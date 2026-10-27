@@ -26,10 +26,10 @@ notes = [
   "Pin 29 (PMID) is 0.95 mm long, centre (1.725); pins 25-28 are 1.0 mm long, centre (1.7).",
   "Pad corners (R0.05) TYP -> roundrect rratio 0.25 on 0.2 mm wide pads/legs.",
   "Solder mask: non-solder-mask-defined preferred, 0.05 mm max all around (PDF p. 149); generator default mask expansion applies.",
-  "Datasheet Figure 5-1 draws INT, CE and QON with an overbar (active low); the parts-lib sheet writes them without a bar, so the sheet names are kept.",
+  "Datasheet Figure 5-1 draws INT, CE and QON with an overbar (active low); the pin table (pins/BQ25798RQMR.toml) writes them without a bar, and the symbol keeps those names.",
 ]
 
-# --- Symbol pins (names as in the parts-lib sheet pin table, which matches Table 5-1) ---
+# --- Symbol pins (names as in pins/BQ25798RQMR.toml, the Table 5-1 transcription) ---
 [[pins]]
 number = "2"
 name = "VBUS"

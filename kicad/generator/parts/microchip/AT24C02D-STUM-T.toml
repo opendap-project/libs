@@ -1,7 +1,7 @@
 # AT24C02D-STUM-T - Microchip (Atmel) 2-kbit I2C serial EEPROM, 5-lead SOT23 (5TS1)
 # Sources: Atmel-8871F (AT24C01D/AT24C02D datasheet, 01/2017), p. 2 (pinout and Table 1-1, pin descriptions),
 # p. 7 (§4.1: A2-A0 not bonded in the SOT23, address 0x50), p. 23 (§12.5, package drawing 5TS1 rev D, 5/31/12).
-# Copy read: the LCSC mirror of part C79996 (parts-lib sheet). The Microchip re-issue DS20006064 returned
+# Copy read: the LCSC mirror of part C79996. The Microchip re-issue DS20006064 returned
 # HTTP 403 from this host (2026-10-25) and was not read: whether it adds a land pattern is UNVERIFIED.
 #
 # 8871F gives the outline only, no land pattern. Land pattern DERIVED per IPC-7351B (nominal density).

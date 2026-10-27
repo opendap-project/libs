@@ -15,6 +15,7 @@ description = "3.8-36 V, 3 A synchronous step-down converter, 2.1 MHz (C version
 keywords = "buck step-down converter DC-DC 3A 36V LMR33630 LMR33630C inverting buck-boost VQFN-HR RNX0012B"
 datasheet = "https://www.ti.com/lit/ds/symlink/lmr33630.pdf"
 datasheet_rev = "SNVSAN3F"
+second_sources = [{ part = "LMR33620CRNXR", note = "2 A, same package and pins" }]
 notes = [
   "Land pattern = TI example board layout RNX0012B (SNVSAN3F p. 49): signal pads 11X (0.6) x (0.25); left column (pins 1-4) and right column (pins 8-11) at x = -/+0.9 ((1.8) between column centres); pins 1-2-3 and 11-10-9 at 2X (0.65) pitch, pins 3-4 and 9-8 at (0.5) (4X (0.5)); pins 1 and 11 at (1.125) above the package centre, pins 4 and 8 at (0.675) below it; pins 5-6-7 vertical, (0.5) apart, (1.4) below the centre; SW pin 12 a (0.25) x (1.825) strip on the centre line whose centre sits (0.788) above the package centre. Centres not dimensioned directly (pins 2, 3, 9, 10) follow from the 0.65 and 0.5 pitches and were checked on the render.",
   "Non-solder-mask-defined pads are preferred (p. 49, 0.07 MAX all around), so the mask expansion is left to the board default; TI shows pads 1, 2 and 10-12 solder-mask-defined as an alternative.",

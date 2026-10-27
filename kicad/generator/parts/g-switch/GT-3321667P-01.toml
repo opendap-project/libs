@@ -38,7 +38,7 @@ keywords = "4.4mm jack balanced headphone Pentaconn-style phone jack G-Switch"
 datasheet = "https://datasheet.lcsc.com/datasheet/pdf/b77c36e71c4d9ede06dc371db399f62a.pdf"
 datasheet_rev = "C-GT03321667P-01 rev. A0, 2020-07-10"
 notes = [
-  "Datasheet URL: the manifest has the LCSC product page (C2762984), not a PDF; this is the PDF mirror named in the parts-lib sheet.",
+  "Datasheet URL: the manifest has the LCSC product page (C2762984), not a PDF; the datasheet field is a PDF mirror.",
   "Spec-sheet discrepancy: the sheet calls the part SMT with 'pad sizes 1.00 x 1.20 / 1.90 / 1.40'. The drawing shows plated slots: copper 1.90 x 1.00, slot drill 1.40 x 0.50 (+0.10/-0); '12-1.20' is not on the layout (2-phi 1.20 are the peg holes). It also lists pad x positions 13.50 (that is the second peg hole) and 'rear pads at 11.75 and 16.50'. The footprint is through-hole (pin-in-paste/reflow suitability UNVERIFIED).",
   "Pin-to-pad assignment UNVERIFIED: the PCB layout carries no pad numbers. Numbers come from the 3D view callouts (circled numbers = contact item numbers, matching the schematic 1-10): 2, 4, 6 on the left side seen from the front, 1, 3, 5 on the right, 8 rear-left corner, 9 and 10 rear middle, 7 rear-right corner; 11 (contact H, nickel plated, not in the schematic) = the side tabs at x' 11.75. Front-left from the 3D view = top row (-y) in the top-view layout. Verify against a sample before ordering boards.",
   "Side tabs at x' 11.75 (item 11, not an electrical pin in the schematic): plated mechanical slots, number \"\" (no net). Tie to GND if the shell should be grounded: UNVERIFIED whether item 11 contacts the sleeve.",

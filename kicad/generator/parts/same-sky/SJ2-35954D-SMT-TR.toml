@@ -30,9 +30,10 @@ description = "3.5 mm 4-conductor (TRRS) audio jack, right angle, SMT, tip and r
 keywords = "audio jack 3.5mm TRRS headphone SMT switch Same Sky SJ2-3595"
 datasheet = "https://www.sameskydevices.com/product/resource/sj2-3595x-smt.pdf"
 datasheet_rev = "SJ2-3595X-SMT rev 1.05, 09/12/2024"
-sheet_pins = "none: the sheet has no pinout (datasheet not downloaded there); pins from the SJ2-3595x-SMT datasheet rev 1.05, which the parts-lib manifest must list (its URL returns 404)"
+second_sources = [{ part = "SJ2-35894D-SMT-TR" }]
+sheet_pins = "none: the sheet has no pinout (datasheet not downloaded there); pins from the SJ2-3595x-SMT datasheet rev 1.05, listed in parts/manifest.toml (the earlier URL returned 404)"
 notes = [
-  "Datasheet obtained this session: the manifest URL (sj2-3595xd-smt.pdf) is 404; the series datasheet is sj2-3595x-smt.pdf (covers SJ2-35954A/B/D-SMT). manifest.toml and the parts-lib sheet need updating (URL, sha256, pin table, dimensions).",
+  "Datasheet obtained this session: the manifest URL (sj2-3595xd-smt.pdf) is 404; the series datasheet is sj2-3595x-smt.pdf (covers SJ2-35954A/B/D-SMT). manifest.toml lists the series datasheet.",
   "Spec-sheet discrepancy: the sheet has no pin table (every field UNVERIFIED). Pins from the datasheet p. 2 table, SJ2-35954D-SMT column: 1 sleeve, 2 tip, 3 ring 1, 4 ring 2, 10 tip switch, 11 ring 1 switch. Pin names here (SLEEVE, TIP, RING1, RING2, TIP_SW, RING1_SW) are OpenDAP spellings of those labels.",
   "Switch contacts (10 with tip 2, 11 with ring 1) are drawn as normally closed in the schematic (break when the plug is inserted): read from the p. 2 schematic symbol, UNVERIFIED by text.",
   "NPTH phi 1.40 at x' = 10.5 on the axis for the phi 1.20 locating peg (side view).",

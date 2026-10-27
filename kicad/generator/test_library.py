@@ -11,6 +11,8 @@ For every part data file in generator/parts/:
 - the symbol pins (count, numbers and names) match the datasheet's pin table, transcribed
   separately in generator/parts/<key>/pins/<part>.toml (schema checked: datasheet revision, page
   citation, pin number to name), unless the part records sheet_pins = "none: <reason>";
+- [part] lifecycle and second_sources (PLIB-003) follow their schema and are
+  present on every part that had them when the fields were introduced;
 - the symbol's pin numbers match the footprint's numbered copper pads, and the symbol carries the
   Manufacturer, MPN, Datasheet and Footprint fields (PCB-T-05);
 - the pads read back from the .kicad_mod file match the transcribed drawing values ([[checks]]);
@@ -210,6 +212,52 @@ def norm(s):
     return re.sub(r"\s+", "", s.replace("~{", "").replace("}", "").replace("−", "-")).upper()
 
 
+# ---------------------------------------------------------------- lifecycle and second sources (PLIB-003)
+
+# The parts whose lifecycle or second sources were recorded when the fields were introduced
+# (2026-10-27); each must keep the field. The data says "Not stated" or [] when the source said none.
+LIFECYCLE_EXPECTED = {"SN74AUC1G74DCUR", "SN74LVC2G66DCUR", "TPS6286910CRQYR", "K4UBE3D4AB-MGCL"}
+SECOND_SOURCES_EXPECTED = {"70-9258-001-120-006", "LBES5PL2EL-923", "NSC5083D-22.5792M", "SJ2-35954D-SMT-TR",
+                           "LMR33630CRNXR", "SN74AUC1G74DCUR", "SN74AXC1T45DCKR", "SN74LVC2G66DCUR",
+                           "TPS6286910CRQYR", "MT53E1G32D2FW-046 IT:C"}
+
+
+def part_record_errors(pt):
+    """Schema of [part] lifecycle = {status, source, read, note?} (source and read may be left out
+    only with status "Not stated") and second_sources = [{part, note?}, ...] ([] = none found)."""
+    errs = []
+    lc = pt.get("lifecycle")
+    if lc is not None:
+        if not isinstance(lc, dict) or not set(lc) <= {"status", "source", "read", "note"}:
+            errs.append("lifecycle: keys status, source, read, note")
+        else:
+            if not str(lc.get("status", "")).strip():
+                errs.append("lifecycle: no status")
+            if lc.get("status") != "Not stated":
+                if not str(lc.get("source", "")).strip():
+                    errs.append("lifecycle: no source")
+                if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(lc.get("read", ""))):
+                    errs.append("lifecycle: read is not a YYYY-MM-DD date")
+    ss = pt.get("second_sources")
+    if ss is not None:
+        if not isinstance(ss, list):
+            errs.append("second_sources: a list")
+        else:
+            for e in ss:
+                if not isinstance(e, dict) or not set(e) <= {"part", "note"} or not str(e.get("part", "")).strip():
+                    errs.append("second_sources: entries are {part, note?}: %r" % (e,))
+    return errs
+
+
+def all_part_records():
+    """[part] tables of every generator part: generator/parts/ and generator/bga/."""
+    out = [p["part"] for p in PARTS]
+    for path in sorted(glob.glob(os.path.join(ROOT, "generator", "bga", "*", "*.toml"))):
+        with open(path, "rb") as fh:
+            out.append(tomllib.load(fh)["part"])
+    return out
+
+
 # ---------------------------------------------------------------- tests
 
 PARTS = kigen.load_parts()
@@ -305,6 +353,28 @@ class Symbols(unittest.TestCase):
         known = {pin_table_path(p) for p in PARTS}
         for path in glob.glob(os.path.join(kigen.PARTS, "*", "pins", "*.toml")):
             self.assertIn(path, known, "pin table without a part data file")
+
+    def test_lifecycle_and_second_sources(self):  # PLIB-003
+        records = all_part_records()
+        for pt in records:
+            with self.subTest(part=pt["mpn"]):
+                self.assertEqual(part_record_errors(pt), [])
+        have_lc = {pt["mpn"] for pt in records if "lifecycle" in pt}
+        have_ss = {pt["mpn"] for pt in records if "second_sources" in pt}
+        self.assertEqual(LIFECYCLE_EXPECTED - have_lc, set(), "lifecycle missing")
+        self.assertEqual(SECOND_SOURCES_EXPECTED - have_ss, set(), "second_sources missing")
+
+    def test_part_record_schema_rejects(self):
+        good = {"lifecycle": {"status": "Active", "source": "TI product page", "read": "2026-10-24"},
+                "second_sources": [{"part": "X1", "note": "same land"}]}
+        self.assertEqual(part_record_errors(good), [])
+        self.assertEqual(part_record_errors({"lifecycle": {"status": "Not stated"}, "second_sources": []}), [])
+        for bad in ({"lifecycle": {"status": "Active"}},
+                    {"lifecycle": {"status": "Active", "source": "TI", "read": "Oct 2026"}},
+                    {"lifecycle": {"status": "Active", "source": "TI", "read": "2026-10-24", "stock": 5}},
+                    {"second_sources": "X1"}, {"second_sources": [{"note": "no part"}]},
+                    {"second_sources": [{"part": "X1", "price": "1"}]}):
+            self.assertNotEqual(part_record_errors(bad), [], bad)
 
     def test_pins_match_pads(self):
         for part in PARTS:

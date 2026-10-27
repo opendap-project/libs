@@ -24,8 +24,8 @@ notes = [
   "Thermal pad connects to V- (datasheet p. 3), not to GND.",
 ]
 
-# Symbol pins: names from the datasheet pin diagram (p. 3: +INA, -INA, OUTA ...); the parts-lib sheet
-# writes them with a space and Unicode minus, kept in sheet_name.
+# Symbol pins: names from the datasheet pin diagram (p. 3: +INA, -INA, OUTA ...); the pin table
+# (pins/OPA1622IDRCR.toml) writes them with a space and Unicode minus, kept in sheet_name.
 [[pins]]
 number = "1"
 name = "+INA"

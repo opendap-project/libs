@@ -16,7 +16,7 @@ datasheet_rev = "Drawing P70-10X0045R issue 4, 02.07.21"
 sheet_pins = "none: single contact"
 notes = [
   "Land pattern = manufacturer 'RECOMMENDED PCB PAD LAYOUT': one round pad phi 2.20 +/-0.05.",
-  "Datasheet URL is the manifest's product page (no direct PDF URL in manifest.toml); the copy read is the LCSC mirror named in the parts-lib sheet.",
+  "Datasheet URL is the manifest's product page (no direct PDF URL in manifest.toml); the copy read is an LCSC mirror.",
   "Body = flange phi 2.00 x free height 3.50 (DIM 'A' for P70-1000045R). Plunger phi 0.90, barrel phi 1.50 / 1.54 not modelled separately.",
   "Only two checks possible (single pad): pad_size and pad_count.",
 ]

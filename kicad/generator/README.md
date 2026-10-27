@@ -38,6 +38,17 @@ Footprints reference their model as `${OPENDAP_KICAD_3DMODELS}/…`, a project t
 
 Top-level tables: `[part]` (MPN, manufacturer, library, datasheet and its revision, notes), `[[pins]]` (number, name, electrical type, side, unit), `[[units]]`, `[footprint]` with `body` (and `datasheet` where several parts share one land, so the footprint file is the same whichever part writes it), `[[footprint.pads]]`, `[[footprint.rows]]`, `[[footprint.paste]]`, `[[footprint.vias]]`, `[[footprint.rings]]` and `[[footprint.paste_sectors]]` (custom pads from `custom_pads.py`: a copper ring around a bottom-port microphone's acoustic port, its paste split into parallel-gap sectors; the port itself is an `np_thru_hole` pad), optional `[[footprint.model]]` boxes and `[footprint.pin1_mark]`, and `[[checks]]`. Coordinates are in millimetres, top view, +y down. `land_pattern` records where the pads come from: `manufacturer` (the recommended land pattern as given), `drawing` (a connector's recommended PCB layout) or `ipc7351b` (derived, with the derivation in comments).
 
+### Lifecycle and second sources (`[part]`, PLIB-003)
+
+Optional in `[part]` of a part here or in `bga/`; `test_library.py` checks their shape and that every part that carried them still does:
+
+```toml
+lifecycle = { status = "Active", source = "TI product page", read = "2026-10-24" }   # as the manufacturer states it; note = "..." optional
+second_sources = [{ part = "TPS628691ARQYR", note = "on the same land" }]           # [] when none was found
+```
+
+`status = "Not stated"` may leave out `source` and `read`. The BOM's chosen alternative stays in `second_source`, the string written to the symbol's `Second_Source` field.
+
 ### Pin table (`parts/<key>/pins/<part>.toml`)
 
 A second reading of the datasheet for the pin check, kept apart from the data that builds the symbol (the same split as the BGA parts' `<Part>-pins.csv`). The file has the part's file name and three keys, and the test rejects any other shape:

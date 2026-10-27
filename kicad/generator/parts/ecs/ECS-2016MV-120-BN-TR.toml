@@ -1,7 +1,7 @@
 # ECS-2016MV-120-BN-TR - ECS Inc. ECS-2016MV MultiVolt HCMOS crystal oscillator, 12.000 MHz, +-50 ppm,
 # -40 to +85 C, 1.6-3.6 V, tri-state, 2.0 x 1.6 x 0.85 mm ceramic, four pads.
-# Source: ECS-2016MV SMD MultiVolt Crystal Oscillator, Rev. 2025 (2 pages), sha256 f179ffbc...1c61872 per the
-# parts-lib sheet and BOM v1.1. Cited as "ECS-2016MV".
+# Source: ECS-2016MV SMD MultiVolt Crystal Oscillator, Rev. 2025 (2 pages), sha256 f179ffbc...1c61872.
+# Cited as "ECS-2016MV".
 #
 # Drawing reading (ECS-2016MV p. 1, 300 dpi render):
 #   Figure 1, left view (pin-1 dot): top view, #4 upper-left, #3 upper-right, #1 lower-left, #2 lower-right.

@@ -25,7 +25,7 @@ datasheet = "https://www.hirose.com/en/product/series/U.FL"
 datasheet_rev = "U.FL catalog 2009.2 (p. 3)"
 sheet_pins = "none: the sheet lists no pin table; 1 = signal, 2 = ground (UNVERIFIED numbering), checked by pad_count"
 notes = [
-  "DISCREPANCY with the parts-lib sheet: the sheet gives GND pads 1 +/- 0.05 wide and SIG 1 x 1 offset 1.05 from the GND row. The p. 3 drawing gives no GND width (4 and 1.9 imply 1.05) and dimensions SIG as 1 +/- 0.05 wide x 1.05 +/- 0.05 tall with its top edge 1 +/- 0.05 below the GND centre line (the 1.05 is the SIG height, not the offset). Footprint follows the drawing.",
+  "The p. 3 drawing gives no GND width (4 and 1.9 imply 1.05) and dimensions SIG as 1 +/- 0.05 wide x 1.05 +/- 0.05 tall with its top edge 1 +/- 0.05 below the GND centre line (the 1.05 is the SIG height, not the offset). Footprint follows the drawing.",
   "Pin numbers are not in the catalog or the sheet: 1 = SIG, 2 = GND (both GND lands), KiCad coaxial convention. UNVERIFIED as a Hirose numbering.",
   "Orderable code is U.FL-R-SMT-1(10); mpn kept without the packaging suffix as requested by the task.",
   "The catalog asks for the engineering drawing for current data (p. 1/3 header note); this footprint is from the 2009.2 catalog only (UNVERIFIED against the current drawing).",

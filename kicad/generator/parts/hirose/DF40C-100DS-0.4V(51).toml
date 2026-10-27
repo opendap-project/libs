@@ -24,7 +24,7 @@ datasheet = "https://www.hirose.com/en/product/document?clcode=&productname=&ser
 datasheet_rev = "DF40 catalog 2020-05-01 (p. 4)"
 sheet_pins = "none: the sheet lists no per-contact table; contacts numbered 1-100 in the odd/even convention of the footprint (UNVERIFIED against a Hirose numbering), checked by pad_count"
 notes = [
-  "Contact numbering is not given in the DF40 catalog or in drawing EDC3-311351-00, and the parts-lib sheet has no pin table: UNVERIFIED. The footprint uses the KiCad 2-row convention, odd contacts on the upper row and even on the lower row, 1/2 at the end carrying the moulded triangle mark (left in the catalog/drawing views). Header and receptacle face each other when mated, so pin n on one side does not land on pin n on the other with the same convention: map the nets through the mating, not by number, until Hirose's numbering is confirmed.",
+  "Contact numbering is not given in the DF40 catalog or in drawing EDC3-311351-00: UNVERIFIED. The footprint uses the KiCad 2-row convention, odd contacts on the upper row and even on the lower row, 1/2 at the end carrying the moulded triangle mark (left in the catalog/drawing views). Header and receptacle face each other when mated, so pin n on one side does not land on pin n on the other with the same convention: map the nets through the mating, not by number, until Hirose's numbering is confirmed.",
   "Land pattern from the catalog only (DF40 cat. p. 4, DF40C view); no Hirose drawing for the receptacle is cached. Worth checking against the receptacle drawing when obtained.",
   "Resist-coating area 1.5 mm max between the rows (cat. p. 4 note 3) is not encoded in the footprint.",
   "Placed on an FPC: stiffener under the receptacle per the sheet (specification UNVERIFIED).",

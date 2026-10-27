@@ -31,7 +31,7 @@ notes = [
   "Shell stakes: 4 plated slots, all numbered S1 (sheet pin table 'Shell = GND'; the sheet gives no shell pin number, S1 is an OpenDAP choice). Front pair copper 1.00 x 2.10, drill slot 0.60 x 1.70; rear pair copper 1.00 x 1.80, drill slot 0.60 x 1.40; both pairs 8.64 apart.",
   "Spec-sheet discrepancy: the sheet says 'stake row spacing 8.64 mm (front) and 5.78 mm (rear)'. On the drawing both stake pairs are 8.64 apart (same vertical centre lines); 5.78 is the spacing of the two phi 0.65 NPTH locating holes. The sheet's 'rear slot row 4.18 / front row 2.60/3.68 from the pad row' is also inverted: 2.60 is PCB edge to rear slots, 4.18 rear slots to front slots/pad edge, 3.68 rear slots to NPTH holes.",
   "attr = smd although the shell stakes are plated through slots (mixed part, as KiCad's own USB-C receptacle footprints do); review.",
-  "Stake length: -GF-A = default 0.95 mm stake (S +/-0.15, ordering grid); board thickness not decided (parts-lib sheet).",
+  "Stake length: -GF-A = default 0.95 mm stake (S +/-0.15, ordering grid); board thickness not decided.",
 ]
 
 [[pins]]

@@ -13,6 +13,7 @@ reference = "U"
 description = "LPDDR4X SDRAM, 32 Gb (4 GB) DDP, 2 channels x16, 4266 Mb/s, VDD1/VDD2/VDDQ 1.8/1.1/0.6 V, 200FBGA 10 x 15 mm"
 keywords = "LPDDR4X SDRAM DRAM Samsung 200FBGA"
 datasheet = "https://datasheet.lcsc.com/datasheet/pdf/68493aa292745ce2f51b9d2d9103c14d.pdf?productCode=C5827966"
+lifecycle = { status = "discontinued", source = "Samsung product page", read = "2026-10-24" }
 pins = "K4UBE3D4AB-MGCL-pins.csv"          # DS p. 10, section 4.2 Package Ballout (names verbatim; NB cells omitted)
 ballmap = "K4UBE3D4AB-MGCL-ballmap.txt"    # DS p. 9, section 4.1, bottom view
 

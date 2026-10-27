@@ -3,8 +3,7 @@
 # Source: NDK catalogue c_NZ2520SDA_e.pdf (2 pages; p. 1 code 2012E_NZ2520SDA_e, p. 2 code 1703A_NZ2520SDA_e),
 # sha256 b818c72b...7825 per manifest. Cited as "NZ2520SDA". Why this catalogue applies: NZ2520SDA is the model and
 # NSC5083D its specification number for +3.3 V (NZ2520SDA p. 2, "Specification Number" table: NSC5083A/B/C/D =
-# 1.8/2.5/3.0/3.3 V); the order code is model + frequency + specification number (p. 2 note). The parts-lib sheet
-# states the same ("NZ2520SDA, specification number NSC5083D").
+# 1.8/2.5/3.0/3.3 V); the order code is model + frequency + specification number (p. 2 note).
 #
 # Drawing reading (NZ2520SDA p. 1, Dimensions, checked on a 400 dpi render):
 #   Top view (marking side, pin-1 dot) shows the dot at the LOWER-LEFT corner.

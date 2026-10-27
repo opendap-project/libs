@@ -21,7 +21,7 @@ notes = [
   "The [footprint] section is copied verbatim from TVS2200DRVR.toml (same drawing 4222173/C, read off SLVSED5C pp. 18-20); its values match SLVS791E PDF pp. 37-39 (pads 0.45 x 0.3, pitch 0.65, span 1.95, exposed pad 1.0 x 1.6, paste 2 x (1.0 x 0.7) at +/-0.45, 88 %). TI's two optional (0.2) vias, (1.1) apart (note 6), are not drawn; add them on the board if wanted.",
   "Solder mask: non-solder-mask-defined preferred, 0.07 mm max opening all around (PDF p. 38); generator default mask expansion applies (not overridden here).",
   "Pin types: SW is the switch node between the inductor and the rectifier (datasheet type I) -> passive; COMP is the error-amplifier output for the compensation capacitor (type O) -> passive; FB senses RSET (type I) -> input; GND is listed as type O in the table and drawn as power_in.",
-  "Thermal pad 7: 'solder to the analog ground plane' (PDF p. 4) -> passive, bottom; the parts-lib sheet calls it 'Thermal pad'.",
+  "Thermal pad 7: 'solder to the analog ground plane' (PDF p. 4) -> passive, bottom; its pin table calls it 'Thermal pad' (pins/TPS61160DRVR.toml).",
 ]
 
 [[pins]]

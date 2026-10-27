@@ -29,9 +29,10 @@ description = "Murata Type 2EL module, NXP IW612: Wi-Fi 6 802.11a/b/g/n/ac/ax 1x
 keywords = "Wi-Fi WiFi 6 802.11ax Bluetooth BLE 802.15.4 Thread module IW612 Murata Type 2EL LBES5PL2EL SDIO"
 datasheet = "https://www.murata.com/en-us/products/connectivitymodule/wi-fi-bluetooth/overview/lineup/type2el"
 datasheet_rev = "Type 2EL Datasheet not obtained (403); pins from E2B-54-1953 Rev. 2.0, land from footprint DXF 2023-07-13"
+second_sources = [{ part = "u-blox MAYA-W271-00B", note = "same chip, per the board BOM" }]
 notes = [
   "Datasheet field = Murata Type 2EL product page: the Type 2EL Datasheet it links (https://pim.murata.com/asset/pim4/wifiBluetoothModule/TYPE2EL_PDF) answered 403 to non-browser fetches on 2026-10-24 and 2026-10-25.",
-  "Pin numbers and names = E2B-54-1953 Rev. 2.0 Table 3, Type 2EL column (pp. 10-11), identical to the parts-lib sheet pin table; positions = Figure 5 (p. 9, top view).",
+  "Pin numbers and names = E2B-54-1953 Rev. 2.0 Table 3, Type 2EL column (pp. 10-11) (pins/LBES5PL2EL-923.toml); positions = Figure 5 (p. 9, top view).",
   "Land pattern = Murata module footprint DXF (top view, 2023-07-13), layer NC_Work2: 107 rectangular pads 0.55 x 0.25 mm. Whether the DXF draws the module terminals or the recommended PCB lands, and the solder-mask and stencil openings, are defined in the datasheet: UNVERIFIED. Mask and paste are drawn equal to the copper (KiCad default) until the datasheet is obtained.",
   "Pin electrical types: the Murata documents read give no pin directions. Types follow the pin names from the module side (TX/RTS/DOUT/_OUT/SPI_TXD/SPI_INT/SD_INT outputs; RX/CTS/DIN/_IN/IND_RST_* inputs; SDIO CLK input, CMD/DAT bidirectional as the SD specification; CONFIG_HOST straps inputs; PCM_CLK/SYNC/MCLK bidirectional because the PCM role is configurable; RF_CNTL outputs, RF_CNTL3/CONFIG_XOSC_SEL and RST_IND bidirectional): UNVERIFIED against the datasheet pin table.",
   "Reserved pins (33-36, 65, 66) are passive (connection rule in the datasheet, UNVERIFIED); NC pins (3, 77-80) are visible no_connect pins (CRAFT-125).",
