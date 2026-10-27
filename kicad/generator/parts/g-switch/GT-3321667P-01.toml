@@ -30,14 +30,14 @@
 [part]
 mpn = "GT-3321667P-01"
 manufacturer = "G-Switch"
-library = "G_Switch"
+library = "g-switch"
 symbol = "GT-3321667P-01"
 reference = "J"
 description = "4.4 mm 5-pole phone jack (balanced headphone), right angle, plated-slot terminals, detect switch, 2 locating pegs"
 keywords = "4.4mm jack balanced headphone Pentaconn-style phone jack G-Switch"
 datasheet = "https://datasheet.lcsc.com/datasheet/pdf/b77c36e71c4d9ede06dc371db399f62a.pdf"
 datasheet_rev = "C-GT03321667P-01 rev. A0, 2020-07-10"
-sheet = "G-Switch/GT-3321667P-01.md"
+sheet = "g-switch/GT-3321667P-01.md"
 notes = [
   "Datasheet URL: the manifest has the LCSC product page (C2762984), not a PDF; this is the PDF mirror named in the parts-lib sheet.",
   "Spec-sheet discrepancy: the sheet calls the part SMT with 'pad sizes 1.00 x 1.20 / 1.90 / 1.40'. The drawing shows plated slots: copper 1.90 x 1.00, slot drill 1.40 x 0.50 (+0.10/-0); '12-1.20' is not on the layout (2-phi 1.20 are the peg holes). It also lists pad x positions 13.50 (that is the second peg hole) and 'rear pads at 11.75 and 16.50'. The footprint is through-hole (pin-in-paste/reflow suitability UNVERIFIED).",

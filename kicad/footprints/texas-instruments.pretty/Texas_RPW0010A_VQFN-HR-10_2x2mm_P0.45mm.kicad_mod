@@ -253,7 +253,7 @@
 		(roundrect_rratio 0.167)
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Texas_Instruments.3dshapes/Texas_RPW0010A_VQFN-HR-10_2x2mm_P0.45mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/texas-instruments.3dshapes/Texas_RPW0010A_VQFN-HR-10_2x2mm_P0.45mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

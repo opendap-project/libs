@@ -6,14 +6,14 @@
 mpn = "TPS22919DCKR"
 second_source = "Texas Instruments TPS22916CYFPR (WCSP, other land; BOM v1 line 50)"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "TPS22919DCKR"
 reference = "U"
 description = "Load switch, 1.6-5.5 V, 1.5 A, 90 mOhm, controlled rise time, short-circuit protection, adjustable quick output discharge, SOT/SC-70-6 (DCK0006A)"
 keywords = "load switch power switch QOD TPS22919 SC-70 DCK"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps22919.pdf"
 datasheet_rev = "SLVSEN5B"
-sheet = "Texas-Instruments/TPS22919DCKR.md"
+sheet = "texas-instruments/TPS22919DCKR.md"
 notes = [
   "Land pattern = TI example board layout DCK0006A (SLVSEN5B p. 25): six pads 0.9 x 0.4 mm, 0.65 mm pitch, 2.2 mm between pad-row centres, R0.05 corners; stencil p. 26 equal to the pads (paste = true).",
   "The DCK0006A land is shared with SN74LVC1G57DCKR (same drawing 4214835): the [footprint] section is identical in both files.",

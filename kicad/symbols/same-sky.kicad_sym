@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Same_Sky:Same_Sky_SJ2-35954D-SMT-TR_Jack_3.5mm_TRRS_Horizontal"
+		(property "Footprint" "same-sky:Same_Sky_SJ2-35954D-SMT-TR_Jack_3.5mm_TRRS_Horizontal"
 			(at 0 0 0)
 			(hide yes)
 			(effects

@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "ECS:Oscillator_SMD_ECS_ECS-2016MV-4Pin_2.0x1.6mm"
+		(property "Footprint" "ecs:Oscillator_SMD_ECS_ECS-2016MV-4Pin_2.0x1.6mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

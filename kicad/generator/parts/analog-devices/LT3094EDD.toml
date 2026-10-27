@@ -6,14 +6,14 @@
 mpn = "LT3094EDD#TRPBF"
 second_source = "Analog Devices LT3094EDD#PBF (same part, tube)"
 manufacturer = "Analog Devices"
-library = "Analog_Devices"
+library = "analog-devices"
 symbol = "LT3094EDD"
 reference = "U"
 description = "Negative LDO regulator, -20 V, -500 mA, 0.8 uVrms noise, 74 dB PSRR at 1 MHz, programmable current limit, power good, VIOC tracking, DFN-12 (DD) 3 x 3 mm with exposed pad (IN)"
 keywords = "negative LDO linear regulator ultra low noise high PSRR LT3094 DFN DD"
 datasheet = "https://www.analog.com/media/en/technical-documentation/data-sheets/lt3094.pdf"
 datasheet_rev = "Rev. B"
-sheet = "Analog-Devices/LT3094EDD-TRPBF.md"
+sheet = "analog-devices/LT3094EDD-TRPBF.md"
 notes = [
   "Land pattern = the recommended solder pad pitch and dimensions of the DD package drawing (LT3094 Rev. B p. 31): 0.45 mm pitch, pads 0.25 x 0.70 mm, outer extent 3.50 mm (pad centres at +-(3.50 - 0.70) / 2 = +-1.40 mm), centre pad 1.65 x 2.38 mm.",
   "The exposed pad (pin 13) is IN, the negative input, not ground (p. 3): it is a power_in pin on the left with IN 1 and 2.",

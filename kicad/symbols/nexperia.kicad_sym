@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Nexperia:Nexperia_SOT23_TO-236AB_2.9x1.3mm_P1.9mm"
+		(property "Footprint" "nexperia:Nexperia_SOT23_TO-236AB_2.9x1.3mm_P1.9mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

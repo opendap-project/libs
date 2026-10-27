@@ -23,14 +23,14 @@
 mpn = "NT3H2111W0FHKH"
 second_source = "ST ST25DV04KC / ST25DV64KC (Type 5 tag, different footprint; BOM v1 line 125)"
 manufacturer = "NXP"
-library = "NXP"
+library = "nxp"
 symbol = "NT3H2111W0FHKH"
 reference = "U"
 description = "NTAG I2C plus 1k: NFC Forum Type 2 Tag with I2C interface, field detection, energy harvesting, 1.67-3.6 V, XQFN8 (SOT902-3) 1.6 x 1.6 mm"
 keywords = "NFC tag NTAG NTAG I2C plus NT3H2111 Type 2 T2T dynamic tag I2C XQFN8 SOT902-3 NXP"
 datasheet = "https://www.nxp.com/docs/en/data-sheet/NT3H2111_2211.pdf"
 datasheet_rev = "Rev. 3.6, 21 July 2023"
-sheet = "NXP/NT3H2111W0FHKH.md"
+sheet = "nxp/NT3H2111W0FHKH.md"
 notes = [
   "Ordering code: DS Table 1 lists NT3H2111W0FHK (XQFN8, SOT902-3); the trailing H of NT3H2111W0FHKH is the packing suffix of the orderable part (UNVERIFIED in the DS, which does not list packing codes).",
   "Land pattern = NXP reflow-soldering footprint SOT902-3 (DS p. 71, Figure 32), transcribed as described in the header; the paste deposit is drawn inside each land and not dimensioned separately: paste = land (generator default, UNVERIFIED reduction).",

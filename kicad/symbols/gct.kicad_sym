@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "GCT:GCT_USB4105-GF-A_USB-C_Receptacle_USB2.0_Horizontal"
+		(property "Footprint" "gct:GCT_USB4105-GF-A_USB-C_Receptacle_USB2.0_Horizontal"
 			(at 0 0 0)
 			(hide yes)
 			(effects

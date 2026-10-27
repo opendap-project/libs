@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "KYOCERA_AVX:KYOCERA_AVX_9258-100_70-9258-001-120-006_SpringFinger_Pad7.0x2.7mm"
+		(property "Footprint" "kyocera-avx:KYOCERA_AVX_9258-100_70-9258-001-120-006_SpringFinger_Pad7.0x2.7mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

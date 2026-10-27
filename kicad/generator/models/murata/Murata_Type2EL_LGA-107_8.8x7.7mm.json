@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Murata",
+  "library": "murata",
   "name": "Murata_Type2EL_LGA-107_8.8x7.7mm",
   "source": "envelope from Type 2EL Product Brief (March 2023): Size 7.7 x 8.8 x 1.3 mm; footprint DXF layer ProductsBoradOutline 8.8 x 7.7 mm. Height tolerance UNVERIFIED (datasheet)"
 }

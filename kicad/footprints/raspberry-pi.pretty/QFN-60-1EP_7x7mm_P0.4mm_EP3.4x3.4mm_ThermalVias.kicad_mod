@@ -599,7 +599,7 @@
 		(remove_unused_layers no)
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Raspberry_Pi.3dshapes/QFN-60-1EP_7x7mm_P0.4mm_EP3.4x3.4mm_ThermalVias.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/raspberry-pi.3dshapes/QFN-60-1EP_7x7mm_P0.4mm_EP3.4x3.4mm_ThermalVias.step"
 		(offset
 			(xyz 0 0 0)
 		)

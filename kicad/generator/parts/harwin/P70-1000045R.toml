@@ -6,14 +6,14 @@
 mpn = "P70-1000045R"
 second_source = "Mill-Max 0965-0-15-20-80-14-11-0 (BOM v1 line 67, same pads)"
 manufacturer = "Harwin"
-library = "Harwin"
+library = "harwin"
 symbol = "P70-1000045R"
 reference = "J"
 description = "SMT spring-loaded pogo pin, 2.0 A, phi 2.00 mm flange, 3.50 mm free height, working height 2.70-3.00 mm"
 keywords = "pogo pin spring loaded contact SMT Harwin P70"
 datasheet = "https://www.harwin.com/products/P70-1000045R/"
 datasheet_rev = "Drawing P70-10X0045R issue 4, 02.07.21"
-sheet = "Harwin/P70-1000045R.md"
+sheet = "harwin/P70-1000045R.md"
 sheet_pins = "none: single contact"
 notes = [
   "Land pattern = manufacturer 'RECOMMENDED PCB PAD LAYOUT': one round pad phi 2.20 +/-0.05.",

@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "VSON-12-1EP_4x2.5mm_P0.4mm_EP2.45x1.95mm_ThermalVias",
   "source": "envelope from SLUSE07B PDF p. 35, outline 4218895/B: 3.85-4.15 x 2.35-2.65, height 0.8-1.0 (nominal midpoints), A1 0-0.05"
 }

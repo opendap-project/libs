@@ -173,7 +173,7 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/NXP.3dshapes/NXP_SOT902-3_XQFN-8_1.6x1.6mm_P0.5mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/nxp.3dshapes/NXP_SOT902-3_XQFN-8_1.6x1.6mm_P0.5mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

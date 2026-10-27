@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Infineon",
+  "library": "infineon",
   "name": "Infineon_PG-LLGA-5-3_3x4mm_P0.7mm_BottomPort",
   "source": "envelope from IM73D122V01 v1.00 p. 11, Figure 12: 3 +/- 0.1 x 4 +/- 0.1, height 1.2 +/- 0.1 (1.3 max)"
 }

@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "VSON-10-1EP_3x3mm_P0.5mm_EP1.65x2.4mm_ThermalVias",
   "source": "envelope from SBOS727B PDF p. 34, outline 4218878/B: 2.9-3.1 x 2.9-3.1, height 0.8-1.0 (nominal midpoints), A1 0.00-0.05"
 }

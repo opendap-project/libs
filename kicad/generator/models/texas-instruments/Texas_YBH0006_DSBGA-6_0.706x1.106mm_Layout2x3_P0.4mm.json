@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "Texas_YBH0006_DSBGA-6_0.706x1.106mm_Layout2x3_P0.4mm",
   "source": "envelope from SLVSFJ2B PDF p. 21, YBH0006-C02 outline 4226594/A: E 0.686-0.726 (x), D 1.086-1.126 (y), 0.4 MAX height, ball height 0.13-0.19 (nominal midpoints)"
 }

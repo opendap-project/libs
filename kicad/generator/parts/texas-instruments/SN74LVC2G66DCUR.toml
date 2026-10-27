@@ -5,14 +5,14 @@
 [part]
 mpn = "SN74LVC2G66DCUR"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "SN74LVC2G66DCUR"
 reference = "U"
 description = "Dual bilateral analog switch, 1.65-5.5 V, one active-high control per switch, VSSOP-8 (DCU0008A)"
 keywords = "analog switch bilateral SPST dual LVC SN74LVC2G66 VSSOP DCU"
 datasheet = "https://www.ti.com/lit/ds/symlink/sn74lvc2g66.pdf"
 datasheet_rev = "SCES325N"
-sheet = "Texas-Instruments/SN74LVC2G66DCUR.md"
+sheet = "texas-instruments/SN74LVC2G66DCUR.md"
 notes = [
   "Land pattern = TI example board layout DCU0008A (SCES325N PDF p. 26), the same drawing 4225266/A as SN74AUC1G74DCUR: the [footprint] section is copied from SN74AUC1G74DCUR.toml unchanged (identical footprint file).",
   "Switch terminals A and B are bidirectional analog nodes: passive pins; controls 1C, 2C inputs.",

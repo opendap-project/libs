@@ -5,14 +5,14 @@
 [part]
 mpn = "TPS65131RGER"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "TPS65131RGER"
 reference = "U"
 description = "Dual-output DC-DC converter, boost up to 15 V and inverter down to -15 V, 2.7-5.5 V input, 1.95 A switch limit, power save, VQFN-24 (RGE0024B) 4 x 4 mm with exposed pad"
 keywords = "boost inverter dual output DC-DC TPS65131 VQFN RGE0024B"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps65131.pdf"
 datasheet_rev = "SLVS493E"
-sheet = "Texas-Instruments/TPS65131RGER.md"
+sheet = "texas-instruments/TPS65131RGER.md"
 notes = [
   "Land pattern = TI example board layout RGE0024B (SLVS493E p. 37): 24X (0.6) x (0.25) pads, 0.5 mm pitch, (3.8) between opposite pad centres, exposed pad (2.45) square with five optional (0.2) vias at (0.975) TYP; non-solder-mask-defined preferred.",
   "Stencil (p. 38, 0.125 mm): pads 1:1, exposed pad as four (1.08) square apertures at (0.64) from the centre lines (78 % coverage): pad 25 paste = false plus [[footprint.paste]].",

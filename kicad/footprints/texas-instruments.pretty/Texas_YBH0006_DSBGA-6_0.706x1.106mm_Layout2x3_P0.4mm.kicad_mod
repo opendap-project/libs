@@ -199,7 +199,7 @@
 		(layers "F.Cu" "F.Mask")
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Texas_Instruments.3dshapes/Texas_YBH0006_DSBGA-6_0.706x1.106mm_Layout2x3_P0.4mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/texas-instruments.3dshapes/Texas_YBH0006_DSBGA-6_0.706x1.106mm_Layout2x3_P0.4mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

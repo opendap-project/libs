@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Hirose:Hirose_DF40C-100DP-0.4V_2x50-1MP_P0.4mm_Vertical"
+		(property "Footprint" "hirose:Hirose_DF40C-100DP-0.4V_2x50-1MP_P0.4mm_Vertical"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -1954,7 +1954,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Hirose:Hirose_DF40C-100DS-0.4V_2x50_P0.4mm_Vertical"
+		(property "Footprint" "hirose:Hirose_DF40C-100DS-0.4V_2x50_P0.4mm_Vertical"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -3881,7 +3881,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Hirose:Hirose_DF40C-50DS-0.4V_2x25_P0.4mm_Vertical"
+		(property "Footprint" "hirose:Hirose_DF40C-50DS-0.4V_2x25_P0.4mm_Vertical"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -4884,7 +4884,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Hirose:Hirose_DM3AT-SF-PEJM5_microSD_PushPush_Top"
+		(property "Footprint" "hirose:Hirose_DM3AT-SF-PEJM5_microSD_PushPush_Top"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -5194,7 +5194,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Hirose:Hirose_FH35C-51S-0.3SHW_1x51-1MP_P0.3mm_Horizontal"
+		(property "Footprint" "hirose:Hirose_FH35C-51S-0.3SHW_1x51-1MP_P0.3mm_Horizontal"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -6224,7 +6224,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Hirose:Hirose_U.FL-R-SMT-1_Vertical"
+		(property "Footprint" "hirose:Hirose_U.FL-R-SMT-1_Vertical"
 			(at 0 0 0)
 			(hide yes)
 			(effects

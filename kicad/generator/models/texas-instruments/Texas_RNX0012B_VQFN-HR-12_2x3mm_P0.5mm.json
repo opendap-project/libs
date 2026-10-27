@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "Texas_RNX0012B_VQFN-HR-12_2x3mm_P0.5mm",
   "source": "envelope from SNVSAN3F p. 48, RNX0012B outline: 1.9-2.1 x 2.9-3.1, height 0.8-0.9, standoff 0.00-0.05"
 }

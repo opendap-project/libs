@@ -193,7 +193,7 @@
 		(solder_mask_margin -0.05)
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Texas_Instruments.3dshapes/Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/texas-instruments.3dshapes/Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

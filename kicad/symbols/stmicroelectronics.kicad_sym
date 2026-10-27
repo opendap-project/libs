@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "STMicroelectronics:ST_LGA-14L_2.5x3mm_P0.5mm"
+		(property "Footprint" "stmicroelectronics:ST_LGA-14L_2.5x3mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Microchip:Microchip_5TS1_SOT-23-5_1.6x2.9mm_P0.95mm"
+		(property "Footprint" "microchip:Microchip_5TS1_SOT-23-5_1.6x2.9mm_P0.95mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

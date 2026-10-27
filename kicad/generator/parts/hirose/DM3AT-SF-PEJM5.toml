@@ -34,14 +34,14 @@
 mpn = "DM3AT-SF-PEJM5"
 second_source = "Molex 104031-0811 (BOM v1 line 11)"
 manufacturer = "Hirose"
-library = "Hirose"
+library = "hirose"
 symbol = "DM3AT-SF-PEJM5"
 reference = "J"
 description = "microSD card connector, push-push, top board mounting, SMT, normally-open card-detection switch"
 keywords = "microSD TF card socket push-push Hirose DM3"
 datasheet = "https://www.hirose.com/en/product/series/DM3"
 datasheet_rev = "DM3 catalog 2017.1 (May 1, 2017)"
-sheet = "Hirose/DM3AT-SF-PEJM5.md"
+sheet = "hirose/DM3AT-SF-PEJM5.md"
 notes = [
   "Land pattern = manufacturer 'Recommended PCB mounting pattern' (catalog 2017.1 p. 3). Pattern tolerance not stated.",
   "Datasheet URL: manifest has the series page; the copy read is the LCSC mirror (C114218) named in the sheet.",

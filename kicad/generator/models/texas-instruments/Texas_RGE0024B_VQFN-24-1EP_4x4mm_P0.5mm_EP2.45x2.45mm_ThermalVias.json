@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "Texas_RGE0024B_VQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm_ThermalVias",
   "source": "envelope from SLVS493E p. 36, RGE0024B outline: 3.9-4.1 square, 1 max height"
 }

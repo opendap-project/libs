@@ -13,7 +13,7 @@
 # footprint body is their envelope, 10 x 15 mm, so the outline, silk and courtyard fit either part.
 
 [part]
-library = "Micron"
+library = "micron"
 symbol = "MT53E1G32D2FW-046"
 manufacturer = "Micron"
 mpn = "MT53E1G32D2FW-046 IT:C"
@@ -119,7 +119,7 @@ edge_y = 0.675
 
 [check]
 balls = 200               # DS p. 43 ("200X")
-pdf = "Micron/MT53E1G32D2FW-046/MICT-S-A0017683454-1.pdf"
+pdf = "micron/MT53E1G32D2FW-046/MICT-S-A0017683454-1.pdf"
 pdf_sha256 = "da659aad98344f65c8568cc6861177502906b109fa9453a0cc92fbb8cff17e39"
 pdf_ballout_page = 31     # physical page of Figure 9 (printed p. 32), re-read with pdftotext
 pdf_ballout_cols = [1, 2, 3, 4, 5, 8, 9, 10, 11, 12]   # the figure prints no cell for columns 6-7

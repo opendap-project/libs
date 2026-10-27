@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "NDK:Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm"
+		(property "Footprint" "ndk:Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -202,7 +202,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "NDK:Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm"
+		(property "Footprint" "ndk:Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -377,7 +377,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "NDK:Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm"
+		(property "Footprint" "ndk:Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -552,7 +552,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "NDK:Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm"
+		(property "Footprint" "ndk:Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

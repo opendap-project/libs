@@ -588,5 +588,5 @@
 	(pad "1V19" smd circle (at 5.525 5.525) (size 0.25 0.25) (property pad_prop_bga) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.0254) (uuid "43824267-7d1e-5413-ba5a-dd588f180fb8"))
 	(pad "1V20" smd circle (at 6.175 5.525) (size 0.25 0.25) (property pad_prop_bga) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.0254) (uuid "0b5099a2-b488-5e9e-8ca4-5bd408fb92b5"))
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Rockchip.3dshapes/Rockchip_FCCSP-565L_15.5x14.4mm_P0.4mm_P0.65mm_Ball0.25mm_Pad0.25mm_NSMD.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+	(model "${OPENDAP_KICAD_3DMODELS}/rockchip.3dshapes/Rockchip_FCCSP-565L_15.5x14.4mm_P0.4mm_P0.65mm_Ball0.25mm_Pad0.25mm_NSMD.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )

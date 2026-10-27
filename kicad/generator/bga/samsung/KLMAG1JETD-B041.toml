@@ -6,7 +6,7 @@
 # covers KLMBG2JETD-B041 (32 GB), which shares this footprint.
 
 [part]
-library = "Samsung"
+library = "samsung"
 symbol = "KLMAG1JETD-B041"
 manufacturer = "Samsung"
 mpn = "KLMAG1JETD-B041"
@@ -112,7 +112,7 @@ edge_y = 3.25
 
 [check]
 balls = 153               # DS p. 5, Figure 1 (153-FBGA) and p. 6 ("153-0.30")
-pdf = "Samsung/KLMAG1JETD-B041/d4518653d9abcd1b59554b92cea5e788.pdf"
+pdf = "samsung/KLMAG1JETD-B041/d4518653d9abcd1b59554b92cea5e788.pdf"
 pdf_sha256 = "015be236158087add125892756a7ef7d63eaa7c0c55969c241597755eb784bd0"
 # Table 2 (DS p. 5) lists every named ball apart from RFU; the figure is the pin-list source.
 table_pins = "KLMxGxJETD-B041-table2.csv"

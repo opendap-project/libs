@@ -117,7 +117,7 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/ECS.3dshapes/Oscillator_SMD_ECS_ECS-2016MV-4Pin_2.0x1.6mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/ecs.3dshapes/Oscillator_SMD_ECS_ECS-2016MV-4Pin_2.0x1.6mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

@@ -8,7 +8,7 @@
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "U" (at -72.39 40.64 0) (effects (font (size 1.27 1.27)) (justify left)))
 		(property "Value" "RK3566" (at 72.39 40.64 0) (effects (font (size 1.27 1.27)) (justify right)))
-		(property "Footprint" "Rockchip:Rockchip_FCCSP-565L_15.5x14.4mm_P0.4mm_P0.65mm_Ball0.25mm_Pad0.25mm_NSMD" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "rockchip:Rockchip_FCCSP-565L_15.5x14.4mm_P0.4mm_P0.65mm_Ball0.25mm_Pad0.25mm_NSMD" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Datasheet" "https://dl.xkwy2018.com/downloads/RK3568/Rockchip-RK3566-Datasheet-V1.1-20210305.pdf" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Description" "Quad-core Arm Cortex-A55 application processor, LPDDR4X/DDR4 32-bit, eMMC 5.1, FCCSP565L 15.5 x 14.4 mm" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Rockchip" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))

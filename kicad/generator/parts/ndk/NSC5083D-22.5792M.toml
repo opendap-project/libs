@@ -24,14 +24,14 @@
 [part]
 mpn = "NSC5083D-22.5792M"
 manufacturer = "NDK"
-library = "NDK"
+library = "ndk"
 symbol = "NSC5083D-22.5792M"
 reference = "Y"
 description = "22.5792 MHz CMOS-output crystal clock oscillator, NZ2520SDA spec. NSC5083D (3.3 V, +/-50 ppm, -40 to +85 C), standby (three-state), 2.5 x 2.0 mm, 4 terminals"
 keywords = "oscillator XO crystal clock CMOS NDK NZ2520SDA NSC5083D MCLK audio"
 datasheet = "https://www.ndk.com/images/products/catalog/c_NZ2520SDA_e.pdf"
 datasheet_rev = "NZ2520SDA catalogue 2012E_NZ2520SDA_e (p. 1) / 1703A_NZ2520SDA_e (p. 2)"
-sheet = "NDK/NSC5083D-22.5792M.md"
+sheet = "ndk/NSC5083D-22.5792M.md"
 notes = [
   "Pin 1 orientation: the sheet marks it UNVERIFIED because the dimension and land-pattern views are mirrored. Reading of NZ2520SDA p. 1: the hatched-terminal view is a bottom view (terminal #1 chamfered), the land pattern is a top view consistent with the top-view pin-1 dot (lower-left). #1 STAND-BY at the dot corner, counter-clockwise from the top. Worth a check against a real part's marking.",
   "Footprint rotated 90 deg clockwise from the catalogue land-pattern view so that #1 is top-left; body therefore 2.0 (x) x 2.5 (y).",

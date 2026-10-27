@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "Texas_RUX0012A_VQFN-HR-12_2x2.5mm_P0.5mm",
   "source": "envelope from SLVSEA3F p. 38, RUX0012A outline: 1.9-2.1 x 2.4-2.6, 1 MAX height, standoff 0.00-0.05"
 }

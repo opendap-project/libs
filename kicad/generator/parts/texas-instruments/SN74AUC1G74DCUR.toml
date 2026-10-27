@@ -7,14 +7,14 @@
 [part]
 mpn = "SN74AUC1G74DCUR"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "SN74AUC1G74DCUR"
 reference = "U"
 description = "Single positive-edge-triggered D-type flip-flop with clear and preset, AUC family, 0.8-2.7 V, 3.6 V-tolerant inputs, VSSOP-8 (DCU0008A)"
 keywords = "flip-flop D-type clear preset AUC logic single-gate SN74AUC1G74 VSSOP DCU"
 datasheet = "https://www.ti.com/lit/ds/symlink/sn74auc1g74.pdf"
 datasheet_rev = "SCES537D"
-sheet = "Texas-Instruments/SN74AUC1G74DCUR.md"
+sheet = "texas-instruments/SN74AUC1G74DCUR.md"
 notes = [
   "Land pattern = TI example board layout DCU0008A (SCES537D addendum p. 15): 8X (0.85) x 8X (0.3) pads, 6X (0.5) pitch, (3.1) between pad-row CENTRES, (R0.05) TYP corners; non-solder-mask-defined (preferred, 0.05 MAX mask clearance) so the mask expansion is left to the board default.",
   "Stencil (p. 16, 0.125 mm thick) apertures equal the pads 1:1: paste = true.",

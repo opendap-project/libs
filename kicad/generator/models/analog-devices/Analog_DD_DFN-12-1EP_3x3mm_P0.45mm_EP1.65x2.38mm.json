@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Analog_Devices",
+  "library": "analog-devices",
   "name": "Analog_DD_DFN-12-1EP_3x3mm_P0.45mm_EP1.65x2.38mm",
   "source": "envelope from LT3094 Rev. B p. 31: body 3.00 +- 0.10, height 0.75 +- 0.05 (z = max)"
 }

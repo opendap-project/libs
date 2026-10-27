@@ -23,14 +23,14 @@
 [part]
 mpn = "DF40C-100DP-0.4V(51)"
 manufacturer = "Hirose"
-library = "Hirose"
+library = "hirose"
 symbol = "DF40C-100DP-0.4V(51)"
 reference = "J"
 description = "DF40 board-to-FPC header, 100 contacts, 0.4 mm pitch, 2 rows, 1.5 mm stack with DF40C-100DS, vertical SMT, 4 corner metal hold-downs"
 keywords = "connector board-to-board board-to-FPC header DF40 DF40C 100DP 0.4mm Hirose"
 datasheet = "https://www.hirose.com/en/product/document?clcode=&productname=&series=DF40&documenttype=Catalog&lang=en&documentid=en_DF40_CAT"
 datasheet_rev = "DF40 catalog 2020-05-01 (p. 10); drawing EDC3-311351-00 rev. 7 (2018-11-19)"
-sheet = "Hirose/DF40C-100DS-DP-0.4V.md"
+sheet = "hirose/DF40C-100DS-DP-0.4V.md"
 sheet_pins = "none: the sheet lists no per-contact table; contacts numbered 1-100 in the odd/even convention of the footprint (UNVERIFIED against a Hirose numbering), checked by pad_count"
 notes = [
   "DISCREPANCY with the parts-lib sheet: the sheet says the four corner contacts are hold-downs and only 96 of 100 are usable. Drawing EDC3-311351-00 and catalog p. 10 show the hold-down leads OUTSIDE the 19.6 mm span of the 100 contacts (50 per row, matching the receptacle's 50 per row over the same 19.6 mm), plus one corner lead per row end: 100 usable contacts + 4 hold-downs (21.52 = 19.6 + 2 x 0.4 + 2 x 0.56). Footprint: 100 numbered lands + 4 unnumbered (no-net) hold-down lands. Please review the sheet's 96-contact budget.",

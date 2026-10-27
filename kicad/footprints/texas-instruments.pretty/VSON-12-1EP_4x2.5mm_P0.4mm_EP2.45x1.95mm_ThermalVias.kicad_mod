@@ -317,7 +317,7 @@
 		(remove_unused_layers no)
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Texas_Instruments.3dshapes/VSON-12-1EP_4x2.5mm_P0.4mm_EP2.45x1.95mm_ThermalVias.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/texas-instruments.3dshapes/VSON-12-1EP_4x2.5mm_P0.4mm_EP2.45x1.95mm_ThermalVias.step"
 		(offset
 			(xyz 0 0 0)
 		)

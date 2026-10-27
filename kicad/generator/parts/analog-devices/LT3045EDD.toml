@@ -5,14 +5,14 @@
 [part]
 mpn = "LT3045EDD#TRPBF"
 manufacturer = "Analog Devices"
-library = "Analog_Devices"
+library = "analog-devices"
 symbol = "LT3045EDD"
 reference = "U"
 description = "LDO regulator, 20 V, 500 mA, 0.8 uVrms noise, 76 dB PSRR at 1 MHz, programmable current limit and power good, single-resistor output set, DFN-10 (DD) 3 x 3 mm with exposed pad"
 keywords = "LDO linear regulator ultra low noise high PSRR LT3045 DFN DD"
 datasheet = "https://www.analog.com/media/en/technical-documentation/data-sheets/lt3045.pdf"
 datasheet_rev = "Rev. D"
-sheet = "Analog-Devices/LT3045EDD-TRPBF.md"
+sheet = "analog-devices/LT3045EDD-TRPBF.md"
 notes = [
   "Land pattern = the recommended solder pad pitch and dimensions of the DD package drawing (LT3045 Rev. D p. 29): 0.50 mm pitch, pads 0.25 x 0.70 mm, outer extent 3.55 mm (pad centres at +-(3.55 - 0.70) / 2 = +-1.425 mm), centre pad 1.65 x 2.38 mm.",
   "Corner radius and paste on the exposed pad are not given: roundrect 0.25 (KLC default) and full paste on the centre pad, both UNVERIFIED (to review against the ADI demo layout, p. 21 Figure 8).",

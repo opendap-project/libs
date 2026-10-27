@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm",
   "source": "envelope from DCK0006A outline (SCES414P p. 28, 4214835/D): body 1.1-1.4 x 1.85-2.15, 1.1 max height"
 }

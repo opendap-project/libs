@@ -102,7 +102,7 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Harwin.3dshapes/Harwin_P70-1000045R_PogoPin_D2.0mm_H3.5mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/harwin.3dshapes/Harwin_P70-1000045R_PogoPin_D2.0mm_H3.5mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

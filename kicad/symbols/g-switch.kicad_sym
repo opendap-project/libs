@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "G_Switch:G_Switch_GT-3321667P-01_Jack_4.4mm_5Pole_Horizontal"
+		(property "Footprint" "g-switch:G_Switch_GT-3321667P-01_Jack_4.4mm_5Pole_Horizontal"
 			(at 0 0 0)
 			(hide yes)
 			(effects

@@ -7,14 +7,14 @@
 [part]
 mpn = "TPS2121RUXR"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "TPS2121RUXR"
 reference = "U"
 description = "2.8-22 V dual-input priority power multiplexer with seamless switchover, 4.5 A, adjustable current limit, VQFN-HR-12 (RUX0012A) 2 x 2.5 mm"
 keywords = "power mux multiplexer priority switchover ideal diode TPS2121 VQFN-HR RUX0012A"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps2121.pdf"
 datasheet_rev = "SLVSEA3F"
-sheet = "Texas-Instruments/TPS2121RUXR.md"
+sheet = "texas-instruments/TPS2121RUXR.md"
 notes = [
   "Land pattern = TI example board layout RUX0012A (SLVSEA3F p. 39): eight signal pads (0.2) x (0.6) at 6X 0.5 pitch in two rows (2.3) apart (pins 12-9 on top, 3-6 on the bottom); four power pads 4X (1.05) x 4X (0.4), (1.35) between the column centres and 2X (0.7) between the row centres (pins 1, 2 left, 8, 7 right).",
   "Non-solder-mask-defined pads (0.05 MAX all around, p. 39): the mask expansion is left to the board default. The drawing shows vias in the power pads (VIA TYP): a layout choice, not part of the footprint.",

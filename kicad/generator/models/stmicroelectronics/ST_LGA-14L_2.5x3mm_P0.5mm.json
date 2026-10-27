@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "STMicroelectronics",
+  "library": "stmicroelectronics",
   "name": "ST_LGA-14L_2.5x3mm_P0.5mm",
   "source": "envelope from DS13510 Rev 4 p. 175, Figure 33: W 3.00 +- 0.1, L 2.50 +- 0.1, H 0.86 MAX"
 }

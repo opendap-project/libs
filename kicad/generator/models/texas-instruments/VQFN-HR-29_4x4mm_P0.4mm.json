@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "VQFN-HR-29_4x4mm_P0.4mm",
   "source": "envelope from SLUSDV2C PDF p. 148, outline 4225253/A: 3.9-4.1 x 3.9-4.1, height 0.8-1.0 (nominal midpoints), A1 0.00-0.05"
 }

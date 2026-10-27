@@ -30,14 +30,14 @@
 mpn = "RK809-5"
 second_source = "Rockchip RK817-5 (BOM v1 line 2)"
 manufacturer = "Rockchip"
-library = "Rockchip_PMIC"
+library = "rockchip"
 symbol = "RK809-5"
 reference = "U"
 description = "PMIC: five synchronous bucks, nine LDOs, two power switches, RTC with 32.768 kHz output, fuel gauge, audio codec; QFN68 7 x 7 mm, 0.35 mm pitch, exposed ground pad"
 keywords = "PMIC buck LDO RTC codec fuel gauge RK809 Rockchip QFN68"
 datasheet = "https://rockchip.fr/RK809%20datasheet%20V1.01.pdf"
 datasheet_rev = "Rev 1.01"
-sheet = "Rockchip/RK809-5.md"
+sheet = "rockchip/RK809-5.md"
 notes = [
   "Land pattern derived per IPC-7351B nominal density from Fig. 2-1 (p. 13): the datasheet has no recommended land pattern. J values UNVERIFIED against the standard text.",
   "0.35 mm pitch: pads 0.14 mm wide leave a 0.21 mm copper gap. With a 0.05 mm solder-mask expansion per side the mask web is 0.11 mm, at or below many fabs' minimum mask sliver (fab-dependent, UNVERIFIED). Confirm with the fab: either a tighter mask expansion (e.g. 0.025 mm -> 0.16 mm web) or a gang (no-web) mask opening per side. Not decided here.",

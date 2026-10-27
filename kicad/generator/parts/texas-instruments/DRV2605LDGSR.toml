@@ -8,14 +8,14 @@
 mpn = "DRV2605LDGSR"
 second_source = "Renesas DA7280-00FV2 (not pin-compatible; BOM v1 line 123)"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "DRV2605LDGSR"
 reference = "U"
 description = "Haptic driver for LRA and ERM actuators, closed-loop auto-resonance, licensed effect library, I2C, 2-5.2 V, VSSOP-10 (DGS0010A)"
 keywords = "haptic driver LRA ERM vibration DRV2605L I2C VSSOP DGS"
 datasheet = "https://www.ti.com/lit/ds/symlink/drv2605l.pdf"
 datasheet_rev = "SLOS854D"
-sheet = "Texas-Instruments/DRV2605LDGSR.md"
+sheet = "texas-instruments/DRV2605LDGSR.md"
 notes = [
   "Land pattern = TI example board layout DGS0010A (SLOS854D p. 71): ten pads (1.45) x (0.3), 8X (0.5) pitch, (4.4) between the pad-row centres, (R0.05) TYP; stencil p. 72 equal to the pads (paste = true).",
   "Non-solder-mask-defined pads, 0.05 mm maximum mask clearance (p. 71): the mask expansion is left to the board default.",

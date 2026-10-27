@@ -1,6 +1,6 @@
 # Library generator
 
-`kigen.py` generates symbols, footprints and 3D envelope models from one data file per part, `parts/<Library>/<MPN>.toml`. (BGA parts have their own generator, `bga.py`, with its own checks; generic symbols that are not one orderable part, such as the crystals of `symbols/OpenDAP_Device.kicad_sym`, come from `generic.py`.) The data file is the reviewed source: every dimension in it cites the manufacturer document, revision and page it was transcribed from, and anything a primary source does not give is marked **UNVERIFIED**. Never edit the generated files by hand.
+`kigen.py` generates symbols, footprints and 3D envelope models from one data file per part, `parts/<Library>/<MPN>.toml`. (BGA parts have their own generator, `bga.py`, with its own checks; generic symbols that are not one orderable part, such as the crystals of `symbols/opendap-generic.kicad_sym`, come from `generic.py`.) The data file is the reviewed source: every dimension in it cites the manufacturer document, revision and page it was transcribed from, and anything a primary source does not give is marked **UNVERIFIED**. Never edit the generated files by hand.
 
 One library may hold parts of both generators (the RK809-5 from `kigen.py` and the RK3566 from `bga.py` share their maker's library): `symlib.py` gives both the same file, every symbol of the library sorted by name, so neither generator overwrites the other's symbols (`test_symlib.py`).
 
@@ -8,7 +8,7 @@ One library may hold parts of both generators (the RK809-5 from `kigen.py` and t
 
 ```sh
 python3 generator/kigen.py              # writes symbols/, footprints/ and generator/models/
-python3 generator/generic.py            # writes symbols/OpenDAP_Device.kicad_sym
+python3 generator/generic.py            # writes symbols/opendap-generic.kicad_sym
 KIGEN_ROOT=$PWD /Applications/FreeCAD.app/Contents/Resources/bin/freecadcmd generator/model.py
                                         # writes 3dmodels/<Library>.3dshapes/<footprint>.step
 python3 generator/test_library.py       # the checks below

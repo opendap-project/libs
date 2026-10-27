@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Hirose",
+  "library": "hirose",
   "name": "Hirose_DF40C-50DS-0.4V_2x25_P0.4mm_Vertical",
   "source": "envelope from DF40 cat. p. 4: A = 12.6 +/- 0.2 (DF40C-50DS), 2.88 +/- 0.2 housing (3.38 over leads), D = 1.45 +/- 0.15"
 }

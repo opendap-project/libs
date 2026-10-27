@@ -172,7 +172,7 @@
 		(layers "F.Cu" "F.Mask")
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Nexperia.3dshapes/Nexperia_SOT23_TO-236AB_2.9x1.3mm_P1.9mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/nexperia.3dshapes/Nexperia_SOT23_TO-236AB_2.9x1.3mm_P1.9mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

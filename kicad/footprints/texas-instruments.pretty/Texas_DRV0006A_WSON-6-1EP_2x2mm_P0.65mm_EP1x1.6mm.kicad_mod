@@ -169,7 +169,7 @@
 		(roundrect_rratio 0.05)
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Texas_Instruments.3dshapes/Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/texas-instruments.3dshapes/Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

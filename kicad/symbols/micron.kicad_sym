@@ -8,7 +8,7 @@
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "U" (at -11.43 11.43 0) (effects (font (size 1.27 1.27)) (justify left)))
 		(property "Value" "MT53E1G32D2FW-046" (at -11.43 13.97 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Micron:LPDDR4_FBGA-200_10.0x15.0mm_Layout12x22_P0.8x0.65mm_Pad0.3mm_NSMD" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "micron:LPDDR4_FBGA-200_10.0x15.0mm_Layout12x22_P0.8x0.65mm_Pad0.3mm_NSMD" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Datasheet" "https://4donline.ihs.com/images/VipMasterIC/IC/MICT/MICT-S-A0017683454/MICT-S-A0017683454-1.pdf?hkey=6D3A4C79FDBF58556ACFDE234799DDF0" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Description" "LPDDR4X SDRAM, 32 Gb (4 GB), 2 x 16 Gb single-channel dies, 2 channels x16, single rank, 4266 Mb/s, VDD1/VDD2/VDDQ 1.8/1.1/0.6 V, 200-ball TFBGA 10 x 14.5 mm; same land: CXMT CXDB5CBAM-MA-B" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
 		(property "Manufacturer" "Micron" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))

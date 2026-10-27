@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:VQFN-HR-29_4x4mm_P0.4mm"
+		(property "Footprint" "texas-instruments:VQFN-HR-29_4x4mm_P0.4mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -661,7 +661,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:VSON-12-1EP_4x2.5mm_P0.4mm_EP2.45x1.95mm_ThermalVias"
+		(property "Footprint" "texas-instruments:VSON-12-1EP_4x2.5mm_P0.4mm_EP2.45x1.95mm_ThermalVias"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -1007,7 +1007,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_Q3_SON-8_3.3x3.3mm_P0.65mm"
+		(property "Footprint" "texas-instruments:Texas_Q3_SON-8_3.3x3.3mm_P0.65mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -1254,7 +1254,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DGS0010A_VSSOP-10_3x3mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_DGS0010A_VSSOP-10_3x3mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -1546,7 +1546,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DDF0008A_SOT-23-8_1.6x2.9mm_P0.65mm"
+		(property "Footprint" "texas-instruments:Texas_DDF0008A_SOT-23-8_1.6x2.9mm_P0.65mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -1793,7 +1793,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DDF0008A_SOT-23-8_1.6x2.9mm_P0.65mm"
+		(property "Footprint" "texas-instruments:Texas_DDF0008A_SOT-23-8_1.6x2.9mm_P0.65mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -2040,7 +2040,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_RNX0012B_VQFN-HR-12_2x3mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_RNX0012B_VQFN-HR-12_2x3mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -2368,7 +2368,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_NJA0024A_WQFN-24-1EP_4x5mm_P0.5mm_EP2.4x3.4mm_ThermalVias"
+		(property "Footprint" "texas-instruments:Texas_NJA0024A_WQFN-24-1EP_4x5mm_P0.5mm_EP2.4x3.4mm_ThermalVias"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -2921,7 +2921,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:VSON-10-1EP_3x3mm_P0.5mm_EP1.65x2.4mm_ThermalVias"
+		(property "Footprint" "texas-instruments:VSON-10-1EP_3x3mm_P0.5mm_EP1.65x2.4mm_ThermalVias"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -3222,7 +3222,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DCU0008A_VSSOP-8_2.3x2mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_DCU0008A_VSSOP-8_2.3x2mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -3469,7 +3469,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DCU0008A_VSSOP-8_2.3x2mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_DCU0008A_VSSOP-8_2.3x2mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -3716,7 +3716,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm"
+		(property "Footprint" "texas-instruments:Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -3927,7 +3927,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm"
+		(property "Footprint" "texas-instruments:Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -4147,7 +4147,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm"
+		(property "Footprint" "texas-instruments:Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -4358,7 +4358,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DCU0008A_VSSOP-8_2.3x2mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_DCU0008A_VSSOP-8_2.3x2mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -4605,7 +4605,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_RTW0024B_WQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm_ThermalVias"
+		(property "Footprint" "texas-instruments:Texas_RTW0024B_WQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm_ThermalVias"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -5158,7 +5158,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DQA0010A_USON-10_1x2.5mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_DQA0010A_USON-10_1x2.5mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -5441,7 +5441,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_RUK0020B_WQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm"
+		(property "Footprint" "texas-instruments:Texas_RUK0020B_WQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -5922,7 +5922,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_RUX0012A_VQFN-HR-12_2x2.5mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_RUX0012A_VQFN-HR-12_2x2.5mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -6241,7 +6241,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm"
+		(property "Footprint" "texas-instruments:Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -6461,7 +6461,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DCK0005A_SC-70-5_1.25x2mm_P0.65mm"
+		(property "Footprint" "texas-instruments:Texas_DCK0005A_SC-70-5_1.25x2mm_P0.65mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -6654,7 +6654,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_YBH0006_DSBGA-6_0.706x1.106mm_Layout2x3_P0.4mm"
+		(property "Footprint" "texas-instruments:Texas_YBH0006_DSBGA-6_0.706x1.106mm_Layout2x3_P0.4mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -6865,7 +6865,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_RPW0010A_VQFN-HR-10_2x2mm_P0.45mm"
+		(property "Footprint" "texas-instruments:Texas_RPW0010A_VQFN-HR-10_2x2mm_P0.45mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -7148,7 +7148,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DBV0006A_SOT-23-6_1.6x2.9mm_P0.95mm"
+		(property "Footprint" "texas-instruments:Texas_DBV0006A_SOT-23-6_1.6x2.9mm_P0.95mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -7359,7 +7359,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+		(property "Footprint" "texas-instruments:Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -7588,7 +7588,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_RGX0011A_VQFN-HR-11_2x3mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_RGX0011A_VQFN-HR-11_2x3mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -7898,7 +7898,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -8118,7 +8118,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -8338,7 +8338,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DLC0008B_VSON-HR-8_1.5x2mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_DLC0008B_VSON-HR-8_1.5x2mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -8585,7 +8585,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_RQY0009A_VQFN-HR-9_1.5x2.5mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_RQY0009A_VQFN-HR-9_1.5x2.5mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -8859,7 +8859,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_RPJ0009A_VQFN-HR-9_1.5x2mm_P0.5mm"
+		(property "Footprint" "texas-instruments:Texas_RPJ0009A_VQFN-HR-9_1.5x2mm_P0.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -9133,7 +9133,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_RGE0024B_VQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm_ThermalVias"
+		(property "Footprint" "texas-instruments:Texas_RGE0024B_VQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm_ThermalVias"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -9686,7 +9686,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DBV0005A_SOT-23-5_1.6x2.9mm_P0.95mm"
+		(property "Footprint" "texas-instruments:Texas_DBV0005A_SOT-23-5_1.6x2.9mm_P0.95mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -9879,7 +9879,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DBV0005A_SOT-23-5_1.6x2.9mm_P0.95mm"
+		(property "Footprint" "texas-instruments:Texas_DBV0005A_SOT-23-5_1.6x2.9mm_P0.95mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -10072,7 +10072,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Texas_Instruments:Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+		(property "Footprint" "texas-instruments:Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

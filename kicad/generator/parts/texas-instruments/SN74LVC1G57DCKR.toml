@@ -6,14 +6,14 @@
 mpn = "SN74LVC1G57DCKR"
 second_source = "Nexperia 74LVC1G57GW (BOM v1 line 98)"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "SN74LVC1G57DCKR"
 reference = "U"
 description = "Configurable multiple-function gate (AND, OR, NAND, NOR, XNOR, inverter, buffer by wiring), Schmitt-trigger inputs, 1.65-5.5 V, Ioff, SOT/SC-70-6 (DCK0006A)"
 keywords = "logic gate configurable AND Schmitt LVC SN74LVC1G57 SC-70 DCK"
 datasheet = "https://www.ti.com/lit/ds/symlink/sn74lvc1g57.pdf"
 datasheet_rev = "SCES414P"
-sheet = "Texas-Instruments/SN74LVC1G57DCKR.md"
+sheet = "texas-instruments/SN74LVC1G57DCKR.md"
 notes = [
   "Land pattern = TI example board layout DCK0006A (SCES414P p. 29): six pads 0.9 x 0.4 mm (reference), 0.65 mm pitch, 2.2 mm between pad-row centres; non-solder-mask-defined preferred; stencil p. 30.",
   "The DCK0006A land is shared with TPS22919DCKR (same drawing 4214835): the [footprint] section is identical in both files.",

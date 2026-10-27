@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Infineon:Infineon_PG-LLGA-5-3_3x4mm_P0.7mm_BottomPort"
+		(property "Footprint" "infineon:Infineon_PG-LLGA-5-3_3x4mm_P0.7mm_BottomPort"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -220,7 +220,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Infineon:Infineon_PG-UQFN-32-1_5x5mm_P0.5mm_EP3.6x3.6mm"
+		(property "Footprint" "infineon:Infineon_PG-UQFN-32-1_5x5mm_P0.5mm_EP3.6x3.6mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

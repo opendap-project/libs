@@ -1,6 +1,6 @@
 # BGA parts
 
-Data for `generator/bga.py`, which builds the BGA parts of this library: the RK3566 SoC (`Rockchip/`), the K4UBE3D4AB-MGCL LPDDR4X and the KLMBG2JETD-B041 / KLMAG1JETD-B041 eMMC (`Samsung/`), and the MT53E1G32D2FW-046 LPDDR4X (`Micron/`), whose land also takes the CXMT CXDB5CBAM-MA-B second source (T1 board ADR 0022). The data files are the reviewed source; the symbols, footprints and STEP models are generated from them and never edited by hand.
+Data for `generator/bga.py`, which builds the BGA parts of this library: the RK3566 SoC (`rockchip/`), the K4UBE3D4AB-MGCL LPDDR4X and the KLMBG2JETD-B041 / KLMAG1JETD-B041 eMMC (`samsung/`), and the MT53E1G32D2FW-046 LPDDR4X (`micron/`), whose land also takes the CXMT CXDB5CBAM-MA-B second source (T1 board ADR 0022). The data files are the reviewed source; the symbols, footprints and STEP models are generated from them and never edited by hand.
 
 ## Use
 

@@ -18,14 +18,14 @@
 mpn = "USB4105-GF-A"
 second_source = "Amphenol 12402012E212A (BOM v1 line 61)"
 manufacturer = "GCT"
-library = "GCT"
+library = "gct"
 symbol = "USB4105-GF-A"
 reference = "J"
 description = "USB Type-C receptacle for USB 2.0, 16 contacts, SMT, PCB top mount, 4 shell stakes, 5 A VBUS"
 keywords = "USB Type-C USB2.0 receptacle connector GCT USB4105"
 datasheet = "https://gct.co/files/drawings/usb4105.pdf"
 datasheet_rev = "Drawing USB4105 rev B4 (18/12/23)"
-sheet = "GCT/USB4105-GF-A.md"
+sheet = "gct/USB4105-GF-A.md"
 notes = [
   "Land pattern = manufacturer 'Recommended PCB Layout' (sheet 1), component-side view, +/-0.05.",
   "Combined GND/VBUS pads (A1/B12, A4/B9, B4/A9, B1/A12) are two pads stacked at the same position, one per pin number (KiCad USB-C practice).",

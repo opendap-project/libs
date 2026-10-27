@@ -4,7 +4,7 @@ OpenDAP's own KiCad library: symbols, footprints, 3D models and fab design rules
 
 ## Layout
 
-- `symbols/` — symbol libraries (`*.kicad_sym`): one per manufacturer, plus `OpenDAP_Device` for generic symbols drawn to the craft standard where KiCad's stock one fails it (crystals)
+- `symbols/` — symbol libraries (`*.kicad_sym`): one per manufacturer, plus `opendap-generic` for generic symbols drawn to the craft standard where KiCad's stock one fails it (crystals)
 - `footprints/` — footprint libraries (`<name>.pretty/`)
 - `3dmodels/` — 3D models. STEP is the source for each part; other formats are generated from it.
 - `design-rules/` — fab design rules and the craft rules (`.kicad_dru`) with their test boards

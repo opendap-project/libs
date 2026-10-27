@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Murata:Murata_Type2EL_LGA-107_8.8x7.7mm"
+		(property "Footprint" "murata:Murata_Type2EL_LGA-107_8.8x7.7mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

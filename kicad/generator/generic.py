@@ -5,7 +5,7 @@ standard where KiCad's stock symbol fails it.
 Usage:
     python3 generator/generic.py [--check]        (Python 3.11 or later)
 
-Writes symbols/OpenDAP_Device.kicad_sym. The symbols carry no footprint, MPN or datasheet: the
+Writes symbols/opendap-generic.kicad_sym. The symbols carry no footprint, MPN or datasheet: the
 schematic fills them per placement, as with KiCad's Device library (KLC S5.1, generic symbol).
 
     Crystal         quartz crystal, 2 pins
@@ -33,7 +33,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from kigen import GENERATOR, PIN_LEN, ROOT, S, SYM_VERSION, Sym, dump, num  # noqa: E402
 
-LIBRARY = "OpenDAP_Device"
+LIBRARY = "opendap-generic"
 PATH = os.path.join(ROOT, "symbols", LIBRARY + ".kicad_sym")
 BODY_W = 0.254   # CRAFT-128
 LEAD_W = 0       # KiCad default line width for the leads and the case outline

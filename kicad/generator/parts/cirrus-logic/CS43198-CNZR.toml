@@ -28,14 +28,14 @@
 [part]
 mpn = "CS43198-CNZR"
 manufacturer = "Cirrus Logic"
-library = "Cirrus_Logic"
+library = "cirrus-logic"
 symbol = "CS43198-CNZR"
 reference = "U"
 description = "Stereo 32-bit audio DAC with pseudodifferential headphone-capable outputs, 40-pin QFN 5 x 5 mm, 0.4 mm pitch, exposed pad"
 keywords = "audio DAC stereo 32-bit headphone class H CS43198 Cirrus QFN40"
 datasheet = "https://www.cirrus.com/docs/ds/cs43198-datasheet.pdf"
 datasheet_rev = "DS1156F2"
-sheet = "Cirrus-Logic/CS43198-CNZR.md"
+sheet = "cirrus-logic/CS43198-CNZR.md"
 notes = [
   "Land pattern derived per IPC-7351B nominal density from DS1156F2 Table 10-1 (p. 134): no recommended land pattern in the datasheet. J values UNVERIFIED against the standard text.",
   "Exposed-pad paste (2 x 2, 1.25 mm at 1.70 mm, 51 %) and the 5-via plus pattern (0.20/0.40 mm) are an OpenDAP choice; DS1156F2 §8.4 (p. 121) only requires a matching copper pad with vias to inner ground planes.",

@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "Texas_DLC0008B_VSON-HR-8_1.5x2mm_P0.5mm",
   "source": "envelope from SLVSEC6D p. 36, DLC0008B outline: 1.4-1.6 x 1.9-2.1, 1 MAX height, standoff 0.00-0.05"
 }

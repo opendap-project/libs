@@ -6,14 +6,14 @@
 [part]
 mpn = "TPS3808G01DBVR"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "TPS3808G01DBVR"
 reference = "U"
 description = "Voltage supervisor, adjustable threshold (0.405 V SENSE), programmable reset delay (CT), manual reset, open-drain active-low RESET, 1.7-6.5 V, SOT-23-6 (DBV0006A)"
 keywords = "supervisor reset voltage monitor TPS3808 adjustable delay SOT-23-6 DBV"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps3808.pdf"
 datasheet_rev = "SBVS050N"
-sheet = "Texas-Instruments/TPS3808G01DBVR.md"
+sheet = "texas-instruments/TPS3808G01DBVR.md"
 notes = [
   "Land pattern = TI example board layout DBV0006A (SBVS050N p. 37, 4214840/G 08/2024): 6X (1.1) x 6X (0.6) pads, 2X (0.95) pitch, (2.6) between pad-row centres, (R0.05) TYP corners; non-solder-mask-defined preferred (0.07 mm max mask clearance); stencil p. 38.",
   "Pin 1 RESET is active low (overbar in Table 5-1); the symbol names it RESET as the parts-lib sheet does, its type open_collector (open-drain output).",

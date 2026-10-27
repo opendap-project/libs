@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "Texas_RPW0010A_VQFN-HR-10_2x2mm_P0.45mm",
   "source": "envelope from RPW0010A outline (SLVSFC9C p. 72, 4225183/A): 1.9-2.1 x 1.9-2.1, 1 MAX height, standoff 0.00-0.05"
 }

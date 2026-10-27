@@ -8,14 +8,14 @@
 mpn = "TPS62826DMQR"
 second_source = "Texas Instruments TPS62827DMQR (BOM v1 line 129)"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "TPS62826DMQR"
 reference = "U"
 description = "3 A synchronous step-down converter, 2.4-5.5 V input, 0.6-4.0 V adjustable output, power save mode, power good, 100 % duty cycle, VSON-HR-6 (DMQ0006A) 1.5 x 1.5 mm"
 keywords = "buck step-down converter DC-DC 3A TPS62826 TPS6282x VSON-HR DMQ0006A"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps62826.pdf"
 datasheet_rev = "SLVSEF9I"
-sheet = "Texas-Instruments/TPS62826DMQR.md"
+sheet = "texas-instruments/TPS62826DMQR.md"
 notes = [
   "Land pattern = TI example board layout DMQ0006A (SLVSEF9I p. 33). TI marks SOLDER MASK DEFINED as preferred: the dimensioned pads are mask openings, metal extends 0.05 MIN all around. OpenDAP choice: copper = opening + 0.05 mm per side, mask_margin = -0.05. Exact copper size not given (MIN only): UNVERIFIED, review. If the generator cannot do negative mask_margin, fall back to copper = opening (NSMD, TI's alternative) and record it.",
   "Long pads (3X (1) x (0.2)) are pins 4, 5, 6 (GND, SW, VIN); short pads (3X (0.6) x (0.25)) are pins 1, 2, 3 (EN, PG, FB): read from the p. 33 drawing (pad labels 1, 3, 4, 6) and consistent with the p. 32 outline (leads 3X 0.3-0.5 on the 1-3 side, 3X 0.7-0.9 on the 4-6 side).",

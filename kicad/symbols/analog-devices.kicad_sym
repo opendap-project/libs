@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Analog_Devices:Analog_DD_DFN-10-1EP_3x3mm_P0.5mm_EP1.65x2.38mm"
+		(property "Footprint" "analog-devices:Analog_DD_DFN-10-1EP_3x3mm_P0.5mm_EP1.65x2.38mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -328,7 +328,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Analog_Devices:Analog_DD_DFN-12-1EP_3x3mm_P0.45mm_EP1.65x2.38mm"
+		(property "Footprint" "analog-devices:Analog_DD_DFN-12-1EP_3x3mm_P0.45mm_EP1.65x2.38mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -674,7 +674,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Analog_Devices:Maxim_T1633-4_TQFN-16-1EP_3x3mm_P0.5mm_EP1.1x1.1mm"
+		(property "Footprint" "analog-devices:Maxim_T1633-4_TQFN-16-1EP_3x3mm_P0.5mm_EP1.1x1.1mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

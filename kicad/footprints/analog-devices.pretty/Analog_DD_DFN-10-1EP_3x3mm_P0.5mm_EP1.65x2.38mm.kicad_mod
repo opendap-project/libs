@@ -216,7 +216,7 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Analog_Devices.3dshapes/Analog_DD_DFN-10-1EP_3x3mm_P0.5mm_EP1.65x2.38mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/analog-devices.3dshapes/Analog_DD_DFN-10-1EP_3x3mm_P0.5mm_EP1.65x2.38mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

@@ -27,7 +27,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Harwin:Harwin_P70-1000045R_PogoPin_D2.0mm_H3.5mm"
+		(property "Footprint" "harwin:Harwin_P70-1000045R_PogoPin_D2.0mm_H3.5mm"
 			(at 0 0 0)
 			(hide yes)
 			(effects

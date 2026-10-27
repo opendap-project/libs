@@ -29,14 +29,14 @@
 [part]
 mpn = "MAX98357AETE+T"
 manufacturer = "Analog Devices"
-library = "Analog_Devices"
+library = "analog-devices"
 symbol = "MAX98357AETE"
 reference = "U"
 description = "Mono filterless Class D amplifier, PCM input (I2S, left-justified, 8-slot TDM), no MCLK, pin-selected gain, 2.5-5.5 V supply, 16-pin TQFN (T1633+4) 3 x 3 mm with exposed pad"
 keywords = "class D amplifier speaker I2S TDM PCM MAX98357A Maxim TQFN"
 datasheet = "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf"
 datasheet_rev = "19-6779 Rev 11"
-sheet = "Analog-Devices/MAX98357AETE-T.md"
+sheet = "analog-devices/MAX98357AETE-T.md"
 notes = [
   "Symbol and file named MAX98357AETE, as LT3045EDD: the '+T' suffix (lead-free, tape and reel) stays in the MPN field. The parts-lib sheet file is MAX98357AETE-T.md ('+' written '-').",
   "Land pattern derived per IPC-7351B nominal density from outline 21-0136 rev O (Rev 11 pp. 36-37): Maxim land pattern 90-0031 (p. 35) not read. J values UNVERIFIED against the standard text. Replace with 90-0031 once it is read.",

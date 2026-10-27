@@ -13,7 +13,7 @@
       ]
     }
   ],
-  "library": "Texas_Instruments",
+  "library": "texas-instruments",
   "name": "Texas_Q3_SON-8_3.3x3.3mm_P0.65mm",
   "source": "envelope from SLPS489A p. 8: D, E 3.200-3.400 (3.300 nom), A 1.100 max, A1 0.000-0.050"
 }

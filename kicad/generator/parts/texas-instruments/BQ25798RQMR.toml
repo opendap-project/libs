@@ -11,14 +11,14 @@
 mpn = "BQ25798RQMR"
 second_source = "Texas Instruments BQ25792RQMR (BOM v1 line 39)"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "BQ25798RQMR"
 reference = "U"
 description = "I2C-controlled 1-4 cell 5 A buck-boost battery charger with NVDC power path, dual-input selector, MPPT and backup mode, VQFN-HR-29 (RQM) 4 x 4 mm"
 keywords = "charger buck-boost NVDC li-ion 2S I2C power path VQFN-HR RQM"
 datasheet = "https://www.ti.com/lit/ds/symlink/bq25798.pdf"
 datasheet_rev = "SLUSDV2C"
-sheet = "Texas-Instruments/BQ25798RQMR.md"
+sheet = "texas-instruments/BQ25798RQMR.md"
 notes = [
   "ACDRV1 and ACDRV2 passive: SLUSDV2C pin table gives them type P, to be tied to GND when no ACFET-RBFET pair is fitted (pp. 4-5, §7.3.5).",
   "Land pattern and stencil are TI's example board layout / stencil for RQM0029A (SLUSDV2C PDF pp. 149-150), used as given.",

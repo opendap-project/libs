@@ -151,7 +151,7 @@
 		(roundrect_rratio 0.125)
 	)
 	(embedded_fonts no)
-	(model "${OPENDAP_KICAD_3DMODELS}/Texas_Instruments.3dshapes/Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/texas-instruments.3dshapes/Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

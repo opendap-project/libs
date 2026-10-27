@@ -1,6 +1,6 @@
 {
  "name": "LPDDR4_FBGA-200_10.0x15.0mm_Layout12x22_P0.8x0.65mm_Pad0.3mm_NSMD",
- "library": "Micron",
+ "library": "micron",
  "body": [
   10.0,
   15.0,

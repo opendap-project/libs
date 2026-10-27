@@ -30,14 +30,14 @@
 mpn = "FH35C-51S-0.3SHW"
 second_source = "Hirose FH35C-51S-0.3SHW(99) (BOM v1 line 71)"
 manufacturer = "Hirose"
-library = "Hirose"
+library = "hirose"
 symbol = "FH35C-51S-0.3SHW"
 reference = "J"
 description = "FH35C dual-sided FPC connector, 51 contacts, 0.3 mm pitch staggered (2 rows at 0.6 mm), 0.9 mm high, back-flip actuator, horizontal SMT"
 keywords = "connector FPC FFC FH35C 0.3mm 51 back-flip dual-sided MIPI DSI Hirose"
 datasheet = "https://www.hirose.com/en/product/series/FH35C"
 datasheet_rev = "FH35C catalog 2013.11 (Aug. 1, 2019 copyright stamp)"
-sheet = "Hirose/FH35C-51S-0.3SHW.md"
+sheet = "hirose/FH35C-51S-0.3SHW.md"
 sheet_pins = "none: the sheet lists no per-contact table; contact numbering from the drawing (UNVERIFIED), checked by pad_count"
 notes = [
   "Orderable code is FH35C-51S-0.3SHW(50) (5,000/reel; (99) = 500/reel). mpn kept without the packaging suffix as requested by the task; set the Manufacturer/MPN field to the ordered code if the BOM requires it.",

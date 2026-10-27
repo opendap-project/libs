@@ -1,6 +1,6 @@
 {
  "name": "Rockchip_FCCSP-565L_15.5x14.4mm_P0.4mm_P0.65mm_Ball0.25mm_Pad0.25mm_NSMD",
- "library": "Rockchip",
+ "library": "rockchip",
  "body": [
   15.5,
   14.4,

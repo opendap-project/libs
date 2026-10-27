@@ -10,14 +10,14 @@
 mpn = "BQ28Z610DRZR-R1"
 second_source = "Texas Instruments BQ40Z50-R2 (BOM v1 line 42, different package)"
 manufacturer = "Texas Instruments"
-library = "Texas_Instruments"
+library = "texas-instruments"
 symbol = "BQ28Z610DRZR-R1"
 reference = "U"
 description = "Impedance Track gas gauge and protection controller for 1-2 series Li-ion packs, high-side N-FET drive, cell balancing, I2C, VSON-12 (DRZ) 4 x 2.5 mm"
 keywords = "fuel gauge gas gauge battery 2S li-ion protection I2C impedance track VSON DRZ"
 datasheet = "https://www.ti.com/lit/ds/symlink/bq28z610-r1.pdf"
 datasheet_rev = "SLUSE07B"
-sheet = "Texas-Instruments/BQ28Z610DRZR-R1.md"
+sheet = "texas-instruments/BQ28Z610DRZR-R1.md"
 notes = [
   "Land pattern and stencil are TI's example board layout / stencil for DRZ0012A (SLUSE07B PDF pp. 36-37), used as given.",
   "Exposed pad 13 is H-shaped: copper (metal under solder mask, dashed) = 2.55 x 2.05 centre + two 0.3 x 3.0 side bars at x = +/-1.125; solder mask opening (solder-mask-defined) 0.05 mm inside the copper: 2.45 x 1.95 + 0.2 x 2.9 bars, outer (2.45) x (2.9). Built as three rect pads numbered 13 with mask_margin = -0.05; pad_count therefore counts 15 pads.",
