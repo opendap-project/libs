@@ -1,0 +1,119 @@
+# KLMBG2JETD-B041 eMMC 5.1, 32 GB, 153FBGA 11.5 x 13 x 0.8 mm. Read by generator/bga.py; checked
+# by generator/test_bga.py. DS = Samsung KLMxGxJETD-B041 eMMC datasheet, Rev. 1.0, Nov. 2016,
+# 26 pages (parts-lib manifest.toml, sha256 f9d8f6f8...306ab06d250673ace45067d52d9058ca;
+# distributor copy from LCSC, not redistributable, fetched into the local cache). The same
+# datasheet covers KLMAG1JETD-B041 (16 GB), which shares this footprint.
+
+[part]
+library = "Samsung"
+symbol = "KLMBG2JETD-B041"
+manufacturer = "Samsung"
+mpn = "KLMBG2JETD-B041"
+reference = "U"
+description = "eMMC 5.1 managed NAND, 32 GB, HS400, VCCQ 1.70-1.95 V or 2.7-3.6 V, VCC 2.7-3.6 V, 153FBGA 11.5 x 13 x 0.8 mm"
+keywords = "eMMC flash NAND Samsung 153FBGA"
+datasheet = "https://datasheet.lcsc.com/datasheet/pdf/8cca530d6d5054b226dcd9a69d076028.pdf?productCode=C2803245"
+pins = "KLMxGxJETD-B041-pins.csv"         # DS p. 5, Figure 1 (names; NC and RFU balls included)
+ballmap = "KLMxGxJETD-B041-ballmap.txt"   # DS p. 5, Figure 1, ball by ball
+
+[package]
+name = "FBGA-153"
+body_x = 11.50           # DS p. 6, Figure 3: 11.50 +/- 0.10
+body_y = 13.00           # DS p. 6, Figure 3: 13.00 +/- 0.10
+height_nom = 0.72        # DS p. 6, Figure 3 [32GB]: 0.72 +/- 0.08
+height_max = 0.80
+standoff_nom = 0.21      # DS p. 6, Figure 3: 0.21 +/- 0.05
+ball_min = 0.25          # DS p. 6, Figure 3: 153 x 0.30 +/- 0.05
+ball_nom = 0.30
+ball_max = 0.35
+cite = "Samsung KLMxGxJETD-B041 datasheet Rev. 1.0 p. 6, Figure 3"
+
+# 14 x 14 grid at 0.50 mm (0.50 x 13 = 6.50; 3.25 from the centre lines to the outer balls),
+# DS p. 6, Figure 3. Top view, A1 top left.
+[[grid]]
+prefix = ""
+rows = ["A","B","C","D","E","F","G","H","J","K","L","M","N","P"]
+cols = 14
+pitch = 0.50
+first_x = -3.25
+first_y = -3.25
+
+# Land: NSMD copper 0.25 mm, mask opening 0.35 mm (0.05 mm per side, the prototype fab's normal expansion;
+# web 0.15 mm at the 0.50 mm pitch). IPC-7351B's ~20 % reduction of the 0.30 mm ball gives
+# 0.24 mm, under the prototype fab's 0.25 mm BGA pad, so the pad is set at that minimum. The IPC-7351B
+# table itself was not retrieved: UNVERIFIED.
+[land]
+type = "NSMD"
+pad = 0.25
+mask_margin = 0.05
+paste = "1:1"
+
+[footprint]
+name = "Samsung_FBGA-153_11.5x13.0mm_Layout14x14_P0.5mm_Ball0.3mm_Pad0.25mm_NSMD"
+tags = "BGA FBGA FBGA-153 eMMC Samsung 0.5mm"
+# Document named in the footprint description; the same for every part sharing this footprint.
+source = "https://datasheet.lcsc.com/datasheet/pdf/8cca530d6d5054b226dcd9a69d076028.pdf?productCode=C2803245"
+
+[[unit]]
+name = "Bus"
+name_re = "^(DAT\\d|CMD|CLK|Data Strobe)$"
+[[unit]]
+name = "Control"
+name_re = "^RSTN$"
+[[unit]]
+name = "Power"
+name_re = "^VDD"
+[[unit]]
+name = "Ground"
+name_re = "^VSS$"
+# The 120 NC and RFU balls split by ball row (CRAFT-126: at most 64 pins per unit): A-G, then H-P.
+[[unit]]
+name = "Not connected, rows A-G"
+ball_re = "^[A-G]\\d+$"
+pin_re = "^(NC|RFU)$"
+[[unit]]
+name = "Not connected, rows H-P"
+name_re = "^(NC|RFU)$"
+
+# Pin types (DS p. 5, pin description). VDDI is the internal regulator node that takes a
+# capacitor, not a supply input: passive. RFU: "do not use for any usage", left unconnected.
+[[ptype]]
+type = "power_in"
+name_re = "^(VDD|VDDF|VSS)$"
+[[ptype]]
+type = "no_connect"
+name_re = "^(NC|RFU)$"
+[[ptype]]
+type = "bidirectional"
+name_re = "^(DAT\\d|CMD)$"
+[[ptype]]
+type = "input"
+name_re = "^(CLK|RSTN)$"
+[[ptype]]
+type = "output"
+name_re = "^Data Strobe$"
+[[ptype]]
+type = "passive"
+name_re = "."
+
+# The drawing's primary dimensions (DS p. 6, Figure 3). Edge distances follow from the ball
+# field being centred on the package centre lines (3.25 dimensions): (11.50 - 6.50) / 2 and
+# (13.00 - 6.50) / 2.
+[[drawing]]
+prefix = ""
+cols = 14
+rows = 14
+pitch = 0.50
+span_x = 6.50
+span_y = 6.50
+edge_x = 2.50
+edge_y = 3.25
+
+[check]
+balls = 153               # DS p. 5, Figure 1 (153-FBGA) and p. 6 ("153-0.30")
+pdf = "Samsung/KLMBG2JETD-B041/8cca530d6d5054b226dcd9a69d076028.pdf"
+pdf_sha256 = "f9d8f6f855ee15df6748a388a5287ac8306ab06d250673ace45067d52d9058ca"
+# Table 2 (DS p. 5) lists every named ball apart from RFU; the figure is the pin-list source.
+table_pins = "KLMxGxJETD-B041-table2.csv"
+table_ignore = "^(NC|RFU)$"
+pdf_table_page = 5        # Table 2, re-read from the PDF (pdfplumber)

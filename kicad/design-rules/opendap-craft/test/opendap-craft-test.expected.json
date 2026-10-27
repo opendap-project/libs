@@ -1,0 +1,21 @@
+{
+  "board_setup_checks": {
+    "mirrored_text_on_front_layer": 1
+  },
+  "pass_column_starts_at_mm": 50.0,
+  "rules": {
+    "OpenDAP CRAFT-01 [Q2]: Silk text in the stroke font, regular, upright": 1,
+    "OpenDAP CRAFT-02 [Q2]: Silk text size from the set": 1,
+    "OpenDAP CRAFT-03 [Q2]: Silk text at 0 or 90 degrees": 1,
+    "OpenDAP CRAFT-04 [Q1]: Silk text reads from its own side": 1,
+    "OpenDAP CRAFT-05 [Q2]: Silk line width 0.15 mm": 1,
+    "OpenDAP CRAFT-07 [Q2]: Silk clearance to pads": 1,
+    "OpenDAP CRAFT-07 [Q2]: Silk clearance to vias": 1,
+    "OpenDAP CRAFT-09 [Q2]: Silk text clear of other silk": 1,
+    "OpenDAP CRAFT-40 [Q2]: Track segments at multiples of 45 degrees": 2,
+    "OpenDAP CRAFT-41 [Q3]: Track corners of 135 degrees or more": 6,
+    "OpenDAP CRAFT-43 [Q2]: Track width from the series": 4,
+    "OpenDAP CRAFT-45 [Q2]: Via from the set": 1,
+    "OpenDAP CRAFT-47 [Q4]: No track segment shorter than 0.1 mm": 3
+  }
+}

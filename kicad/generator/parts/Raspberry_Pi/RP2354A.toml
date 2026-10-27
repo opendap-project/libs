@@ -1,0 +1,679 @@
+# RP2354A (RP2350A die + 2 MB stacked flash), QFN-60 7 x 7 mm, 0.4 mm pitch.
+# Source: RP2350 Datasheet, Release 8, build 80d627281ed5 ("DS"). Page numbers are PRINTED page numbers
+# (PDF page = printed + 1 in this build: Figure 148 is on PDF page 1326, printed 1325).
+# Land pattern: manufacturer recommended footprint, DS §14.1.2, p. 1325, Figure 148 (top view, dimensions in mm),
+# transcribed from the rendered drawing:
+#   outer pad-to-pad extent 7.75 (both axes); inner extent 6.00; pad length 0.875 (= (7.75 - 6.00)/2, also dimensioned);
+#   pad width 0.20; pitch 0.40; row extent 5.80 outer edge to outer edge (= 14 x 0.40 + 0.20 -> 15 pads per side);
+#   centre pad 3.40 x 3.40; 0.975 = row-end pad edge (2.90) to the outer edge of the perpendicular row (3.875).
+#   Pad centre = (6.00 + 0.875)/2 = 3.4375 from the origin.
+# Package (DS p. 1324, Figure 147): D = E = 7 BSC, A 0.800 / 0.850 / 0.900, A1 0.000 / - / 0.050,
+#   D2 = E2 3.350 / 3.400 / 3.450, b 0.130 / 0.180 / 0.230, e 0.400 BSC, L 0.350 / 0.400 / 0.450.
+# Pin numbering: Figure 152 (p. 1330), pin 1 top of the left side, counter-clockwise viewed from the top.
+# Exposed pad: Figure 148 gives the copper land only. Paste apertures and vias are an OpenDAP choice:
+#   2 x 2 apertures 1.25 x 1.25 at 1.70 pitch = 6.25 / 11.56 mm^2 = 54 %; 5 vias (plus pattern) drill 0.20,
+#   diameter 0.40 in the 0.45 mm paste-free cross. GND reaches the die only through the exposed pad (Table 1679, p. 1335).
+
+[part]
+mpn = "RP2354A"
+manufacturer = "Raspberry Pi"
+library = "Raspberry_Pi"
+symbol = "RP2354A"
+reference = "U"
+description = "RP2350 microcontroller with 2 MB of QSPI flash stacked in the package, 30 GPIOs, QFN-60 7 x 7 mm, 0.4 mm pitch, exposed GND pad"
+keywords = "microcontroller MCU RP2350 RP2354 Cortex-M33 RISC-V flash QFN60 Raspberry Pi"
+datasheet = "https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf"
+datasheet_rev = "Release 8, build 80d627281ed5"
+sheet = "Raspberry-Pi/RP2354A.md"
+notes = [
+  "Land pattern = manufacturer recommended PCB footprint, DS p. 1325 Figure 148 (signal pads 0.875 x 0.20 mm, centre pad 3.40 x 3.40 mm).",
+  "Pad and centre-pad corner radii are drawn rounded in Figure 148 but not dimensioned: signal pads roundrect 0.25 ratio and centre pad 0.10 mm radius (rratio 0.03) are UNVERIFIED choices.",
+  "Exposed-pad paste (2 x 2, 1.25 mm at 1.70 mm, 54 %) and the 5-via plus pattern (0.20/0.40 mm) are an OpenDAP choice; the datasheet gives neither. Raspberry Pi's KiCad minimal-design footprint was not opened (UNVERIFIED cross-check).",
+  "IOVDD pin numbers: Figure 152 (p. 1330, checked in the rendered image) shows IOVDD on 1, 11, 20, 30, 38, 45; Table 1679 (p. 1334) lists IOVDD on 11, 20, 30, 38, 45, 54, which collides with QSPI_IOVDD = 54 in the same table. The symbol follows Figure 152 (pin 1 = IOVDD, pin 54 = QSPI_IOVDD), consistent with the sheet; the table entry is a datasheet error (UNVERIFIED with Raspberry Pi).",
+  "RP2354A stacked flash: same pinout as RP2350A (DS §14.3, p. 1327); the internal W25Q16JVWI shares the six QSPI pads, which stay bonded out. QSPI_IOVDD must be 2.97-3.63 V on RP2354 (sheet, DS Table 1688).",
+  "The sheet pin table groups pins in ranges; the symbol expands them to one pin per number following Tables 1674-1679 (pp. 1332-1335) and Figure 152. No name differences found.",
+  "RP2354A thermal data are 'TBD' in DS Table 1670 (p. 1325).",
+]
+
+[[pins]]
+number = "26"
+name = "RUN"
+type = "input"
+unit = 1
+side = "left"
+gap = false
+
+[[pins]]
+number = "24"
+name = "SWCLK"
+type = "input"
+unit = 1
+side = "left"
+gap = true
+
+[[pins]]
+number = "25"
+name = "SWDIO"
+type = "bidirectional"
+unit = 1
+side = "left"
+gap = false
+
+[[pins]]
+number = "21"
+name = "XIN"
+type = "input"
+unit = 1
+side = "left"
+gap = true
+
+[[pins]]
+number = "22"
+name = "XOUT"
+type = "passive"
+unit = 1
+side = "left"
+gap = false
+
+[[pins]]
+number = "60"
+name = "QSPI_SS"
+type = "bidirectional"
+unit = 1
+side = "left"
+gap = true
+
+[[pins]]
+number = "56"
+name = "QSPI_SCLK"
+type = "bidirectional"
+unit = 1
+side = "left"
+gap = false
+
+[[pins]]
+number = "57"
+name = "QSPI_SD0"
+type = "bidirectional"
+unit = 1
+side = "left"
+gap = false
+
+[[pins]]
+number = "59"
+name = "QSPI_SD1"
+type = "bidirectional"
+unit = 1
+side = "left"
+gap = false
+
+[[pins]]
+number = "58"
+name = "QSPI_SD2"
+type = "bidirectional"
+unit = 1
+side = "left"
+gap = false
+
+[[pins]]
+number = "55"
+name = "QSPI_SD3"
+type = "bidirectional"
+unit = 1
+side = "left"
+gap = false
+
+[[pins]]
+number = "52"
+name = "USB_DP"
+type = "bidirectional"
+unit = 1
+side = "left"
+gap = true
+
+[[pins]]
+number = "51"
+name = "USB_DM"
+type = "bidirectional"
+unit = 1
+side = "left"
+gap = false
+
+[[pins]]
+number = "48"
+name = "VREG_LX"
+type = "power_out"
+unit = 3
+side = "right"
+gap = true
+
+[[pins]]
+number = "50"
+name = "VREG_FB"
+type = "input"
+unit = 3
+side = "left"
+gap = false
+
+[[pins]]
+number = "2"
+name = "GPIO0"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "3"
+name = "GPIO1"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "4"
+name = "GPIO2"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "5"
+name = "GPIO3"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "7"
+name = "GPIO4"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "8"
+name = "GPIO5"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "9"
+name = "GPIO6"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "10"
+name = "GPIO7"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "12"
+name = "GPIO8"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = true
+
+[[pins]]
+number = "13"
+name = "GPIO9"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "14"
+name = "GPIO10"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "15"
+name = "GPIO11"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "16"
+name = "GPIO12"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "17"
+name = "GPIO13"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "18"
+name = "GPIO14"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "19"
+name = "GPIO15"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "27"
+name = "GPIO16"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = true
+
+[[pins]]
+number = "28"
+name = "GPIO17"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "29"
+name = "GPIO18"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "31"
+name = "GPIO19"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "32"
+name = "GPIO20"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "33"
+name = "GPIO21"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "34"
+name = "GPIO22"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "35"
+name = "GPIO23"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "36"
+name = "GPIO24"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "37"
+name = "GPIO25"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "40"
+name = "GPIO26_ADC0"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = true
+
+[[pins]]
+number = "41"
+name = "GPIO27_ADC1"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "42"
+name = "GPIO28_ADC2"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "43"
+name = "GPIO29_ADC3"
+type = "bidirectional"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "1"
+name = "IOVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "11"
+name = "IOVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "20"
+name = "IOVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "30"
+name = "IOVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "38"
+name = "IOVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "45"
+name = "IOVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "54"
+name = "QSPI_IOVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = true
+
+[[pins]]
+number = "53"
+name = "USB_OTP_VDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "44"
+name = "ADC_AVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "49"
+name = "VREG_VIN"
+type = "power_in"
+unit = 3
+side = "top"
+gap = true
+
+[[pins]]
+number = "46"
+name = "VREG_AVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "6"
+name = "DVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = true
+
+[[pins]]
+number = "23"
+name = "DVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "39"
+name = "DVDD"
+type = "power_in"
+unit = 3
+side = "top"
+gap = false
+
+[[pins]]
+number = "47"
+name = "VREG_PGND"
+type = "power_in"
+unit = 3
+side = "bottom"
+gap = false
+
+[[pins]]
+number = "EP"
+name = "GND"
+type = "power_in"
+unit = 3
+side = "bottom"
+gap = false
+
+[footprint]
+name = "QFN-60-1EP_7x7mm_P0.4mm_EP3.4x3.4mm_ThermalVias"
+description = "QFN-60 7 x 7 mm, 0.4 mm pitch, exposed pad 3.4 x 3.4 mm, thermal vias; RP2350 datasheet recommended footprint (Figure 148)"
+tags = "QFN 60 0.4 RP2350 RP2354 RP2354A"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "RP2350 DS Release 8 p. 1325, Figure 148"
+body = { x = 7.0, y = 7.0, z = 0.85, standoff = 0.0, cite = "RP2350 DS Release 8 p. 1324, Figure 147, D = E = 7 BSC, A nom 0.850, A1 0.000-0.050 (no nominal; 0 used)" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "EP"
+at = [0.0, 0.0]
+size = [3.4, 3.4]
+shape = "roundrect"
+rratio = 0.03
+type = "smd"
+paste = false
+cite = "RP2350 DS Release 8 p. 1325, Figure 148, centre pad 3.40 x 3.40 (corner radius UNVERIFIED, not dimensioned)"
+
+[[footprint.rows]]
+first = 1
+count = 15
+step = 1
+start = [-3.4375, -2.8]
+pitch = [0, 0.4]
+size = [0.875, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "RP2350 DS Release 8 p. 1325, Figure 148: pitch 0.40, pad 0.20 x 0.875, extents 7.75 / 6.00 / 5.80"
+
+[[footprint.rows]]
+first = 16
+count = 15
+step = 1
+start = [-2.8, 3.4375]
+pitch = [0.4, 0]
+size = [0.2, 0.875]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "RP2350 DS Release 8 p. 1325, Figure 148: pitch 0.40, pad 0.20 x 0.875, extents 7.75 / 6.00 / 5.80"
+
+[[footprint.rows]]
+first = 31
+count = 15
+step = 1
+start = [3.4375, 2.8]
+pitch = [0, -0.4]
+size = [0.875, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "RP2350 DS Release 8 p. 1325, Figure 148: pitch 0.40, pad 0.20 x 0.875, extents 7.75 / 6.00 / 5.80"
+
+[[footprint.rows]]
+first = 46
+count = 15
+step = 1
+start = [2.8, -3.4375]
+pitch = [-0.4, 0]
+size = [0.2, 0.875]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "RP2350 DS Release 8 p. 1325, Figure 148: pitch 0.40, pad 0.20 x 0.875, extents 7.75 / 6.00 / 5.80"
+
+[[footprint.paste]]
+start = [-0.85, -0.85]
+pitch = [1.7, 1.7]
+count = [2, 2]
+size = [1.25, 1.25]
+cite = "OpenDAP choice (DS gives no stencil for the centre pad): 54 % coverage"
+
+[[footprint.vias]]
+number = "EP"
+start = [-1.2, 0.0]
+pitch = [1.2, 0.0]
+count = [3, 1]
+drill = 0.2
+diameter = 0.4
+cite = "OpenDAP choice (DS gives no via pattern); GND only through the exposed pad, DS Table 1679 p. 1335"
+
+[[footprint.vias]]
+number = "EP"
+start = [0.0, -1.2]
+pitch = [0.0, 2.4]
+count = [1, 2]
+drill = 0.2
+diameter = 0.4
+cite = "OpenDAP choice (DS gives no via pattern); GND only through the exposed pad, DS Table 1679 p. 1335"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.4
+cite = "RP2350 DS Release 8 p. 1325, Figure 148, 0.40"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "15"
+value = 5.6
+cite = "RP2350 DS Release 8 p. 1325, Figure 148, row extent 5.80 outer edges minus one pad width 0.20"
+
+[[checks]]
+kind = "dx"
+a = "16"
+b = "30"
+value = 5.6
+cite = "RP2350 DS Release 8 p. 1325, Figure 148, 5.80 - 0.20, bottom row"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "45"
+value = 6.875
+cite = "RP2350 DS Release 8 p. 1325, Figure 148, (7.75 + 6.00)/2 between left and right pad centres"
+
+[[checks]]
+kind = "dy"
+a = "60"
+b = "16"
+value = 6.875
+cite = "RP2350 DS Release 8 p. 1325, Figure 148, (7.75 + 6.00)/2 between top and bottom pad centres (pin 60 top-left, pin 16 bottom-left)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.875, 0.2]
+cite = "RP2350 DS Release 8 p. 1325, Figure 148, 0.875 x 0.20"
+
+[[checks]]
+kind = "pad_size"
+a = "EP"
+value = [3.4, 3.4]
+cite = "RP2350 DS Release 8 p. 1325, Figure 148, 3.40 x 3.40"
+
+[[checks]]
+kind = "pad_count"
+value = 61
+cite = "DS p. 1330 Figure 152: 60 pins + exposed GND pad"
+
+[[units]]
+name = "System"
+
+[[units]]
+name = "GPIO"
+
+[[units]]
+name = "Power"

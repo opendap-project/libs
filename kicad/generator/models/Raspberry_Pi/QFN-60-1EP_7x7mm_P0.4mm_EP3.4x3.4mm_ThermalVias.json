@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        7.0,
+        7.0,
+        0.85
+      ]
+    }
+  ],
+  "library": "Raspberry_Pi",
+  "name": "QFN-60-1EP_7x7mm_P0.4mm_EP3.4x3.4mm_ThermalVias",
+  "source": "envelope from RP2350 DS Release 8 p. 1324, Figure 147, D = E = 7 BSC, A nom 0.850, A1 0.000-0.050 (no nominal; 0 used)"
+}

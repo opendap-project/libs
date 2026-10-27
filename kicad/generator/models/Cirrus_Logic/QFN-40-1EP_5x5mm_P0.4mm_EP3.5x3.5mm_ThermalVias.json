@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.035
+      ],
+      "size": [
+        5.0,
+        5.0,
+        0.715
+      ]
+    }
+  ],
+  "library": "Cirrus_Logic",
+  "name": "QFN-40-1EP_5x5mm_P0.4mm_EP3.5x3.5mm_ThermalVias",
+  "source": "envelope from DS1156F2 p. 134, Figure 10-1 / Table 10-1, D = E = 5 BSC, A nom 0.75, A1 nom 0.035"
+}

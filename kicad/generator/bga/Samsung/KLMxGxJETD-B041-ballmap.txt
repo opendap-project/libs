@@ -1,0 +1,19 @@
+# KLMxGxJETD-B041 153FBGA ball map, ball-side down (top) view: Samsung KLMxGxJETD-B041 eMMC
+# datasheet Rev. 1.0 (Nov. 2016), p. 5, Figure 1 (153-FBGA). Transcribed from the figure, cell by
+# cell: 'o' = a ball (named, RFU or NC), '-' = no ball. Columns 1..14 left to right, rows A..P top
+# to bottom (no I, O). Second reading of the ball set for test_bga.py; the names come from the
+# same figure and are cross-checked against Table 2 (p. 5).
+A  |oooooooooooooo|
+B  |oooooooooooooo|
+C  |oooooooooooooo|
+D  |oooo-------ooo|
+E  |ooo-oooooo-ooo|
+F  |ooo-o----o-ooo|
+G  |ooo-o----o-ooo|
+H  |ooo-o----o-ooo|
+J  |ooo-o----o-ooo|
+K  |ooo-oooooo-ooo|
+L  |ooo--------ooo|
+M  |oooooooooooooo|
+N  |oooooooooooooo|
+P  |oooooooooooooo|

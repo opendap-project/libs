@@ -1,0 +1,141 @@
+# ECS-2016MV-120-BN-TR - ECS Inc. ECS-2016MV MultiVolt HCMOS crystal oscillator, 12.000 MHz, +-50 ppm,
+# -40 to +85 C, 1.6-3.6 V, tri-state, 2.0 x 1.6 x 0.85 mm ceramic, four pads.
+# Source: ECS-2016MV SMD MultiVolt Crystal Oscillator, Rev. 2025 (2 pages), sha256 f179ffbc...1c61872 per the
+# parts-lib sheet and BOM v1.1. Cited as "ECS-2016MV".
+#
+# Drawing reading (ECS-2016MV p. 1, 300 dpi render):
+#   Figure 1, left view (pin-1 dot): top view, #4 upper-left, #3 upper-right, #1 lower-left, #2 lower-right.
+#   Figure 1, middle view (hatched pads, #1 chamfered): bottom view, #1 upper-left, #2 upper-right,
+#   #4 lower-left, #3 lower-right (the top view flipped about the long axis).
+#   Figure 2, "Suggested Land Pattern": four equal lands, horizontally 0.775 / 0.5 / 0.775, vertically
+#   0.675 / 0.3 / 0.675, i.e. lands 0.775 (x) x 0.675 (y) with a 0.5 gap in x and a 0.3 gap in y.
+#   The view carries no pad numbers; since the four lands are equal, numbering follows the top view.
+#   Land centres in the catalogue orientation (long axis horizontal): x = +-(0.25 + 0.3875) = +-0.6375,
+#   y = +-(0.15 + 0.3375) = +-0.4875.
+# Orientation: rotated 90 deg clockwise (as seen from the top, +y down), (x, y) -> (-y, x), so that #1 is
+# top-left as in the NDK NZ2520SDA parts of this library. Body 1.6 (x) x 2.0 (y); lands 0.675 (x) x 0.775 (y).
+#   #1 (-0.4875, -0.6375)  #4 (0.4875, -0.6375)
+#   #2 (-0.4875,  0.6375)  #3 (0.4875,  0.6375)
+
+[part]
+mpn = "ECS-2016MV-120-BN-TR"
+second_source = "Abracon ABM8-272-T3 crystal with a re-tuned XOUT resistor, after qualification over temperature (BOM v1 line 14)"
+manufacturer = "ECS Inc."
+library = "ECS"
+symbol = "ECS-2016MV-120-BN-TR"
+reference = "Y"
+description = "12.000 MHz HCMOS crystal oscillator, ECS-2016MV MultiVolt (1.6-3.6 V), +/-50 ppm, -40 to +85 C, tri-state, 2.0 x 1.6 mm, 4 pads"
+keywords = "oscillator XO crystal clock HCMOS ECS-2016MV 12 MHz 2016 MultiVolt"
+datasheet = "https://ecsxtal.com/store/pdf/ECS-2016MV.pdf"
+datasheet_rev = "Rev. 2025"
+sheet = "ECS/ECS-2016MV-120-BN-TR.md"
+notes = [
+  "Land pattern = ECS suggested land pattern (ECS-2016MV p. 1, Figure 2): lands 0.775 x 0.675, gaps 0.5 and 0.3; rotated 90 deg so pin 1 is top-left.",
+  "The suggested land pattern carries no pad numbers; pin 1 follows the top view (dot at #1, lower-left before rotation). The four lands are identical, so the numbering is the only reading involved.",
+  "Lands drawn as plain rectangles; mask and paste rules are not given (UNVERIFIED): mask to the board default, paste 1:1 (generator default).",
+  "Body height: only 0.85 mm max is given (ECS-2016MV p. 1); the 3D envelope uses the maximum.",
+  "Pin 1 Tri-state: >= 0.7 x Vdd or not connected -> output active (ECS-2016MV p. 1): input. In the T1 it is left open (BOM v1 line 14).",
+]
+
+[[pins]]
+number = "1"
+name = "TRI-STATE"
+type = "input"
+side = "left"
+gap = false
+
+[[pins]]
+number = "3"
+name = "OUTPUT"
+type = "output"
+side = "right"
+gap = false
+
+[[pins]]
+number = "4"
+name = "VDD"
+type = "power_in"
+side = "top"
+gap = false
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "power_in"
+side = "bottom"
+gap = false
+
+[footprint]
+name = "Oscillator_SMD_ECS_ECS-2016MV-4Pin_2.0x1.6mm"
+description = "ECS ECS-2016MV crystal oscillator, 2.0 x 1.6 mm, 4 pads, manufacturer suggested land pattern, rotated so pin 1 is top-left (https://ecsxtal.com/store/pdf/ECS-2016MV.pdf)"
+tags = "oscillator XO ECS ECS-2016MV 2016"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "ECS-2016MV Rev. 2025, p. 1, Figure 2 (Suggested Land Pattern)"
+body = { x = 1.6, y = 2.0, z = 0.85, standoff = 0.0, cite = "ECS-2016MV p. 1, Figure 1: 2.0 +/- 0.1 x 1.6 +/- 0.1 (rotated 90 deg), 0.85 max height (max used)" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "1"
+at = [-0.4875, -0.6375]
+size = [0.675, 0.775]
+shape = "rect"
+type = "smd"
+cite = "ECS-2016MV p. 1, Figure 2: 0.775 x 0.675 lands, gaps 0.5 x 0.3 (rotated)"
+
+[[footprint.pads]]
+number = "2"
+at = [-0.4875, 0.6375]
+size = [0.675, 0.775]
+shape = "rect"
+type = "smd"
+cite = "ECS-2016MV p. 1, Figure 2 (rotated)"
+
+[[footprint.pads]]
+number = "3"
+at = [0.4875, 0.6375]
+size = [0.675, 0.775]
+shape = "rect"
+type = "smd"
+cite = "ECS-2016MV p. 1, Figure 2 (rotated)"
+
+[[footprint.pads]]
+number = "4"
+at = [0.4875, -0.6375]
+size = [0.675, 0.775]
+shape = "rect"
+type = "smd"
+cite = "ECS-2016MV p. 1, Figure 2 (rotated)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "2"
+value = 1.275
+cite = "ECS-2016MV p. 1, Figure 2: 0.775 + 0.5 between #1 and #2 centres (long axis, vertical after rotation)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "4"
+value = 0.975
+cite = "ECS-2016MV p. 1, Figure 2: 0.675 + 0.3 between #1 and #4 centres (short axis, horizontal after rotation)"
+
+[[checks]]
+kind = "pitch"
+a = "2"
+b = "3"
+value = 0.975
+cite = "ECS-2016MV p. 1, Figure 2: 0.675 + 0.3"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.675, 0.775]
+cite = "ECS-2016MV p. 1, Figure 2: 0.775 x 0.675 (rotated)"
+
+[[checks]]
+kind = "pad_count"
+value = 4
+cite = "ECS-2016MV p. 1, Pad connections: 4 pads"

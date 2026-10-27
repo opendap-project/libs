@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.0,
+        2.0,
+        0.8
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm",
+  "source": "envelope from DRV0006A outline (SLVSED5C p. 18, 4222173/C): 1.9-2.1 x 1.9-2.1, 0.7-0.8 height (0.8 max), standoff 0.00-0.05"
+}

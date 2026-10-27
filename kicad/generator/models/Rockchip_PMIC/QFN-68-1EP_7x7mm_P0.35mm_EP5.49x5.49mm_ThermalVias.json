@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.035
+      ],
+      "size": [
+        7.0,
+        7.0,
+        0.715
+      ]
+    }
+  ],
+  "library": "Rockchip_PMIC",
+  "name": "QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm_ThermalVias",
+  "source": "envelope from Rev 1.01 p. 13, Fig. 2-1, D = E = 7 BSC, A nom 0.75, A1 nom 0.035"
+}

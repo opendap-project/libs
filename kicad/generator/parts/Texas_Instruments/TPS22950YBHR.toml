@@ -1,0 +1,167 @@
+# TPS22950YBHR - TI 5.5 V, 2.7 A adjustable current-limited load switch, auto-retry, reverse-current blocking, YBH0006 (WCSP / DSBGA-6)
+# Sources: SLVSFJ2B (TPS22950x datasheet, Dec 2020 rev. Feb 2023), PDF p. 4 (Table 6-1 pin functions),
+# PDF p. 21 (YBH0006-C02 outline 4226594/A 03/2021), PDF p. 22 (example board layout, scale 50X),
+# PDF p. 23 (example stencil design, 0.075 mm stencil). The board layout is a top view: columns 1-2 left to
+# right, rows A-C top to bottom, ball A1 top left; used as drawn (y down).
+
+[part]
+mpn = "TPS22950YBHR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPS22950YBHR"
+reference = "U"
+description = "Load switch with adjustable current limit (RILIM, 0.05-3.5 A), 1.8-5.5 V, 34 mOhm, auto-retry, reverse-current blocking, quick output discharge, open-drain FLT, WCSP-6 0.7 x 1.1 mm (YBH0006)"
+keywords = "load switch current limit power switch reverse current blocking TPS22950 WCSP DSBGA YBH"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps22950.pdf"
+datasheet_rev = "SLVSFJ2B"
+sheet = "Texas-Instruments/TPS22950YBHR.md"
+notes = [
+  "Land pattern = TI example board layout YBH0006-C02 (SLVSFJ2B PDF p. 22, drawing 4226594/A): six round pads (0.2) at (0.4) pitch both ways, 2 columns x 3 rows.",
+  "TI marks solder-mask-defined (SMD) pads PREFERRED for this WCSP (0.2 mask opening over larger copper, 0.05 MIN) and also gives non-solder-mask-defined (0.2 copper, 0.05 MAX mask clearance). The drawing does not size the copper under the mask, so the footprint draws the NSMD option: 0.2 copper, generator default mask expansion. Using SMD needs a copper size TI does not give: UNVERIFIED.",
+  "Stencil (PDF p. 23, 0.075 mm thick): 6X (0.21) square apertures, (R0.05) TYP, at the ball centres -> [[footprint.paste]] with the copper pads paste = false.",
+  "Pad numbers are the WCSP ball names (A1..C2), as in the WCSP column of Table 6-1; the SOT-6 (DDC) numbers do not apply to this part. Pin 1 mark on A1 (pin1 = A1).",
+  "FLT is open-drain (Table 6-1) -> open_collector. ILIM sets the current limit through a resistor to GND (type O in the table) -> passive, left.",
+]
+
+[[pins]]
+number = "B1"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "A1"
+name = "ON"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "C2"
+name = "ILIM"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "B2"
+name = "VOUT"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "A2"
+name = "FLT"
+type = "open_collector"
+side = "right"
+
+[[pins]]
+number = "C1"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_YBH0006_DSBGA-6_0.706x1.106mm_Layout2x3_P0.4mm"
+description = "Texas Instruments YBH0006-C02 DSBGA (WCSP) 6 balls, 0.706 x 1.106 mm body, 0.4 mm pitch, 2 x 3 layout, TI example land pattern (drawing 4226594/A)"
+tags = "WCSP DSBGA-6 YBH0006 YBH Texas"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps22950.pdf"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "YBH0006-C02 example board layout, drawing 4226594/A 03/2021 (SLVSFJ2B PDF p. 22); stencil PDF p. 23"
+body = { x = 0.706, y = 1.106, z = 0.4, standoff = 0.16, cite = "SLVSFJ2B PDF p. 21, YBH0006-C02 outline 4226594/A: E 0.686-0.726 (x), D 1.086-1.126 (y), 0.4 MAX height, ball height 0.13-0.19 (nominal midpoints)" }
+body_offset = [0.0, 0.0]
+pin1 = "A1"
+
+[[footprint.pads]]
+number = "A1"
+at = [-0.2, -0.4]
+size = [0.2, 0.2]
+shape = "circle"
+type = "smd"
+paste = false
+cite = "SLVSFJ2B PDF p. 22: 6X (0.2), (0.4) TYP both ways, centred on both SYMM lines"
+
+[[footprint.pads]]
+number = "A2"
+at = [0.2, -0.4]
+size = [0.2, 0.2]
+shape = "circle"
+type = "smd"
+paste = false
+cite = "SLVSFJ2B PDF p. 22"
+
+[[footprint.pads]]
+number = "B1"
+at = [-0.2, 0.0]
+size = [0.2, 0.2]
+shape = "circle"
+type = "smd"
+paste = false
+cite = "SLVSFJ2B PDF p. 22"
+
+[[footprint.pads]]
+number = "B2"
+at = [0.2, 0.0]
+size = [0.2, 0.2]
+shape = "circle"
+type = "smd"
+paste = false
+cite = "SLVSFJ2B PDF p. 22"
+
+[[footprint.pads]]
+number = "C1"
+at = [-0.2, 0.4]
+size = [0.2, 0.2]
+shape = "circle"
+type = "smd"
+paste = false
+cite = "SLVSFJ2B PDF p. 22"
+
+[[footprint.pads]]
+number = "C2"
+at = [0.2, 0.4]
+size = [0.2, 0.2]
+shape = "circle"
+type = "smd"
+paste = false
+cite = "SLVSFJ2B PDF p. 22"
+
+[[footprint.paste]]
+start = [-0.2, -0.4]
+pitch = [0.4, 0.4]
+count = [2, 3]
+size = [0.21, 0.21]
+rratio = 0.238
+cite = "SLVSFJ2B PDF p. 23: 6X (0.21) square, (0.4) TYP, (R0.05) TYP (rratio 0.05/0.21), 0.075 mm stencil"
+
+[[checks]]
+kind = "pitch"
+a = "A1"
+b = "A2"
+value = 0.4
+cite = "SLVSFJ2B PDF p. 22, (0.4) TYP column pitch"
+
+[[checks]]
+kind = "pitch"
+a = "A1"
+b = "B1"
+value = 0.4
+cite = "SLVSFJ2B PDF p. 22, (0.4) TYP row pitch"
+
+[[checks]]
+kind = "dy"
+a = "A1"
+b = "C1"
+value = 0.8
+cite = "SLVSFJ2B PDF p. 21, 0.8 TYP"
+
+[[checks]]
+kind = "pad_size"
+a = "A1"
+value = [0.2, 0.2]
+cite = "SLVSFJ2B PDF p. 22, 6X (0.2)"
+
+[[checks]]
+kind = "pad_count"
+value = 6
+cite = "SLVSFJ2B PDF p. 21, six balls"

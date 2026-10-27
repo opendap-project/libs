@@ -1,0 +1,273 @@
+# LMR33630CRNXR - TI 3.8-36 V, 3 A synchronous step-down converter, 2.1 MHz, RNX0012B (VQFN-HR-12, 2 x 3 mm)
+# Sources: SNVSAN3F (LMR33630 datasheet, Aug 2017 rev. Nov 2020), PDF p. 5 (Figure 6-2 RNX top view,
+# Table 6-1 pin functions); mechanical addendum drawing 4223969/C 10/2018: PDF p. 48 package
+# outline, p. 49 example board layout, p. 50 example stencil design (PDF page numbers of the cached
+# lmr33630.pdf). Pad centres were read from 110 dpi renders of pp. 49-50 against the dimension labels.
+
+[part]
+mpn = "LMR33630CRNXR"
+second_source = "Texas Instruments LMR33620CRNXR (2 A, same package and pins; BOM v1 line 116)"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "LMR33630CRNXR"
+reference = "U"
+description = "3.8-36 V, 3 A synchronous step-down converter, 2.1 MHz (C version), power good, VQFN-HR-12 (RNX0012B) 2 x 3 mm"
+keywords = "buck step-down converter DC-DC 3A 36V LMR33630 LMR33630C inverting buck-boost VQFN-HR RNX0012B"
+datasheet = "https://www.ti.com/lit/ds/symlink/lmr33630.pdf"
+datasheet_rev = "SNVSAN3F"
+sheet = "Texas-Instruments/LMR33630CRNXR.md"
+notes = [
+  "Land pattern = TI example board layout RNX0012B (SNVSAN3F p. 49): signal pads 11X (0.6) x (0.25); left column (pins 1-4) and right column (pins 8-11) at x = -/+0.9 ((1.8) between column centres); pins 1-2-3 and 11-10-9 at 2X (0.65) pitch, pins 3-4 and 9-8 at (0.5) (4X (0.5)); pins 1 and 11 at (1.125) above the package centre, pins 4 and 8 at (0.675) below it; pins 5-6-7 vertical, (0.5) apart, (1.4) below the centre; SW pin 12 a (0.25) x (1.825) strip on the centre line whose centre sits (0.788) above the package centre. Centres not dimensioned directly (pins 2, 3, 9, 10) follow from the 0.65 and 0.5 pitches and were checked on the render.",
+  "Non-solder-mask-defined pads are preferred (p. 49, 0.07 MAX all around), so the mask expansion is left to the board default; TI shows pads 1, 2 and 10-12 solder-mask-defined as an alternative.",
+  "Stencil (p. 50): apertures equal the pads except pin 12, split into 2X (0.25) x (0.812) apertures centred (1.294) and (0.282) above the package centre: pin 12 has paste = false and two [[footprint.paste]] entries.",
+  "Body z = 0.9 mm is the maximum height (0.8-0.9, p. 48); x/y nominal (1.9-2.1 x 2.9-3.1).",
+  "Pins 1 and 11 (PGND) and 2 and 10 (VIN) are two pads each with their own number; the symbol shows every pad. Pin 3 is NC (no internal connection, Table 6-1): TI routes SW to it on the PCB to reach CBOOT; it is a no_connect pin here, and the schematic decides.",
+  "The RNX0012C drawing (p. 51, 1 mm max height) has the same land (p. 52); the orderable LMR33630CRNXR is listed with the RNX package (p. 42 addendum), drawing variant not stated: UNVERIFIED which of B or C ships.",
+]
+
+[[pins]]
+number = "2"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "10"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "9"
+name = "EN"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "3"
+name = "NC"
+type = "no_connect"
+side = "left"
+gap = true
+
+[[pins]]
+number = "12"
+name = "SW"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "4"
+name = "BOOT"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "5"
+name = "VCC"
+type = "power_out"
+side = "right"
+gap = true
+
+[[pins]]
+number = "7"
+name = "FB"
+type = "input"
+side = "right"
+gap = true
+
+[[pins]]
+number = "8"
+name = "PG"
+type = "open_collector"
+side = "right"
+
+[[pins]]
+number = "1"
+name = "PGND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "11"
+name = "PGND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "6"
+name = "AGND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_RNX0012B_VQFN-HR-12_2x3mm_P0.5mm"
+description = "Texas Instruments RNX0012B VQFN-HR-12, 2 x 3 mm body, TI example land pattern and stencil (SNVSAN3F pp. 49-50, drawing 4223969/C)"
+tags = "VQFN-HR QFN RNX0012B LMR33630 LMR33620 Texas"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SNVSAN3F p. 49, RNX0012B example board layout (4223969/C 10/2018); stencil p. 50"
+body = { x = 2.0, y = 3.0, z = 0.9, standoff = 0.0, cite = "SNVSAN3F p. 48, RNX0012B outline: 1.9-2.1 x 2.9-3.1, height 0.8-0.9, standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "1"
+at = [-0.9, -1.125]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: 11X (0.6) x (0.25), (1.8) between columns, 2X (1.125) above the centre, (R0.05) TYP"
+
+[[footprint.pads]]
+number = "2"
+at = [-0.9, -0.475]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: 2X (0.65) below pin 1"
+
+[[footprint.pads]]
+number = "3"
+at = [-0.9, 0.175]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: 2X (0.65) below pin 2; 4X (0.5) above pin 4"
+
+[[footprint.pads]]
+number = "4"
+at = [-0.9, 0.675]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: 2X (0.675) below the centre"
+
+[[footprint.pads]]
+number = "5"
+at = [-0.5, 1.4]
+size = [0.25, 0.6]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: (1.4) below the centre, (0.5) pitch about the SYMM line"
+
+[[footprint.pads]]
+number = "6"
+at = [0.0, 1.4]
+size = [0.25, 0.6]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: on the SYMM line, (1.4) below the centre"
+
+[[footprint.pads]]
+number = "7"
+at = [0.5, 1.4]
+size = [0.25, 0.6]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: (0.5) right of pin 6"
+
+[[footprint.pads]]
+number = "8"
+at = [0.9, 0.675]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: mirror of pin 4"
+
+[[footprint.pads]]
+number = "9"
+at = [0.9, 0.175]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: mirror of pin 3"
+
+[[footprint.pads]]
+number = "10"
+at = [0.9, -0.475]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: 2X (0.65) below pin 11"
+
+[[footprint.pads]]
+number = "11"
+at = [0.9, -1.125]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVSAN3F p. 49: mirror of pin 1"
+
+[[footprint.pads]]
+number = "12"
+at = [0.0, -0.7875]
+size = [0.25, 1.825]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = false
+cite = "SNVSAN3F p. 49: (0.25) x (1.825), centre (0.788) above the package centre"
+
+[[footprint.paste]]
+start = [0.0, -1.294]
+pitch = [0.0, 1.012]
+count = [1, 2]
+size = [0.25, 0.812]
+cite = "SNVSAN3F p. 50: 2X (0.25) x 2X (0.812), centres (1.294) and (0.282) above the package centre"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "11"
+value = 1.8
+cite = "SNVSAN3F p. 49, (1.8)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "2"
+value = 0.65
+cite = "SNVSAN3F p. 49, 2X (0.65)"
+
+[[checks]]
+kind = "dy"
+a = "3"
+b = "4"
+value = 0.5
+cite = "SNVSAN3F p. 49, 4X (0.5)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "4"
+value = 1.8
+cite = "SNVSAN3F p. 49, 2X (1.125) + 2X (0.675)"
+
+[[checks]]
+kind = "pad_size"
+a = "12"
+value = [0.25, 1.825]
+cite = "SNVSAN3F p. 49, (0.25), (1.825)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.6, 0.25]
+cite = "SNVSAN3F p. 49, 11X (0.6), 11X (0.25)"
+
+[[checks]]
+kind = "pad_count"
+value = 12
+cite = "SNVSAN3F p. 48, 12 terminals, no exposed pad"

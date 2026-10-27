@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        3.0,
+        3.0,
+        0.8
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_RUK0020B_WQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm",
+  "source": "envelope from RUK0020B outline (SLVSEL9 p. 33, 4222676/A): 2.9-3.1 x 2.9-3.1, 0.8 MAX height, standoff 0.00-0.05"
+}

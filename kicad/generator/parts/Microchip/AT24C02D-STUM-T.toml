@@ -1,0 +1,160 @@
+# AT24C02D-STUM-T - Microchip (Atmel) 2-kbit I2C serial EEPROM, 5-lead SOT23 (5TS1)
+# Sources: Atmel-8871F (AT24C01D/AT24C02D datasheet, 01/2017), p. 2 (pinout and Table 1-1, pin descriptions),
+# p. 7 (§4.1: A2-A0 not bonded in the SOT23, address 0x50), p. 23 (§12.5, package drawing 5TS1 rev D, 5/31/12).
+# Copy read: the LCSC mirror of part C79996 (parts-lib sheet). The Microchip re-issue DS20006064 returned
+# HTTP 403 from this host (2026-10-25) and was not read: whether it adds a land pattern is UNVERIFIED.
+#
+# 8871F gives the outline only, no land pattern. Land pattern DERIVED per IPC-7351B (nominal density).
+#
+# Package 5TS1 rev D (p. 23): D = 2.90 BSC; E = 2.80 BSC (lead span); E1 = 1.60 BSC; e = 0.95 BSC; e1 = 1.90 BSC;
+#   b = 0.30-0.50; A <= 1.00; A1 = 0.00-0.10; L1 = 0.60 REF. Foot length L is drawn but has no row in the table:
+#   L = 0.30-0.50 is taken from JEDEC MO-193 variation AB, which the drawing references; MO-193 was not opened, so
+#   L is UNVERIFIED. Top view (p. 2): pins 1-2-3 on one side, 5 and 4 opposite (5 across from 1).
+#
+# IPC-7351B derivation (nominal density, gull wing, pitch > 0.625). J values as tabulated for IPC-7351B nominal
+# density; UNVERIFIED against the standard text: Jt = 0.35, Jh = 0.35, Js = 0.03; F = 0.05, P = 0.05.
+# Rounded to 0.01, nearest, as CS43198-CNZR.
+#   Ltol = 0 (E BSC); Zmax = 2.80 + 0.70 + sqrt(0 + 0.05^2 + 0.05^2) = 3.5707 -> 3.57
+#   Smin = 2.80 - 2 x 0.50 = 1.80; Smax = 2.80 - 2 x 0.30 = 2.20; Stol = 0.40; Stol(RMS) = sqrt(0 + 2 x 0.20^2) = 0.2828
+#   Smax(RMS) = 2.20 - (0.40 - 0.2828)/2 = 2.1414; Gmin = 2.1414 - 0.70 - sqrt(0.2828^2 + 0.05^2 + 0.05^2) = 2.1414 - 0.70 - 0.2915 = 1.1499 -> 1.15
+#   Xmax = 0.30 + 0.06 + sqrt(0.20^2 + 0.05^2 + 0.05^2) = 0.36 + 0.2121 = 0.5721 -> 0.57
+#   Pad length (Z - G)/2 = 1.21; pad centre (Z + G)/4 = 1.18 (2.36 between pad-row centres); width 0.57.
+#   Copper gap between pads in a row: 0.95 - 0.57 = 0.38.
+
+[part]
+mpn = "AT24C02D-STUM-T"
+manufacturer = "Microchip"
+library = "Microchip"
+symbol = "AT24C02D-STUM-T"
+reference = "U"
+description = "Serial EEPROM, 2 kbit (256 x 8), I2C 1 MHz at 2.5-3.6 V / 400 kHz at 1.7-3.6 V, 8-byte page, write protect, fixed address 0x50, 5-lead SOT23 (5TS1)"
+keywords = "EEPROM I2C serial memory 2 kbit AT24C02D 24C02 SOT23-5"
+datasheet = "https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/AT24C01D-AT24C02D-I2C-Compatible-Two-Wire-Serial-EEPROM-1-Kbit-2-Kbit-DS20006064.pdf"
+datasheet_rev = "Atmel-8871F"
+sheet = "Microchip/AT24C02D-STUM-T.md"
+notes = [
+  "Datasheet field: the current Microchip document (DS20006064, the manifest URL). Every value here is from Atmel-8871F (01/2017); DS20006064 was not read (HTTP 403).",
+  "Land pattern derived per IPC-7351B nominal density from 5TS1 rev D (8871F p. 23): no land pattern in 8871F. Foot length L and the J values are UNVERIFIED (see the comments). Replace with a Microchip land pattern once one is read.",
+  "Pad order (top view, rotated so that pin 1 is top left): pins 1-3 down the left row, pin 4 bottom right, pin 5 top right (5 across from 1, 8871F p. 2).",
+  "SDA is open-drain I/O (Table 1-1, p. 2): bidirectional. WP has an internal pull-down when floating (Table 1-1): input.",
+  "Body z = 1.00 mm is the maximum height (A, p. 23); standoff A1 0.00-0.10, taken as 0.",
+]
+
+[[pins]]
+number = "4"
+name = "VCC"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "1"
+name = "SCL"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "3"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "WP"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Microchip_5TS1_SOT-23-5_1.6x2.9mm_P0.95mm"
+description = "Microchip/Atmel 5TS1 thin SOT23-5 (JEDEC MO-193 AB), 1.6 x 2.9 mm body, 0.95 mm pitch; land pattern derived per IPC-7351B nominal from Atmel-8871F p. 23"
+tags = "SOT-23-5 SOT23-5 TSOT 5TS1 MO-193 Microchip Atmel"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "ipc7351b"
+land_pattern_cite = "Atmel-8871F p. 23, 5TS1 rev D (package dimensions); IPC-7351B nominal derivation in comments; L UNVERIFIED"
+body = { x = 1.6, y = 2.9, z = 1.0, standoff = 0.0, cite = "Atmel-8871F p. 23, 5TS1: E1 1.60 BSC, D 2.90 BSC, A 1.00 MAX, A1 0.00-0.10" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "1"
+at = [-1.18, -0.95]
+size = [1.21, 0.57]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "8871F p. 23, e = 0.95 BSC; pad 1.21 x 0.57 at 1.18 from the IPC-7351B nominal derivation (see comments)"
+
+[[footprint.pads]]
+number = "2"
+at = [-1.18, 0.0]
+size = [1.21, 0.57]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "8871F p. 23; IPC-7351B derivation"
+
+[[footprint.pads]]
+number = "3"
+at = [-1.18, 0.95]
+size = [1.21, 0.57]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "8871F p. 23; IPC-7351B derivation"
+
+[[footprint.pads]]
+number = "4"
+at = [1.18, 0.95]
+size = [1.21, 0.57]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "8871F p. 23, e1 = 1.90 BSC between pins 4 and 5; IPC-7351B derivation"
+
+[[footprint.pads]]
+number = "5"
+at = [1.18, -0.95]
+size = [1.21, 0.57]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "8871F p. 23; IPC-7351B derivation"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.95
+cite = "8871F p. 23, e = 0.95 BSC"
+
+[[checks]]
+kind = "dy"
+a = "5"
+b = "4"
+value = 1.9
+cite = "8871F p. 23, e1 = 1.90 BSC"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "5"
+value = 2.36
+cite = "IPC-7351B derivation from 8871F p. 23: (Z + G)/2 = (3.57 + 1.15)/2"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [1.21, 0.57]
+cite = "IPC-7351B derivation from 8871F p. 23: (Z - G)/2 x X"
+
+[[checks]]
+kind = "pad_count"
+value = 5
+cite = "8871F p. 23, five leads"

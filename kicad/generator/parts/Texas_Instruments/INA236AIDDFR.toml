@@ -1,0 +1,134 @@
+# INA236AIDDFR - TI 48 V, 16-bit I2C current, voltage and power monitor, address option A (0x40-0x43), DDF0008A (SOT-23-THIN-8)
+# Sources: SBOSA81D (INA236 datasheet, May 2021 rev. August 2023), PDF p. 3 (Figure 5-2, Table 5-1), p. 16
+# (Table 7-1, addresses), p. 41 (DDF0008A outline, drawing 4222047/E 07/2024), p. 42 (example board layout),
+# p. 43 (example stencil design).
+
+[part]
+mpn = "INA236AIDDFR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "INA236AIDDFR"
+reference = "U"
+description = "Current, voltage and power monitor, 16-bit, -0.3 to 48 V common mode, 1.2 V-compliant I2C, address option A (0x40-0x43), alert output, SOT-23-THIN-8 (DDF0008A)"
+keywords = "current monitor power monitor shunt I2C INA236 SOT-23 DDF"
+datasheet = "https://www.ti.com/lit/ds/symlink/ina236.pdf"
+datasheet_rev = "SBOSA81D"
+sheet = "Texas-Instruments/INA236AIDDFR.md"
+notes = [
+  "Land pattern = TI example board layout DDF0008A (SBOSA81D p. 42): eight pads 1.05 x 0.45 mm, 0.65 mm pitch, 2.6 mm between pad-row centres, R0.05 corners; non-solder-mask-defined (0.05 MAX all around), mask expansion left to the board default; stencil p. 43 equal to the pads (paste = true).",
+  "Pad order read from the p. 42 drawing: pin 1 top left, 1-4 down the left row, 5 bottom right, 8 top right.",
+  "The DDF0008A land is shared by INA236AIDDFR and INA236BIDDFR (same datasheet, same package, same pin table, SBOSA81D pp. 3, 37): the [footprint] section is identical in both files.",
+  "ALERT is open drain (Table 5-1, p. 3; may float if unused, p. 14): open_collector. A0 is tied to GND, VS, SDA or SCL to set the address (Table 7-1, p. 16): input.",
+  "Kelvin routing from IN+/IN- to the shunt and the VS bypass are layout rules (p. 31, §8.4.1), not part of the footprint.",
+  "BOM v1 line 54 (x4, 0x40-0x43).",
+]
+
+[[pins]]
+number = "4"
+name = "VS"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "1"
+name = "IN+"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "2"
+name = "IN-"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "SCL"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "6"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "7"
+name = "A0"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "8"
+name = "ALERT"
+type = "open_collector"
+side = "right"
+
+[[pins]]
+number = "3"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_DDF0008A_SOT-23-8_1.6x2.9mm_P0.65mm"
+description = "Texas Instruments DDF0008A SOT-23-THIN-8, 1.6 x 2.9 mm body, 0.65 mm pitch, TI example land pattern (drawing 4222047/E)"
+tags = "SOT-23-8 SOT-23-THIN DDF0008A DDF Texas"
+datasheet = "https://www.ti.com/lit/ds/symlink/ina236.pdf"   # shared land: one document for the footprint file
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "DDF0008A example board layout, drawing 4222047/E 07/2024 (SBOSA81D p. 42); stencil p. 43"
+body = { x = 1.6, y = 2.9, z = 1.1, standoff = 0.0, cite = "DDF0008A outline (SBOSA81D p. 41, 4222047/E): body 1.55-1.65 x 2.85-2.95, 1.1 MAX height, standoff 0.0-0.1" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 4
+step = 1
+start = [-1.3, -0.975]
+pitch = [0.0, 0.65]
+size = [1.05, 0.45]
+shape = "roundrect"
+rratio = 0.111
+type = "smd"
+cite = "DDF0008A example board layout: 8X (1.05) x 8X (0.45), 6X (0.65), (2.6) between pad-row centres, (R0.05) TYP (rratio 0.05/0.45); pins 1-4 left, top to bottom"
+
+[[footprint.rows]]
+first = 5
+count = 4
+step = 1
+start = [1.3, 0.975]
+pitch = [0.0, -0.65]
+size = [1.05, 0.45]
+shape = "roundrect"
+rratio = 0.111
+type = "smd"
+cite = "DDF0008A example board layout: pins 5-8 right, bottom to top"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.65
+cite = "DDF0008A example board layout, 6X (0.65)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "8"
+value = 2.6
+cite = "DDF0008A example board layout, (2.6)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [1.05, 0.45]
+cite = "DDF0008A example board layout, 8X (1.05), 8X (0.45)"
+
+[[checks]]
+kind = "pad_count"
+value = 8
+cite = "DDF0008A outline, eight leads"

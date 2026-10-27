@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        21.52,
+        1.85,
+        1.14
+      ]
+    }
+  ],
+  "library": "Hirose",
+  "name": "Hirose_DF40C-100DP-0.4V_2x50-1MP_P0.4mm_Vertical",
+  "source": "envelope from EDC3-311351-00 sheet 1: B = 21.52 +/- 0.2 (table, 100DP), 1.85 +/- 0.2, height 1.14 +/- 0.15; DF40 cat. p. 10 A = 21.52"
+}

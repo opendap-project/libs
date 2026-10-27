@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.1
+      ],
+      "size": [
+        3.0,
+        3.0,
+        1.0
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_DGS0010A_VSSOP-10_3x3mm_P0.5mm",
+  "source": "envelope from SLOS854D p. 70, DGS0010A outline: 2.9-3.1 x 2.9-3.1 (notes 3, 4), lead span 4.75-5.05, 1.1 MAX height, standoff 0.05-0.15 (nominal 0.1)"
+}

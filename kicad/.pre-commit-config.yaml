@@ -1,0 +1,37 @@
+# Local checks for every commit. Install once per clone: pre-commit install
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-added-large-files
+        args: ["--maxkb=5120"]
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v6.2.0
+    hooks:
+      - id: reuse
+  - repo: https://github.com/opendap-project/toolkit-hooks
+    rev: v0.4.0
+    hooks:
+      - id: no-stray-files
+      - id: kicad-erc
+        exclude: ^design-rules/(vendor/|[^/]+/test/)  # rule-set test boards fail by design
+      - id: kicad-drc
+        exclude: ^design-rules/(vendor/|[^/]+/test/)
+      - id: no-fab-outputs
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.24.0
+    hooks:
+      - id: markdownlint-cli2
+  - repo: local
+    hooks:
+      - id: colour-theme
+        name: Schematic colour theme (CRAFT-103)
+        entry: python3 colour-themes/check_theme.py
+        language: system
+        files: ^colour-themes/
+        pass_filenames: false

@@ -1,0 +1,509 @@
+# FH35C-51S-0.3SHW: Hirose FH35C dual-sided FPC connector, 51 contacts, 0.3 mm pitch (staggered 2 x 0.6 mm rows),
+# 0.9 mm high, back-flip actuator, horizontal SMT. Ordered as FH35C-51S-0.3SHW(50), HRS No. CL580-2920-9-50.
+# Source: FH35C cat. = Hirose FH35C Series catalog 2013.11 (Aug. 1, 2019 stamp), sha256 8e389661...f789.
+#   p. 3 Connector Dimensions + table (n = 51: A 16.9, B 14.4, C 15, D 15.63, E 16.33);
+#   p. 4 Recommended Land Dimensions + table (n = 51: B 14.4, C 15) and Recommended Land and Metal Mask Dimensions.
+#   Read from 300 and 800 dpi renders; every number below checked on the image.
+#
+# Recommended land dimensions (p. 4), view "Connector image, mounted surface" (top view of the board):
+#   Row R1 (upper in the view, rear): (n-1)/2 = 25 lands, 0.3 +/- 0.02 wide, 0.65 +/- 0.03 long, 0.6 pitch, span B = 14.4.
+#   Row R2 (lower in the view):       (n+1)/2 = 26 lands, 0.3 +/- 0.02 wide, 0.8 +/- 0.03 long,  0.6 pitch, span C = 15.
+#   Stagger: B is centred in C (each R1 land midway between two R2 lands: 0.3 offset), true position 0.02 to datum X.
+#   Vertical chain (3.6) = 0.65 (R1 land) + 2.15 +/- 0.03 (gap between R1 bottom edge and R2 top edge) + 0.8 (R2 land).
+#   Metal fittings (2): 0.4 +/- 0.03 wide x 0.95 +/- 0.03 tall; inner edge 0.5 +/- 0.03 outboard of the last R2 land centre
+#     (end of C); bottom edge 0.2 +/- 0.03 above the R2 land bottom edge.
+#   Connector outline (thin line, "mounted surface"): front/rear edges at R1 top + (0.35) and about 3.0 below it
+#     (p. 3 side view depth (3)).
+# Coordinates (origin = body centroid: body y from R1 top + 0.35 to + 3.35, so R1 top edge at y = -1.85):
+#   R1: y -1.85 ... -1.20, centre -1.525; x = -7.2 ... +7.2.
+#   R2: top -1.20 + 2.15 = 0.95, bottom 1.75, centre 1.35; x = -7.5 ... +7.5.
+#   Fittings: x = +/-(7.5 + 0.5 + 0.2) = +/-8.2; bottom 1.75 - 0.2 = 1.55, top 0.60, centre 1.075.
+#   Body x centred on the lands (symmetric drawing).
+# Numbering: contacts alternate R2, R1, R2, ... (odd on the 26-land row, even on the 25-land row). Contact 1 is not dimensioned
+#   in the catalog (sheet: UNVERIFIED). Pin 1 is put at the +x end of R2, the end under the triangular "polarity mark" in the
+#   p. 3 front view (third-angle projection, x preserved). Numbering therefore runs right to left (pitch -0.3 per contact).
+# Orientation: as drawn on p. 4 (mating features as the drawing shows them); pin 1 is bottom-right, not top-left, as a result.
+# Stencil (p. 4, t = 0.1): openings 0.23 +/- 0.02 wide x 0.55 +/- 0.02 (R1) / 0.65 +/- 0.02 (R2); rows 2.4 +/- 0.02 apart;
+#   fittings 0.3 +/- 0.02 x 0.7 +/- 0.02. Not encoded (no per-row paste field); see notes.
+
+[part]
+mpn = "FH35C-51S-0.3SHW"
+second_source = "Hirose FH35C-51S-0.3SHW(99) (BOM v1 line 71)"
+manufacturer = "Hirose"
+library = "Hirose"
+symbol = "FH35C-51S-0.3SHW"
+reference = "J"
+description = "FH35C dual-sided FPC connector, 51 contacts, 0.3 mm pitch staggered (2 rows at 0.6 mm), 0.9 mm high, back-flip actuator, horizontal SMT"
+keywords = "connector FPC FFC FH35C 0.3mm 51 back-flip dual-sided MIPI DSI Hirose"
+datasheet = "https://www.hirose.com/en/product/series/FH35C"
+datasheet_rev = "FH35C catalog 2013.11 (Aug. 1, 2019 copyright stamp)"
+sheet = "Hirose/FH35C-51S-0.3SHW.md"
+sheet_pins = "none: the sheet lists no per-contact table; contact numbering from the drawing (UNVERIFIED), checked by pad_count"
+notes = [
+  "Orderable code is FH35C-51S-0.3SHW(50) (5,000/reel; (99) = 500/reel). mpn kept without the packaging suffix as requested by the task; set the Manufacturer/MPN field to the ordered code if the BOM requires it.",
+  "Contact 1 position UNVERIFIED (not in the catalog; the sheet says the same). Chosen: odd contacts on the 26-land row (n+1)/2, even on the 25-land row, pin 1 at the +x end below the p. 3 polarity mark. Confirm against Hirose's drawing for approval before release.",
+  "Sheet has no pin table with names: symbol pins named Pin_1 ... Pin_51 (passive).",
+  "Body y extent (3.0) and the 0.35 rear offset are reference dimensions ((3), (0.35)); the body centroid origin depends on them.",
+  "Metal-fitting lands are unnumbered (no net); the sheet does not list them as pins.",
+  "Stencil from p. 4 (t = 0.1 mm): 0.23 x 0.55 (25-row), 0.23 x 0.65 (26-row), fittings 0.3 x 0.7; not encoded, generator default 1:1 applies. Encode if the generator gains per-row paste apertures.",
+]
+
+[[pins]]
+number = "1"
+name = "Pin_1"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "2"
+name = "Pin_2"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "3"
+name = "Pin_3"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "4"
+name = "Pin_4"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "5"
+name = "Pin_5"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "6"
+name = "Pin_6"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "7"
+name = "Pin_7"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "8"
+name = "Pin_8"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "9"
+name = "Pin_9"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "10"
+name = "Pin_10"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "11"
+name = "Pin_11"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "12"
+name = "Pin_12"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "13"
+name = "Pin_13"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "14"
+name = "Pin_14"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "15"
+name = "Pin_15"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "16"
+name = "Pin_16"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "17"
+name = "Pin_17"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "18"
+name = "Pin_18"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "19"
+name = "Pin_19"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "20"
+name = "Pin_20"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "21"
+name = "Pin_21"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "22"
+name = "Pin_22"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "23"
+name = "Pin_23"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "24"
+name = "Pin_24"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "25"
+name = "Pin_25"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "26"
+name = "Pin_26"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "27"
+name = "Pin_27"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "28"
+name = "Pin_28"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "29"
+name = "Pin_29"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "30"
+name = "Pin_30"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "31"
+name = "Pin_31"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "32"
+name = "Pin_32"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "33"
+name = "Pin_33"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "34"
+name = "Pin_34"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "35"
+name = "Pin_35"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "36"
+name = "Pin_36"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "37"
+name = "Pin_37"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "38"
+name = "Pin_38"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "39"
+name = "Pin_39"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "40"
+name = "Pin_40"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "41"
+name = "Pin_41"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "42"
+name = "Pin_42"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "43"
+name = "Pin_43"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "44"
+name = "Pin_44"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "45"
+name = "Pin_45"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "46"
+name = "Pin_46"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "47"
+name = "Pin_47"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "48"
+name = "Pin_48"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "49"
+name = "Pin_49"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "50"
+name = "Pin_50"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "51"
+name = "Pin_51"
+type = "passive"
+side = "left"
+gap = false
+
+[footprint]
+name = "Hirose_FH35C-51S-0.3SHW_1x51-1MP_P0.3mm_Horizontal"
+description = "Hirose FH35C-51S-0.3SHW FPC connector, 51 contacts, 0.3 mm pitch staggered rows (0.6 mm per row), back-flip, dual-sided (FH35C catalog p. 4)"
+tags = "connector Hirose FH35C FPC 0.3mm 51 staggered horizontal"
+attr = "smd"
+courtyard_class = "connector"
+land_pattern = "manufacturer"
+land_pattern_cite = "FH35C catalog 2013.11 p. 4, Recommended Land Dimensions (n = 51: B 14.4, C 15)"
+body = { x = 16.9, y = 3.0, z = 0.9, standoff = 0.0, cite = "FH35C cat. p. 3: A = 16.9 +/- 0.15 (n = 51), depth (3) reference, height 0.9 +/- 0.1; p. 4 outline 0.35 inside the 25-row land edge" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 26
+step = 2
+start = [7.5, 1.35]
+pitch = [-0.6, 0.0]
+size = [0.3, 0.8]
+shape = "rect"
+type = "smd"
+cite = "FH35C cat. p. 4: (n+1)/2 lands 0.3 +/- 0.02 x 0.8 +/- 0.03, pitch 0.6, span C = 15"
+
+[[footprint.rows]]
+first = 2
+count = 25
+step = 2
+start = [7.2, -1.525]
+pitch = [-0.6, 0.0]
+size = [0.3, 0.65]
+shape = "rect"
+type = "smd"
+cite = "FH35C cat. p. 4: (n-1)/2 lands 0.3 +/- 0.02 x 0.65 +/- 0.03, pitch 0.6, span B = 14.4, 2.15 +/- 0.03 row gap"
+
+[[footprint.pads]]
+number = ""
+at = [-8.2, 1.075]
+size = [0.4, 0.95]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "FH35C cat. p. 4: fitting 0.4 +/- 0.03 x 0.95 +/- 0.03, 0.5 +/- 0.03 from C end, 0.2 +/- 0.03 above the long-land bottom edge"
+
+[[footprint.pads]]
+number = ""
+at = [8.2, 1.075]
+size = [0.4, 0.95]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "FH35C cat. p. 4: fitting 0.4 +/- 0.03 x 0.95 +/- 0.03, 0.5 +/- 0.03 from C end, 0.2 +/- 0.03 above the long-land bottom edge"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "3"
+value = 0.6
+cite = "FH35C cat. p. 4: 0.6 pitch within a row"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "2"
+value = -0.3
+cite = "FH35C cat. p. 4: rows staggered by half the row pitch (B centred in C; (C - B)/2 = 0.3); contact pitch 0.3"
+
+[[checks]]
+kind = "dx"
+a = "51"
+b = "1"
+value = 15.0
+cite = "FH35C cat. p. 4 table: C = 15 for FH35C-51S-0.3SHW(50)"
+
+[[checks]]
+kind = "dx"
+a = "50"
+b = "2"
+value = 14.4
+cite = "FH35C cat. p. 4 table: B = 14.4 for FH35C-51S-0.3SHW(50)"
+
+[[checks]]
+kind = "dy"
+a = "2"
+b = "1"
+value = 2.875
+cite = "FH35C cat. p. 4: row centres 0.65/2 + 2.15 + 0.8/2 = 2.875 (overall (3.6))"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.3, 0.8]
+cite = "FH35C cat. p. 4: 0.3 +/- 0.02 x 0.8 +/- 0.03"
+
+[[checks]]
+kind = "pad_size"
+a = "2"
+value = [0.3, 0.65]
+cite = "FH35C cat. p. 4: 0.3 +/- 0.02 x 0.65 +/- 0.03"
+
+[[checks]]
+kind = "pad_count"
+value = 51
+cite = "FH35C cat. p. 3 table: 51 contacts (fittings unnumbered)"

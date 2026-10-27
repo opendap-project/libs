@@ -1,0 +1,13 @@
+.DS_Store
+.claude/settings.local.json
+
+# KiCad
+*-backups/
+*.kicad_prl
+fp-info-cache
+_autosave-*
+*.lck
+~*.lck
+
+# Python
+__pycache__/

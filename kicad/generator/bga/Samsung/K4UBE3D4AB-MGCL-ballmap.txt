@@ -1,0 +1,28 @@
+# K4UBE3D4AB-MGCL 200FBGA ball positions, top view: Samsung K4UBE3D4AB-MGCL datasheet Rev. 1.0
+# (Aug. 2021), p. 9, section 4.1 Package Dimension, bottom view (mirrored here to the top view).
+# Transcribed from the drawing, cell by cell: 'o' = a ball, '-' = no ball. Columns 1..12 left to
+# right, rows A..AB top to bottom (no I, O, Q, S, X, Z). The drawing shows ten balls per row in
+# columns 1-5 and 8-12 and no balls in rows L and M. Second reading of the ball set for
+# test_bga.py; the names come from the ballout table, p. 10.
+A  |ooooo--ooooo|
+B  |ooooo--ooooo|
+C  |ooooo--ooooo|
+D  |ooooo--ooooo|
+E  |ooooo--ooooo|
+F  |ooooo--ooooo|
+G  |ooooo--ooooo|
+H  |ooooo--ooooo|
+J  |ooooo--ooooo|
+K  |ooooo--ooooo|
+L  |------------|
+M  |------------|
+N  |ooooo--ooooo|
+P  |ooooo--ooooo|
+R  |ooooo--ooooo|
+T  |ooooo--ooooo|
+U  |ooooo--ooooo|
+V  |ooooo--ooooo|
+W  |ooooo--ooooo|
+Y  |ooooo--ooooo|
+AA |ooooo--ooooo|
+AB |ooooo--ooooo|

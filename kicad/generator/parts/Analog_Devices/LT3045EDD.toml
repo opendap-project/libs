@@ -1,0 +1,165 @@
+# LT3045EDD#TRPBF - Analog Devices 20 V, 500 mA ultra-low-noise, ultra-high-PSRR LDO, DD package (DFN-10, 3 x 3 mm)
+# Sources: LT3045 datasheet Rev. D, p. 2 (pin configuration), pp. 12-13 (pin functions), p. 29
+# (DD package drawing, LTC DWG 05-08-1699 Rev C, with its recommended solder pad dimensions).
+
+[part]
+mpn = "LT3045EDD#TRPBF"
+manufacturer = "Analog Devices"
+library = "Analog_Devices"
+symbol = "LT3045EDD"
+reference = "U"
+description = "LDO regulator, 20 V, 500 mA, 0.8 uVrms noise, 76 dB PSRR at 1 MHz, programmable current limit and power good, single-resistor output set, DFN-10 (DD) 3 x 3 mm with exposed pad"
+keywords = "LDO linear regulator ultra low noise high PSRR LT3045 DFN DD"
+datasheet = "https://www.analog.com/media/en/technical-documentation/data-sheets/lt3045.pdf"
+datasheet_rev = "Rev. D"
+sheet = "Analog-Devices/LT3045EDD-TRPBF.md"
+notes = [
+  "Land pattern = the recommended solder pad pitch and dimensions of the DD package drawing (LT3045 Rev. D p. 29): 0.50 mm pitch, pads 0.25 x 0.70 mm, outer extent 3.55 mm (pad centres at +-(3.55 - 0.70) / 2 = +-1.425 mm), centre pad 1.65 x 2.38 mm.",
+  "Corner radius and paste on the exposed pad are not given: roundrect 0.25 (KLC default) and full paste on the centre pad, both UNVERIFIED (to review against the ADI demo layout, p. 21 Figure 8).",
+  "Pins 1 and 2 (IN) are two pads with their own numbers; pin 11 is the exposed pad, GND (p. 13).",
+  "Thermal vias under the pad: not specified by ADI (UNVERIFIED); none are drawn.",
+]
+
+[[pins]]
+number = "1"
+name = "IN"
+type = "power_in"
+side = "left"
+
+[[pins]]
+number = "2"
+name = "IN"
+type = "power_in"
+side = "left"
+
+[[pins]]
+number = "3"
+name = "EN/UV"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "6"
+name = "PGFB"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "ILIM"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "7"
+name = "SET"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "10"
+name = "OUT"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "OUTS"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "4"
+name = "PG"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "8"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "11"
+name = "GND"
+type = "power_in"
+side = "bottom"
+sheet_number = "11 (EP)"
+
+[footprint]
+name = "Analog_DD_DFN-10-1EP_3x3mm_P0.5mm_EP1.65x2.38mm"
+description = "Analog Devices (Linear Technology) DD DFN-10, 3 x 3 mm body, 0.5 mm pitch, exposed pad 1.65 x 2.38 mm, recommended solder pads of LTC DWG 05-08-1699 Rev C"
+tags = "DFN DD 05-08-1699 LT3045 Analog Devices"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "LT3045 Rev. D p. 29, DD package drawing, recommended solder pad pitch and dimensions"
+body = { x = 3.0, y = 3.0, z = 0.8, standoff = 0.0, cite = "LT3045 Rev. D p. 29: body 3.00 +- 0.10, height 0.75 +- 0.05 (z = max)" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 5
+step = 1
+start = [-1.425, -1.0]
+pitch = [0.0, 0.5]
+size = [0.7, 0.25]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "LT3045 Rev. D p. 29: 0.50 pitch, pads 0.25 x 0.70, outer extent 3.55; pins 1-5 left, top to bottom"
+
+[[footprint.rows]]
+first = 6
+count = 5
+step = 1
+start = [1.425, 1.0]
+pitch = [0.0, -0.5]
+size = [0.7, 0.25]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "LT3045 Rev. D p. 29: 0.50 pitch, pads 0.25 x 0.70, outer extent 3.55; pins 6-10 right, bottom to top"
+
+[[footprint.pads]]
+number = "11"
+at = [0.0, 0.0]
+size = [1.65, 2.38]
+shape = "rect"
+type = "smd"
+cite = "LT3045 Rev. D p. 29: exposed pad 1.65 x 2.38"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "LT3045 Rev. D p. 29: 0.5 pitch"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "10"
+value = 2.85
+cite = "LT3045 Rev. D p. 29: outer extent minus one pad length"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.7, 0.25]
+cite = "LT3045 Rev. D p. 29: pad length 0.70, width 0.25"
+
+[[checks]]
+kind = "pad_size"
+a = "11"
+value = [1.65, 2.38]
+cite = "LT3045 Rev. D p. 29: centre pad 1.65 x 2.38"
+
+[[checks]]
+kind = "pad_count"
+value = 11
+cite = "LT3045 Rev. D p. 29: 10 leads and the exposed pad"

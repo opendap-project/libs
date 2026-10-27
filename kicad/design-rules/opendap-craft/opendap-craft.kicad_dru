@@ -1,0 +1,160 @@
+(version 1)
+# OpenDAP craft rules: the part of the OpenDAP PCB craft standard that KiCad DRC can check
+#
+# Standard: docs/specs/pcb-craft-standard.md (CRAFT-xx IDs). Every rule name
+# carries its CRAFT ID and its quality level (RFC 0010): Q0-Q1 rules are
+# errors, Q2-Q4 rules are warnings. The rest of the standard is checked by
+# `odapkit craft check` (toolkit-hardware) or by review.
+#
+# Composition: these rules sit after a fab rule set and before the product
+# rules in a board's <project>.dru.toml (odapkit dru compose). They only use
+# constraints the fab sets do not use (assertion, silk_clearance, track_angle,
+# track_segment_length), so they never relax a fab limit. KiCad applies every
+# matching assertion, so a product rule cannot relax them either: the
+# exemptions are built in, and are the only ones:
+#   - impedance-controlled net classes, named after their impedance as the
+#     T1 board names them: <name>_<ohms>D (differential, for example
+#     USB3_90D) or <name>_<ohms>SE (single-ended). Their widths come from the
+#     stackup; they are exempt from CRAFT-40 and CRAFT-43;
+#   - rule areas named CRAFT-EXEMPT* or containing ESCAPE (a BGA escape,
+#     where the fab floors apply): the copper inside them is exempt from
+#     CRAFT-40, CRAFT-41, CRAFT-43 and CRAFT-47.
+#
+# Property names (Height, Thickness, Font, Orientation, Mirrored, Line_Width,
+# Fill, Diameter, Hole, Width, Start_X...) were each tested with kicad-cli
+# 10.0.7, failing and passing: an unknown property makes an assertion fail on
+# every object instead of reporting an error. track_angle takes bare degrees:
+# "135deg" makes KiCad drop the whole rules file without an error.
+#
+# Use: compose it with odapkit dru, or copy it next to the KiCad project as
+# <project>.kicad_dru.
+
+
+# --- Silkscreen ---
+
+# CRAFT-01: one typeface, KiCad's stroke font, regular and upright (KLC F5.1
+# sizes are given in this font; a stroke font plots as lines of one width).
+(rule "OpenDAP CRAFT-01 [Q2]: Silk text in the stroke font, regular, upright"
+	(severity warning)
+	(condition "A.Type == 'Text' && A.Visible && (A.Layer == 'F.SilkS' || A.Layer == 'B.SilkS')")
+	(constraint assertion "A.Font == 'KiCad Font' && A.Italic == 0 && A.Bold == 0")
+)
+
+# CRAFT-02: text sizes from the closed set, height x stroke, width = height:
+# 0.8 x 0.15 (dense areas only), 1.0 x 0.15 (reference designators, KLC
+# F5.1), 1.6 x 0.24 (labels), 2.0 x 0.30 (board name). 0.8 mm and 0.15 mm are
+# the prototype fab's minimums.
+(rule "OpenDAP CRAFT-02 [Q2]: Silk text size from the set"
+	(severity warning)
+	(condition "A.Type == 'Text' && A.Visible && (A.Layer == 'F.SilkS' || A.Layer == 'B.SilkS')")
+	(constraint assertion "A.Width == A.Height && ((A.Height == 0.8mm && A.Thickness == 0.15mm) || (A.Height == 1.0mm && A.Thickness == 0.15mm) || (A.Height == 1.6mm && A.Thickness == 0.24mm) || (A.Height == 2.0mm && A.Thickness == 0.3mm))")
+)
+
+# CRAFT-03: two reading directions, from the bottom edge (0) and from the
+# right edge (90). A flipped footprint keeps its text angle, so the same two
+# values hold on the bottom side.
+(rule "OpenDAP CRAFT-03 [Q2]: Silk text at 0 or 90 degrees"
+	(severity warning)
+	(condition "A.Type == 'Text' && A.Visible && (A.Layer == 'F.SilkS' || A.Layer == 'B.SilkS')")
+	(constraint assertion "A.Orientation == 0 || A.Orientation == 90")
+)
+
+# CRAFT-04: text reads from its own side: unmirrored on top, mirrored on the
+# bottom.
+(rule "OpenDAP CRAFT-04 [Q1]: Silk text reads from its own side"
+	(condition "A.Type == 'Text' && A.Visible && (A.Layer == 'F.SilkS' || A.Layer == 'B.SilkS')")
+	(constraint assertion "(A.Layer == 'F.SilkS' && A.Mirrored == 0) || (A.Layer == 'B.SilkS' && A.Mirrored == 1)")
+)
+
+# CRAFT-05: one silk stroke, 0.15 mm, for every outline and mark (KLC F5.1
+# allows 0.10-0.15 mm; the prototype fab's minimum line is 0.15 mm). Filled marks (pin-1
+# triangles, dots, the brand mark) have no stroke and are not checked.
+(rule "OpenDAP CRAFT-05 [Q2]: Silk line width 0.15 mm"
+	(severity warning)
+	(condition "A.Type == 'Graphic' && A.Fill == 'None' && (A.Layer == 'F.SilkS' || A.Layer == 'B.SilkS')")
+	(constraint assertion "A.Line_Width == 0.15mm")
+)
+
+# CRAFT-07: silk keeps 0.15 mm from pads (JLCPCB's minimum to pads; KLC F5.1
+# recommends 0.2 mm). KiCad measures this to the pad copper and reports it as
+# silk_over_copper. Silk inside a mask opening is CRAFT-06, a Board Setup
+# check.
+(rule "OpenDAP CRAFT-07 [Q2]: Silk clearance to pads"
+	(severity warning)
+	(condition "A.Type == 'Pad' || B.Type == 'Pad'")
+	(constraint silk_clearance (min 0.15mm))
+)
+
+# CRAFT-07, vias: silk keeps 0.15 mm from every via land. KiCad measures silk
+# to the via hole, so the value is 0.15 mm plus the largest ring in the
+# CRAFT-45 set (0.30 / 0.60 mm: 0.15 mm).
+(rule "OpenDAP CRAFT-07 [Q2]: Silk clearance to vias"
+	(severity warning)
+	(condition "A.Type == 'Via' || B.Type == 'Via'")
+	(constraint silk_clearance (min 0.3mm))
+)
+
+# CRAFT-08 (silk 0.5 mm from the board edge) is not here: in kicad-cli
+# 10.0.7, silk_clearance against Edge.Cuts skips silk lines and reports
+# inconsistent distances for text (0.8 to 3.0 mm for the same text-to-cutout
+# geometry). odapkit craft check measures it instead.
+
+# CRAFT-09: silk text keeps 0.15 mm from any other silk, so every character
+# stands alone. KiCad measures text through a polygon approximation: expect
+# about 0.1 mm of spread near the limit.
+(rule "OpenDAP CRAFT-09 [Q2]: Silk text clear of other silk"
+	(severity warning)
+	(condition "(A.Type == 'Text' || B.Type == 'Text') && (A.Layer == 'F.SilkS' || A.Layer == 'B.SilkS') && (B.Layer == 'F.SilkS' || B.Layer == 'B.SilkS')")
+	(constraint silk_clearance (min 0.15mm))
+)
+
+
+# --- Routing ---
+
+# Impedance classes are named <NAME>_<ohms>D or <NAME>_<ohms>SE with 10-299
+# ohms; the patterns require a digit after the underscore so names such as
+# BAT_SENSE are not taken for impedance classes.
+
+# CRAFT-40: every straight segment at a multiple of 45 degrees (0.001 mm
+# tolerance on the coordinates). Arcs are checked by odapkit craft check
+# (CRAFT-42): KiCad DRC gives arcs no property of their own.
+(rule "OpenDAP CRAFT-40 [Q2]: Track segments at multiples of 45 degrees"
+	(severity warning)
+	(condition "A.Type == 'Track' && !(A.NetClass == '*_1?D' || A.NetClass == '*_2?D' || A.NetClass == '*_3?D' || A.NetClass == '*_4?D' || A.NetClass == '*_5?D' || A.NetClass == '*_6?D' || A.NetClass == '*_7?D' || A.NetClass == '*_8?D' || A.NetClass == '*_9?D' || A.NetClass == '*_1??D' || A.NetClass == '*_2??D' || A.NetClass == '*_1?SE' || A.NetClass == '*_2?SE' || A.NetClass == '*_3?SE' || A.NetClass == '*_4?SE' || A.NetClass == '*_5?SE' || A.NetClass == '*_6?SE' || A.NetClass == '*_7?SE' || A.NetClass == '*_8?SE' || A.NetClass == '*_9?SE' || A.NetClass == '*_1??SE' || A.NetClass == '*_2??SE') && !A.intersectsArea('CRAFT-EXEMPT*') && !A.intersectsArea('*ESCAPE*')")
+	(constraint assertion "(A.End_X - A.Start_X < 0.001mm && A.End_X - A.Start_X > -0.001mm) || (A.End_Y - A.Start_Y < 0.001mm && A.End_Y - A.Start_Y > -0.001mm) || ((A.End_X - A.Start_X) - (A.End_Y - A.Start_Y) < 0.001mm && (A.End_X - A.Start_X) - (A.End_Y - A.Start_Y) > -0.001mm) || ((A.End_X - A.Start_X) + (A.End_Y - A.Start_Y) < 0.001mm && (A.End_X - A.Start_X) + (A.End_Y - A.Start_Y) > -0.001mm)")
+)
+
+# CRAFT-41: no right-angle or acute corners between connected segments
+# (the angle between them is at least 135 degrees). Bare degrees: see header.
+(rule "OpenDAP CRAFT-41 [Q3]: Track corners of 135 degrees or more"
+	(severity warning)
+	(condition "A.Type == 'Track' && !A.intersectsArea('CRAFT-EXEMPT*') && !A.intersectsArea('*ESCAPE*')")
+	(constraint track_angle (min 135))
+)
+
+# CRAFT-43: track widths from the OpenDAP series (mm): 0.08, 0.1, 0.15, 0.2,
+# 0.25, 0.3, 0.4, 0.5, 0.6, 0.8, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 5.0;
+# copper wider than 5 mm is a pour in all but name and is not checked.
+# Impedance classes take their widths from the stackup instead.
+(rule "OpenDAP CRAFT-43 [Q2]: Track width from the series"
+	(severity warning)
+	(condition "A.Type == 'Track' && !(A.NetClass == '*_1?D' || A.NetClass == '*_2?D' || A.NetClass == '*_3?D' || A.NetClass == '*_4?D' || A.NetClass == '*_5?D' || A.NetClass == '*_6?D' || A.NetClass == '*_7?D' || A.NetClass == '*_8?D' || A.NetClass == '*_9?D' || A.NetClass == '*_1??D' || A.NetClass == '*_2??D' || A.NetClass == '*_1?SE' || A.NetClass == '*_2?SE' || A.NetClass == '*_3?SE' || A.NetClass == '*_4?SE' || A.NetClass == '*_5?SE' || A.NetClass == '*_6?SE' || A.NetClass == '*_7?SE' || A.NetClass == '*_8?SE' || A.NetClass == '*_9?SE' || A.NetClass == '*_1??SE' || A.NetClass == '*_2??SE') && !A.intersectsArea('CRAFT-EXEMPT*') && !A.intersectsArea('*ESCAPE*')")
+	(constraint assertion "A.Width == 0.08mm || A.Width == 0.1mm || A.Width == 0.15mm || A.Width == 0.2mm || A.Width == 0.25mm || A.Width == 0.3mm || A.Width == 0.4mm || A.Width == 0.5mm || A.Width == 0.6mm || A.Width == 0.8mm || A.Width == 1.0mm || A.Width == 1.5mm || A.Width == 2.0mm || A.Width == 2.5mm || A.Width == 3.0mm || A.Width == 3.5mm || A.Width == 4.0mm || A.Width == 5.0mm || A.Width > 5.0mm")
+)
+
+# CRAFT-45: vias from the OpenDAP set, drill / land (mm): 0.10 / 0.25 (laser
+# microvia), 0.20 / 0.46, 0.30 / 0.60. Each meets the prototype fab's HDI and
+# multilayer drill and ring minimums (0.075 mm microvia ring, 5 mil
+# mechanical ring).
+(rule "OpenDAP CRAFT-45 [Q2]: Via from the set"
+	(severity warning)
+	(condition "A.Type == 'Via'")
+	(constraint assertion "(A.Hole == 0.1mm && A.Diameter == 0.25mm) || (A.Hole == 0.2mm && A.Diameter == 0.46mm) || (A.Hole == 0.3mm && A.Diameter == 0.6mm)")
+)
+
+# CRAFT-47: no jogs: no straight segment shorter than 0.1 mm.
+(rule "OpenDAP CRAFT-47 [Q4]: No track segment shorter than 0.1 mm"
+	(severity warning)
+	(condition "A.Type == 'Track' && !A.intersectsArea('CRAFT-EXEMPT*') && !A.intersectsArea('*ESCAPE*')")
+	(constraint track_segment_length (min 0.1mm))
+)

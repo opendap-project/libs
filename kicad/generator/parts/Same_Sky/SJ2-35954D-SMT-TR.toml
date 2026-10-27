@@ -1,0 +1,226 @@
+# Same Sky SJ2-35954D-SMT-TR: 3.5 mm 4-conductor (TRRS) audio jack, right angle, SMT, tip and ring-1 switches.
+# Primary source: Same Sky datasheet "SERIES: SJ2-3595X-SMT | AUDIO JACK", rev 1.05, dated 09/12/2024, 4 pages,
+# downloaded 2026-10-24 from https://www.sameskydevices.com/product/resource/sj2-3595x-smt.pdf
+# (sha256 41bfe21d4f246be60a465564fb9388bb5654fc58b0468d37877385496fb6d557). The local cache directory
+# was empty; the file is kept only in the scratchpad (w6/). Page 2 rendered and read at 200-500 dpi.
+#
+# Drawing frame ("Recommended PCB Layout, Top View", p. 2): plug axis horizontal, front nose to the LEFT,
+# x' measured from the body front face (datum A, where the 2.00 long nose starts) toward the rear,
+# y' from the plug axis (+y' down). The footprint keeps this orientation (mating side at the left, as the
+# drawing shows); pin 4 is top-left, pin 1 bottom-left (rotating to put pin 1 top-left would move the
+# mating side). Origin = centre of the overall envelope 14.0 x 6.3: x' from -2.00 (nose front) to
+# +12.00 (rear) -> centre x' = 5.00; footprint x = x' - 5.00, y = y'.
+#
+# Pad positions (p. 2 layout): x' = 2.8 (#4 top, #1 bottom), 5.5 (#3), 9.3 (#2), 10.5 (#11, NPTH), 11.5 (#10).
+# y: 2.75 from axis to the inner (lower) edge of #2/#10; 5.6 between inner edges of #2/#10 and #3/#11
+#    -> #2/#10 centre y' = -(2.75 + 0.80) = -3.55; #3/#11 centre y' = 5.6 - 2.75 + 0.80 = +3.65.
+#    2.45 from axis and 4.93 overall locate the inner edges of #4 and #1 (extension lines coincide with
+#    those pad edges; pixel check agrees within 0.03 mm): #4 centre y' = -(2.45 + 1.00) = -3.45,
+#    #1 centre y' = (4.93 - 2.45) + 1.00 = +3.48. The pads' 2.0/1.6 side is along y, 1.5 along x
+#    (measured on the drawing).
+
+[part]
+mpn = "SJ2-35954D-SMT-TR"
+second_source = "Same Sky SJ2-35894D-SMT-TR (BOM v1 line 30)"
+manufacturer = "Same Sky"
+library = "Same_Sky"
+symbol = "SJ2-35954D-SMT-TR"
+reference = "J"
+description = "3.5 mm 4-conductor (TRRS) audio jack, right angle, SMT, tip and ring-1 switches, tape and reel"
+keywords = "audio jack 3.5mm TRRS headphone SMT switch Same Sky SJ2-3595"
+datasheet = "https://www.sameskydevices.com/product/resource/sj2-3595x-smt.pdf"
+datasheet_rev = "SJ2-3595X-SMT rev 1.05, 09/12/2024"
+sheet = "Same-Sky/SJ2-35954D-SMT-TR.md"
+sheet_pins = "none: the sheet has no pinout (datasheet not downloaded there); pins from the SJ2-3595x-SMT datasheet rev 1.05, which the parts-lib manifest must list (its URL returns 404)"
+notes = [
+  "Datasheet obtained this session: the manifest URL (sj2-3595xd-smt.pdf) is 404; the series datasheet is sj2-3595x-smt.pdf (covers SJ2-35954A/B/D-SMT). manifest.toml and the parts-lib sheet need updating (URL, sha256, pin table, dimensions).",
+  "Spec-sheet discrepancy: the sheet has no pin table (every field UNVERIFIED). Pins from the datasheet p. 2 table, SJ2-35954D-SMT column: 1 sleeve, 2 tip, 3 ring 1, 4 ring 2, 10 tip switch, 11 ring 1 switch. Pin names here (SLEEVE, TIP, RING1, RING2, TIP_SW, RING1_SW) are OpenDAP spellings of those labels.",
+  "Switch contacts (10 with tip 2, 11 with ring 1) are drawn as normally closed in the schematic (break when the plug is inserted): read from the p. 2 schematic symbol, UNVERIFIED by text.",
+  "NPTH phi 1.40 at x' = 10.5 on the axis for the phi 1.20 locating peg (side view).",
+  "Land pattern = manufacturer 'Recommended PCB Layout' (PCB tolerance +/-0.05).",
+  "Front view: the nose (phi 5.00 ring, axis 1.8 +/-0.2 above the seating plane) has a feature 0.40 below the seating plane ('0.40' dimension, front view): the board likely needs an edge or cut-out under the nose. Interpretation UNVERIFIED; check before placing the jack away from the board edge.",
+  "Body: rear housing 12.0 long is DERIVED (14.0 overall - 2.00 nose, side view); width 6.3 (8.3 over the terminals); height 4.00 +/-0.2 (front view). Nose phi 5.00 x 2.00.",
+  "The grey '1.2' on the layout is the reference distance from datum A to the step in the housing outline; not a pad dimension.",
+]
+
+[[pins]]
+number = "2"
+name = "TIP"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "10"
+name = "TIP_SW"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "3"
+name = "RING1"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "11"
+name = "RING1_SW"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "4"
+name = "RING2"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "1"
+name = "SLEEVE"
+type = "passive"
+side = "left"
+gap = true
+
+[footprint]
+name = "Same_Sky_SJ2-35954D-SMT-TR_Jack_3.5mm_TRRS_Horizontal"
+description = "Same Sky SJ2-35954D-SMT-TR 3.5 mm TRRS jack, SMT, tip and ring-1 switches (datasheet SJ2-3595X-SMT rev 1.05, p. 2)"
+tags = "audio jack 3.5mm TRRS headphone Same Sky SJ2-3595"
+attr = "smd"
+courtyard_class = "connector"
+land_pattern = "manufacturer"
+land_pattern_cite = "SJ2-3595X-SMT rev 1.05 p. 2, Recommended PCB Layout, Top View"
+body = { x = 14.0, y = 6.3, z = 4.0, standoff = 0.0, cite = "SJ2-3595X-SMT rev 1.05 p. 2: side view 14.0 overall incl. 2.00 nose; front view 6.3 wide, 4.00 +/-0.2 high" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "4"
+at = [-2.2, -3.45]
+size = [1.5, 2.0]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "SJ2-3595X-SMT p. 2 layout: 2-(2.0X1.5), x' 2.8, inner edge 2.45 above axis"
+
+[[footprint.pads]]
+number = "1"
+at = [-2.2, 3.48]
+size = [1.5, 2.0]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "SJ2-3595X-SMT p. 2 layout: 2-(2.0X1.5), x' 2.8, inner edge 4.93 - 2.45 = 2.48 below axis"
+
+[[footprint.pads]]
+number = "3"
+at = [0.5, 3.65]
+size = [1.5, 1.6]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "SJ2-3595X-SMT p. 2 layout: 4-(1.6X1.5), x' 5.5, inner edge 5.6 - 2.75 below axis"
+
+[[footprint.pads]]
+number = "2"
+at = [4.3, -3.55]
+size = [1.5, 1.6]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "SJ2-3595X-SMT p. 2 layout: 4-(1.6X1.5), x' 9.3, inner edge 2.75 above axis"
+
+[[footprint.pads]]
+number = "11"
+at = [5.5, 3.65]
+size = [1.5, 1.6]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "SJ2-3595X-SMT p. 2 layout: 4-(1.6X1.5), x' 10.5, inner edge 5.6 - 2.75 below axis"
+
+[[footprint.pads]]
+number = "10"
+at = [6.5, -3.55]
+size = [1.5, 1.6]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "SJ2-3595X-SMT p. 2 layout: 4-(1.6X1.5), x' 11.5, inner edge 2.75 above axis"
+
+[[footprint.pads]]
+number = ""
+at = [5.5, 0.0]
+size = [1.4, 1.4]
+shape = "circle"
+type = "np_thru_hole"
+drill = 1.4
+cite = "SJ2-3595X-SMT p. 2 layout: phi 1.40 at x' 10.5 on the plug axis (peg phi 1.20, side view)"
+
+[[footprint.model]]
+size = [12.0, 6.3, 4.0]
+at = [1.0, 0.0, 0.0]
+cite = "SJ2-3595X-SMT p. 2: housing 14.0 - 2.00 = 12.0 (DERIVED) x 6.3 x 4.00"
+
+[[footprint.model]]
+size = [2.0, 5.0, 4.3]
+at = [-6.0, 0.0, 0.0]
+cite = "SJ2-3595X-SMT p. 2: nose 2.00 long, phi 5.00, axis 1.8 above seating (top at 4.3 DERIVED); the 0.40 below-seating feature is not modelled"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "3"
+value = 2.7
+cite = "SJ2-3595X-SMT p. 2 layout: 5.5 - 2.8"
+
+[[checks]]
+kind = "dx"
+a = "4"
+b = "2"
+value = 6.5
+cite = "SJ2-3595X-SMT p. 2 layout: 9.3 - 2.8"
+
+[[checks]]
+kind = "dx"
+a = "4"
+b = "10"
+value = 8.7
+cite = "SJ2-3595X-SMT p. 2 layout: 11.5 - 2.8"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "11"
+value = 7.7
+cite = "SJ2-3595X-SMT p. 2 layout: 10.5 - 2.8"
+
+[[checks]]
+kind = "dy"
+a = "2"
+b = "3"
+value = 7.2
+cite = "SJ2-3595X-SMT p. 2 layout: 5.6 between inner edges + 1.6 pad"
+
+[[checks]]
+kind = "dy"
+a = "4"
+b = "1"
+value = 6.93
+cite = "SJ2-3595X-SMT p. 2 layout: 4.93 between inner edges + 2.0 pad"
+
+[[checks]]
+kind = "pad_size"
+a = "4"
+value = [1.5, 2.0]
+cite = "SJ2-3595X-SMT p. 2 layout: 2-(2.0X1.5)"
+
+[[checks]]
+kind = "pad_size"
+a = "3"
+value = [1.5, 1.6]
+cite = "SJ2-3595X-SMT p. 2 layout: 4-(1.6X1.5)"
+
+[[checks]]
+kind = "pad_count"
+value = 6
+cite = "SJ2-3595X-SMT p. 2 layout: #1, #2, #3, #4, #10, #11"

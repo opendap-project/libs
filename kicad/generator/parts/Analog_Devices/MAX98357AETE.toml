@@ -1,0 +1,275 @@
+# MAX98357AETE+T - Analog Devices (Maxim) mono Class D amplifier with I2S/TDM PCM input, 16-pin TQFN 3 x 3 mm (T1633+4)
+# Sources: MAX98357A/MAX98357B datasheet 19-6779 Rev 11 (5/18), PDF p. 15 (pin configuration, pin description),
+# p. 35 (package table: code T1633+4, outline 21-0136, land pattern 90-0031), pp. 36-37 (outline 21-0136 rev O,
+# drawn as images: read from 130 dpi renders). Page numbers are PDF page numbers of the cached copy.
+#
+# Land pattern 90-0031 is not reproduced in the datasheet and could not be fetched (analog.com timed out from
+# this host, 2026-10-25). Land pattern DERIVED per IPC-7351B (nominal density), as for CS43198-CNZR.
+#
+# Package 21-0136 rev O, column 16L 3x3, with the T1633-4 row of the second exposed-pad table, which gives
+# this package code a custom lead length (note 9, p. 37):
+#   D = E = 2.90 / 3.00 / 3.10; b = 0.20 / 0.25 / 0.30; e = 0.50 BSC; L = 0.35 / 0.45 / 0.55 (T1633-4);
+#   D2 = E2 = 0.95 / 1.10 / 1.25; A = 0.70 / 0.75 / 0.80; A1 = 0 / 0.02 / 0.05; k = 0.25 min; 4 terminals per side.
+#   Top view (p. 15): pin 1 at the index corner, counter-clockwise: 1-4, 5-8, 9-12, 13-16.
+#
+# IPC-7351B derivation (nominal density). J values as tabulated for IPC-7351B nominal density; UNVERIFIED against
+# the standard text: Jt = 0.30, Jh = 0.00, Js = -0.04; F = 0.05, P = 0.05.
+#   Ltol = 3.10 - 2.90 = 0.20; Zmax = 2.90 + 0.60 + sqrt(0.20^2 + 0.05^2 + 0.05^2) = 3.50 + 0.2121 = 3.7121 -> 3.71 (rounded to 0.01, nearest, as CS43198-CNZR)
+#   Smin = 2.90 - 2 x 0.55 = 1.80; Smax = 3.10 - 2 x 0.35 = 2.40; Stol = 0.60; Stol(RMS) = sqrt(0.20^2 + 2 x 0.20^2) = 0.3464
+#   Smax(RMS) = 2.40 - (0.60 - 0.3464)/2 = 2.2732; Gmin = 2.2732 - 0 - sqrt(0.3464^2 + 0.05^2 + 0.05^2) = 2.2732 - 0.3536 = 1.9196 -> 1.92
+#   Xmax = 0.20 - 0.08 + sqrt(0.10^2 + 0.05^2 + 0.05^2) = 0.12 + 0.1225 = 0.2425 -> 0.24
+#   Pad length (Z - G)/2 = 0.895; pad centre (Z + G)/4 = 1.4075; width 0.24. Copper gap between pads 0.26.
+#   Inner pad edge 0.96 vs exposed-pad land edge 0.55: 0.41 clearance. Corner: row end 0.75 + 0.12 = 0.87 < 0.96.
+#
+# Exposed pad: land = nominal D2 = E2 = 1.10 square ("connect to a solid ground plane", p. 15).
+# EP paste: one 0.90 x 0.90 aperture = 0.81 / 1.21 mm^2 = 67 % (OpenDAP choice, UNVERIFIED).
+# No thermal vias drawn: the datasheet gives none and the EP is not internally connected (p. 15); vias to the
+# ground plane are a layout choice.
+
+[part]
+mpn = "MAX98357AETE+T"
+manufacturer = "Analog Devices"
+library = "Analog_Devices"
+symbol = "MAX98357AETE"
+reference = "U"
+description = "Mono filterless Class D amplifier, PCM input (I2S, left-justified, 8-slot TDM), no MCLK, pin-selected gain, 2.5-5.5 V supply, 16-pin TQFN (T1633+4) 3 x 3 mm with exposed pad"
+keywords = "class D amplifier speaker I2S TDM PCM MAX98357A Maxim TQFN"
+datasheet = "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf"
+datasheet_rev = "19-6779 Rev 11"
+sheet = "Analog-Devices/MAX98357AETE-T.md"
+notes = [
+  "Symbol and file named MAX98357AETE, as LT3045EDD: the '+T' suffix (lead-free, tape and reel) stays in the MPN field. The parts-lib sheet file is MAX98357AETE-T.md ('+' written '-').",
+  "Land pattern derived per IPC-7351B nominal density from outline 21-0136 rev O (Rev 11 pp. 36-37): Maxim land pattern 90-0031 (p. 35) not read. J values UNVERIFIED against the standard text. Replace with 90-0031 once it is read.",
+  "Lead length: package code T1633-4 has a custom L = 0.35 / 0.45 / 0.55 (second exposed-pad table and note 9, p. 37), not the 0.30 / 0.40 / 0.50 of the generic 16L column.",
+  "Pins 7/8 (VDD) and 3/11/15 (GND) are separate pads with their own numbers; pins 5, 6, 12, 13 are N.C.: visible no_connect pins (CRAFT-125). The exposed pad is pad EP, not internally connected, connected to the ground plane (p. 15): passive.",
+  "Body z = 0.80 mm is the maximum height (A, p. 37); x/y nominal 3.00.",
+]
+
+[[pins]]
+number = "7"
+name = "VDD"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "8"
+name = "VDD"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "16"
+name = "BCLK"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "14"
+name = "LRCLK"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "1"
+name = "DIN"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "4"
+name = "SD_MODE"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "2"
+name = "GAIN_SLOT"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "9"
+name = "OUTP"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "10"
+name = "OUTN"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "5"
+name = "NC"
+type = "no_connect"
+side = "right"
+gap = true
+sheet_name = "N.C."
+
+[[pins]]
+number = "6"
+name = "NC"
+type = "no_connect"
+side = "right"
+sheet_name = "N.C."
+
+[[pins]]
+number = "12"
+name = "NC"
+type = "no_connect"
+side = "right"
+sheet_name = "N.C."
+
+[[pins]]
+number = "13"
+name = "NC"
+type = "no_connect"
+side = "right"
+sheet_name = "N.C."
+
+[[pins]]
+number = "3"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "11"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "15"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "EP"
+name = "EP"
+type = "passive"
+side = "bottom"
+sheet_name = "Exposed pad"
+
+[footprint]
+name = "Maxim_T1633-4_TQFN-16-1EP_3x3mm_P0.5mm_EP1.1x1.1mm"
+description = "Maxim/Analog Devices TQFN-16 (T1633+4, outline 21-0136), 3 x 3 mm body, 0.5 mm pitch, exposed pad 1.1 mm; land pattern derived per IPC-7351B nominal from MAX98357A Rev 11 pp. 36-37"
+tags = "TQFN QFN 16 T1633 21-0136 MAX98357A Maxim"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "ipc7351b"
+land_pattern_cite = "MAX98357A/B 19-6779 Rev 11 pp. 36-37, outline 21-0136 rev O (16L 3x3, T1633-4); IPC-7351B nominal derivation in comments"
+body = { x = 3.0, y = 3.0, z = 0.8, standoff = 0.0, cite = "Rev 11 p. 37, 21-0136 16L 3x3: D = E 2.90-3.10, A 0.70-0.80, A1 0-0.05" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 4
+step = 1
+start = [-1.4075, -0.75]
+pitch = [0.0, 0.5]
+size = [0.895, 0.24]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "Rev 11 p. 37, e = 0.50 BSC; pad 0.895 x 0.24 at 1.4075 from the IPC-7351B nominal derivation (see comments); pins 1-4 left, top to bottom"
+
+[[footprint.rows]]
+first = 5
+count = 4
+step = 1
+start = [-0.75, 1.4075]
+pitch = [0.5, 0.0]
+size = [0.24, 0.895]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "Rev 11 p. 37, e = 0.50 BSC; IPC-7351B derivation; pins 5-8 bottom, left to right"
+
+[[footprint.rows]]
+first = 9
+count = 4
+step = 1
+start = [1.4075, 0.75]
+pitch = [0.0, -0.5]
+size = [0.895, 0.24]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "Rev 11 p. 37, e = 0.50 BSC; IPC-7351B derivation; pins 9-12 right, bottom to top"
+
+[[footprint.rows]]
+first = 13
+count = 4
+step = 1
+start = [0.75, -1.4075]
+pitch = [-0.5, 0.0]
+size = [0.24, 0.895]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "Rev 11 p. 37, e = 0.50 BSC; IPC-7351B derivation; pins 13-16 top, right to left"
+
+[[footprint.pads]]
+number = "EP"
+at = [0.0, 0.0]
+size = [1.1, 1.1]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "Rev 11 p. 37, T1633-4: D2 = E2 nominal 1.10"
+
+[[footprint.paste]]
+start = [0.0, 0.0]
+pitch = [0.0, 0.0]
+count = [1, 1]
+size = [0.9, 0.9]
+cite = "OpenDAP choice (the datasheet gives no stencil): 67 % EP paste coverage, UNVERIFIED"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "Rev 11 p. 37, e = 0.50 BSC"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "4"
+value = 1.5
+cite = "Rev 11 p. 37, (ND - 1) x e = 3 x 0.5"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "12"
+value = 2.815
+cite = "IPC-7351B derivation from Rev 11 p. 37: (Z + G)/2 = (3.71 + 1.92)/2"
+
+[[checks]]
+kind = "dy"
+a = "16"
+b = "5"
+value = 2.815
+cite = "IPC-7351B derivation from Rev 11 p. 37: (Z + G)/2"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.895, 0.24]
+cite = "IPC-7351B derivation from Rev 11 p. 37: (Z - G)/2 x X"
+
+[[checks]]
+kind = "pad_size"
+a = "EP"
+value = [1.1, 1.1]
+cite = "Rev 11 p. 37, T1633-4: D2 = E2 nominal 1.10"
+
+[[checks]]
+kind = "pad_count"
+value = 17
+cite = "Rev 11 p. 15: 16 terminals and the exposed pad"

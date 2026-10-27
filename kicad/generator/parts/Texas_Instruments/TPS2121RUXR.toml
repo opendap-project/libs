@@ -1,0 +1,214 @@
+# TPS2121RUXR - TI 2.8-22 V dual-input priority power mux, 4.5 A, RUX0012A (VQFN-HR-12, 2 x 2.5 mm)
+# Sources: SLVSEA3F (TPS212x datasheet, Aug 2018 rev. Aug 2020), PDF pp. 4-5 (Figure 6-2 RUX pinout,
+# pin functions); mechanical addendum drawing 4224010/A 11/2017: PDF p. 38 package outline, p. 39
+# example board layout, p. 40 example stencil design (PDF page numbers of the cached tps2121.pdf).
+# Pad centres were read from a 150 dpi render of p. 39 against the dimension labels (125 px/mm).
+
+[part]
+mpn = "TPS2121RUXR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPS2121RUXR"
+reference = "U"
+description = "2.8-22 V dual-input priority power multiplexer with seamless switchover, 4.5 A, adjustable current limit, VQFN-HR-12 (RUX0012A) 2 x 2.5 mm"
+keywords = "power mux multiplexer priority switchover ideal diode TPS2121 VQFN-HR RUX0012A"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps2121.pdf"
+datasheet_rev = "SLVSEA3F"
+sheet = "Texas-Instruments/TPS2121RUXR.md"
+notes = [
+  "Land pattern = TI example board layout RUX0012A (SLVSEA3F p. 39): eight signal pads (0.2) x (0.6) at 6X 0.5 pitch in two rows (2.3) apart (pins 12-9 on top, 3-6 on the bottom); four power pads 4X (1.05) x 4X (0.4), (1.35) between the column centres and 2X (0.7) between the row centres (pins 1, 2 left, 8, 7 right).",
+  "Non-solder-mask-defined pads (0.05 MAX all around, p. 39): the mask expansion is left to the board default. The drawing shows vias in the power pads (VIA TYP): a layout choice, not part of the footprint.",
+  "Stencil (p. 40): apertures equal the pads (100 % printed coverage), so paste = true.",
+  "Body z = 1.0 mm is the maximum height (1 MAX, p. 38); x/y nominal (1.9-2.1 x 2.4-2.6).",
+  "OUT is two pads (1, 8): pin 1 power_out, pin 8 passive, so ERC reads one driver.",
+]
+
+[[pins]]
+number = "7"
+name = "IN1"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "2"
+name = "IN2"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "5"
+name = "OV1"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "4"
+name = "OV2"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "6"
+name = "PR1"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "3"
+name = "CP2"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "1"
+name = "OUT"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "8"
+name = "OUT"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "ST"
+type = "output"
+side = "right"
+gap = true
+
+[[pins]]
+number = "10"
+name = "ILM"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "11"
+name = "SS"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "12"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_RUX0012A_VQFN-HR-12_2x2.5mm_P0.5mm"
+description = "Texas Instruments RUX0012A VQFN-HR-12, 2 x 2.5 mm body, TI example land pattern and stencil (SLVSEA3F pp. 39-40, drawing 4224010/A)"
+tags = "VQFN-HR QFN RUX0012A TPS2121 Texas"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SLVSEA3F p. 39, RUX0012A example board layout (4224010/A 11/2017); stencil p. 40"
+body = { x = 2.0, y = 2.5, z = 1.0, standoff = 0.0, cite = "SLVSEA3F p. 38, RUX0012A outline: 1.9-2.1 x 2.4-2.6, 1 MAX height, standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 3
+count = 4
+step = 1
+start = [-0.75, 1.15]
+pitch = [0.5, 0.0]
+size = [0.2, 0.6]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSEA3F p. 39: 8X (0.2) x 8X (0.6), 6X 0.5 pitch, rows (2.3) apart; pins 3-6 bottom row left to right, (R0.05) TYP"
+
+[[footprint.rows]]
+first = 9
+count = 4
+step = 1
+start = [0.75, -1.15]
+pitch = [-0.5, 0.0]
+size = [0.2, 0.6]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSEA3F p. 39: pins 9-12 top row right to left"
+
+[[footprint.pads]]
+number = "1"
+at = [-0.675, -0.35]
+size = [1.05, 0.4]
+shape = "roundrect"
+rratio = 0.125
+type = "smd"
+cite = "SLVSEA3F p. 39: 4X (1.05) x 4X (0.4), (1.35) between column centres, 2X (0.7) between row centres"
+
+[[footprint.pads]]
+number = "2"
+at = [-0.675, 0.35]
+size = [1.05, 0.4]
+shape = "roundrect"
+rratio = 0.125
+type = "smd"
+cite = "SLVSEA3F p. 39: below pin 1"
+
+[[footprint.pads]]
+number = "7"
+at = [0.675, 0.35]
+size = [1.05, 0.4]
+shape = "roundrect"
+rratio = 0.125
+type = "smd"
+cite = "SLVSEA3F p. 39: mirror of pin 2"
+
+[[footprint.pads]]
+number = "8"
+at = [0.675, -0.35]
+size = [1.05, 0.4]
+shape = "roundrect"
+rratio = 0.125
+type = "smd"
+cite = "SLVSEA3F p. 39: mirror of pin 1"
+
+[[checks]]
+kind = "pitch"
+a = "3"
+b = "4"
+value = 0.5
+cite = "SLVSEA3F p. 39, 6X 0.5"
+
+[[checks]]
+kind = "dy"
+a = "12"
+b = "3"
+value = 2.3
+cite = "SLVSEA3F p. 39, (2.3)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "8"
+value = 1.35
+cite = "SLVSEA3F p. 39, 1.35"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "2"
+value = 0.7
+cite = "SLVSEA3F p. 39, 2X (0.7)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [1.05, 0.4]
+cite = "SLVSEA3F p. 39, 4X (1.05), 4X (0.4)"
+
+[[checks]]
+kind = "pad_size"
+a = "3"
+value = [0.2, 0.6]
+cite = "SLVSEA3F p. 39, 8X (0.2), 8X (0.6)"
+
+[[checks]]
+kind = "pad_count"
+value = 12
+cite = "SLVSEA3F p. 38, 12 terminals, no exposed pad"

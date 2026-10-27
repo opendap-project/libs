@@ -1,0 +1,398 @@
+# GCT USB4105-GF-A: USB Type-C receptacle for USB 2.0, SMT, PCB top mount.
+# Primary source: GCT drawing USB4105 revision B4 (18/12/23), sheet 1 of 2 (sha256 fb331fba...c0e5).
+# Rendered and read at 500 dpi. The "Recommended PCB Layout" is "as viewed from component side",
+# tolerance +/-0.05; that is the footprint frame used here: signal pads at the top (-y), PCB edge at the
+# bottom (+y), mating side toward +y; A1 at top-left.
+#
+# Distances along y in the drawing are given from the PCB edge (d, toward the pads):
+#   rear stake slot centres  d = 2.60          (2x 2.60, PCB edge to slot centre)
+#   NPTH locating holes      d = 2.60 + 3.68 = 6.28
+#   front stake slot centres d = 2.60 + 4.18 = 6.78   (12x 4.18 ends on the line that is both the pads'
+#                                                       lower edge and the front slots' centre line)
+#   signal pad centres       d = 6.78 + 1.15/2 = 7.355
+# Body: 8.94 x 7.35 footprint outline; side view shows the shell front at the PCB edge (2.60 from the
+# front to the rear stake = the layout's 2.60 from the PCB edge), so the body spans d = 0 .. 7.35 and its
+# centroid is at d = 3.675. Footprint y = 3.675 - d.
+
+[part]
+mpn = "USB4105-GF-A"
+second_source = "Amphenol 12402012E212A (BOM v1 line 61)"
+manufacturer = "GCT"
+library = "GCT"
+symbol = "USB4105-GF-A"
+reference = "J"
+description = "USB Type-C receptacle for USB 2.0, 16 contacts, SMT, PCB top mount, 4 shell stakes, 5 A VBUS"
+keywords = "USB Type-C USB2.0 receptacle connector GCT USB4105"
+datasheet = "https://gct.co/files/drawings/usb4105.pdf"
+datasheet_rev = "Drawing USB4105 rev B4 (18/12/23)"
+sheet = "GCT/USB4105-GF-A.md"
+notes = [
+  "Land pattern = manufacturer 'Recommended PCB Layout' (sheet 1), component-side view, +/-0.05.",
+  "Combined GND/VBUS pads (A1/B12, A4/B9, B4/A9, B1/A12) are two pads stacked at the same position, one per pin number (KiCad USB-C practice).",
+  "Shell stakes: 4 plated slots, all numbered S1 (sheet pin table 'Shell = GND'; the sheet gives no shell pin number, S1 is an OpenDAP choice). Front pair copper 1.00 x 2.10, drill slot 0.60 x 1.70; rear pair copper 1.00 x 1.80, drill slot 0.60 x 1.40; both pairs 8.64 apart.",
+  "Spec-sheet discrepancy: the sheet says 'stake row spacing 8.64 mm (front) and 5.78 mm (rear)'. On the drawing both stake pairs are 8.64 apart (same vertical centre lines); 5.78 is the spacing of the two phi 0.65 NPTH locating holes. The sheet's 'rear slot row 4.18 / front row 2.60/3.68 from the pad row' is also inverted: 2.60 is PCB edge to rear slots, 4.18 rear slots to front slots/pad edge, 3.68 rear slots to NPTH holes.",
+  "attr = smd although the shell stakes are plated through slots (mixed part, as KiCad's own USB-C receptacle footprints do); review.",
+  "Stake length: -GF-A = default 0.95 mm stake (S +/-0.15, ordering grid); board thickness not decided (parts-lib sheet).",
+]
+
+[[pins]]
+number = "A1"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "A12"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "B1"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "B12"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "S1"
+sheet_number = "Shell"
+name = "GND"
+type = "passive"
+side = "bottom"
+gap = true
+
+[[pins]]
+number = "A4"
+name = "VBUS"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "A9"
+name = "VBUS"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "B4"
+name = "VBUS"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "B9"
+name = "VBUS"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "A5"
+name = "CC1"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "B5"
+name = "CC2"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "A6"
+name = "Dp1"
+type = "bidirectional"
+side = "left"
+gap = true
+
+[[pins]]
+number = "A7"
+name = "Dn1"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "B6"
+name = "Dp2"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "B7"
+name = "Dn2"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "A8"
+name = "SBU1"
+type = "bidirectional"
+side = "left"
+gap = true
+
+[[pins]]
+number = "B8"
+name = "SBU2"
+type = "bidirectional"
+side = "left"
+
+[footprint]
+name = "GCT_USB4105-GF-A_USB-C_Receptacle_USB2.0_Horizontal"
+description = "GCT USB4105-GF-A USB Type-C receptacle for USB 2.0, top mount, 12 signal pads P0.50 mm, 4 plated shell slots, 2 locating holes (drawing USB4105 rev B4)"
+tags = "USB Type-C USB2.0 receptacle GCT USB4105"
+attr = "smd"
+courtyard_class = "connector"
+land_pattern = "manufacturer"
+land_pattern_cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout (component side, +/-0.05)"
+body = { x = 8.94, y = 7.35, z = 3.31, standoff = 0.0, cite = "USB4105 rev B4 sheet 1: top view 8.94 x 7.35, side view 3.31" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "A1"
+at = [-3.20, -3.68]
+size = [0.60, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 4x 0.60 wide, P 0.50; spans 6.40/4.80/3.50 (combined pad with B12: two pads stacked at the same place)"
+
+[[footprint.pads]]
+number = "B12"
+at = [-3.20, -3.68]
+size = [0.60, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 4x 0.60 wide, P 0.50; spans 6.40/4.80/3.50 (combined pad with A1: two pads stacked at the same place)"
+
+[[footprint.pads]]
+number = "A4"
+at = [-2.40, -3.68]
+size = [0.60, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 4x 0.60 wide, P 0.50; spans 6.40/4.80/3.50 (combined pad with B9: two pads stacked at the same place)"
+
+[[footprint.pads]]
+number = "B9"
+at = [-2.40, -3.68]
+size = [0.60, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 4x 0.60 wide, P 0.50; spans 6.40/4.80/3.50 (combined pad with A4: two pads stacked at the same place)"
+
+[[footprint.pads]]
+number = "B8"
+at = [-1.75, -3.68]
+size = [0.30, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 8x 0.30 wide, P 0.50; spans 6.40/4.80/3.50"
+
+[[footprint.pads]]
+number = "A5"
+at = [-1.25, -3.68]
+size = [0.30, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 8x 0.30 wide, P 0.50; spans 6.40/4.80/3.50"
+
+[[footprint.pads]]
+number = "B7"
+at = [-0.75, -3.68]
+size = [0.30, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 8x 0.30 wide, P 0.50; spans 6.40/4.80/3.50"
+
+[[footprint.pads]]
+number = "A6"
+at = [-0.25, -3.68]
+size = [0.30, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 8x 0.30 wide, P 0.50; spans 6.40/4.80/3.50"
+
+[[footprint.pads]]
+number = "A7"
+at = [0.25, -3.68]
+size = [0.30, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 8x 0.30 wide, P 0.50; spans 6.40/4.80/3.50"
+
+[[footprint.pads]]
+number = "B6"
+at = [0.75, -3.68]
+size = [0.30, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 8x 0.30 wide, P 0.50; spans 6.40/4.80/3.50"
+
+[[footprint.pads]]
+number = "A8"
+at = [1.25, -3.68]
+size = [0.30, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 8x 0.30 wide, P 0.50; spans 6.40/4.80/3.50"
+
+[[footprint.pads]]
+number = "B5"
+at = [1.75, -3.68]
+size = [0.30, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 8x 0.30 wide, P 0.50; spans 6.40/4.80/3.50"
+
+[[footprint.pads]]
+number = "B4"
+at = [2.40, -3.68]
+size = [0.60, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 4x 0.60 wide, P 0.50; spans 6.40/4.80/3.50 (combined pad with A9: two pads stacked at the same place)"
+
+[[footprint.pads]]
+number = "A9"
+at = [2.40, -3.68]
+size = [0.60, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 4x 0.60 wide, P 0.50; spans 6.40/4.80/3.50 (combined pad with B4: two pads stacked at the same place)"
+
+[[footprint.pads]]
+number = "B1"
+at = [3.20, -3.68]
+size = [0.60, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 4x 0.60 wide, P 0.50; spans 6.40/4.80/3.50 (combined pad with A12: two pads stacked at the same place)"
+
+[[footprint.pads]]
+number = "A12"
+at = [3.20, -3.68]
+size = [0.60, 1.15]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "USB4105 drawing rev B4 sheet 1, Recommended PCB Layout: 12x 1.15 long, 4x 0.60 wide, P 0.50; spans 6.40/4.80/3.50 (combined pad with B1: two pads stacked at the same place)"
+
+# Shell stakes (plated slots), all S1
+[[footprint.pads]]
+number = "S1"
+at = [-4.32, -3.105]
+size = [1.0, 2.1]
+shape = "oval"
+type = "thru_hole"
+drill = [0.6, 1.7]
+cite = "USB4105 rev B4 sheet 1, layout: 8.64 between slot centres, 2x 2.10 / 2x 1.70 front slot lengths, 4x 1.00 / 4x 0.60 widths, d = 2.60 + 4.18"
+
+[[footprint.pads]]
+number = "S1"
+at = [4.32, -3.105]
+size = [1.0, 2.1]
+shape = "oval"
+type = "thru_hole"
+drill = [0.6, 1.7]
+cite = "USB4105 rev B4 sheet 1, layout: 8.64, 2x 2.10 / 2x 1.70, 4x 1.00 / 4x 0.60, d = 2.60 + 4.18"
+
+[[footprint.pads]]
+number = "S1"
+at = [-4.32, 1.075]
+size = [1.0, 1.8]
+shape = "oval"
+type = "thru_hole"
+drill = [0.6, 1.4]
+cite = "USB4105 rev B4 sheet 1, layout: 2x 1.80 / 2x 1.40 rear slot lengths, 4x 1.00 / 4x 0.60, 2x 2.60 from PCB edge"
+
+[[footprint.pads]]
+number = "S1"
+at = [4.32, 1.075]
+size = [1.0, 1.8]
+shape = "oval"
+type = "thru_hole"
+drill = [0.6, 1.4]
+cite = "USB4105 rev B4 sheet 1, layout: 2x 1.80 / 2x 1.40, 4x 1.00 / 4x 0.60, 2x 2.60 from PCB edge"
+
+# Locating holes (non-plated)
+[[footprint.pads]]
+number = ""
+at = [-2.89, -2.605]
+size = [0.65, 0.65]
+shape = "circle"
+type = "np_thru_hole"
+drill = 0.65
+cite = "USB4105 rev B4 sheet 1, layout: 2x phi 0.65, 5.78 apart, 2x 3.68 from the rear slot centre line"
+
+[[footprint.pads]]
+number = ""
+at = [2.89, -2.605]
+size = [0.65, 0.65]
+shape = "circle"
+type = "np_thru_hole"
+drill = 0.65
+cite = "USB4105 rev B4 sheet 1, layout: 2x phi 0.65, 5.78 apart, 2x 3.68 from the rear slot centre line"
+
+[[checks]]
+kind = "pitch"
+a = "A5"
+b = "B7"
+value = 0.5
+cite = "USB4105 rev B4 sheet 1, layout 0.50"
+
+[[checks]]
+kind = "dx"
+a = "A1"
+b = "B1"
+value = 6.4
+cite = "USB4105 rev B4 sheet 1, layout 6.40"
+
+[[checks]]
+kind = "dx"
+a = "A4"
+b = "B4"
+value = 4.8
+cite = "USB4105 rev B4 sheet 1, layout 4.80"
+
+[[checks]]
+kind = "dx"
+a = "B8"
+b = "B5"
+value = 3.5
+cite = "USB4105 rev B4 sheet 1, layout 3.50"
+
+[[checks]]
+kind = "pad_size"
+a = "A1"
+value = [0.6, 1.15]
+cite = "USB4105 rev B4 sheet 1, layout 4x 0.60, 12x 1.15"
+
+[[checks]]
+kind = "pad_size"
+a = "A5"
+value = [0.3, 1.15]
+cite = "USB4105 rev B4 sheet 1, layout 8x 0.30, 12x 1.15"
+
+[[checks]]
+kind = "pad_count"
+value = 20
+cite = "USB4105 rev B4 sheet 1: 16 contact numbers on 12 lands (4 combined) + 4 shell slots S1"

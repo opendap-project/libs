@@ -1,0 +1,203 @@
+# NT3H2111W0FHKH - NXP NTAG I2C plus 1k, NFC Forum Type 2 Tag with I2C interface, XQFN8 (SOT902-3),
+# body 1.6 x 1.6 x 0.5 mm.
+# Source: NXP NT3H2111_2211 product data sheet, Rev. 3.6, 21 July 2023 ("DS"), 84 pages, fetched from
+# cache.nxp.com (www.nxp.com answers 404 to non-browser fetches). Page numbers = PDF page numbers.
+#   p. 5 Table 1 (ordering: NT3H2111W0FHK, XQFN8, SOT902-3); p. 8 Figure 3 (XQFN8 pinning, transparent top
+#   view), p. 9 Table 3 (pin description); p. 70 Figure 31 (package outline SOT902-3); p. 71 Figure 32
+#   (footprint information for reflow soldering, sot902-3_fr, issue 13-01-02).
+# Figure 32 reading (800 dpi render, 845 px/mm against the 1.000 and 1.200 dimensions):
+#   lands D x C = 0.4 x 0.22 (D (8x) on all eight lands, C (7x) on seven); side lands at x = +-0.6
+#   (1.200 between column centres), y = -0.5 / 0 / +0.5 (1.000 between the outer row centres); the two
+#   centre lands (pins 4 and 8) are 0.22 x 0.4 at x = 0, y = +-0.6 (position read from the drawing:
+#   0.10 beyond the outer row centres, consistent with the package e = 0.6; not dimensioned, UNVERIFIED).
+#   The eighth land (pin 1, the wider terminal b1 = 0.30 of Figure 31) is 0.32 long instead of C: its
+#   inner edge 0.110 from the row centre, outer edge 0.320 further out (dimensions 0.110 and 0.320).
+#   The 0.025 offsets are the solder-resist opening around each land (dash-dot outline, as in NXP's
+#   sot618-1_fr convention): left to the board default. The SLx x SLy 0.5 x 0.5 dash-dot square at the
+#   centre is the "metal area not for soldering" of Figure 31: no land there.
+# Orientation: Figure 32 is drawn with the wide land at the lower right, which is Figure 3 rotated 180 deg.
+# The footprint follows Figure 3 (pin 1 top-left): 1-3 left top to bottom, 4 bottom centre, 5-7 right
+# bottom to top, 8 top centre; the pin-1 land extends upwards (towards the package corner).
+
+[part]
+mpn = "NT3H2111W0FHKH"
+second_source = "ST ST25DV04KC / ST25DV64KC (Type 5 tag, different footprint; BOM v1 line 125)"
+manufacturer = "NXP"
+library = "NXP"
+symbol = "NT3H2111W0FHKH"
+reference = "U"
+description = "NTAG I2C plus 1k: NFC Forum Type 2 Tag with I2C interface, field detection, energy harvesting, 1.67-3.6 V, XQFN8 (SOT902-3) 1.6 x 1.6 mm"
+keywords = "NFC tag NTAG NTAG I2C plus NT3H2111 Type 2 T2T dynamic tag I2C XQFN8 SOT902-3 NXP"
+datasheet = "https://www.nxp.com/docs/en/data-sheet/NT3H2111_2211.pdf"
+datasheet_rev = "Rev. 3.6, 21 July 2023"
+sheet = "NXP/NT3H2111W0FHKH.md"
+notes = [
+  "Ordering code: DS Table 1 lists NT3H2111W0FHK (XQFN8, SOT902-3); the trailing H of NT3H2111W0FHKH is the packing suffix of the orderable part (UNVERIFIED in the DS, which does not list packing codes).",
+  "Land pattern = NXP reflow-soldering footprint SOT902-3 (DS p. 71, Figure 32), transcribed as described in the header; the paste deposit is drawn inside each land and not dimensioned separately: paste = land (generator default, UNVERIFIED reduction).",
+  "Centre-land position (pins 4 and 8 at y = +-0.6) read from the drawing, not dimensioned: UNVERIFIED.",
+  "FD is an open-drain field-detect output (DS p. 2 features, §8.4): open_collector. LA/LB are the antenna coil terminals: passive. VOUT is the energy-harvesting output: power_out.",
+  "Body z = 0.5 mm is the maximum height (A max 0.5, DS p. 70); D = E = 1.60 nominal (1.55-1.65).",
+]
+
+[[pins]]
+number = "3"
+name = "SCL"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "1"
+name = "LA"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "8"
+name = "LB"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "4"
+name = "FD"
+type = "open_collector"
+side = "right"
+
+[[pins]]
+number = "7"
+name = "VOUT"
+type = "power_out"
+side = "right"
+gap = true
+
+[[pins]]
+number = "6"
+name = "VCC"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "2"
+name = "VSS"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "NXP_SOT902-3_XQFN-8_1.6x1.6mm_P0.5mm"
+description = "NXP SOT902-3 XQFN8, 1.6 x 1.6 x 0.5 mm body, NXP reflow-soldering footprint sot902-3_fr (NT3H2111_2211 data sheet Rev. 3.6, Figure 32)"
+tags = "XQFN-8 XQFN8 SOT902-3 MO-255 NTAG NT3H2111 NXP"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "NT3H2111_2211 Rev. 3.6, p. 71, Figure 32 (sot902-3_fr, issue 13-01-02)"
+body = { x = 1.6, y = 1.6, z = 0.5, standoff = 0.0, cite = "DS p. 70, Figure 31 (SOT902-3): D = E 1.55 / 1.60 / 1.65, A max 0.5, A1 0.00-0.05 (0 used)" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "1"
+at = [-0.6, -0.55]
+size = [0.4, 0.32]
+shape = "rect"
+type = "smd"
+cite = "DS p. 71: D = 0.4; pin-1 land from 0.110 inside the row centre (y = -0.5) to 0.320 outwards: y -0.39 to -0.71, centre -0.55"
+
+[[footprint.pads]]
+number = "2"
+at = [-0.6, 0.0]
+size = [0.4, 0.22]
+shape = "rect"
+type = "smd"
+cite = "DS p. 71: D x C = 0.4 x 0.22; columns 1.200 apart"
+
+[[footprint.pads]]
+number = "3"
+at = [-0.6, 0.5]
+size = [0.4, 0.22]
+shape = "rect"
+type = "smd"
+cite = "DS p. 71: D x C; outer rows 1.000 apart"
+
+[[footprint.pads]]
+number = "4"
+at = [0.0, 0.6]
+size = [0.22, 0.4]
+shape = "rect"
+type = "smd"
+cite = "DS p. 71: centre land C x D (rotated); y = +0.6 read from the drawing (UNVERIFIED)"
+
+[[footprint.pads]]
+number = "5"
+at = [0.6, 0.5]
+size = [0.4, 0.22]
+shape = "rect"
+type = "smd"
+cite = "DS p. 71: D x C"
+
+[[footprint.pads]]
+number = "6"
+at = [0.6, 0.0]
+size = [0.4, 0.22]
+shape = "rect"
+type = "smd"
+cite = "DS p. 71: D x C"
+
+[[footprint.pads]]
+number = "7"
+at = [0.6, -0.5]
+size = [0.4, 0.22]
+shape = "rect"
+type = "smd"
+cite = "DS p. 71: D x C"
+
+[[footprint.pads]]
+number = "8"
+at = [0.0, -0.6]
+size = [0.22, 0.4]
+shape = "rect"
+type = "smd"
+cite = "DS p. 71: centre land C x D (rotated); y = -0.6 read from the drawing (UNVERIFIED)"
+
+[[checks]]
+kind = "dx"
+a = "2"
+b = "6"
+value = 1.2
+cite = "DS p. 71, 1.200 between the land columns"
+
+[[checks]]
+kind = "dy"
+a = "7"
+b = "5"
+value = 1.0
+cite = "DS p. 71, 1.000 between the outer land rows"
+
+[[checks]]
+kind = "pitch"
+a = "6"
+b = "5"
+value = 0.5
+cite = "DS p. 70, e1 = 0.5"
+
+[[checks]]
+kind = "pad_size"
+a = "2"
+value = [0.4, 0.22]
+cite = "DS p. 71, D = 0.4, C = 0.22"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.4, 0.32]
+cite = "DS p. 71, D = 0.4; 0.320 (pin-1 land)"
+
+[[checks]]
+kind = "pad_count"
+value = 8
+cite = "DS p. 5, Table 1: XQFN8, 8 terminals"

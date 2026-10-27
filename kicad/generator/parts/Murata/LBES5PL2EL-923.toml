@@ -1,0 +1,1096 @@
+# LBES5PL2EL-923 - Murata Type 2EL Wi-Fi 6 + Bluetooth 5.4 + 802.15.4 module (NXP IW612), LGA-107, 8.8 x 7.7 x 1.3 mm.
+# The module datasheet (Murata "Type 2EL Datasheet", pim.murata.com TYPE2EL_PDF) could not be obtained: it
+# answers 403 to non-browser fetches (2026-10-24, again 2026-10-25). Sources used instead:
+#   E2B-54-1953 Rev. 2.0 (Type 2EL/2DL/2LL/2KL Unified Design Guide, 2025-08-21), p. 9 Figure 5 (pin
+#     assignments, top view), pp. 10-11 Table 3 (terminal names, Type 2EL column);
+#   E2B-09-1413 Rev. 9.0 (Type 2EL/2DL Hardware Application Note, 2026-05-21), §3.4 (the footprint is
+#     provided as a DXF on the website), Figure 5 (reference schematic);
+#   Murata "Module footprint, top view" DXF (2023-07-13, sha256 b9979fee8cb0ad645944f82bdc85baac4b92061e385d450f8130526bcb4c4970);
+#   Type 2EL Product Brief (March 2023): "Size: 7.7 x 8.8 x 1.3 mm".
+# DXF reading: layer "NC_Work2" holds 428 LINE entities forming 107 closed rectangles, all 0.55 x 0.25 mm
+#   (75 long in x, 32 long in y), plus the text "(TOP VIEW)"; layer "ProductsBoradOutline" holds the 8.8 x 7.7 mm
+#   outline with its corner at (0, 0). No pad numbers are in the DXF. Pads were numbered by matching the DXF grid
+#   to E2B-54-1953 Figure 5: pin 1 is the bottom-left corner pad (DXF y up), 1-16 along the bottom left to right,
+#   17-27 up the right side, 28-43 along the top right to left, 44-54 down the left side, 55-107 the inner grid;
+#   the one empty inner position (DXF x 2.025, y 1.85, left of pin 55) is the same in both. Footprint frame:
+#   X = x_dxf - 4.4, Y = 3.85 - y_dxf (body centre at the origin, +y down).
+# DXF pad grid: perimeter pitch 0.5 mm (corner pads 0.725 mm from their neighbours), perimeter columns at
+#   x = 0.575 / 8.225, rows at y = 0.575 / 7.125; inner grid 6 columns at 0.95 mm pitch (x 2.025-6.775) and
+#   9 rows at 0.5 mm pitch (y 1.85-5.85).
+
+[part]
+mpn = "LBES5PL2EL-923"
+second_source = "u-blox MAYA-W271-00B (same IW612 chip, other land; pin compatibility UNVERIFIED; BOM v1 line 55)"
+manufacturer = "Murata"
+library = "Murata"
+symbol = "LBES5PL2EL-923"
+reference = "U"
+description = "Murata Type 2EL module, NXP IW612: Wi-Fi 6 802.11a/b/g/n/ac/ax 1x1 2.4/5 GHz (SDIO 3.0), Bluetooth 5.4 BR/EDR/LE (UART, PCM), IEEE 802.15.4 (SPI), LGA-107 8.8 x 7.7 x 1.3 mm"
+keywords = "Wi-Fi WiFi 6 802.11ax Bluetooth BLE 802.15.4 Thread module IW612 Murata Type 2EL LBES5PL2EL SDIO"
+datasheet = "https://www.murata.com/en-us/products/connectivitymodule/wi-fi-bluetooth/overview/lineup/type2el"
+datasheet_rev = "Type 2EL Datasheet not obtained (403); pins from E2B-54-1953 Rev. 2.0, land from footprint DXF 2023-07-13"
+sheet = "Murata/LBES5PL2EL-923.md"
+notes = [
+  "Datasheet field = Murata Type 2EL product page: the Type 2EL Datasheet it links (https://pim.murata.com/asset/pim4/wifiBluetoothModule/TYPE2EL_PDF) answered 403 to non-browser fetches on 2026-10-24 and 2026-10-25.",
+  "Pin numbers and names = E2B-54-1953 Rev. 2.0 Table 3, Type 2EL column (pp. 10-11), identical to the parts-lib sheet pin table; positions = Figure 5 (p. 9, top view).",
+  "Land pattern = Murata module footprint DXF (top view, 2023-07-13), layer NC_Work2: 107 rectangular pads 0.55 x 0.25 mm. Whether the DXF draws the module terminals or the recommended PCB lands, and the solder-mask and stencil openings, are defined in the datasheet: UNVERIFIED. Mask and paste are drawn equal to the copper (KiCad default) until the datasheet is obtained.",
+  "Pin electrical types: the Murata documents read give no pin directions. Types follow the pin names from the module side (TX/RTS/DOUT/_OUT/SPI_TXD/SPI_INT/SD_INT outputs; RX/CTS/DIN/_IN/IND_RST_* inputs; SDIO CLK input, CMD/DAT bidirectional as the SD specification; CONFIG_HOST straps inputs; PCM_CLK/SYNC/MCLK bidirectional because the PCM role is configurable; RF_CNTL outputs, RF_CNTL3/CONFIG_XOSC_SEL and RST_IND bidirectional): UNVERIFIED against the datasheet pin table.",
+  "Reserved pins (33-36, 65, 66) are passive (connection rule in the datasheet, UNVERIFIED); NC pins (3, 77-80) are visible no_connect pins (CRAFT-125).",
+  "Ground under the module, via rules under the LGA and any keep-out under the body: not in E2B-09-1413 or E2B-54-1953; UNVERIFIED (datasheet).",
+  "Units by function: 1 power, 2 host interfaces (SDIO, UART, SPI, PCM, CONFIG_HOST straps), 3 RF, 4 control/reset/wake/coexistence, 5 NC and reserved, 6 ground (49 pins).",
+]
+
+[[units]]
+name = "Power"
+
+[[units]]
+name = "Host: SDIO, UART, SPI, PCM"
+
+[[units]]
+name = "RF"
+
+[[units]]
+name = "Control, reset, wake"
+
+[[units]]
+name = "NC and reserved"
+
+[[units]]
+name = "Ground"
+
+[[pins]]
+number = "12"
+name = "AVDD33_1"
+type = "power_in"
+side = "top"
+unit = 1
+
+[[pins]]
+number = "13"
+name = "AVDD33_2"
+type = "power_in"
+side = "top"
+unit = 1
+
+[[pins]]
+number = "31"
+name = "AVDD18_1"
+type = "power_in"
+side = "top"
+unit = 1
+gap = true
+
+[[pins]]
+number = "30"
+name = "AVDD18_2"
+type = "power_in"
+side = "top"
+unit = 1
+
+[[pins]]
+number = "40"
+name = "SD_VIO"
+type = "power_in"
+side = "top"
+unit = 1
+gap = true
+
+[[pins]]
+number = "54"
+name = "VIO"
+type = "power_in"
+side = "top"
+unit = 1
+
+[[pins]]
+number = "44"
+name = "SD_CLK"
+type = "input"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "42"
+name = "SD_CMD"
+type = "bidirectional"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "48"
+name = "SD_DAT[0]"
+type = "bidirectional"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "45"
+name = "SD_DAT[1]"
+type = "bidirectional"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "47"
+name = "SD_DAT[2]"
+type = "bidirectional"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "46"
+name = "SD_DAT[3]"
+type = "bidirectional"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "51"
+name = "UART_RX"
+type = "input"
+side = "left"
+unit = 2
+gap = true
+
+[[pins]]
+number = "50"
+name = "UART_CTS"
+type = "input"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "8"
+name = "SPI_CLK"
+type = "input"
+side = "left"
+unit = 2
+gap = true
+
+[[pins]]
+number = "4"
+name = "SPI_FRM"
+type = "input"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "6"
+name = "SPI_RXD"
+type = "input"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "60"
+name = "PCM_DIN"
+type = "input"
+side = "left"
+unit = 2
+gap = true
+
+[[pins]]
+number = "57"
+name = "PCM_CLK"
+type = "bidirectional"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "61"
+name = "PCM_SYNC"
+type = "bidirectional"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "58"
+name = "PCM_MCLK"
+type = "bidirectional"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "55"
+name = "CONFIG_HOST[0]"
+type = "input"
+side = "left"
+unit = 2
+gap = true
+
+[[pins]]
+number = "56"
+name = "CONFIG_HOST[1]"
+type = "input"
+side = "left"
+unit = 2
+
+[[pins]]
+number = "72"
+name = "SD_INT"
+type = "output"
+side = "right"
+unit = 2
+
+[[pins]]
+number = "49"
+name = "UART_TX"
+type = "output"
+side = "right"
+unit = 2
+gap = true
+
+[[pins]]
+number = "52"
+name = "UART_RTS"
+type = "output"
+side = "right"
+unit = 2
+
+[[pins]]
+number = "7"
+name = "SPI_TXD"
+type = "output"
+side = "right"
+unit = 2
+gap = true
+
+[[pins]]
+number = "5"
+name = "SPI_INT"
+type = "output"
+side = "right"
+unit = 2
+
+[[pins]]
+number = "59"
+name = "PCM_DOUT"
+type = "output"
+side = "right"
+unit = 2
+gap = true
+
+[[pins]]
+number = "15"
+name = "ANT0"
+type = "passive"
+side = "right"
+unit = 3
+
+[[pins]]
+number = "23"
+name = "ANT1"
+type = "passive"
+side = "right"
+unit = 3
+
+[[pins]]
+number = "18"
+name = "BT_15.4_IN"
+type = "passive"
+side = "right"
+unit = 3
+
+[[pins]]
+number = "27"
+name = "RF_CNTL0"
+type = "output"
+side = "right"
+unit = 3
+gap = true
+
+[[pins]]
+number = "26"
+name = "RF_CNTL1"
+type = "output"
+side = "right"
+unit = 3
+
+[[pins]]
+number = "25"
+name = "RF_CNTL3/CONFIG_XOSC_SEL"
+type = "bidirectional"
+side = "right"
+unit = 3
+
+[[pins]]
+number = "24"
+name = "RF_CNTL4"
+type = "output"
+side = "right"
+unit = 3
+
+[[pins]]
+number = "10"
+name = "PDn"
+type = "input"
+side = "left"
+unit = 4
+
+[[pins]]
+number = "63"
+name = "IND_RST_WL"
+type = "input"
+side = "left"
+unit = 4
+gap = true
+
+[[pins]]
+number = "64"
+name = "IND_RST_BT"
+type = "input"
+side = "left"
+unit = 4
+
+[[pins]]
+number = "38"
+name = "IND_RST_15.4"
+type = "input"
+side = "left"
+unit = 4
+
+[[pins]]
+number = "74"
+name = "WL_WAKE_IN"
+type = "input"
+side = "left"
+unit = 4
+gap = true
+
+[[pins]]
+number = "75"
+name = "BT15.4_WAKE_IN"
+type = "input"
+side = "left"
+unit = 4
+
+[[pins]]
+number = "69"
+name = "WCI-2_SIN"
+type = "input"
+side = "left"
+unit = 4
+gap = true
+
+[[pins]]
+number = "37"
+name = "RST_IND"
+type = "bidirectional"
+side = "right"
+unit = 4
+
+[[pins]]
+number = "73"
+name = "WL_WAKE_OUT"
+type = "output"
+side = "right"
+unit = 4
+gap = true
+
+[[pins]]
+number = "76"
+name = "BT15.4_WAKE_OUT"
+type = "output"
+side = "right"
+unit = 4
+
+[[pins]]
+number = "70"
+name = "WCI-2_SOUT"
+type = "output"
+side = "right"
+unit = 4
+gap = true
+
+[[pins]]
+number = "3"
+name = "NC"
+type = "no_connect"
+side = "left"
+unit = 5
+
+[[pins]]
+number = "77"
+name = "NC"
+type = "no_connect"
+side = "left"
+unit = 5
+
+[[pins]]
+number = "78"
+name = "NC"
+type = "no_connect"
+side = "left"
+unit = 5
+
+[[pins]]
+number = "79"
+name = "NC"
+type = "no_connect"
+side = "left"
+unit = 5
+
+[[pins]]
+number = "80"
+name = "NC"
+type = "no_connect"
+side = "left"
+unit = 5
+
+[[pins]]
+number = "33"
+name = "Reserved"
+type = "passive"
+side = "right"
+unit = 5
+
+[[pins]]
+number = "34"
+name = "Reserved"
+type = "passive"
+side = "right"
+unit = 5
+
+[[pins]]
+number = "35"
+name = "Reserved"
+type = "passive"
+side = "right"
+unit = 5
+
+[[pins]]
+number = "36"
+name = "Reserved"
+type = "passive"
+side = "right"
+unit = 5
+
+[[pins]]
+number = "65"
+name = "Reserved"
+type = "passive"
+side = "right"
+unit = 5
+
+[[pins]]
+number = "66"
+name = "Reserved"
+type = "passive"
+side = "right"
+unit = 5
+
+[[pins]]
+number = "1"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "9"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "11"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "14"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "16"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "17"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "19"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "20"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "21"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "22"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "28"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "29"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "32"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "39"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "41"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "43"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "53"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "62"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "67"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "68"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "71"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "81"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "82"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "83"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "84"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "85"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "86"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "87"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "88"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "89"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "90"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "91"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "92"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "93"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "94"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "95"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "96"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "97"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "98"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "99"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "100"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "101"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "102"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "103"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "104"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "105"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "106"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[[pins]]
+number = "107"
+name = "GND"
+type = "power_in"
+side = "bottom"
+unit = 6
+
+[footprint]
+name = "Murata_Type2EL_LGA-107_8.8x7.7mm"
+description = "Murata Type 2EL (LBES5PL2EL) module, LGA-107, 8.8 x 7.7 mm body, pads 0.55 x 0.25 mm at 0.5 mm pitch, from the Murata footprint DXF (top view, 2023-07-13)"
+tags = "Murata Type 2EL Type 2DL LBES5PL2EL LGA-107 IW612 module"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "drawing"
+land_pattern_cite = "Murata Type 2EL/2DL module footprint, top view (DXF, 2023-07-13, sha256 b9979fee...4970), layer NC_Work2; numbering per E2B-54-1953 Rev. 2.0 Figure 5 (p. 9). Mask and stencil openings UNVERIFIED (datasheet not obtained)."
+body = { x = 8.8, y = 7.7, z = 1.3, standoff = 0.0, cite = "Type 2EL Product Brief (March 2023): Size 7.7 x 8.8 x 1.3 mm; footprint DXF layer ProductsBoradOutline 8.8 x 7.7 mm. Height tolerance UNVERIFIED (datasheet)" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "1"
+at = [-3.975, 3.275]
+size = [0.25, 0.55]
+shape = "rect"
+type = "smd"
+cite = "DXF pad at (0.425, 0.575), 0.25 x 0.55; pin 1 = bottom-left corner (E2B-54-1953 Figure 5)"
+
+[[footprint.pads]]
+number = "16"
+at = [3.975, 3.275]
+size = [0.25, 0.55]
+shape = "rect"
+type = "smd"
+cite = "DXF pad at (8.375, 0.575), 0.25 x 0.55"
+
+[[footprint.pads]]
+number = "28"
+at = [3.975, -3.275]
+size = [0.25, 0.55]
+shape = "rect"
+type = "smd"
+cite = "DXF pad at (8.375, 7.125), 0.25 x 0.55"
+
+[[footprint.pads]]
+number = "43"
+at = [-3.975, -3.275]
+size = [0.25, 0.55]
+shape = "rect"
+type = "smd"
+cite = "DXF pad at (0.425, 7.125), 0.25 x 0.55"
+
+[[footprint.rows]]
+first = 2
+count = 14
+step = 1
+start = [-3.25, 3.275]
+pitch = [0.5, 0.0]
+size = [0.25, 0.55]
+shape = "rect"
+type = "smd"
+cite = "DXF bottom row y 0.575, x 1.15-7.65 at 0.5 pitch; pins 2-15 left to right"
+
+[[footprint.rows]]
+first = 17
+count = 11
+step = 1
+start = [3.825, 2.5]
+pitch = [0.0, -0.5]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF right column x 8.225, y 1.35-6.35 at 0.5 pitch; pins 17-27 bottom to top"
+
+[[footprint.rows]]
+first = 29
+count = 14
+step = 1
+start = [3.25, -3.275]
+pitch = [-0.5, 0.0]
+size = [0.25, 0.55]
+shape = "rect"
+type = "smd"
+cite = "DXF top row y 7.125, x 7.65-1.15 at 0.5 pitch; pins 29-42 right to left"
+
+[[footprint.rows]]
+first = 44
+count = 11
+step = 1
+start = [-3.825, -2.5]
+pitch = [0.0, 0.5]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF left column x 0.575, y 6.35-1.35 at 0.5 pitch; pins 44-54 top to bottom"
+
+[[footprint.rows]]
+first = 72
+count = 6
+step = -1
+start = [-2.375, -2.0]
+pitch = [0.95, 0.0]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner row y 5.85, x 2.025-6.775 at 0.95 pitch; pins 72-67 left to right (Figure 5)"
+
+[[footprint.rows]]
+first = 73
+count = 7
+step = 1
+start = [-2.375, -1.5]
+pitch = [0.0, 0.5]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner column x 2.025, y 5.35-2.35; pins 73-79 top to bottom"
+
+[[footprint.rows]]
+first = 80
+count = 4
+step = 1
+start = [-1.425, 1.5]
+pitch = [0.95, 0.0]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner row y 2.35, x 2.975-5.825; pins 80-83 left to right"
+
+[[footprint.rows]]
+first = 66
+count = 7
+step = -1
+start = [2.375, -1.5]
+pitch = [0.0, 0.5]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner column x 6.775, y 5.35-2.35; pins 66-60 top to bottom"
+
+[[footprint.rows]]
+first = 55
+count = 5
+step = 1
+start = [-1.425, 2.0]
+pitch = [0.95, 0.0]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner row y 1.85, x 2.975-6.775 (no pad at x 2.025); pins 55-59 left to right"
+
+[[footprint.rows]]
+first = 92
+count = 6
+step = 1
+start = [-1.425, -1.5]
+pitch = [0.0, 0.5]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner column x 2.975, y 5.35-2.85; pins 92-97 top to bottom"
+
+[[footprint.rows]]
+first = 98
+count = 2
+step = 1
+start = [-0.475, 1.0]
+pitch = [0.95, 0.0]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner row y 2.85, x 3.925-4.875; pins 98-99"
+
+[[footprint.rows]]
+first = 89
+count = 6
+step = -1
+start = [1.425, -1.5]
+pitch = [0.0, 0.5]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner column x 5.825, y 5.35-2.85; pins 89-84 top to bottom"
+
+[[footprint.rows]]
+first = 91
+count = 2
+step = -1
+start = [-0.475, -1.5]
+pitch = [0.95, 0.0]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner row y 5.35, x 3.925-4.875; pins 91-90"
+
+[[footprint.rows]]
+first = 104
+count = 4
+step = 1
+start = [-0.475, -1.0]
+pitch = [0.0, 0.5]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner column x 3.925, y 4.85-3.35; pins 104-107 top to bottom"
+
+[[footprint.rows]]
+first = 103
+count = 4
+step = -1
+start = [0.475, -1.0]
+pitch = [0.0, 0.5]
+size = [0.55, 0.25]
+shape = "rect"
+type = "smd"
+cite = "DXF inner column x 4.875, y 4.85-3.35; pins 103-100 top to bottom"
+
+[[checks]]
+kind = "pitch"
+a = "2"
+b = "3"
+value = 0.5
+cite = "DXF perimeter pitch 0.5 (bottom row x 1.15, 1.65)"
+
+[[checks]]
+kind = "pitch"
+a = "17"
+b = "18"
+value = 0.5
+cite = "DXF perimeter pitch 0.5 (right column y 1.35, 1.85)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "16"
+value = 7.95
+cite = "DXF corner pads x 0.425 and 8.375"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "43"
+value = -6.55
+cite = "DXF corner pads y 0.575 and 7.125 (footprint +y down)"
+
+[[checks]]
+kind = "dx"
+a = "54"
+b = "17"
+value = 7.65
+cite = "DXF side columns x 0.575 and 8.225"
+
+[[checks]]
+kind = "dx"
+a = "72"
+b = "71"
+value = 0.95
+cite = "DXF inner column pitch 0.95 (x 2.025, 2.975)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.25, 0.55]
+cite = "DXF pad 0.25 x 0.55 (top and bottom rows)"
+
+[[checks]]
+kind = "pad_size"
+a = "17"
+value = [0.55, 0.25]
+cite = "DXF pad 0.55 x 0.25 (side columns and inner grid)"
+
+[[checks]]
+kind = "pad_size"
+a = "107"
+value = [0.55, 0.25]
+cite = "DXF pad 0.55 x 0.25 (inner grid)"
+
+[[checks]]
+kind = "pad_count"
+value = 107
+cite = "DXF layer NC_Work2: 107 rectangles; E2B-54-1953 Table 3 pins 1-107"

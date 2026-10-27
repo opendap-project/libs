@@ -1,0 +1,222 @@
+# FUSB302B01MPX - onsemi programmable USB Type-C controller with USB PD BMC PHY, I2C address 0x23, WQFN-14 2.5 x 2.5 mm
+# (case 510BR, MLP-14, 0.5 mm pitch, exposed pad)
+# Sources: FUSB302B/D Rev. 5 (August 2021), PDF p. 2 (Table 1 ordering information), p. 5 (Figure 5 pin
+# assignment, top-through and bottom views; Table 3 pin description), p. 18 (Table 15 I2C slave address),
+# p. 31 (case 510BR outline and recommended land pattern, drawing 98AON13629G, issue O, 31 Aug 2016)
+# (PDF page numbers of the cached fusb302b-d.pdf). Land pattern read from a 200 dpi render of p. 31.
+
+[part]
+mpn = "FUSB302B01MPX"
+manufacturer = "onsemi"
+library = "onsemi"
+symbol = "FUSB302B01MPX"
+reference = "U"
+description = "Programmable USB Type-C controller with USB PD BMC physical layer, I2C address 0x23, source/sink/DRP, dead-battery Rd, WQFN-14 (MLP) 2.5 x 2.5 mm, 0.5 mm pitch"
+keywords = "USB Type-C PD power delivery port controller TCPM CC FUSB302 FUSB302B WQFN MLP"
+datasheet = "https://www.onsemi.com/pdf/datasheet/fusb302b-d.pdf"
+datasheet_rev = "FUSB302B/D Rev. 5"
+sheet = "onsemi/FUSB302B01MPX.md"
+notes = [
+  "FUSB302B01MPX: top mark UP, 7-bit I2C address 0x23 (FUSB302B/D p. 2 Table 1, p. 18 Table 15). Same die, package and pins as FUSB302BMPX, which differs only in the address: both files keep an identical [footprint] section (one land, case 510BR).",
+  "Land pattern = onsemi recommended land pattern, case 510BR (FUSB302B/D p. 31, 98AON13629G): 14 pads 0.30 TYP wide x (0.58) long at 0.50 TYP pitch; 2.43 between the centre lines of opposite pad rows (the dimension lines end on the red pad centre lines, in both axes); centre pad 1.45 x 1.45. Pad corners are drawn square. Note D: 'land pattern recommendation is existing industry land pattern'.",
+  "Pin order (p. 5, Figure 5, top-through view): 1-3 left top to bottom (CC2, VBUS, VDD), 4-7 bottom left to right (VDD, INT_N, SCL, SDA), 8-10 right bottom to top (GND, GND, CC1), 11-14 top right to left (CC1, VCONN, VCONN, CC2).",
+  "The exposed pad has no number in the datasheet ('Connect to GND for thermal', p. 5): it is pad 15 here, named GND; the sheet lists it as 'EP' with no name (sheet_number, sheet_name).",
+  "Solder mask and stencil openings are not given by onsemi: UNVERIFIED. The centre pad prints at full pad size (generator default); a reduced, windowed aperture is a board-level stencil decision.",
+  "Pin types from Table 3: CC1/CC2 I/O (bidirectional), VBUS input, VDD power, VCONN power-switch input (power_in), SCL input, SDA open-drain I/O (bidirectional), INT_N open-drain output (open_collector).",
+]
+
+[[pins]]
+number = "6"
+name = "SCL"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "7"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "2"
+name = "VBUS"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "5"
+name = "INT_N"
+type = "open_collector"
+side = "right"
+
+[[pins]]
+number = "10"
+name = "CC1"
+type = "bidirectional"
+side = "right"
+gap = true
+
+[[pins]]
+number = "11"
+name = "CC1"
+type = "bidirectional"
+side = "right"
+
+[[pins]]
+number = "1"
+name = "CC2"
+type = "bidirectional"
+side = "right"
+
+[[pins]]
+number = "14"
+name = "CC2"
+type = "bidirectional"
+side = "right"
+
+[[pins]]
+number = "3"
+name = "VDD"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "4"
+name = "VDD"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "12"
+name = "VCONN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "13"
+name = "VCONN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "8"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "9"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "15"
+name = "GND"
+type = "power_in"
+side = "bottom"
+sheet_number = "EP"
+sheet_name = "—"
+
+[footprint]
+name = "onsemi_510BR_WQFN-14-1EP_2.5x2.5mm_P0.5mm_EP1.45x1.45mm"
+description = "onsemi case 510BR WQFN-14 (MLP) 2.5 x 2.5 mm body, 0.5 mm pitch, 1.45 x 1.45 mm exposed pad, onsemi recommended land pattern (98AON13629G)"
+tags = "WQFN QFN MLP 510BR onsemi FUSB302B"
+datasheet = "https://www.onsemi.com/pdf/datasheet/fusb302b-d.pdf"   # shared land: one document for the footprint file
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "FUSB302B/D Rev. 5 p. 31, case 510BR recommended land pattern (98AON13629G, issue O)"
+body = { x = 2.5, y = 2.5, z = 0.8, standoff = 0.0, cite = "FUSB302B/D p. 31, case 510BR: 2.50 +/- 0.05 square, 0.75 +/- 0.05 height (0.8 max), standoff 0.025 +/- 0.025" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 3
+step = 1
+start = [-1.215, -0.5]
+pitch = [0.0, 0.5]
+size = [0.58, 0.3]
+shape = "rect"
+type = "smd"
+cite = "FUSB302B/D p. 31: 0.30 TYP x (0.58), 0.50 TYP pitch, 2.43 between opposite pad-row centre lines; pins 1-3 left, top to bottom"
+
+[[footprint.rows]]
+first = 4
+count = 4
+step = 1
+start = [-0.75, 1.215]
+pitch = [0.5, 0.0]
+size = [0.3, 0.58]
+shape = "rect"
+type = "smd"
+cite = "FUSB302B/D p. 31: pins 4-7 bottom, left to right"
+
+[[footprint.rows]]
+first = 8
+count = 3
+step = 1
+start = [1.215, 0.5]
+pitch = [0.0, -0.5]
+size = [0.58, 0.3]
+shape = "rect"
+type = "smd"
+cite = "FUSB302B/D p. 31: pins 8-10 right, bottom to top"
+
+[[footprint.rows]]
+first = 11
+count = 4
+step = 1
+start = [0.75, -1.215]
+pitch = [-0.5, 0.0]
+size = [0.3, 0.58]
+shape = "rect"
+type = "smd"
+cite = "FUSB302B/D p. 31: pins 11-14 top, right to left"
+
+[[footprint.pads]]
+number = "15"
+at = [0.0, 0.0]
+size = [1.45, 1.45]
+shape = "rect"
+type = "smd"
+cite = "FUSB302B/D p. 31: centre pad 1.45 x 1.45; stencil not given (UNVERIFIED)"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "FUSB302B/D p. 31, 0.50 TYP"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "10"
+value = 2.43
+cite = "FUSB302B/D p. 31, 2.43 between the left and right pad-row centre lines"
+
+[[checks]]
+kind = "dy"
+a = "14"
+b = "4"
+value = 2.43
+cite = "FUSB302B/D p. 31, 2.43 between the top and bottom pad-row centre lines"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.58, 0.3]
+cite = "FUSB302B/D p. 31, 0.30 TYP x (0.58)"
+
+[[checks]]
+kind = "pad_size"
+a = "15"
+value = [1.45, 1.45]
+cite = "FUSB302B/D p. 31, 1.45 x 1.45"
+
+[[checks]]
+kind = "pad_count"
+value = 15
+cite = "FUSB302B/D p. 31: 14 terminals and the exposed pad"

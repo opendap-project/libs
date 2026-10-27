@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        8.94,
+        7.35,
+        3.31
+      ]
+    }
+  ],
+  "library": "GCT",
+  "name": "GCT_USB4105-GF-A_USB-C_Receptacle_USB2.0_Horizontal",
+  "source": "envelope from USB4105 rev B4 sheet 1: top view 8.94 x 7.35, side view 3.31"
+}

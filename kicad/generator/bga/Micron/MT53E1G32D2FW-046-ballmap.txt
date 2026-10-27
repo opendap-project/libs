@@ -1,0 +1,29 @@
+# MT53E1G32D2FW-046 200-ball TFBGA (package code FW) ball positions, top view: Micron z42n
+# LPDDR4X/LPDDR4 data sheet Rev. C 02/2023, p. 43, Figure 15, bottom view (mirrored here to the
+# top view). Transcribed from the drawing, cell by cell: 'o' = a ball, '-' = no ball. Columns
+# 1..12 left to right, rows A..AB top to bottom (no I, O, Q, S, X, Z). The drawing shows ten balls
+# per row in columns 1-5 and 8-12 and no balls in rows L and M. The CXMT CXDB5CBAM-MA-B second
+# source has the same set (CXMT datasheet V1.0, p. 10, Figure 2-1). Second reading of the ball set
+# for test_bga.py; the names come from the ballout figure, p. 32.
+A  |ooooo--ooooo|
+B  |ooooo--ooooo|
+C  |ooooo--ooooo|
+D  |ooooo--ooooo|
+E  |ooooo--ooooo|
+F  |ooooo--ooooo|
+G  |ooooo--ooooo|
+H  |ooooo--ooooo|
+J  |ooooo--ooooo|
+K  |ooooo--ooooo|
+L  |------------|
+M  |------------|
+N  |ooooo--ooooo|
+P  |ooooo--ooooo|
+R  |ooooo--ooooo|
+T  |ooooo--ooooo|
+U  |ooooo--ooooo|
+V  |ooooo--ooooo|
+W  |ooooo--ooooo|
+Y  |ooooo--ooooo|
+AA |ooooo--ooooo|
+AB |ooooo--ooooo|

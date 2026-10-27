@@ -1,0 +1,42 @@
+# RK3566 FCCSP565L ball map, top view: Rockchip RK3566 Datasheet Rev 1.1 (2021-03-05), p. 23, Fig. 2-6.
+# Transcribed from the figure, cell by cell: 'o' = a ball, '-' = a cell drawn black (no ball),
+# ' ' = no cell. Columns 1..38 left to right, rows A..AR top to bottom (letters I, O, Q, S, X, Z
+# are not used). The figure draws the 0.65 mm core on the same table as the 0.4 mm ring ("Table
+# cell space is not follow the real ball size scale"): core columns 1..20 sit in table columns
+# 10..29 and core rows A..V in table rows J..AF; core ball 1<row><col>. Geometry comes from
+# Fig. 2-3 (p. 21), not from this table. Used by test_bga.py as the second reading of the pin set.
+A  |ooo-o-o-oo-oo-o-o-oo-oo--oo-oo-oo-o-oo|
+B  |oooooooooooooooooooooooooooooooooooooo|
+C  |oo                                  o-|
+D  |-o                                  oo|
+E  |oo                                  o-|
+F  |oo                                  oo|
+G  |-o                                  oo|
+H  |oo                                  o-|
+J  |-o       ooooooooooo-oooooooo       oo|
+K  |oo       o-o-ooooooo-oooooooo       oo|
+L  |-o       oooooooooo-ooooooooo       o-|
+M  |oo       oooooooooooooooooooo       oo|
+N  |oo       oooo-ooooooooooooooo       oo|
+P  |-o       oooooooooooooooooooo       o-|
+R  |oo       oooooooooooooooooooo       oo|
+T  |-o       oooooooooooooooooooo       oo|
+U  |-o       oooooooooooooooooooo       o-|
+V  |oo       -ooooooooooooooooooo       oo|
+W  |-o       ooooooooooooooo---o-       oo|
+Y  |oo       --oooooooooooooooooo       o-|
+AA |-o       oooooooooooooooooooo       oo|
+AB |oo       oooooooooooooooooooo       oo|
+AC |-o       oooooooooooooooooooo       o-|
+AD |oo       oooooooooooooooooooo       oo|
+AE |-o       ooooooooo-ooo-oooooo       o-|
+AF |oo       ooooooooo-ooo-oooooo       oo|
+AG |-o                                  oo|
+AH |-o                                  o-|
+AJ |oo                                  oo|
+AK |-o                                  oo|
+AL |oo                                  o-|
+AM |oo                                  oo|
+AN |-o                                  oo|
+AP |ooooooooooooooooooooooooooooooooooooo-|
+AR |oo-o-oo-oo-o-oo-oo-oo-oo-oo-oo-oo-oo-o|

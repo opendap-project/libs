@@ -1,0 +1,14 @@
+{
+  "board_setup_checks": {
+    "solder_mask_bridge": 1
+  },
+  "pass_column_starts_at_mm": 50.0,
+  "rules": {
+    "PCBWay flex: Copper clearance": 1,
+    "PCBWay flex: Copper to outline (UNVERIFIED)": 1,
+    "PCBWay flex: Drill": 1,
+    "PCBWay flex: Plated hole pad size": 1,
+    "PCBWay flex: Track width": 1,
+    "PCBWay flex: Via pad diameter": 1
+  }
+}

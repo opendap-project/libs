@@ -1,0 +1,316 @@
+#!/usr/bin/env python3
+"""Lint KiCad custom design rule (.kicad_dru) files.
+
+Catches the classes of mistakes that have actually slipped into this repo
+before there was any automated check:
+
+  * unbalanced parentheses / malformed s-expressions
+  * a missing or wrong `(version 1)` header
+  * a `(rule ...)` with no name or no `(constraint ...)`
+  * duplicate rule names
+  * rule names not prefixed with the fab name (e.g. "JLCPCB: ")
+  * lowercase item-type literals in conditions (`'track'`, `'via'`, `'pad'`,
+    `'text'`, `'graphic'`) — KiCad expects PascalCase (`'Track'`, `'Via'`,
+    `'Pad'`, ...); the lowercase form parses fine but silently never matches.
+  * layer names written in their Board Setup display form (`F.Silkscreen`)
+    rather than the file-format form (`F.SilkS`), and layer names matching no
+    KiCad layer at all. A display name resolves only while the board still
+    uses the default: imported boards and boards written before KiCad 6 carry
+    a different name, and the rule then stops matching. In a `(layer ...)`
+    clause that makes KiCad reject the whole file, so every rule in it quietly
+    stops being enforced; in a condition it fails with no message anywhere.
+
+No third-party dependencies; runs on any Python 3.8+.
+
+Usage:
+    python3 tools/lint_dru.py FILE [FILE ...]
+    python3 tools/lint_dru.py            # lint every *.kicad_dru in the repo
+
+Exit code is non-zero if any error is found.
+"""
+
+from __future__ import annotations
+
+import fnmatch
+import glob
+import os
+import re
+import sys
+
+# Item-type literals that must be PascalCase in KiCad expressions. Maps the
+# wrong (lowercase) spelling to the correct one for the error message.
+BAD_TYPE_LITERALS = {
+    "track": "Track",
+    "via": "Via",
+    "pad": "Pad",
+    "text": "Text",
+    "graphic": "Graphic",
+    "zone": "Zone",
+}
+
+# Matches e.g.  A.Type == 'track'   or   B.Type=='via'
+TYPE_LITERAL_RE = re.compile(r"\.Type\s*[=!]=\s*'([^']*)'")
+
+# The layer names KiCad writes in board files. These never change and are the
+# only spellings that resolve on every board.
+KNOWN_LAYERS = {
+    "F.Cu", "B.Cu",
+    "F.Adhes", "B.Adhes",
+    "F.Paste", "B.Paste",
+    "F.SilkS", "B.SilkS",
+    "F.Mask", "B.Mask",
+    "F.CrtYd", "B.CrtYd",
+    "F.Fab", "B.Fab",
+    "Edge.Cuts", "Margin",
+    "Dwgs.User", "Cmts.User", "Eco1.User", "Eco2.User",
+}
+KNOWN_LAYERS.update(f"In{n}.Cu" for n in range(1, 31))
+KNOWN_LAYERS.update(f"User.{n}" for n in range(1, 46))
+
+# Board Setup display names whose file-format spelling differs. The display
+# name is editable, and board importers overwrite it, so a rule written
+# against it stops matching. Suffix map first (these pair with an F./B./? or
+# a glob prefix), then the handful of whole names that differ.
+DISPLAY_SUFFIXES = {
+    "Silkscreen": "SilkS",
+    "Courtyard": "CrtYd",
+    "Adhesive": "Adhes",
+}
+DISPLAY_NAMES = {
+    "User.Drawings": "Dwgs.User",
+    "User.Comments": "Cmts.User",
+    "User.Eco1": "Eco1.User",
+    "User.Eco2": "Eco2.User",
+}
+
+# Layer keywords that are not layer names.
+LAYER_KEYWORDS = {"outer", "inner"}
+
+# Where a layer name can appear: a (layer "...") clause, a .Layer comparison,
+# or an existsOnLayer('...') call.
+LAYER_CLAUSE_RE = re.compile(r'\(\s*layer\s+"([^"]*)"')
+LAYER_COMPARE_RE = re.compile(r"\.Layer\s*[=!]=\s*'([^']*)'")
+EXISTS_ON_LAYER_RE = re.compile(r"existsOnLayer\(\s*'([^']*)'\s*\)")
+
+
+def check_layer_token(token: str):
+    """Return an error message for one layer name, or None if it is fine.
+
+    Handles KiCad's `?` (one character) and `*` (any run) wildcards, which is
+    how `?.SilkS` covers both the front and back layers.
+    """
+    if token in LAYER_KEYWORDS:
+        return None
+
+    if any(fnmatch.fnmatchcase(known, token) for known in KNOWN_LAYERS):
+        return None
+
+    # Resolves against no board layer. Say why, if we can tell.
+    if token in DISPLAY_NAMES:
+        return (
+            f"layer '{token}' is a Board Setup display name — use the "
+            f"file-format name '{DISPLAY_NAMES[token]}'"
+        )
+
+    prefix, _, suffix = token.rpartition(".")
+    if suffix in DISPLAY_SUFFIXES:
+        return (
+            f"layer '{token}' is a Board Setup display name — use the "
+            f"file-format name '{prefix}.{DISPLAY_SUFFIXES[suffix]}'. The "
+            f"display name is editable and board importers rewrite it, so "
+            f"this only matches while the board keeps KiCad's default"
+        )
+
+    return f"layer '{token}' matches no KiCad layer"
+
+
+class LintError(Exception):
+    pass
+
+
+def strip_comments(text: str) -> str:
+    """Blank out `#` comments and the inside of "strings" so paren counting
+    and structural checks aren't confused by them. Preserves newlines and
+    overall length so line numbers stay accurate."""
+    out = []
+    in_string = False
+    in_comment = False
+    for ch in text:
+        if ch == "\n":
+            in_comment = False
+            out.append(ch)
+            continue
+        if in_comment:
+            out.append(" ")
+            continue
+        if in_string:
+            out.append(ch)
+            if ch == '"':
+                in_string = False
+            continue
+        if ch == '"':
+            in_string = True
+            out.append(ch)
+        elif ch == "#":
+            in_comment = True
+            out.append(" ")
+        else:
+            out.append(ch)
+    return "".join(out)
+
+
+def check_paren_balance(code: str, errors: list) -> bool:
+    depth = 0
+    line = 1
+    for ch in code:
+        if ch == "\n":
+            line += 1
+        elif ch == "(":
+            depth += 1
+        elif ch == ")":
+            depth -= 1
+            if depth < 0:
+                errors.append((line, "unbalanced ')' (closes with no matching '(')"))
+                return False
+    if depth != 0:
+        errors.append((line, f"unbalanced parentheses ({depth} '(' left unclosed)"))
+        return False
+    return True
+
+
+def iter_top_level_forms(code: str):
+    """Yield (start_line, text) for each top-level parenthesised form."""
+    depth = 0
+    line = 1
+    start_line = None
+    buf = []
+    for ch in code:
+        if depth > 0:
+            buf.append(ch)
+        if ch == "(":
+            if depth == 0:
+                start_line = line
+                buf = ["("]
+            depth += 1
+        elif ch == ")":
+            depth -= 1
+            if depth == 0:
+                yield start_line, "".join(buf)
+        if ch == "\n":
+            line += 1
+
+
+def lint_file(path: str) -> list:
+    """Return a list of (line, message) errors for one file."""
+    errors: list = []
+    with open(path, "r", encoding="utf-8") as fh:
+        raw = fh.read()
+
+    code = strip_comments(raw)
+
+    if not check_paren_balance(code, errors):
+        # Structure is broken; further checks would be noise.
+        return errors
+
+    forms = list(iter_top_level_forms(code))
+
+    # 1. version header
+    if not forms or not re.match(r"\(\s*version\s+1\s*\)", forms[0][1]):
+        errors.append((1, "file must start with a `(version 1)` header"))
+
+    # 2. Rule names must share one "<FAB>: " prefix, and the filename must start
+    #    with it. Deriving the prefix from the rules (not by splitting the
+    #    filename on '-') keeps this correct for hyphenated fab names and for
+    #    variant files like JLCPCB-4L-1oz.kicad_dru.
+    stem = os.path.basename(path).split(".")[0]
+    seen_names: dict = {}
+    prefixes: dict = {}  # prefix -> first line seen
+    for start_line, form in forms:
+        if not re.match(r"\(\s*rule\b", form):
+            continue
+
+        name_match = re.match(r'\(\s*rule\s+"([^"]*)"', form)
+        if not name_match:
+            errors.append((start_line, "rule is missing a quoted name"))
+            continue
+        name = name_match.group(1)
+
+        if not re.search(r"\(\s*constraint\b", form):
+            errors.append((start_line, f'rule "{name}" has no (constraint ...)'))
+
+        if name in seen_names:
+            errors.append(
+                (start_line, f'duplicate rule name "{name}" (first defined at line {seen_names[name]})')
+            )
+        else:
+            seen_names[name] = start_line
+
+        if ": " in name:
+            prefixes.setdefault(name.split(": ", 1)[0], start_line)
+        else:
+            errors.append((start_line, f'rule "{name}" should be named "<FAB>: ..."'))
+
+    if len(prefixes) > 1:
+        errors.append((1, f"rules use more than one fab prefix: {sorted(prefixes)}"))
+    for pfx in prefixes:
+        if not stem.startswith(pfx):
+            errors.append(
+                (prefixes[pfx], f'rule prefix "{pfx}" does not match filename "{stem}"'))
+
+    # 3. lowercase type literals (scanned on the raw text so line numbers and
+    #    the surrounding condition are reported as the author wrote them).
+    for i, raw_line in enumerate(raw.splitlines(), start=1):
+        line_code = strip_comments(raw_line)
+        for m in TYPE_LITERAL_RE.finditer(line_code):
+            literal = m.group(1)
+            if literal in BAD_TYPE_LITERALS:
+                errors.append(
+                    (
+                        i,
+                        f"lowercase type literal '{literal}' — KiCad expects "
+                        f"'{BAD_TYPE_LITERALS[literal]}' (the lowercase form never matches)",
+                    )
+                )
+
+    # 4. layer names, in (layer ...) clauses, .Layer comparisons and
+    #    existsOnLayer() calls.
+    for i, raw_line in enumerate(raw.splitlines(), start=1):
+        line_code = strip_comments(raw_line)
+        for pattern in (LAYER_CLAUSE_RE, LAYER_COMPARE_RE, EXISTS_ON_LAYER_RE):
+            for m in pattern.finditer(line_code):
+                problem = check_layer_token(m.group(1))
+                if problem:
+                    errors.append((i, problem))
+
+    return errors
+
+
+def main(argv: list) -> int:
+    paths = argv[1:]
+    if not paths:
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        paths = sorted(glob.glob(os.path.join(root, "**", "*.kicad_dru"), recursive=True))
+
+    if not paths:
+        print("no .kicad_dru files found", file=sys.stderr)
+        return 1
+
+    total = 0
+    for path in paths:
+        errors = lint_file(path)
+        if errors:
+            total += len(errors)
+            for line, msg in sorted(errors):
+                print(f"{path}:{line}: {msg}")
+        else:
+            print(f"{path}: OK")
+
+    if total:
+        print(f"\n{total} problem(s) found", file=sys.stderr)
+        return 1
+    print("\nAll design rule files pass.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv))

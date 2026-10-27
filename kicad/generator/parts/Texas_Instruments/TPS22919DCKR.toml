@@ -1,0 +1,119 @@
+# TPS22919DCKR - TI 5.5 V, 1.5 A load switch with quick output discharge, DCK0006A (SC-70-6)
+# Sources: SLVSEN5B (TPS22919 datasheet, Oct 2018 rev. May 2019), p. 3 (pin functions), p. 24
+# (DCK0006A outline), p. 25 (example board layout), p. 26 (example stencil design).
+
+[part]
+mpn = "TPS22919DCKR"
+second_source = "Texas Instruments TPS22916CYFPR (WCSP, other land; BOM v1 line 50)"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPS22919DCKR"
+reference = "U"
+description = "Load switch, 1.6-5.5 V, 1.5 A, 90 mOhm, controlled rise time, short-circuit protection, adjustable quick output discharge, SOT/SC-70-6 (DCK0006A)"
+keywords = "load switch power switch QOD TPS22919 SC-70 DCK"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps22919.pdf"
+datasheet_rev = "SLVSEN5B"
+sheet = "Texas-Instruments/TPS22919DCKR.md"
+notes = [
+  "Land pattern = TI example board layout DCK0006A (SLVSEN5B p. 25): six pads 0.9 x 0.4 mm, 0.65 mm pitch, 2.2 mm between pad-row centres, R0.05 corners; stencil p. 26 equal to the pads (paste = true).",
+  "The DCK0006A land is shared with SN74LVC1G57DCKR (same drawing 4214835): the [footprint] section is identical in both files.",
+  "Pin 4 is NC (leave floating, p. 3): a visible no_connect pin (CRAFT-125).",
+]
+
+[[pins]]
+number = "1"
+name = "IN"
+type = "power_in"
+side = "left"
+
+[[pins]]
+number = "3"
+name = "ON"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "4"
+name = "NC"
+type = "no_connect"
+side = "left"
+gap = true
+
+[[pins]]
+number = "6"
+name = "VOUT"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "5"
+name = "QOD"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm"
+description = "Texas Instruments DCK0006A SOT/SC-70-6, 1.25 x 2.0 mm body, 0.65 mm pitch, TI example land pattern (drawing 4214835)"
+tags = "SC-70-6 SOT-363 DCK0006A DCK Texas"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps22919.pdf"   # shared land: one document for the footprint file
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "DCK0006A example board layout, drawing 4214835 (SLVSEN5B p. 25; SCES414P p. 29)"
+body = { x = 1.25, y = 2.0, z = 1.1, standoff = 0.0, cite = "DCK0006A outline (SCES414P p. 28, 4214835/D): body 1.1-1.4 x 1.85-2.15, 1.1 max height" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 3
+step = 1
+start = [-1.1, -0.65]
+pitch = [0.0, 0.65]
+size = [0.9, 0.4]
+shape = "roundrect"
+rratio = 0.125
+type = "smd"
+cite = "DCK0006A example board layout: 6X (0.9) x 6X (0.4), 4X (0.65), (2.2) between pad-row centres, (R0.05) TYP (rratio 0.05/0.4); pins 1-3 left, top to bottom"
+
+[[footprint.rows]]
+first = 4
+count = 3
+step = 1
+start = [1.1, 0.65]
+pitch = [0.0, -0.65]
+size = [0.9, 0.4]
+shape = "roundrect"
+rratio = 0.125
+type = "smd"
+cite = "DCK0006A example board layout: 6X (0.9) x 6X (0.4), 4X (0.65), (2.2) between pad-row centres, (R0.05) TYP (rratio 0.05/0.4); pins 4-6 right, bottom to top"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.65
+cite = "DCK0006A example board layout, 4X (0.65)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "6"
+value = 2.2
+cite = "DCK0006A example board layout, (2.2)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.9, 0.4]
+cite = "DCK0006A example board layout, 6X (0.9), 6X (0.4)"
+
+[[checks]]
+kind = "pad_count"
+value = 6
+cite = "DCK0006A outline, six leads"

@@ -1,0 +1,273 @@
+# OPA1622IDRCR, DRC0010J (VSON-10, 3 x 3 mm, 0.5 mm pitch, exposed thermal pad with four tabs).
+# Sources: SBOS727B, PDF p. 3 (pin configuration), PDF p. 34 (package outline 4218878/B, bottom view),
+# PDF p. 35 (example board layout, top view, scale 20X), PDF p. 36 (example stencil design, 0.125 mm stencil).
+# Coordinates were read from the drawing labels and checked against the vector geometry of the PDF
+# (20X scale, 56.69 pt/mm). The board layout is a top view: pin 1 top-left, 1..5 down the left side,
+# 6..10 up the right side; used as drawn (y down).
+
+[part]
+mpn = "OPA1622IDRCR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "OPA1622IDRCR"
+reference = "U"
+description = "Dual bipolar-input audio operational amplifier, high-current output, enable pin, VSON-10 (DRC) 3 x 3 mm with thermal pad"
+keywords = "opamp audio dual headphone driver enable VSON DRC"
+datasheet = "https://www.ti.com/lit/ds/symlink/opa1622.pdf"
+datasheet_rev = "SBOS727B"
+sheet = "Texas-Instruments/OPA1622IDRCR.md"
+notes = [
+  "Land pattern and stencil are TI's example board layout / stencil design for DRC0010J (SBOS727B PDF pp. 35-36), used as given.",
+  "Thermal pad 11 is the 1.65 x 2.4 mm pad plus four 0.25 x 0.5 mm tabs (drawn as five copper pads with number 11); pad_count therefore counts 15 pads.",
+  "Thermal vias: TI draws four vias at (0, +/-0.95) and (+/-0.575, 0) and gives only the hole, (0.2) VIA TYP. The via copper diameter 0.4 mm is an OpenDAP choice, UNVERIFIED (not in the drawing). TI note 5: vias are optional; vias under paste should be filled, plugged or tented.",
+  "Pad corners (R0.05) TYP on the signal pads -> roundrect, rratio 0.05/0.24 = 0.208. Exposed pad corners drawn square; tab ends rounded R0.05 (rratio 0.2).",
+  "Solder mask: non-solder-mask-defined preferred, 0.07 mm max opening all around (PDF p. 35); generator default mask expansion applies (not overridden here).",
+  "Thermal pad connects to V- (datasheet p. 3), not to GND.",
+]
+
+# Symbol pins: names from the datasheet pin diagram (p. 3: +INA, -INA, OUTA ...); the parts-lib sheet
+# writes them with a space and Unicode minus, kept in sheet_name.
+[[pins]]
+number = "1"
+name = "+INA"
+sheet_name = "+IN A"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "10"
+name = "-INA"
+sheet_name = "−IN A"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "+INB"
+sheet_name = "+IN B"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "6"
+name = "-INB"
+sheet_name = "−IN B"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "8"
+name = "EN"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "9"
+name = "OUTA"
+sheet_name = "OUT A"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "7"
+name = "OUTB"
+sheet_name = "OUT B"
+type = "output"
+side = "right"
+gap = true
+
+[[pins]]
+number = "2"
+name = "V+"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "4"
+name = "V-"
+sheet_name = "V−"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "3"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "11"
+name = "EP"
+sheet_name = "Thermal pad"
+sheet_number = "Pad (11)"
+type = "passive"
+side = "bottom"
+
+[footprint]
+name = "VSON-10-1EP_3x3mm_P0.5mm_EP1.65x2.4mm_ThermalVias"
+description = "TI DRC0010J VSON-10 3x3mm, 0.5mm pitch, exposed pad 1.65x2.4mm with tabs, TI example land pattern and stencil (SBOS727B, 4218878/B)"
+tags = "VSON DRC0010J DRC 10 0.5mm thermal pad"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SBOS727B PDF p. 35 (example board layout 4218878/B) and PDF p. 36 (example stencil design)"
+body = { x = 3.0, y = 3.0, z = 0.9, standoff = 0.0, cite = "SBOS727B PDF p. 34, outline 4218878/B: 2.9-3.1 x 2.9-3.1, height 0.8-1.0 (nominal midpoints), A1 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+# Signal pads: 10X (0.6) x 10X (0.24), 8X (0.5) pitch, (2.8) between pad centre lines (x = +/-1.4).
+[[footprint.rows]]
+first = 1
+count = 5
+step = 1
+start = [-1.4, -1.0]
+pitch = [0.0, 0.5]
+size = [0.6, 0.24]
+shape = "roundrect"
+rratio = 0.208
+type = "smd"
+cite = "SBOS727B PDF p. 35: 10X (0.6), 10X (0.24), 8X (0.5), (2.8), (R0.05) TYP; pins 1-5 left side, top to bottom"
+
+[[footprint.rows]]
+first = 6
+count = 5
+step = 1
+start = [1.4, 1.0]
+pitch = [0.0, -0.5]
+size = [0.6, 0.24]
+shape = "roundrect"
+rratio = 0.208
+type = "smd"
+cite = "SBOS727B PDF p. 35: pins 6-10 right side, bottom to top"
+
+# Exposed pad 11: (1.65) x (2.4) body + four tabs (0.25) wide, centres 2X (0.5) apart, to (3.4) overall.
+[[footprint.pads]]
+number = "11"
+at = [0.0, 0.0]
+size = [1.65, 2.4]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "SBOS727B PDF p. 35: (1.65), (2.4)"
+
+[[footprint.pads]]
+number = "11"
+at = [-0.25, -1.45]
+size = [0.25, 0.5]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = false
+cite = "SBOS727B PDF p. 35: tab (0.25) wide at (0.5) centre spacing, extends to (3.4)/2 = 1.7 from the EP edge at 1.2"
+
+[[footprint.pads]]
+number = "11"
+at = [0.25, -1.45]
+size = [0.25, 0.5]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = false
+cite = "SBOS727B PDF p. 35: tab, as above"
+
+[[footprint.pads]]
+number = "11"
+at = [-0.25, 1.45]
+size = [0.25, 0.5]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = false
+cite = "SBOS727B PDF p. 35: tab, as above"
+
+[[footprint.pads]]
+number = "11"
+at = [0.25, 1.45]
+size = [0.25, 0.5]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = false
+cite = "SBOS727B PDF p. 35: tab, as above"
+
+# Stencil (0.125 mm thick, 80 % printed coverage on pad 11): 2X (1.5) x 2X (1.06) at y = +/-(0.63);
+# tab apertures 4X (0.25) x 4X (0.34) centred at y = +/-(1.53), x = +/-0.25.
+# Coverage check: (2*1.5*1.06 + 4*0.25*0.34) / (1.65*2.4 + 4*0.25*0.5) = 3.52 / 4.46 = 79 %.
+[[footprint.paste]]
+start = [0.0, -0.63]
+pitch = [0.0, 1.26]
+count = [1, 2]
+size = [1.5, 1.06]
+cite = "SBOS727B PDF p. 36: 2X (1.5), 2X (1.06), (0.63)"
+
+[[footprint.paste]]
+start = [-0.25, -1.53]
+pitch = [0.5, 3.06]
+count = [2, 2]
+size = [0.25, 0.34]
+cite = "SBOS727B PDF p. 36: 4X (0.25), 4X (0.34), (1.53), (0.5)"
+
+# Thermal vias, (0.2) VIA TYP: at (0, +/-0.95) and (+/-0.575, 0).
+[[footprint.vias]]
+number = "11"
+start = [0.0, -0.95]
+pitch = [0.0, 1.9]
+count = [1, 2]
+drill = 0.2
+diameter = 0.4
+cite = "SBOS727B PDF p. 35: (0.2) VIA TYP, (0.95); diameter 0.4 UNVERIFIED (OpenDAP choice, not in the drawing)"
+
+[[footprint.vias]]
+number = "11"
+start = [-0.575, 0.0]
+pitch = [1.15, 0.0]
+count = [2, 1]
+drill = 0.2
+diameter = 0.4
+cite = "SBOS727B PDF p. 35: (0.2) VIA TYP, (0.575); diameter 0.4 UNVERIFIED (OpenDAP choice, not in the drawing)"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "SBOS727B PDF p. 35, 8X (0.5)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "10"
+value = 2.8
+cite = "SBOS727B PDF p. 35, (2.8) between pad centre lines"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "5"
+value = 2.0
+cite = "SBOS727B PDF p. 35, 4 x 0.5 pitch; outline p. 34, 2X 2"
+
+[[checks]]
+kind = "dy"
+a = "10"
+b = "6"
+value = 2.0
+cite = "SBOS727B PDF p. 35, 4 x 0.5 pitch"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.6, 0.24]
+cite = "SBOS727B PDF p. 35, 10X (0.6), 10X (0.24)"
+
+[[checks]]
+kind = "pad_size"
+a = "11"
+value = [1.65, 2.4]
+cite = "SBOS727B PDF p. 35, (1.65) x (2.4) (main exposed pad, first pad 11 entry)"
+
+[[checks]]
+kind = "pad_count"
+value = 15
+cite = "SBOS727B PDF p. 35: 10 signal pads + exposed pad 11 drawn as main pad + 4 tabs"

@@ -1,0 +1,131 @@
+(footprint "Oscillator_SMD_ECS_ECS-2016MV-4Pin_2.0x1.6mm"
+	(version 20260206)
+	(generator "opendap-kigen")
+	(layer "F.Cu")
+	(descr "ECS ECS-2016MV crystal oscillator, 2.0 x 1.6 mm, 4 pads, manufacturer suggested land pattern, rotated so pin 1 is top-left (https://ecsxtal.com/store/pdf/ECS-2016MV.pdf)")
+	(tags "oscillator XO ECS ECS-2016MV 2016")
+	(property "Reference" "REF**"
+		(at 0 -1.98 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Oscillator_SMD_ECS_ECS-2016MV-4Pin_2.0x1.6mm"
+		(at 0 1.98 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://ecsxtal.com/store/pdf/ECS-2016MV.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "ECS ECS-2016MV crystal oscillator, 2.0 x 1.6 mm, 4 pads, manufacturer suggested land pattern, rotated so pin 1 is top-left (https://ecsxtal.com/store/pdf/ECS-2016MV.pdf)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_poly
+		(pts
+			(xy -1.1 -0.6375)
+			(xy -1.55 -0.9375)
+			(xy -1.55 -0.3375)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+	)
+	(fp_poly
+		(pts
+			(xy -0.4 -1)
+			(xy 0.8 -1)
+			(xy 0.8 1)
+			(xy -0.8 1)
+			(xy -0.8 -0.6)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+	)
+	(fp_rect
+		(start -1.08 -1.28)
+		(end 1.08 1.28)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -0.4875 -0.6375)
+		(size 0.675 0.775)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "2" smd rect
+		(at -0.4875 0.6375)
+		(size 0.675 0.775)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "3" smd rect
+		(at 0.4875 0.6375)
+		(size 0.675 0.775)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(pad "4" smd rect
+		(at 0.4875 -0.6375)
+		(size 0.675 0.775)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/../lib/opendap/3dmodels/ECS.3dshapes/Oscillator_SMD_ECS_ECS-2016MV-4Pin_2.0x1.6mm.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

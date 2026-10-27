@@ -1,0 +1,252 @@
+# BQ28Z610DRZR-R1, DRZ0012A (VSON-12, 4.0 x 2.5 mm, 0.4 mm pitch, H-shaped exposed pad 13).
+# Sources: SLUSE07B p. 3 (Figure 6-1 pinout, top view; Table 6-1), PDF p. 35 (package outline 4218895/B,
+# bottom view), PDF p. 36 (example board layout, top view, scale 20X), PDF p. 37 (example stencil design,
+# 0.1 mm stencil, 79 % coverage on the exposed pad). Coordinates read from the drawing labels and checked
+# against the PDF vector geometry (20X scale, 56.69 pt/mm). Board layout top view: pin 1 top-left,
+# 1..6 down the left side, 7..12 up the right side (12 top-right); used as drawn (y down).
+# Body: 4.0 mm along x (the pin rows are at x = +/-1.9), 2.5 mm along y.
+
+[part]
+mpn = "BQ28Z610DRZR-R1"
+second_source = "Texas Instruments BQ40Z50-R2 (BOM v1 line 42, different package)"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "BQ28Z610DRZR-R1"
+reference = "U"
+description = "Impedance Track gas gauge and protection controller for 1-2 series Li-ion packs, high-side N-FET drive, cell balancing, I2C, VSON-12 (DRZ) 4 x 2.5 mm"
+keywords = "fuel gauge gas gauge battery 2S li-ion protection I2C impedance track VSON DRZ"
+datasheet = "https://www.ti.com/lit/ds/symlink/bq28z610-r1.pdf"
+datasheet_rev = "SLUSE07B"
+sheet = "Texas-Instruments/BQ28Z610DRZR-R1.md"
+notes = [
+  "Land pattern and stencil are TI's example board layout / stencil for DRZ0012A (SLUSE07B PDF pp. 36-37), used as given.",
+  "Exposed pad 13 is H-shaped: copper (metal under solder mask, dashed) = 2.55 x 2.05 centre + two 0.3 x 3.0 side bars at x = +/-1.125; solder mask opening (solder-mask-defined) 0.05 mm inside the copper: 2.45 x 1.95 + 0.2 x 2.9 bars, outer (2.45) x (2.9). Built as three rect pads numbered 13 with mask_margin = -0.05; pad_count therefore counts 15 pads.",
+  "Exposed pad has no number in the datasheet pin table (PWPD, '—'); the package outline (PDF p. 35) labels it 13, which is used here.",
+  "Thermal vias: TI draws five, (0.2) VIA TYP, at (0, 0), (0, +/-0.725), (+/-0.975, 0); only the hole is given. Via copper diameter 0.4 mm is an OpenDAP choice, UNVERIFIED. TI note 5: vias optional; vias under paste filled, plugged or tented (the two at x = +/-0.975 lie under the paste apertures).",
+  "The stencil page (PDF p. 37) labels the right-side pins 7 at the top and 12 at the bottom, contradicting the board layout (PDF p. 36), the package outline (PDF p. 35) and Figure 6-1 (12 top-right). The footprint follows the board layout and Figure 6-1; the geometry is symmetric so the stencil is unaffected.",
+  "Signal pad corners (R0.05) TYP -> roundrect rratio 0.25; exposed pad pieces drawn as rect (TI rounds the bar ends R0.05; not reproduced).",
+  "Signal pads: non-solder-mask-defined preferred, 0.05 mm max all around (PDF p. 36); generator default mask expansion applies.",
+]
+
+[[pins]]
+number = "12"
+name = "VC1"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "3"
+name = "SRP"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "2"
+name = "SRN"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "4"
+name = "TS1"
+type = "bidirectional"
+side = "left"
+gap = true
+
+[[pins]]
+number = "5"
+name = "SCL"
+type = "bidirectional"
+side = "left"
+gap = true
+
+[[pins]]
+number = "6"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "11"
+name = "VC2"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "10"
+name = "PBI"
+type = "passive"
+side = "top"
+
+[[pins]]
+number = "8"
+name = "PACK"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "CHG"
+type = "output"
+side = "right"
+gap = true
+
+[[pins]]
+number = "7"
+name = "DSG"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "1"
+name = "VSS"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "13"
+name = "PWPD"
+sheet_number = "—"
+type = "passive"
+side = "bottom"
+
+[footprint]
+name = "VSON-12-1EP_4x2.5mm_P0.4mm_EP2.45x1.95mm_ThermalVias"
+description = "TI DRZ0012A VSON-12 4x2.5mm, 0.4mm pitch, H-shaped exposed pad, TI example land pattern and stencil (SLUSE07B, 4218895/B)"
+tags = "VSON DRZ0012A DRZ 12 0.4mm thermal pad"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SLUSE07B PDF p. 36 (example board layout 4218895/B) and PDF p. 37 (example stencil design)"
+body = { x = 4.0, y = 2.5, z = 0.9, standoff = 0.0, cite = "SLUSE07B PDF p. 35, outline 4218895/B: 3.85-4.15 x 2.35-2.65, height 0.8-1.0 (nominal midpoints), A1 0-0.05" }
+body_offset = [0.0, 0.0]
+
+# Signal pads: 12X (0.6) x 12X (0.2), 10X (0.4) pitch, (3.8) between pad centre lines, 2X (2) pin 1 to pin 6.
+[[footprint.rows]]
+first = 1
+count = 6
+step = 1
+start = [-1.9, -1.0]
+pitch = [0.0, 0.4]
+size = [0.6, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSE07B PDF p. 36: 12X (0.6), 12X (0.2), 10X (0.4), 2X (2), (3.8), (R0.05) TYP"
+
+[[footprint.rows]]
+first = 7
+count = 6
+step = 1
+start = [1.9, 1.0]
+pitch = [0.0, -0.4]
+size = [0.6, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSE07B PDF p. 36: pins 7-12 right side, 7 bottom to 12 top (Figure 6-1, p. 3)"
+
+# Exposed pad 13: copper pieces (metal under solder mask), mask opening 0.05 inside.
+[[footprint.pads]]
+number = "13"
+at = [0.0, 0.0]
+size = [2.55, 2.05]
+shape = "rect"
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLUSE07B PDF p. 36: mask opening (2.45) wide, centre part 1.95 tall (vector geometry y +/-0.975); copper 0.05 outside it (dashed metal outline, x +/-1.275, y +/-1.025)"
+
+[[footprint.pads]]
+number = "13"
+at = [-1.125, 0.0]
+size = [0.3, 3.0]
+shape = "rect"
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLUSE07B PDF p. 36: bar mask opening 4X (0.2) at 2X (2.25) centre spacing, (2.9) tall; copper 0.05 outside it (vector geometry x -1.275..-0.975, y +/-1.5)"
+
+[[footprint.pads]]
+number = "13"
+at = [1.125, 0.0]
+size = [0.3, 3.0]
+shape = "rect"
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLUSE07B PDF p. 36: as left bar, mirrored"
+
+# Stencil (0.1 mm thick, 79 % coverage): 2X (1.08) x 2X (1.75) at x = +/-(0.64); 4X (0.2) x 4X (0.375)
+# at x = +/-1.125 (2X (2.25)), y = +/-(1.2625).
+# Coverage check: (2*1.08*1.75 + 4*0.2*0.375) / (2.45*1.95 + 2*0.2*(2.9-1.95)) = 4.08 / 5.16 = 79 %.
+[[footprint.paste]]
+start = [-0.64, 0.0]
+pitch = [1.28, 0.0]
+count = [2, 1]
+size = [1.08, 1.75]
+cite = "SLUSE07B PDF p. 37: 2X (1.08), 2X (1.75), 2X (0.64)"
+
+[[footprint.paste]]
+start = [-1.125, -1.2625]
+pitch = [2.25, 2.525]
+count = [2, 2]
+size = [0.2, 0.375]
+cite = "SLUSE07B PDF p. 37: 4X (0.2), 4X (0.375), 4X (1.2625), 2X (2.25)"
+
+[[footprint.vias]]
+number = "13"
+start = [0.0, -0.725]
+pitch = [0.0, 0.725]
+count = [1, 3]
+drill = 0.2
+diameter = 0.4
+cite = "SLUSE07B PDF p. 36: (0.2) VIA TYP, 2X (0.725); diameter 0.4 UNVERIFIED (OpenDAP choice, not in the drawing)"
+
+[[footprint.vias]]
+number = "13"
+start = [-0.975, 0.0]
+pitch = [1.95, 0.0]
+count = [2, 1]
+drill = 0.2
+diameter = 0.4
+cite = "SLUSE07B PDF p. 36: (0.2) VIA TYP, 2X (0.975); diameter 0.4 UNVERIFIED (OpenDAP choice, not in the drawing)"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.4
+cite = "SLUSE07B PDF p. 36, 10X (0.4)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "12"
+value = 3.8
+cite = "SLUSE07B PDF p. 36, (3.8)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "6"
+value = 2.0
+cite = "SLUSE07B PDF p. 36, 2X (2); outline p. 35, 2X 2"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.6, 0.2]
+cite = "SLUSE07B PDF p. 36, 12X (0.6), 12X (0.2)"
+
+[[checks]]
+kind = "pad_size"
+a = "13"
+value = [2.55, 2.05]
+cite = "SLUSE07B PDF p. 36, centre copper of pad 13 (mask opening 2.45 x 1.95 + 0.05 all around), first pad 13 entry"
+
+[[checks]]
+kind = "pad_count"
+value = 15
+cite = "SLUSE07B PDF p. 36: 12 signal pads + exposed pad 13 drawn as centre + 2 bars"

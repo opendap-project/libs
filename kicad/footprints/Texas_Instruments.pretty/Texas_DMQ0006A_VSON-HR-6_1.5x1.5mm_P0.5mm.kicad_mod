@@ -1,0 +1,207 @@
+(footprint "Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm"
+	(version 20260206)
+	(generator "opendap-kigen")
+	(layer "F.Cu")
+	(descr "Texas Instruments DMQ0006A VSON-HR-6, 1.5 x 1.5 mm body, 0.5 mm pitch, TI example land pattern and stencil, solder-mask-defined pads (SLVSEF9I pp. 33-34, drawing 4222645/E)")
+	(tags "VSON-HR SON DMQ0006A TPS62826 TPS62827 TPS6282x Texas")
+	(property "Reference" "REF**"
+		(at 0 -1.7 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm"
+		(at 0 1.7 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps62826.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Texas Instruments DMQ0006A VSON-HR-6, 1.5 x 1.5 mm body, 0.5 mm pitch, TI example land pattern and stencil, solder-mask-defined pads (SLVSEF9I pp. 33-34, drawing 4222645/E)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.925 -0.925)
+		(end 0.925 -0.925)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_line
+		(start -0.925 0.925)
+		(end 0.925 0.925)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_poly
+		(pts
+			(xy -1.2 -0.5)
+			(xy -1.65 -0.8)
+			(xy -1.65 -0.2)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+	)
+	(fp_poly
+		(pts
+			(xy -0.375 -0.75)
+			(xy 0.75 -0.75)
+			(xy 0.75 0.75)
+			(xy -0.75 0.75)
+			(xy -0.75 -0.375)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+	)
+	(fp_rect
+		(start -1.25 -1)
+		(end 1.25 1)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "" smd roundrect
+		(at -0.65 -0.5)
+		(size 0.6 0.25)
+		(layers "F.Paste")
+		(roundrect_rratio 0.25)
+	)
+	(pad "" smd roundrect
+		(at -0.65 0)
+		(size 0.6 0.25)
+		(layers "F.Paste")
+		(roundrect_rratio 0.25)
+	)
+	(pad "" smd roundrect
+		(at -0.65 0.5)
+		(size 0.6 0.25)
+		(layers "F.Paste")
+		(roundrect_rratio 0.25)
+	)
+	(pad "" smd roundrect
+		(at 0.45 -0.5)
+		(size 1 0.2)
+		(layers "F.Paste")
+		(roundrect_rratio 0.25)
+	)
+	(pad "" smd roundrect
+		(at 0.45 0)
+		(size 1 0.2)
+		(layers "F.Paste")
+		(roundrect_rratio 0.25)
+	)
+	(pad "" smd roundrect
+		(at 0.45 0.5)
+		(size 1 0.2)
+		(layers "F.Paste")
+		(roundrect_rratio 0.25)
+	)
+	(pad "1" smd roundrect
+		(at -0.65 -0.5)
+		(size 0.7 0.35)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(solder_mask_margin -0.05)
+	)
+	(pad "2" smd roundrect
+		(at -0.65 0)
+		(size 0.7 0.35)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(solder_mask_margin -0.05)
+	)
+	(pad "3" smd roundrect
+		(at -0.65 0.5)
+		(size 0.7 0.35)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(solder_mask_margin -0.05)
+	)
+	(pad "4" smd roundrect
+		(at 0.45 0.5)
+		(size 1.1 0.3)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(solder_mask_margin -0.05)
+	)
+	(pad "5" smd roundrect
+		(at 0.45 0)
+		(size 1.1 0.3)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(solder_mask_margin -0.05)
+	)
+	(pad "6" smd roundrect
+		(at 0.45 -0.5)
+		(size 1.1 0.3)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.25)
+		(solder_mask_margin -0.05)
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Texas_Instruments.3dshapes/Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

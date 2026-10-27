@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        3.0,
+        3.0,
+        0.8
+      ]
+    }
+  ],
+  "library": "Analog_Devices",
+  "name": "Analog_DD_DFN-10-1EP_3x3mm_P0.5mm_EP1.65x2.38mm",
+  "source": "envelope from LT3045 Rev. D p. 29: body 3.00 +- 0.10, height 0.75 +- 0.05 (z = max)"
+}
