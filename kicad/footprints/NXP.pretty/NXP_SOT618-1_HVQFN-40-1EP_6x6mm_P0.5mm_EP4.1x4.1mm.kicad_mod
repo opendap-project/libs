@@ -419,7 +419,7 @@
 		(layers "F.Cu" "F.Mask")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/NXP.3dshapes/NXP_SOT618-1_HVQFN-40-1EP_6x6mm_P0.5mm_EP4.1x4.1mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/NXP.3dshapes/NXP_SOT618-1_HVQFN-40-1EP_6x6mm_P0.5mm_EP4.1x4.1mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

@@ -223,5 +223,5 @@
 	(pad "AB11" smd circle (at 3.6 6.825) (size 0.3 0.3) (property pad_prop_bga) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.05) (uuid "ecb758f2-ab43-5078-bf6b-8cfb547e2a36"))
 	(pad "AB12" smd circle (at 4.4 6.825) (size 0.3 0.3) (property pad_prop_bga) (layers "F.Cu" "F.Mask" "F.Paste") (solder_mask_margin 0.05) (uuid "c080fd94-a7f8-599a-a7bf-00b6ba4e6cb5"))
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Micron.3dshapes/LPDDR4_FBGA-200_10.0x15.0mm_Layout12x22_P0.8x0.65mm_Pad0.3mm_NSMD.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
+	(model "${OPENDAP_KICAD_3DMODELS}/Micron.3dshapes/LPDDR4_FBGA-200_10.0x15.0mm_Layout12x22_P0.8x0.65mm_Pad0.3mm_NSMD.step" (offset (xyz 0 0 0)) (scale (xyz 1 1 1)) (rotate (xyz 0 0 0)))
 )

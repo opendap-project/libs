@@ -262,7 +262,7 @@
 		(remove_unused_layers no)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/GCT.3dshapes/GCT_USB4105-GF-A_USB-C_Receptacle_USB2.0_Horizontal.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/GCT.3dshapes/GCT_USB4105-GF-A_USB-C_Receptacle_USB2.0_Horizontal.step"
 		(offset
 			(xyz 0 0 0)
 		)

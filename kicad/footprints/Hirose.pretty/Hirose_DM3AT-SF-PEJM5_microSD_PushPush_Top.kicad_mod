@@ -262,7 +262,7 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Hirose.3dshapes/Hirose_DM3AT-SF-PEJM5_microSD_PushPush_Top.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Hirose.3dshapes/Hirose_DM3AT-SF-PEJM5_microSD_PushPush_Top.step"
 		(offset
 			(xyz 0 0 0)
 		)

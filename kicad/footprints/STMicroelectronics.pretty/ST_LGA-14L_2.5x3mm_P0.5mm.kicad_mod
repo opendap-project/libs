@@ -203,7 +203,7 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/STMicroelectronics.3dshapes/ST_LGA-14L_2.5x3mm_P0.5mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/STMicroelectronics.3dshapes/ST_LGA-14L_2.5x3mm_P0.5mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

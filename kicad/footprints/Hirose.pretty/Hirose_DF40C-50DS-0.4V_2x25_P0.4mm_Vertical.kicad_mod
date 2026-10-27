@@ -401,7 +401,7 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Hirose.3dshapes/Hirose_DF40C-50DS-0.4V_2x25_P0.4mm_Vertical.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Hirose.3dshapes/Hirose_DF40C-50DS-0.4V_2x25_P0.4mm_Vertical.step"
 		(offset
 			(xyz 0 0 0)
 		)

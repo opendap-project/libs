@@ -154,7 +154,7 @@
 		(roundrect_rratio 0.25)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Microchip.3dshapes/Microchip_5TS1_SOT-23-5_1.6x2.9mm_P0.95mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Microchip.3dshapes/Microchip_5TS1_SOT-23-5_1.6x2.9mm_P0.95mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

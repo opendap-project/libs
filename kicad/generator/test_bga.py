@@ -313,7 +313,7 @@ class BgaParts(unittest.TestCase):
                 min_web = min(min_web, c - (d1 + d2) / 2 - m1 - m2)
         self.assertGreaterEqual(min_gap, 0.065 - EPS, "copper gap")
         self.assertGreaterEqual(min_web, 0.0762 - 0.0015, "mask web below 3 mil")
-        self.assertIn('(model "${KIPRJMOD}/../lib/opendap/3dmodels/%s.3dshapes/%s.step"' % (
+        self.assertIn('(model "${OPENDAP_KICAD_3DMODELS}/%s.3dshapes/%s.step"' % (
             lib, part["footprint"]["name"]), fptext)
         self.assertTrue(os.path.exists(os.path.join(
             ROOT, "3dmodels", lib + ".3dshapes", part["footprint"]["name"] + ".step")), "STEP missing")

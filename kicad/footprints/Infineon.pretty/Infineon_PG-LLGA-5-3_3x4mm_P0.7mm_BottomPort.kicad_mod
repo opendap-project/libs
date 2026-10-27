@@ -410,7 +410,7 @@
 		(layers "*.Cu" "*.Mask")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Infineon.3dshapes/Infineon_PG-LLGA-5-3_3x4mm_P0.7mm_BottomPort.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Infineon.3dshapes/Infineon_PG-LLGA-5-3_3x4mm_P0.7mm_BottomPort.step"
 		(offset
 			(xyz 0 0 0)
 		)

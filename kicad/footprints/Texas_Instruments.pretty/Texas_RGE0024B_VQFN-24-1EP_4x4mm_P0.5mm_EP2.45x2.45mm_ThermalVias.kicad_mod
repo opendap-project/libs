@@ -382,7 +382,7 @@
 		(remove_unused_layers no)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Texas_Instruments.3dshapes/Texas_RGE0024B_VQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm_ThermalVias.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Texas_Instruments.3dshapes/Texas_RGE0024B_VQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm_ThermalVias.step"
 		(offset
 			(xyz 0 0 0)
 		)

@@ -354,7 +354,7 @@
 		(layers "F.Cu" "F.Mask")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Infineon.3dshapes/Infineon_PG-UQFN-32-1_5x5mm_P0.5mm_EP3.6x3.6mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Infineon.3dshapes/Infineon_PG-UQFN-32-1_5x5mm_P0.5mm_EP3.6x3.6mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

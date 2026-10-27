@@ -478,7 +478,7 @@
 		(remove_unused_layers no)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Cirrus_Logic.3dshapes/QFN-40-1EP_5x5mm_P0.4mm_EP3.5x3.5mm_ThermalVias.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Cirrus_Logic.3dshapes/QFN-40-1EP_5x5mm_P0.4mm_EP3.5x3.5mm_ThermalVias.step"
 		(offset
 			(xyz 0 0 0)
 		)

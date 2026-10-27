@@ -750,7 +750,7 @@
 		(remove_unused_layers no)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Rockchip_PMIC.3dshapes/QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm_ThermalVias.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Rockchip_PMIC.3dshapes/QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm_ThermalVias.step"
 		(offset
 			(xyz 0 0 0)
 		)

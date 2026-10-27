@@ -151,7 +151,7 @@
 		(roundrect_rratio 0.083)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Texas_Instruments.3dshapes/Texas_DBV0006A_SOT-23-6_1.6x2.9mm_P0.95mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Texas_Instruments.3dshapes/Texas_DBV0006A_SOT-23-6_1.6x2.9mm_P0.95mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

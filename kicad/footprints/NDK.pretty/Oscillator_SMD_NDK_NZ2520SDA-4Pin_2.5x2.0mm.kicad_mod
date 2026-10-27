@@ -117,7 +117,7 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/NDK.3dshapes/Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/NDK.3dshapes/Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

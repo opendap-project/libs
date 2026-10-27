@@ -367,7 +367,7 @@
 		(roundrect_rratio 0.25)
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Texas_Instruments.3dshapes/VQFN-HR-29_4x4mm_P0.4mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Texas_Instruments.3dshapes/VQFN-HR-29_4x4mm_P0.4mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

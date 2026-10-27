@@ -15,7 +15,7 @@ python3 templates/generate.py   # needs KiCad 10 for its stock symbols; kicad-cl
 
 ## Using them in a board project
 
-1. kicad-lib is the project's submodule at `hardware/lib/opendap`. In Schematic Setup → Page Settings, or in the `.kicad_pro`, set the drawing sheet to `${KIPRJMOD}/../lib/opendap/drawing-sheets/opendap.kicad_wks` (the example, inside this repository, uses a path relative to itself).
+1. The `libs` repository is the project's submodule at `hardware/lib/opendap`, with this library in its `kicad/` folder, and the project sets the text variable `OPENDAP_KICAD_3DMODELS` to `${KIPRJMOD}/../lib/opendap/kicad/3dmodels`. In Schematic Setup → Page Settings, or in the `.kicad_pro`, set the drawing sheet to `${KIPRJMOD}/../lib/opendap/kicad/drawing-sheets/opendap.kicad_wks` (the example, inside this repository, uses a path relative to itself).
 2. In Project Settings → Text Variables, set `OPENDAP_PROJECT`, `OPENDAP_BOARD`, `OPENDAP_LICENCE` (`CERN-OHL-S-2.0` or `CERN-OHL-W-2.0`) and `OPENDAP_SOURCE`.
 3. Copy the ERC severities and the field names of the example's `.kicad_pro` (CRAFT-158, §9.4).
 4. For each feature block, copy `feature-block/feature-block.kicad_sch` to `<block>.kicad_sch` (the block ID without `blk.`), fill its title block and replace the placeholders.

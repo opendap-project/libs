@@ -20,7 +20,7 @@ Python 3.11 or later (`tomllib`); KiCad 10 (`kicad-cli`) for the load and plot c
 - **Footprints** (`footprints/<Library>.pretty/`): pads as the data gives them; the anchor at the body centroid for SMD parts and at pin 1 for through-hole parts (CRAFT-15); silk outline 0.15 mm, clipped 0.15 mm clear of every pad (CRAFT-05, CRAFT-07); reference 1.0 × 0.15 mm on the silk (CRAFT-02); a filled pin-1 triangle without stroke, outside the body (CRAFT-13); fab body outline with a pin-1 chamfer and `${REFERENCE}` (KLC F5.2, CRAFT-11); courtyard 0.05 mm on a 0.01 mm grid at the KLC F5.3 clearance of the part's class.
 - **3D models** (`3dmodels/<Library>.3dshapes/`): envelope boxes from the datasheet body dimensions, OpenDAP's own (parts-lib ADR 0001). Manufacturer STEP files are never committed unless their licence allows it; they are listed in the parts-lib `manifest.toml` and fetched into the local cache.
 
-Footprints reference their model as `${KIPRJMOD}/../lib/opendap/3dmodels/…`, the path of this library as a submodule of an OpenDAP hardware project.
+Footprints reference their model as `${OPENDAP_KICAD_3DMODELS}/…`, a project text variable, so the library assumes nothing about where a consumer keeps it.
 
 ## Checks (`test_library.py`)
 

@@ -16,7 +16,7 @@ OpenDAP's own KiCad library: symbols, footprints, 3D models and fab design rules
 
 ## Use
 
-OpenDAP repositories add this library as a git submodule at `hardware/lib/opendap`, pinned to a tag, and reference it from their library tables with `${KIPRJMOD}/../lib/opendap/…`.
+OpenDAP repositories add the `libs` repository as a git submodule at `hardware/lib/opendap`, pinned to a tag, and reference this folder from their library tables with `${KIPRJMOD}/../lib/opendap/kicad/…`. Footprints find their 3D models through the project text variable `OPENDAP_KICAD_3DMODELS`, which a consumer sets in its `.kicad_pro` (`text_variables`), for example to `${KIPRJMOD}/../lib/opendap/kicad/3dmodels`.
 
 ## License
 

@@ -318,7 +318,7 @@
 		(layers "F.Cu" "F.Mask")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Texas_Instruments.3dshapes/Texas_RUK0020B_WQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Texas_Instruments.3dshapes/Texas_RUK0020B_WQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

@@ -40,7 +40,7 @@ PARTS = os.path.join(ROOT, "generator", "parts")
 FP_VERSION = "20260206"
 SYM_VERSION = "20251024"
 GENERATOR = "opendap-kigen"
-MODEL_PATH = "${KIPRJMOD}/../lib/opendap/3dmodels/%s.3dshapes/%s.step"
+MODEL_PATH = "${OPENDAP_KICAD_3DMODELS}/%s.3dshapes/%s.step"
 
 SILK_W = 0.15          # CRAFT-05
 SILK_PAD_CLR = 0.15    # CRAFT-07

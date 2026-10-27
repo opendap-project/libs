@@ -244,7 +244,7 @@
 		(layers "F.Cu" "F.Mask" "F.Paste")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/onsemi.3dshapes/onsemi_510BR_WQFN-14-1EP_2.5x2.5mm_P0.5mm_EP1.45x1.45mm.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/onsemi.3dshapes/onsemi_510BR_WQFN-14-1EP_2.5x2.5mm_P0.5mm_EP1.45x1.45mm.step"
 		(offset
 			(xyz 0 0 0)
 		)

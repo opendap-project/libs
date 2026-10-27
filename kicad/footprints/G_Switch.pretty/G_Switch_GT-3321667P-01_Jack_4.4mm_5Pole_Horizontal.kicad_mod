@@ -256,7 +256,7 @@
 		(layers "*.Cu" "*.Mask")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/G_Switch.3dshapes/G_Switch_GT-3321667P-01_Jack_4.4mm_5Pole_Horizontal.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/G_Switch.3dshapes/G_Switch_GT-3321667P-01_Jack_4.4mm_5Pole_Horizontal.step"
 		(offset
 			(xyz 0 0 0)
 		)

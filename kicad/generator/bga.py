@@ -44,7 +44,7 @@ DATA = os.path.join(ROOT, "generator", "bga")
 FP_VERSION = "20260206"
 SYM_VERSION = "20251024"
 GENERATOR = "opendap-bga"
-MODEL_PATH = "${KIPRJMOD}/../lib/opendap/3dmodels/%s.3dshapes/%s.step"
+MODEL_PATH = "${OPENDAP_KICAD_3DMODELS}/%s.3dshapes/%s.step"
 NS = uuid.UUID("6f1d3a52-5b8e-4f43-9a51-0d1a0c3f0b7e")
 
 SILK_W, SILK_PAD_CLR, FAB_W, CRT_W, CRT_BGA = 0.15, 0.15, 0.10, 0.05, 1.0

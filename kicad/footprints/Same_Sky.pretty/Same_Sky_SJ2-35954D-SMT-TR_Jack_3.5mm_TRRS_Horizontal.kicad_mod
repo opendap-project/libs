@@ -214,7 +214,7 @@
 		(layers "*.Cu" "*.Mask")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Same_Sky.3dshapes/Same_Sky_SJ2-35954D-SMT-TR_Jack_3.5mm_TRRS_Horizontal.step"
+	(model "${OPENDAP_KICAD_3DMODELS}/Same_Sky.3dshapes/Same_Sky_SJ2-35954D-SMT-TR_Jack_3.5mm_TRRS_Horizontal.step"
 		(offset
 			(xyz 0 0 0)
 		)
