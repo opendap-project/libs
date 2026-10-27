@@ -1,0 +1,119 @@
+# SN74AXC1T45DCKR - TI single-bit dual-supply bus transceiver, DCK0006A (SC-70-6)
+# Sources: SCES882E (SN74AXC1T45 datasheet, Dec 2017 rev. Dec 2023), p. 3 (pin functions, Figure 4-2,
+# Table 4-1), p. 18 (function table), p. 30 (DCK0006A outline), p. 31 (example board layout),
+# p. 32 (example stencil design).
+
+[part]
+mpn = "SN74AXC1T45DCKR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "SN74AXC1T45DCKR"
+reference = "U"
+description = "Single-bit dual-supply bus transceiver, 0.65-3.6 V on each port, direction pin referenced to VCCA, SOT/SC-70-6 (DCK0006A)"
+keywords = "level translator level shifter transceiver dual supply AXC SN74AXC1T45 SC-70 DCK"
+datasheet = "https://www.ti.com/lit/ds/symlink/sn74axc1t45.pdf"
+datasheet_rev = "SCES882E"
+sheet = "Texas-Instruments/SN74AXC1T45DCKR.md"
+notes = [
+  "Land pattern = TI example board layout DCK0006A (SCES882E p. 31, drawing 4214835/D): six pads 0.9 x 0.4 mm (reference), 0.65 mm pitch, 2.2 mm between pad-row centres, R0.05 TYP; non-solder-mask-defined preferred, 0.07 mm max mask clearance; stencil p. 32 equal to the pads.",
+  "The DCK0006A land is shared with TPS22919DCKR and SN74LVC1G57DCKR (same drawing 4214835): the [footprint] section is identical in all three files.",
+  "A and B are bidirectional; the direction is set by DIR (high: A to B, low: B to A; Table 7-1, p. 18). A is on the left with DIR, B on the right.",
+]
+
+[[pins]]
+number = "3"
+name = "A"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "DIR"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "4"
+name = "B"
+type = "bidirectional"
+side = "right"
+
+[[pins]]
+number = "1"
+name = "VCCA"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "6"
+name = "VCCB"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_DCK0006A_SC-70-6_1.25x2mm_P0.65mm"
+description = "Texas Instruments DCK0006A SOT/SC-70-6, 1.25 x 2.0 mm body, 0.65 mm pitch, TI example land pattern (drawing 4214835)"
+tags = "SC-70-6 SOT-363 DCK0006A DCK Texas"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps22919.pdf"   # shared land: one document for the footprint file
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "DCK0006A example board layout, drawing 4214835 (SLVSEN5B p. 25; SCES414P p. 29)"
+body = { x = 1.25, y = 2.0, z = 1.1, standoff = 0.0, cite = "DCK0006A outline (SCES414P p. 28, 4214835/D): body 1.1-1.4 x 1.85-2.15, 1.1 max height" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 3
+step = 1
+start = [-1.1, -0.65]
+pitch = [0.0, 0.65]
+size = [0.9, 0.4]
+shape = "roundrect"
+rratio = 0.125
+type = "smd"
+cite = "DCK0006A example board layout: 6X (0.9) x 6X (0.4), 4X (0.65), (2.2) between pad-row centres, (R0.05) TYP (rratio 0.05/0.4); pins 1-3 left, top to bottom"
+
+[[footprint.rows]]
+first = 4
+count = 3
+step = 1
+start = [1.1, 0.65]
+pitch = [0.0, -0.65]
+size = [0.9, 0.4]
+shape = "roundrect"
+rratio = 0.125
+type = "smd"
+cite = "DCK0006A example board layout: 6X (0.9) x 6X (0.4), 4X (0.65), (2.2) between pad-row centres, (R0.05) TYP (rratio 0.05/0.4); pins 4-6 right, bottom to top"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.65
+cite = "DCK0006A example board layout, 4X (0.65)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "6"
+value = 2.2
+cite = "DCK0006A example board layout, (2.2)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.9, 0.4]
+cite = "DCK0006A example board layout, 6X (0.9), 6X (0.4)"
+
+[[checks]]
+kind = "pad_count"
+value = 6
+cite = "DCK0006A outline, six leads"

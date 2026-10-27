@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        13.85,
+        15.95,
+        1.68
+      ]
+    }
+  ],
+  "library": "Hirose",
+  "name": "Hirose_DM3AT-SF-PEJM5_microSD_PushPush_Top",
+  "source": "envelope from DM3 catalog 2017.1 p. 3 outline: 13.85, 15.95, 1.68"
+}

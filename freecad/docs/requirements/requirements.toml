@@ -1,0 +1,14 @@
+schema = "opendap.requirements/v1"
+
+[[block]]
+markdown = "# FreeCAD library requirements\n"
+
+[[block]]
+[[block.requirement]]
+id = "FLIB-001"
+text = "OpenDAP shall maintain its own FreeCAD parts library, shared by every OpenDAP mechanical project."
+priority = "must"
+status = "confirmed"
+
+[[block]]
+markdown = ""

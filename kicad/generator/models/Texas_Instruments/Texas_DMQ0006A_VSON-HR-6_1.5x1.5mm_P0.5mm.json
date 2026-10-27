@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.5,
+        1.5,
+        1.0
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm",
+  "source": "envelope from SLVSEF9I p. 32, DMQ0006A outline: 1.45-1.55 x 1.45-1.55, height 0.8-1.0 (z = max), standoff 0.00-0.05"
+}

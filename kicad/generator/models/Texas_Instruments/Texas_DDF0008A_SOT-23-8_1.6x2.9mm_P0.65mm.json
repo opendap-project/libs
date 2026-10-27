@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.6,
+        2.9,
+        1.1
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_DDF0008A_SOT-23-8_1.6x2.9mm_P0.65mm",
+  "source": "envelope from DDF0008A outline (SBOSA81D p. 41, 4222047/E): body 1.55-1.65 x 2.85-2.95, 1.1 MAX height, standoff 0.0-0.1"
+}

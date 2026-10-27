@@ -1,0 +1,154 @@
+(version 1)
+# OpenDAP fab rules: PCBWay advanced HDI (laser microvias, blind and buried vias)
+#
+# Process: PCBWay advanced HDI, 1+N+1 to 6+N+6 builds, stacked or staggered
+# copper-filled microvias. Stackup assumed: 18 um (1/2 oz) base copper on every
+# layer, FR-4. See README.md for the stackup, what DRC cannot check, and the
+# values still UNVERIFIED.
+#
+# Every value is a PCBWay published figure, copied in
+# design-rules/pcbway-capabilities.md (pages fetched 2026-10-22) and
+# cited by its source key:
+#   [P1]  https://www.pcbway.com/capabilities.html
+#   [P2]  https://www.pcbway.com/advanced-pcb-capabilities.html
+#   [P3]  https://www.pcbway.com/hdi-pcb.html
+#   [P10] https://www.pcbway.com/pcb_prototype/PCB_BGA.html
+#   [P16] https://www.pcbway.com/HighQualityOrderOnline.aspx
+# Where PCBWay gives a normal value and a tighter limit, the rule uses the
+# normal value. A product that needs the limit overrides the rule in its own
+# product rules, in a named area or net class.
+#
+# Mil figures are written in mil (1 mil = 0.0254 mm), exactly as published.
+# KiCad applies the LAST matching rule for a constraint: general rules come
+# first, specific ones after them.
+#
+# Use: copy next to the KiCad project as <project>.kicad_dru.
+
+
+# --- Copper clearance and track width ---
+
+# Track/space, HDI, <= 18 um base: 3/3 mil, the normal order option; 0.065 mm
+# is the floor for a BGA escape area only. [P3, P16]
+(rule "PCBWay HDI: Copper clearance (outer)"
+	(layer outer)
+	(constraint clearance (min 3mil))
+)
+
+# Same figure on inner layers. [P3, P16]
+(rule "PCBWay HDI: Copper clearance (inner)"
+	(layer inner)
+	(constraint clearance (min 3mil))
+)
+
+# BGA pad to line: 3 mil (advanced factory; 2.5 mil prototype limit). [P10]
+# After the general clearance rules so that it decides for BGA pads.
+(rule "PCBWay HDI: BGA pad to track"
+	(condition "(A.Type == 'Pad' && A.Fabrication_Property == 'BGA pad' && (B.Type == 'Track' || B.Type == 'Arc')) || (B.Type == 'Pad' && B.Fabrication_Property == 'BGA pad' && (A.Type == 'Track' || A.Type == 'Arc'))")
+	(constraint clearance (min 3mil))
+)
+
+# Track width, outer: 3 mil. [P3, P16]
+(rule "PCBWay HDI: Track width (outer)"
+	(layer outer)
+	(constraint track_width (min 3mil))
+)
+
+# Track width, inner: 3 mil. [P3, P16]
+(rule "PCBWay HDI: Track width (inner)"
+	(layer inner)
+	(constraint track_width (min 3mil))
+)
+
+
+# --- BGA ---
+
+# BGA pad >= 0.25 mm (prototype factory figure; the advanced factory states
+# 0.20 mm, 0.15 mm sample limit). Pads marked with the "BGA pad" fabrication
+# property. [P10]
+(rule "PCBWay HDI: BGA pad size"
+	(condition "A.Type == 'Pad' && A.Fabrication_Property == 'BGA pad'")
+	(constraint assertion "A.Size_X >= 0.25mm && A.Size_Y >= 0.25mm")
+)
+
+
+# --- Drilling ---
+
+# Mechanical drill 0.20-6.5 mm (advanced, normal; 0.15 mm is the HDI-page
+# minimum and stays a product override). Every drilled hole: pads, through,
+# blind and buried vias. [P1]
+(rule "PCBWay HDI: Mechanical drill"
+	(condition "A.Type == 'Pad' || (A.Type == 'Via' && A.Via_Type != 'Micro')")
+	(constraint hole_size (min 0.2mm) (max 6.5mm))
+)
+
+# Laser drill: 4 mil standard, 8 mil maximum (dielectric <= 0.15 mm). The
+# minimum is set to 0.1 mm, the laser hole of PCBWay's own published 8-layer
+# HDI example; 3 mil is reviewed and stays a product override. [P3]
+(rule "PCBWay HDI: Laser microvia drill"
+	(condition "A.Type == 'Via' && A.Via_Type == 'Micro'")
+	(constraint hole_size (min 0.1mm) (max 8mil))
+)
+
+# Microvia ring: 3 mil, the advanced minimum via ring, applied to a
+# 0.10 mm laser hole in a 0.25 mm land (0.075 mm). PCBWay publishes no
+# microvia-specific land: UNVERIFIED, see README. [P2, P3]
+(rule "PCBWay HDI: Laser microvia annular ring"
+	(condition "A.Type == 'Via' && A.Via_Type == 'Micro'")
+	(constraint annular_width (min 0.075mm))
+)
+
+# Via annular ring, outer, 18-35 um copper: >= 5 mil normal (4 mil medium,
+# 3 mil advanced minimum). Mechanical vias. [P1, P2]
+(rule "PCBWay HDI: Mechanical via annular ring"
+	(condition "A.Type == 'Via' && A.Via_Type != 'Micro'")
+	(constraint annular_width (min 5mil))
+)
+
+# Hole to hole, vias <= 0.45 mm: >= 11 mil. Mechanical vias. [P1]
+(rule "PCBWay HDI: Via hole to hole"
+	(condition "A.Type == 'Via' && B.Type == 'Via' && A.Via_Type != 'Micro' && B.Via_Type != 'Micro'")
+	(constraint hole_to_hole (min 11mil))
+)
+
+
+# --- Hole to copper ---
+
+# Hole to conductor, outer layers: 6 mil (advanced). Mechanical holes. [P2]
+(rule "PCBWay HDI: Hole to copper (outer)"
+	(layer outer)
+	(condition "A.Type == 'Pad' || (A.Type == 'Via' && A.Via_Type != 'Micro')")
+	(constraint hole_clearance (min 6mil))
+)
+
+# Hole to inner conductor, 8 layers: >= 9 mil normal (7 mil medium, 6 mil
+# high difficulty). Mechanical holes. [P1]
+(rule "PCBWay HDI: Hole to copper (inner)"
+	(layer inner)
+	(condition "A.Type == 'Pad' || (A.Type == 'Via' && A.Via_Type != 'Micro')")
+	(constraint hole_clearance (min 9mil))
+)
+
+
+# --- Board edge ---
+
+# Line to board edge (milled): 0.20 mm. [P1]
+(rule "PCBWay HDI: Copper to board edge"
+	(constraint edge_clearance (min 0.2mm))
+)
+
+
+# --- Legend ---
+
+# Silkscreen line >= 0.15 mm (character stroke). [P1]
+(rule "PCBWay HDI: Silkscreen line width"
+	(layer "?.SilkS")
+	(condition "A.Type == 'Text' || A.Type == 'Text Box'")
+	(constraint text_thickness (min 0.15mm))
+)
+
+# Silkscreen height >= 0.8 mm. [P1]
+(rule "PCBWay HDI: Silkscreen text height"
+	(layer "?.SilkS")
+	(condition "A.Type == 'Text' || A.Type == 'Text Box'")
+	(constraint text_height (min 0.8mm))
+)

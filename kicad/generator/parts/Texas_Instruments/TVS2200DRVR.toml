@@ -1,0 +1,151 @@
+# TVS2200DRVR - TI 22 V unidirectional flat-clamp surge protection device, DRV0006A (WSON-6, 2 x 2 mm, exposed pad)
+# Sources: SLVSED5C (TVS2200 datasheet, Dec 2017 rev. Aug 2023), PDF p. 3 (Figure 6-1 bottom view, Table 6-1 pin
+# functions); mechanical addendum drawing 4222173/C 11/2025: PDF p. 18 package outline, p. 19 example board
+# layout, p. 20 example stencil design (PDF page numbers of the cached tvs2200.pdf). Read from 150 dpi renders.
+
+[part]
+mpn = "TVS2200DRVR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TVS2200DRVR"
+reference = "D"
+description = "Unidirectional flat-clamp surge protection device, 22 V stand-off, 40 A 8/20 us, IEC 61000-4-2 level 4, WSON-6 (DRV0006A) 2 x 2 mm"
+keywords = "TVS surge protection flat clamp ESD VBUS USB-C TVS2200 WSON DRV"
+datasheet = "https://www.ti.com/lit/ds/symlink/tvs2200.pdf"
+datasheet_rev = "SLVSED5C"
+sheet = "Texas-Instruments/TVS2200DRVR.md"
+notes = [
+  "Land pattern = TI example board layout DRV0006A (SLVSED5C p. 19): six pads 6X (0.45) x 6X (0.3), 4X (0.65) pitch, (1.95) between the pad-column centres, (R0.05) TYP; thermal pad 7 (1) x (1.6). Pins 1-3 left top to bottom, 4-6 right bottom to top (top view; p. 3 shows the bottom view).",
+  "Stencil (p. 20, 0.125 mm): signal apertures equal the pads; pad 7 prints through two (1) x (0.7) apertures at y = +/-(0.45), 88 % coverage (2 x 0.7 / 1.6), so pad 7 has paste = false.",
+  "The two optional (0.2) vias in pad 7 at y = +/-0.55 ((1.1) apart, note 6) are a layout choice, not part of the footprint.",
+  "The DRV0006A land (drawing 4222173/C) is shared with TPS61160DRVR (SLVS791E) and TVS0500DRVR (SLVSED2C carries the same drawing): every one of these data files keeps this [footprint] section identical.",
+  "Non-solder-mask-defined pads, 0.07 mm max opening all around (p. 19): the board default mask expansion applies.",
+  "Pin 7 is the exposed pad; the sheet lists it as '7 (exposed pad)' (sheet_number).",
+]
+
+[[pins]]
+number = "4"
+name = "IN"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "IN"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "6"
+name = "IN"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "1"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "3"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "7"
+name = "GND"
+type = "power_in"
+side = "bottom"
+sheet_number = "7 (exposed pad)"
+
+[footprint]
+name = "Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+description = "Texas Instruments DRV0006A WSON-6, 2 x 2 mm body, 0.65 mm pitch, 1 x 1.6 mm exposed pad, TI example land pattern and stencil (drawing 4222173/C)"
+tags = "WSON SON DRV0006A DRV Texas TVS"
+datasheet = "https://www.ti.com/lit/ds/symlink/tvs2200.pdf"   # shared land: one document for the footprint file
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "DRV0006A example board layout and example stencil design, drawing 4222173/C 11/2025 (SLVSED5C pp. 19-20)"
+body = { x = 2.0, y = 2.0, z = 0.8, standoff = 0.0, cite = "DRV0006A outline (SLVSED5C p. 18, 4222173/C): 1.9-2.1 x 1.9-2.1, 0.7-0.8 height (0.8 max), standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 3
+step = 1
+start = [-0.975, -0.65]
+pitch = [0.0, 0.65]
+size = [0.45, 0.3]
+shape = "roundrect"
+rratio = 0.167
+type = "smd"
+cite = "SLVSED5C p. 19: 6X (0.45) x 6X (0.3), 4X (0.65), (1.95) between column centres, (R0.05) TYP (rratio 0.05/0.3); pins 1-3 left, top to bottom"
+
+[[footprint.rows]]
+first = 4
+count = 3
+step = 1
+start = [0.975, 0.65]
+pitch = [0.0, -0.65]
+size = [0.45, 0.3]
+shape = "roundrect"
+rratio = 0.167
+type = "smd"
+cite = "SLVSED5C p. 19: pins 4-6 right, bottom to top"
+
+[[footprint.pads]]
+number = "7"
+at = [0.0, 0.0]
+size = [1.0, 1.6]
+shape = "roundrect"
+rratio = 0.05
+type = "smd"
+paste = false
+cite = "SLVSED5C p. 19: thermal pad (1) x (1.6), centred (SYMM), (R0.05) TYP (rratio 0.05/1.0)"
+
+[[footprint.paste]]
+start = [0.0, -0.45]
+pitch = [0.0, 0.9]
+count = [1, 2]
+size = [1.0, 0.7]
+cite = "SLVSED5C p. 20: pad 7 apertures (1) x (0.7) at (0.45) from the centre line, 88 % printed coverage"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.65
+cite = "SLVSED5C p. 19, 4X (0.65)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "6"
+value = 1.95
+cite = "SLVSED5C p. 19, (1.95)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.45, 0.3]
+cite = "SLVSED5C p. 19, 6X (0.45), 6X (0.3)"
+
+[[checks]]
+kind = "pad_size"
+a = "7"
+value = [1.0, 1.6]
+cite = "SLVSED5C p. 19, (1) x (1.6)"
+
+[[checks]]
+kind = "pad_count"
+value = 7
+cite = "SLVSED5C p. 18: six terminals and the exposed thermal pad"

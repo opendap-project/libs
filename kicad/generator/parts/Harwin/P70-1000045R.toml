@@ -1,0 +1,75 @@
+# Harwin P70-1000045R: SMT spring-loaded pogo pin, tape and reel.
+# Primary source: Customer Information Sheet, drawing P70-10X0045R, issue 4 (02.07.21), sheet 2 of 2
+# (LCSC mirror C17702549, sha256 c0e14613...b9107). Rendered and read at 300 dpi.
+
+[part]
+mpn = "P70-1000045R"
+second_source = "Mill-Max 0965-0-15-20-80-14-11-0 (BOM v1 line 67, same pads)"
+manufacturer = "Harwin"
+library = "Harwin"
+symbol = "P70-1000045R"
+reference = "J"
+description = "SMT spring-loaded pogo pin, 2.0 A, phi 2.00 mm flange, 3.50 mm free height, working height 2.70-3.00 mm"
+keywords = "pogo pin spring loaded contact SMT Harwin P70"
+datasheet = "https://www.harwin.com/products/P70-1000045R/"
+datasheet_rev = "Drawing P70-10X0045R issue 4, 02.07.21"
+sheet = "Harwin/P70-1000045R.md"
+sheet_pins = "none: single contact"
+notes = [
+  "Land pattern = manufacturer 'RECOMMENDED PCB PAD LAYOUT': one round pad phi 2.20 +/-0.05.",
+  "Datasheet URL is the manifest's product page (no direct PDF URL in manifest.toml); the copy read is the LCSC mirror named in the parts-lib sheet.",
+  "Body = flange phi 2.00 x free height 3.50 (DIM 'A' for P70-1000045R). Plunger phi 0.90, barrel phi 1.50 / 1.54 not modelled separately.",
+  "Only two checks possible (single pad): pad_size and pad_count.",
+]
+
+[[pins]]
+number = "1"
+name = "CONTACT"
+type = "passive"
+side = "left"
+
+[footprint]
+name = "Harwin_P70-1000045R_PogoPin_D2.0mm_H3.5mm"
+description = "Harwin P70-1000045R SMT spring-loaded pogo pin, round pad phi 2.20 mm (drawing P70-10X0045R issue 4)"
+tags = "Harwin P70 pogo pin spring contact"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "P70-10X0045R issue 4, RECOMMENDED PCB PAD LAYOUT"
+body = { x = 2.0, y = 2.0, z = 3.5, standoff = 0.0, cite = "P70-10X0045R issue 4, COMPONENT DETAILS flange phi 2.00; size table DIM 'A' 3.50 +/-0.20 (P70-1000045R)" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "1"
+at = [0.0, 0.0]
+size = [2.2, 2.2]
+shape = "circle"
+type = "smd"
+paste = true
+cite = "P70-10X0045R issue 4, RECOMMENDED PCB PAD LAYOUT, phi 2.20 +/-0.05"
+
+[[footprint.model]]
+size = [2.0, 2.0, 0.4]
+at = [0.0, 0.0, 0.0]
+cite = "P70-10X0045R issue 4, flange phi 2.00, DIM 'C' 0.40 (P70-1000045R)"
+
+[[footprint.model]]
+size = [1.54, 1.54, 2.5]
+at = [0.0, 0.0, 0.0]
+cite = "P70-10X0045R issue 4, barrel phi 1.54/1.50, DIM 'B' 2.50 (flange bottom to barrel top)"
+
+[[footprint.model]]
+size = [0.9, 0.9, 3.5]
+at = [0.0, 0.0, 0.0]
+cite = "P70-10X0045R issue 4, plunger phi 0.90, DIM 'A' 3.50 free height"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [2.2, 2.2]
+cite = "P70-10X0045R issue 4, RECOMMENDED PCB PAD LAYOUT, phi 2.20"
+
+[[checks]]
+kind = "pad_count"
+value = 1
+cite = "P70-10X0045R issue 4, RECOMMENDED PCB PAD LAYOUT (one pad)"

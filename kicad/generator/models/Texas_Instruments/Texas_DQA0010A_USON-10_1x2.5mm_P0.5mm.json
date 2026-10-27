@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.0,
+        2.5,
+        0.55
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_DQA0010A_USON-10_1x2.5mm_P0.5mm",
+  "source": "envelope from DQA0010A outline (SLVSBO7O p. 28, 4220328/A): 0.9-1.1 x 2.4-2.6, 0.55 MAX height, standoff 0.00-0.05"
+}

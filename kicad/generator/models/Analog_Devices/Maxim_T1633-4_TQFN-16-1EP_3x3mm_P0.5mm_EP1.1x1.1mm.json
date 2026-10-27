@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        3.0,
+        3.0,
+        0.8
+      ]
+    }
+  ],
+  "library": "Analog_Devices",
+  "name": "Maxim_T1633-4_TQFN-16-1EP_3x3mm_P0.5mm_EP1.1x1.1mm",
+  "source": "envelope from Rev 11 p. 37, 21-0136 16L 3x3: D = E 2.90-3.10, A 0.70-0.80, A1 0-0.05"
+}

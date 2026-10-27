@@ -1,0 +1,178 @@
+# LT3094EDD#TRPBF - Analog Devices -20 V, -500 mA ultra-low-noise, ultra-high-PSRR negative LDO, DD package (DFN-12, 3 x 3 mm)
+# Sources: LT3094 datasheet Rev. B, p. 3 (pin configuration), p. 15 (pin functions), p. 31
+# (DD package drawing, LTC DWG 05-08-1725 Rev A, with its recommended solder pad dimensions).
+
+[part]
+mpn = "LT3094EDD#TRPBF"
+second_source = "Analog Devices LT3094EDD#PBF (same part, tube)"
+manufacturer = "Analog Devices"
+library = "Analog_Devices"
+symbol = "LT3094EDD"
+reference = "U"
+description = "Negative LDO regulator, -20 V, -500 mA, 0.8 uVrms noise, 74 dB PSRR at 1 MHz, programmable current limit, power good, VIOC tracking, DFN-12 (DD) 3 x 3 mm with exposed pad (IN)"
+keywords = "negative LDO linear regulator ultra low noise high PSRR LT3094 DFN DD"
+datasheet = "https://www.analog.com/media/en/technical-documentation/data-sheets/lt3094.pdf"
+datasheet_rev = "Rev. B"
+sheet = "Analog-Devices/LT3094EDD-TRPBF.md"
+notes = [
+  "Land pattern = the recommended solder pad pitch and dimensions of the DD package drawing (LT3094 Rev. B p. 31): 0.45 mm pitch, pads 0.25 x 0.70 mm, outer extent 3.50 mm (pad centres at +-(3.50 - 0.70) / 2 = +-1.40 mm), centre pad 1.65 x 2.38 mm.",
+  "The exposed pad (pin 13) is IN, the negative input, not ground (p. 3): it is a power_in pin on the left with IN 1 and 2.",
+  "Corner radius and paste on the exposed pad are not given: roundrect 0.25 (KLC default) and full paste on the centre pad, both UNVERIFIED.",
+  "OUT is two pins (11, 12): pin 11 is power_out, pin 12 passive, so ERC reads one driver (KiCad flags two connected power outputs).",
+]
+
+[[pins]]
+number = "1"
+name = "IN"
+type = "power_in"
+side = "left"
+
+[[pins]]
+number = "2"
+name = "IN"
+type = "power_in"
+side = "left"
+
+[[pins]]
+number = "13"
+name = "IN"
+type = "power_in"
+side = "left"
+sheet_number = "13 (EP)"
+
+[[pins]]
+number = "3"
+name = "EN/UV"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "5"
+name = "PGFB"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "6"
+name = "ILIM"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "8"
+name = "SET"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "11"
+name = "OUT"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "12"
+name = "OUT"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "10"
+name = "OUTS"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "4"
+name = "PG"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "7"
+name = "VIOC"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Analog_DD_DFN-12-1EP_3x3mm_P0.45mm_EP1.65x2.38mm"
+description = "Analog Devices (Linear Technology) DD DFN-12, 3 x 3 mm body, 0.45 mm pitch, exposed pad 1.65 x 2.38 mm, recommended solder pads of LTC DWG 05-08-1725 Rev A"
+tags = "DFN DD 05-08-1725 LT3094 Analog Devices"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "LT3094 Rev. B p. 31, DD package drawing, recommended solder pad pitch and dimensions"
+body = { x = 3.0, y = 3.0, z = 0.8, standoff = 0.0, cite = "LT3094 Rev. B p. 31: body 3.00 +- 0.10, height 0.75 +- 0.05 (z = max)" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 6
+step = 1
+start = [-1.4, -1.125]
+pitch = [0.0, 0.45]
+size = [0.7, 0.25]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "LT3094 Rev. B p. 31: 0.45 pitch, pads 0.25 x 0.70, outer extent 3.50; pins 1-6 left, top to bottom"
+
+[[footprint.rows]]
+first = 7
+count = 6
+step = 1
+start = [1.4, 1.125]
+pitch = [0.0, -0.45]
+size = [0.7, 0.25]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "LT3094 Rev. B p. 31: 0.45 pitch, pads 0.25 x 0.70, outer extent 3.50; pins 7-12 right, bottom to top"
+
+[[footprint.pads]]
+number = "13"
+at = [0.0, 0.0]
+size = [1.65, 2.38]
+shape = "rect"
+type = "smd"
+cite = "LT3094 Rev. B p. 31: exposed pad 1.65 x 2.38"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.45
+cite = "LT3094 Rev. B p. 31: 0.45 pitch"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "12"
+value = 2.8
+cite = "LT3094 Rev. B p. 31: outer extent minus one pad length"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.7, 0.25]
+cite = "LT3094 Rev. B p. 31: pad length 0.70, width 0.25"
+
+[[checks]]
+kind = "pad_size"
+a = "13"
+value = [1.65, 2.38]
+cite = "LT3094 Rev. B p. 31: centre pad 1.65 x 2.38"
+
+[[checks]]
+kind = "pad_count"
+value = 13
+cite = "LT3094 Rev. B p. 31: 12 leads and the exposed pad"

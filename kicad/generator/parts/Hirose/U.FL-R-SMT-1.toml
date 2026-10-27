@@ -1,0 +1,120 @@
+# U.FL-R-SMT-1: Hirose U.FL SMT coaxial receptacle, 50 ohm, DC-6 GHz. Ordered as U.FL-R-SMT-1(10) (2,500/reel).
+# Source: U.FL cat. = Hirose U.FL Series catalog 2009.2, sha256 6949727d...dcdd2, p. 3 "Receptacles" outline and
+#   "Recommended PCB Mounting Pattern" (read from 300 and 600 dpi renders).
+# Recommended pattern (p. 3, top view; SIG land below the GND lands as drawn):
+#   GND lands: outer edges 4 +/- 0.05 apart, inner edges 1.9 +/- 0.05 apart -> width (4 - 1.9)/2 = 1.05 (derived; no
+#     width dimension printed), height 2.2 +/- 0.05, centred on the horizontal centre line; x centres +/-(1.9 + 1.05)/2 = +/-1.475.
+#   SIG land: 1 +/- 0.05 wide, 1.05 +/- 0.05 tall; its top edge is 1 +/- 0.05 below the GND centre line -> centre y = +1.525.
+#   "No conductive traces in this area" between the lands.
+#   The crosshair at the GND centre line / vertical axis is the receptacle axis (outline: post centred in the 2.6 body,
+#   GND terminals 1.8 centred on it) -> origin there.
+# Body (p. 3): 2.6 x 2.6 housing (3 over the GND terminals, (3.1) over the SIG tabs), base 0.35 high, Phi 2 post,
+#   overall 1.25 high.
+# Orientation: as drawn (SIG below); pin 1 (SIG) is therefore bottom-centre, not top-left.
+
+[part]
+mpn = "U.FL-R-SMT-1"
+second_source = "Hirose U.FL-R-SMT-1(80) (BOM v1 line 56)"
+manufacturer = "Hirose"
+library = "Hirose"
+symbol = "U.FL-R-SMT-1"
+reference = "J"
+description = "U.FL ultra-small SMT coaxial receptacle, 50 ohm, DC to 6 GHz, 2.6 x 2.6 mm, 1.25 mm high"
+keywords = "connector coaxial RF U.FL IPEX antenna 50ohm Hirose receptacle"
+datasheet = "https://www.hirose.com/en/product/series/U.FL"
+datasheet_rev = "U.FL catalog 2009.2 (p. 3)"
+sheet = "Hirose/U.FL-R-SMT-1.md"
+sheet_pins = "none: the sheet lists no pin table; 1 = signal, 2 = ground (UNVERIFIED numbering), checked by pad_count"
+notes = [
+  "DISCREPANCY with the parts-lib sheet: the sheet gives GND pads 1 +/- 0.05 wide and SIG 1 x 1 offset 1.05 from the GND row. The p. 3 drawing gives no GND width (4 and 1.9 imply 1.05) and dimensions SIG as 1 +/- 0.05 wide x 1.05 +/- 0.05 tall with its top edge 1 +/- 0.05 below the GND centre line (the 1.05 is the SIG height, not the offset). Footprint follows the drawing.",
+  "Pin numbers are not in the catalog or the sheet: 1 = SIG, 2 = GND (both GND lands), KiCad coaxial convention. UNVERIFIED as a Hirose numbering.",
+  "Orderable code is U.FL-R-SMT-1(10); mpn kept without the packaging suffix as requested by the task.",
+  "The catalog asks for the engineering drawing for current data (p. 1/3 header note); this footprint is from the 2009.2 catalog only (UNVERIFIED against the current drawing).",
+  "Keep-out 'no conductive traces' between the lands (p. 3) is not encoded as a rule area.",
+]
+
+[[pins]]
+number = "1"
+name = "SIG"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "passive"
+side = "bottom"
+gap = false
+
+[footprint]
+name = "Hirose_U.FL-R-SMT-1_Vertical"
+description = "Hirose U.FL-R-SMT-1 coaxial receptacle, recommended mounting pattern (U.FL catalog 2009.2 p. 3)"
+tags = "connector coaxial U.FL Hirose RF antenna"
+attr = "smd"
+courtyard_class = "connector"
+land_pattern = "manufacturer"
+land_pattern_cite = "U.FL catalog 2009.2 p. 3, Recommended PCB Mounting Pattern"
+body = { x = 2.6, y = 2.6, z = 1.25, standoff = 0.0, cite = "U.FL cat. p. 3: 2.6 x 2.6 housing (3 over GND terminals, (3.1) over tabs), 1.25 overall height" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "1"
+at = [0.0, 1.525]
+size = [1.0, 1.05]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "U.FL cat. p. 3, Recommended PCB Mounting Pattern: SIG 1 +/- 0.05 wide x 1.05 +/- 0.05 tall, top edge 1 +/- 0.05 below the GND centre line"
+
+[[footprint.pads]]
+number = "2"
+at = [-1.475, 0.0]
+size = [1.05, 2.2]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "U.FL cat. p. 3, Recommended PCB Mounting Pattern: GND 2.2 +/- 0.05 tall; width (4 - 1.9)/2 = 1.05 derived from 4 +/- 0.05 and 1.9 +/- 0.05"
+
+[[footprint.pads]]
+number = "2"
+at = [1.475, 0.0]
+size = [1.05, 2.2]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "U.FL cat. p. 3, Recommended PCB Mounting Pattern: GND 2.2 +/- 0.05 tall; width (4 - 1.9)/2 = 1.05 derived from 4 +/- 0.05 and 1.9 +/- 0.05"
+
+[[footprint.model]]
+size = [2.6, 2.6, 0.35]
+at = [0.0, 0.0, 0.0]
+cite = "U.FL cat. p. 3: 2.6 x 2.6 base, 0.35 high"
+
+[[footprint.model]]
+size = [2.0, 2.0, 0.9]
+at = [0.0, 0.0, 0.35]
+cite = "U.FL cat. p. 3: Phi 2 mating post, top at 1.25 (envelope box)"
+
+[[checks]]
+kind = "dy"
+a = "2"
+b = "1"
+value = 1.525
+cite = "U.FL cat. p. 3, Recommended PCB Mounting Pattern: 1 +/- 0.05 (GND centre line to SIG top edge) + 1.05/2"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [1.0, 1.05]
+cite = "U.FL cat. p. 3, Recommended PCB Mounting Pattern: SIG 1 +/- 0.05 x 1.05 +/- 0.05"
+
+[[checks]]
+kind = "pad_size"
+a = "2"
+value = [1.05, 2.2]
+cite = "U.FL cat. p. 3, Recommended PCB Mounting Pattern: GND 2.2 +/- 0.05 tall; width from 4 / 1.9"
+
+[[checks]]
+kind = "pad_count"
+value = 3
+cite = "U.FL cat. p. 3: SIG + 2 GND lands"

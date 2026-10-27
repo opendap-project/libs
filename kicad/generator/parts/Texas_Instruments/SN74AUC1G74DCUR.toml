@@ -1,0 +1,153 @@
+# SN74AUC1G74DCUR - TI single D flip-flop with clear and preset, DCU0008A (VSSOP-8)
+# Sources: SCES537D (SN74AUC1G74 datasheet, Dec 2003 rev. Jun 2007), mechanical addendum
+# drawing 4225266/A 09/2014: p. 14 package outline, p. 15 example board layout,
+# p. 16 example stencil design (PDF page numbers of the cached sn74auc1g74.pdf). All three
+# drawings checked against 200 dpi renders.
+
+[part]
+mpn = "SN74AUC1G74DCUR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "SN74AUC1G74DCUR"
+reference = "U"
+description = "Single positive-edge-triggered D-type flip-flop with clear and preset, AUC family, 0.8-2.7 V, 3.6 V-tolerant inputs, VSSOP-8 (DCU0008A)"
+keywords = "flip-flop D-type clear preset AUC logic single-gate SN74AUC1G74 VSSOP DCU"
+datasheet = "https://www.ti.com/lit/ds/symlink/sn74auc1g74.pdf"
+datasheet_rev = "SCES537D"
+sheet = "Texas-Instruments/SN74AUC1G74DCUR.md"
+notes = [
+  "Land pattern = TI example board layout DCU0008A (SCES537D addendum p. 15): 8X (0.85) x 8X (0.3) pads, 6X (0.5) pitch, (3.1) between pad-row CENTRES, (R0.05) TYP corners; non-solder-mask-defined (preferred, 0.05 MAX mask clearance) so the mask expansion is left to the board default.",
+  "Stencil (p. 16, 0.125 mm thick) apertures equal the pads 1:1: paste = true.",
+  "Discrepancy with the parts-lib sheet (Recommended footprint): the sheet says '(3.1) mm between pad-row outer edges' and that the footprint is 'to be generated to IPC-7351'. The drawing dimensions (3.1) between the pad centrelines (outer edges are 3.1 + 0.85 = 3.95 mm apart), and the TI example pattern is used as given (land_pattern = manufacturer).",
+  "The sheet cites 'SCES537D package pages' without page numbers: the DCU0008A pages are PDF pp. 14-16 of the cached file.",
+  "Body z = 0.9 mm is the maximum height (0.6-0.9, p. 14 Detail A); x/y nominal (2.2-2.4 x 1.9-2.1, excluding mold flash up to 0.15 per side, note 3).",
+  "Active-low pin names: the sheet writes a combining overline (Q̅, CLR̅, PRE̅); symbol names use KiCad ~{..}, sheet_name keeps the sheet text.",
+]
+
+[[pins]]
+number = "8"
+name = "VCC"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "2"
+name = "D"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "1"
+name = "CLK"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "7"
+name = "~{PRE}"
+sheet_name = "PRE̅"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "6"
+name = "~{CLR}"
+sheet_name = "CLR̅"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "Q"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "3"
+name = "~{Q}"
+sheet_name = "Q̅"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "4"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_DCU0008A_VSSOP-8_2.3x2mm_P0.5mm"
+description = "Texas Instruments DCU0008A VSSOP-8 (JEDEC MO-187 CA), 2.3 x 2.0 mm body, 0.5 mm pitch, TI example land pattern (SCES537D addendum p. 15, drawing 4225266/A)"
+tags = "VSSOP-8 US8 DCU0008A MO-187 Texas"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SCES537D addendum p. 15, DCU0008A example board layout (4225266/A 09/2014); stencil p. 16"
+body = { x = 2.3, y = 2.0, z = 0.9, standoff = 0.05, cite = "SCES537D p. 14, DCU0008A outline: 2.2-2.4 (x) x 1.9-2.1 (y), height 0.6-0.9 (z = max), standoff 0.0-0.1 (nominal 0.05)" }
+body_offset = [0.0, 0.0]
+
+# Pins 1-4 left (1 top), pins 5-8 right (5 bottom, 8 top). Pad centres x = +-(3.1)/2 = +-1.55,
+# y = -0.75 / -0.25 / +0.25 / +0.75 (6X (0.5), symmetric about SYMM).
+[[footprint.rows]]
+first = 1
+count = 4
+step = 1
+start = [-1.55, -0.75]
+pitch = [0.0, 0.5]
+size = [0.85, 0.3]
+shape = "roundrect"
+rratio = 0.17
+type = "smd"
+cite = "SCES537D p. 15: 8X (0.85), 8X (0.3), 6X (0.5), (3.1) centre to centre, (R0.05) TYP (rratio 0.05/0.3)"
+
+[[footprint.rows]]
+first = 5
+count = 4
+step = 1
+start = [1.55, 0.75]
+pitch = [0.0, -0.5]
+size = [0.85, 0.3]
+shape = "roundrect"
+rratio = 0.17
+type = "smd"
+cite = "SCES537D p. 15: 8X (0.85), 8X (0.3), 6X (0.5), (3.1) centre to centre, (R0.05) TYP"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "SCES537D p. 14, 6X [0.5]; p. 15, 6X (0.5)"
+
+[[checks]]
+kind = "dy"
+a = "8"
+b = "5"
+value = 1.5
+cite = "SCES537D p. 14, 2X [1.5]"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "8"
+value = 3.1
+cite = "SCES537D p. 15, (3.1)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "4"
+value = 1.5
+cite = "SCES537D p. 14, [1.5]; p. 15, 3 x (0.5)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.85, 0.3]
+cite = "SCES537D p. 15, 8X (0.85), 8X (0.3)"
+
+[[checks]]
+kind = "pad_count"
+value = 8
+cite = "SCES537D p. 1, DCU package pinout (8 pins)"

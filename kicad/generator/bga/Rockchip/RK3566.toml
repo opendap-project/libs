@@ -1,0 +1,185 @@
+# RK3566 application processor, FCCSP565L. Read by generator/bga.py; checked by generator/test_bga.py.
+# Every number cites its source. DS = Rockchip RK3566 Datasheet Rev 1.1, 2021-03-05 (parts-lib
+# manifest.toml, sha256 1bc4aa39...7451280; not redistributable, fetched into the local cache).
+
+[part]
+library = "Rockchip"
+symbol = "RK3566"
+manufacturer = "Rockchip"
+mpn = "RK3566"
+reference = "U"
+description = "Quad-core Arm Cortex-A55 application processor, LPDDR4X/DDR4 32-bit, eMMC 5.1, FCCSP565L 15.5 x 14.4 mm"
+keywords = "SoC Rockchip RK3566 Cortex-A55 FCCSP565L"
+datasheet = "https://dl.xkwy2018.com/downloads/RK3568/Rockchip-RK3566-Datasheet-V1.1-20210305.pdf"
+pins = "RK3566-pins.csv"          # DS Table 2-1 Pin Number List, pp. 23-30 (names verbatim)
+ballmap = "RK3566-ballmap.txt"    # DS Fig. 2-6 Ball Map, p. 23
+
+[package]
+name = "FCCSP-565L"
+body_x = 15.5            # DS p. 21, Fig. 2-2 / Fig. 2-3 and p. 18 (body 15.5 x 14.4 mm)
+body_y = 14.4
+height_nom = 0.833       # A, DS p. 22, Fig. 2-5 (min 0.762, max 0.904)
+height_max = 0.904
+standoff_nom = 0.160     # A1, DS p. 22, Fig. 2-5 (min 0.120, max 0.200)
+ball_min = 0.200         # b, DS p. 22, Fig. 2-5
+ball_nom = 0.250
+ball_max = 0.300
+cite = "DS Rev 1.1 pp. 21-22, Figs. 2-2 to 2-5"
+
+# Ball grids, top view, origin at the body centre, +x right, +y down (KiCad). A1 is the top-left
+# corner (DS Fig. 2-3 is a bottom view with "A1 BALL PAD CORNER" top right).
+# Perimeter ring: 38 columns x 35 rows at 0.400 mm; outer ball centres span 14.800 x 13.600 mm
+# (DS Fig. 2-3); edge to the first ball 0.350 REF (x) and 0.400 REF (y): (15.5-14.8)/2, (14.4-13.6)/2.
+[[grid]]
+prefix = ""
+rows = ["A","B","C","D","E","F","G","H","J","K","L","M","N","P","R","T","U","V","W","Y",
+        "AA","AB","AC","AD","AE","AF","AG","AH","AJ","AK","AL","AM","AN","AP","AR"]
+cols = 38
+pitch = 0.400            # DS Fig. 2-3
+first_x = -7.400         # -14.800 / 2
+first_y = -6.800         # -13.600 / 2
+
+# Core: 20 columns x 18 rows at 0.650 mm; edge to the first core ball 1.575 REF (x) and 1.675 REF
+# (y) (DS Fig. 2-3): -15.5/2 + 1.575 and -14.4/2 + 1.675.
+[[grid]]
+prefix = "1"
+rows = ["A","B","C","D","E","F","G","H","J","K","L","M","N","P","R","T","U","V"]
+cols = 20
+pitch = 0.650            # DS Fig. 2-3
+first_x = -6.175
+first_y = -5.525
+
+# Land pattern (no land pattern published by Rockchip; see generator/bga/README.md):
+# NSMD copper land 0.25 mm on both grids, solder-mask opening 0.3008 mm (1 mil per side).
+[land]
+type = "NSMD"
+pad = 0.25
+mask_margin = 0.0254
+paste = "1:1"
+
+[footprint]
+name = "Rockchip_FCCSP-565L_15.5x14.4mm_P0.4mm_P0.65mm_Ball0.25mm_Pad0.25mm_NSMD"
+tags = "BGA FCCSP FCCSP565L RK3566 Rockchip 0.4mm 0.65mm"
+
+# Symbol units, in order: the first rule that matches a pin decides its unit. 'name' is a regular
+# expression on the pin name (search), 'domain' on the IO power domain of DS section 2.7.
+[[unit]]
+name = "DDR channel A"
+name_re = "^DDR_(DQ|DM)\\w*_A/|LPDDR4_\\w+_A/"
+[[unit]]
+name = "DDR channel B"
+name_re = "^DDR_(DQ|DM)\\w*_B/|LPDDR4_\\w+_B/"
+[[unit]]
+name = "DDR common"
+name_re = "^DDR(?!PHY|_AVSS)"
+[[unit]]
+name = "PMUIO0, PMUIO1"
+domain_re = "^PMUIO[01]$"
+[[unit]]
+name = "PMUIO2"
+domain_re = "^PMUIO2$"
+[[unit]]
+name = "VCCIO1"
+domain_re = "^VCCIO1$"
+[[unit]]
+name = "VCCIO2"
+domain_re = "^VCCIO2$"
+[[unit]]
+name = "VCCIO3"
+domain_re = "^VCCIO3$"
+[[unit]]
+name = "VCCIO4"
+domain_re = "^VCCIO4$"
+[[unit]]
+name = "VCCIO5"
+domain_re = "^VCCIO5$"
+[[unit]]
+name = "VCCIO6"
+domain_re = "^VCCIO6$"
+[[unit]]
+name = "VCCIO7"
+domain_re = "^VCCIO7$"
+[[unit]]
+name = "USB"
+name_re = "^USB(3)?_(HOST|OTG)"
+[[unit]]
+name = "Multi-PHY (PCIe, USB 3, SATA)"
+name_re = "^(PCIE20|SATA|USB3_HOST1_SS|MULTI_PHY)(?!.*AVDD)"
+[[unit]]
+name = "MIPI CSI RX"
+name_re = "^MIPI_CSI_RX_(?!AVDD)"
+[[unit]]
+name = "MIPI DSI TX0, LVDS"
+name_re = "^MIPI_DSI_TX0_(?!.*AVDD)"
+[[unit]]
+name = "MIPI DSI TX1"
+name_re = "^MIPI_DSI_TX1_(?!AVDD)"
+[[unit]]
+name = "HDMI, eDP"
+name_re = "^(HDMI_TX|EDP_TX)_(?!AVDD)"
+[[unit]]
+name = "SARADC"
+name_re = "^SARADC_VIN"
+[[unit]]
+name = "Power: CPU, GPU, NPU, logic"
+name_re = "^(VDD_CPU|VDD_GPU|VDD_NPU|VDD_LOGIC|PMU_VDD_LOGIC)"
+[[unit]]
+name = "Power: DDR and IO"
+name_re = "^(DDRPHY_VDDQ|VCCIO\\d|PMUIO\\d)"
+[[unit]]
+name = "Power: analog"
+name_re = "AVDD|^OTP_VCC"
+[[unit]]
+name = "Ground 1"
+name_re = "^VSS_([1-9]|[1-5]\\d|6[0-4])$"
+[[unit]]
+name = "Ground 2"
+name_re = "^VSS_(6[5-9]|[7-9]\\d|1[01]\\d|12[0-8])$"
+[[unit]]
+name = "Ground 3"
+name_re = "VSS"
+
+# Electrical types, first match wins (KiCad pin types). Alternates take the same type.
+[[ptype]]
+type = "power_in"
+name_re = "^(VDD_|PMU_VDD|DDRPHY_VDDQ|VCCIO\\d|PMUIO\\d)|AVDD|^OTP_VCC|VSS"
+[[ptype]]
+type = "bidirectional"
+name_re = "GPIO|^DDR_(DQ|DM)|^USB(3)?_(HOST|OTG)\\d?_D[PM]"
+[[ptype]]
+type = "output"
+name_re = "^DDR4_|^XOUT24M|^DDR_VREFOUT|^(PCIE20_TX|USB3_HOST1_SSTX|MIPI_DSI_TX|HDMI_TX_(CLK|D)|EDP_TX_D)"
+[[ptype]]
+type = "input"
+name_re = "^(XIN24M|nPOR|SARADC_VIN|PCIE20_RX|USB3_HOST1_SSRX|MIPI_CSI_RX|USB_OTG0_(ID|VBUSDET)|HDMI_TX_HPDIN)"
+[[ptype]]
+type = "passive"
+name_re = "."
+
+# The drawing's primary dimensions, for the independent check in generator/test_bga.py (it
+# recomputes every ball centre from these, not from [[grid]]). DS p. 21, Fig. 2-3.
+[[drawing]]
+prefix = ""
+cols = 38                 # ball map columns 1..38 (Fig. 2-6)
+rows = 35                 # ball map rows A..AR (Fig. 2-6)
+pitch = 0.400
+span_x = 14.800           # outer ball centres, x
+span_y = 13.600           # outer ball centres, y
+edge_x = 0.350            # body edge to the first ball centre, x (REF)
+edge_y = 0.400            # body edge to the first ball centre, y (REF)
+[[drawing]]
+prefix = "1"
+cols = 20
+rows = 18
+pitch = 0.650
+edge_x = 1.575            # body edge to the first core ball centre, x (REF)
+edge_y = 1.675            # body edge to the first core ball centre, y (REF)
+map_col0 = 9              # Fig. 2-6 draws core column 1 in table column 10 (0-based 9)
+map_row0 = 8              # and core row A in table row J (0-based 8)
+
+[check]
+balls = 565               # DS p. 18 and p. 21 (b, 565x)
+pdf = "Rockchip/RK3566/Rockchip-RK3566-Datasheet-V1.1-20210305.pdf"   # under ~/.cache/opendap/parts
+pdf_sha256 = "1bc4aa39464c3481d1c82a171498104b9ccd34a61110e97fd9678288e7451280"
+pdf_pages = [23, 30]      # Table 2-1 Pin Number List
+board_pinout = "hardware/pinout/pinout-v1.csv"   # in the T1 board repository, when checked out

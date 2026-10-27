@@ -1,0 +1,156 @@
+# DRV2605LDGSR - TI haptic driver for LRA and ERM with effect library, I2C, DGS0010A (VSSOP-10)
+# Sources: SLOS854D (DRV2605L datasheet, May 2014 rev. March 2018), PDF p. 5 (DGS pinout and pin
+# functions), p. 70 (DGS0010A package outline), p. 71 (example board layout), p. 72 (example stencil
+# design); drawing 4221984/A 05/2015 (PDF page numbers of the cached drv2605l.pdf).
+# Pad positions read from a 150 dpi render of p. 71 against the dimension labels.
+
+[part]
+mpn = "DRV2605LDGSR"
+second_source = "Renesas DA7280-00FV2 (not pin-compatible; BOM v1 line 123)"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "DRV2605LDGSR"
+reference = "U"
+description = "Haptic driver for LRA and ERM actuators, closed-loop auto-resonance, licensed effect library, I2C, 2-5.2 V, VSSOP-10 (DGS0010A)"
+keywords = "haptic driver LRA ERM vibration DRV2605L I2C VSSOP DGS"
+datasheet = "https://www.ti.com/lit/ds/symlink/drv2605l.pdf"
+datasheet_rev = "SLOS854D"
+sheet = "Texas-Instruments/DRV2605LDGSR.md"
+notes = [
+  "Land pattern = TI example board layout DGS0010A (SLOS854D p. 71): ten pads (1.45) x (0.3), 8X (0.5) pitch, (4.4) between the pad-row centres, (R0.05) TYP; stencil p. 72 equal to the pads (paste = true).",
+  "Non-solder-mask-defined pads, 0.05 mm maximum mask clearance (p. 71): the mask expansion is left to the board default.",
+  "IN/TRIG must be tied to GND when not used (p. 5): passive. VDD/NC (pin 6) is an optional supply input to tie to VDD or leave floating (p. 5): passive. REG is the 1.8 V internal regulator output, 1 uF required (p. 5): power_out.",
+  "OUT- is written OUT– (en dash) in the pin table; the symbol uses ASCII '-' and the sheet writes the U+2212 minus that the check normalises.",
+  "Body z = 1.1 mm is the maximum height (1.1 MAX, p. 70); x/y nominal 3.0 x 3.0 (2.9-3.1).",
+]
+
+[[pins]]
+number = "2"
+name = "SCL"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "3"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "EN"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "4"
+name = "IN/TRIG"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "7"
+name = "OUT+"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "OUT-"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "1"
+name = "REG"
+type = "power_out"
+side = "right"
+gap = true
+
+[[pins]]
+number = "10"
+name = "VDD"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "6"
+name = "VDD/NC"
+type = "passive"
+side = "top"
+
+[[pins]]
+number = "8"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_DGS0010A_VSSOP-10_3x3mm_P0.5mm"
+description = "Texas Instruments DGS0010A VSSOP-10 (JEDEC MO-187 BA), 3.0 x 3.0 mm body, 0.5 mm pitch, TI example land pattern (SLOS854D p. 71, drawing 4221984/A)"
+tags = "VSSOP-10 MSOP-10 DGS0010A MO-187 DRV2605L Texas"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SLOS854D p. 71, DGS0010A example board layout (4221984/A 05/2015); stencil p. 72"
+body = { x = 3.0, y = 3.0, z = 1.1, standoff = 0.1, cite = "SLOS854D p. 70, DGS0010A outline: 2.9-3.1 x 2.9-3.1 (notes 3, 4), lead span 4.75-5.05, 1.1 MAX height, standoff 0.05-0.15 (nominal 0.1)" }
+body_offset = [0.0, 0.0]
+
+# Pins 1-5 left (1 top), pins 6-10 right (6 bottom, 10 top). Pad centres x = +-(4.4)/2 = +-2.2,
+# y = -1.0 / -0.5 / 0 / +0.5 / +1.0 (8X (0.5), symmetric about SYMM).
+[[footprint.rows]]
+first = 1
+count = 5
+step = 1
+start = [-2.2, -1.0]
+pitch = [0.0, 0.5]
+size = [1.45, 0.3]
+shape = "roundrect"
+rratio = 0.17
+type = "smd"
+cite = "SLOS854D p. 71: 10X (1.45), 10X (0.3), 8X (0.5), (4.4) centre to centre, (R0.05) TYP (rratio 0.05/0.3); pins 1-5 left, top to bottom"
+
+[[footprint.rows]]
+first = 6
+count = 5
+step = 1
+start = [2.2, 1.0]
+pitch = [0.0, -0.5]
+size = [1.45, 0.3]
+shape = "roundrect"
+rratio = 0.17
+type = "smd"
+cite = "SLOS854D p. 71: pins 6-10 right, bottom to top"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "SLOS854D p. 70, 8X 0.5; p. 71, 8X (0.5)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "10"
+value = 4.4
+cite = "SLOS854D p. 71, (4.4)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "5"
+value = 2.0
+cite = "SLOS854D p. 70, 2X 2 (pin 1 to pin 5 centres); p. 71, 4 x (0.5)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [1.45, 0.3]
+cite = "SLOS854D p. 71, 10X (1.45), 10X (0.3)"
+
+[[checks]]
+kind = "pad_count"
+value = 10
+cite = "SLOS854D p. 5, DGS 10-pin VSSOP"

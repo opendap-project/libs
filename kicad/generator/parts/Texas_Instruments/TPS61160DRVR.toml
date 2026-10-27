@@ -1,0 +1,160 @@
+# TPS61160DRVR - TI white-LED boost driver, 26 V open-LED protection, 0.7 A switch, DRV0006A (WSON-6 2 x 2 mm, exposed pad)
+# Sources: SLVS791E (TPS6116x datasheet, Nov 2007 rev. July 2016), PDF p. 4 (pin functions), PDF p. 37
+# (DRV0006A outline 4222173/C 11/2025), PDF p. 38 (example board layout, scale 25X), PDF p. 39 (example stencil
+# design, 0.125 mm stencil, scale 30X). The board layout is a top view: pins 1-3 down the left side,
+# 4-6 up the right side, exposed pad 7 in the centre; used as drawn (y down).
+
+[part]
+mpn = "TPS61160DRVR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPS61160DRVR"
+reference = "U"
+description = "White LED boost driver, 2.7-18 V in, 0.7 A switch, 600 kHz, 200 mV FB, 26 V open-LED protection, PWM and EasyScale dimming, WSON-6 2 x 2 mm (DRV0006A) with exposed pad"
+keywords = "LED driver backlight boost white LED TPS61160 WSON DRV"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps61160.pdf"
+datasheet_rev = "SLVS791E"
+sheet = "Texas-Instruments/TPS61160DRVR.md"
+notes = [
+  "Land pattern and stencil are TI's DRV0006A example board layout / stencil design (SLVS791E PDF pp. 38-39, drawing 4222173/C), used as given.",
+  "The DRV0006A land (drawing 4222173/C) is also the land of TVS0500DRVR and TVS2200DRVR: a kicad-lib file for either keeps this [footprint] section identical.",
+  "Signal pads (R0.05) TYP -> roundrect, rratio 0.05/0.3 = 0.167. The exposed pad is drawn with the same small corner radius; rratio 0.05/1.0 = 0.05.",
+  "The [footprint] section is copied verbatim from TVS2200DRVR.toml (same drawing 4222173/C, read off SLVSED5C pp. 18-20); its values match SLVS791E PDF pp. 37-39 (pads 0.45 x 0.3, pitch 0.65, span 1.95, exposed pad 1.0 x 1.6, paste 2 x (1.0 x 0.7) at +/-0.45, 88 %). TI's two optional (0.2) vias, (1.1) apart (note 6), are not drawn; add them on the board if wanted.",
+  "Solder mask: non-solder-mask-defined preferred, 0.07 mm max opening all around (PDF p. 38); generator default mask expansion applies (not overridden here).",
+  "Pin types: SW is the switch node between the inductor and the rectifier (datasheet type I) -> passive; COMP is the error-amplifier output for the compensation capacitor (type O) -> passive; FB senses RSET (type I) -> input; GND is listed as type O in the table and drawn as power_in.",
+  "Thermal pad 7: 'solder to the analog ground plane' (PDF p. 4) -> passive, bottom; the parts-lib sheet calls it 'Thermal pad'.",
+]
+
+[[pins]]
+number = "6"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "5"
+name = "CTRL"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "4"
+name = "SW"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "1"
+name = "FB"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "2"
+name = "COMP"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "3"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "7"
+name = "EP"
+sheet_name = "Thermal pad"
+type = "passive"
+side = "bottom"
+
+[footprint]
+name = "Texas_DRV0006A_WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm"
+description = "Texas Instruments DRV0006A WSON-6, 2 x 2 mm body, 0.65 mm pitch, 1 x 1.6 mm exposed pad, TI example land pattern and stencil (drawing 4222173/C)"
+tags = "WSON SON DRV0006A DRV Texas TVS"
+datasheet = "https://www.ti.com/lit/ds/symlink/tvs2200.pdf"   # shared land: one document for the footprint file
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "DRV0006A example board layout and example stencil design, drawing 4222173/C 11/2025 (SLVSED5C pp. 19-20)"
+body = { x = 2.0, y = 2.0, z = 0.8, standoff = 0.0, cite = "DRV0006A outline (SLVSED5C p. 18, 4222173/C): 1.9-2.1 x 1.9-2.1, 0.7-0.8 height (0.8 max), standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 3
+step = 1
+start = [-0.975, -0.65]
+pitch = [0.0, 0.65]
+size = [0.45, 0.3]
+shape = "roundrect"
+rratio = 0.167
+type = "smd"
+cite = "SLVSED5C p. 19: 6X (0.45) x 6X (0.3), 4X (0.65), (1.95) between column centres, (R0.05) TYP (rratio 0.05/0.3); pins 1-3 left, top to bottom"
+
+[[footprint.rows]]
+first = 4
+count = 3
+step = 1
+start = [0.975, 0.65]
+pitch = [0.0, -0.65]
+size = [0.45, 0.3]
+shape = "roundrect"
+rratio = 0.167
+type = "smd"
+cite = "SLVSED5C p. 19: pins 4-6 right, bottom to top"
+
+[[footprint.pads]]
+number = "7"
+at = [0.0, 0.0]
+size = [1.0, 1.6]
+shape = "roundrect"
+rratio = 0.05
+type = "smd"
+paste = false
+cite = "SLVSED5C p. 19: thermal pad (1) x (1.6), centred (SYMM), (R0.05) TYP (rratio 0.05/1.0)"
+
+[[footprint.paste]]
+start = [0.0, -0.45]
+pitch = [0.0, 0.9]
+count = [1, 2]
+size = [1.0, 0.7]
+cite = "SLVSED5C p. 20: pad 7 apertures (1) x (0.7) at (0.45) from the centre line, 88 % printed coverage"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.65
+cite = "SLVS791E PDF p. 38, 4X (0.65)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "6"
+value = 1.95
+cite = "SLVS791E PDF p. 38, (1.95) between pad centre lines"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "3"
+value = 1.3
+cite = "SLVS791E PDF p. 37, 2X 1.3; p. 38, 2 x (0.65)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.45, 0.3]
+cite = "SLVS791E PDF p. 38, 6X (0.45), 6X (0.3)"
+
+[[checks]]
+kind = "pad_size"
+a = "7"
+value = [1.0, 1.6]
+cite = "SLVS791E PDF p. 38, (1) x (1.6)"
+
+[[checks]]
+kind = "pad_count"
+value = 7
+cite = "SLVS791E PDF p. 37: six terminals + exposed thermal pad 7"

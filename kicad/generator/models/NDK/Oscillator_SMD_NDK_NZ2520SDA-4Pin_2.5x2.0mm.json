@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.0,
+        2.5,
+        0.9
+      ]
+    }
+  ],
+  "library": "NDK",
+  "name": "Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm",
+  "source": "envelope from NZ2520SDA p. 1, Dimensions: 2.50 +/- 0.10 x 2.00 +/- 0.10 (rotated 90 deg), 0.9 max height (max used; nominal UNVERIFIED)"
+}

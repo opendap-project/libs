@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.0,
+        3.0,
+        1.0
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_RGX0011A_VQFN-HR-11_2x3mm_P0.5mm",
+  "source": "envelope from SLVSDV2 p. 42, RGX0011A outline: 1.9-2.1 x 2.9-3.1, 1 MAX (z = max), standoff 0.00-0.05"
+}

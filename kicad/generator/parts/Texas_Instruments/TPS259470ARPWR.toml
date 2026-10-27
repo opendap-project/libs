@@ -1,0 +1,311 @@
+# TPS259470ARPWR - TI 2.7-23 V, 5.5 A eFuse with true reverse-current blocking, adjustable OVLO, AUXOFF and FLT,
+# auto-retry, VQFN-HR-10 (RPW0010A) 2 x 2 mm
+# Sources: SLVSFC9C (TPS25947xx datasheet, Oct 2020 rev. May 2026), PDF pp. 5-6 (Figure 5-1 RPW top view,
+# Table 5-1 pin functions); mechanical addendum drawing 4225183/A 08/2019: PDF p. 72 package outline, p. 73
+# example board layout, p. 74 example stencil design (PDF page numbers of the cached tps25947.pdf).
+# Pad geometry read from 150 dpi renders of pp. 73-74 (177 px/mm at 30X) against the dimension labels.
+
+[part]
+mpn = "TPS259470ARPWR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPS259470ARPWR"
+reference = "U"
+description = "eFuse, 2.7-23 V, 5.5 A, 28 mOhm, true reverse-current blocking, adjustable UVLO/OVLO and current limit, AUXOFF and FLT outputs, auto-retry, VQFN-HR-10 (RPW0010A) 2 x 2 mm"
+keywords = "eFuse hot swap current limit reverse current blocking OVLO TPS25947 TPS259470A VQFN-HR RPW"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps25947.pdf"
+datasheet_rev = "SLVSFC9C"
+sheet = "Texas-Instruments/TPS259470ARPWR.md"
+notes = [
+  "Land pattern = TI example board layout RPW0010A (SLVSFC9C p. 73), top view as drawn: IN (5) and OUT (6) are 2X (0.3) x 2X (2.4) bars, centres 2X (0.25) either side of the package centre line; pins 2, 3 (left) and 9, 8 (right) are 8X (0.6) x 4X (0.25) pads at 4X (0.225) from the centre line, (1.8) between the column centres.",
+  "Corner pins 1, 4, 7, 10 are L-shaped (p. 73): each is two copper rectangles with the same number, an arm 0.6 x 4X (0.3) on the pad column (centre 0.225 + 4X (0.475) = 0.70 from the centre line) and a leg 4X (0.25) x 4X (0.65) running to the package edge (2X (2.4)), centres (1.45)/2 = 0.725 and 2X (1.75)/2 = 0.875; arm and leg overlap. pad_size checks read the largest piece (the arm).",
+  "Stencil (p. 74, 0.100 mm): pads 2, 3, 8, 9 print at pad size; IN and OUT through two 4X (0.28) x 4X (1.06) apertures each at 4X (0.63) from the centre line (82 %); corner pads through an L of 0.6 x 4X (0.275) at 4X (0.4625) from the 0.225 line and 4X (0.225) x 0.65 at (1.425)/2 (93 %). Pads 1, 4, 5, 6, 7, 10 have paste = false.",
+  "Non-solder-mask-defined pads, 0.05 mm max opening all around (p. 73): the board default mask expansion applies. Thermal vias under IN and OUT (p. 63, §8.4.1) are a layout choice.",
+  "Pin types (Table 5-1): EN/UVLO and OVLO analog inputs (input); AUXOFF and FLT open-drain digital outputs (open_collector); IN, OUT power; DVDT, ILM, ITIMER are R/C setting pins (Analog Output in the table, ILM also the current monitor), passive so that ERC does not read them as drivers.",
+  "Pin 2 is OVLO and pin 3 AUXOFF, pin 4 FLT on the TPS259470x; other family members name them OVCSEL, PG, PGTH (Table 5-1). The symbol uses the TPS259470x names.",
+]
+
+[[pins]]
+number = "5"
+name = "IN"
+type = "power_in"
+side = "left"
+
+[[pins]]
+number = "1"
+name = "EN/UVLO"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "2"
+name = "OVLO"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "6"
+name = "OUT"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "4"
+name = "FLT"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "3"
+name = "AUXOFF"
+type = "open_collector"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "ILM"
+type = "passive"
+side = "right"
+gap = true
+
+[[pins]]
+number = "7"
+name = "DVDT"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "10"
+name = "ITIMER"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "8"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_RPW0010A_VQFN-HR-10_2x2mm_P0.45mm"
+description = "Texas Instruments RPW0010A VQFN-HR-10, 2 x 2 mm body, L-shaped corner pads, TI example land pattern and stencil (drawing 4225183/A)"
+tags = "VQFN-HR QFN RPW0010A RPW Texas TPS25947 eFuse"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "RPW0010A example board layout and example stencil design, drawing 4225183/A 08/2019 (SLVSFC9C pp. 73-74)"
+body = { x = 2.0, y = 2.0, z = 1.0, standoff = 0.0, cite = "RPW0010A outline (SLVSFC9C p. 72, 4225183/A): 1.9-2.1 x 1.9-2.1, 1 MAX height, standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "5"
+at = [-0.25, 0.0]
+size = [0.3, 2.4]
+shape = "roundrect"
+rratio = 0.167
+type = "smd"
+paste = false
+cite = "SLVSFC9C p. 73: IN bar 2X (0.3) x 2X (2.4), centre 2X (0.25) left of the centre line, (R0.05) TYP"
+
+[[footprint.pads]]
+number = "6"
+at = [0.25, 0.0]
+size = [0.3, 2.4]
+shape = "roundrect"
+rratio = 0.167
+type = "smd"
+paste = false
+cite = "SLVSFC9C p. 73: OUT bar, mirror of pin 5"
+
+[[footprint.pads]]
+number = "2"
+at = [-0.9, -0.225]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SLVSFC9C p. 73: 8X (0.6) x 4X (0.25), 4X (0.225) from the centre line, (1.8) between the column centres"
+
+[[footprint.pads]]
+number = "3"
+at = [-0.9, 0.225]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SLVSFC9C p. 73: as pin 2, below the centre line"
+
+[[footprint.pads]]
+number = "8"
+at = [0.9, 0.225]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SLVSFC9C p. 73: mirror of pin 3"
+
+[[footprint.pads]]
+number = "9"
+at = [0.9, -0.225]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SLVSFC9C p. 73: mirror of pin 2"
+
+[[footprint.pads]]
+number = "1"
+at = [-0.9, -0.7]
+size = [0.6, 0.3]
+shape = "roundrect"
+rratio = 0.167
+type = "smd"
+paste = false
+cite = "SLVSFC9C p. 73: corner arm 8X (0.6) x 4X (0.3), centre 0.225 + 4X (0.475) = 0.70 from the centre line"
+
+[[footprint.pads]]
+number = "1"
+at = [-0.725, -0.875]
+size = [0.25, 0.65]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = false
+cite = "SLVSFC9C p. 73: corner leg 4X (0.25) x 4X (0.65) to the package edge, centres (1.45)/2 and 2X (1.75)/2"
+
+[[footprint.pads]]
+number = "4"
+at = [-0.9, 0.7]
+size = [0.6, 0.3]
+shape = "roundrect"
+rratio = 0.167
+type = "smd"
+paste = false
+cite = "SLVSFC9C p. 73: corner arm 8X (0.6) x 4X (0.3), centre 0.225 + 4X (0.475) = 0.70 from the centre line"
+
+[[footprint.pads]]
+number = "4"
+at = [-0.725, 0.875]
+size = [0.25, 0.65]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = false
+cite = "SLVSFC9C p. 73: corner leg 4X (0.25) x 4X (0.65) to the package edge, centres (1.45)/2 and 2X (1.75)/2"
+
+[[footprint.pads]]
+number = "7"
+at = [0.9, 0.7]
+size = [0.6, 0.3]
+shape = "roundrect"
+rratio = 0.167
+type = "smd"
+paste = false
+cite = "SLVSFC9C p. 73: corner arm 8X (0.6) x 4X (0.3), centre 0.225 + 4X (0.475) = 0.70 from the centre line"
+
+[[footprint.pads]]
+number = "7"
+at = [0.725, 0.875]
+size = [0.25, 0.65]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = false
+cite = "SLVSFC9C p. 73: corner leg 4X (0.25) x 4X (0.65) to the package edge, centres (1.45)/2 and 2X (1.75)/2"
+
+[[footprint.pads]]
+number = "10"
+at = [0.9, -0.7]
+size = [0.6, 0.3]
+shape = "roundrect"
+rratio = 0.167
+type = "smd"
+paste = false
+cite = "SLVSFC9C p. 73: corner arm 8X (0.6) x 4X (0.3), centre 0.225 + 4X (0.475) = 0.70 from the centre line"
+
+[[footprint.pads]]
+number = "10"
+at = [0.725, -0.875]
+size = [0.25, 0.65]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = false
+cite = "SLVSFC9C p. 73: corner leg 4X (0.25) x 4X (0.65) to the package edge, centres (1.45)/2 and 2X (1.75)/2"
+
+[[footprint.paste]]
+start = [-0.25, -0.63]
+pitch = [0.5, 1.26]
+count = [2, 2]
+size = [0.28, 1.06]
+rratio = 0.179
+cite = "SLVSFC9C p. 74: IN and OUT apertures 4X (0.28) x 4X (1.06) at 4X (0.63) from the centre line, 82 % coverage"
+
+[[footprint.paste]]
+start = [-0.9, -0.6875]
+pitch = [1.8, 1.375]
+count = [2, 2]
+size = [0.6, 0.275]
+rratio = 0.182
+cite = "SLVSFC9C p. 74: corner arm apertures 8X (0.6) x 4X (0.275), centre 4X (0.225) + 4X (0.4625) = 0.6875 from the centre line"
+
+[[footprint.paste]]
+start = [-0.7125, -0.875]
+pitch = [1.425, 1.75]
+count = [2, 2]
+size = [0.225, 0.65]
+rratio = 0.222
+cite = "SLVSFC9C p. 74: corner leg apertures 4X (0.225) x 0.65, centres (1.425)/2 and 2X (1.75)/2; 93 % with the arm"
+
+[[checks]]
+kind = "dx"
+a = "5"
+b = "6"
+value = 0.5
+cite = "SLVSFC9C p. 73, 2X (0.25) either side of the centre line"
+
+[[checks]]
+kind = "dx"
+a = "2"
+b = "9"
+value = 1.8
+cite = "SLVSFC9C p. 73, (1.8)"
+
+[[checks]]
+kind = "dy"
+a = "2"
+b = "3"
+value = 0.45
+cite = "SLVSFC9C p. 73, 2 x 4X (0.225)"
+
+[[checks]]
+kind = "dy"
+a = "3"
+b = "4"
+value = 0.475
+cite = "SLVSFC9C p. 73, 4X (0.475) between pad 3 and the corner arm"
+
+[[checks]]
+kind = "pad_size"
+a = "5"
+value = [0.3, 2.4]
+cite = "SLVSFC9C p. 73, 2X (0.3), 2X (2.4)"
+
+[[checks]]
+kind = "pad_size"
+a = "2"
+value = [0.6, 0.25]
+cite = "SLVSFC9C p. 73, 8X (0.6), 4X (0.25)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.6, 0.3]
+cite = "SLVSFC9C p. 73, corner arm 8X (0.6) x 4X (0.3)"
+
+[[checks]]
+kind = "pad_count"
+value = 14
+cite = "SLVSFC9C p. 73: ten terminals, corner pins 1, 4, 7, 10 drawn as arm + leg (two copper pieces each)"

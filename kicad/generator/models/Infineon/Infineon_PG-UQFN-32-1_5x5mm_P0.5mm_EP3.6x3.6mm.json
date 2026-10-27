@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        5.0,
+        5.0,
+        0.6
+      ]
+    }
+  ],
+  "library": "Infineon",
+  "name": "Infineon_PG-UQFN-32-1_5x5mm_P0.5mm_EP3.6x3.6mm",
+  "source": "envelope from DS p. 16, Figure 4: 5 x 5 (basic), 0.6 Max. height, 0.05 Max. standoff (0 used); terminals 0.25 +-0.05 x 0.4 +-0.05, exposed pad 3.6 +-0.1"
+}

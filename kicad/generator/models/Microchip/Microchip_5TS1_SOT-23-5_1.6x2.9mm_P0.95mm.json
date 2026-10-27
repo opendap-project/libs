@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.6,
+        2.9,
+        1.0
+      ]
+    }
+  ],
+  "library": "Microchip",
+  "name": "Microchip_5TS1_SOT-23-5_1.6x2.9mm_P0.95mm",
+  "source": "envelope from Atmel-8871F p. 23, 5TS1: E1 1.60 BSC, D 2.90 BSC, A 1.00 MAX, A1 0.00-0.10"
+}

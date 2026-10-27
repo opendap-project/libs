@@ -1,0 +1,315 @@
+# G-Switch GT-3321667P-01: 4.4 mm 5-pole phone jack with detect switch.
+# Primary source: G-Switch customer drawing C-GT03321667P-01 rev. A0 (2020-07-10), one page, raster scan
+# (150 ppi JPEG inside the PDF; LCSC mirror, sha256 13c0d988...7df1). Read at 600 dpi render.
+# Chinese notes translated: "技术要求" = technical requirements; 1. electrical and mechanical requirements:
+# 1.1 contact resistance <= 50 mOhm; 1.2 insulation resistance >= 100 MOhm; 1.3 withstand voltage 500 V AC;
+# 1.4 insertion/withdrawal >= 5,000 cycles; 1.5 insertion force 0.5-2.5 kgf (5-25 N); 1.6 withdrawal force
+# 0.5-2.5 kgf (5-25 N); 2. unless stated, untoleranced dimensions are reference; 3. product meets RoHS.
+#
+# Drawing frame: "RECOMMENDED PCB LAYOUT, TOP VIEW, TOL +/-0.05": plug axis horizontal, nose (3.50 long) to
+# the LEFT, x' from the housing front face (where the nose starts) toward the rear, y' from the plug
+# axis, +y' down. The second layout-like view (with phi 1.00 pegs) is the BOTTOM view (mirrored: rows
+# 3.10/5.80/8.50 at the top, the 13.50 peg below the axis); it was used only to confirm dimensions.
+#
+# Pads are PLATED SLOTS, not SMT lands: 12 oval pads 1.90 x 1.00 ("12-1.90", "12-1.00") with slot drills
+# 1.40 (+0.10/-0) x 0.50 (+0.10/-0) ("12-1.40", "12-0.50"); tails 0.80 below the seating plane (side view
+# "12-0.80"). Hence attr = through_hole and, per the schema, origin at pin 1.
+# Pad centres (x', y'):
+#   top row    y' = -3.25 (6.50 between rows): x' 2.60, 5.30, 8.00
+#   bottom row y' = +3.25:                     x' 3.10, 5.80, 8.50
+#   side tabs  y' = -/+4.05 (8.10):           x' 11.75 (2-11.75)
+#   rear four  x' 16.50 (4-16.50): y' = -1.95 (1.95 from axis), +1.60 (3.55 from the -1.95 pad),
+#              -3.45 / +3.45 (6.90 between them; the split about the axis is not dimensioned: symmetric
+#              assumed, pixel measurement -3.48/+3.41 top view and -3.45/+3.45 bottom view)
+#   NPTH phi 1.20 (pegs phi 1.00 +/-0.05): (6.00, 0) and (13.50, -1.65); the 1.65 comes from "2.50" (top
+#              view) and "5.80" (bottom view), both measured from the housing side face at 4.15 = 8.30/2
+#              (pixel check on both views: 1.64 / 1.66).
+# Footprint coordinates = (x' - 3.10, y' - 3.25), pin 1 at (3.10, +3.25). Orientation kept as drawn
+# (mating side left); pin 1 is bottom-left, the nearest KLC-like choice without moving the mating side.
+
+[part]
+mpn = "GT-3321667P-01"
+manufacturer = "G-Switch"
+library = "G_Switch"
+symbol = "GT-3321667P-01"
+reference = "J"
+description = "4.4 mm 5-pole phone jack (balanced headphone), right angle, plated-slot terminals, detect switch, 2 locating pegs"
+keywords = "4.4mm jack balanced headphone Pentaconn-style phone jack G-Switch"
+datasheet = "https://datasheet.lcsc.com/datasheet/pdf/b77c36e71c4d9ede06dc371db399f62a.pdf"
+datasheet_rev = "C-GT03321667P-01 rev. A0, 2020-07-10"
+sheet = "G-Switch/GT-3321667P-01.md"
+notes = [
+  "Datasheet URL: the manifest has the LCSC product page (C2762984), not a PDF; this is the PDF mirror named in the parts-lib sheet.",
+  "Spec-sheet discrepancy: the sheet calls the part SMT with 'pad sizes 1.00 x 1.20 / 1.90 / 1.40'. The drawing shows plated slots: copper 1.90 x 1.00, slot drill 1.40 x 0.50 (+0.10/-0); '12-1.20' is not on the layout (2-phi 1.20 are the peg holes). It also lists pad x positions 13.50 (that is the second peg hole) and 'rear pads at 11.75 and 16.50'. The footprint is through-hole (pin-in-paste/reflow suitability UNVERIFIED).",
+  "Pin-to-pad assignment UNVERIFIED: the PCB layout carries no pad numbers. Numbers come from the 3D view callouts (circled numbers = contact item numbers, matching the schematic 1-10): 2, 4, 6 on the left side seen from the front, 1, 3, 5 on the right, 8 rear-left corner, 9 and 10 rear middle, 7 rear-right corner; 11 (contact H, nickel plated, not in the schematic) = the side tabs at x' 11.75. Front-left from the 3D view = top row (-y) in the top-view layout. Verify against a sample before ordering boards.",
+  "Side tabs at x' 11.75 (item 11, not an electrical pin in the schematic): plated mechanical slots, number \"\" (no net). Tie to GND if the shell should be grounded: UNVERIFIED whether item 11 contacts the sleeve.",
+  "Detect switch: schematic shows 10 DETECT and 9 SWITCH with an actuator arrow; open/closed state without plug UNVERIFIED (sheet note agrees).",
+  "Body: 20.50 long incl. 3.50 nose, 8.30 overall width (8.10 at the PCB), 6.50 high; nose phi 6.50. Pegs phi 1.00 +/-0.05 into phi 1.20 NPTH.",
+  "Housing UL94V-HB (BOM items 13-14). Reflow rating not on the drawing: UNVERIFIED.",
+]
+
+[[pins]]
+number = "7"
+name = "L+"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "8"
+name = "L+"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "6"
+name = "L-"
+type = "passive"
+side = "left"
+sheet_name = "L−"
+
+[[pins]]
+number = "4"
+name = "R+"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "5"
+name = "R+"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "2"
+name = "R-"
+type = "passive"
+side = "left"
+sheet_name = "R−"
+
+[[pins]]
+number = "3"
+name = "R-"
+type = "passive"
+side = "left"
+sheet_name = "R−"
+
+[[pins]]
+number = "10"
+name = "DETECT"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "SWITCH"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "1"
+sheet_name = "GND (sleeve)"
+name = "GND"
+type = "passive"
+side = "bottom"
+
+[footprint]
+name = "G_Switch_GT-3321667P-01_Jack_4.4mm_5Pole_Horizontal"
+description = "G-Switch GT-3321667P-01 4.4 mm 5-pole phone jack, 12 plated slots 1.90 x 1.00 (drill 1.40 x 0.50), 2 locating holes phi 1.20 (drawing C-GT03321667P-01 rev A0)"
+tags = "4.4mm jack balanced headphone G-Switch"
+attr = "through_hole"
+courtyard_class = "connector"
+land_pattern = "manufacturer"
+land_pattern_cite = "C-GT03321667P-01 rev A0, RECOMMENDED PCB LAYOUT, TOP VIEW, TOL +/-0.05"
+# Envelope x' -3.50 .. 17.00 (centre 6.75), y' -4.15 .. 4.15 -> centre relative to pin 1: (3.65, -3.25)
+body = { x = 20.5, y = 8.3, z = 6.5, standoff = 0.0, cite = "C-GT03321667P-01 rev A0: 20.50 incl. 3.50 nose (side view), 8.30 / 4.15 and 6.50 (front view)" }
+body_offset = [3.65, -3.25]
+
+[[footprint.pads]]
+number = "1"
+at = [0.0, 0.0]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: x' 3.10, row 6.50 (+3.25); 12-1.90, 12-1.00, 12-1.40, 12-0.50"
+
+[[footprint.pads]]
+number = "3"
+at = [2.7, 0.0]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: x' 5.80, row +3.25"
+
+[[footprint.pads]]
+number = "5"
+at = [5.4, 0.0]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: x' 8.50, row +3.25"
+
+[[footprint.pads]]
+number = "2"
+at = [-0.5, -6.5]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: x' 2.60, row -3.25 (6.50)"
+
+[[footprint.pads]]
+number = "4"
+at = [2.2, -6.5]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: x' 5.30, row -3.25"
+
+[[footprint.pads]]
+number = "6"
+at = [4.9, -6.5]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: x' 8.00, row -3.25"
+
+[[footprint.pads]]
+number = "8"
+at = [13.4, -6.7]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: 4-16.50; y' -3.45 (6.90 split symmetric, UNVERIFIED split)"
+
+[[footprint.pads]]
+number = "9"
+at = [13.4, -5.2]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: 4-16.50; y' -1.95 (1.95)"
+
+[[footprint.pads]]
+number = "10"
+at = [13.4, -1.65]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: 4-16.50; y' +1.60 (3.55 from the -1.95 pad)"
+
+[[footprint.pads]]
+number = "7"
+at = [13.4, 0.2]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: 4-16.50; y' +3.45 (6.90 split symmetric, UNVERIFIED split)"
+
+[[footprint.pads]]
+number = ""
+at = [8.65, -7.3]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: 2-11.75, y' -4.05 (8.10); item 11 side tab, mechanical"
+
+[[footprint.pads]]
+number = ""
+at = [8.65, 0.8]
+size = [1.9, 1.0]
+shape = "oval"
+type = "thru_hole"
+drill = [1.4, 0.5]
+cite = "C-GT03321667P-01 layout: 2-11.75, y' +4.05 (8.10); item 11 side tab, mechanical"
+
+[[footprint.pads]]
+number = ""
+at = [2.9, -3.25]
+size = [1.2, 1.2]
+shape = "circle"
+type = "np_thru_hole"
+drill = 1.2
+cite = "C-GT03321667P-01 layout: 2-phi 1.20 at x' 6.00 on the axis (peg phi 1.00 +/-0.05)"
+
+[[footprint.pads]]
+number = ""
+at = [10.4, -4.9]
+size = [1.2, 1.2]
+shape = "circle"
+type = "np_thru_hole"
+drill = 1.2
+cite = "C-GT03321667P-01 layout: 2-phi 1.20 at x' 13.50, y' -1.65 (2.50 from the 4.15 side face; bottom view 5.80)"
+
+[[footprint.model]]
+size = [17.0, 8.3, 6.5]
+at = [5.4, -3.25, 0.0]
+cite = "C-GT03321667P-01: housing 20.50 - 3.50 = 17.00 (DERIVED) x 8.30 x 6.50"
+
+[[footprint.model]]
+size = [3.5, 6.5, 6.5]
+at = [-4.85, -3.25, 0.0]
+cite = "C-GT03321667P-01: nose 3.50 long, phi 6.50"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "3"
+value = 2.7
+cite = "C-GT03321667P-01 layout: 5.80 - 3.10"
+
+[[checks]]
+kind = "dx"
+a = "2"
+b = "6"
+value = 5.4
+cite = "C-GT03321667P-01 layout: 8.00 - 2.60"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "7"
+value = 13.4
+cite = "C-GT03321667P-01 layout: 16.50 - 3.10"
+
+[[checks]]
+kind = "dy"
+a = "2"
+b = "1"
+value = 6.5
+cite = "C-GT03321667P-01 layout: 6.50"
+
+[[checks]]
+kind = "dy"
+a = "8"
+b = "7"
+value = 6.9
+cite = "C-GT03321667P-01 layout: 6.90"
+
+[[checks]]
+kind = "dy"
+a = "9"
+b = "10"
+value = 3.55
+cite = "C-GT03321667P-01 layout: 3.55"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [1.9, 1.0]
+cite = "C-GT03321667P-01 layout: 12-1.90, 12-1.00"
+
+[[checks]]
+kind = "pad_count"
+value = 10
+cite = "C-GT03321667P-01 schematic pins 1-10 (side tabs unnumbered)"

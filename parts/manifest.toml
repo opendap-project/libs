@@ -1,0 +1,2139 @@
+# External part files: fetched into ~/.cache/opendap/parts/<manufacturer>/<mpn>/ and verified.
+# Never commit these files unless their licence allows redistribution (ADR 0001).
+#
+# [[file]]
+# mpn = "CS43198-CNZR"
+# manufacturer = "Cirrus Logic"
+# kind = "datasheet"            # datasheet | step | ibis | spice | touchstone | thermal | other
+# url = "https://…"
+# revision = "DS1147F2"
+# date = "2024-01-01"
+# sha256 = "…"
+# redistributable = false
+
+# Board and touch faceplate parts, from board BOM v1 (2026-10-22).
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "datasheet"
+url = "https://www.rock-chips.com/uploads/pdf/2022.8.26/192/RK3566%20Brief%20Datasheet.pdf"
+revision = "Brief datasheet"
+sha256 = "1f97b585f023ee6e4183800650af09bf89abf7ec53bcee974674c371932bf697"
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "datasheet"
+url = "https://dl.radxa.com/rock3/docs/hw/datasheet/Rockchip-RK3568-Datasheet-V1.0-20201210.pdf"
+revision = "V1.0"
+date = "2020-12-10"
+sha256 = "a51fff0392e03d35ca39ad3d27e1718395cdd8f48187ce855b025b1169d0b2fe"
+# full, RK3568 family
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "datasheet"
+url = "https://dl.xkwy2018.com/downloads/RK3568/Rockchip-RK3566-Datasheet-V1.1-20210305.pdf"
+revision = "Rev 1.1"
+date = "2021-03-05"
+sha256 = "1bc4aa39464c3481d1c82a171498104b9ccd34a61110e97fd9678288e7451280"
+# full RK3566 datasheet (59 pages): package FCCSP565L, ball map, pin list, electrical; board-maker mirror
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "datasheet"
+url = "https://files.pine64.org/doc/quartz64/Rockchip%20RK3566%20Datasheet%20V1.0-20201210.pdf"
+revision = "Rev 1.0"
+date = "2020-12-10"
+sha256 = "c8874a165b50e82b199cd13eb620a1ab95c8bd8a0db5cdbfb7b0a7b09156b7d4"
+# superseded by Rev 1.1; Pine64 hosts it with Rockchip's release permission, licence terms not stated
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://dl.xkwy2018.com/downloads/RK3568/RK356X/Hardware/Rockchip_RK3566_Hardware_Design_Guide_V1.1_EN.pdf"
+revision = "V1.1.0"
+date = "2022-02-06"
+sha256 = "27063af9183cd9a17f71d9aa66f64eb2514427e490c3cc8f9336e11eacf1d9d1"
+# RK3566 Hardware Design Guide (102 pages); board-maker mirror
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://raw.githubusercontent.com/hqnicolas/RK3568-hardware-design/main/01_Common%20Document/Rockchip_RK3568_High_Speed_PCB_Design_Guide_V10_EN_2021-4-12.pdf"
+revision = "V1.0.0 (RK-YH-YJ-6012)"
+date = "2021-04-12"
+sha256 = "ba3b7aa055b641f59688f2fd0133094b71f06bc928786d4e1444c3c63b5ff513"
+# RK3568 High Speed PCB Design Guide (45 pages); the RK3566 edition named in the RK3566 guide was not found
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://raw.githubusercontent.com/hqnicolas/RK3568-hardware-design/main/02_DDR%20Template/RK3568_Template_LP4XD200P132SD6_43x28_1600MHz/RK3568_Template_LP4XD200P132SD6_43x28_1600MHz_V10_20210201%E6%A0%B8%E5%BF%83%E6%9D%BF%E8%AE%BE%E8%AE%A1%E9%87%8D%E7%82%B9%E8%AF%B4%E6%98%8E.doc"
+revision = "Template V10"
+date = "2021-02-01"
+sha256 = "05452a69c16b1c610ea43aaa4d16d172efc9bbc8eeb135a4097fe4ae3e9e9038"
+# RK3568 LPDDR4X core-board template design notes (Chinese, Word .doc): layers, via size, copper
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://dl.xkwy2018.com/downloads/RK3568/RK356X/Hardware/Rockchip_RK3566_EVB2_User_Guide_V1.1_EN.pdf"
+revision = "V1.1"
+date = "2021-02-02"
+sha256 = "ba69e1a16ccbd2e90b306a414df945f35b9a2a9241d1dc2e070b5ad99e12ff4c"
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://dl.xkwy2018.com/downloads/RK3568/RK356X/Rockchip_RK356X_Introduction_IO_Power_Domains_Configuration_EN.pdf"
+revision = "V1.0.2 (RK-SM-YF-905)"
+date = "2021-06-02"
+sha256 = "f9cefa6110ba5503495304266a3928767d2189427d5e970950468009e9a08622"
+redistributable = false
+
+[[file]]
+mpn = "RK809-5"
+manufacturer = "Rockchip"
+kind = "datasheet"
+url = "https://rockchip.fr/RK809%20datasheet%20V1.01.pdf"
+revision = "Rev 1.01"
+date = "2018-08-28"
+sha256 = "3f9b42ed70ec5eac76ce0e7aceed6e31743a35f4773a14489a052ec75908062f"
+redistributable = false
+
+[[file]]
+mpn = "RK860-0"
+manufacturer = "Rockchip"
+kind = "datasheet"
+url = ""
+# no public datasheet exists (2026-10-25); replaced in the T1 by the TPS6286910CRQYR (board ADR 0021)
+# RK860-2 alternative
+redistributable = false
+
+[[file]]
+mpn = "SYR827PKC"
+manufacturer = "Silergy"
+kind = "datasheet"
+url = "https://atta.szlcsc.com/upload/public/pdf/source/20170810/C111838_1502335158458879679.pdf"
+revision = "AN_SYR827/SYR828 Rev. 0.1"
+sha256 = "e3027f87f758885162dd76a2015f97b2f8cc15508708b4b1fc3e8315e649bd62"
+# application note marked "Confidential - Prepared for Customer Use Only", LCSC mirror; no Silergy-hosted datasheet found (board ADR 0021)
+redistributable = false
+
+[[file]]
+mpn = "TPS6286910CRQYR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62869.pdf"
+revision = "SLVSFS3B"
+date = "2021-07"
+sha256 = "62f61d2bbc06f7d030be182838b00ff065a80c0b953b9319e11a4e66c4e6ab5c"
+# TPS62868/TPS62869 datasheet (41 pages); vdd_cpu buck from board ADR 0021, replaces the RK860-0
+redistributable = false
+
+[[file]]
+mpn = "TPS6286910CRQYR"
+manufacturer = "Texas Instruments"
+kind = "other"
+url = "https://www.ti.com/lit/ug/sluuch3/sluuch3.pdf"
+revision = "SLUUCH3"
+date = "2021-05"
+sha256 = "89087aef7b3bc93e9ce96367d3e20293969f99c32541d4df9ac13a07d6426ff2"
+# TPS628690EVM-135 user's guide: VID jumper selects VOUT register 1 or 2 (A options)
+redistributable = false
+
+[[file]]
+mpn = "XGL4012-221MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/80d2e45e-9ea9-4518-8af9-e8c2c28ee954/xgl4012.pdf"
+revision = "Document 1718"
+date = "2026-08-27"
+sha256 = "6a22786f346699ace065e8d6fe336a11518f505f56818d9b67e6eab14e2daaf7"
+# vdd_cpu inductor proposed by board ADR 0021 (0.22 uH, 4.0 x 4.0 x 1.2 mm max)
+redistributable = false
+
+[[file]]
+mpn = "DFE252012F-R47M"
+manufacturer = "Murata"
+kind = "datasheet"
+url = "https://www.murata.com/en-us/products/productdetail?partno=DFE252012F-R47M%3DP2"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "DFE252012F-2R2M"
+manufacturer = "Murata"
+kind = "datasheet"
+url = "https://www.murata.com/en-us/products/productdetail?partno=DFE252012F-2R2M%3DP2"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "DFE252012F-4R7M"
+manufacturer = "Murata"
+kind = "datasheet"
+url = "https://www.murata.com/en-us/products/productdetail?partno=DFE252012F-4R7M%3DP2"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "DFE201610E-2R2M"
+manufacturer = "Murata"
+kind = "datasheet"
+url = "https://www.murata.com/en-us/products/productdetail?partno=DFE201610E-2R2M%3DP2"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "TLV62569DBVR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tlv62569.pdf"
+revision = "SLVSDG1C"
+date = "2017-10"
+sha256 = "1ba6f55dfe678d06d563acd6632f1f950a497d812270806021097b55cd81d3c4"
+redistributable = false
+
+[[file]]
+mpn = "TPS62A01"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62a01.pdf"
+revision = "SLUSEG9E"
+date = "2024-06"
+sha256 = "cad0b23ab86368916991fc9bb2840df5f9b8013320eb8b62b28ae517e53f6518"
+redistributable = false
+
+[[file]]
+mpn = "K4UBE3D4AB-MGCL"
+manufacturer = "Samsung"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/68493aa292745ce2f51b9d2d9103c14d.pdf?productCode=C5827966"
+revision = "Rev. 1.0"
+date = "2021-08"
+sha256 = "7bb0223d5490109c2ebd9e8f25641e1d2dccd2df0952b04c02553fd078a06e04"
+# Samsung datasheet (108 pages), distributor copy (LCSC C5827966); Samsung lists the part as discontinued
+redistributable = false
+
+[[file]]
+mpn = "H9HCNNNCPMMLXR-NEE"
+manufacturer = "SK hynix"
+kind = "datasheet"
+url = ""
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "TPS7A1006PDSER"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps7a10.pdf"
+revision = "SBVS314B"
+date = "2018-10"
+sha256 = "c2c2c5ff934b44df9fdbbff6e66f5d6397ffd5b78f6d918c91f3ffcb4dd355f9"
+redistributable = false
+
+[[file]]
+mpn = "KLMBG2JETD-B041"
+manufacturer = "Samsung"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/8cca530d6d5054b226dcd9a69d076028.pdf?productCode=C2803245"
+revision = "Rev. 1.0"
+date = "2016-11"
+sha256 = "f9d8f6f855ee15df6748a388a5287ac8306ab06d250673ace45067d52d9058ca"
+# Samsung KLMxGxJETD-B041 eMMC 5.1 datasheet (26 pages, 16/32/64 GB), distributor copy (LCSC C2803245)
+redistributable = false
+
+[[file]]
+mpn = "KLMAG1JETD-B041"
+manufacturer = "Samsung"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/d4518653d9abcd1b59554b92cea5e788.pdf"
+revision = "Rev. 1.0"
+date = "2016-11"
+sha256 = "015be236158087add125892756a7ef7d63eaa7c0c55969c241597755eb784bd0"
+# the same Samsung KLMxGxJETD-B041 datasheet, distributor copy for this part (LCSC C499919)
+redistributable = false
+
+[[file]]
+mpn = "DM3AT-SF-PEJM5"
+manufacturer = "Hirose"
+kind = "datasheet"
+url = "https://www.hirose.com/en/product/series/DM3"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "RP2354A"
+manufacturer = "Raspberry Pi"
+kind = "datasheet"
+url = "https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf"
+revision = "Release 8, build 80d627281ed5"
+date = "2026-10-01"
+sha256 = "a638d6780da919162660691bfa02c6dcf7c2a0b6e9f18e2d7519c80b664a2e39"
+redistributable = false
+
+[[file]]
+mpn = "RP2354A"
+manufacturer = "Raspberry Pi"
+kind = "datasheet"
+url = "https://datasheets.raspberrypi.com/rp2350/hardware-design-with-rp2350.pdf"
+revision = "build 06a7f75e58a1"
+date = "2026-08-20"
+sha256 = "cef88bc7d87e67b4262ee15f2b94b03566667143f4e8daf6931828bef6408059"
+# hardware design guide
+redistributable = false
+
+[[file]]
+mpn = "AOTA-B201610S3R3-101-T"
+manufacturer = "Abracon"
+kind = "datasheet"
+url = "https://abracon.com/Magnetics/power/AOTA-B201610.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "ABM8-272-T3"
+manufacturer = "Abracon"
+kind = "datasheet"
+url = "https://abracon.com/Resonators/ABM8-272.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "X322524MOB4SI"
+manufacturer = "YXC"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/lcsc/2403291504_YXC-X322524MOB4SI_C70590.pdf"
+# YXC datasheet, distributor copy (no YXC-hosted PDF found)
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "SC-32S"
+manufacturer = "Seiko Instruments"
+kind = "datasheet"
+url = "https://www.sii.co.jp/hubfs/SC-32S_Leaflet_e_26.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "AT24C02D-STUM-T"
+manufacturer = "Microchip"
+kind = "datasheet"
+url = "https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/AT24C01D-AT24C02D-I2C-Compatible-Two-Wire-Serial-EEPROM-1-Kbit-2-Kbit-DS20006064.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "CS43198-CNZR"
+manufacturer = "Cirrus Logic"
+kind = "datasheet"
+url = "https://www.cirrus.com/docs/ds/cs43198-datasheet.pdf"
+revision = "DS1156F2"
+date = "2022-12"
+sha256 = "e2da18e07a5683ee9eb134154a31ac7f8a197587c01c250c42286ea604dd351d"
+redistributable = false
+
+[[file]]
+mpn = "OPA1622IDRCR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/opa1622.pdf"
+revision = "SBOS727B"
+date = "2016-05"
+sha256 = "505556d18113e86aed84f20c1dbcfc6b4ad66ccdc5202998bd883f7a7eac9824"
+redistributable = false
+
+[[file]]
+mpn = "OPA1622IDRCR"
+manufacturer = "Texas Instruments"
+kind = "spice"
+url = "https://www.ti.com/lit/zip/SBOM958"
+revision = "SBOM958D"
+date = "2022-07-11"
+sha256 = "1bafa50b657ea2ece0c1d3e1ab7684556093d824a7d749aaaf07a933b81e49b8"
+# PSpice model; OPA1622.LIB inside, sha256 9dfaf17ed53e37d8930376f042379e828d96bc7d10349fed0dc058daf695223e
+# date: newest entry of the archive; downloaded without login on 2026-10-24 (redirects to sbom958d.zip)
+redistributable = false
+
+[[file]]
+mpn = "NSC5083D-22.5792M"
+manufacturer = "NDK"
+kind = "datasheet"
+url = "https://www.ndk.com/images/products/catalog/c_NZ2520SDA_e.pdf"
+revision = "catalog 1703A"
+sha256 = "b818c72bf170e8dac004fcc7e0c5639eb8ffbe22d624f2e851aef9fde8f87825"
+# NZ2520SDA, 3.3 V
+redistributable = false
+
+[[file]]
+mpn = "NSC5083D-24.576M"
+manufacturer = "NDK"
+kind = "datasheet"
+url = "https://www.ndk.com/images/products/catalog/c_NZ2520SDA_e.pdf"
+revision = "catalog 1703A"
+sha256 = "b818c72bf170e8dac004fcc7e0c5639eb8ffbe22d624f2e851aef9fde8f87825"
+# NZ2520SDA, 3.3 V
+redistributable = false
+
+[[file]]
+mpn = "TPS65131RGER"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps65131.pdf"
+revision = "SLVS493E"
+date = "2022-04"
+sha256 = "e8360b9509047317416cfd9163a09d8cdf5c8accbd4e702ad6a43292ef48e0ed"
+redistributable = false
+
+[[file]]
+mpn = "LM27762"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/lm27762.pdf"
+revision = "SNVSAF7C"
+date = "2025-10"
+sha256 = "465db259d11b3b2fe202661b21e1e664065ff8873056a984aa9f967a9fbdc6e0"
+redistributable = false
+
+[[file]]
+mpn = "PMEG2010AEH"
+manufacturer = "Nexperia"
+kind = "datasheet"
+url = "https://assets.nexperia.com/documents/data-sheet/PMEG2010AEH.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "MBRM120LT1G"
+manufacturer = "onsemi"
+kind = "datasheet"
+url = "https://www.onsemi.com/pdf/datasheet/mbrm120lt1-d.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "TPS7A4901DGNR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps7a49.pdf"
+revision = "SBVS121E"
+date = "2015-05"
+sha256 = "f69e957b22bcc2db72149f57c96501aedeb4ed214f016c98f562d71411474182"
+redistributable = false
+
+[[file]]
+mpn = "TPS7A2050"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps7a20.pdf"
+revision = "SBVS338H"
+date = "2024-07"
+sha256 = "b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0"
+# option
+redistributable = false
+
+[[file]]
+mpn = "TPS7A3001DGNR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps7a30.pdf"
+revision = "SBVS125D"
+date = "2015-06"
+sha256 = "b60d6fd8d7220e9f8a4dcfeaa7438a5e5e419ef589e1ea85e9d04781f2203ae5"
+redistributable = false
+
+[[file]]
+mpn = "TPS7A94"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps7a94.pdf"
+revision = "SBVS336C"
+date = "2023-06"
+sha256 = "bf9c611825fdcd2b8d0887b64721e5c2cb43be68913385e8538869d62120e4bf"
+# rejected
+redistributable = false
+
+[[file]]
+mpn = "LT3045"
+manufacturer = "Analog Devices"
+kind = "datasheet"
+url = "https://www.analog.com/media/en/technical-documentation/data-sheets/lt3045.pdf"
+# sha256 pending: not downloaded yet
+# alternatives
+redistributable = false
+
+[[file]]
+mpn = "LT3094"
+manufacturer = "Analog Devices"
+kind = "datasheet"
+url = "https://www.analog.com/media/en/technical-documentation/data-sheets/lt3094.pdf"
+# sha256 pending: not downloaded yet
+# alternatives
+redistributable = false
+
+[[file]]
+mpn = "LT3042"
+manufacturer = "Analog Devices"
+kind = "datasheet"
+url = "https://www.analog.com/media/en/technical-documentation/data-sheets/lt3045.pdf"
+# sha256 pending: not downloaded yet
+# alternatives
+redistributable = false
+
+[[file]]
+mpn = "ADP7182"
+manufacturer = "Analog Devices"
+kind = "datasheet"
+url = "https://www.analog.com/media/en/technical-documentation/data-sheets/adp7182.pdf"
+# sha256 pending: not downloaded yet
+# alternative
+redistributable = false
+
+[[file]]
+mpn = "TPS62840DLCR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62840.pdf"
+revision = "SLVSEC6D"
+date = "2020-03"
+sha256 = "b715ae80beb8f08b5c4a417537c5f52e01ad0a52f3791c240146b72fec5f3214"
+redistributable = false
+
+[[file]]
+mpn = "TPS7A2018PDBVR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps7a20.pdf"
+revision = "SBVS338H"
+date = "2024-07"
+sha256 = "b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0"
+redistributable = false
+
+[[file]]
+mpn = "LP5907"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/lp5907.pdf"
+sha256 = "f5deda2f0cd6f251622fa0fbb57fd0ddff831b797f96b9a0a53ed35059e1c4ba"
+# alternative
+redistributable = false
+
+[[file]]
+mpn = "SJ2-35954D-SMT-TR"
+manufacturer = "Same Sky"
+kind = "datasheet"
+url = "https://www.sameskydevices.com/product/resource/sj2-3595x-smt.pdf"
+revision = "rev 1.05"
+date = "2024-09-12"
+sha256 = "58121365a7d044f178d71f8f6929277f63375dd0e188f2abeec4fb6cc9053cb9"
+# SJ2-3595X-SMT series datasheet (4 pages; covers SJ2-35954A/B/D-SMT), copy downloaded 2026-10-25.
+# The server stamps every download with a new PDF modification date, so a fresh download reports a
+# hash mismatch although the content is rev 1.05 (two downloads on 2026-10-25 and kicad-lib's copy
+# of 2026-10-24 all differ); check the revision on p. 4 instead. Was sj2-3595xd-smt.pdf (HTTP 404).
+redistributable = false
+
+[[file]]
+mpn = "Pentaconn 4.4 mm jack"
+manufacturer = "Nippon DICS"
+kind = "datasheet"
+url = "https://www.ndics.com/brands/pentaconn/"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "GT-3321667P-01"
+manufacturer = "G-Switch"
+kind = "datasheet"
+url = "https://www.lcsc.com/product-detail/C2762984.html"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "MAX98357AETE+T"
+manufacturer = "Analog Devices"
+kind = "datasheet"
+url = "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "CMS-151125-078S-67"
+manufacturer = "Same Sky"
+kind = "datasheet"
+url = "https://www.sameskydevices.com/product/resource/cms-151125-078s-67.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "IM73D122V01XTMA1"
+manufacturer = "Infineon"
+kind = "datasheet"
+url = "https://www.infineon.com/assets/row/public/documents/24/49/infineon-im73d122-datasheet-en.pdf"
+revision = "v1.00"
+date = "2022-08-12"
+sha256 = "1a597dbd8ff794b98d09a8b214eb1f9e864f36ae4a05d4eaf0d9c3ba6211ce36"
+redistributable = false
+
+[[file]]
+mpn = "DMG1012T-7"
+manufacturer = "Diodes Inc."
+kind = "datasheet"
+url = "https://www.diodes.com/assets/Datasheets/ds31783.pdf"
+sha256 = "2f226aaee67a900773753a79c93d565820d01a300a4b1b7409fd07072da8aa40"
+redistributable = false
+
+[[file]]
+mpn = "TPD1E10B06DPYR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tpd1e10b06.pdf"
+revision = "SLLSEB1G"
+date = "2024-08"
+sha256 = "77fb9c454aee5b14a220d256b7ee9fa9751572840478f80437393aeed2582f8d"
+redistributable = false
+
+[[file]]
+mpn = "ERA-3AEB series"
+manufacturer = "Panasonic"
+kind = "datasheet"
+url = "https://industrial.panasonic.com/cdbs/www-data/pdf/RDM0000/AOA0000C331.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "BQ25895RTWR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/bq25895.pdf"
+revision = "SLUSC88C"
+date = "2022-10"
+sha256 = "2667a8d185cbf9138aed63f47616d35c0d0d29da877702b32b301caa55f8d404"
+redistributable = false
+
+[[file]]
+mpn = "XAL4020-102MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/6adcb47d-8b55-416c-976e-1e22e0d2848c/xal4000.pdf"
+sha256 = "b26cf975bd56a807173b05665bddd49ed49323400330eb8f6fa63e24ff6d7d15"
+redistributable = false
+
+[[file]]
+mpn = "FUSB302BMPX"
+manufacturer = "onsemi"
+kind = "datasheet"
+url = "https://www.onsemi.com/pdf/datasheet/fusb302b-d.pdf"
+sha256 = "bdea0857f98f931f42d2522359e9df8a2b83da9e5525efe076cd2091d32ff66a"
+redistributable = false
+
+[[file]]
+mpn = "MAX17055EWL+T"
+manufacturer = "Analog Devices"
+kind = "datasheet"
+url = "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX17055.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "RL0603FR-070R01L"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-RL_Group_51_RoHS_L_12.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "TPS259470ARPWR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps25947.pdf"
+revision = "SLVSFC9C"
+date = "2026-05"
+sha256 = "8f96de389903091650d4f462dcfad3210071c3ae7093623a7978f34baf8a65b4"
+redistributable = false
+
+[[file]]
+mpn = "TPS2121RUXR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps2121.pdf"
+revision = "SLVSEA3F"
+date = "2020-08"
+sha256 = "b2f5950f596dc2c4ca33e4ebac27fd35e4dcc68ea63e173466123e1118e91a06"
+redistributable = false
+
+[[file]]
+mpn = "Adafruit 328"
+manufacturer = "Adafruit"
+kind = "datasheet"
+url = "https://cdn-shop.adafruit.com/datasheets/785060-2500mAh_specification_sheet.pdf"
+revision = "Q/WAPL785060-1011"
+sha256 = "826149daa4aa9ba3ab7b635993a022d6521572a44d1d0588171468507b58ecd3"
+# battery
+redistributable = false
+
+[[file]]
+mpn = "S2B-PH-SM4-TB"
+manufacturer = "JST"
+kind = "datasheet"
+url = "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+sha256 = "447624f4f2f7d37c58c1eaa7ee314ad757fe7aff48f6186491ef6f69fbc00b96"
+# LF; SN; LF; SN
+redistributable = false
+
+[[file]]
+mpn = "S3B-PH-SM4-TB"
+manufacturer = "JST"
+kind = "datasheet"
+url = "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"
+sha256 = "447624f4f2f7d37c58c1eaa7ee314ad757fe7aff48f6186491ef6f69fbc00b96"
+# LF; SN; LF; SN
+redistributable = false
+
+[[file]]
+mpn = "NCP15XH103F03RC"
+manufacturer = "Murata"
+kind = "datasheet"
+url = "https://www.murata.com/en-us/products/productdetail?partno=NCP15XH103F03RC"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "TPS22919DCKR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps22919.pdf"
+revision = "SLVSEN5B"
+date = "2019-05"
+sha256 = "743c59b01fb0891d2d0f1faba779161cd2d2b6c18edf68e6d5b3279016240c84"
+redistributable = false
+
+[[file]]
+mpn = "TPS22916CYFPR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps22916.pdf"
+revision = "SLVSDO5F"
+date = "2021-12"
+sha256 = "a4d81b70556d5564aaee9baf455b7651375a94c629448f3f7e7ced2f5c41b33f"
+# alternative
+redistributable = false
+
+[[file]]
+mpn = "SiP32431DR3"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/66597/sip32431.pdf"
+revision = "S20-0532-Rev. G"
+date = "2020-07-06"
+sha256 = "b65cb9eb72321cc173cef97ffa71be590916dbacb63e4237bd89eab7d178ed59"
+# alternative
+redistributable = false
+
+[[file]]
+mpn = "TPS61169DCKR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps61169.pdf"
+revision = "SNVSA40B"
+date = "2024-06"
+sha256 = "7d0b8ace2459a9fd22fe7145086cbad4ccb3bb43219247459313fcba75230151"
+redistributable = false
+
+[[file]]
+mpn = "TPS61160DRVR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps61160.pdf"
+revision = "SLVS791E"
+date = "2016-07"
+sha256 = "61b6bd7f86e32f06067896335a65e61f43e822470302c4676a4d6042fdfb3b3b"
+# alternative
+redistributable = false
+
+[[file]]
+mpn = "LQH3NPN100MJRL"
+manufacturer = "Murata"
+kind = "datasheet"
+url = "https://www.murata.com/en-us/products/productdetail?partno=LQH3NPN100MJRL"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "PMEG4010CEH"
+manufacturer = "Nexperia"
+kind = "datasheet"
+url = "https://assets.nexperia.com/documents/data-sheet/PMEG4010CEH.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "INA236AIDDFR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/ina236.pdf"
+revision = "SBOSA81D"
+date = "2023-08"
+sha256 = "47e4c0976d958a27621450eb4732ba2f1b3b3e7f5606b3f7370ad8ba456ec45d"
+redistributable = false
+
+[[file]]
+mpn = "INA226AIDGSR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/ina226.pdf"
+revision = "SBOS547C"
+date = "2026-08"
+sha256 = "c9b67f886d4a5241a5e070723f7b61867409eeb27eed768b9cdd9cb17e03ca2d"
+# alternative
+redistributable = false
+
+[[file]]
+mpn = "INA238"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/ina238.pdf"
+revision = "SLYS025B"
+date = "2025-05"
+sha256 = "66d47e5eec628369772c7a545c32420c2a0e31225efce08f9fd82aa37640f61d"
+# alternative
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "datasheet"
+url = "https://pim.murata.com/asset/pim4/wifiBluetoothModule/TYPE2EL_PDF"
+# sha256 pending: not downloaded
+# Type 2EL Datasheet, linked from the product page; 403 to non-browser fetches (2026-10-24)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type2el-2dl-hw-application-note.ashx?la=en-us&cvid=20260604010000000000"
+revision = "E2B-09-1413 Rev. 9.0"
+date = "2026-05-21"
+sha256 = "aade44c588030b5bc4e9e436b6fe01d5ad21826d369849ede8dae6b3b27476ea"
+# Type 2EL/2DL Hardware Application Note (36 pages)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type2el-2dl-2ll-2kl-unified-design-guide.ashx?la=en-us&cvid=20250925054431000000"
+revision = "E2B-54-1953 Rev. 2.0"
+date = "2025-08-21"
+sha256 = "eaecfe5d476c7027f4fc3718bb13f727348346eb084c44eb97724ebe447b0443"
+# Type 2EL/2DL/2LL/2KL Unified Design Guide (19 pages)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type-2el-radio-law-approval-application-note.ashx?la=en-us&cvid=20250421010000000000"
+revision = "CER-0248 Rev. 6.0"
+date = "2025-03-04"
+sha256 = "f37a17254d420bedec628e284cc12ac83c48141589ba0de03ce573973e7a69ed"
+# Type 2EL Radio Law Certification Application Note (75 pages)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type2el-product-brief.ashx?la=en-us&cvid=20230713010000000000"
+revision = "Product Brief"
+date = "2023-03"
+sha256 = "73077ec9d01d6661796ac6cf67f796e707f6fad08a4b61156d52323e4b4eb598"
+# Type 2EL Product Brief
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type2el-2dl-module-footprint-topview.ashx?la=en-us&cvid=20230713010000000000"
+date = "2023-07-13"
+sha256 = "b9979fee8cb0ad645944f82bdc85baac4b92061e385d450f8130526bcb4c4970"
+# module footprint, top view (DXF)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://www.murata.com/-/media/webrenewal/products/connectivitymodule/asset/pub/rfm/data/type2el/type2el-2dl-u-fl.ashx?la=en-us&cvid=20230713010000000000"
+date = "2023-07-13"
+sha256 = "a8387fa54dba76e6f73c261cad7df9bc927cd30fae8b5daa2cf5d9fcd38754f3"
+# RF trace to u.FL layout (DXF)
+redistributable = false
+
+[[file]]
+mpn = "LBES5PL2EL-923"
+manufacturer = "Murata"
+kind = "other"
+url = "https://atta.szlcsc.com/upload/public/pdf/source/20241017/047927140A685FF6C66B6B417FB86DA7.pdf"
+revision = "PA4"
+date = "2024-08-05"
+sha256 = "b5b0ce7c22855e326151b4923e6a334d0d7eefc48b1558f17c94f1b3c41b4308"
+# Embedded Artists 2EL / 2DL M.2 Module Datasheet (carrier board, secondary), LCSC mirror
+redistributable = false
+
+[[file]]
+mpn = "U.FL-R-SMT-1"
+manufacturer = "Hirose"
+kind = "datasheet"
+url = "https://www.hirose.com/en/product/series/U.FL"
+# sha256 pending: not downloaded yet
+# 10
+redistributable = false
+
+[[file]]
+mpn = "146187-0050"
+manufacturer = "Molex"
+kind = "datasheet"
+url = "https://www.molex.com/en-us/products/part-detail/1461870050"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "146153-0050"
+manufacturer = "Molex"
+kind = "datasheet"
+url = "https://www.molex.com/en-us/products/part-detail/1461530050"
+# sha256 pending: molex.com refused automated fetches (2026-10-24); sales drawing, PS-146153-100-001 and AS-146153-100-001 not obtained
+redistributable = false
+
+[[file]]
+mpn = "146153-0050"
+manufacturer = "Molex"
+kind = "other"
+url = "https://datasheet.lcsc.com/datasheet/pdf/23abb347781ae39a1ac044ca72bd54ef.pdf?productCode=C3284102"
+revision = "1461531050 rev. B1"
+date = "2019-04-03"
+sha256 = "4bb15eb60149c8948841a603aa14e5b46fc2d3eff0d85ce457dd8ce2793d674f"
+# product customer drawing of the same flex with MHF4L plug (146153-1050 ... -1300), LCSC mirror
+redistributable = false
+
+[[file]]
+mpn = "146153-0050"
+manufacturer = "Molex"
+kind = "other"
+url = "https://datasheet.lcsc.com/datasheet/pdf/adc3b9714c331b3236f06bfb1c203eb9.pdf?productCode=C6991332"
+revision = "2196110100 rev. A1"
+date = "2022-08-03"
+sha256 = "207fd73b2212b4729ad69ff5ea91e635712a97bd8836a9bd20dbf321acd03c8f"
+# 219611 series drawing (listed alternative; shows Molex's L1/L2 cable-length convention), LCSC mirror
+redistributable = false
+
+[[file]]
+mpn = "W24P-U"
+manufacturer = "Inventek"
+kind = "datasheet"
+url = "https://www.inventeksys.com/wp-content/uploads/W24P-U_2.4Ghz_-Antenna_Specification.pdf"
+revision = "DOC-DS-20075-1.0"
+date = "2013-10-01"
+sha256 = "68cde1cc9ebc00631efe68414a5c1dce6e3f248c57385f4c0f66edbb11dfecbc"
+redistributable = false
+
+[[file]]
+mpn = "LSM6DSV16XTR"
+manufacturer = "STMicroelectronics"
+kind = "datasheet"
+url = "https://www.st.com/resource/en/datasheet/lsm6dsv16x.pdf"
+sha256 = "ec53c0e5952fc0c9587ed32b56d066016c2954bc6e9d18355b13a1c4cda17894"
+redistributable = false
+
+[[file]]
+mpn = "VEML6030"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/84366/veml6030.pdf"
+revision = "Rev. 1.8"
+date = "2024-11-28"
+sha256 = "46bc766f22f7e933afba4c3d1e84ca836b6f3e013d1c9b73402fbb3447471b56"
+redistributable = false
+
+[[file]]
+mpn = "USB4105-GF-A"
+manufacturer = "GCT"
+kind = "datasheet"
+url = "https://gct.co/files/drawings/usb4105.pdf"
+revision = "drawing (revision field not parsed)"
+sha256 = "fb331fbabee8392ed2937ed757c1610cb0f174b84625147c0b580a18eea8c0e5"
+redistributable = false
+
+[[file]]
+mpn = "TPD4E05U06DQAR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf"
+revision = "SLVSBO7O"
+date = "2024-08"
+sha256 = "c167cf1e72a5473a4d2c59b6a3c0251498701da05b7785919b9ceaae3b3e02c6"
+redistributable = false
+
+[[file]]
+mpn = "TPD6E05U06RVZR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tpd6e05u06.pdf"
+revision = "SLVSBO7O"
+date = "2024-08"
+sha256 = "c167cf1e72a5473a4d2c59b6a3c0251498701da05b7785919b9ceaae3b3e02c6"
+redistributable = false
+
+[[file]]
+mpn = "TPD1E04U04DPYR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tpd1e04u04.pdf"
+revision = "SLVSDG4B"
+date = "2016-08"
+sha256 = "f48a05822f3f04931d733d809c20d723bc03d3bf3f9b6ae44dab5da22c595d11"
+# alternative
+redistributable = false
+
+[[file]]
+mpn = "TPD4E1U06"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf"
+revision = "SLVSBQ9E"
+date = "2026-10"
+sha256 = "aaf78b3eda253f43ce9f7cc6150d88dac876f9aaafe8a4cc0d03a9773660f418"
+# reference for CSI budget
+redistributable = false
+
+[[file]]
+mpn = "TPD8S300ARUKR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tpd8s300a.pdf"
+revision = "SLVSEL9"
+date = "2018-06"
+sha256 = "2c1d5b68b19430efcd8127f6e425186c88fbf0bbdc268df1d053ec45af8f88f1"
+redistributable = false
+
+[[file]]
+mpn = "TPD4S311A"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tpd4s311.pdf"
+revision = "SLVSF72C"
+date = "2021-02"
+sha256 = "3f206dd65f48b10e3c1c3d4ea9df9566fb7417bb480b2c5abd018f3188229e49"
+# alternative
+redistributable = false
+
+[[file]]
+mpn = "TVS2200DRVR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tvs2200.pdf"
+revision = "SLVSED5C"
+date = "2023-08"
+sha256 = "84c986c9cc4f323fdb0c6840bff455438802dd6df9af5fd89c73b8bce4dced9e"
+redistributable = false
+
+[[file]]
+mpn = "TVS0500DRVR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tvs0500.pdf"
+revision = "SLVSED2C"
+date = "2019-11"
+sha256 = "ac7a4dc56da905c36f143d2dc76760d526b9e143bfedaacfacf6c8f5c9541fc7"
+redistributable = false
+
+[[file]]
+mpn = "P70-1000045R"
+manufacturer = "Harwin"
+kind = "datasheet"
+url = "https://www.harwin.com/products/P70-1000045R/"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "FH35C-51S-0.3SHW"
+manufacturer = "Hirose"
+kind = "datasheet"
+url = "https://www.hirose.com/en/product/series/FH35C"
+# sha256 pending: not downloaded yet
+# 50
+redistributable = false
+
+[[file]]
+mpn = "KMR221GLFS"
+manufacturer = "C&K"
+kind = "datasheet"
+url = "https://www.ckswitches.com/media/1479/kmr2.pdf"
+sha256 = "2720f475dd31d921fcb70d1d32dd02bd52de8c88554f63b59809a1b744fb7a26"
+redistributable = false
+
+[[file]]
+mpn = "PTS815SJM250SMTRLFS"
+manufacturer = "C&K"
+kind = "datasheet"
+url = "https://www.ckswitches.com/media/2768/pts815.pdf"
+sha256 = "858ecdb21e9c8ce7146be4f3512defc531f6ffc4c67dd152d41d80c3a1c5d915"
+redistributable = false
+
+[[file]]
+mpn = "SKHHLQA010"
+manufacturer = "Alps Alpine"
+kind = "datasheet"
+url = "https://tech.alpsalpine.com/e/products/detail/SKHHLQA010/"
+# sha256 pending: not downloaded yet
+# alternative
+redistributable = false
+
+[[file]]
+mpn = "19-217/GHC-YR1S2/6T"
+manufacturer = "Everlight"
+kind = "datasheet"
+url = "https://www.lcsc.com/product-detail/C2986059.html"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "19-217/R6C-AL1M2VY/6T"
+manufacturer = "Everlight"
+kind = "datasheet"
+url = "https://www.lcsc.com/product-detail/C2986060.html"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "E35GH-I-MW800-CB"
+manufacturer = "Focus LCDs"
+kind = "datasheet"
+url = "https://focuslcds.com/wp-content/uploads/2025/09/E35GH-I-MW800-CB_Spec.pdf"
+revision = "Rev 1.0"
+sha256 = "2912a2ebd90ead827494d9b20842f6da3a1ceb43b620b62f27978a82a52c91df"
+redistributable = false
+
+[[file]]
+mpn = "GT911"
+manufacturer = "Goodix"
+kind = "datasheet"
+url = ""
+revision = "Rev.00 (preliminary)"
+date = "2014-08-04"
+sha256 = "60c6c2284b482a7acdcd2747c47a9a7d25283235ccda8c688c10e2fd3216a98b"
+redistributable = false
+
+[[file]]
+mpn = "FH12-20S-0.5SH"
+manufacturer = "Hirose"
+kind = "datasheet"
+url = "https://www.hirose.com/en/product/series/FH12"
+# sha256 pending: not downloaded yet
+# 55; 55
+redistributable = false
+
+[[file]]
+mpn = "FH12-6S-0.5SH"
+manufacturer = "Hirose"
+kind = "datasheet"
+url = "https://www.hirose.com/en/product/series/FH12"
+# sha256 pending: not downloaded yet
+# 55; 55
+redistributable = false
+
+[[file]]
+mpn = "Radxa ZERO 3W schematic"
+manufacturer = "Radxa"
+kind = "datasheet"
+url = "https://dl.radxa.com/zero3/docs/hw/3w/radxa_zero_3w_v1.12_schematic.pdf"
+revision = "v1.12"
+sha256 = "50f0ca8af531c2c91813fb050bdaf339d37123f7d035d59ca65785df829d28bc"
+# reference
+redistributable = false
+
+[[file]]
+mpn = "CDC6CE024576ADLXR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/cdc6c.pdf"
+revision = "SNAS843D"
+date = "2026-01"
+sha256 = "6756ca5f8426140c34ca9a98a2ad9a4105c492337e073c96ed619c0368e16404"
+# rejected MCLK
+redistributable = false
+
+[[file]]
+mpn = "SG-210STF"
+manufacturer = "Seiko Epson"
+kind = "datasheet"
+url = "https://support.epson.biz/td/api/doc_check.php?dl=app_SG-210STF"
+# sha256 pending: not downloaded yet
+# MCLK candidate, 24.576 MHz only
+redistributable = false
+
+[[file]]
+mpn = "SX2M22.5792M20F30TNN"
+manufacturer = "Shenzhen SCTF"
+kind = "datasheet"
+url = "https://www.lcsc.com/product-detail/C5452663.html"
+# sha256 pending: not downloaded yet
+# bring-up only
+redistributable = false
+
+[[file]]
+mpn = "TPS61088RHLR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps61088.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "XAL4020-152MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/6adcb47d-8b55-416c-976e-1e22e0d2848c/xal4000.pdf"
+sha256 = "b26cf975bd56a807173b05665bddd49ed49323400330eb8f6fa63e24ff6d7d15"
+redistributable = false
+
+[[file]]
+mpn = "TCA6416ARTWR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tca6416a.pdf"
+sha256 = "a7deab846f35a9f1377c260b3e517fbac90683416bab1aa28028b45e53fc292b"
+redistributable = false
+
+[[file]]
+mpn = "PCA9306DCUR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/pca9306.pdf"
+sha256 = "1cd97c734729f2bfca26ccaa93521c04c373568e4ebe6d892267dba2571e21e6"
+redistributable = false
+
+[[file]]
+mpn = "TCA9406DCUR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tca9406.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "SN74AXC8T245PWR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74axc8t245.pdf"
+sha256 = "6cf4003c438c0546fb86f0932613896197dd19a75bdb307f385eb6e75535126e"
+redistributable = false
+
+[[file]]
+mpn = "SN74AXC4T774PWR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74axc4t774.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "SN74AXC2T45DCUR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74axc2t45.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "SN74AXC1T45DCKR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74axc1t45.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "TPS3839G18DBZR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps3839.pdf"
+sha256 = "a18940237afc63cf6d1a0bb5e1c8c0b2c3274e01c47fa5f27e470a005072621b"
+redistributable = false
+
+[[file]]
+mpn = "SN74LVC1G27DCKR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74lvc1g27.pdf"
+sha256 = "52eba79ea5ba10a6e4dd1a96de487c4a3c05875ec6da3186794718eb79a7e8af"
+redistributable = false
+
+[[file]]
+mpn = "BAT54"
+manufacturer = "Nexperia"
+kind = "datasheet"
+url = "https://assets.nexperia.com/documents/data-sheet/BAT54_SER.pdf"
+sha256 = "40b7447c4bbe3a9153d07a28620275322e1b4a7375c89de312d1f4b8c7325847"
+redistributable = false
+
+[[file]]
+mpn = "215"
+manufacturer = "Nexperia"
+kind = "datasheet"
+url = "https://assets.nexperia.com/documents/data-sheet/BAT54_SER.pdf"
+# sha256 pending: not downloaded yet
+redistributable = false
+
+[[file]]
+mpn = "DF40C-100DS/DP-0.4V"
+manufacturer = "Hirose"
+kind = "datasheet"
+url = "https://www.hirose.com/en/product/document?clcode=&productname=&series=DF40&documenttype=Catalog&lang=en&documentid=en_DF40_CAT"
+# sha256 pending: not downloaded yet
+# 51; 51
+redistributable = false
+
+[[file]]
+mpn = "DF40C-30DS/DP-0.4V"
+manufacturer = "Hirose"
+kind = "datasheet"
+url = "https://www.hirose.com/en/product/document?clcode=&productname=&series=DF40&documenttype=Catalog&lang=en&documentid=en_DF40_CAT"
+# sha256 pending: not downloaded yet
+# 51; 51
+redistributable = false
+
+# Board BOM v1.1 additions (2026-10-22). sha256 of the copy downloaded from the URL shown, where it was.
+
+[[file]]
+mpn = "TPS61089RNRR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps61089.pdf"
+revision = "SLVSD38C"
+date = "2021-08"
+sha256 = "863eda98cbb0853553e7cfd4f199027fcca5b80a5e0fb57448aeccabce061e0d"
+redistributable = false
+
+[[file]]
+mpn = "TPS7A2031PDBVR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps7a20.pdf"
+revision = "SBVS338H"
+date = "2024-07"
+sha256 = "b6c487d79ebed6dd43bf220b07fc5b3ecb9ee55d87e6daa2312acda6546046c0"
+redistributable = false
+
+[[file]]
+mpn = "TPS62A03DRLR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62a03.pdf"
+revision = "SLUSFD4A"
+date = "2024-10"
+sha256 = "db38a14c2b2dfcfb6cdd81baa36ab230aca30df836b81cb974d7ec4ed19c9381"
+# fallback for the vcc3v3_sys buck (BOM line 6); dropped in BOM v1.2
+redistributable = false
+
+[[file]]
+mpn = "SN74AXC2T245RSWR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74axc2t245.pdf"
+revision = "SCES879A"
+date = "2024-02"
+sha256 = "fd6cf4a6e830e80e76a2cbca4351f067dae9f8e3915d5086104a70e2d72e5d4f"
+redistributable = false
+
+[[file]]
+mpn = "SN74AVC2T245RSWR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74avc2t245.pdf"
+revision = "SCES692E"
+date = "2024-09"
+sha256 = "2d473c07fce653298ed85fa2b948201ca6bd91616cd2b04eb486760c9de0eb3b"
+# second source for SN74AXC2T245RSWR
+redistributable = false
+
+[[file]]
+mpn = "SN74LVC2G66DCUR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74lvc2g66.pdf"
+revision = "SCES325N"
+date = "2018-08"
+sha256 = "27bccaae2be20f940700dd8404252b0b6b4ca622b3d9e3cdd112f9e5e1cb775a"
+redistributable = false
+
+[[file]]
+mpn = "SN74LVC1G57DCKR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74lvc1g57.pdf"
+revision = "SCES414P"
+date = "2016-11"
+sha256 = "078364de617898af0dd4cee99931ab1d36b622824a06e8f9b7fa95087644af24"
+redistributable = false
+
+[[file]]
+mpn = "SN74LVC1G58DCKR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74lvc1g58.pdf"
+revision = "SCES415N"
+date = "2013-12"
+sha256 = "c9f14665a6c5631feeee9a82ccb5328b51a83ad3ea90c49e2d53713520877e8a"
+redistributable = false
+
+[[file]]
+mpn = "ECS-2016MV-120-BN-TR"
+manufacturer = "ECS Inc."
+kind = "datasheet"
+url = "https://ecsxtal.com/store/pdf/ECS-2016MV.pdf"
+revision = "Rev. 2025"
+date = "2025"
+sha256 = "f179ffbc8a8257a363abd72fb03ddc445cfae44fed3edb7e32cd938101c61872"
+redistributable = false
+
+[[file]]
+mpn = "PMEG6010CEH"
+manufacturer = "Nexperia"
+kind = "datasheet"
+url = "https://assets.nexperia.com/documents/data-sheet/PMEG6010CEH_PMEG6010CEJ.pdf"
+revision = "Rev. 02"
+date = "2007-03-27"
+# sha256 pending: not downloaded yet
+# HTTP 403 from this host; the copy read for the spec sheet came from the LCSC mirror (sha256 00cb4092481811245afeadff66d4bf266ff5486c7ca28fb47e822868f8689bee)
+redistributable = false
+
+[[file]]
+mpn = "19-217/G7C-AN1P2/6T"
+manufacturer = "Everlight"
+kind = "datasheet"
+url = "https://www.everlighteurope.com/custom/files/datasheets/DSE-0014851.pdf"
+revision = "DSE-0014851 Rev. 4"
+date = "2021-12-16"
+sha256 = "9329ea0e5aeb9d40f738f4bc8824cc6f3a6b63ab2bc7fe237d06fa69fac017d5"
+redistributable = false
+
+[[file]]
+mpn = "Radxa ROCK 3C schematic"
+manufacturer = "Radxa"
+kind = "datasheet"
+url = "https://dl.radxa.com/rock3/docs/hw/3c/v1400/radxa_rock_3c_v1400_schematic.pdf"
+revision = "v1.4"
+date = "2024-03-05"
+sha256 = "34c3113b192357c97ed42b979ab7f6242c492d3f2e02207e128ec35d1733b5bd"
+# RK809-5 reference
+redistributable = false
+
+# Board BOM v1.2 additions (2026-10-22). sha256 of the copy downloaded from the URL shown, where it was.
+
+[[file]]
+mpn = "TPS62826DMQR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62826.pdf"
+revision = "SLVSEF9I"
+date = "2024-03"
+sha256 = "8a309f2a40486a380242d3f178eb4bda3ef4dca3deca647fa82f763d14866f63"
+redistributable = false
+
+[[file]]
+mpn = "TPS62827DMQR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62826.pdf"
+revision = "SLVSEF9I"
+date = "2024-03"
+sha256 = "8a309f2a40486a380242d3f178eb4bda3ef4dca3deca647fa82f763d14866f63"
+# alternative for BOM line 6
+redistributable = false
+
+[[file]]
+mpn = "LP5521YQX/NOPB"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/lp5521.pdf"
+revision = "SNVS441I"
+date = "2016-11"
+sha256 = "095c9a07852dbef1a85d26afebefc23f2f8f001c7b5d89512bd31d0ebc37011f"
+redistributable = false
+
+[[file]]
+mpn = "19-337/R6GHBHC-A01/2T"
+manufacturer = "Everlight"
+kind = "datasheet"
+url = "https://en.everlight.com/wp-content/plugins/ItemRelationship/product_files/pdf/19-337-R6GHBHC-A01-2T.pdf"
+revision = "DSE-0002657 Rev. 4"
+date = "2013-05-21"
+sha256 = "20990b41beab81cbc0da25070fe15e00f4e491f6b905b12110f1e118559cee8e"
+redistributable = false
+
+[[file]]
+mpn = "045102.5MRL"
+manufacturer = "Littelfuse"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/ecd74ee295e2e3d7ddb74e9193c5d222.pdf"
+revision = "451/453 Series, Revised 06/15/17"
+date = "2017-06-15"
+sha256 = "e6a46c9a12645c68d2004d892bb8b370e3792708fd2d013c8108b7b00f059dd7"
+# LCSC mirror of the 451/453 Series datasheet; littelfuse.com returned HTTP 403 from this host
+redistributable = false
+
+[[file]]
+mpn = "0451007.MRL"
+manufacturer = "Littelfuse"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/ecd74ee295e2e3d7ddb74e9193c5d222.pdf"
+revision = "451/453 Series, Revised 06/15/17"
+date = "2017-06-15"
+sha256 = "e6a46c9a12645c68d2004d892bb8b370e3792708fd2d013c8108b7b00f059dd7"
+# LCSC mirror of the 451/453 Series datasheet; littelfuse.com returned HTTP 403 from this host
+redistributable = false
+
+[[file]]
+mpn = "DF40C-50DS/DP-0.4V"
+manufacturer = "Hirose"
+kind = "datasheet"
+url = "https://www.hirose.com/en/product/document?clcode=&productname=&series=DF40&documenttype=Catalog&lang=en&documentid=en_DF40_CAT"
+# sha256 pending: not downloaded yet
+# 51; 51. The URL returned HTML from this host; the spec sheet reads the same DF40 catalog copy as the 30-pin sheet (LCSC mirror, sha256 b806e4a9a488507525fbc3174b2ad9273a08efcd24d151c45a3ccb3db540e19f)
+redistributable = false
+
+[[file]]
+mpn = "LT3045EDD#TRPBF"
+manufacturer = "Analog Devices"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/6b4c027fb90357baec1b8d318e11eacb.pdf"
+revision = "Rev. D"
+date = "2022-11"
+sha256 = "9132e595759a58a0920e7c63997872df02ca9ce598ead76c6f7a31051405eba6"
+# LCSC mirror; analog.com timed out from this host. BOM v1.3 line 25
+redistributable = false
+
+[[file]]
+mpn = "LT3094EDD#TRPBF"
+manufacturer = "Analog Devices"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/1a8bfd511d8ae1f9056ba9136e868838.pdf"
+revision = "Rev. B"
+date = "2020-01"
+sha256 = "c82438ca3359a588f6f1ad5ab5160b3f2223ec78f723be17bda753f8dc71694d"
+# LCSC mirror; analog.com timed out from this host. BOM v1.3 line 26
+redistributable = false
+
+# BOM v1.3 parts (2026-10-22).
+
+[[file]]
+mpn = "744373240047"
+manufacturer = "Wurth Elektronik"
+kind = "datasheet"
+url = "https://www.we-online.com/components/products/datasheet/744373240047.pdf"
+revision = "003.000"
+date = "2024-12-27"
+sha256 = "18d4780afd61015ea4d7b56a174b1f51405d51a51fd87ca1d1eef86f177af2da"
+# BOM v1.3 line 106. curl from this host gets HTTP 403; the file was fetched from this URL with a browser-like client
+redistributable = false
+
+[[file]]
+mpn = "XFL4015-471MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/84927b8b-f089-421b-a7f4-a0fa23afe908/xfl4015.pdf"
+revision = "Document 769-1"
+date = "2026-03-10"
+sha256 = "6535ab70d0ef65ba03d4b0800e206fc7867f26464e2d9dfd5dd931a2bcb0c7c1"
+# BOM v1.3 line 106 alternative
+redistributable = false
+
+[[file]]
+mpn = "RT0603BRD071KL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a.pdf"
+revision = "V.16"
+date = "2025-05-06"
+sha256 = "0a729d144519a7021c82a0ef242b064e467c70d44afcf9eabd6c7ffdc4b673a3"
+# RT series (thin film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 37, 1.00 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RT0603BRD071K62L"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a.pdf"
+revision = "V.16"
+date = "2025-05-06"
+sha256 = "0a729d144519a7021c82a0ef242b064e467c70d44afcf9eabd6c7ffdc4b673a3"
+# RT series (thin film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 37, 1.62 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RT0603BRD0760K4L"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a.pdf"
+revision = "V.16"
+date = "2025-05-06"
+sha256 = "0a729d144519a7021c82a0ef242b064e467c70d44afcf9eabd6c7ffdc4b673a3"
+# RT series (thin film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 109, 60.4 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-071RL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 107, 1.0 Ω
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-07374RL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 109, 374 Ω
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-079K31L"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 109, 9.31 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-07475KL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 111, 475 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-07576KL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 111, 576 kΩ
+redistributable = false
+
+[[file]]
+mpn = "RC0603FR-07100KL"
+manufacturer = "Yageo"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e.pdf"
+revision = "V.12"
+date = "2022-08-02"
+sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 111, 100 kΩ
+redistributable = false
+
+# Board BOM v1.5 (board ADR 0014, two-cell battery), 2026-10-22.
+
+[[file]]
+mpn = "BQ25798RQMR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/bq25798.pdf"
+revision = "SLUSDV2C"
+date = "2026-06"
+sha256 = "163e45683f62f208545920e1470054b352b4a4b0cdc201e1f19fcb1007f1e222"
+redistributable = false
+
+[[file]]
+mpn = "BQ28Z610DRZR-R1"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/bq28z610-r1.pdf"
+revision = "SLUSE07B"
+date = "2022-01"
+sha256 = "d7506515380a903d0e911d3ce523f950c409848f7f1523874db5379d981c4da0"
+redistributable = false
+
+[[file]]
+mpn = "BQ28Z610DRZR-R1"
+manufacturer = "Texas Instruments"
+kind = "other"
+url = "https://www.ti.com/lit/ug/sluuc81/sluuc81.pdf"
+revision = "SLUUC81"
+date = "2020-01"
+sha256 = "5663b323ede0ce095ff6d75ba83701b9d716eb22492e1f0f220a8fcfe2927bd9"
+# BQ28Z610-R1 Technical Reference (data flash, gauge-only configuration)
+redistributable = false
+
+[[file]]
+mpn = "TPS62136RGXR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62136.pdf"
+revision = "SLVSDV2"
+date = "2017-03"
+sha256 = "b445aeace2de2d6b9f657bb692104d848c17b8158f727f8e15a6ac738a13a70a"
+redistributable = false
+
+[[file]]
+mpn = "TPS62136RGXR"
+manufacturer = "Texas Instruments"
+kind = "spice"
+url = "https://www.ti.com/lit/zip/SLVMC09"
+revision = "SLVMC09A"
+date = "2020-11-17"
+sha256 = "764f65e3e817b73ef0690637fb1a08ab7fa04ec5a1858b203dc7cf555a04ad99"
+# PSpice unencrypted transient model ("Final 1.1"); TPS62136_PSPICE_TRANS/TPS62136_TRANS.lib inside,
+# sha256 252dce79505a414bd31e4bd2209334de90761d277894c759c3f88da003439a56
+# date: newest entry of the archive; downloaded without login on 2026-10-24 (redirects to slvmc09a.zip)
+redistributable = false
+
+[[file]]
+mpn = "TPS62903RPJR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62903.pdf"
+revision = "SLVSES3A"
+date = "2021-03"
+sha256 = "323bfe650fdef2fa2c361f1264391a4e0d75c30772a49ee46f6741370250dcee"
+redistributable = false
+
+[[file]]
+mpn = "XGL4020-102MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/76c9c081-4945-4c85-9129-9356e1ad6734/xgl4020.pdf"
+revision = "Document 1529"
+date = "2026-02-19"
+sha256 = "1e050d7e4f44f7e1f3ae3be38de87b15e4d72b2ef463c7b1f4edc292f83ad2c0"
+# same file for XGL4020-152MEC
+redistributable = false
+
+[[file]]
+mpn = "XGL4020-152MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/76c9c081-4945-4c85-9129-9356e1ad6734/xgl4020.pdf"
+revision = "Document 1529"
+date = "2026-02-19"
+sha256 = "1e050d7e4f44f7e1f3ae3be38de87b15e4d72b2ef463c7b1f4edc292f83ad2c0"
+redistributable = false
+
+[[file]]
+mpn = "XEL4020-152MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/3c7caaa2-c1ed-4ff8-84e5-0b1b14a30417/xel4020.pdf"
+revision = "Document 1302"
+date = "2026-02-19"
+sha256 = "1c28ca6c85d755ad87bdf5c258131d6706d60572d592b5647810efd8bab2c3be"
+# second source for XGL4020-152MEC (BOM v1.5 line 114); TI-listed for the TPS62136
+redistributable = false
+
+[[file]]
+mpn = "0451004.MRL"
+manufacturer = "Littelfuse"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/ecd74ee295e2e3d7ddb74e9193c5d222.pdf"
+revision = "451/453 Series, Revised 06/15/17"
+date = "2017-06-15"
+sha256 = "e6a46c9a12645c68d2004d892bb8b370e3792708fd2d013c8108b7b00f059dd7"
+# LCSC mirror of the 451/453 Series datasheet (same file as 045102.5MRL); littelfuse.com returned HTTP 403 from this host
+redistributable = false
+
+[[file]]
+mpn = "WSL12065L000FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
+mpn = "WSL12063L000FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
+mpn = "WSL2512R0100FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
+mpn = "WSL2010R0200FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
+mpn = "WSL1206R1000FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
+mpn = "WSL1206R0200FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
+mpn = "43650-0400"
+manufacturer = "Molex"
+kind = "datasheet"
+url = "https://www.molex.com/en-us/products/part-detail/436500400"
+# sha256 pending: molex.com unreachable from this host on 2026-10-22; drawing and product specification not downloaded
+redistributable = false
+
+[[file]]
+mpn = "0451005.MRL"
+manufacturer = "Littelfuse"
+kind = "datasheet"
+url = "https://datasheet.lcsc.com/datasheet/pdf/ecd74ee295e2e3d7ddb74e9193c5d222.pdf"
+revision = "451/453 Series, Revised 06/15/17"
+date = "2017-06-15"
+sha256 = "e6a46c9a12645c68d2004d892bb8b370e3792708fd2d013c8108b7b00f059dd7"
+# board BOM v1.5 line 104 (supersedes 0451004.MRL); same 451/453 file as 045102.5MRL
+redistributable = false
+
+# Board BOM v1.6 (board ADR 0015, ADR 0014 item 6, MaskROM fix), 2026-10-22.
+
+[[file]]
+mpn = "LMR33630CRNXR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/lmr33630.pdf"
+revision = "SNVSAN3F"
+date = "2020-11"
+sha256 = "3b0920a4e56a0b3f5f214a6317d3c06cff6e541e5054024adc31c30acc50c04a"
+redistributable = false
+
+[[file]]
+mpn = "LMR33630CRNXR"
+manufacturer = "Texas Instruments"
+kind = "other"
+url = "https://www.ti.com/lit/an/snva856b/snva856b.pdf"
+revision = "SNVA856B"
+date = "2022-10"
+sha256 = "806345f00ea5d4bd5148149e96a73941d791c04746f12b0316d5f983c47c3478"
+# application note: Working With Inverting Buck-Boost Converters
+redistributable = false
+
+[[file]]
+mpn = "LMR33630CRNXR"
+manufacturer = "Texas Instruments"
+kind = "spice"
+url = "https://www.ti.com/lit/zip/SNVMBG5"
+revision = "SNVMBG5A"
+date = "2020-08-31"
+sha256 = "bf3d8f3b2d33a7e957147972194555b7883da88efde2ba4275be0a23c69bc2b7"
+# PSpice unencrypted transient model (inverting and non-inverting); LMR33630C_PSPICE_TRANS/LMR33630C_TRANS.lib
+# inside, sha256 b6ca4171f65db8d9f5c70ad0f06d6da9c164d84ef134c095dd220bb47ef70906
+# date: newest entry of the archive; downloaded without login on 2026-10-24 (redirects to snvmbg5a.zip)
+redistributable = false
+
+[[file]]
+mpn = "XGL4020-222MEC"
+manufacturer = "Coilcraft"
+kind = "datasheet"
+url = "https://www.coilcraft.com/getmedia/76c9c081-4945-4c85-9129-9356e1ad6734/xgl4020.pdf"
+revision = "Document 1529"
+date = "2026-02-19"
+sha256 = "1e050d7e4f44f7e1f3ae3be38de87b15e4d72b2ef463c7b1f4edc292f83ad2c0"
+redistributable = false
+
+[[file]]
+mpn = "TPS3808G01DBVR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps3808.pdf"
+revision = "SBVS050N"
+date = "2026-08"
+sha256 = "74d889c0f68af88032f1633c26381817cc03e10d9fd3b4c177a044ad3ed86eed"
+redistributable = false
+
+[[file]]
+mpn = "CSD17575Q3"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/csd17575q3.pdf"
+revision = "SLPS489A"
+date = "2014-08"
+sha256 = "77a41b522836eb087795c7f9ecdd85794fdb8117fdd8295efede8e24537e869a"
+redistributable = false
+
+[[file]]
+mpn = "CSD17575Q3"
+manufacturer = "Texas Instruments"
+kind = "other"
+url = "https://www.ti.com/lit/pdf/SLUUCB5"
+revision = "SLUUCB5E"
+date = "2022-07"
+sha256 = "a653d3bae48cf0f0cc9f705968d309b90e1f003d50f51b53bee273e874bebfbd"
+# BQ25792EVM / BQ25798EVM user guide; BOM lists the CSD17575Q3 as the ship FET (Q5)
+redistributable = false
+
+[[file]]
+mpn = "DMP3099L-7"
+manufacturer = "Diodes Inc."
+kind = "datasheet"
+url = "https://www.diodes.com/assets/Datasheets/DMP3099L.pdf"
+revision = "DS36081 Rev. 5-2"
+date = "2025-05"
+sha256 = "06f3030318ba16b229928e1766aa85ade37b92dba7cdcb99a06b6eb9566b442c"
+redistributable = false
+
+[[file]]
+mpn = "GRM32ER71E226KE15L"
+manufacturer = "Murata"
+kind = "datasheet"
+url = "https://www.murata.com/en-us/products/productdetail?partno=GRM32ER71E226KE15%23"
+# sha256 pending: product page renders by script; PDF not retrieved on 2026-10-22
+# DC-bias curve read from Murata SimSurfing on 2026-10-24 (spec sheet, Recommended operating conditions)
+redistributable = false
+
+# Master clock dividers and 2x oscillators (board ADR 0019, 2026-10-24).
+
+[[file]]
+mpn = "SN74AUC1G74DCUR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/sn74auc1g74.pdf"
+revision = "SCES537D"
+date = "2007-06"
+sha256 = "78ef342668836a8c3bffdb203769e9e4404e1914badcff849016b7ff429445c6"
+redistributable = false
+
+[[file]]
+mpn = "NSC5083D-45.158M"
+manufacturer = "NDK"
+kind = "datasheet"
+url = "https://www.ndk.com/images/products/catalog/c_NZ2520SDA_e.pdf"
+revision = "catalog 1703A"
+sha256 = "b818c72bf170e8dac004fcc7e0c5639eb8ffbe22d624f2e851aef9fde8f87825"
+# NZ2520SDA, 3.3 V
+redistributable = false
+
+[[file]]
+mpn = "NSC5083D-49.152M"
+manufacturer = "NDK"
+kind = "datasheet"
+url = "https://www.ndk.com/images/products/catalog/c_NZ2520SDA_e.pdf"
+revision = "catalog 1703A"
+sha256 = "b818c72bf170e8dac004fcc7e0c5639eb8ffbe22d624f2e851aef9fde8f87825"
+# NZ2520SDA, 3.3 V
+redistributable = false
+
+# Battery contacts (board ADR 0020, 2026-10-24).
+
+[[file]]
+mpn = "70-9258-001-120-006"
+manufacturer = "KYOCERA AVX"
+kind = "datasheet"
+url = "https://datasheets.kyocera-avx.com/9258-100.pdf"
+revision = "TDS-BTB-0026 Rev 1"
+date = "2025-09-10"
+sha256 = "1b4e30aff4b7bf7a02d4c77edf9b6cca8020bf4094d9256b975ae5c8362bb34c"
+# 9258-100 series data sheet, 1 page (catalog "Board to Board Connectors 090325", p. 36)
+redistributable = false
+
+[[file]]
+mpn = "70-9258-001-120-006"
+manufacturer = "KYOCERA AVX"
+kind = "other"
+url = "https://www.kyocera-avx.com/download/connectors/Conn-Sales-Drawings/9XXX/9258-100.zip"
+revision = "Drawing 70-9258-001-1X0-00XS Rev F"
+date = "2025-02-27"
+sha256 = "c4907e39d0df15c20abe8db5fe3625bfe0e997d0dee40b89dd1b7b40ea1d2384"
+# sales drawing zip (one PDF, 3 sheets; sheet 2 is the -120); the PDF inside: sha256 2354523cafd9da19797b288adc2bc03fe1c01e38b54145671eecc498e4105aae
+redistributable = false
+
+# LPDDR4X replacement for the discontinued K4UBE3D4AB-MGCL (board ADR 0022, 2026-10-25).
+
+[[file]]
+mpn = "MT53E1G32D2FW-046"
+manufacturer = "Micron"
+kind = "datasheet"
+url = "https://4donline.ihs.com/images/VipMasterIC/IC/MICT/MICT-S-A0017683454/MICT-S-A0017683454-1.pdf?hkey=6D3A4C79FDBF58556ACFDE234799DDF0"
+revision = "Rev. C (z42n_embedded_lpddr4x_lpddr4.pdf, CCM005-554574167-10834)"
+date = "2023-02"
+sha256 = "da659aad98344f65c8568cc6861177502906b109fa9453a0cc92fbb8cff17e39"
+# Micron z42n LPDDR4X/LPDDR4 data sheet (314 pages), design revision :C (IT:C, WT:C); distributor copy
+redistributable = false
+
+[[file]]
+mpn = "CXDB5CBAM-MA-B"
+manufacturer = "CXMT"
+kind = "datasheet"
+url = "https://atta.szlcsc.com/upload/public/pdf/source/20260904/718A3721388EA08CCE629AF1BA773D14.pdf"
+revision = "Version 1.0"
+date = "2024-04-17"
+sha256 = "becc7fc20e65a8c72cd6b31535867a6456309e6c0a8a06b119411bb1b0609f7a"
+# CXMT 4GB LPDDR4X SDRAM datasheet (86 pages), LCSC copy; marked confidential by CXMT
+redistributable = false
+
+[[file]]
+mpn = "RK3566"
+manufacturer = "Rockchip"
+kind = "other"
+url = "https://media.githubusercontent.com/media/boychenxingxing/rk3588/eda9d1d22c9ce490e6c3ebe739101857f7e0f1a4/Common/AVL/Rockchip_Support_List_DDR_Ver2.65.pdf"
+revision = "Ver 2.65"
+date = "2025-03-17"
+sha256 = "05e13b0d4c20b21e18c532571d5ad91fb2317ab40e2ba08194d48db111977950"
+# Rockchip Solutions DDR SDRAM Support List (21 pages), from a public RK3588 SDK mirror (Common/AVL), pinned by commit
+redistributable = false
+
+# HAT extension switch (board BOM v1.11 line 144, hat-standard interface v1.1).
+
+[[file]]
+mpn = "TMUXHS4412IRUAR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tmuxhs4412.pdf"
+revision = "SLASEW5A"
+date = "2024-10"
+sha256 = "6dc3f769bfebb35d87a083ff1cdd7b29b81269bbce8ef172a3dfa4909e083bd3"
+# TMUXHS4412 datasheet (29 pages, package option addendum 2026-02-06); same hash as the board BOM Datasheets table
+redistributable = false
+
+# T1 USB, faceplate and IO parts (board BOM v1 lines 122-127, 145, 146); added 2026-10-25.
+
+[[file]]
+mpn = "SLB9673XU20FW2613XTMA1"
+manufacturer = "Infineon"
+kind = "datasheet"
+url = "https://www.farnell.com/datasheets/4146092.pdf"
+revision = "Revision 1.3"
+date = "2023-05-02"
+sha256 = "ad36569ed82a15841bcb5abeb5daf53d3e750731b5ecb1465699f64ab1ebf184"
+# OPTIGA TPM SLB 9673 TPM2.0 Data Sheet (22 pages), distributor copy; the infineon.com link was not fetchable on 2026-10-25
+redistributable = false
+
+[[file]]
+mpn = "DRV2605LDGSR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/drv2605l.pdf"
+revision = "SLOS854D"
+date = "2018-03"
+sha256 = "0597de48de2dd1d08d3d2a801ced819c1c756f152916367608b9146c927bb290"
+# DRV2605L datasheet
+redistributable = false
+
+[[file]]
+mpn = "TPS22945DCKR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps22945.pdf"
+revision = "SLVS832D"
+date = "2014-07"
+sha256 = "b5668708867c75e761024274abd05d5a37b2c7ad036e8c9843ef1abffbc00223"
+# TPS2294x datasheet
+redistributable = false
+
+[[file]]
+mpn = "TPS22950YBHR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps22950.pdf"
+revision = "SLVSFJ2B"
+date = "2023-02"
+sha256 = "e0f4f5766ba30309af96287e20345b34b38986da59bb0e644bf5401e009c0c66"
+# TPS22950x datasheet
+redistributable = false
+
+[[file]]
+mpn = "NT3H2111W0FHKH"
+manufacturer = "NXP"
+kind = "datasheet"
+url = "https://www.nxp.com/docs/en/data-sheet/NT3H2111_2211.pdf"
+revision = "Rev. 3.6"
+date = "2023-07-21"
+sha256 = "44a7cbee1220999138538341392aacde5a87aed7a284974328e8297b132a20c8"
+# NTAG I2C plus product data sheet (84 pages), fetched from cache.nxp.com
+redistributable = false
+
+[[file]]
+mpn = "PN7160A1HN/C100E"
+manufacturer = "NXP"
+kind = "datasheet"
+url = "https://www.nxp.com/docs/en/data-sheet/PN7160_PN7161.pdf"
+revision = "Rev. 4.2"
+date = "2026-07-22"
+sha256 = "8c662109d7f0d186a9bc5e9844b5cc88c3ef292aede23ad45aaa150029c648fc"
+# PN7160_PN7161 product data sheet (70 pages), fetched from cache.nxp.com
+redistributable = false
+
+[[file]]
+mpn = "PN7160A1HN/C100E"
+manufacturer = "NXP"
+kind = "other"
+url = "https://www.nxp.com/docs/en/package-information/SOT618-1.pdf"
+revision = "SOT618-1"
+date = "2022-11-25"
+sha256 = "224b90d769cfd7a4d0c95cdc20452c17e6ac7a1d8c05c3978afa39fe1f469acb"
+# HVQFN40 package information (5 pages)
+redistributable = false

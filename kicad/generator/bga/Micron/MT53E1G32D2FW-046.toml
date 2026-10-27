@@ -1,0 +1,132 @@
+# MT53E1G32D2FW-046 LPDDR4X SDRAM, 200-ball TFBGA 10 x 14.5 mm (package code FW). Read by
+# generator/bga.py; checked by generator/test_bga.py. Every number cites its source. DS = Micron
+# z42n "LPDDR4X/LPDDR4 SDRAM" data sheet (MT53E1G16D1, MT53E1G32D2, ...), Rev. C 02/2023, 314 pages,
+# design revision :C (parts-lib manifest.toml, sha256 da659aad...cff17e39; distributor copy, not
+# redistributable, fetched into the local cache). Page numbers are the printed ones; the PDF's
+# physical page is one lower from p. 4 on. The T1 fits it under board ADR 0022, which also accepts
+# the CXMT CXDB5CBAM-MA-B as a second source on this land (CXMT = CXMT "4GB LPDDR4X SDRAM
+# Datasheet CXDB5CBAM-MA-B", Version 1.0, Apr. 17, 2024, 86 pages).
+#
+# One footprint for both packages. The balls of both sit on the same JEDEC MO-311 grid (DS p. 43;
+# CXMT p. 11 note 1) and the two ballouts agree ball for ball except the balls one maker leaves
+# unconnected (check ref_pins below). The bodies differ: Micron 10 x 14.5 mm, CXMT 10 x 15 mm. The
+# footprint body is their envelope, 10 x 15 mm, so the outline, silk and courtyard fit either part.
+
+[part]
+library = "Micron"
+symbol = "MT53E1G32D2FW-046"
+manufacturer = "Micron"
+mpn = "MT53E1G32D2FW-046 IT:C"
+reference = "U"
+description = "LPDDR4X SDRAM, 32 Gb (4 GB), 2 x 16 Gb single-channel dies, 2 channels x16, single rank, 4266 Mb/s, VDD1/VDD2/VDDQ 1.8/1.1/0.6 V, 200-ball TFBGA 10 x 14.5 mm; same land: CXMT CXDB5CBAM-MA-B"
+keywords = "LPDDR4X LPDDR4 SDRAM DRAM Micron 200FBGA TFBGA"
+datasheet = "https://4donline.ihs.com/images/VipMasterIC/IC/MICT/MICT-S-A0017683454/MICT-S-A0017683454-1.pdf?hkey=6D3A4C79FDBF58556ACFDE234799DDF0"
+pins = "MT53E1G32D2FW-046-pins.csv"          # DS p. 32, Figure 9, 200-ball dual-channel single-rank ballout (names verbatim)
+ballmap = "MT53E1G32D2FW-046-ballmap.txt"    # DS p. 43, Figure 15, bottom view
+
+[package]
+name = "FBGA-200"
+body_x = 10.00           # DS p. 43: 10 +/- 0.1; CXMT p. 10: 10 +/- 0.1
+body_y = 15.00           # envelope: DS p. 43 gives 14.5 +/- 0.1, CXMT p. 10 gives 15 +/- 0.1
+height_nom = 1.00        # DS p. 43: 1 +/- 0.1 (the taller part; CXMT p. 10: 0.77 +/- 0.1)
+height_max = 1.10        # DS p. 4: package code FW "10 x 14.5 x1.10mm"
+standoff_nom = 0.306     # DS p. 43: 0.306 +/- 0.05
+ball_min = 0.386         # DS p. 43: 200X 0.436 +/- 0.05 post reflow on 0.40 SMD ball pads
+ball_nom = 0.436         # (CXMT p. 10: 0.31 +/- 0.05 post reflow on 0.28 SMD ball pads)
+ball_max = 0.486
+cite = "Micron z42n data sheet Rev. C p. 43, Figure 15, and CXMT CXDB5CBAM-MA-B datasheet V1.0 p. 10"
+
+# Ball grid, top view, origin at the body centre, +x right, +y down. 12 columns at 0.80 mm
+# (8.8 CTR) and 22 rows at 0.65 mm (13.65 CTR), DS p. 43 and CXMT p. 10. Columns 6-7 and rows L-M
+# carry no ball (DS p. 32).
+[[grid]]
+prefix = ""
+rows = ["A","B","C","D","E","F","G","H","J","K","L","M","N","P","R","T","U","V","W","Y","AA","AB"]
+cols = 12
+pitch_x = 0.80
+pitch_y = 0.65
+first_x = -4.40
+first_y = -6.825
+
+# Land: NSMD copper 0.30 mm, mask opening 0.40 mm (0.05 mm per side, as the Samsung part), web
+# 0.25 mm at the 0.65 mm pitch, copper gap 0.35 mm. The land serves two ball sizes: Micron 0.436 mm
+# post reflow on 0.40 mm package pads (DS p. 43) and CXMT 0.31 mm on 0.28 mm package pads (CXMT
+# p. 10). 0.30 mm is 25 % under the Micron package pad, in line with the ~20 % reduction IPC-7351B
+# applies to collapsing balls (the IPC table was not retrieved: UNVERIFIED), and equal to the CXMT
+# ball. Neither maker publishes a PCB land pattern in these datasheets. 0.30 mm is above the prototype fab's
+# 0.25 mm BGA pad minimum (kicad-lib design-rules/pcbway-capabilities.md).
+[land]
+type = "NSMD"
+pad = 0.30
+mask_margin = 0.05
+paste = "1:1"
+
+[footprint]
+name = "LPDDR4_FBGA-200_10.0x15.0mm_Layout12x22_P0.8x0.65mm_Pad0.3mm_NSMD"
+tags = "BGA FBGA TFBGA FBGA-200 LPDDR4 LPDDR4X Micron CXMT MO-311 0.8mm 0.65mm"
+
+[[unit]]
+name = "Calibration, reset"
+name_re = "^(ZQ|RESET)"
+[[unit]]
+name = "Channel A"
+name_re = "_A$"
+[[unit]]
+name = "Channel B"
+name_re = "_B$"
+[[unit]]
+name = "Power"
+name_re = "^VDD"
+[[unit]]
+name = "Ground"
+name_re = "^VSS"
+[[unit]]
+name = "Not connected"
+name_re = "^(DNU|NC)$"
+
+# Pin types (DS p. 33, Table 6). DNU: "Must be grounded or left floating"; NC: "Not internally
+# connected"; both left unconnected. ODT_CA: input. ZQ0: "connected to VDDQ through a 240 ohm
+# +/-1% resistor", shared by both dies (DS p. 26, Figure 3), passive.
+[[ptype]]
+type = "power_in"
+name_re = "^(VDD|VSS)"
+[[ptype]]
+type = "no_connect"
+name_re = "^(DNU|NC)$"
+[[ptype]]
+type = "bidirectional"
+name_re = "^(DQ|DMI)"
+[[ptype]]
+type = "input"
+name_re = "^(CA|CK|CKE|CS|ODT|RESET)"
+[[ptype]]
+type = "passive"
+name_re = "."
+
+# The drawing's primary dimensions for the independent check (DS p. 43): spans 8.8 and 13.65 CTR,
+# pitch 0.8 and 0.65, ball field centred. The edge distances follow from the envelope body:
+# (10 - 8.8) / 2 and (15 - 13.65) / 2 (on the Micron body alone, (14.5 - 13.65) / 2 = 0.425).
+[[drawing]]
+prefix = ""
+cols = 12
+rows = 22
+pitch_x = 0.80
+pitch_y = 0.65
+span_x = 8.80
+span_y = 13.65
+edge_x = 0.60
+edge_y = 0.675
+
+[check]
+balls = 200               # DS p. 43 ("200X")
+pdf = "Micron/MT53E1G32D2FW-046/MICT-S-A0017683454-1.pdf"
+pdf_sha256 = "da659aad98344f65c8568cc6861177502906b109fa9453a0cc92fbb8cff17e39"
+pdf_ballout_page = 31     # physical page of Figure 9 (printed p. 32), re-read with pdftotext
+pdf_ballout_cols = [1, 2, 3, 4, 5, 8, 9, 10, 11, 12]   # the figure prints no cell for columns 6-7
+# Third reading: the second source's ballout, CXMT CXDB5CBAM-MA-B datasheet V1.0 p. 11, Figure 2-2,
+# transcribed ball by ball. CXMT prints the family ballout; for this one-rank 4 GB package its
+# block diagram (p. 12, Figure 2-3) wires only CS, CKE and ZQ0, so CS1, CKE1 and ZQ1 are floating,
+# and p. 11 note 4 makes CS2, CKE2 and ZQ2 NC for 1- and 2-rank packages. The rules map those to
+# Micron's NC and CXMT's ODTCA spelling to ODT_CA; every other ball must match by name.
+ref_pins = "MT53E1G32D2FW-046-cxmt-cxdb5cbam-ma-b.csv"
+ref_rename = [["^ODTCA_", "ODT_CA_"], ["^(ZQ1|ZQ2|CS1_[AB]|CKE1_[AB]|CS2_[AB]|CKE2_[AB])$", "NC"]]

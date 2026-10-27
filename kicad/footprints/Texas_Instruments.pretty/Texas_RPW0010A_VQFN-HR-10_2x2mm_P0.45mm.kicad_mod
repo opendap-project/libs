@@ -1,0 +1,267 @@
+(footprint "Texas_RPW0010A_VQFN-HR-10_2x2mm_P0.45mm"
+	(version 20260206)
+	(generator "opendap-kigen")
+	(layer "F.Cu")
+	(descr "Texas Instruments RPW0010A VQFN-HR-10, 2 x 2 mm body, L-shaped corner pads, TI example land pattern and stencil (drawing 4225183/A)")
+	(tags "VQFN-HR QFN RPW0010A RPW Texas TPS25947 eFuse")
+	(property "Reference" "REF**"
+		(at 0 -2.15 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Texas_RPW0010A_VQFN-HR-10_2x2mm_P0.45mm"
+		(at 0 2.15 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps25947.pdf"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Texas Instruments RPW0010A VQFN-HR-10, 2 x 2 mm body, L-shaped corner pads, TI example land pattern and stencil (drawing 4225183/A)"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_poly
+		(pts
+			(xy -1.4 -0.7)
+			(xy -1.85 -1)
+			(xy -1.85 -0.4)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+	)
+	(fp_poly
+		(pts
+			(xy -0.5 -1)
+			(xy 1 -1)
+			(xy 1 1)
+			(xy -1 1)
+			(xy -1 -0.5)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+	)
+	(fp_rect
+		(start -1.45 -1.45)
+		(end 1.45 1.45)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad "" smd roundrect
+		(at -0.9 -0.6875)
+		(size 0.6 0.275)
+		(layers "F.Paste")
+		(roundrect_rratio 0.182)
+	)
+	(pad "" smd roundrect
+		(at -0.9 0.6875)
+		(size 0.6 0.275)
+		(layers "F.Paste")
+		(roundrect_rratio 0.182)
+	)
+	(pad "" smd roundrect
+		(at -0.7125 -0.875)
+		(size 0.225 0.65)
+		(layers "F.Paste")
+		(roundrect_rratio 0.222)
+	)
+	(pad "" smd roundrect
+		(at -0.7125 0.875)
+		(size 0.225 0.65)
+		(layers "F.Paste")
+		(roundrect_rratio 0.222)
+	)
+	(pad "" smd roundrect
+		(at -0.25 -0.63)
+		(size 0.28 1.06)
+		(layers "F.Paste")
+		(roundrect_rratio 0.179)
+	)
+	(pad "" smd roundrect
+		(at -0.25 0.63)
+		(size 0.28 1.06)
+		(layers "F.Paste")
+		(roundrect_rratio 0.179)
+	)
+	(pad "" smd roundrect
+		(at 0.25 -0.63)
+		(size 0.28 1.06)
+		(layers "F.Paste")
+		(roundrect_rratio 0.179)
+	)
+	(pad "" smd roundrect
+		(at 0.25 0.63)
+		(size 0.28 1.06)
+		(layers "F.Paste")
+		(roundrect_rratio 0.179)
+	)
+	(pad "" smd roundrect
+		(at 0.7125 -0.875)
+		(size 0.225 0.65)
+		(layers "F.Paste")
+		(roundrect_rratio 0.222)
+	)
+	(pad "" smd roundrect
+		(at 0.7125 0.875)
+		(size 0.225 0.65)
+		(layers "F.Paste")
+		(roundrect_rratio 0.222)
+	)
+	(pad "" smd roundrect
+		(at 0.9 -0.6875)
+		(size 0.6 0.275)
+		(layers "F.Paste")
+		(roundrect_rratio 0.182)
+	)
+	(pad "" smd roundrect
+		(at 0.9 0.6875)
+		(size 0.6 0.275)
+		(layers "F.Paste")
+		(roundrect_rratio 0.182)
+	)
+	(pad "1" smd roundrect
+		(at -0.9 -0.7)
+		(size 0.6 0.3)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.167)
+	)
+	(pad "1" smd roundrect
+		(at -0.725 -0.875)
+		(size 0.25 0.65)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.2)
+	)
+	(pad "2" smd roundrect
+		(at -0.9 -0.225)
+		(size 0.6 0.25)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.2)
+	)
+	(pad "3" smd roundrect
+		(at -0.9 0.225)
+		(size 0.6 0.25)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.2)
+	)
+	(pad "4" smd roundrect
+		(at -0.9 0.7)
+		(size 0.6 0.3)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.167)
+	)
+	(pad "4" smd roundrect
+		(at -0.725 0.875)
+		(size 0.25 0.65)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.2)
+	)
+	(pad "5" smd roundrect
+		(at -0.25 0)
+		(size 0.3 2.4)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.167)
+	)
+	(pad "6" smd roundrect
+		(at 0.25 0)
+		(size 0.3 2.4)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.167)
+	)
+	(pad "7" smd roundrect
+		(at 0.725 0.875)
+		(size 0.25 0.65)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.2)
+	)
+	(pad "7" smd roundrect
+		(at 0.9 0.7)
+		(size 0.6 0.3)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.167)
+	)
+	(pad "8" smd roundrect
+		(at 0.9 0.225)
+		(size 0.6 0.25)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.2)
+	)
+	(pad "9" smd roundrect
+		(at 0.9 -0.225)
+		(size 0.6 0.25)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.2)
+	)
+	(pad "10" smd roundrect
+		(at 0.725 -0.875)
+		(size 0.25 0.65)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.2)
+	)
+	(pad "10" smd roundrect
+		(at 0.9 -0.7)
+		(size 0.6 0.3)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.167)
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/../lib/opendap/3dmodels/Texas_Instruments.3dshapes/Texas_RPW0010A_VQFN-HR-10_2x2mm_P0.45mm.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

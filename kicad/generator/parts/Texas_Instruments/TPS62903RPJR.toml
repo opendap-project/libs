@@ -1,0 +1,207 @@
+# TPS62903RPJR - TI 3 A buck converter, RPJ0009A (VQFN-HR-9, 1.5 x 2.0 mm)
+# Sources: SLVSES3A (TPS62903 datasheet, Feb 2021 rev. Mar 2021), mechanical addendum
+# drawing 4224505/A 10/2018: p. 43 package outline, p. 44 example board layout,
+# p. 45 example stencil design. All three drawings checked against 200 dpi renders.
+
+[part]
+mpn = "TPS62903RPJR"
+second_source = "Texas Instruments TPS62902 (BOM v1 line 38)"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPS62903RPJR"
+reference = "U"
+description = "3 A synchronous step-down converter, 3-17 V input, 0.4-5.5 V output, DCS-Control, power good, VQFN-HR-9 (RPJ0009A) 1.5 x 2.0 mm"
+keywords = "buck step-down converter DC-DC DCS-Control 3A TPS62903 VQFN-HR RPJ0009A"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps62903.pdf"
+datasheet_rev = "SLVSES3A"
+sheet = "Texas-Instruments/TPS62903RPJR.md"
+notes = [
+  "Land pattern = TI example board layout RPJ0009A (SLVSES3A p. 44), non-solder-mask-defined pads (preferred by TI, 0.05 mm max mask clearance all around): pad copper = dimensioned metal, mask expansion left to the board default.",
+  "Stencil (SLVSES3A p. 45, 0.125 mm thick) apertures equal the pads 1:1, so pads keep paste = true.",
+  "Pad corner radius not dimensioned in the drawing (corners drawn rounded): roundrect rratio 0.25 is the KLC default, UNVERIFIED against TI.",
+  "Pad centre coordinates come from reference (parenthesised) dimensions (0.925), (0.25), (0.625), (0.45), (0.5), (1) on p. 44; the package centre lies 0.25 mm between the pin 1/6 row and the pin 2/5 row (outline p. 43 bottom view: (0.25) between middle lead row and PKG centreline).",
+  "Body z = 1.0 mm is the maximum height (A = 0.8-1.0, SLVSES3A p. 43); body x/y are nominal.",
+  "Orientation: as TI's land pattern example (top view): pin 1 left side upper, pins 9-8-7 along the top edge, pin 1 index area top-left (p. 43 top view). Matches Figure 5-1 top view (p. 3) rotated 180 degrees.",
+]
+
+[[pins]]
+number = "6"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "5"
+name = "EN"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "7"
+name = "MODE/S-CONF"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "8"
+name = "SS/TR"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "2"
+name = "SW"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "3"
+name = "VOS"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "FB/VSET"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "1"
+name = "PG"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "4"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_RPJ0009A_VQFN-HR-9_1.5x2mm_P0.5mm"
+description = "Texas Instruments RPJ0009A VQFN-HR-9, 1.5 x 2.0 mm body, 0.5 mm pitch, TI example land pattern (SLVSES3A p. 44, drawing 4224505/A)"
+tags = "VQFN-HR QFN RPJ0009A TPS62903 Texas"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SLVSES3A p. 44, RPJ0009A example board layout (4224505/A); stencil p. 45"
+body = { x = 1.5, y = 2.0, z = 1.0, standoff = 0.0, cite = "SLVSES3A p. 43, RPJ0009A outline: 1.4-1.6 x 1.9-2.1, height 0.8-1.0 (z = max), standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+# Left side, pins 1-3: 4X (0.65) x 6X (0.2) pads, centres x = -(0.625), y = -0.25 / +0.25 / +0.75
+# (pin 1 row is (0.25) above the PKG centreline; pitch 0.5; (1) between pin 1 and pin 3 rows).
+[[footprint.rows]]
+first = 1
+count = 3
+step = 1
+start = [-0.625, -0.25]
+pitch = [0.0, 0.5]
+size = [0.65, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSES3A p. 44: 4X (0.65), 6X (0.2), (0.625), (0.25), 6X (0.5), (1); rratio UNVERIFIED (radius not dimensioned)"
+
+# Right side: pins 4 and 6 are the long pads 2X (1) x (0.2), centre x = +(0.45)
+[[footprint.pads]]
+number = "4"
+at = [0.45, 0.75]
+size = [1.0, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = true
+cite = "SLVSES3A p. 44: 2X (1), 6X (0.2), 2X (0.45); row y = pin 3 row"
+
+[[footprint.pads]]
+number = "5"
+at = [0.625, 0.25]
+size = [0.65, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = true
+cite = "SLVSES3A p. 44: 4X (0.65), 6X (0.2), (0.625) right of PKG centreline"
+
+[[footprint.pads]]
+number = "6"
+at = [0.45, -0.25]
+size = [1.0, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = true
+cite = "SLVSES3A p. 44: 2X (1), 6X (0.2), 2X (0.45); row y = pin 1 row"
+
+# Top edge, pins 7-9 (pin 7 right, pin 9 left): 3X (0.25) x 3X (0.55), centres y = -(0.925), x = +0.5 / 0 / -0.5
+[[footprint.rows]]
+first = 7
+count = 3
+step = 1
+start = [0.5, -0.925]
+pitch = [-0.5, 0.0]
+size = [0.25, 0.55]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSES3A p. 44: 3X (0.25), 3X (0.55), (0.925), 6X (0.5), (1) between pins 9 and 7"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "SLVSES3A p. 43, 6X 0.5 (basic); p. 44, 6X (0.5)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "3"
+value = 1.0
+cite = "SLVSES3A p. 44, (1) between pin 1 and pin 3 rows; p. 43, 2X [1]"
+
+[[checks]]
+kind = "dx"
+a = "9"
+b = "7"
+value = 1.0
+cite = "SLVSES3A p. 44, (1) between pins 9 and 7; p. 43, [1]"
+
+[[checks]]
+kind = "dy"
+a = "9"
+b = "1"
+value = 0.675
+cite = "SLVSES3A p. 44, (0.925) - (0.25)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "6"
+value = 1.075
+cite = "SLVSES3A p. 44, (0.625) + 2X (0.45)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.65, 0.2]
+cite = "SLVSES3A p. 44, 4X (0.65), 6X (0.2)"
+
+[[checks]]
+kind = "pad_size"
+a = "6"
+value = [1.0, 0.2]
+cite = "SLVSES3A p. 44, 2X (1), 6X (0.2)"
+
+[[checks]]
+kind = "pad_size"
+a = "8"
+value = [0.25, 0.55]
+cite = "SLVSES3A p. 44, 3X (0.25), 3X (0.55)"
+
+[[checks]]
+kind = "pad_count"
+value = 9
+cite = "SLVSES3A p. 3, Figure 5-1, 9-pin RPJ"

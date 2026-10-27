@@ -1,0 +1,155 @@
+# NSC5083D-45.158M: NDK NZ2520SDA crystal clock oscillator, specification number NSC5083D (+3.3 V +/- 0.33 V,
+# +/-50e-6, -40 to +85 C), 45.158 MHz. Four terminals, 2.5 x 2.0 x 0.9 mm max.
+# Source: NDK catalogue c_NZ2520SDA_e.pdf (2 pages; p. 1 code 2012E_NZ2520SDA_e, p. 2 code 1703A_NZ2520SDA_e),
+# sha256 b818c72b...7825 per manifest. Cited as "NZ2520SDA". Why this catalogue applies: NZ2520SDA is the model and
+# NSC5083D its specification number for +3.3 V (NZ2520SDA p. 2, "Specification Number" table: NSC5083A/B/C/D =
+# 1.8/2.5/3.0/3.3 V); the order code is model + frequency + specification number (p. 2 note). The parts-lib sheet
+# states the same ("NZ2520SDA, specification number NSC5083D").
+#
+# Drawing reading (NZ2520SDA p. 1, Dimensions, checked on a 400 dpi render):
+#   Top view (marking side, pin-1 dot) shows the dot at the LOWER-LEFT corner.
+#   The terminal view below it (hatched terminals, #1 terminal chamfered) is a BOTTOM view: #1 upper-left, #2 upper-right,
+#   #4 lower-left, #3 lower-right; terminals 0.8 +/- 0.1 x 0.7 +/- 0.1, pitch 1.65 +/- 0.1 (long axis) x 1.25 +/- 0.1.
+#   "Land pattern (Recommended)" view: #4 upper-left, #3 upper-right, #1 lower-left, #2 lower-right; lands 1.0 x 1.0 at
+#   1.65 x 1.25. This matches the top view (dot lower-left) and is the bottom view flipped about the long axis, so the
+#   land-pattern view is a TOP view: #1 lower-left, then counter-clockwise #2, #3, #4. This resolves the sheet's open
+#   pin-1 question (the two views are top and bottom views of the same part, not contradictory).
+#
+# Orientation: the land pattern is rotated 90 deg clockwise (as seen from the top, +y down) so that #1 is top-left
+# (schema / IPC-7351 zero orientation): (x, y) -> (-y, x). Long axis (1.65) is now vertical; body 2.0 (x) x 2.5 (y).
+#   #1 (-0.625, -0.825)  #4 (0.625, -0.825)
+#   #2 (-0.625,  0.825)  #3 (0.625,  0.825)
+# Pads: 1.0 x 1.0 rectangles as drawn (no corner radius in the drawing).
+
+[part]
+mpn = "NSC5083D-45.158M"
+manufacturer = "NDK"
+library = "NDK"
+symbol = "NSC5083D-45.158M"
+reference = "Y"
+description = "45.158 MHz CMOS-output crystal clock oscillator, NZ2520SDA spec. NSC5083D (3.3 V, +/-50 ppm, -40 to +85 C), standby (three-state), 2.5 x 2.0 mm, 4 terminals"
+keywords = "oscillator XO crystal clock CMOS NDK NZ2520SDA NSC5083D MCLK audio"
+datasheet = "https://www.ndk.com/images/products/catalog/c_NZ2520SDA_e.pdf"
+datasheet_rev = "NZ2520SDA catalogue 2012E_NZ2520SDA_e (p. 1) / 1703A_NZ2520SDA_e (p. 2)"
+sheet = "NDK/NSC5083D-45.158M.md"
+notes = [
+  "Pin 1 orientation: the sheet marks it UNVERIFIED because the dimension and land-pattern views are mirrored. Reading of NZ2520SDA p. 1: the hatched-terminal view is a bottom view (terminal #1 chamfered), the land pattern is a top view consistent with the top-view pin-1 dot (lower-left). #1 STAND-BY at the dot corner, counter-clockwise from the top. Worth a check against a real part's marking.",
+  "Footprint rotated 90 deg clockwise from the catalogue land-pattern view so that #1 is top-left; body therefore 2.0 (x) x 2.5 (y).",
+  "Body height: only 0.9 mm max is given (NZ2520SDA p. 1); the 3D envelope uses the maximum. Nominal height UNVERIFIED.",
+  "The catalogue recommends about 0.01 uF between VCC and GND close to the part (Cby in the land-pattern view); not part of the footprint.",
+  "Paste: the catalogue gives no stencil; 1:1 apertures (generator default).",
+]
+
+[[pins]]
+number = "1"
+name = "STAND-BY"
+type = "input"
+side = "left"
+gap = false
+
+[[pins]]
+number = "3"
+name = "OUTPUT"
+type = "output"
+side = "right"
+gap = false
+
+[[pins]]
+number = "4"
+name = "VCC"
+type = "power_in"
+side = "top"
+gap = false
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "power_in"
+side = "bottom"
+gap = false
+
+[footprint]
+name = "Oscillator_SMD_NDK_NZ2520SDA-4Pin_2.5x2.0mm"
+description = "NDK NZ2520SDA crystal clock oscillator, 2.5 x 2.0 mm, 4 terminals, manufacturer land pattern, rotated so pin 1 is top-left (https://www.ndk.com/images/products/catalog/c_NZ2520SDA_e.pdf)"
+tags = "oscillator XO NDK NZ2520SDA NSC5083D 2520"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "NZ2520SDA p. 1, Land pattern (Recommended)"
+body = { x = 2.0, y = 2.5, z = 0.9, standoff = 0.0, cite = "NZ2520SDA p. 1, Dimensions: 2.50 +/- 0.10 x 2.00 +/- 0.10 (rotated 90 deg), 0.9 max height (max used; nominal UNVERIFIED)" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "1"
+at = [-0.625, -0.825]
+size = [1.0, 1.0]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "NZ2520SDA p. 1, Land pattern (Recommended): 1.0 x 1.0 lands, 1.65 x 1.25 centres"
+
+[[footprint.pads]]
+number = "2"
+at = [-0.625, 0.825]
+size = [1.0, 1.0]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "NZ2520SDA p. 1, Land pattern (Recommended): 1.0 x 1.0 lands, 1.65 x 1.25 centres"
+
+[[footprint.pads]]
+number = "3"
+at = [0.625, 0.825]
+size = [1.0, 1.0]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "NZ2520SDA p. 1, Land pattern (Recommended): 1.0 x 1.0 lands, 1.65 x 1.25 centres"
+
+[[footprint.pads]]
+number = "4"
+at = [0.625, -0.825]
+size = [1.0, 1.0]
+shape = "rect"
+type = "smd"
+paste = true
+cite = "NZ2520SDA p. 1, Land pattern (Recommended): 1.0 x 1.0 lands, 1.65 x 1.25 centres"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "2"
+value = 1.65
+cite = "NZ2520SDA p. 1, Land pattern (Recommended): 1.65 between #1 and #2 (long axis, vertical after rotation)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "4"
+value = 1.25
+cite = "NZ2520SDA p. 1, Land pattern (Recommended): 1.25 between #1 and #4 rows (horizontal after rotation)"
+
+[[checks]]
+kind = "pitch"
+a = "2"
+b = "3"
+value = 1.25
+cite = "NZ2520SDA p. 1, Land pattern (Recommended): 1.25"
+
+[[checks]]
+kind = "pitch"
+a = "4"
+b = "3"
+value = 1.65
+cite = "NZ2520SDA p. 1, Land pattern (Recommended): 1.65"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [1.0, 1.0]
+cite = "NZ2520SDA p. 1, Land pattern (Recommended): 1.0 x 1.0"
+
+[[checks]]
+kind = "pad_count"
+value = 4
+cite = "NZ2520SDA p. 1, Terminal land connections #1 to #4"

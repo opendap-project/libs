@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.25,
+        2.0,
+        1.1
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_DCK0005A_SC-70-5_1.25x2mm_P0.65mm",
+  "source": "envelope from DCK0005A outline (SLVS832D PDF p. 22, 4214834/G): body 1.1-1.4 x 1.85-2.15, 1.1 max height, standoff 0.0-0.1"
+}

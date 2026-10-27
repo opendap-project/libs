@@ -1,0 +1,31 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.6,
+        2.6,
+        0.35
+      ]
+    },
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.35
+      ],
+      "size": [
+        2.0,
+        2.0,
+        0.9
+      ]
+    }
+  ],
+  "library": "Hirose",
+  "name": "Hirose_U.FL-R-SMT-1_Vertical",
+  "source": "envelope from U.FL cat. p. 3: 2.6 x 2.6 housing (3 over GND terminals, (3.1) over tabs), 1.25 overall height"
+}

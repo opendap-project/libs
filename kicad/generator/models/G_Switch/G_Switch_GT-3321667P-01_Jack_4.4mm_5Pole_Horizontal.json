@@ -1,0 +1,31 @@
+{
+  "boxes": [
+    {
+      "at": [
+        5.4,
+        -3.25,
+        0.0
+      ],
+      "size": [
+        17.0,
+        8.3,
+        6.5
+      ]
+    },
+    {
+      "at": [
+        -4.85,
+        -3.25,
+        0.0
+      ],
+      "size": [
+        3.5,
+        6.5,
+        6.5
+      ]
+    }
+  ],
+  "library": "G_Switch",
+  "name": "G_Switch_GT-3321667P-01_Jack_4.4mm_5Pole_Horizontal",
+  "source": "envelope from C-GT03321667P-01 rev A0: 20.50 incl. 3.50 nose (side view), 8.30 / 4.15 and 6.50 (front view)"
+}

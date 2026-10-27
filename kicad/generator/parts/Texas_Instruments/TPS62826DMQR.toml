@@ -1,0 +1,208 @@
+# TPS62826DMQR - TI 3 A buck converter, DMQ0006A (VSON-HR-6, 1.5 x 1.5 mm)
+# Sources: SLVSEF9I (TPS6282x datasheet, Mar 2018 rev. Mar 2024), mechanical addendum
+# drawing 4222645/E 09/2023: p. 32 package outline (bottom view), p. 33 example board layout,
+# p. 34 example stencil design. All three drawings checked against 200 dpi renders.
+# The [footprint] section is identical in TPS62826DMQR.toml and TPS62827DMQR.toml (same DMQ0006A).
+
+[part]
+mpn = "TPS62826DMQR"
+second_source = "Texas Instruments TPS62827DMQR (BOM v1 line 129)"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPS62826DMQR"
+reference = "U"
+description = "3 A synchronous step-down converter, 2.4-5.5 V input, 0.6-4.0 V adjustable output, power save mode, power good, 100 % duty cycle, VSON-HR-6 (DMQ0006A) 1.5 x 1.5 mm"
+keywords = "buck step-down converter DC-DC 3A TPS62826 TPS6282x VSON-HR DMQ0006A"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps62826.pdf"
+datasheet_rev = "SLVSEF9I"
+sheet = "Texas-Instruments/TPS62826DMQR.md"
+notes = [
+  "Land pattern = TI example board layout DMQ0006A (SLVSEF9I p. 33). TI marks SOLDER MASK DEFINED as preferred: the dimensioned pads are mask openings, metal extends 0.05 MIN all around. OpenDAP choice: copper = opening + 0.05 mm per side, mask_margin = -0.05. Exact copper size not given (MIN only): UNVERIFIED, review. If the generator cannot do negative mask_margin, fall back to copper = opening (NSMD, TI's alternative) and record it.",
+  "Long pads (3X (1) x (0.2)) are pins 4, 5, 6 (GND, SW, VIN); short pads (3X (0.6) x (0.25)) are pins 1, 2, 3 (EN, PG, FB): read from the p. 33 drawing (pad labels 1, 3, 4, 6) and consistent with the p. 32 outline (leads 3X 0.3-0.5 on the 1-3 side, 3X 0.7-0.9 on the 4-6 side).",
+  "Stencil (p. 34, 0.125 mm thick): apertures equal the mask openings, (R0.05) TYP corners; pads therefore paste = false + [[footprint.paste]].",
+  "Corner radius on copper not given (mask openings R0.05 TYP): roundrect rratio 0.25 KLC default, UNVERIFIED.",
+  "Body z = 1.0 mm is the maximum height (0.8-1.0, p. 32); x/y nominal.",
+  "Orientation (top view): pins 1-3 left top to bottom, pins 6-4 right top to bottom, pin 1 index top-left (p. 32 top view). Figure 5-1 (p. 3) is a BOTTOM view (FB 3 top-left); mirrored, it matches this top view.",
+  "Discrepancy with the parts-lib sheet (TPS62826DMQR.md, Recommended footprint): the sheet says 'non-solder-mask-defined pads preferred'; the drawing on p. 33 says SOLDER MASK DEFINED (PREFERRED), NSMD as the alternative.",
+  "Pin table: SLVSEF9I p. 3, Table 5-1; matches the parts-lib sheet table exactly."
+]
+
+[[pins]]
+number = "6"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "1"
+name = "EN"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "SW"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "3"
+name = "FB"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "2"
+name = "PG"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "4"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_DMQ0006A_VSON-HR-6_1.5x1.5mm_P0.5mm"
+description = "Texas Instruments DMQ0006A VSON-HR-6, 1.5 x 1.5 mm body, 0.5 mm pitch, TI example land pattern and stencil, solder-mask-defined pads (SLVSEF9I pp. 33-34, drawing 4222645/E)"
+tags = "VSON-HR SON DMQ0006A TPS62826 TPS62827 TPS6282x Texas"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SLVSEF9I p. 33, DMQ0006A example board layout (4222645/E 09/2023); stencil p. 34"
+body = { x = 1.5, y = 1.5, z = 1.0, standoff = 0.0, cite = "SLVSEF9I p. 32, DMQ0006A outline: 1.45-1.55 x 1.45-1.55, height 0.8-1.0 (z = max), standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+# TI marks SOLDER MASK DEFINED as PREFERRED for DMQ0006A (p. 33). The dimensioned pads are the mask
+# openings: left column (pins 1-3) 3X (0.6) x 3X (0.25) at x = -(0.65); right column (pins 4-6)
+# 3X (1) x 3X (0.2) at x = +(0.45); rows 4X (0.5) apart, pin 2/5 row on the SYMM centreline.
+# Copper = opening + 0.05 per side (drawing: metal 0.05 MIN all around) -> 0.7 x 0.35 and 1.1 x 0.3,
+# mask_margin -0.05 (OpenDAP choice of the minimum, UNVERIFIED). Copper gaps: 0.15 (left column),
+# 0.2 (right column), 0.2 (between columns).
+[[footprint.pads]]
+number = "1"
+at = [-0.65, -0.5]
+size = [0.7, 0.35]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLVSEF9I p. 33: opening 3X (0.6) x 3X (0.25), (0.65), 4X (0.5); SMD metal 0.05 MIN all around; copper size UNVERIFIED (OpenDAP choice)"
+
+[[footprint.pads]]
+number = "2"
+at = [-0.65, 0.0]
+size = [0.7, 0.35]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLVSEF9I p. 33: as pad 1, on SYMM centreline; copper size UNVERIFIED (OpenDAP choice)"
+
+[[footprint.pads]]
+number = "3"
+at = [-0.65, 0.5]
+size = [0.7, 0.35]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLVSEF9I p. 33: as pad 1; copper size UNVERIFIED (OpenDAP choice)"
+
+[[footprint.pads]]
+number = "4"
+at = [0.45, 0.5]
+size = [1.1, 0.3]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLVSEF9I p. 33: opening 3X (1) x 3X (0.2), (0.45), 4X (0.5); SMD metal 0.05 MIN all around; copper size UNVERIFIED (OpenDAP choice)"
+
+[[footprint.pads]]
+number = "5"
+at = [0.45, 0.0]
+size = [1.1, 0.3]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLVSEF9I p. 33: as pad 4, on SYMM centreline; copper size UNVERIFIED (OpenDAP choice)"
+
+[[footprint.pads]]
+number = "6"
+at = [0.45, -0.5]
+size = [1.1, 0.3]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLVSEF9I p. 33: as pad 4; copper size UNVERIFIED (OpenDAP choice)"
+
+# Stencil (p. 34, 0.125 mm): apertures equal the mask openings, (R0.05) TYP corners.
+[[footprint.paste]]
+start = [-0.65, -0.5]
+pitch = [0.0, 0.5]
+count = [1, 3]
+size = [0.6, 0.25]
+cite = "SLVSEF9I p. 34: 3X (0.6) x 3X (0.25), (0.65), 4X (0.5)"
+
+[[footprint.paste]]
+start = [0.45, -0.5]
+pitch = [0.0, 0.5]
+count = [1, 3]
+size = [1.0, 0.2]
+cite = "SLVSEF9I p. 34: 3X (1) x 3X (0.2), (0.45), 4X (0.5)"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "SLVSEF9I p. 32, 4X [0.5]; p. 33, 4X (0.5)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "3"
+value = 1.0
+cite = "SLVSEF9I p. 32, 2X [1]"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "6"
+value = 1.1
+cite = "SLVSEF9I p. 33, (0.65) + (0.45)"
+
+[[checks]]
+kind = "dx"
+a = "3"
+b = "4"
+value = 1.1
+cite = "SLVSEF9I p. 33, (0.65) + (0.45)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.7, 0.35]
+cite = "SLVSEF9I p. 33, opening 3X (0.6) x 3X (0.25) + 0.05 MIN metal all around; UNVERIFIED (OpenDAP choice of exactly 0.05)"
+
+[[checks]]
+kind = "pad_size"
+a = "5"
+value = [1.1, 0.3]
+cite = "SLVSEF9I p. 33, opening 3X (1) x 3X (0.2) + 0.05 MIN metal all around; UNVERIFIED (OpenDAP choice of exactly 0.05)"
+
+[[checks]]
+kind = "pad_count"
+value = 6
+cite = "SLVSEF9I p. 3, Figure 5-1, 6-pin VSON-HR"

@@ -1,0 +1,475 @@
+# CS43198-CNZR audio DAC, 40-pin QFN 5 x 5 mm, 0.4 mm pitch.
+# Source: Cirrus Logic DS1156F2 (December 2022). Page numbers are printed page numbers (= PDF page numbers).
+# DS1156F2 gives package dimensions (p. 134, Figure 10-1, Table 10-1) but no recommended land pattern, stencil or
+# via pattern; §8.4 (p. 121) requires the thermal pad to mate with a matching copper pad, connected to ground,
+# with "a series of vias" to inner ground planes (GNDA in split-ground systems). Land pattern DERIVED per IPC-7351B.
+#
+# Package (Table 10-1, checked against the rendered drawing):
+#   D = E = 5 BSC; L = 0.35 / 0.40 / 0.45; b = 0.15 / 0.20 / 0.25; e = 0.4 BSC;
+#   J = K (EP) = 3.4 / 3.5 / 3.6; A = 0.7 / 0.75 / 0.8; A1 = 0 / 0.035 / 0.05.
+#   10 terminals per side; bottom view shows pin 1 top-right, 10/11 bottom-right, 20/21 bottom-left, 30/31 top-left,
+#   i.e. pin 1 top of the left side and counter-clockwise viewed from the top (Figure 1-1, p. 4).
+#   Table 10-1 note: "X/Y Dimensions are estimates" (Cirrus wording; UNVERIFIED what it applies to).
+#
+# IPC-7351B derivation (nominal density). J values as tabulated for IPC-7351B nominal density; UNVERIFIED against the standard text:
+#   Jt = 0.30, Jh = 0.00, Js = -0.04; F = 0.05, P = 0.05. D = 5.00 BSC, Ltol = 0 taken.
+#   Zmax = 5.00 + 0.60 + 0.0707 = 5.6707 -> 5.67
+#   Smin = 5.00 - 0.90 = 4.10; Smax = 5.00 - 0.70 = 4.30; Stol = 0.20; Stol(RMS) = sqrt(2 * 0.10^2) = 0.1414
+#   Smax(RMS) = 4.30 - (0.20 - 0.1414)/2 = 4.2707; Gmin = 4.2707 - 0 - sqrt(0.1414^2 + 0.05^2 + 0.05^2) = 4.2707 - 0.1581 = 4.1126 -> 4.11
+#   Xmax = 0.15 - 0.08 + sqrt(0.10^2 + 0.05^2 + 0.05^2) = 0.07 + 0.1225 = 0.1925 -> 0.19
+#   Pad length (Z - G)/2 = 0.78; pad centre (Z + G)/4 = 2.445; width 0.19. Copper gap 0.21.
+#   Inner pad edge 2.055 vs EP edge 1.75: 0.305 clearance. Corner: row end 1.80 + 0.095 = 1.895 < 2.055.
+#
+# Exposed pad: land = nominal EP 3.5 x 3.5 ("matching copper pad", §8.4 p. 121).
+# EP paste: 2 x 2 apertures 1.25 x 1.25 at 1.70 pitch = 6.25 / 12.25 mm^2 = 51 % (OpenDAP choice).
+# Vias: 5 (plus pattern) in the 0.45 mm paste-free cross between apertures, drill 0.20, diameter 0.40
+#   (OpenDAP choice; §8.4 requires vias but gives no count or size).
+
+[part]
+mpn = "CS43198-CNZR"
+manufacturer = "Cirrus Logic"
+library = "Cirrus_Logic"
+symbol = "CS43198-CNZR"
+reference = "U"
+description = "Stereo 32-bit audio DAC with pseudodifferential headphone-capable outputs, 40-pin QFN 5 x 5 mm, 0.4 mm pitch, exposed pad"
+keywords = "audio DAC stereo 32-bit headphone class H CS43198 Cirrus QFN40"
+datasheet = "https://www.cirrus.com/docs/ds/cs43198-datasheet.pdf"
+datasheet_rev = "DS1156F2"
+sheet = "Cirrus-Logic/CS43198-CNZR.md"
+notes = [
+  "Land pattern derived per IPC-7351B nominal density from DS1156F2 Table 10-1 (p. 134): no recommended land pattern in the datasheet. J values UNVERIFIED against the standard text.",
+  "Exposed-pad paste (2 x 2, 1.25 mm at 1.70 mm, 51 %) and the 5-via plus pattern (0.20/0.40 mm) are an OpenDAP choice; DS1156F2 §8.4 (p. 121) only requires a matching copper pad with vias to inner ground planes.",
+  "Table 10-1 notes 'X/Y Dimensions are estimates' and describe b as a 'solder sphere diameter' (copied from a WLCSP note): UNVERIFIED how this affects the QFN values.",
+  "Pins 28 and 27 carry an overbar in Figure 1-1 (p. 4) (RESET, INT active low); the sheet writes RESET and INT without a bar, so the symbol keeps the sheet names.",
+  "Minus signs: the sheet writes FILT−, −VA, VCP_FILT− with U+2212; symbol uses ASCII '-' and sheet_name keeps the sheet text.",
+  "EP is passive and named EP (sheet: 'Thermal pad', connect to ground, GNDA in split-ground systems).",
+]
+
+[[pins]]
+number = "1"
+name = "SCL"
+type = "input"
+side = "left"
+gap = false
+
+[[pins]]
+number = "39"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+gap = false
+
+[[pins]]
+number = "30"
+name = "ADR"
+type = "input"
+side = "left"
+gap = false
+
+[[pins]]
+number = "28"
+name = "RESET"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "2"
+name = "SDIN1"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "34"
+name = "SCLK1"
+type = "bidirectional"
+side = "left"
+gap = false
+
+[[pins]]
+number = "38"
+name = "LRCK1"
+type = "bidirectional"
+side = "left"
+gap = false
+
+[[pins]]
+number = "40"
+name = "DSDA/SDIN2"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "29"
+name = "DSDB/LRCK2"
+type = "bidirectional"
+side = "left"
+gap = false
+
+[[pins]]
+number = "32"
+name = "DSDCLK/SCLK2"
+type = "bidirectional"
+side = "left"
+gap = false
+
+[[pins]]
+number = "37"
+name = "XTI/MCLK"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "36"
+name = "XTO"
+type = "output"
+side = "left"
+gap = false
+
+[[pins]]
+number = "22"
+name = "HP_DETECT"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "14"
+name = "AOUTA"
+type = "output"
+side = "right"
+gap = false
+
+[[pins]]
+number = "13"
+name = "REFA"
+type = "input"
+side = "right"
+gap = false
+
+[[pins]]
+number = "16"
+name = "AOUTB"
+type = "output"
+side = "right"
+gap = false
+
+[[pins]]
+number = "17"
+name = "REFB"
+type = "input"
+side = "right"
+gap = false
+
+[[pins]]
+number = "27"
+name = "INT"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "33"
+name = "CLKOUT"
+type = "output"
+side = "right"
+gap = false
+
+[[pins]]
+number = "3"
+name = "TSO"
+type = "output"
+side = "right"
+gap = false
+
+[[pins]]
+number = "5"
+name = "FILT+"
+type = "passive"
+side = "right"
+gap = true
+
+[[pins]]
+number = "6"
+name = "FILT-"
+type = "passive"
+side = "right"
+gap = false
+sheet_name = "FILT−"
+
+[[pins]]
+number = "9"
+name = "-VA"
+type = "power_out"
+side = "right"
+gap = true
+sheet_name = "−VA"
+
+[[pins]]
+number = "10"
+name = "FLYP_VA"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "11"
+name = "FLYN_VA"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "21"
+name = "VCP_FILT+"
+type = "passive"
+side = "right"
+gap = true
+
+[[pins]]
+number = "18"
+name = "VCP_FILT-"
+type = "passive"
+side = "right"
+gap = false
+sheet_name = "VCP_FILT−"
+
+[[pins]]
+number = "24"
+name = "FLYP_VCP"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "23"
+name = "FLYC_VCP"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "20"
+name = "FLYN_VCP"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "7"
+name = "VA"
+type = "power_in"
+side = "top"
+gap = false
+
+[[pins]]
+number = "25"
+name = "VCP"
+type = "power_in"
+side = "top"
+gap = false
+
+[[pins]]
+number = "26"
+name = "VP"
+type = "power_in"
+side = "top"
+gap = false
+
+[[pins]]
+number = "4"
+name = "VD"
+type = "power_in"
+side = "top"
+gap = true
+
+[[pins]]
+number = "31"
+name = "VL"
+type = "power_in"
+side = "top"
+gap = false
+
+[[pins]]
+number = "8"
+name = "GNDA"
+type = "power_in"
+side = "bottom"
+gap = false
+
+[[pins]]
+number = "12"
+name = "GNDCP"
+type = "power_in"
+side = "bottom"
+gap = false
+
+[[pins]]
+number = "15"
+name = "GNDCP"
+type = "power_in"
+side = "bottom"
+gap = false
+
+[[pins]]
+number = "19"
+name = "GNDCP"
+type = "power_in"
+side = "bottom"
+gap = false
+
+[[pins]]
+number = "35"
+name = "GNDD"
+type = "power_in"
+side = "bottom"
+gap = false
+
+[[pins]]
+number = "EP"
+name = "EP"
+type = "passive"
+side = "bottom"
+gap = true
+sheet_name = "Thermal pad"
+
+[footprint]
+name = "QFN-40-1EP_5x5mm_P0.4mm_EP3.5x3.5mm_ThermalVias"
+description = "QFN-40 5 x 5 mm, 0.4 mm pitch, exposed pad 3.5 x 3.5 mm, thermal vias; land pattern derived per IPC-7351B nominal from Cirrus Logic DS1156F2 p. 134"
+tags = "QFN 40 0.4 CS43198 DAC"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "ipc7351b"
+land_pattern_cite = "DS1156F2 p. 134, Table 10-1 (package dimensions); IPC-7351B nominal derivation in comments"
+body = { x = 5.0, y = 5.0, z = 0.75, standoff = 0.035, cite = "DS1156F2 p. 134, Figure 10-1 / Table 10-1, D = E = 5 BSC, A nom 0.75, A1 nom 0.035" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "EP"
+at = [0.0, 0.0]
+size = [3.5, 3.5]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "DS1156F2 p. 134, Figure 10-1 / Table 10-1, J = K nom 3.5; DS1156F2 §8.4 p. 121 'matching copper pad'"
+
+[[footprint.rows]]
+first = 1
+count = 10
+step = 1
+start = [-2.445, -1.8]
+pitch = [0, 0.4]
+size = [0.78, 0.19]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "DS1156F2 p. 134, Figure 10-1 / Table 10-1 e = 0.4 BSC; pad 0.78 x 0.19 at 2.445 from IPC-7351B nominal derivation (see comments)"
+
+[[footprint.rows]]
+first = 11
+count = 10
+step = 1
+start = [-1.8, 2.445]
+pitch = [0.4, 0]
+size = [0.19, 0.78]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "DS1156F2 p. 134, Figure 10-1 / Table 10-1 e = 0.4 BSC; pad 0.78 x 0.19 at 2.445 from IPC-7351B nominal derivation (see comments)"
+
+[[footprint.rows]]
+first = 21
+count = 10
+step = 1
+start = [2.445, 1.8]
+pitch = [0, -0.4]
+size = [0.78, 0.19]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "DS1156F2 p. 134, Figure 10-1 / Table 10-1 e = 0.4 BSC; pad 0.78 x 0.19 at 2.445 from IPC-7351B nominal derivation (see comments)"
+
+[[footprint.rows]]
+first = 31
+count = 10
+step = 1
+start = [1.8, -2.445]
+pitch = [-0.4, 0]
+size = [0.19, 0.78]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "DS1156F2 p. 134, Figure 10-1 / Table 10-1 e = 0.4 BSC; pad 0.78 x 0.19 at 2.445 from IPC-7351B nominal derivation (see comments)"
+
+[[footprint.paste]]
+start = [-0.85, -0.85]
+pitch = [1.7, 1.7]
+count = [2, 2]
+size = [1.25, 1.25]
+cite = "OpenDAP choice (datasheet gives no stencil): 51 % EP paste coverage"
+
+[[footprint.vias]]
+number = "EP"
+start = [-1.2, 0.0]
+pitch = [1.2, 0.0]
+count = [3, 1]
+drill = 0.2
+diameter = 0.4
+cite = "OpenDAP choice; DS1156F2 §8.4 p. 121 requires vias to inner ground planes, no pattern given"
+
+[[footprint.vias]]
+number = "EP"
+start = [0.0, -1.2]
+pitch = [0.0, 2.4]
+count = [1, 2]
+drill = 0.2
+diameter = 0.4
+cite = "OpenDAP choice; DS1156F2 §8.4 p. 121 requires vias to inner ground planes, no pattern given"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.4
+cite = "DS1156F2 p. 134, Figure 10-1 / Table 10-1, e = 0.4 BSC"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "10"
+value = 3.6
+cite = "DS1156F2 p. 134, Figure 10-1 / Table 10-1, 9 x e (10 terminals per side)"
+
+[[checks]]
+kind = "dx"
+a = "11"
+b = "20"
+value = 3.6
+cite = "DS1156F2 p. 134, Figure 10-1 / Table 10-1, 9 x e, bottom row left to right"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "30"
+value = 4.89
+cite = "IPC-7351B derivation from DS1156F2 p. 134, Figure 10-1 / Table 10-1: (Z + G)/2 = (5.67 + 4.11)/2"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.78, 0.19]
+cite = "IPC-7351B derivation from DS1156F2 p. 134, Figure 10-1 / Table 10-1: (Z - G)/2 x X"
+
+[[checks]]
+kind = "pad_size"
+a = "EP"
+value = [3.5, 3.5]
+cite = "DS1156F2 p. 134, Figure 10-1 / Table 10-1, J = K nom 3.5"
+
+[[checks]]
+kind = "pad_count"
+value = 41
+cite = "DS1156F2 p. 4 Figure 1-1 and p. 134: 40 terminals + exposed pad"

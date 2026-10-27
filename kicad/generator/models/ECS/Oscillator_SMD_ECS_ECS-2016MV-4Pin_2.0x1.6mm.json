@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.6,
+        2.0,
+        0.85
+      ]
+    }
+  ],
+  "library": "ECS",
+  "name": "Oscillator_SMD_ECS_ECS-2016MV-4Pin_2.0x1.6mm",
+  "source": "envelope from ECS-2016MV p. 1, Figure 1: 2.0 +/- 0.1 x 1.6 +/- 0.1 (rotated 90 deg), 0.85 max height (max used)"
+}

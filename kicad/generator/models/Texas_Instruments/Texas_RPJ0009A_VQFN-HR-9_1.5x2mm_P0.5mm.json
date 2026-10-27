@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.5,
+        2.0,
+        1.0
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_RPJ0009A_VQFN-HR-9_1.5x2mm_P0.5mm",
+  "source": "envelope from SLVSES3A p. 43, RPJ0009A outline: 1.4-1.6 x 1.9-2.1, height 0.8-1.0 (z = max), standoff 0.00-0.05"
+}

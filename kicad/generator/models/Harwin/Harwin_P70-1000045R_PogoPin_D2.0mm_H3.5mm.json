@@ -1,0 +1,43 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.0,
+        2.0,
+        0.4
+      ]
+    },
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.54,
+        1.54,
+        2.5
+      ]
+    },
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.9,
+        0.9,
+        3.5
+      ]
+    }
+  ],
+  "library": "Harwin",
+  "name": "Harwin_P70-1000045R_PogoPin_D2.0mm_H3.5mm",
+  "source": "envelope from P70-10X0045R issue 4, COMPONENT DETAILS flange phi 2.00; size table DIM 'A' 3.50 +/-0.20 (P70-1000045R)"
+}

@@ -1,0 +1,139 @@
+# CSD17575Q3 - TI 30 V N-channel NexFET power MOSFET, SON 3.3 x 3.3 mm (Q3)
+# Sources: SLPS489A (CSD17575Q3 datasheet, June 2014 rev. Aug 2014), PDF p. 1 (pin configuration),
+# p. 8 §7.1 Q3 package dimensions, p. 9 §7.2 recommended PCB pattern and §7.3 recommended stencil
+# opening (PDF page numbers of the cached csd17575q3.pdf; drawings read from a 150 dpi render).
+
+[part]
+mpn = "CSD17575Q3"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "CSD17575Q3"
+reference = "Q"
+description = "N-channel NexFET power MOSFET, 30 V, 1.9 / 2.6 mOhm at VGS 10 / 4.5 V, SON 3.3 x 3.3 mm (Q3)"
+keywords = "MOSFET N-channel NexFET 30V ship FET CSD17575Q3 SON Q3"
+datasheet = "https://www.ti.com/lit/ds/symlink/csd17575q3.pdf"
+datasheet_rev = "SLPS489A"
+sheet = "Texas-Instruments/CSD17575Q3.md"
+notes = [
+  "Land pattern = TI recommended PCB pattern (SLPS489A p. 9, §7.2): source pads 1-4 0.500 x 0.630 at 0.650 pitch; 0.560 gap; the drain land 2.450 x 1.900 (1.225 each side of the centre line) with four 0.500 x 0.410 fingers (pins 8-5) and 0.150 notches between them; 3.500 overall.",
+  "The drain land is drawn as the body pad plus four finger pads, all numbered as drain pins (5-8; the body pad carries number 5), touching, so they form one copper area as on p. 9.",
+  "Stencil (p. 9, §7.3): the drain body takes two 1.020 x 1.445 apertures 0.250 apart; the finger and source apertures (0.340 / 0.310 x 0.450) are smaller than their pads: here the fingers and source pads print at pad size (UNVERIFIED simplification), the body pad has paste = false and the two drawn windows.",
+  "Body: 3.3 x 3.3 nominal, 1.000 nominal / 1.100 max height (p. 8, D, E, A).",
+]
+
+[[pins]]
+number = "4"
+name = "G"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "D"
+type = "passive"
+side = "top"
+
+[[pins]]
+number = "6"
+name = "D"
+type = "passive"
+side = "top"
+
+[[pins]]
+number = "7"
+name = "D"
+type = "passive"
+side = "top"
+
+[[pins]]
+number = "8"
+name = "D"
+type = "passive"
+side = "top"
+
+[[pins]]
+number = "1"
+name = "S"
+type = "passive"
+side = "bottom"
+
+[[pins]]
+number = "2"
+name = "S"
+type = "passive"
+side = "bottom"
+
+[[pins]]
+number = "3"
+name = "S"
+type = "passive"
+side = "bottom"
+
+[footprint]
+name = "Texas_Q3_SON-8_3.3x3.3mm_P0.65mm"
+description = "Texas Instruments NexFET Q3 SON-8, 3.3 x 3.3 mm body, TI recommended PCB pattern (SLPS489A p. 9)"
+tags = "SON NexFET Q3 CSD17575Q3 Texas MOSFET"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SLPS489A p. 9, §7.2 recommended PCB pattern; §7.3 recommended stencil opening"
+body = { x = 3.3, y = 3.3, z = 1.1, standoff = 0.0, cite = "SLPS489A p. 8: D, E 3.200-3.400 (3.300 nom), A 1.100 max, A1 0.000-0.050" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 4
+step = 1
+start = [-0.975, 1.435]
+pitch = [0.65, 0.0]
+size = [0.5, 0.63]
+shape = "rect"
+type = "smd"
+cite = "SLPS489A p. 9: 0.500 (x 8) x 0.630, 0.650 pitch; bottom edge at the 3.500 extent; pins 1-4 left to right"
+
+[[footprint.rows]]
+first = 5
+count = 4
+step = 1
+start = [0.975, -1.545]
+pitch = [-0.65, 0.0]
+size = [0.5, 0.41]
+shape = "rect"
+type = "smd"
+cite = "SLPS489A p. 9: drain fingers 0.410 high, 0.150 notches (x 6); pins 5-8 right to left"
+
+[[footprint.pads]]
+number = "5"
+at = [0.0, -0.39]
+size = [2.45, 1.9]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "SLPS489A p. 9: drain land 1.900 high, 1.225 each side of the centre line, 0.560 above the source pads"
+
+[[footprint.paste]]
+start = [-0.635, -0.2625]
+pitch = [1.27, 0.0]
+count = [2, 1]
+size = [1.02, 1.445]
+cite = "SLPS489A p. 9 §7.3: 1.020 (x 2) x 1.445 (x 2), 0.250 apart, 0.225 below the finger apertures in the 3.320 stencil extent"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.65
+cite = "SLPS489A p. 9, 0.650"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.5, 0.63]
+cite = "SLPS489A p. 9, 0.500 (x 8), 0.630"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "4"
+value = 1.95
+cite = "SLPS489A p. 9, 3 x 0.650"

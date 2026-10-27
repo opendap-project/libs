@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.05
+      ],
+      "size": [
+        2.3,
+        2.0,
+        0.85
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_DCU0008A_VSSOP-8_2.3x2mm_P0.5mm",
+  "source": "envelope from SCES537D p. 14, DCU0008A outline: 2.2-2.4 (x) x 1.9-2.1 (y), height 0.6-0.9 (z = max), standoff 0.0-0.1 (nominal 0.05)"
+}

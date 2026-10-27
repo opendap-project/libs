@@ -1,0 +1,320 @@
+# LP5521YQX/NOPB - TI three-channel RGB LED driver with charge pump and I2C, NJA0024A (WQFN-24, 4 x 5 mm)
+# Sources: SNVS441I (LP5521 datasheet, January 2007 rev. November 2016), PDF p. 3 (NJA pinout), p. 4
+# (Pin Functions LP5521YQ); mechanical addendum drawing 4215212/A 04/2017: PDF p. 48 package outline,
+# p. 49 example board layout, p. 50 example stencil design (read from 150 dpi renders; 1 mm = 106.3 px at
+# the 18X layout scale, 147.6 px at the 25X stencil scale).
+
+[part]
+mpn = "LP5521YQX/NOPB"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "LP5521YQX"
+reference = "U"
+description = "Three-channel RGB LED driver, 25.5 mA programmable current sources, 8-bit PWM, program engines, adaptive 1x/1.5x charge pump, I2C, WQFN-24 (NJA0024A) 4 x 5 mm with exposed pad"
+keywords = "LED driver RGB charge pump I2C LP5521 WQFN NJA0024A"
+datasheet = "https://www.ti.com/lit/ds/symlink/lp5521.pdf"
+datasheet_rev = "SNVS441I"
+sheet = "Texas-Instruments/LP5521YQX-NOPB.md"
+notes = [
+  "Symbol name LP5521YQX: the MPN's '/NOPB' suffix cannot be part of a KiCad symbol name; the MPN field keeps it.",
+  "Land pattern = TI example board layout NJA0024A (SNVS441I p. 49): 24X (0.4) x 24X (0.25) pads, 20X (0.5) pitch, (3.4) between the left and right pad-column centres, (4.4) between the top and bottom pad-row centres, (R0.05) TYP corners; exposed pad 25 (2.4) x (3.4); non-solder-mask-defined preferred (0.07 MAX all around), mask expansion left to the board default.",
+  "Orientation as the p. 49 drawing (top view, body 4 mm in x, 5 mm in y): pins 1-7 down the left side, 8-12 along the bottom, 13-19 up the right side, 20-24 along the top (24 top left). The p. 3 pinout figure shows the same package turned by 90 degrees.",
+  "Vias (p. 49): eight (0.2) vias, optional (note 6), filled, plugged or tented under paste. Positions read off the render: centre column at y = +-0.59 and +-1.45 (3X (1.18) between the inner rows, 2X (0.86) to the outer ones), side columns at x = +-0.95 ((0.95) TYP) on the inner rows. Via copper diameter 0.4 mm is an OpenDAP choice (the drawing gives the 0.2 mm hole only): UNVERIFIED.",
+  "Stencil (p. 50, 0.1 mm): pads 1:1; exposed pad as 6X (1.06) x (0.98) apertures, columns at x = +-(0.63) TYP, rows at (1.18) TYP pitch centred on the pad, 76 % printed coverage: pad 25 paste = false plus [[footprint.paste]].",
+  "Exposed pad 25: soldered to the board (p. 48, note 3); the pin table gives no net. Visible passive pin.",
+  "TRIG and CLK_32K are tied to GND when unused (p. 17, §7.3.5.3; p. 17, §7.3.5.5): passive. INT is open drain (p. 4): open_collector. R, G, B are current-source outputs (type A, p. 4): output. Pins 8-12 N/C: visible no_connect pins (CRAFT-125).",
+  "Body z = 0.8 mm is the maximum height (0.8 MAX, p. 48); x/y nominal (3.9-4.1 x 4.9-5.1).",
+]
+
+[[pins]]
+number = "3"
+name = "VDD"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "14"
+name = "EN"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "15"
+name = "SCL"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "13"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "20"
+name = "ADDR_SEL0"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "21"
+name = "ADDR_SEL1"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "7"
+name = "TRIG"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "5"
+name = "CLK_32K"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "2"
+name = "CFLY1P"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "24"
+name = "CFLY1N"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "1"
+name = "CFLY2P"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "23"
+name = "CFLY2N"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "22"
+name = "VOUT"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "17"
+name = "R"
+type = "output"
+side = "right"
+gap = true
+
+[[pins]]
+number = "18"
+name = "G"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "19"
+name = "B"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "6"
+name = "INT"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "16"
+name = "GPO"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "8"
+name = "NC"
+type = "no_connect"
+side = "right"
+gap = true
+sheet_name = "N/C"
+
+[[pins]]
+number = "9"
+name = "NC"
+type = "no_connect"
+side = "right"
+sheet_name = "N/C"
+
+[[pins]]
+number = "10"
+name = "NC"
+type = "no_connect"
+side = "right"
+sheet_name = "N/C"
+
+[[pins]]
+number = "11"
+name = "NC"
+type = "no_connect"
+side = "right"
+sheet_name = "N/C"
+
+[[pins]]
+number = "12"
+name = "NC"
+type = "no_connect"
+side = "right"
+sheet_name = "N/C"
+
+[[pins]]
+number = "4"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "25"
+name = "EP"
+type = "passive"
+side = "bottom"
+sheet_name = "Exposed pad"
+
+[footprint]
+name = "Texas_NJA0024A_WQFN-24-1EP_4x5mm_P0.5mm_EP2.4x3.4mm_ThermalVias"
+description = "Texas Instruments NJA0024A WQFN-24, 4 x 5 mm body, 0.5 mm pitch, exposed pad 2.4 x 3.4 mm with thermal vias, TI example land pattern and stencil (SNVS441I pp. 49-50, drawing 4215212/A)"
+tags = "WQFN QFN NJA0024A LP5521 Texas"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SNVS441I p. 49, NJA0024A example board layout (4215212/A 04/2017); stencil p. 50"
+body = { x = 4.0, y = 5.0, z = 0.8, standoff = 0.0, cite = "SNVS441I p. 48, NJA0024A outline: 3.9-4.1 x 4.9-5.1, 0.8 MAX height" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 7
+step = 1
+start = [-1.7, -1.5]
+pitch = [0.0, 0.5]
+size = [0.4, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVS441I p. 49: 24X (0.4) x 24X (0.25), 20X (0.5), (3.4) between column centres, (R0.05) TYP; pins 1-7 left, top to bottom"
+
+[[footprint.rows]]
+first = 8
+count = 5
+step = 1
+start = [-1.0, 2.2]
+pitch = [0.5, 0.0]
+size = [0.25, 0.4]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVS441I p. 49: (4.4) between row centres; pins 8-12 bottom, left to right"
+
+[[footprint.rows]]
+first = 13
+count = 7
+step = 1
+start = [1.7, 1.5]
+pitch = [0.0, -0.5]
+size = [0.4, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVS441I p. 49: pins 13-19 right, bottom to top"
+
+[[footprint.rows]]
+first = 20
+count = 5
+step = 1
+start = [1.0, -2.2]
+pitch = [-0.5, 0.0]
+size = [0.25, 0.4]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SNVS441I p. 49: pins 20-24 top, right to left"
+
+[[footprint.pads]]
+number = "25"
+at = [0.0, 0.0]
+size = [2.4, 3.4]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "SNVS441I p. 49: exposed pad (2.4) x (3.4)"
+
+[[footprint.paste]]
+start = [-0.63, -1.18]
+pitch = [1.26, 1.18]
+count = [2, 3]
+size = [1.06, 0.98]
+cite = "SNVS441I p. 50: 6X (1.06) x 6X (0.98) apertures, (0.63) TYP from the vertical centre line, (1.18) TYP row pitch, 76 % coverage, 0.1 mm stencil"
+
+[[footprint.vias]]
+number = "25"
+start = [0.0, -1.45]
+pitch = [0.0, 2.9]
+count = [1, 2]
+drill = 0.2
+diameter = 0.4
+cite = "SNVS441I p. 49: (0.2) TYP vias, outer centre-column pair at (1.18)/2 + (0.86); diameter 0.4 UNVERIFIED (OpenDAP choice)"
+
+[[footprint.vias]]
+number = "25"
+start = [-0.95, -0.59]
+pitch = [0.95, 1.18]
+count = [3, 2]
+drill = 0.2
+diameter = 0.4
+cite = "SNVS441I p. 49: (0.2) TYP vias, inner rows (1.18) apart, columns (0.95) TYP apart; diameter 0.4 UNVERIFIED"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "SNVS441I p. 49, 20X (0.5)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "19"
+value = 3.4
+cite = "SNVS441I p. 49, (3.4) between column centres"
+
+[[checks]]
+kind = "dy"
+a = "24"
+b = "8"
+value = 4.4
+cite = "SNVS441I p. 49, (4.4) between row centres"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.4, 0.25]
+cite = "SNVS441I p. 49, 24X (0.4), 24X (0.25)"
+
+[[checks]]
+kind = "pad_size"
+a = "25"
+value = [2.4, 3.4]
+cite = "SNVS441I p. 49, (2.4) x (3.4)"
+
+[[checks]]
+kind = "pad_count"
+value = 25
+cite = "SNVS441I p. 48: 24 terminals and the exposed thermal pad"

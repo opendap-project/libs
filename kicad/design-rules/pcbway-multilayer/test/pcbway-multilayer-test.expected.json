@@ -1,0 +1,21 @@
+{
+  "board_setup_checks": {
+    "solder_mask_bridge": 1
+  },
+  "pass_column_starts_at_mm": 50.0,
+  "rules": {
+    "PCBWay multilayer: Copper clearance (inner)": 1,
+    "PCBWay multilayer: Copper clearance (outer)": 1,
+    "PCBWay multilayer: Copper to board edge": 1,
+    "PCBWay multilayer: Hole to copper (inner)": 1,
+    "PCBWay multilayer: Hole to copper (outer)": 1,
+    "PCBWay multilayer: Mechanical drill": 1,
+    "PCBWay multilayer: Silkscreen line width": 1,
+    "PCBWay multilayer: Silkscreen text height": 1,
+    "PCBWay multilayer: Through vias only": 1,
+    "PCBWay multilayer: Track width (inner)": 1,
+    "PCBWay multilayer: Track width (outer)": 1,
+    "PCBWay multilayer: Via annular ring": 1,
+    "PCBWay multilayer: Via hole to hole": 1
+  }
+}

@@ -1,0 +1,411 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "3bea76d0-3167-5954-88c2-514c22109e3d")
+	(paper "A4")
+	(title_block
+		(title "<Function, in sentence case>")
+		(date "2026-10-24")
+		(rev "A")
+		(company "The OpenDAP Project")
+		(comment 1 "blk.<id>")
+		(comment 2 "<One sentence: what this block does and for whom>")
+	)
+	(lib_symbols)
+	(rectangle
+		(start 133.35 40.64)
+		(end 205.74 88.9)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "44db52b4-388e-5d37-a6fd-7fb106e8d4ab")
+	)
+	(rectangle
+		(start 48.26 40.64)
+		(end 120.65 88.9)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "5eb16f60-de1b-5791-aba9-fea7cd241ada")
+	)
+	(text "Rails"
+		(exclude_from_sim no)
+		(at 19.05 135.89 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left bottom)
+		)
+		(uuid "05fcfe5d-b1c1-55bc-8386-32741f07b288")
+	)
+	(text "<Next group>"
+		(exclude_from_sim no)
+		(at 134.62 39.37 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left bottom)
+		)
+		(uuid "19312d02-0163-5b71-ad11-5eaf9f67f8e4")
+	)
+	(text "<Group title>"
+		(exclude_from_sim no)
+		(at 49.53 39.37 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left bottom)
+		)
+		(uuid "555db2f4-d67c-5c39-8d44-dba51d24e307")
+	)
+	(text "Interface"
+		(exclude_from_sim no)
+		(at 19.05 104.14 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left bottom)
+		)
+		(uuid "918554ed-589a-5257-aade-75e71ac8aaa2")
+	)
+	(text "Supplies enter first at the left (or top), inputs left, outputs right; ground symbols on one baseline."
+		(exclude_from_sim no)
+		(at 48.26 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "deae243a-5556-5cb0-b8b7-3152b52cee34")
+	)
+	(text_box "Notes\n1. Function: <what the block does>.\n2. Absent state: <what every interface net does with the block unfitted or unpowered>.\n3. Constraints: <PCB-x-nn IDs this sheet implements>.\n4. Decisions: <ADR numbers, one line each>.\n5. Unless noted: <default tolerance, dielectric, voltage rating>."
+		(exclude_from_sim no)
+		(at 152.4 101.6 0)
+		(size 129.54 17.78)
+		(margins 1.905 1.905 1.905 1.905)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "a9af4044-2762-56c5-8a48-5562a1d95603")
+	)
+	(table
+		(column_count 3)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 22.86 20.32 83.82)
+		(row_heights 5.08 5.08)
+		(uuid "155af2d6-b910-4004-89f5-9efa593557f6")
+		(cells
+			(table_cell "Net"
+				(exclude_from_sim no)
+				(at 19.05 106.68 0)
+				(size 22.86 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "06c71ccb-1d05-5008-a9e4-117dd3cd06d4")
+			)
+			(table_cell "Direction"
+				(exclude_from_sim no)
+				(at 41.91 106.68 0)
+				(size 20.32 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "ce1c43fe-d693-5fe7-9143-b347c4a55285")
+			)
+			(table_cell "Absent state (block not fitted)"
+				(exclude_from_sim no)
+				(at 62.23 106.68 0)
+				(size 83.82 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "6ed0d2a1-e67a-522a-8ca4-c568056f5e5f")
+			)
+			(table_cell "<NET>"
+				(exclude_from_sim no)
+				(at 19.05 111.76 0)
+				(size 22.86 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "a9fb5ff3-b588-5009-80e7-93c6ab707117")
+			)
+			(table_cell "<Input>"
+				(exclude_from_sim no)
+				(at 41.91 111.76 0)
+				(size 20.32 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "04d81c39-f191-58ed-a940-2a4530b71d7c")
+			)
+			(table_cell "<What holds it, and where (host side)>"
+				(exclude_from_sim no)
+				(at 62.23 111.76 0)
+				(size 83.82 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "74296725-09a4-5b0b-a9b3-40ceb538713f")
+			)
+		)
+	)
+	(table
+		(column_count 3)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 22.86 25.4 78.74)
+		(row_heights 5.08 5.08)
+		(uuid "d364e52d-61af-4c15-a16a-f31c8b5120db")
+		(cells
+			(table_cell "Rail"
+				(exclude_from_sim no)
+				(at 19.05 138.43 0)
+				(size 22.86 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "00551d8e-c395-5bb3-b663-ecd86b170fe9")
+			)
+			(table_cell "Capacitors"
+				(exclude_from_sim no)
+				(at 41.91 138.43 0)
+				(size 25.4 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "8599a994-71af-54d8-95ce-85eeeefd1afc")
+			)
+			(table_cell "Requirement"
+				(exclude_from_sim no)
+				(at 67.31 138.43 0)
+				(size 78.74 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+					)
+					(justify left top)
+				)
+				(uuid "448b03ac-e2d9-5484-9bc3-77a5c6e3936f")
+			)
+			(table_cell "<RAIL>"
+				(exclude_from_sim no)
+				(at 19.05 143.51 0)
+				(size 22.86 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "6257db95-36fd-5034-b437-7316de0489e7")
+			)
+			(table_cell "<C1xx value>"
+				(exclude_from_sim no)
+				(at 41.91 143.51 0)
+				(size 25.4 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "dd8308f0-f86b-585a-9bfe-ad7daa1c0877")
+			)
+			(table_cell "<Data sheet requirement, with its section>"
+				(exclude_from_sim no)
+				(at 67.31 143.51 0)
+				(size 78.74 5.08)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+				(uuid "79a49c7f-4f0e-5367-8380-da72d718abaa")
+			)
+		)
+	)
+	(hierarchical_label "<SUPPLY_IN>"
+		(shape input)
+		(at 38.1 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1b0dc21e-1efc-5870-a6e7-eeb1e194495a")
+	)
+	(hierarchical_label "<SIGNAL_IN>"
+		(shape input)
+		(at 38.1 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "240e0140-9cb1-52e8-97fd-3c89f9e20b71")
+	)
+	(hierarchical_label "<SIGNAL_OUT>"
+		(shape output)
+		(at 254 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4dbeccad-8fc8-5e4a-81f5-6f5554996110")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)

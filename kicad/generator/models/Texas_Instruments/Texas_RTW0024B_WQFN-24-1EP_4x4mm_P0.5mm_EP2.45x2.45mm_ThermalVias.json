@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        4.0,
+        4.0,
+        0.8
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_RTW0024B_WQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm_ThermalVias",
+  "source": "envelope from SCPS194F p. 42, RTW0024B outline: 3.85-4.15 square, 0.8 MAX height, standoff 0.00-0.05"
+}

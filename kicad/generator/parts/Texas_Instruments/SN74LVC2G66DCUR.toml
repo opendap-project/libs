@@ -1,0 +1,146 @@
+# SN74LVC2G66DCUR - TI dual bilateral analog switch, DCU0008A (VSSOP-8)
+# Sources: SCES325N (SN74LVC2G66 datasheet, Jul 2001 rev. Aug 2018), p. 3 (pin functions), PDF
+# pp. 25-27 (DCU0008A outline, example board layout, stencil; drawing 4225266/A 09/2014).
+
+[part]
+mpn = "SN74LVC2G66DCUR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "SN74LVC2G66DCUR"
+reference = "U"
+description = "Dual bilateral analog switch, 1.65-5.5 V, one active-high control per switch, VSSOP-8 (DCU0008A)"
+keywords = "analog switch bilateral SPST dual LVC SN74LVC2G66 VSSOP DCU"
+datasheet = "https://www.ti.com/lit/ds/symlink/sn74lvc2g66.pdf"
+datasheet_rev = "SCES325N"
+sheet = "Texas-Instruments/SN74LVC2G66DCUR.md"
+notes = [
+  "Land pattern = TI example board layout DCU0008A (SCES325N PDF p. 26), the same drawing 4225266/A as SN74AUC1G74DCUR: the [footprint] section is copied from SN74AUC1G74DCUR.toml unchanged (identical footprint file).",
+  "Switch terminals A and B are bidirectional analog nodes: passive pins; controls 1C, 2C inputs.",
+]
+
+[[pins]]
+number = "1"
+name = "1A"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "7"
+name = "1C"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "2A"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "3"
+name = "2C"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "2"
+name = "1B"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "6"
+name = "2B"
+type = "passive"
+side = "right"
+gap = true
+
+[[pins]]
+number = "8"
+name = "VCC"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "4"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_DCU0008A_VSSOP-8_2.3x2mm_P0.5mm"
+description = "Texas Instruments DCU0008A VSSOP-8 (JEDEC MO-187 CA), 2.3 x 2.0 mm body, 0.5 mm pitch, TI example land pattern (SCES537D addendum p. 15, drawing 4225266/A)"
+tags = "VSSOP-8 US8 DCU0008A MO-187 Texas"
+datasheet = "https://www.ti.com/lit/ds/symlink/sn74auc1g74.pdf"   # shared land: one document for the footprint file
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SCES537D addendum p. 15, DCU0008A example board layout (4225266/A 09/2014); stencil p. 16"
+body = { x = 2.3, y = 2.0, z = 0.9, standoff = 0.05, cite = "SCES537D p. 14, DCU0008A outline: 2.2-2.4 (x) x 1.9-2.1 (y), height 0.6-0.9 (z = max), standoff 0.0-0.1 (nominal 0.05)" }
+body_offset = [0.0, 0.0]
+
+# Pins 1-4 left (1 top), pins 5-8 right (5 bottom, 8 top). Pad centres x = +-(3.1)/2 = +-1.55,
+# y = -0.75 / -0.25 / +0.25 / +0.75 (6X (0.5), symmetric about SYMM).
+[[footprint.rows]]
+first = 1
+count = 4
+step = 1
+start = [-1.55, -0.75]
+pitch = [0.0, 0.5]
+size = [0.85, 0.3]
+shape = "roundrect"
+rratio = 0.17
+type = "smd"
+cite = "SCES537D p. 15: 8X (0.85), 8X (0.3), 6X (0.5), (3.1) centre to centre, (R0.05) TYP (rratio 0.05/0.3)"
+
+[[footprint.rows]]
+first = 5
+count = 4
+step = 1
+start = [1.55, 0.75]
+pitch = [0.0, -0.5]
+size = [0.85, 0.3]
+shape = "roundrect"
+rratio = 0.17
+type = "smd"
+cite = "SCES537D p. 15: 8X (0.85), 8X (0.3), 6X (0.5), (3.1) centre to centre, (R0.05) TYP"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "SCES537D p. 14, 6X [0.5]; p. 15, 6X (0.5)"
+
+[[checks]]
+kind = "dy"
+a = "8"
+b = "5"
+value = 1.5
+cite = "SCES537D p. 14, 2X [1.5]"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "8"
+value = 3.1
+cite = "SCES537D p. 15, (3.1)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "4"
+value = 1.5
+cite = "SCES537D p. 14, [1.5]; p. 15, 3 x (0.5)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.85, 0.3]
+cite = "SCES537D p. 15, 8X (0.85), 8X (0.3)"
+
+[[checks]]
+kind = "pad_count"
+value = 8
+cite = "SCES537D p. 1, DCU package pinout (8 pins)"

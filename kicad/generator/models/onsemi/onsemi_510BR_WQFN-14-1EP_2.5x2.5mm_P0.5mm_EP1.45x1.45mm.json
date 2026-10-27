@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.5,
+        2.5,
+        0.8
+      ]
+    }
+  ],
+  "library": "onsemi",
+  "name": "onsemi_510BR_WQFN-14-1EP_2.5x2.5mm_P0.5mm_EP1.45x1.45mm",
+  "source": "envelope from FUSB302B/D p. 31, case 510BR: 2.50 +/- 0.05 square, 0.75 +/- 0.05 height (0.8 max), standoff 0.025 +/- 0.025"
+}

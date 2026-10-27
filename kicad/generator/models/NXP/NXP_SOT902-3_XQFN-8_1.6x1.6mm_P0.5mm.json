@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.6,
+        1.6,
+        0.5
+      ]
+    }
+  ],
+  "library": "NXP",
+  "name": "NXP_SOT902-3_XQFN-8_1.6x1.6mm_P0.5mm",
+  "source": "envelope from DS p. 70, Figure 31 (SOT902-3): D = E 1.55 / 1.60 / 1.65, A max 0.5, A1 0.00-0.05 (0 used)"
+}

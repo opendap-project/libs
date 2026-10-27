@@ -1,0 +1,118 @@
+# K4UBE3D4AB-MGCL LPDDR4X SDRAM, 200FBGA 10 x 15 mm. Read by generator/bga.py; checked by
+# generator/test_bga.py. Every number cites its source. DS = Samsung K4UBE3D4AB-MGCL datasheet,
+# Rev. 1.0, Aug. 2021, 108 pages (parts-lib manifest.toml, sha256 7bb0223d...25641e1d2dccd2df;
+# distributor copy from LCSC, not redistributable, fetched into the local cache). Samsung's
+# product page lists the part as discontinued (read 2026-10-24).
+
+[part]
+library = "Samsung"
+symbol = "K4UBE3D4AB-MGCL"
+manufacturer = "Samsung"
+mpn = "K4UBE3D4AB-MGCL"
+reference = "U"
+description = "LPDDR4X SDRAM, 32 Gb (4 GB) DDP, 2 channels x16, 4266 Mb/s, VDD1/VDD2/VDDQ 1.8/1.1/0.6 V, 200FBGA 10 x 15 mm"
+keywords = "LPDDR4X SDRAM DRAM Samsung 200FBGA"
+datasheet = "https://datasheet.lcsc.com/datasheet/pdf/68493aa292745ce2f51b9d2d9103c14d.pdf?productCode=C5827966"
+pins = "K4UBE3D4AB-MGCL-pins.csv"          # DS p. 10, section 4.2 Package Ballout (names verbatim; NB cells omitted)
+ballmap = "K4UBE3D4AB-MGCL-ballmap.txt"    # DS p. 9, section 4.1, bottom view
+
+[package]
+name = "FBGA-200"
+body_x = 10.00           # DS p. 9: 10.00 +/- 0.10
+body_y = 15.00           # DS p. 9: 15.00 +/- 0.10
+height_nom = 0.90        # DS p. 9: 0.90 +/- 0.10 (seating plane to top)
+height_max = 1.00
+standoff_nom = 0.22      # DS p. 9: 0.22 +/- 0.05
+ball_min = 0.26          # DS p. 9: 200 x 0.31 +/- 0.05 post reflow (solder ball 0.30)
+ball_nom = 0.30
+ball_max = 0.36
+cite = "Samsung K4UBE3D4AB-MGCL datasheet Rev. 1.0 p. 9, section 4.1"
+
+# Ball grid, top view, origin at the body centre, +x right, +y down. 12 columns at 0.80 mm
+# (0.80 x 11 = 8.80; 4.40 from the centre line to the outer column) and 22 rows at 0.65 mm
+# (0.65 x 21 = 13.65; 6.825 from the centre line to the outer row), DS p. 9. Columns 6-7 and rows
+# L-M carry no ball (NB, DS p. 10).
+[[grid]]
+prefix = ""
+rows = ["A","B","C","D","E","F","G","H","J","K","L","M","N","P","R","T","U","V","W","Y","AA","AB"]
+cols = 12
+pitch_x = 0.80
+pitch_y = 0.65
+first_x = -4.40
+first_y = -6.825
+
+# Land: NSMD copper 0.25 mm, mask opening 0.35 mm (0.05 mm per side, the prototype fab's normal expansion;
+# web 0.30 mm at the 0.65 mm pitch). IPC-7351B's ~20 % reduction of the 0.30 mm ball gives
+# 0.24 mm, under the prototype fab's 0.25 mm BGA pad (kicad-lib design-rules/pcbway-capabilities.md), so
+# the pad is set at that minimum. The IPC-7351B table itself was not retrieved: UNVERIFIED.
+[land]
+type = "NSMD"
+pad = 0.25
+mask_margin = 0.05
+paste = "1:1"
+
+[footprint]
+name = "Samsung_FBGA-200_10.0x15.0mm_Layout12x22_P0.8x0.65mm_Ball0.3mm_Pad0.25mm_NSMD"
+tags = "BGA FBGA FBGA-200 LPDDR4 LPDDR4X Samsung 0.8mm 0.65mm"
+
+[[unit]]
+name = "Channel A"
+name_re = "_a$"
+[[unit]]
+name = "Channel B"
+name_re = "_b$"
+[[unit]]
+name = "Calibration, reset"
+name_re = "^(ZQ|RESET)"
+[[unit]]
+name = "Power"
+name_re = "^VDD"
+[[unit]]
+name = "Ground"
+name_re = "^VSS"
+[[unit]]
+name = "Do not use"
+name_re = "^DNU$"
+
+# Pin types. DNU: "do not use" (DS p. 10), left unconnected. ODT_CA: input; DS p. 10 note 2,
+# "ODT pin should connect to VDD2 or VSS". ZQ: calibration resistor, passive.
+[[ptype]]
+type = "power_in"
+name_re = "^(VDD|VSS)"
+[[ptype]]
+type = "no_connect"
+name_re = "^DNU$"
+[[ptype]]
+type = "bidirectional"
+name_re = "^(DQ|DMI)"
+[[ptype]]
+type = "input"
+name_re = "^(CA|CK|CKE|CS|ODT|RESET)"
+[[ptype]]
+type = "passive"
+name_re = "."
+
+# The drawing's primary dimensions for the independent check (DS p. 9). The edge distances are
+# not dimensioned; they follow from the ball field being centred on the package centre lines,
+# from which the 4.40 and 6.825 dimensions are taken: (10.00 - 8.80) / 2 and (15.00 - 13.65) / 2.
+[[drawing]]
+prefix = ""
+cols = 12
+rows = 22
+pitch_x = 0.80
+pitch_y = 0.65
+span_x = 8.80
+span_y = 13.65
+edge_x = 0.60
+edge_y = 0.675
+
+[check]
+balls = 200               # DS p. 9 ("200-0.31") and p. 10 (200Ball FBGA)
+pdf = "Samsung/K4UBE3D4AB-MGCL/68493aa292745ce2f51b9d2d9103c14d.pdf"
+pdf_sha256 = "7bb0223d5490109c2ebd9e8f25641e1d2dccd2df0952b04c02553fd078a06e04"
+pdf_ballout_page = 10     # the ballout table, re-read from the PDF text layer (pdftotext)
+# Third reading: the JEDEC 200-ball LPDDR4 symbol of the Radxa ZERO 3W v1.12 schematic, sheet 14
+# (LPDDR4X_1X32bit), transcribed ball by ball. Its names carry indices and _NC suffixes; the rules
+# below map them to the datasheet's names before comparing every ball.
+ref_pins = "K4UBE3D4AB-MGCL-radxa-zero-3w.csv"
+ref_rename = [["^(VDD1|VDD2|VDDQ|VSS|DNU)_\\d+$", "\\1"], ["^.*_NC$", "DNU"], ["^CA5_B$", "CA5_b"]]

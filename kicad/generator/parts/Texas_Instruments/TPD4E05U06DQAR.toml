@@ -1,0 +1,236 @@
+# TPD4E05U06DQAR - TI 4-channel 0.5 pF, 5.5 V ESD protection for high-speed lines, USON-10 (DQA0010A) 1 x 2.5 mm
+# Sources: SLVSBO7O (TPD1E05U06/TPD4E05U06/TPD6E05U06 datasheet, Dec 2012 rev. Aug 2024), PDF p. 4 (Figure 4-3
+# DQA top view, Table 4-2 pin functions); mechanical addendum: DQA0010A drawing 4220328/A 12/2015, PDF p. 28
+# package outline, p. 29 example board layout, p. 30 example stencil design; DQA0010B drawing 4230307/A 12/2023,
+# PDF pp. 31-33 (PDF page numbers of the cached tpd4e05u06.pdf). Read from 150 dpi renders.
+
+[part]
+mpn = "TPD4E05U06DQAR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPD4E05U06DQAR"
+reference = "U"
+description = "4-channel ESD protection, 0.5 pF, 5.5 V stand-off, IEC 61000-4-2 level 4, flow-through routing, USON-10 (DQA0010A) 1 x 2.5 mm"
+keywords = "ESD TVS protection USB high-speed low capacitance TPD4E05U06 USON DQA"
+datasheet = "https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf"
+datasheet_rev = "SLVSBO7O"
+sheet = "Texas-Instruments/TPD4E05U06DQAR.md"
+notes = [
+  "Land pattern = TI example board layout DQA0010A (SLVSBO7O p. 29): ten pads 10X (0.565) long, 8X (0.2) wide signal pads and 2X (0.4) wide centre GND pads (3, 8), 4X (0.5) pitch, (0.835) between the column centres, (R0.05) TYP. Pins 1-5 left top to bottom, 6-10 right bottom to top (top view).",
+  "Stencil (p. 30, 0.1 mm): apertures equal the signal pads; pads 3 and 8 print 2X (0.36) high x (0.565), 90 % coverage, so they have paste = false and their own apertures.",
+  "DQA0010B (drawing 4230307/A, p. 32) has the same ten pads plus a (0.3) bridge with a (0.2) via joining pads 3 and 8 under the package. Both are GND, so a DQA0010B part also solders on this land (its centre bar over solder mask between pads 3 and 8); which outline a reel ships in is UNVERIFIED (sheet).",
+  "NC pins 6, 7, 9, 10 are passive, not no_connect: Table 4-2 says they are for optional straight-through routing and may float or be grounded, so a net may legitimately reach them.",
+  "Datasheet names use an en dash (D1-, D2- printed as D1–, D2–); the symbol uses ASCII '-'.",
+  "Non-solder-mask-defined pads, 0.07 mm max opening all around (p. 29): the board default mask expansion applies.",
+]
+
+[[pins]]
+number = "1"
+name = "D1+"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "2"
+name = "D1-"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "4"
+name = "D2+"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "5"
+name = "D2-"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "10"
+name = "NC"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "NC"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "7"
+name = "NC"
+type = "passive"
+side = "right"
+gap = true
+
+[[pins]]
+number = "6"
+name = "NC"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "3"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "8"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_DQA0010A_USON-10_1x2.5mm_P0.5mm"
+description = "Texas Instruments DQA0010A USON-10, 1 x 2.5 mm body, 0.5 mm pitch, TI example land pattern and stencil (drawing 4220328/A); also fits DQA0010B"
+tags = "USON SON DQA0010A DQA0010B DQA Texas TPD4E05U06 ESD"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "DQA0010A example board layout and example stencil design, drawing 4220328/A 12/2015 (SLVSBO7O pp. 29-30)"
+body = { x = 1.0, y = 2.5, z = 0.55, standoff = 0.0, cite = "DQA0010A outline (SLVSBO7O p. 28, 4220328/A): 0.9-1.1 x 2.4-2.6, 0.55 MAX height, standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "1"
+at = [-0.4175, -1.0]
+size = [0.565, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSBO7O p. 29: 10X (0.565) x 8X (0.2), 4X (0.5), (0.835) between column centres, (R0.05) TYP (rratio 0.05/0.2); pin 1 top left"
+
+[[footprint.pads]]
+number = "2"
+at = [-0.4175, -0.5]
+size = [0.565, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSBO7O p. 29: 10X (0.565) x 8X (0.2), 4X (0.5), (0.835) between column centres, (R0.05) TYP (rratio 0.05/0.2)"
+
+[[footprint.pads]]
+number = "3"
+at = [-0.4175, 0.0]
+size = [0.565, 0.4]
+shape = "roundrect"
+rratio = 0.125
+type = "smd"
+paste = false
+cite = "SLVSBO7O p. 29: centre GND pad 2X (0.4) x (0.565), (R0.05) TYP (rratio 0.05/0.4)"
+
+[[footprint.pads]]
+number = "4"
+at = [-0.4175, 0.5]
+size = [0.565, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSBO7O p. 29: 10X (0.565) x 8X (0.2), 4X (0.5), (0.835) between column centres, (R0.05) TYP (rratio 0.05/0.2)"
+
+[[footprint.pads]]
+number = "5"
+at = [-0.4175, 1.0]
+size = [0.565, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSBO7O p. 29: 10X (0.565) x 8X (0.2), 4X (0.5), (0.835) between column centres, (R0.05) TYP (rratio 0.05/0.2)"
+
+[[footprint.pads]]
+number = "6"
+at = [0.4175, 1.0]
+size = [0.565, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSBO7O p. 29: 10X (0.565) x 8X (0.2), 4X (0.5), (0.835) between column centres, (R0.05) TYP (rratio 0.05/0.2); pins 6-10 right, bottom to top"
+
+[[footprint.pads]]
+number = "7"
+at = [0.4175, 0.5]
+size = [0.565, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSBO7O p. 29: 10X (0.565) x 8X (0.2), 4X (0.5), (0.835) between column centres, (R0.05) TYP (rratio 0.05/0.2)"
+
+[[footprint.pads]]
+number = "8"
+at = [0.4175, 0.0]
+size = [0.565, 0.4]
+shape = "roundrect"
+rratio = 0.125
+type = "smd"
+paste = false
+cite = "SLVSBO7O p. 29: centre GND pad 2X (0.4) x (0.565)"
+
+[[footprint.pads]]
+number = "9"
+at = [0.4175, -0.5]
+size = [0.565, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSBO7O p. 29: 10X (0.565) x 8X (0.2), 4X (0.5), (0.835) between column centres, (R0.05) TYP (rratio 0.05/0.2)"
+
+[[footprint.pads]]
+number = "10"
+at = [0.4175, -1.0]
+size = [0.565, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSBO7O p. 29: 10X (0.565) x 8X (0.2), 4X (0.5), (0.835) between column centres, (R0.05) TYP (rratio 0.05/0.2)"
+
+[[footprint.paste]]
+start = [-0.4175, 0.0]
+pitch = [0.835, 0.0]
+count = [2, 1]
+size = [0.565, 0.36]
+rratio = 0.139
+cite = "SLVSBO7O p. 30: pads 3 and 8 apertures 2X (0.36) x (0.565), 90 % printed coverage"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.5
+cite = "SLVSBO7O p. 29, 4X (0.5)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "10"
+value = 0.835
+cite = "SLVSBO7O p. 29, (0.835)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "5"
+value = 2.0
+cite = "SLVSBO7O p. 29, 4 x 0.5 pitch"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.565, 0.2]
+cite = "SLVSBO7O p. 29, 10X (0.565), 8X (0.2)"
+
+[[checks]]
+kind = "pad_size"
+a = "3"
+value = [0.565, 0.4]
+cite = "SLVSBO7O p. 29, 10X (0.565), 2X (0.4)"
+
+[[checks]]
+kind = "pad_count"
+value = 10
+cite = "SLVSBO7O p. 28: ten terminals, no exposed pad"

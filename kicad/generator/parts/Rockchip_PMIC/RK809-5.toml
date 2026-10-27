@@ -1,0 +1,745 @@
+# RK809-5 PMIC, QFN68 7 x 7 mm, 0.35 mm pitch.
+# Source: Rockchip RK809 Datasheet Rev 1.01 (2018-08-28); page numbers are PDF page numbers (= printed footers).
+# The datasheet gives package dimensions only (p. 13, Fig. 2-1); no land pattern, stencil or via pattern.
+# The land pattern below is DERIVED per IPC-7351B nominal density (land_pattern = "ipc7351b").
+#
+# Package (p. 13, Fig. 2-1 table, checked against the rendered drawing):
+#   D = E = 7 BSC; L = 0.30 / 0.40 / 0.50; b = 0.10 / 0.15 / 0.20; e = 0.35 BSC;
+#   D1 = E1 (EP) = 5.39 / 5.49 / 5.59; A = 0.70 / 0.75 / 0.80; A1 = 0 / 0.035 / 0.05.
+#   17 terminals per side (68 / 4), pin 1 top of left side, numbering counter-clockwise viewed from the top
+#   (Fig. 2-2, p. 14; bottom view in Fig. 2-1 shows the mirror: 1 top-right, 17/18 bottom-right, 34/35 bottom-left, 51/52 top-left).
+#
+# IPC-7351B derivation (nominal density). J values as tabulated for IPC-7351B nominal density; UNVERIFIED against the standard text:
+#   Jt (toe) = 0.30, Jh (heel) = 0.00, Js (side) = -0.04; F (fabrication) = 0.05, P (placement) = 0.05.
+#   Outer terminal span Lspan = D = 7.00 (BSC, Ltol = 0 taken; the drawing gives no tolerance on D).
+#   Zmax = Lmin + 2 Jt + sqrt(Ltol^2 + F^2 + P^2) = 7.00 + 0.60 + 0.0707 = 7.6707 -> 7.67
+#   Smin = D - 2 Lmax = 6.00; Smax = D - 2 Lmin = 6.40; Stol = 0.40
+#   Stol(RMS) = sqrt(Ltol^2 + 2 Ttol^2) = sqrt(0 + 2 * 0.20^2) = 0.2828; Smax(RMS) = Smax - (Stol - Stol(RMS))/2 = 6.3414
+#   Gmin = Smax(RMS) - 2 Jh - sqrt(Stol(RMS)^2 + F^2 + P^2) = 6.3414 - 0 - 0.2915 = 6.0499 -> 6.05
+#   Xmax = Wmin + 2 Js + sqrt(Wtol^2 + F^2 + P^2) = 0.10 - 0.08 + 0.1225 = 0.1425 -> 0.14
+#   Pad length = (Z - G)/2 = 0.81; pad centre = (Z + G)/4 = 3.43; pad width 0.14.
+#   Copper gap between adjacent pads = 0.35 - 0.14 = 0.21. Inner pad edge 3.025 vs EP edge 2.745: 0.28 clearance.
+#   Corner check: last pad of a row ends at 2.80 + 0.07 = 2.87 < 3.025 (inner edge of the adjacent row): no overlap.
+#
+# Exposed pad: land = nominal EP 5.49 x 5.49 (OpenDAP choice, the datasheet gives no land).
+# EP paste: 4 x 4 apertures 1.00 x 1.00 at 1.45 pitch = 16.0 mm^2 / 30.14 mm^2 = 53 % coverage (OpenDAP choice).
+# Thermal vias: 3 x 3 at 1.45 pitch, drill 0.20, diameter 0.40, placed at the intersections of the 0.45 mm
+#   paste-free channels between apertures (0.025 mm clearance to each aperture) (OpenDAP choice).
+
+[part]
+mpn = "RK809-5"
+second_source = "Rockchip RK817-5 (BOM v1 line 2)"
+manufacturer = "Rockchip"
+library = "Rockchip_PMIC"
+symbol = "RK809-5"
+reference = "U"
+description = "PMIC: five synchronous bucks, nine LDOs, two power switches, RTC with 32.768 kHz output, fuel gauge, audio codec; QFN68 7 x 7 mm, 0.35 mm pitch, exposed ground pad"
+keywords = "PMIC buck LDO RTC codec fuel gauge RK809 Rockchip QFN68"
+datasheet = "https://rockchip.fr/RK809%20datasheet%20V1.01.pdf"
+datasheet_rev = "Rev 1.01"
+sheet = "Rockchip/RK809-5.md"
+notes = [
+  "Land pattern derived per IPC-7351B nominal density from Fig. 2-1 (p. 13): the datasheet has no recommended land pattern. J values UNVERIFIED against the standard text.",
+  "0.35 mm pitch: pads 0.14 mm wide leave a 0.21 mm copper gap. With a 0.05 mm solder-mask expansion per side the mask web is 0.11 mm, at or below many fabs' minimum mask sliver (fab-dependent, UNVERIFIED). Confirm with the fab: either a tighter mask expansion (e.g. 0.025 mm -> 0.16 mm web) or a gang (no-web) mask opening per side. Not decided here.",
+  "IPC side-fillet formula with b = 0.10-0.20 gives X = 0.14 mm, narrower than the nominal lead (0.15). Review whether a 0.15-0.17 mm pad is preferred; a wider pad shrinks the mask web further.",
+  "Exposed-pad land (nominal EP 5.49 mm), paste apertures (4 x 4, 1.00 mm at 1.45 mm, 53 %) and thermal vias (3 x 3, 0.20/0.40 mm at 1.45 mm) are an OpenDAP choice, not from the datasheet. 0.20 mm drills need the fab's small-via capability; tenting/plugging of the vias UNVERIFIED (not decided).",
+  "Package D/E given as 7 BSC with no tolerance; Ltol = 0 used in the derivation.",
+  "Pins 42/43: Fig. 2-2 (p. 14) names MIC1N/MIC1P, the pin table (p. 15) MICIN/MICIP; symbol uses MIC1N/MIC1P, sheet_name keeps the sheet text.",
+  "EP named GND in the symbol (sheet: 'Exposed pad', type G, ground).",
+]
+
+[[pins]]
+number = "1"
+name = "SCL"
+type = "input"
+unit = 3
+side = "left"
+gap = false
+
+[[pins]]
+number = "2"
+name = "SDA"
+type = "bidirectional"
+unit = 3
+side = "left"
+gap = false
+
+[[pins]]
+number = "49"
+name = "SLEEP"
+type = "input"
+unit = 3
+side = "left"
+gap = true
+
+[[pins]]
+number = "52"
+name = "PWRON"
+type = "input"
+unit = 3
+side = "left"
+gap = false
+
+[[pins]]
+number = "61"
+name = "VDC"
+type = "input"
+unit = 3
+side = "left"
+gap = false
+
+[[pins]]
+number = "50"
+name = "XIN"
+type = "passive"
+unit = 3
+side = "left"
+gap = true
+
+[[pins]]
+number = "51"
+name = "XOUT"
+type = "passive"
+unit = 3
+side = "left"
+gap = false
+
+[[pins]]
+number = "14"
+name = "LRCLK"
+type = "bidirectional"
+unit = 4
+side = "left"
+gap = true
+
+[[pins]]
+number = "15"
+name = "BCLK"
+type = "bidirectional"
+unit = 4
+side = "left"
+gap = false
+
+[[pins]]
+number = "16"
+name = "MCLK"
+type = "input"
+unit = 4
+side = "left"
+gap = false
+
+[[pins]]
+number = "17"
+name = "SDI"
+type = "input"
+unit = 4
+side = "left"
+gap = false
+
+[[pins]]
+number = "42"
+name = "MIC1N"
+type = "input"
+unit = 4
+side = "left"
+gap = true
+sheet_name = "MICIN (MIC1N)"
+
+[[pins]]
+number = "43"
+name = "MIC1P"
+type = "input"
+unit = 4
+side = "left"
+gap = false
+sheet_name = "MICIP (MIC1P)"
+
+[[pins]]
+number = "40"
+name = "HP_SNS"
+type = "input"
+unit = 4
+side = "left"
+gap = false
+
+[[pins]]
+number = "56"
+name = "BATDIV"
+type = "input"
+unit = 3
+side = "left"
+gap = true
+
+[[pins]]
+number = "62"
+name = "SNSP"
+type = "input"
+unit = 3
+side = "left"
+gap = false
+
+[[pins]]
+number = "63"
+name = "SNSN"
+type = "input"
+unit = 3
+side = "left"
+gap = false
+
+[[pins]]
+number = "12"
+name = "SW1"
+type = "output"
+unit = 1
+side = "right"
+gap = false
+
+[[pins]]
+number = "13"
+name = "FB1"
+type = "input"
+unit = 1
+side = "right"
+gap = false
+
+[[pins]]
+number = "9"
+name = "SW2"
+type = "output"
+unit = 1
+side = "right"
+gap = true
+
+[[pins]]
+number = "8"
+name = "FB2"
+type = "input"
+unit = 1
+side = "right"
+gap = false
+
+[[pins]]
+number = "25"
+name = "SW3"
+type = "output"
+unit = 1
+side = "right"
+gap = true
+
+[[pins]]
+number = "27"
+name = "FB3"
+type = "input"
+unit = 1
+side = "right"
+gap = false
+
+[[pins]]
+number = "26"
+name = "VBUCK3"
+type = "input"
+unit = 1
+side = "right"
+gap = false
+
+[[pins]]
+number = "65"
+name = "SW4"
+type = "output"
+unit = 1
+side = "right"
+gap = true
+
+[[pins]]
+number = "64"
+name = "FB4"
+type = "input"
+unit = 1
+side = "right"
+gap = false
+
+[[pins]]
+number = "53"
+name = "SW5"
+type = "output"
+unit = 1
+side = "right"
+gap = true
+
+[[pins]]
+number = "59"
+name = "FB5"
+type = "input"
+unit = 1
+side = "right"
+gap = false
+
+[[pins]]
+number = "23"
+name = "LDO1"
+type = "power_out"
+unit = 2
+side = "right"
+gap = true
+
+[[pins]]
+number = "21"
+name = "LDO2"
+type = "power_out"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "20"
+name = "LDO3"
+type = "power_out"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "28"
+name = "LDO4"
+type = "power_out"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "29"
+name = "LDO5"
+type = "power_out"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "31"
+name = "LDO6"
+type = "power_out"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "3"
+name = "LDO7"
+type = "power_out"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "5"
+name = "LDO8"
+type = "power_out"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "6"
+name = "LDO9"
+type = "power_out"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "55"
+name = "SWOUT1"
+type = "power_out"
+unit = 2
+side = "right"
+gap = true
+
+[[pins]]
+number = "58"
+name = "SWOUT2"
+type = "power_out"
+unit = 2
+side = "right"
+gap = false
+
+[[pins]]
+number = "7"
+name = "INT"
+type = "open_collector"
+unit = 3
+side = "right"
+gap = true
+
+[[pins]]
+number = "67"
+name = "RESETB"
+type = "open_collector"
+unit = 3
+side = "right"
+gap = false
+
+[[pins]]
+number = "68"
+name = "CLK32K"
+type = "open_collector"
+unit = 3
+side = "right"
+gap = false
+
+[[pins]]
+number = "60"
+name = "EXT_EN"
+type = "output"
+unit = 3
+side = "right"
+gap = false
+
+[[pins]]
+number = "18"
+name = "SDO/PDMDATA"
+type = "output"
+unit = 4
+side = "right"
+gap = true
+
+[[pins]]
+number = "19"
+name = "PDMCLK"
+type = "output"
+unit = 4
+side = "right"
+gap = false
+
+[[pins]]
+number = "32"
+name = "SPKP_OUT"
+type = "output"
+unit = 4
+side = "right"
+gap = true
+
+[[pins]]
+number = "34"
+name = "SPKN_OUT"
+type = "output"
+unit = 4
+side = "right"
+gap = false
+
+[[pins]]
+number = "39"
+name = "HPL_OUT"
+type = "output"
+unit = 4
+side = "right"
+gap = false
+
+[[pins]]
+number = "41"
+name = "HPR_OUT"
+type = "output"
+unit = 4
+side = "right"
+gap = false
+
+[[pins]]
+number = "37"
+name = "CPP"
+type = "passive"
+unit = 4
+side = "right"
+gap = true
+
+[[pins]]
+number = "36"
+name = "CPN"
+type = "passive"
+unit = 4
+side = "right"
+gap = false
+
+[[pins]]
+number = "38"
+name = "VCC_CPVDD"
+type = "power_out"
+unit = 4
+side = "right"
+gap = false
+
+[[pins]]
+number = "35"
+name = "VCC_CPVSS"
+type = "power_out"
+unit = 4
+side = "right"
+gap = false
+
+[[pins]]
+number = "44"
+name = "VCC_1P8A"
+type = "power_out"
+unit = 3
+side = "right"
+gap = true
+
+[[pins]]
+number = "48"
+name = "VCC_1P8D"
+type = "power_out"
+unit = 3
+side = "right"
+gap = false
+
+[[pins]]
+number = "46"
+name = "VREF"
+type = "passive"
+unit = 3
+side = "right"
+gap = false
+
+[[pins]]
+number = "45"
+name = "VCC_RTC"
+type = "passive"
+unit = 3
+side = "right"
+gap = false
+
+[[pins]]
+number = "11"
+name = "VCC1"
+type = "power_in"
+unit = 1
+side = "top"
+gap = false
+
+[[pins]]
+number = "10"
+name = "VCC2"
+type = "power_in"
+unit = 1
+side = "top"
+gap = false
+
+[[pins]]
+number = "24"
+name = "VCC3"
+type = "power_in"
+unit = 1
+side = "top"
+gap = false
+
+[[pins]]
+number = "66"
+name = "VCC4"
+type = "power_in"
+unit = 1
+side = "top"
+gap = false
+
+[[pins]]
+number = "22"
+name = "VCC5"
+type = "power_in"
+unit = 2
+side = "top"
+gap = true
+
+[[pins]]
+number = "30"
+name = "VCC6"
+type = "power_in"
+unit = 2
+side = "top"
+gap = false
+
+[[pins]]
+number = "4"
+name = "VCC7"
+type = "power_in"
+unit = 2
+side = "top"
+gap = false
+
+[[pins]]
+number = "57"
+name = "VCC8"
+type = "power_in"
+unit = 2
+side = "top"
+gap = false
+
+[[pins]]
+number = "54"
+name = "VCC9"
+type = "power_in"
+unit = 1
+side = "top"
+gap = false
+
+[[pins]]
+number = "33"
+name = "VCC_SPK_HP"
+type = "power_in"
+unit = 4
+side = "top"
+gap = true
+
+[[pins]]
+number = "47"
+name = "GNDREF"
+type = "power_in"
+unit = 3
+side = "bottom"
+gap = false
+
+[[pins]]
+number = "EP"
+name = "GND"
+type = "power_in"
+unit = 3
+side = "bottom"
+gap = false
+sheet_name = "Exposed pad"
+
+[footprint]
+name = "QFN-68-1EP_7x7mm_P0.35mm_EP5.49x5.49mm_ThermalVias"
+description = "QFN-68 7 x 7 mm, 0.35 mm pitch, exposed pad 5.49 x 5.49 mm, thermal vias; land pattern derived per IPC-7351B nominal from RK809 Datasheet Rev 1.01 p. 13 Fig. 2-1"
+tags = "QFN 68 0.35 RK809 PMIC"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "ipc7351b"
+land_pattern_cite = "RK809 Datasheet Rev 1.01 p. 13, Fig. 2-1 (package dimensions); IPC-7351B nominal derivation in comments"
+body = { x = 7.0, y = 7.0, z = 0.75, standoff = 0.035, cite = "Rev 1.01 p. 13, Fig. 2-1, D = E = 7 BSC, A nom 0.75, A1 nom 0.035" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "EP"
+at = [0.0, 0.0]
+size = [5.49, 5.49]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "Rev 1.01 p. 13, Fig. 2-1, D1 = E1 nom 5.49 (land = nominal EP, OpenDAP choice)"
+
+[[footprint.rows]]
+first = 1
+count = 17
+step = 1
+start = [-3.43, -2.8]
+pitch = [0, 0.35]
+size = [0.81, 0.14]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "Rev 1.01 p. 13, Fig. 2-1 e = 0.35 BSC; pad 0.81 x 0.14 at 3.43 from IPC-7351B nominal derivation (see comments)"
+
+[[footprint.rows]]
+first = 18
+count = 17
+step = 1
+start = [-2.8, 3.43]
+pitch = [0.35, 0]
+size = [0.14, 0.81]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "Rev 1.01 p. 13, Fig. 2-1 e = 0.35 BSC; pad 0.81 x 0.14 at 3.43 from IPC-7351B nominal derivation (see comments)"
+
+[[footprint.rows]]
+first = 35
+count = 17
+step = 1
+start = [3.43, 2.8]
+pitch = [0, -0.35]
+size = [0.81, 0.14]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "Rev 1.01 p. 13, Fig. 2-1 e = 0.35 BSC; pad 0.81 x 0.14 at 3.43 from IPC-7351B nominal derivation (see comments)"
+
+[[footprint.rows]]
+first = 52
+count = 17
+step = 1
+start = [2.8, -3.43]
+pitch = [-0.35, 0]
+size = [0.14, 0.81]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "Rev 1.01 p. 13, Fig. 2-1 e = 0.35 BSC; pad 0.81 x 0.14 at 3.43 from IPC-7351B nominal derivation (see comments)"
+
+[[footprint.paste]]
+start = [-2.175, -2.175]
+pitch = [1.45, 1.45]
+count = [4, 4]
+size = [1.0, 1.0]
+cite = "OpenDAP choice (datasheet gives no stencil): 53 % EP paste coverage"
+
+[[footprint.vias]]
+number = "EP"
+start = [-1.45, -1.45]
+pitch = [1.45, 1.45]
+count = [3, 3]
+drill = 0.2
+diameter = 0.4
+cite = "OpenDAP choice (datasheet gives no via pattern), UNVERIFIED thermal adequacy for 2 W (p. 16)"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.35
+cite = "Rev 1.01 p. 13, Fig. 2-1, e = 0.35 BSC"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "17"
+value = 5.6
+cite = "Rev 1.01 p. 13, Fig. 2-1, 16 x e = 16 x 0.35 (17 terminals per side)"
+
+[[checks]]
+kind = "dx"
+a = "18"
+b = "34"
+value = 5.6
+cite = "Rev 1.01 p. 13, Fig. 2-1, 16 x e, bottom row left to right"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "51"
+value = 6.86
+cite = "IPC-7351B derivation from Rev 1.01 p. 13, Fig. 2-1: (Z + G)/2 = (7.67 + 6.05)/2"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.81, 0.14]
+cite = "IPC-7351B derivation from Rev 1.01 p. 13, Fig. 2-1: (Z - G)/2 x X"
+
+[[checks]]
+kind = "pad_size"
+a = "EP"
+value = [5.49, 5.49]
+cite = "Rev 1.01 p. 13, Fig. 2-1, D1 = E1 nom 5.49"
+
+[[checks]]
+kind = "pad_count"
+value = 69
+cite = "Rev 1.01 p. 13, Fig. 2-1 and Fig. 2-2 p. 14: 68 terminals + exposed pad"
+
+[[units]]
+name = "BUCK"
+
+[[units]]
+name = "LDO and switches"
+
+[[units]]
+name = "Control"
+
+[[units]]
+name = "Codec (unused in the T1)"

@@ -1,0 +1,31 @@
+{
+  "boxes": [
+    {
+      "at": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        12.0,
+        6.3,
+        4.0
+      ]
+    },
+    {
+      "at": [
+        -6.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.0,
+        5.0,
+        4.3
+      ]
+    }
+  ],
+  "library": "Same_Sky",
+  "name": "Same_Sky_SJ2-35954D-SMT-TR_Jack_3.5mm_TRRS_Horizontal",
+  "source": "envelope from SJ2-3595X-SMT rev 1.05 p. 2: side view 14.0 overall incl. 2.00 nose; front view 6.3 wide, 4.00 +/-0.2 high"
+}

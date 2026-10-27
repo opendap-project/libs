@@ -1,0 +1,854 @@
+# DF40C-100DS-0.4V(51): Hirose DF40 receptacle, 100 contacts, 0.4 mm pitch, double row, vertical SMT, 1.5 mm stacking
+# height, style C (without reinforcing metal fitting). HRS No. 684-4033-4 51. Placed on the FPC ends of the HAT flat cable.
+# Source: DF40 cat. = Hirose DF40 Series catalog, May 1, 2020, p. 4, "Receptacle (Stacking height 1.5mm)" and
+#   "Recommended PCB layout", left view "DF40C (Without reinforcing metal fitting)" [PDF page 4]. No receptacle drawing in the cache.
+#   Read from a 300 dpi render.
+# Geometry:
+#   Lands 0.2 +/- 0.02 wide at P = 0.4 +/- 0.02; outer edge to edge 3.78 (+0.05/0), inner 2.38 (0/-0.05)
+#     -> land length (3.78 - 2.38)/2 = 0.70, land centre y = +/-(3.78 + 2.38)/4 = +/-1.54 (rows 3.08 apart).
+#   Span B = 19.6 +/- 0.02 (table, 100 contacts) = 49 x 0.4 -> 50 lands per row; B runs from the first to the last land:
+#     DF40C has no hold-down lands (those, 1.2 +/- 0.02 outboard, belong to the DF40B layout on the right of the same figure).
+#   1.5 max resist-coating area between rows (note 3): not encoded.
+#   Body: A = 22.6 +/- 0.2, 2.88 +/- 0.2 housing width (3.38 +/- 0.2 over leads), D = 1.45 +/- 0.15 height (table).
+# Orientation: as drawn (long axis horizontal, triangle mark at the left end); origin at the land-pattern centre.
+
+[part]
+mpn = "DF40C-100DS-0.4V(51)"
+manufacturer = "Hirose"
+library = "Hirose"
+symbol = "DF40C-100DS-0.4V(51)"
+reference = "J"
+description = "DF40 board-to-FPC receptacle, 100 contacts, 0.4 mm pitch, 2 rows, 1.5 mm stack with DF40C-100DP, vertical SMT, no metal fitting"
+keywords = "connector board-to-board board-to-FPC receptacle DF40 DF40C 100DS 0.4mm Hirose"
+datasheet = "https://www.hirose.com/en/product/document?clcode=&productname=&series=DF40&documenttype=Catalog&lang=en&documentid=en_DF40_CAT"
+datasheet_rev = "DF40 catalog 2020-05-01 (p. 4)"
+sheet = "Hirose/DF40C-100DS-DP-0.4V.md"
+sheet_pins = "none: the sheet lists no per-contact table; contacts numbered 1-100 in the odd/even convention of the footprint (UNVERIFIED against a Hirose numbering), checked by pad_count"
+notes = [
+  "Contact numbering is not given in the DF40 catalog or in drawing EDC3-311351-00, and the parts-lib sheet has no pin table: UNVERIFIED. The footprint uses the KiCad 2-row convention, odd contacts on the upper row and even on the lower row, 1/2 at the end carrying the moulded triangle mark (left in the catalog/drawing views). Header and receptacle face each other when mated, so pin n on one side does not land on pin n on the other with the same convention: map the nets through the mating, not by number, until Hirose's numbering is confirmed.",
+  "Land pattern from the catalog only (DF40 cat. p. 4, DF40C view); no Hirose drawing for the receptacle is cached. Worth checking against the receptacle drawing when obtained.",
+  "Resist-coating area 1.5 mm max between the rows (cat. p. 4 note 3) is not encoded in the footprint.",
+  "Placed on an FPC: stiffener under the receptacle per the sheet (specification UNVERIFIED).",
+]
+
+# Two units of 50 contacts by group (CRAFT-126: at most 64 pins per unit): contacts 1-50 and 51-100.
+[[units]]
+name = "Contacts 1-50"
+
+[[units]]
+name = "Contacts 51-100"
+
+[[pins]]
+number = "1"
+name = "Pin_1"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "2"
+name = "Pin_2"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "3"
+name = "Pin_3"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "4"
+name = "Pin_4"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "5"
+name = "Pin_5"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "6"
+name = "Pin_6"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "7"
+name = "Pin_7"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "8"
+name = "Pin_8"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "9"
+name = "Pin_9"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "10"
+name = "Pin_10"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "11"
+name = "Pin_11"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "12"
+name = "Pin_12"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "13"
+name = "Pin_13"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "14"
+name = "Pin_14"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "15"
+name = "Pin_15"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "16"
+name = "Pin_16"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "17"
+name = "Pin_17"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "18"
+name = "Pin_18"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "19"
+name = "Pin_19"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "20"
+name = "Pin_20"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "21"
+name = "Pin_21"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "22"
+name = "Pin_22"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "23"
+name = "Pin_23"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "24"
+name = "Pin_24"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "25"
+name = "Pin_25"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "26"
+name = "Pin_26"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "27"
+name = "Pin_27"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "28"
+name = "Pin_28"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "29"
+name = "Pin_29"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "30"
+name = "Pin_30"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "31"
+name = "Pin_31"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "32"
+name = "Pin_32"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "33"
+name = "Pin_33"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "34"
+name = "Pin_34"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "35"
+name = "Pin_35"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "36"
+name = "Pin_36"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "37"
+name = "Pin_37"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "38"
+name = "Pin_38"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "39"
+name = "Pin_39"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "40"
+name = "Pin_40"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "41"
+name = "Pin_41"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "42"
+name = "Pin_42"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "43"
+name = "Pin_43"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "44"
+name = "Pin_44"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "45"
+name = "Pin_45"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "46"
+name = "Pin_46"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "47"
+name = "Pin_47"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "48"
+name = "Pin_48"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "49"
+name = "Pin_49"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "50"
+name = "Pin_50"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "51"
+unit = 2
+name = "Pin_51"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "52"
+unit = 2
+name = "Pin_52"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "53"
+unit = 2
+name = "Pin_53"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "54"
+unit = 2
+name = "Pin_54"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "55"
+unit = 2
+name = "Pin_55"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "56"
+unit = 2
+name = "Pin_56"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "57"
+unit = 2
+name = "Pin_57"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "58"
+unit = 2
+name = "Pin_58"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "59"
+unit = 2
+name = "Pin_59"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "60"
+unit = 2
+name = "Pin_60"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "61"
+unit = 2
+name = "Pin_61"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "62"
+unit = 2
+name = "Pin_62"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "63"
+unit = 2
+name = "Pin_63"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "64"
+unit = 2
+name = "Pin_64"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "65"
+unit = 2
+name = "Pin_65"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "66"
+unit = 2
+name = "Pin_66"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "67"
+unit = 2
+name = "Pin_67"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "68"
+unit = 2
+name = "Pin_68"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "69"
+unit = 2
+name = "Pin_69"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "70"
+unit = 2
+name = "Pin_70"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "71"
+unit = 2
+name = "Pin_71"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "72"
+unit = 2
+name = "Pin_72"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "73"
+unit = 2
+name = "Pin_73"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "74"
+unit = 2
+name = "Pin_74"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "75"
+unit = 2
+name = "Pin_75"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "76"
+unit = 2
+name = "Pin_76"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "77"
+unit = 2
+name = "Pin_77"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "78"
+unit = 2
+name = "Pin_78"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "79"
+unit = 2
+name = "Pin_79"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "80"
+unit = 2
+name = "Pin_80"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "81"
+unit = 2
+name = "Pin_81"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "82"
+unit = 2
+name = "Pin_82"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "83"
+unit = 2
+name = "Pin_83"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "84"
+unit = 2
+name = "Pin_84"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "85"
+unit = 2
+name = "Pin_85"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "86"
+unit = 2
+name = "Pin_86"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "87"
+unit = 2
+name = "Pin_87"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "88"
+unit = 2
+name = "Pin_88"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "89"
+unit = 2
+name = "Pin_89"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "90"
+unit = 2
+name = "Pin_90"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "91"
+unit = 2
+name = "Pin_91"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "92"
+unit = 2
+name = "Pin_92"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "93"
+unit = 2
+name = "Pin_93"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "94"
+unit = 2
+name = "Pin_94"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "95"
+unit = 2
+name = "Pin_95"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "96"
+unit = 2
+name = "Pin_96"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "97"
+unit = 2
+name = "Pin_97"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "98"
+unit = 2
+name = "Pin_98"
+type = "passive"
+side = "right"
+gap = false
+
+[[pins]]
+number = "99"
+unit = 2
+name = "Pin_99"
+type = "passive"
+side = "left"
+gap = false
+
+[[pins]]
+number = "100"
+unit = 2
+name = "Pin_100"
+type = "passive"
+side = "right"
+gap = false
+
+[footprint]
+name = "Hirose_DF40C-100DS-0.4V_2x50_P0.4mm_Vertical"
+description = "Hirose DF40C-100DS-0.4V(51) receptacle, 2 x 50 contacts, 0.4 mm pitch, 1.5 mm stack, without metal fitting (DF40 catalog p. 4)"
+tags = "connector Hirose DF40 DF40C receptacle board-to-board 0.4mm 100"
+attr = "smd"
+courtyard_class = "connector"
+land_pattern = "manufacturer"
+land_pattern_cite = "DF40 catalog 2020-05-01 p. 4, Recommended PCB layout, DF40C (without reinforcing metal fitting)"
+body = { x = 22.6, y = 2.88, z = 1.45, standoff = 0.0, cite = "DF40 cat. p. 4: A = 22.6 +/- 0.2 (DF40C-100DS), 2.88 +/- 0.2 housing (3.38 over leads), D = 1.45 +/- 0.15" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 50
+step = 2
+start = [-9.8, -1.54]
+pitch = [0.4, 0.0]
+size = [0.2, 0.7]
+shape = "rect"
+type = "smd"
+cite = "DF40 cat. p. 4, Recommended PCB layout, DF40C: 0.2 +/- 0.02 wide, P 0.4, B = 19.6, 3.78 / 2.38 row edges"
+
+[[footprint.rows]]
+first = 2
+count = 50
+step = 2
+start = [-9.8, 1.54]
+pitch = [0.4, 0.0]
+size = [0.2, 0.7]
+shape = "rect"
+type = "smd"
+cite = "DF40 cat. p. 4, Recommended PCB layout, DF40C: 0.2 +/- 0.02 wide, P 0.4, B = 19.6, 3.78 / 2.38 row edges"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "3"
+value = 0.4
+cite = "DF40 cat. p. 4, Recommended PCB layout, DF40C: P = 0.4 +/- 0.02"
+
+[[checks]]
+kind = "dx"
+a = "2"
+b = "100"
+value = 19.6
+cite = "DF40 cat. p. 4, Recommended PCB layout, DF40C: B +/- 0.02, table B = 19.6 for DF40C-100DS-0.4V(51)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "2"
+value = 3.08
+cite = "DF40 cat. p. 4, Recommended PCB layout, DF40C: (3.78 + 2.38)/2 between row centres"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.2, 0.7]
+cite = "DF40 cat. p. 4, Recommended PCB layout, DF40C: 0.2 +/- 0.02 wide; (3.78 - 2.38)/2 = 0.70 long"
+
+[[checks]]
+kind = "pad_count"
+value = 100
+cite = "DF40 cat. p. 4, DF40C-100DS-0.4V(51): 100 contacts"

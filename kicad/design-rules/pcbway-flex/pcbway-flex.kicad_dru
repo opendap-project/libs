@@ -1,0 +1,72 @@
+(version 1)
+# OpenDAP fab rules: PCBWay flexible PCB (FPC)
+#
+# Process: PCBWay FPC, adhesiveless polyimide, 1-12 layers, ENIG, coverlay,
+# stiffeners under connectors. Every rule applies to all copper layers:
+# PCBWay publishes one figure for inner and outer flex layers. See README.md
+# for the stackup, what DRC cannot check (bend radius, coverlay web,
+# stiffeners), and the values still UNVERIFIED.
+#
+# Every value is a PCBWay published figure, copied in
+# design-rules/pcbway-capabilities.md (pages fetched 2026-10-22) and
+# cited by its source key:
+#   [P1]  https://www.pcbway.com/capabilities.html
+#   [P5]  https://www.pcbway.com/fpc-rigid-flex-pcb/flex-pcb.html
+#   [P13] https://www.pcbway.com/flexible.aspx
+# Where PCBWay gives a normal value and a tighter limit, the rule uses the
+# normal value. A product that needs the limit overrides the rule in its own
+# product rules, in a named area or net class.
+#
+# Mil figures are written in mil (1 mil = 0.0254 mm), exactly as published.
+# KiCad applies the LAST matching rule for a constraint: general rules come
+# first, specific ones after them.
+#
+# Use: copy next to the KiCad project as <project>.kicad_dru.
+
+
+# --- Copper clearance and track width ---
+
+# Track/space: 3/3 mil as this set's default (2/2 mil on the page and
+# 0.06 mm on the order form are the floor and stay product overrides).
+# [P5, P13]
+(rule "PCBWay flex: Copper clearance"
+	(constraint clearance (min 3mil))
+)
+
+# Track width: 3 mil. [P5, P13]
+(rule "PCBWay flex: Track width"
+	(constraint track_width (min 3mil))
+)
+
+
+# --- Holes and pads ---
+
+# Hole >= 0.15 mm (order form; the page's 4 mil mechanical hole is the floor
+# and stays a product override). Every drilled hole. [P13]
+(rule "PCBWay flex: Drill"
+	(condition "A.Type == 'Pad' || A.Type == 'Via'")
+	(constraint hole_size (min 0.15mm))
+)
+
+# Via pad >= 0.35 mm (hole/pad 0.15/0.35 mm). [P13]
+(rule "PCBWay flex: Via pad diameter"
+	(condition "A.Type == 'Via'")
+	(constraint via_diameter (min 0.35mm))
+)
+
+# Plated-hole pad >= 0.35 mm, the same hole/pad figure applied to
+# through-hole pads. [P13]
+(rule "PCBWay flex: Plated hole pad size"
+	(condition "A.Type == 'Pad' && A.Pad_Type == 'Through-hole'")
+	(constraint assertion "A.Size_X >= 0.35mm && A.Size_Y >= 0.35mm")
+)
+
+
+# --- Outline ---
+
+# Copper to outline: 0.20 mm. UNVERIFIED for flex: PCBWay publishes no flex
+# value; this is the rigid line-to-milled-edge figure, kept until PCBWay's DFM
+# review answers (capability record, constraint 4). [P1]
+(rule "PCBWay flex: Copper to outline (UNVERIFIED)"
+	(constraint edge_clearance (min 0.2mm))
+)

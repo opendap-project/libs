@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        7.8,
+        2.4,
+        3.3
+      ]
+    }
+  ],
+  "library": "KYOCERA_AVX",
+  "name": "KYOCERA_AVX_9258-100_70-9258-001-120-006_SpringFinger_Pad7.0x2.7mm",
+  "source": "envelope from 70-9258-001-1X0-00XS Rev F sheet 2: length 7.8 (side view), base width 2.4 (top view), free height 3.0-3.3 (max used)"
+}

@@ -1,0 +1,270 @@
+# TPD8S300ARUKR - TI USB Type-C port protector: 20 V short-to-VBUS protection on CC1/CC2/SBU1/SBU2, IEC ESD on
+# eight lines, dead-battery Rd, WQFN-20 (RUK0020B) 3 x 3 mm with exposed pad
+# Sources: SLVSEL9 (TPD8S300A datasheet, June 2018), PDF pp. 3-4 (RUK pin configuration, top view, Pin
+# Functions); mechanical addendum drawing 4222676/A 02/2016: PDF p. 33 package outline, p. 34 example board
+# layout, p. 35 example stencil design (PDF page numbers of the cached tpd8s300a.pdf). Read from 150 dpi renders.
+
+[part]
+mpn = "TPD8S300ARUKR"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPD8S300ARUKR"
+reference = "U"
+description = "USB Type-C port protector, 20 V short-to-VBUS overvoltage protection on CC1, CC2, SBU1, SBU2, 8-channel IEC 61000-4-2 ESD, dead-battery Rd, WQFN-20 (RUK0020B) 3 x 3 mm"
+keywords = "USB Type-C protection OVP CC SBU ESD dead battery TPD8S300A WQFN RUK"
+datasheet = "https://www.ti.com/lit/ds/symlink/tpd8s300a.pdf"
+datasheet_rev = "SLVSEL9"
+sheet = "Texas-Instruments/TPD8S300ARUKR.md"
+notes = [
+  "Land pattern = TI example board layout RUK0020B (SLVSEL9 p. 34): 20 pads 20X (0.6) x 20X (0.2) at 16X (0.4) pitch, (2.8) between opposite pad-row centres in both axes, (R0.05) TYP; thermal pad 21 (1.7) square. Top view as drawn: pins 1-5 left top to bottom, 6-10 bottom left to right, 11-15 right bottom to top, 16-20 top right to left (the p. 3 pinout is the same order rotated by 90 degrees).",
+  "Stencil (p. 35, 0.1 mm): signal apertures equal the pads; pad 21 prints through four 4X (0.75) square apertures at (0.47) TYP from the centre lines, 78 % coverage, so pad 21 has paste = false.",
+  "The five optional (0.2) vias in pad 21 (centre and (0.6) TYP from it, note 5) are a layout choice, not part of the footprint.",
+  "Non-solder-mask-defined pads, 0.05 mm max opening all around (p. 34): the board default mask expansion applies.",
+  "Pin types: the OVP FET pass-through pins (C_CC1/2, CC1/2, C_SBU1/2, SBU1/2), RPD_G1/2 and the ESD clamp lines D1-D4 are passive (I/O in the pin table, no driver); VBIAS (Power, a 0.1 uF capacitor to GND only) is passive; FLT is open drain (open_collector).",
+  "Pin 21 is the thermal pad, internally connected to GND; the sheet names it 'Thermal pad' (sheet_name).",
+]
+
+[[pins]]
+number = "4"
+name = "C_CC1"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "C_CC2"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "7"
+name = "RPD_G1"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "6"
+name = "RPD_G2"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "1"
+name = "C_SBU1"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "2"
+name = "C_SBU2"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "20"
+name = "D1"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "19"
+name = "D2"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "17"
+name = "D3"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "16"
+name = "D4"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "12"
+name = "CC1"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "11"
+name = "CC2"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "15"
+name = "SBU1"
+type = "passive"
+side = "right"
+gap = true
+
+[[pins]]
+number = "14"
+name = "SBU2"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "FLT"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "10"
+name = "VPWR"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "3"
+name = "VBIAS"
+type = "passive"
+side = "top"
+
+[[pins]]
+number = "8"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "13"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "18"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "21"
+name = "GND"
+type = "power_in"
+side = "bottom"
+sheet_name = "Thermal pad"
+
+[footprint]
+name = "Texas_RUK0020B_WQFN-20-1EP_3x3mm_P0.4mm_EP1.7x1.7mm"
+description = "Texas Instruments RUK0020B WQFN-20, 3 x 3 mm body, 0.4 mm pitch, 1.7 x 1.7 mm exposed pad, TI example land pattern and stencil (drawing 4222676/A)"
+tags = "WQFN QFN RUK0020B RUK Texas TPD8S300A"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "RUK0020B example board layout and example stencil design, drawing 4222676/A 02/2016 (SLVSEL9 pp. 34-35)"
+body = { x = 3.0, y = 3.0, z = 0.8, standoff = 0.0, cite = "RUK0020B outline (SLVSEL9 p. 33, 4222676/A): 2.9-3.1 x 2.9-3.1, 0.8 MAX height, standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+[[footprint.rows]]
+first = 1
+count = 5
+step = 1
+start = [-1.4, -0.8]
+pitch = [0.0, 0.4]
+size = [0.6, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSEL9 p. 34: 20X (0.6) x 20X (0.2), 16X (0.4), (2.8) between row centres, (R0.05) TYP; pins 1-5 left, top to bottom"
+
+[[footprint.rows]]
+first = 6
+count = 5
+step = 1
+start = [-0.8, 1.4]
+pitch = [0.4, 0.0]
+size = [0.2, 0.6]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSEL9 p. 34: pins 6-10 bottom, left to right"
+
+[[footprint.rows]]
+first = 11
+count = 5
+step = 1
+start = [1.4, 0.8]
+pitch = [0.0, -0.4]
+size = [0.6, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSEL9 p. 34: pins 11-15 right, bottom to top"
+
+[[footprint.rows]]
+first = 16
+count = 5
+step = 1
+start = [0.8, -1.4]
+pitch = [-0.4, 0.0]
+size = [0.2, 0.6]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLVSEL9 p. 34: pins 16-20 top, right to left"
+
+[[footprint.pads]]
+number = "21"
+at = [0.0, 0.0]
+size = [1.7, 1.7]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "SLVSEL9 p. 34: thermal pad (1.7) square, centred (SYMM)"
+
+[[footprint.paste]]
+start = [-0.47, -0.47]
+pitch = [0.94, 0.94]
+count = [2, 2]
+size = [0.75, 0.75]
+cite = "SLVSEL9 p. 35: pad 21 apertures 4X (0.75) square at (0.47) TYP from the centre lines, 78 % printed coverage"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "2"
+value = 0.4
+cite = "SLVSEL9 p. 34, 16X (0.4)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "15"
+value = 2.8
+cite = "SLVSEL9 p. 34, (2.8) between the left and right row centres"
+
+[[checks]]
+kind = "dy"
+a = "20"
+b = "6"
+value = 2.8
+cite = "SLVSEL9 p. 34, (2.8) between the top and bottom row centres"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.6, 0.2]
+cite = "SLVSEL9 p. 34, 20X (0.6), 20X (0.2)"
+
+[[checks]]
+kind = "pad_size"
+a = "21"
+value = [1.7, 1.7]
+cite = "SLVSEL9 p. 34, (1.7) square thermal pad"
+
+[[checks]]
+kind = "pad_count"
+value = 21
+cite = "SLVSEL9 p. 33: 20 terminals and the exposed thermal pad"

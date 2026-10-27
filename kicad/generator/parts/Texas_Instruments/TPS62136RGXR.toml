@@ -1,0 +1,220 @@
+# TPS62136RGXR - TI 4 A buck converter, RGX0011A (VQFN-HR-11, 2 x 3 mm)
+# Sources: SLVSDV2 (TPS62136/TPS621361 datasheet, March 2017), mechanical addendum
+# drawing 4221908/A 10/2015: p. 42 package outline, p. 43 example board layout,
+# p. 44 example stencil design. All three drawings checked against 200 dpi renders.
+
+[part]
+mpn = "TPS62136RGXR"
+second_source = "Texas Instruments TPS62136RGXT (BOM v1 line 113)"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPS62136RGXR"
+reference = "U"
+description = "4 A synchronous step-down converter, 3-17 V input, 0.8-12 V output, DCS-Control, 1 MHz, power good, output discharge, VQFN-HR-11 (RGX0011A) 2 x 3 mm"
+keywords = "buck step-down converter DC-DC DCS-Control 4A TPS62136 VQFN-HR RGX0011A"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps62136.pdf"
+datasheet_rev = "SLVSDV2"
+sheet = "Texas-Instruments/TPS62136RGXR.md"
+notes = [
+  "Land pattern = TI example board layout RGX0011A (SLVSDV2 p. 43). Pads 4-11 are non-solder-mask-defined (metal dimensioned, mask expansion = board default, TI: 0.05 mm max).",
+  "Pads 1-3 (VIN, SW, GND bars) are SOLDER-MASK-DEFINED per p. 43: the dimensioned 3X (2.4) x 3X (0.25) is the mask opening; the metal under the mask is drawn '0.05 MIN all around'. OpenDAP choice: copper = opening + 0.05 mm per side = 2.5 x 0.35 mm, mask_margin = -0.05. The exact copper size is not given (MIN only): UNVERIFIED, review.",
+  "Generator support for a negative per-pad mask_margin is assumed; if not supported, fall back to 2.4 x 0.25 NSMD copper and record the change.",
+  "Stencil (p. 44, 0.125 mm): pads 4-11 apertures = pads (8X (0.25) x 8X (0.6)); pads 1-3 split into 3 apertures each, 9X (0.66) x 9X (0.25), centres (0.86) TYP apart, 80 % printed coverage by area (TI). Pads 1-3 therefore paste = false + [[footprint.paste]].",
+  "Corner radius (R0.05) TYP on pads/apertures (pp. 43-44): rratio 0.2 on 0.25 mm wide pads; the bars use rratio 0.15 on the 0.35 mm copper (0.05 radius approx.), UNVERIFIED for the copper outline under the mask.",
+  "Body z = 1.0 mm is the maximum height ('1 MAX', p. 42); x/y nominal (1.9-2.1 x 2.9-3.1).",
+  "Orientation: as TI's land pattern example (top view): pins 11..8 along the top edge (11 left), bars 1-2-3 top to bottom, pins 4..7 along the bottom edge (4 left); pin 1 index area top-left (p. 42). Pin 1 bar is centred on x = 0, so it is not strictly in the -x/-y quadrant; its row is in -y.",
+  "The datasheet's thermal data (SLVSDV2 p. 5) uses 6 thermal vias on the JEDEC board; the TI land pattern shows no vias, none are added here.",
+]
+
+[[pins]]
+number = "1"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "8"
+name = "EN"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "10"
+name = "MODE"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "11"
+name = "VSEL"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "9"
+name = "SS/TR"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "2"
+name = "SW"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "6"
+name = "VOS"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "5"
+name = "FB"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "4"
+name = "FB2"
+type = "open_collector"
+side = "right"
+
+[[pins]]
+number = "7"
+name = "PG"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "3"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_RGX0011A_VQFN-HR-11_2x3mm_P0.5mm"
+description = "Texas Instruments RGX0011A VQFN-HR-11, 2.0 x 3.0 mm body, 0.5 mm pitch, TI example land pattern and stencil (SLVSDV2 pp. 43-44, drawing 4221908/A)"
+tags = "VQFN-HR QFN RGX0011A TPS62136 Texas"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SLVSDV2 p. 43, RGX0011A example board layout (4221908/A); stencil p. 44"
+body = { x = 2.0, y = 3.0, z = 1.0, standoff = 0.0, cite = "SLVSDV2 p. 42, RGX0011A outline: 1.9-2.1 x 2.9-3.1, 1 MAX (z = max), standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+# Bars 1-3: solder-mask-defined. Opening 3X (2.4) x 3X (0.25), pitch 2X (0.5), centred on SYMM.
+# Copper = opening + 0.05 per side (drawing: 0.05 MIN all around) -> 2.5 x 0.35, mask_margin -0.05.
+[[footprint.pads]]
+number = "1"
+at = [0.0, -0.5]
+size = [2.5, 0.35]
+shape = "roundrect"
+rratio = 0.15
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLVSDV2 p. 43: opening 3X (2.4) x 3X (0.25), 2X (0.5) pitch, SMD pads 1-3 with metal 0.05 MIN beyond opening; copper size UNVERIFIED (OpenDAP choice: exactly 0.05)"
+
+[[footprint.pads]]
+number = "2"
+at = [0.0, 0.0]
+size = [2.5, 0.35]
+shape = "roundrect"
+rratio = 0.15
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLVSDV2 p. 43: as pad 1, on SYMM centreline; copper size UNVERIFIED (OpenDAP choice)"
+
+[[footprint.pads]]
+number = "3"
+at = [0.0, 0.5]
+size = [2.5, 0.35]
+shape = "roundrect"
+rratio = 0.15
+type = "smd"
+paste = false
+mask_margin = -0.05
+cite = "SLVSDV2 p. 43: as pad 1; copper size UNVERIFIED (OpenDAP choice)"
+
+# Bottom edge pins 4..7 (4 left), top edge pins 8..11 (8 right): 8X (0.25) x 8X (0.6),
+# 6X (0.5) pitch, rows (2.8) apart, symmetric about both SYMM centrelines.
+[[footprint.rows]]
+first = 4
+count = 4
+step = 1
+start = [-0.75, 1.4]
+pitch = [0.5, 0.0]
+size = [0.25, 0.6]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SLVSDV2 p. 43: 8X (0.25), 8X (0.6), 6X (0.5), (2.8), (R0.05) TYP"
+
+[[footprint.rows]]
+first = 8
+count = 4
+step = 1
+start = [0.75, -1.4]
+pitch = [-0.5, 0.0]
+size = [0.25, 0.6]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SLVSDV2 p. 43: 8X (0.25), 8X (0.6), 6X (0.5), (2.8), (R0.05) TYP"
+
+# Stencil for pads 1-3: 9 apertures 0.66 x 0.25, x = -0.86 / 0 / +0.86, rows on the bar centres.
+[[footprint.paste]]
+start = [-0.86, -0.5]
+pitch = [0.86, 0.5]
+count = [3, 3]
+size = [0.66, 0.25]
+cite = "SLVSDV2 p. 44: 9X (0.66), 9X (0.25), (0.86) TYP, (0.5) TYP; 80 % printed coverage pads 1-3"
+
+[[checks]]
+kind = "pitch"
+a = "11"
+b = "10"
+value = 0.5
+cite = "SLVSDV2 p. 43, 6X (0.5); p. 42, 6X [0.5]"
+
+[[checks]]
+kind = "dy"
+a = "11"
+b = "4"
+value = 2.8
+cite = "SLVSDV2 p. 43, (2.8)"
+
+[[checks]]
+kind = "dx"
+a = "11"
+b = "8"
+value = 1.5
+cite = "SLVSDV2 p. 42, 2X [1.5]"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "3"
+value = 1.0
+cite = "SLVSDV2 p. 43, 2X (0.5); p. 42, [1]"
+
+[[checks]]
+kind = "pad_size"
+a = "4"
+value = [0.25, 0.6]
+cite = "SLVSDV2 p. 43, 8X (0.25), 8X (0.6)"
+
+[[checks]]
+kind = "pad_size"
+a = "2"
+value = [2.5, 0.35]
+cite = "SLVSDV2 p. 43, opening 3X (2.4) x 3X (0.25) + 0.05 MIN metal all around; UNVERIFIED (OpenDAP choice of exactly 0.05)"
+
+[[checks]]
+kind = "pad_count"
+value = 11
+cite = "SLVSDV2 p. 3, RGX 11-pin VQFN"

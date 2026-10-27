@@ -1,0 +1,443 @@
+# BQ25798RQMR, RQM0029A (VQFN-HR-29, 4 x 4 mm, 0.4 mm pitch, no exposed pad; four L-shaped corner pads).
+# Sources: SLUSDV2C p. 4 (Figure 5-1 pinout, top view; Table 5-1), PDF p. 148 (package outline 4225253/A,
+# bottom view), PDF p. 149 (example board layout, top view, scale 18X), PDF p. 150 (example stencil design,
+# 0.1 mm stencil). Coordinates read from the drawing labels and checked against the PDF vector geometry
+# (18X scale, 51.02 pt/mm, origin at the PKG centre lines). Board layout is a top view: pin 1 top-left
+# (L-shaped), 1..9 down the left side, 10..15 along the bottom, 16..24 up the right side, 25..29 along the top
+# right to left; used as drawn (y down).
+# Stencil apertures on PDF p. 150 are 1:1 with the copper pads (same geometry), so pads keep paste = true.
+
+[part]
+mpn = "BQ25798RQMR"
+second_source = "Texas Instruments BQ25792RQMR (BOM v1 line 39)"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "BQ25798RQMR"
+reference = "U"
+description = "I2C-controlled 1-4 cell 5 A buck-boost battery charger with NVDC power path, dual-input selector, MPPT and backup mode, VQFN-HR-29 (RQM) 4 x 4 mm"
+keywords = "charger buck-boost NVDC li-ion 2S I2C power path VQFN-HR RQM"
+datasheet = "https://www.ti.com/lit/ds/symlink/bq25798.pdf"
+datasheet_rev = "SLUSDV2C"
+sheet = "Texas-Instruments/BQ25798RQMR.md"
+notes = [
+  "ACDRV1 and ACDRV2 passive: SLUSDV2C pin table gives them type P, to be tied to GND when no ACFET-RBFET pair is fitted (pp. 4-5, §7.3.5).",
+  "Land pattern and stencil are TI's example board layout / stencil for RQM0029A (SLUSDV2C PDF pp. 149-150), used as given.",
+  "The four corner pads (pins 1, 9, 16, 24) are L-shaped in the drawing; each is built from two overlapping roundrect pads with the same number (one horizontal leg, one vertical leg). pad_count therefore counts 33 pads (TI labels '33X (0.2)' for the 0.2 mm wide pads and legs).",
+  "Right-side pins 17, 18, 19 are longer inward than the other side pads: (0.7), (0.65), (0.68) [0.675 in the vector geometry], centres (1.85), (1.875), (1.8625).",
+  "Pin 29 (PMID) is 0.95 mm long, centre (1.725); pins 25-28 are 1.0 mm long, centre (1.7).",
+  "Pad corners (R0.05) TYP -> roundrect rratio 0.25 on 0.2 mm wide pads/legs.",
+  "Solder mask: non-solder-mask-defined preferred, 0.05 mm max all around (PDF p. 149); generator default mask expansion applies.",
+  "Datasheet Figure 5-1 draws INT, CE and QON with an overbar (active low); the parts-lib sheet writes them without a bar, so the sheet names are kept.",
+]
+
+# --- Symbol pins (names as in the parts-lib sheet pin table, which matches Table 5-1) ---
+[[pins]]
+number = "2"
+name = "VBUS"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "3"
+name = "VBUS"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "9"
+name = "VAC1"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "8"
+name = "VAC2"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "11"
+name = "ACDRV1"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "10"
+name = "ACDRV2"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "6"
+name = "D+"
+type = "bidirectional"
+side = "left"
+gap = true
+
+[[pins]]
+number = "7"
+name = "D-"
+sheet_name = "D−"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "14"
+name = "SCL"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "15"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "13"
+name = "CE"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "12"
+name = "QON"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "16"
+name = "TS"
+type = "input"
+side = "left"
+gap = true
+
+[[pins]]
+number = "17"
+name = "ILIM_HIZ"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "20"
+name = "PROG"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "29"
+name = "PMID"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "4"
+name = "BTST1"
+type = "passive"
+side = "right"
+gap = true
+
+[[pins]]
+number = "28"
+name = "SW1"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "26"
+name = "SW2"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "19"
+name = "BTST2"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "25"
+name = "SYS"
+type = "power_out"
+side = "right"
+gap = true
+
+[[pins]]
+number = "22"
+name = "BAT"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "23"
+name = "BAT"
+type = "passive"
+side = "right"
+
+[[pins]]
+number = "18"
+name = "BATP"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "24"
+name = "SDRV"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "5"
+name = "REGN"
+type = "power_out"
+side = "right"
+gap = true
+
+[[pins]]
+number = "1"
+name = "STAT"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "21"
+name = "INT"
+type = "open_collector"
+side = "right"
+
+[[pins]]
+number = "27"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "VQFN-HR-29_4x4mm_P0.4mm"
+description = "TI RQM0029A VQFN-HR-29 4x4mm, 0.4mm pitch, no exposed pad, TI example land pattern (SLUSDV2C, 4225253/A)"
+tags = "VQFN-HR RQM0029A RQM 29 0.4mm hotrod"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SLUSDV2C PDF p. 149 (example board layout 4225253/A) and PDF p. 150 (example stencil design)"
+body = { x = 4.0, y = 4.0, z = 0.9, standoff = 0.0, cite = "SLUSDV2C PDF p. 148, outline 4225253/A: 3.9-4.1 x 3.9-4.1, height 0.8-1.0 (nominal midpoints), A1 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+# Pin 1 (L): horizontal leg x -2.2..-1.25, y -1.7..-1.5; vertical leg x -1.45..-1.25, y -2.2..-1.5.
+[[footprint.pads]]
+number = "1"
+at = [-1.725, -1.6]
+size = [0.95, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 2X (0.95) leg length, (1.6) leg centre, (1.9) outer edge; vector geometry"
+
+[[footprint.pads]]
+number = "1"
+at = [-1.35, -1.85]
+size = [0.2, 0.7]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 2X (1.35) leg centre, (1.85) leg centre, (1.9) outer edge; vector geometry x -1.45..-1.25, y -2.2..-1.5"
+
+# Pins 2..8: left side, 0.6 x 0.2, y -1.2..+1.2 at 0.4 pitch, centre x -1.9.
+[[footprint.rows]]
+first = 2
+count = 7
+step = 1
+start = [-1.9, -1.2]
+pitch = [0.0, 0.4]
+size = [0.6, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 17X (0.6), 33X (0.2), 2X (1.2) (0.8) (0.4) from PKG CL, centre (1.9)"
+
+# Pin 9 (L): horizontal leg x -2.2..-1.3, y 1.5..1.7; vertical leg x -1.5..-1.3, y 1.5..2.2.
+[[footprint.pads]]
+number = "9"
+at = [-1.75, 1.6]
+size = [0.9, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 2X (0.9) leg length, (1.6) centre; vector geometry"
+
+[[footprint.pads]]
+number = "9"
+at = [-1.4, 1.85]
+size = [0.2, 0.7]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 2X (1.4) leg centre, (1.85) centre; 4X (0.7) leg length"
+
+# Pins 10..15: bottom, 0.2 x 0.6, x -1.0..+1.0 at 0.4 pitch, centre y 1.9.
+[[footprint.rows]]
+first = 10
+count = 6
+step = 1
+start = [-1.0, 1.9]
+pitch = [0.4, 0.0]
+size = [0.2, 0.6]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 2X (1) (0.6) (0.2) from PKG CL, 17X (0.6), (1.9)"
+
+# Pin 16 (L): mirror of pin 9.
+[[footprint.pads]]
+number = "16"
+at = [1.75, 1.6]
+size = [0.9, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: mirror of pin 9 (vector geometry x 1.3..2.2, y 1.5..1.7)"
+
+[[footprint.pads]]
+number = "16"
+at = [1.4, 1.85]
+size = [0.2, 0.7]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: mirror of pin 9 (vector geometry x 1.3..1.5, y 1.5..2.2)"
+
+# Pins 17..19: right side, longer pads.
+[[footprint.pads]]
+number = "17"
+at = [1.85, 1.2]
+size = [0.7, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: (0.7), (1.85)"
+
+[[footprint.pads]]
+number = "18"
+at = [1.875, 0.8]
+size = [0.65, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: (0.65), (1.875)"
+
+[[footprint.pads]]
+number = "19"
+at = [1.8625, 0.4]
+size = [0.675, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: (0.68) [0.675 in vector geometry], (1.8625)"
+
+# Pins 20..23: right side, 0.6 x 0.2, y 0..-1.2.
+[[footprint.rows]]
+first = 20
+count = 4
+step = 1
+start = [1.9, 0.0]
+pitch = [0.0, -0.4]
+size = [0.6, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 17X (0.6), 0.4 pitch, centre (1.9)"
+
+# Pin 24 (L): mirror of pin 1.
+[[footprint.pads]]
+number = "24"
+at = [1.725, -1.6]
+size = [0.95, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 2X (0.95), mirror of pin 1 (vector geometry x 1.25..2.2, y -1.7..-1.5)"
+
+[[footprint.pads]]
+number = "24"
+at = [1.35, -1.85]
+size = [0.2, 0.7]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 2X (1.35), mirror of pin 1 (vector geometry x 1.25..1.45, y -2.2..-1.5)"
+
+# Pins 25..28: top, 0.2 x 1.0, centre y -1.7, x 0.9..-0.45 (right to left).
+[[footprint.rows]]
+first = 25
+count = 4
+step = 1
+start = [0.9, -1.7]
+pitch = [-0.45, 0.0]
+size = [0.2, 1.0]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 2X (0.9) 2X (0.45) PKG CL, 4X (1) pad length, (1.7) centre"
+
+[[footprint.pads]]
+number = "29"
+at = [-0.9, -1.725]
+size = [0.2, 0.95]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+cite = "SLUSDV2C PDF p. 149: 2X (0.9), (1.725) centre, (0.95) length; vector geometry y -2.2..-1.25"
+
+[[checks]]
+kind = "pitch"
+a = "2"
+b = "3"
+value = 0.4
+cite = "SLUSDV2C PDF p. 149, 0.4 pitch (2X (1.2)/(0.8)); outline p. 148, 23X 0.4"
+
+[[checks]]
+kind = "dx"
+a = "2"
+b = "23"
+value = 3.8
+cite = "SLUSDV2C PDF p. 149, pad centres at +/-(1.9)"
+
+[[checks]]
+kind = "dy"
+a = "27"
+b = "12"
+value = 3.6
+cite = "SLUSDV2C PDF p. 149, (1.7) top-row centre and (1.9) bottom-row centre"
+
+[[checks]]
+kind = "dx"
+a = "10"
+b = "15"
+value = 2.0
+cite = "SLUSDV2C PDF p. 149, 2X (1) from PKG CL"
+
+[[checks]]
+kind = "pad_size"
+a = "2"
+value = [0.6, 0.2]
+cite = "SLUSDV2C PDF p. 149, 17X (0.6), 33X (0.2)"
+
+[[checks]]
+kind = "pad_size"
+a = "29"
+value = [0.2, 0.95]
+cite = "SLUSDV2C PDF p. 149, (0.95)"
+
+[[checks]]
+kind = "pad_size"
+a = "17"
+value = [0.7, 0.2]
+cite = "SLUSDV2C PDF p. 149, (0.7)"
+
+[[checks]]
+kind = "pad_count"
+value = 33
+cite = "SLUSDV2C PDF p. 149: 29 pins, corner pins 1, 9, 16, 24 drawn as two legs each (33X (0.2))"

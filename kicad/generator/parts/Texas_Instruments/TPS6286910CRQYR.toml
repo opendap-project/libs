@@ -1,0 +1,218 @@
+# TPS6286910CRQYR - TI 6 A buck converter with I2C DVS, RQY0009A (VQFN-HR-9, 1.5 x 2.5 mm)
+# Sources: SLVSFS3B (TPS62868/TPS62869 datasheet, Sep 2020 rev. Jul 2021), mechanical addendum
+# drawing 4225639/A 03/2020: p. 38 package outline, p. 39 example board layout,
+# p. 40 example stencil design. Drawings checked against 200 dpi renders.
+
+[part]
+mpn = "TPS6286910CRQYR"
+second_source = "Texas Instruments TPS628691ARQYR (same land; pin 9 is VSET/VID, 86.6 kOhm to AGND for 0.90 V / 0x41; board ADR 0021)"
+manufacturer = "Texas Instruments"
+library = "Texas_Instruments"
+symbol = "TPS6286910CRQYR"
+reference = "U"
+description = "6 A synchronous step-down converter with I2C DVS, 2.4-5.5 V input, 0.4-1.675 V in 5 mV steps, 0.9 V start-up, address 0x42, power good, VQFN-HR-9 (RQY0009A) 1.5 x 2.5 mm"
+keywords = "buck step-down converter DC-DC DCS-Control I2C DVS 6A TPS62869 VQFN-HR RQY0009A vdd_cpu"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps62869.pdf"
+datasheet_rev = "SLVSFS3B"
+sheet = "Texas-Instruments/TPS6286910CRQYR.md"
+notes = [
+  "Land pattern = TI example board layout RQY0009A (SLVSFS3B p. 39), non-solder-mask-defined pads (preferred by TI, 0.05 mm max mask clearance all around): pad copper = dimensioned metal, mask expansion left to the board default.",
+  "Stencil (SLVSFS3B p. 40, 0.1 mm thick) apertures equal the pads 1:1, so pads keep paste = true.",
+  "Pad corner radius (R0.05) TYP (p. 39): rratio = 0.05 / short side = 0.2 for the 0.25 mm wide pads and 0.25 for the 0.2 mm high pads.",
+  "Pad centres from reference dimensions on p. 39: 4X (0.5) pitch with pins 9 and 5 on the vertical package centreline; (2.35) between the top and bottom rows, centred on the package; long pads 3X (0.95) x 3X (0.2) from the vertical centreline outwards (pins 2, 3 left, pin 7 right), (0.95) between the centres of the left and right long pads; 2X (0.4) from pins 2 and 3 to the horizontal centreline, pin 7 on it.",
+  "Body z = 1.0 mm is the maximum height (0.8-1.0, SLVSFS3B p. 38); body x/y are nominal (1.4-1.6 x 2.4-2.6).",
+  "Orientation: top view as TI's land pattern example and Figure 6-1 top view (p. 4): pins 1-9-8 along the top edge, pin 1 top-left, pin 1 index area top-left (p. 38 top view).",
+]
+
+[[pins]]
+number = "3"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "4"
+name = "EN"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "5"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+
+[[pins]]
+number = "6"
+name = "SCL"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "7"
+name = "SW"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "8"
+name = "VOS"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "9"
+name = "PG"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "1"
+name = "AGND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "2"
+name = "PGND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_RQY0009A_VQFN-HR-9_1.5x2.5mm_P0.5mm"
+description = "Texas Instruments RQY0009A VQFN-HR-9, 1.5 x 2.5 mm body, 0.5 mm pitch, TI example land pattern (SLVSFS3B p. 39, drawing 4225639/A)"
+tags = "VQFN-HR QFN RQY0009A TPS62868 TPS62869 Texas"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SLVSFS3B p. 39, RQY0009A example board layout (4225639/A); stencil p. 40"
+body = { x = 1.5, y = 2.5, z = 1.0, standoff = 0.0, cite = "SLVSFS3B p. 38, RQY0009A outline: 1.4-1.6 x 2.4-2.6, height 0.8-1.0 (z = max), standoff 0.00-0.05" }
+body_offset = [0.0, 0.0]
+
+# Top row, pins 1, 9, 8 (left to right): 6X (0.25) x 6X (0.55), centres y = -(2.35)/2, x = -0.5 / 0 / +0.5
+[[footprint.pads]]
+number = "1"
+at = [-0.5, -1.175]
+size = [0.25, 0.55]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = true
+cite = "SLVSFS3B p. 39: 6X (0.25), 6X (0.55), 4X (0.5), (2.35); (R0.05) TYP"
+
+[[footprint.pads]]
+number = "9"
+at = [0.0, -1.175]
+size = [0.25, 0.55]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = true
+cite = "SLVSFS3B p. 39: on the vertical PKG centreline; 6X (0.25), 6X (0.55), (2.35)"
+
+[[footprint.pads]]
+number = "8"
+at = [0.5, -1.175]
+size = [0.25, 0.55]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+paste = true
+cite = "SLVSFS3B p. 39: 6X (0.25), 6X (0.55), 4X (0.5), (2.35)"
+
+# Bottom row, pins 4, 5, 6 (left to right), y = +(2.35)/2
+[[footprint.rows]]
+first = 4
+count = 3
+step = 1
+start = [-0.5, 1.175]
+pitch = [0.5, 0.0]
+size = [0.25, 0.55]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SLVSFS3B p. 39: 6X (0.25), 6X (0.55), 4X (0.5), (2.35); pin 5 on the vertical PKG centreline"
+
+# Long pads: pins 2 and 3 left of the vertical centreline, pin 7 right of it, 3X (0.95) x 3X (0.2)
+[[footprint.pads]]
+number = "2"
+at = [-0.475, -0.4]
+size = [0.95, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = true
+cite = "SLVSFS3B p. 39: 3X (0.95) from the vertical PKG centreline, 3X (0.2), 2X (0.4) above the horizontal PKG centreline"
+
+[[footprint.pads]]
+number = "3"
+at = [-0.475, 0.4]
+size = [0.95, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = true
+cite = "SLVSFS3B p. 39: 3X (0.95), 3X (0.2), 2X (0.4) below the horizontal PKG centreline"
+
+[[footprint.pads]]
+number = "7"
+at = [0.475, 0.0]
+size = [0.95, 0.2]
+shape = "roundrect"
+rratio = 0.25
+type = "smd"
+paste = true
+cite = "SLVSFS3B p. 39: 3X (0.95) from the vertical PKG centreline to the right, on the horizontal PKG centreline; (0.95) between long-pad centres"
+
+[[checks]]
+kind = "pitch"
+a = "1"
+b = "9"
+value = 0.5
+cite = "SLVSFS3B p. 38, 4X 0.5; p. 39, 4X (0.5)"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "8"
+value = 1.0
+cite = "SLVSFS3B p. 39, 2 x 4X (0.5)"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "4"
+value = 2.35
+cite = "SLVSFS3B p. 39, (2.35) between the top and bottom rows"
+
+[[checks]]
+kind = "dy"
+a = "2"
+b = "3"
+value = 0.8
+cite = "SLVSFS3B p. 38, 2X 0.4; p. 39, 2X (0.4)"
+
+[[checks]]
+kind = "dx"
+a = "2"
+b = "7"
+value = 0.95
+cite = "SLVSFS3B p. 39, (0.95) between long-pad centres"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.25, 0.55]
+cite = "SLVSFS3B p. 39, 6X (0.25), 6X (0.55)"
+
+[[checks]]
+kind = "pad_size"
+a = "7"
+value = [0.95, 0.2]
+cite = "SLVSFS3B p. 39, 3X (0.95), 3X (0.2)"
+
+[[checks]]
+kind = "pad_count"
+value = 9
+cite = "SLVSFS3B p. 4, Figure 6-1, 9-pin RQY"

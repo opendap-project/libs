@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        22.6,
+        2.88,
+        1.45
+      ]
+    }
+  ],
+  "library": "Hirose",
+  "name": "Hirose_DF40C-100DS-0.4V_2x50_P0.4mm_Vertical",
+  "source": "envelope from DF40 cat. p. 4: A = 22.6 +/- 0.2 (DF40C-100DS), 2.88 +/- 0.2 housing (3.38 over leads), D = 1.45 +/- 0.15"
+}
