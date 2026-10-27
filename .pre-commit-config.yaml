@@ -19,9 +19,9 @@ repos:
     hooks:
       - id: no-stray-files
       - id: kicad-erc
-        exclude: ^design-rules/(vendor/|[^/]+/test/)  # rule-set test boards fail by design
+        exclude: ^kicad/design-rules/(vendor/|[^/]+/test/)  # rule-set test boards fail by design
       - id: kicad-drc
-        exclude: ^design-rules/(vendor/|[^/]+/test/)
+        exclude: ^kicad/design-rules/(vendor/|[^/]+/test/)
       - id: no-fab-outputs
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.24.0
@@ -31,7 +31,19 @@ repos:
     hooks:
       - id: colour-theme
         name: Schematic colour theme (CRAFT-103)
-        entry: python3 colour-themes/check_theme.py
+        entry: sh -c 'cd kicad && python3 colour-themes/check_theme.py'
         language: system
-        files: ^colour-themes/
+        files: ^kicad/colour-themes/
         pass_filenames: false
+      - id: requirements-current-freecad
+        name: freecad requirements README rendered (odapkit req render --check)
+        entry: odapkit req render freecad/docs/requirements/requirements.toml --check
+        language: system
+        pass_filenames: false
+        files: ^freecad/docs/requirements/
+      - id: requirements-current-blender
+        name: blender requirements README rendered (odapkit req render --check)
+        entry: odapkit req render blender/docs/requirements/requirements.toml --check
+        language: system
+        pass_filenames: false
+        files: ^blender/docs/requirements/

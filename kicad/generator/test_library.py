@@ -9,7 +9,7 @@ For every part data file in generator/parts/:
 - the library files are up to date with the data (kigen.py --check) and every footprint has its
   STEP model;
 - the symbol pins (count, numbers and names) match the pin table of the part's parts-lib spec sheet
-  (found through the workspace's repos.tsv, or ODAP_PARTS_LIB_DIR); skipped when parts-lib is not
+  (the libs root's parts/ folder, else the workspace's repos.tsv, or ODAP_PARTS_LIB_DIR); skipped when parts-lib is not
   checked out;
 - the symbol's pin numbers match the footprint's numbered copper pads, and the symbol carries the
   Manufacturer, MPN, Datasheet and Footprint fields (PCB-T-05);
@@ -171,6 +171,10 @@ def parts_lib_dir():
     env = os.environ.get("ODAP_PARTS_LIB_DIR")
     if env:
         return env
+    # In the libs root the parts library is the sibling folder (RFC 0017).
+    sibling = os.path.join(os.path.dirname(ROOT), "parts")
+    if os.path.isdir(sibling):
+        return sibling
     d = ROOT
     for _ in range(6):
         d = os.path.dirname(d)
