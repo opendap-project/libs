@@ -4,13 +4,13 @@
 Usage:
     kigen.py [--check] [--out DIR] [PART.toml ...]
 
-Each part is one TOML file under generator/parts/<Library>/ (schema: generator/README.md). Every
+Each part is one TOML file under generator/parts/<key>/ (schema: generator/README.md). Every
 dimension in it cites the manufacturer document and page it was transcribed from. The generator
 writes:
 
-    symbols/<Library>.kicad_sym                 one symbol per part (Manufacturer and MPN fields)
-    footprints/<Library>.pretty/<name>.kicad_mod one footprint per distinct footprint name
-    generator/models/<Library>/<name>.json      the envelope boxes for generator/model.py (STEP)
+    symbols/<key>.kicad_sym                     one symbol per part (Manufacturer and MPN fields)
+    footprints/<key>.pretty/<name>.kicad_mod     one footprint per distinct footprint name
+    generator/models/<key>/<name>.json          the envelope boxes for generator/model.py (STEP)
 
 Conventions (kicad-lib docs/specs/pcb-craft-standard.md and the KiCad Library Conventions, KLC):
 SMD anchor at the body centroid, THT anchor at pin 1 (CRAFT-15); silk 0.15 mm stroke (CRAFT-05),

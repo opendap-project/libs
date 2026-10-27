@@ -48,6 +48,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 DATA = os.path.join(HERE, "bga")
 CACHE = os.path.expanduser("~/.cache/opendap/parts")
+
+
+def cache_path(part, rel):
+    """A file of the local parts cache, <cache>/<manufacturer>/<rel>: the folder follows the maker's display name,
+    as parts-sync.py names it, not the library key."""
+    return os.path.join(CACHE, re.sub(r"[^A-Za-z0-9._-]+", "-", part["part"]["manufacturer"]), rel)
+
+
 KICAD_CLI = os.environ.get("KICAD_CLI") or next(
     (c for c in ("/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli", shutil.which("kicad-cli") or "")
      if c and os.path.exists(c)), None)
@@ -320,7 +328,7 @@ class BgaParts(unittest.TestCase):
 
         # 5. optional third readings: the datasheet PDF and the T1 pinout
         chk = part["check"]
-        pdf = os.path.join(CACHE, chk["pdf"]) if chk.get("pdf") else None
+        pdf = cache_path(part, chk["pdf"]) if chk.get("pdf") else None
         if pdf and os.path.exists(pdf):
             try:
                 import pdfplumber  # noqa: F401

@@ -4,14 +4,14 @@
 Usage:
     python3 generator/bga.py [--check] [PART.toml ...]      (Python 3.11 or later)
 
-Each part is generator/bga/<Library>/<Part>.toml (geometry, land, units, pin types, each value with
+Each part is generator/bga/<key>/<Part>.toml (geometry, land, units, pin types, each value with
 its datasheet page) plus a pin list CSV (ball, name, io_domain, source page). With no argument, every
 part under generator/bga/ is built. The script writes:
 
-    symbols/<Library>.kicad_sym                     every BGA part of the library, one multi-unit
+    symbols/<key>.kicad_sym                         every BGA part of the library, one multi-unit
                                                     symbol each (Manufacturer and MPN fields)
-    footprints/<Library>.pretty/<footprint>.kicad_mod
-    generator/bga/<Library>/<footprint>.model.json  body and balls for generator/bga_model.py (STEP)
+    footprints/<key>.pretty/<footprint>.kicad_mod
+    generator/bga/<key>/<footprint>.model.json      body and balls for generator/bga_model.py (STEP)
 
 Conventions, shared with generator/kigen.py: the KiCad Library Conventions (KLC) and kicad-lib's
 PCB craft standard. Anchor at the body centre and ball A1 top left (CRAFT-15); silk 0.15 mm

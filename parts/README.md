@@ -4,7 +4,7 @@ Tool-independent data for every part OpenDAP designs with, shared by every repos
 
 ## Layout
 
-- `<manufacturer>/<MPN>.md` — spec sheet: absolute maximum ratings, operating conditions, power by mode, pinout and package, recommended footprint, application circuit and required passives, interfaces and timing, Linux driver, available simulation models, design notes; each with its datasheet reference. Structure: [spec sheet template](docs/specs/spec-sheet-template.md)
+- `<key>/<MPN>.md` — spec sheet, in the folder of its [maker key](../README.md#maker-keys): absolute maximum ratings, operating conditions, power by mode, pinout and package, recommended footprint, application circuit and required passives, interfaces and timing, Linux driver, available simulation models, design notes; each with its datasheet reference. Structure: [spec sheet template](docs/specs/spec-sheet-template.md)
 - `manifest.toml` — every external file with its official URL, revision, date and sha256; fetch them into `~/.cache/opendap/parts/` with `toolkit/hardware/tools/parts-sync.py`
 - `docs/`
 

@@ -108,7 +108,7 @@ edge_y = 0.675
 
 [check]
 balls = 200               # DS p. 9 ("200-0.31") and p. 10 (200Ball FBGA)
-pdf = "samsung/K4UBE3D4AB-MGCL/68493aa292745ce2f51b9d2d9103c14d.pdf"
+pdf = "K4UBE3D4AB-MGCL/68493aa292745ce2f51b9d2d9103c14d.pdf"
 pdf_sha256 = "7bb0223d5490109c2ebd9e8f25641e1d2dccd2df0952b04c02553fd078a06e04"
 pdf_ballout_page = 10     # the ballout table, re-read from the PDF text layer (pdftotext)
 # Third reading: the JEDEC 200-ball LPDDR4 symbol of the Radxa ZERO 3W v1.12 schematic, sheet 14

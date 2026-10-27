@@ -5,9 +5,9 @@ Usage (FreeCAD's command-line interpreter runs the script; arguments go through 
 
     KIGEN_ROOT=<kicad-lib> /Applications/FreeCAD.app/Contents/Resources/bin/freecadcmd generator/bga_model.py
 
-Reads generator/bga/<Library>/<footprint>.model.json (written by bga.py: body size and height above
+Reads generator/bga/<key>/<footprint>.model.json (written by bga.py: body size and height above
 the stand-off, ball diameter and stand-off, ball centres in the footprint frame with +y down) and
-writes 3dmodels/<Library>.3dshapes/<footprint>.step: the body as a box on the stand-off and each
+writes 3dmodels/<key>.3dshapes/<footprint>.step: the body as a box on the stand-off and each
 ball as a cylinder of the nominal diameter and the nominal stand-off height. The models are
 envelopes drawn from the datasheet dimensions (parts-lib ADR 0001: OpenDAP's own, scripted,
 reproducible), not manufacturer models. The STEP header timestamp is fixed so a rebuild is stable.

@@ -111,7 +111,7 @@ edge_y = 3.25
 
 [check]
 balls = 153               # DS p. 5, Figure 1 (153-FBGA) and p. 6 ("153-0.30")
-pdf = "samsung/KLMBG2JETD-B041/8cca530d6d5054b226dcd9a69d076028.pdf"
+pdf = "KLMBG2JETD-B041/8cca530d6d5054b226dcd9a69d076028.pdf"
 pdf_sha256 = "f9d8f6f855ee15df6748a388a5287ac8306ab06d250673ace45067d52d9058ca"
 # Table 2 (DS p. 5) lists every named ball apart from RFU; the figure is the pin-list source.
 table_pins = "KLMxGxJETD-B041-table2.csv"

@@ -11,6 +11,19 @@ OpenDAP's shared design libraries, one folder per tool, used by every OpenDAP ha
 
 Consumers pin this repository by tag. Each folder keeps its own `docs/` (requirements, specs, ADRs) and `REUSE.toml`; the licence texts are in `LICENSES/`. The folders came from the former `kicad-lib`, `parts-lib`, `freecad-lib` and `blender-lib` repositories with their history ([RFC 0017](https://github.com/opendap-project/rfcs/blob/main/text/0017-naming-and-topology.md)).
 
+## Maker keys
+
+Each maker has one key in lowercase kebab case (`texas-instruments`, `diodes-inc`, `rockchip`; `opendap-generic` for generic symbols that are no one maker's part). The key names everything that belongs to the maker in every folder:
+
+| Where | Form |
+| --- | --- |
+| KiCad libraries | `kicad/symbols/<key>.kicad_sym`, `kicad/footprints/<key>.pretty/`, `kicad/3dmodels/<key>.3dshapes/` |
+| Library ids in schematics and boards | `<key>:<symbol or footprint>`, for example `texas-instruments:Texas_DBV0005A_SOT-23-5_1.6x2.9mm_P0.95mm` |
+| Generator data | `kicad/generator/parts/<key>/`, `kicad/generator/bga/<key>/`, `library = "<key>"` |
+| Spec sheets | `parts/<key>/<MPN>.md` |
+
+The maker's display name is a field, never a key: `manufacturer` in the part data and in `parts/manifest.toml`, and the `Manufacturer` field of each symbol (`Texas Instruments`). The local parts cache follows the display name (`~/.cache/opendap/parts/<manufacturer>/<MPN>/`, named by `parts-sync.py`); the `pdf` path in a BGA part's `[check]` is relative to its maker's cache folder.
+
 ## License
 
 This repository follows the [REUSE](https://reuse.software) layout: licence texts in `LICENSES/`, and each folder's `REUSE.toml` maps its paths. Copyright © 2026 The OpenDAP Project.

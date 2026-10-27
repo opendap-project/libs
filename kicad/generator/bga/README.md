@@ -5,9 +5,9 @@ Data for `generator/bga.py`, which builds the BGA parts of this library: the RK3
 ## Use
 
 ```sh
-python3 generator/bga.py            # symbols/<Library>.kicad_sym, footprints/<Library>.pretty/, *.model.json
+python3 generator/bga.py            # symbols/<key>.kicad_sym, footprints/<key>.pretty/, *.model.json
 KIGEN_ROOT=$PWD /Applications/FreeCAD.app/Contents/Resources/bin/freecadcmd generator/bga_model.py
-                                    # 3dmodels/<Library>.3dshapes/<footprint>.step
+                                    # 3dmodels/<key>.3dshapes/<footprint>.step
 python3 generator/test_bga.py       # the second reading below
 python3 generator/bga.py --check    # exits 1 if a generated file is stale
 ```

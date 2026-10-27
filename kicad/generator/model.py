@@ -5,9 +5,9 @@ Usage (FreeCAD's command-line interpreter runs the script; arguments go through 
 
     KIGEN_ROOT=<kicad-lib> /Applications/FreeCAD.app/Contents/Resources/bin/freecadcmd generator/model.py
 
-Reads generator/models/<Library>/<footprint>.json (written by kigen.py: boxes in mm, x/y in the
+Reads generator/models/<key>/<footprint>.json (written by kigen.py: boxes in mm, x/y in the
 footprint frame with +y down, z from the board surface) and writes
-3dmodels/<Library>.3dshapes/<footprint>.step. The models are envelopes drawn from the datasheet
+3dmodels/<key>.3dshapes/<footprint>.step. The models are envelopes drawn from the datasheet
 body dimensions (parts-lib ADR 0001: OpenDAP's own, scripted, reproducible), not manufacturer
 models. The STEP header timestamp is fixed so a rebuild is byte-stable.
 """
