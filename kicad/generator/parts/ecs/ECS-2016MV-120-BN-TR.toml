@@ -28,7 +28,6 @@ description = "12.000 MHz HCMOS crystal oscillator, ECS-2016MV MultiVolt (1.6-3.
 keywords = "oscillator XO crystal clock HCMOS ECS-2016MV 12 MHz 2016 MultiVolt"
 datasheet = "https://ecsxtal.com/store/pdf/ECS-2016MV.pdf"
 datasheet_rev = "Rev. 2025"
-sheet = "ecs/ECS-2016MV-120-BN-TR.md"
 notes = [
   "Land pattern = ECS suggested land pattern (ECS-2016MV p. 1, Figure 2): lands 0.775 x 0.675, gaps 0.5 and 0.3; rotated 90 deg so pin 1 is top-left.",
   "The suggested land pattern carries no pad numbers; pin 1 follows the top view (dot at #1, lower-left before rotation). The four lands are identical, so the numbering is the only reading involved.",

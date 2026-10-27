@@ -15,7 +15,6 @@ description = "eFuse, 2.7-23 V, 5.5 A, 28 mOhm, true reverse-current blocking, a
 keywords = "eFuse hot swap current limit reverse current blocking OVLO TPS25947 TPS259470A VQFN-HR RPW"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps25947.pdf"
 datasheet_rev = "SLVSFC9C"
-sheet = "texas-instruments/TPS259470ARPWR.md"
 notes = [
   "Land pattern = TI example board layout RPW0010A (SLVSFC9C p. 73), top view as drawn: IN (5) and OUT (6) are 2X (0.3) x 2X (2.4) bars, centres 2X (0.25) either side of the package centre line; pins 2, 3 (left) and 9, 8 (right) are 8X (0.6) x 4X (0.25) pads at 4X (0.225) from the centre line, (1.8) between the column centres.",
   "Corner pins 1, 4, 7, 10 are L-shaped (p. 73): each is two copper rectangles with the same number, an arm 0.6 x 4X (0.3) on the pad column (centre 0.225 + 4X (0.475) = 0.70 from the centre line) and a leg 4X (0.25) x 4X (0.65) running to the package edge (2X (2.4)), centres (1.45)/2 = 0.725 and 2X (1.75)/2 = 0.875; arm and leg overlap. pad_size checks read the largest piece (the arm).",

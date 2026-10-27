@@ -1,0 +1,11 @@
+# ECS-2016MV-120-BN-TR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../ECS-2016MV-120-BN-TR.toml).
+
+datasheet_rev = "Rev. 2025"
+cite = "Pad connections (p. 1)"
+
+[pins]
+"1" = "Tri-state"
+"2" = "GND"
+"3" = "Output"
+"4" = "Vdd"

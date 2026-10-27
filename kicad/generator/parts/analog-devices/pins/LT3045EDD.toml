@@ -1,0 +1,18 @@
+# LT3045EDD#TRPBF: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../LT3045EDD.toml).
+
+datasheet_rev = "Rev. D"
+cite = "DD package, 10-lead DFN 3 × 3 mm (LT3045 Rev. D, p. 2; pin functions p. 12–13)"
+
+[pins]
+"1" = "IN"
+"2" = "IN"
+"3" = "EN/UV"
+"4" = "PG"
+"5" = "ILIM"
+"6" = "PGFB"
+"7" = "SET"
+"8" = "GND"
+"9" = "OUTS"
+"10" = "OUT"
+"11 (EP)" = "GND"

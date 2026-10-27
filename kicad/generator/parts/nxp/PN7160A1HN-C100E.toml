@@ -29,7 +29,6 @@ description = "PN7160 NFC controller, NCI, integrated firmware, I2C host interfa
 keywords = "NFC controller reader NCI PN7160 PN7161 I2C HVQFN40 SOT618-1 NXP"
 datasheet = "https://www.nxp.com/docs/en/data-sheet/PN7160_PN7161.pdf"
 datasheet_rev = "Rev. 4.2, 22 July 2026"
-sheet = "nxp/PN7160A1HN-C100E.md"
 notes = [
   "Land pattern = NXP reflow soldering footprint SOT618-1 (PI p. 3, Figure 2): 40 lands 0.29 x 0.9 at 0.5 pitch, 5.2 / 7.0 inner / outer extent, centre land 4.1 x 4.1 with 3 x 3 paste squares 0.6 at 0.9 pitch (19 % coverage, calculation). Signal-land paste is drawn inside each land but not dimensioned: paste = land (UNVERIFIED reduction).",
   "No thermal vias are drawn by NXP; none are placed in the footprint (a layout choice).",

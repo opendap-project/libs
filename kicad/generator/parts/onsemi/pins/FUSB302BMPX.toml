@@ -1,0 +1,22 @@
+# FUSB302BMPX: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../FUSB302BMPX.toml).
+
+datasheet_rev = "FUSB302B/D Rev. 5"
+cite = "FUSB302BMPX, top view (p. 5, Figure 5; Table 3)"
+
+[pins]
+"1" = "CC2"
+"2" = "VBUS"
+"3" = "VDD"
+"4" = "VDD"
+"5" = "INT_N"
+"6" = "SCL"
+"7" = "SDA"
+"8" = "GND"
+"9" = "GND"
+"10" = "CC1"
+"11" = "CC1"
+"12" = "VCONN"
+"13" = "VCONN"
+"14" = "CC2"
+"EP" = "—"

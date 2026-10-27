@@ -1,0 +1,19 @@
+# TPS2121RUXR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS2121RUXR.toml).
+
+datasheet_rev = "SLVSEA3F"
+cite = "SLVSEA3F p. 4–5, Figure 6-2, Pin Functions table"
+
+[pins]
+"1" = "OUT"
+"8" = "OUT"
+"2" = "IN2"
+"3" = "CP2"
+"4" = "OV2"
+"5" = "OV1"
+"6" = "PR1"
+"7" = "IN1"
+"9" = "ST"
+"10" = "ILM"
+"11" = "SS"
+"12" = "GND"

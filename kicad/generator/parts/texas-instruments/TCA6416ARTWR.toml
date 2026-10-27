@@ -13,7 +13,6 @@ description = "16-bit I2C and SMBus I/O expander, separate 1.65-5.5 V I2C-side (
 keywords = "GPIO expander I/O expander I2C level translation TCA6416A WQFN RTW0024B"
 datasheet = "https://www.ti.com/lit/ds/symlink/tca6416a.pdf"
 datasheet_rev = "SCPS194F"
-sheet = "texas-instruments/TCA6416ARTWR.md"
 notes = [
   "Land pattern = TI example board layout RTW0024B (SCPS194F p. 43): 24X (0.6) x 24X (0.24) pads, 20X (0.5) pitch, (3.8) between opposite pad-row centres, (R0.05) TYP corners; exposed pad 25 (2.45) square with five (0.2) vias, one central and four at (0.97) on the centre lines; non-solder-mask-defined preferred (0.07 MAX all around), so the mask expansion is left to the board default.",
   "Stencil (p. 44, 0.125 mm): pads 1:1; exposed pad as 4X (1.08) square apertures at (0.64) TYP from the centre lines, 78 % printed coverage: pad 25 paste = false plus [[footprint.paste]].",

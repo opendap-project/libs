@@ -1,0 +1,15 @@
+# SN74LVC2G66DCUR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../SN74LVC2G66DCUR.toml).
+
+datasheet_rev = "SCES325N"
+cite = "SCES325N p. 3, Pin Functions"
+
+[pins]
+"1" = "1A"
+"2" = "1B"
+"3" = "2C"
+"4" = "GND"
+"5" = "2A"
+"6" = "2B"
+"7" = "1C"
+"8" = "VCC"

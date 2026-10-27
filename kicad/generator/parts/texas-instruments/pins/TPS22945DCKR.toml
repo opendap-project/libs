@@ -1,0 +1,12 @@
+# TPS22945DCKR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS22945DCKR.toml).
+
+datasheet_rev = "SLVS832D"
+cite = "SLVS832D PDF p. 3, §6"
+
+[pins]
+"1" = "VOUT"
+"2" = "GND"
+"3" = "OC"
+"4" = "ON"
+"5" = "VIN"

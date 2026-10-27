@@ -1,0 +1,15 @@
+# PCA9306DCUR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../PCA9306DCUR.toml).
+
+datasheet_rev = "SCPS113O"
+cite = "DCU pin numbers (Figure 5-2, Table 5-1, p. 4)"
+
+[pins]
+"1" = "GND"
+"2" = "VREF1"
+"3" = "SCL1"
+"4" = "SDA1"
+"5" = "SDA2"
+"6" = "SCL2"
+"7" = "VREF2"
+"8" = "EN"

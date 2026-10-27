@@ -1,0 +1,13 @@
+# SN74LVC1G58DCKR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../SN74LVC1G58DCKR.toml).
+
+datasheet_rev = "SCES415N"
+cite = "DCK pin numbers, top view (SCES415N, p. 1)"
+
+[pins]
+"1" = "In1"
+"2" = "GND"
+"3" = "In0"
+"4" = "Y"
+"5" = "VCC"
+"6" = "In2"

@@ -13,7 +13,6 @@ description = "N-channel NexFET power MOSFET, 30 V, 1.9 / 2.6 mOhm at VGS 10 / 4
 keywords = "MOSFET N-channel NexFET 30V ship FET CSD17575Q3 SON Q3"
 datasheet = "https://www.ti.com/lit/ds/symlink/csd17575q3.pdf"
 datasheet_rev = "SLPS489A"
-sheet = "texas-instruments/CSD17575Q3.md"
 notes = [
   "Land pattern = TI recommended PCB pattern (SLPS489A p. 9, §7.2): source pads 1-4 0.500 x 0.630 at 0.650 pitch; 0.560 gap; the drain land 2.450 x 1.900 (1.225 each side of the centre line) with four 0.500 x 0.410 fingers (pins 8-5) and 0.150 notches between them; 3.500 overall.",
   "The drain land is drawn as the body pad plus four finger pads, all numbered as drain pins (5-8; the body pad carries number 5), touching, so they form one copper area as on p. 9.",

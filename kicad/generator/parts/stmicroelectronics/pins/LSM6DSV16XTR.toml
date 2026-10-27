@@ -1,0 +1,21 @@
+# LSM6DSV16XTR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../LSM6DSV16XTR.toml).
+
+datasheet_rev = "DS13510 Rev 4"
+cite = "LGA-14L (Figure 5, p. 9; Table 2, p. 11). Functions shown for mode 1 (host interface only), the T1 configuration"
+
+[pins]
+"1" = "SDO/SA0"
+"2" = "SDx/AH1/Qvar1"
+"3" = "SCx/AH2/Qvar2"
+"4" = "INT1"
+"5" = "Vdd_IO"
+"6" = "GND"
+"7" = "GND"
+"8" = "Vdd"
+"9" = "INT2"
+"10" = "OCS_Aux"
+"11" = "SDO_Aux"
+"12" = "CS"
+"13" = "SCL"
+"14" = "SDA"

@@ -1,0 +1,14 @@
+# TPS61160DRVR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS61160DRVR.toml).
+
+datasheet_rev = "SLVS791E"
+cite = "SLVS791E PDF p. 4, §5"
+
+[pins]
+"1" = "FB"
+"2" = "COMP"
+"3" = "GND"
+"4" = "SW"
+"5" = "CTRL"
+"6" = "VIN"
+"7" = "Thermal pad"

@@ -15,7 +15,6 @@ description = "Haptic driver for LRA and ERM actuators, closed-loop auto-resonan
 keywords = "haptic driver LRA ERM vibration DRV2605L I2C VSSOP DGS"
 datasheet = "https://www.ti.com/lit/ds/symlink/drv2605l.pdf"
 datasheet_rev = "SLOS854D"
-sheet = "texas-instruments/DRV2605LDGSR.md"
 notes = [
   "Land pattern = TI example board layout DGS0010A (SLOS854D p. 71): ten pads (1.45) x (0.3), 8X (0.5) pitch, (4.4) between the pad-row centres, (R0.05) TYP; stencil p. 72 equal to the pads (paste = true).",
   "Non-solder-mask-defined pads, 0.05 mm maximum mask clearance (p. 71): the mask expansion is left to the board default.",

@@ -8,9 +8,9 @@ For every part data file in generator/parts/:
 
 - the library files are up to date with the data (kigen.py --check) and every footprint has its
   STEP model;
-- the symbol pins (count, numbers and names) match the pin table of the part's parts-lib spec sheet
-  (the libs root's parts/ folder, else the workspace's repos.tsv, or ODAP_PARTS_LIB_DIR); skipped when parts-lib is not
-  checked out;
+- the symbol pins (count, numbers and names) match the datasheet's pin table, transcribed
+  separately in generator/parts/<key>/pins/<part>.toml (schema checked: datasheet revision, page
+  citation, pin number to name), unless the part records sheet_pins = "none: <reason>";
 - the symbol's pin numbers match the footprint's numbered copper pads, and the symbol carries the
   Manufacturer, MPN, Datasheet and Footprint fields (PCB-T-05);
 - the pads read back from the .kicad_mod file match the transcribed drawing values ([[checks]]);
@@ -40,6 +40,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import tomllib
 import unittest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -165,107 +166,44 @@ def seg_seg(a, b, c, d):
     return min(seg_point(a, c, d), seg_point(b, c, d), seg_point(c, a, b), seg_point(d, a, b))
 
 
-# ---------------------------------------------------------------- parts-lib sheet reader
+# ---------------------------------------------------------------- datasheet pin tables
 
-def parts_lib_dir():
-    env = os.environ.get("ODAP_PARTS_LIB_DIR")
-    if env:
-        return env
-    # In the libs root the parts library is the sibling folder (RFC 0017).
-    sibling = os.path.join(os.path.dirname(ROOT), "parts")
-    if os.path.isdir(sibling):
-        return sibling
-    d = ROOT
-    for _ in range(6):
-        d = os.path.dirname(d)
-        tsv = os.path.join(d, "repos.tsv")
-        if os.path.exists(tsv):
-            for line in open(tsv):
-                cols = line.split()
-                if len(cols) >= 2 and cols[1].endswith("parts-lib"):
-                    return os.path.join(d, cols[0])
-            return os.path.join(d, "public", "libs", "parts")
-    return None
+PIN_TABLE_KEYS = {"datasheet_rev", "cite", "pins"}
 
 
-def expand_numbers(cell):
-    cell = cell.replace("**", "").replace("`", "").replace("#", "").strip()
-    out = []
-    for part in re.split(r",\s*|;\s*|\s+and\s+", cell):
-        part = part.strip()
-        m = re.fullmatch(r"([A-Za-z]*)(\d+)\s*[–\-]\s*\1?(\d+)", part)
-        if m:
-            out += ["%s%d" % (m.group(1), i) for i in range(int(m.group(2)), int(m.group(3)) + 1)]
-        elif part:
-            out.append(part)
-    return out
+def pin_table_path(part):
+    """generator/parts/<key>/pins/<part>.toml, next to the part's own data file."""
+    d, f = os.path.split(part["_path"])
+    return os.path.join(d, "pins", f)
 
 
-def expand_names(cell):
-    """"XIN, XOUT" -> two names; "GPIO0–GPIO3" and "GPIO26_ADC0–GPIO29_ADC3" -> ranges."""
-    out = []
-    for part in cell.split(", "):
-        m = re.fullmatch(r"(\D+)(\d+)(\D*)(\d*)[–\-]\1(\d+)\3(\d*)", part.strip())
-        if m and int(m.group(5)) > int(m.group(2)):
-            a, b = int(m.group(2)), int(m.group(5))
-            for k in range(b - a + 1):
-                suffix = m.group(3) + (str(int(m.group(4)) + k) if m.group(4) else "")
-                out.append("%s%d%s" % (m.group(1), a + k, suffix))
-        else:
-            out.append(part.strip())
-    return out
+def pin_table_errors(data, part):
+    """Schema of a pin table file: datasheet_rev (the part's), cite (a page, table or drawing
+    sheet), and [pins] mapping each pin number to its name, both non-empty strings."""
+    errs = []
+    if set(data) != PIN_TABLE_KEYS:
+        errs.append("keys %s, expected %s" % (sorted(data), sorted(PIN_TABLE_KEYS)))
+    if data.get("datasheet_rev") != part["part"].get("datasheet_rev"):
+        errs.append("datasheet_rev differs from the part's")
+    cite = data.get("cite")
+    if not isinstance(cite, str) or not re.search(r"\bpp?\. \d|\bsheet \d|SCHEMATIC", cite):
+        errs.append("cite names no page, table or drawing sheet: %r" % cite)
+    pins = data.get("pins")
+    if not isinstance(pins, dict) or not pins:
+        errs.append("no [pins]")
+    else:
+        for n, name in pins.items():
+            if not (n.strip() and isinstance(name, str) and name.strip()):
+                errs.append("pin %r: empty number or name" % n)
+    return errs
 
 
-def sheet_pins(path, header=None):
-    """{number: name} from the sheet's pin table: the first table whose header has a pin column
-    and a name column (or the table whose header contains `header`)."""
-    lines = open(path).read().splitlines()
-    tables, cur = [], []
-    for ln in lines:
-        if ln.strip().startswith("|"):
-            cur.append([c.strip() for c in ln.strip().strip("|").split("|")])
-        elif cur:
-            tables.append(cur)
-            cur = []
-    if cur:
-        tables.append(cur)
-    for t in tables:
-        if len(t) < 3:
-            continue
-        head = [h.lower().replace("*", "") for h in t[0]]
-        if header and header.lower() not in " | ".join(head):
-            continue
-        pcs = [i for i, h in enumerate(head) if re.fullmatch(r"(pin|pins|pin\(s\)|pin no\.?|no\.?|ball|contact|terminal|pad)s?", h)]
-        # discretes' tables call the name column "Symbol" (Nexperia: Pin | Symbol | Description)
-        ncs = [i for i, h in enumerate(head) if re.search(r"name|signal", h) or h == "symbol"]
-        if not ncs:
-            ncs = [i for i, h in enumerate(head) if h == "function"]
-        if not pcs or not ncs:
-            continue
-        # a table may carry several pin/name column pairs side by side (USB-C rows A and B)
-        pairs = [(pc, min([n for n in ncs if n > pc] or ncs)) for pc in pcs]
-        out = {}
-        for row in t[2:]:
-            for pc, nc in pairs:
-                if len(row) <= max(pc, nc):
-                    continue
-                nums = expand_numbers(row[pc])
-                cell = row[nc].replace("**", "").replace("`", "").strip()
-                names = expand_names(cell)
-                if len(names) != len(nums):
-                    names = [cell] * len(nums)
-                out.update(zip(nums, names))
-        return out
-    # no table: an inline list in the pinout section, "pin 1 EN, 2 PG, 3 FB"
-    text = "\n".join(lines)
-    sec = re.search(r"## Pinout.*?(?=\n## )", text, re.S)
-    m = sec and re.search(r"pin (\d+ [^\s,;()]+(?:, \d+ [^\s,;()]+)+)", sec.group(0))
-    if m:
-        return dict(item.split(" ", 1) for item in m.group(1).split(", "))
-    hashed = sec and re.findall(r"#(\d+) ([^,;()]+?)(?=,|\s*\(|;|$)", sec.group(0), re.M)
-    if hashed:
-        return {n: name.strip() for n, name in hashed}
-    return None
+def load_pin_table(part):
+    path = pin_table_path(part)
+    if not os.path.exists(path):
+        return None, path
+    with open(path, "rb") as fh:
+        return tomllib.load(fh), path
 
 
 def norm(s):
@@ -336,23 +274,37 @@ class Symbols(unittest.TestCase):
                     for v in p["at"]:
                         self.assertAlmostEqual(v / 2.54, round(v / 2.54), places=4, msg=p)
 
-    def test_pins_match_sheet(self):
-        base = parts_lib_dir()
-        if not base or not os.path.isdir(base):
-            self.skipTest("parts-lib not checked out (set ODAP_PARTS_LIB_DIR)")
+    def test_pins_match_datasheet(self):
+        """Symbol pins against the datasheet's pin table, transcribed separately in pins/<part>.toml."""
         for part in PARTS:
             pt = part["part"]
             with self.subTest(part=pt["mpn"]):
+                table, path = load_pin_table(part)
                 if pt.get("sheet_pins", "").startswith("none:"):
-                    continue  # the sheet has no pin table; the reason is recorded in the data
-                table = sheet_pins(os.path.join(base, pt["sheet"]), pt.get("sheet_pin_table"))
-                self.assertIsNotNone(table, "no pin table in %s" % pt["sheet"])
-                # pins the sheet does not list (switch and shell terminals) carry not_in_sheet with the reason
+                    self.assertIsNone(table, "%s exists but the part says sheet_pins = none" % path)
+                    continue  # the datasheet has no pin table; the reason is recorded in the data
+                self.assertIsNotNone(table, "no pin table: write %s or set sheet_pins = \"none: <reason>\"" % path)
+                self.assertEqual(pin_table_errors(table, part), [], path)
+                table = table["pins"]
+                # pins the table does not list (switch and shell terminals) carry not_in_sheet with the reason
                 mine = {p.get("sheet_number", p["number"]): p.get("sheet_name", p["name"])
                         for p in part["pins"] if not p.get("not_in_sheet")}
-                self.assertEqual(sorted(mine), sorted(table), "pin numbers differ from %s" % pt["sheet"])
+                self.assertEqual(sorted(mine), sorted(table), "pin numbers differ from %s" % path)
                 for n, name in mine.items():
                     self.assertEqual(norm(name), norm(table[n]), "pin %s" % n)
+
+    def test_pin_table_schema_rejects(self):
+        part = {"part": {"datasheet_rev": "Rev A"}}
+        good = {"datasheet_rev": "Rev A", "cite": "Table 2, p. 2", "pins": {"1": "A"}}
+        self.assertEqual(pin_table_errors(good, part), [])
+        for bad in ({**good, "extra": 1}, {**good, "datasheet_rev": "Rev B"}, {**good, "cite": "Table 2"},
+                    {**good, "pins": {}}, {**good, "pins": {"1": ""}}):
+            self.assertNotEqual(pin_table_errors(bad, part), [], bad)
+
+    def test_pin_tables_belong_to_parts(self):
+        known = {pin_table_path(p) for p in PARTS}
+        for path in glob.glob(os.path.join(kigen.PARTS, "*", "pins", "*.toml")):
+            self.assertIn(path, known, "pin table without a part data file")
 
     def test_pins_match_pads(self):
         for part in PARTS:

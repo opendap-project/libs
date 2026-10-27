@@ -1,0 +1,15 @@
+# TPS62840DLCR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS62840DLCR.toml).
+
+datasheet_rev = "SLVSEC6D"
+cite = "VSON-HR-8 (DLC), body 1.4–1.6 mm × 1.9–2.1 mm, 1 mm max height, 0.5 mm pitch, no exposed pad (SLVSEC6D, p. 4; p. 36, DLC0008B, drawing 4224310/A 05/2018)"
+
+[pins]
+"1" = "GND"
+"2" = "VIN"
+"3" = "MODE"
+"4" = "EN"
+"5" = "VSET"
+"6" = "STOP"
+"7" = "SW"
+"8" = "VOS"

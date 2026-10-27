@@ -1,0 +1,15 @@
+# NT3H2111W0FHKH: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../NT3H2111W0FHKH.toml).
+
+datasheet_rev = "Rev. 3.6, 21 July 2023"
+cite = "XQFN8 pin numbers (DS p. 8, Figure 3, transparent top view; p. 9, Table 3)"
+
+[pins]
+"1" = "LA"
+"2" = "VSS"
+"3" = "SCL"
+"4" = "FD"
+"5" = "SDA"
+"6" = "VCC"
+"7" = "VOUT"
+"8" = "LB"

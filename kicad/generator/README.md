@@ -27,7 +27,7 @@ Footprints reference their model as `${OPENDAP_KICAD_3DMODELS}/…`, a project t
 ## Checks (`test_library.py`)
 
 - the generated files are up to date with the data, and every footprint has its STEP model;
-- symbol pin numbers and names match the pin table of the part's [parts-lib](https://github.com/opendap-project/parts-lib) spec sheet (`sheet_name` and `sheet_number` record where the symbol deliberately differs from the sheet's text);
+- symbol pin numbers and names match the datasheet's pin table, transcribed separately in `parts/<key>/pins/<part>.toml` (see below); `sheet_name` and `sheet_number` record where the symbol deliberately differs from the table's text, and `sheet_pins = "none: <reason>"` marks a part whose datasheet has no pin table;
 - symbol pins match the footprint's numbered copper pads; the symbol fields are filled;
 - the pads read back from each `.kicad_mod` match the drawing values transcribed in `[[checks]]` (pitch, offsets, pad sizes, pad count, and a copper ring's radii and offset: `ring`, `ring_dy`); an inline fixture checks the ring and ring-sector pads;
 - the footprint rules of the craft standard listed above;
@@ -36,4 +36,17 @@ Footprints reference their model as `${OPENDAP_KICAD_3DMODELS}/…`, a project t
 
 ## Data file
 
-Top-level tables: `[part]` (MPN, manufacturer, library, datasheet and its revision, the parts-lib sheet path, notes), `[[pins]]` (number, name, electrical type, side, unit), `[[units]]`, `[footprint]` with `body` (and `datasheet` where several parts share one land, so the footprint file is the same whichever part writes it), `[[footprint.pads]]`, `[[footprint.rows]]`, `[[footprint.paste]]`, `[[footprint.vias]]`, `[[footprint.rings]]` and `[[footprint.paste_sectors]]` (custom pads from `custom_pads.py`: a copper ring around a bottom-port microphone's acoustic port, its paste split into parallel-gap sectors; the port itself is an `np_thru_hole` pad), optional `[[footprint.model]]` boxes and `[footprint.pin1_mark]`, and `[[checks]]`. Coordinates are in millimetres, top view, +y down. `land_pattern` records where the pads come from: `manufacturer` (the recommended land pattern as given), `drawing` (a connector's recommended PCB layout) or `ipc7351b` (derived, with the derivation in comments).
+Top-level tables: `[part]` (MPN, manufacturer, library, datasheet and its revision, notes), `[[pins]]` (number, name, electrical type, side, unit), `[[units]]`, `[footprint]` with `body` (and `datasheet` where several parts share one land, so the footprint file is the same whichever part writes it), `[[footprint.pads]]`, `[[footprint.rows]]`, `[[footprint.paste]]`, `[[footprint.vias]]`, `[[footprint.rings]]` and `[[footprint.paste_sectors]]` (custom pads from `custom_pads.py`: a copper ring around a bottom-port microphone's acoustic port, its paste split into parallel-gap sectors; the port itself is an `np_thru_hole` pad), optional `[[footprint.model]]` boxes and `[footprint.pin1_mark]`, and `[[checks]]`. Coordinates are in millimetres, top view, +y down. `land_pattern` records where the pads come from: `manufacturer` (the recommended land pattern as given), `drawing` (a connector's recommended PCB layout) or `ipc7351b` (derived, with the derivation in comments).
+
+### Pin table (`parts/<key>/pins/<part>.toml`)
+
+A second reading of the datasheet for the pin check, kept apart from the data that builds the symbol (the same split as the BGA parts' `<Part>-pins.csv`). The file has the part's file name and three keys, and the test rejects any other shape:
+
+```toml
+datasheet_rev = "BAT54 v.6 (1 July 2022)"   # equal to the part's [part] datasheet_rev
+cite = "Pinning (Table 2, p. 2)"            # the page, table or drawing sheet of the pin table
+[pins]                                      # pin number = name, as the datasheet prints them
+"1" = "A"
+"2" = "n.c."
+"3" = "K"
+```

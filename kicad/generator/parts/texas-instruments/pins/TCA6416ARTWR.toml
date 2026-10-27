@@ -1,0 +1,32 @@
+# TCA6416ARTWR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TCA6416ARTWR.toml).
+
+datasheet_rev = "SCPS194F"
+cite = "RTW pin numbers from Table 5-1 (p. 4)"
+
+[pins]
+"1" = "P0"
+"2" = "P1"
+"3" = "P2"
+"4" = "P3"
+"5" = "P4"
+"6" = "P5"
+"7" = "P6"
+"8" = "P7"
+"9" = "GND"
+"10" = "P10"
+"11" = "P11"
+"12" = "P12"
+"13" = "P13"
+"14" = "P14"
+"15" = "P15"
+"16" = "P16"
+"17" = "P17"
+"18" = "ADDR"
+"19" = "SCL"
+"20" = "SDA"
+"21" = "VCCP"
+"22" = "INT"
+"23" = "VCCI"
+"24" = "RESET"
+"25" = "Thermal pad"

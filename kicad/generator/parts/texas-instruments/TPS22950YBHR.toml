@@ -14,7 +14,6 @@ description = "Load switch with adjustable current limit (RILIM, 0.05-3.5 A), 1.
 keywords = "load switch current limit power switch reverse current blocking TPS22950 WCSP DSBGA YBH"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps22950.pdf"
 datasheet_rev = "SLVSFJ2B"
-sheet = "texas-instruments/TPS22950YBHR.md"
 notes = [
   "Land pattern = TI example board layout YBH0006-C02 (SLVSFJ2B PDF p. 22, drawing 4226594/A): six round pads (0.2) at (0.4) pitch both ways, 2 columns x 3 rows.",
   "TI marks solder-mask-defined (SMD) pads PREFERRED for this WCSP (0.2 mask opening over larger copper, 0.05 MIN) and also gives non-solder-mask-defined (0.2 copper, 0.05 MAX mask clearance). The drawing does not size the copper under the mask, so the footprint draws the NSMD option: 0.2 copper, generator default mask expansion. Using SMD needs a copper size TI does not give: UNVERIFIED.",

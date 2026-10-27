@@ -1,0 +1,19 @@
+# LMR33630CRNXR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../LMR33630CRNXR.toml).
+
+datasheet_rev = "SNVSAN3F"
+cite = "SNVSAN3F, p. 5, Figure 6-2 and Table 6-1 (RNX)"
+
+[pins]
+"1" = "PGND"
+"11" = "PGND"
+"2" = "VIN"
+"10" = "VIN"
+"3" = "NC"
+"4" = "BOOT"
+"5" = "VCC"
+"6" = "AGND"
+"7" = "FB"
+"8" = "PG"
+"9" = "EN"
+"12" = "SW"

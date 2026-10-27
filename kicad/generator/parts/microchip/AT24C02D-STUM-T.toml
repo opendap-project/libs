@@ -31,7 +31,6 @@ description = "Serial EEPROM, 2 kbit (256 x 8), I2C 1 MHz at 2.5-3.6 V / 400 kHz
 keywords = "EEPROM I2C serial memory 2 kbit AT24C02D 24C02 SOT23-5"
 datasheet = "https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/AT24C01D-AT24C02D-I2C-Compatible-Two-Wire-Serial-EEPROM-1-Kbit-2-Kbit-DS20006064.pdf"
 datasheet_rev = "Atmel-8871F"
-sheet = "microchip/AT24C02D-STUM-T.md"
 notes = [
   "Datasheet field: the current Microchip document (DS20006064, the manifest URL). Every value here is from Atmel-8871F (01/2017); DS20006064 was not read (HTTP 403).",
   "Land pattern derived per IPC-7351B nominal density from 5TS1 rev D (8871F p. 23): no land pattern in 8871F. Foot length L and the J values are UNVERIFIED (see the comments). Replace with a Microchip land pattern once one is read.",

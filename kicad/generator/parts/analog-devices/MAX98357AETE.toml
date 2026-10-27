@@ -36,9 +36,8 @@ description = "Mono filterless Class D amplifier, PCM input (I2S, left-justified
 keywords = "class D amplifier speaker I2S TDM PCM MAX98357A Maxim TQFN"
 datasheet = "https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf"
 datasheet_rev = "19-6779 Rev 11"
-sheet = "analog-devices/MAX98357AETE-T.md"
 notes = [
-  "Symbol and file named MAX98357AETE, as LT3045EDD: the '+T' suffix (lead-free, tape and reel) stays in the MPN field. The parts-lib sheet file is MAX98357AETE-T.md ('+' written '-').",
+  "Symbol and file named MAX98357AETE, as LT3045EDD: the '+T' suffix (lead-free, tape and reel) stays in the MPN field.",
   "Land pattern derived per IPC-7351B nominal density from outline 21-0136 rev O (Rev 11 pp. 36-37): Maxim land pattern 90-0031 (p. 35) not read. J values UNVERIFIED against the standard text. Replace with 90-0031 once it is read.",
   "Lead length: package code T1633-4 has a custom L = 0.35 / 0.45 / 0.55 (second exposed-pad table and note 9, p. 37), not the 0.30 / 0.40 / 0.50 of the generic 16L column.",
   "Pins 7/8 (VDD) and 3/11/15 (GND) are separate pads with their own numbers; pins 5, 6, 12, 13 are N.C.: visible no_connect pins (CRAFT-125). The exposed pad is pad EP, not internally connected, connected to the ground plane (p. 15): passive.",

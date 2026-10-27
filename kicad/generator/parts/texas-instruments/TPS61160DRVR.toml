@@ -14,7 +14,6 @@ description = "White LED boost driver, 2.7-18 V in, 0.7 A switch, 600 kHz, 200 m
 keywords = "LED driver backlight boost white LED TPS61160 WSON DRV"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps61160.pdf"
 datasheet_rev = "SLVS791E"
-sheet = "texas-instruments/TPS61160DRVR.md"
 notes = [
   "Land pattern and stencil are TI's DRV0006A example board layout / stencil design (SLVS791E PDF pp. 38-39, drawing 4222173/C), used as given.",
   "The DRV0006A land (drawing 4222173/C) is also the land of TVS0500DRVR and TVS2200DRVR: a kicad-lib file for either keeps this [footprint] section identical.",

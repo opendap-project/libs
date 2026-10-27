@@ -1,0 +1,16 @@
+# TPS62903RPJR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS62903RPJR.toml).
+
+datasheet_rev = "SLVSES3A"
+cite = "SLVSES3A, p. 3, Figure 5-1 and Table 5-1"
+
+[pins]
+"1" = "PG"
+"2" = "SW"
+"3" = "VOS"
+"4" = "GND"
+"5" = "EN"
+"6" = "VIN"
+"7" = "MODE/S-CONF"
+"8" = "SS/TR"
+"9" = "FB/VSET"

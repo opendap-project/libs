@@ -14,7 +14,6 @@ description = "3 A synchronous step-down converter, 3-17 V input, 0.4-5.5 V outp
 keywords = "buck step-down converter DC-DC DCS-Control 3A TPS62903 VQFN-HR RPJ0009A"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps62903.pdf"
 datasheet_rev = "SLVSES3A"
-sheet = "texas-instruments/TPS62903RPJR.md"
 notes = [
   "Land pattern = TI example board layout RPJ0009A (SLVSES3A p. 44), non-solder-mask-defined pads (preferred by TI, 0.05 mm max mask clearance all around): pad copper = dimensioned metal, mask expansion left to the board default.",
   "Stencil (SLVSES3A p. 45, 0.125 mm thick) apertures equal the pads 1:1, so pads keep paste = true.",

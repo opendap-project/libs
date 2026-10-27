@@ -1,0 +1,11 @@
+# NSC5083D-49.152M: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../NSC5083D-49.152M.toml).
+
+datasheet_rev = "NZ2520SDA catalogue 2012E_NZ2520SDA_e (p. 1) / 1703A_NZ2520SDA_e (p. 2)"
+cite = "#1 STAND-BY, #2 GND, #3 OUTPUT, #4 VCC (NZ2520SDA, p. 1)"
+
+[pins]
+"1" = "STAND-BY"
+"2" = "GND"
+"3" = "OUTPUT"
+"4" = "VCC"

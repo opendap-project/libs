@@ -1,0 +1,17 @@
+# GT-3321667P-01: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../GT-3321667P-01.toml).
+
+datasheet_rev = "C-GT03321667P-01 rev. A0, 2020-07-10"
+cite = "Pin numbers from the drawing schematic (drawing C-GT03321667P-01, \"SCHEMATIC\")"
+
+[pins]
+"1" = "GND (sleeve)"
+"2" = "R−"
+"3" = "R−"
+"4" = "R+"
+"5" = "R+"
+"6" = "L−"
+"7" = "L+"
+"8" = "L+"
+"9" = "SWITCH"
+"10" = "DETECT"

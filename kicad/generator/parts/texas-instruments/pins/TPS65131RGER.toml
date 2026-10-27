@@ -1,0 +1,32 @@
+# TPS65131RGER: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS65131RGER.toml).
+
+datasheet_rev = "SLVS493E"
+cite = "VQFN-24 (RGE), 4 mm × 4 mm, exposed thermal pad (pad 25) (SLVS493E, p. 3, Figure 5-1 and Table 5-1; p. 36, RGE0024B)"
+
+[pins]
+"1" = "INP"
+"24" = "INP"
+"2" = "PGND"
+"3" = "PGND"
+"4" = "VIN"
+"5" = "INN"
+"6" = "INN"
+"7" = "BSW"
+"8" = "ENP"
+"9" = "PSP"
+"10" = "ENN"
+"11" = "PSN"
+"12" = "NC"
+"20" = "NC"
+"13" = "OUTN"
+"14" = "OUTN"
+"15" = "VNEG"
+"16" = "FBN"
+"17" = "VREF"
+"18" = "CN"
+"19" = "AGND"
+"21" = "CP"
+"22" = "FBP"
+"23" = "VPOS"
+"25" = "Thermal pad"

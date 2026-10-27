@@ -1,0 +1,28 @@
+# TPD8S300ARUKR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPD8S300ARUKR.toml).
+
+datasheet_rev = "SLVSEL9"
+cite = "WQFN-20 (RUK), top view (Pin Functions, pp. 3–4)"
+
+[pins]
+"1" = "C_SBU1"
+"2" = "C_SBU2"
+"3" = "VBIAS"
+"4" = "C_CC1"
+"5" = "C_CC2"
+"6" = "RPD_G2"
+"7" = "RPD_G1"
+"8" = "GND"
+"9" = "FLT"
+"10" = "VPWR"
+"11" = "CC2"
+"12" = "CC1"
+"13" = "GND"
+"14" = "SBU2"
+"15" = "SBU1"
+"16" = "D4"
+"17" = "D3"
+"18" = "GND"
+"19" = "D2"
+"20" = "D1"
+"21" = "Thermal pad"

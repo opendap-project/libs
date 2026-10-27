@@ -1,0 +1,13 @@
+# TPS62827DMQR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS62827DMQR.toml).
+
+datasheet_rev = "SLVSEF9I"
+cite = "pin 1 EN, 2 PG, 3 FB, 4 GND, 5 SW, 6 VIN (p. 3, Table 5-1)"
+
+[pins]
+"1" = "EN"
+"2" = "PG"
+"3" = "FB"
+"4" = "GND"
+"5" = "SW"
+"6" = "VIN"

@@ -14,7 +14,6 @@ description = "4 A synchronous step-down converter, 3-17 V input, 0.8-12 V outpu
 keywords = "buck step-down converter DC-DC DCS-Control 4A TPS62136 VQFN-HR RGX0011A"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps62136.pdf"
 datasheet_rev = "SLVSDV2"
-sheet = "texas-instruments/TPS62136RGXR.md"
 notes = [
   "Land pattern = TI example board layout RGX0011A (SLVSDV2 p. 43). Pads 4-11 are non-solder-mask-defined (metal dimensioned, mask expansion = board default, TI: 0.05 mm max).",
   "Pads 1-3 (VIN, SW, GND bars) are SOLDER-MASK-DEFINED per p. 43: the dimensioned 3X (2.4) x 3X (0.25) is the mask opening; the metal under the mask is drawn '0.05 MIN all around'. OpenDAP choice: copper = opening + 0.05 mm per side = 2.5 x 0.35 mm, mask_margin = -0.05. The exact copper size is not given (MIN only): UNVERIFIED, review.",

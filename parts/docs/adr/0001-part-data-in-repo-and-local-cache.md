@@ -1,6 +1,7 @@
 # ADR 0001: Part data in the repository and in a local cache
 
-- **Status:** Accepted
+- **Status:** Superseded
+- **Superseded by:** [ADR 0002](0002-public-form-of-a-part.md) (2026-10-27): spec sheets are no longer published; the manifest and the local cache stand.
 - **Date:** 2026-10-22
 
 ## Context

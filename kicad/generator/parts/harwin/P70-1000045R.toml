@@ -13,7 +13,6 @@ description = "SMT spring-loaded pogo pin, 2.0 A, phi 2.00 mm flange, 3.50 mm fr
 keywords = "pogo pin spring loaded contact SMT Harwin P70"
 datasheet = "https://www.harwin.com/products/P70-1000045R/"
 datasheet_rev = "Drawing P70-10X0045R issue 4, 02.07.21"
-sheet = "harwin/P70-1000045R.md"
 sheet_pins = "none: single contact"
 notes = [
   "Land pattern = manufacturer 'RECOMMENDED PCB PAD LAYOUT': one round pad phi 2.20 +/-0.05.",

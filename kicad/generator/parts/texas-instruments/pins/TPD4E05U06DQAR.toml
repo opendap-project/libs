@@ -1,0 +1,17 @@
+# TPD4E05U06DQAR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPD4E05U06DQAR.toml).
+
+datasheet_rev = "SLVSBO7O"
+cite = "USON-10 (DQA), top view (Figure 4-3, Table 4-2, p. 4)"
+
+[pins]
+"1" = "D1+"
+"2" = "D1−"
+"3" = "GND"
+"4" = "D2+"
+"5" = "D2−"
+"6" = "NC"
+"7" = "NC"
+"9" = "NC"
+"10" = "NC"
+"8" = "GND"

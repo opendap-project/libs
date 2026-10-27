@@ -1,0 +1,13 @@
+# TPS3808G01DBVR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS3808G01DBVR.toml).
+
+datasheet_rev = "SBVS050N"
+cite = "SBVS050N, p. 4, Table 5-1 (SOT-23)"
+
+[pins]
+"1" = "RESET"
+"2" = "GND"
+"3" = "MR"
+"4" = "CT"
+"5" = "SENSE"
+"6" = "VDD"

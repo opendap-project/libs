@@ -1,0 +1,15 @@
+# CSD17575Q3: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../CSD17575Q3.toml).
+
+datasheet_rev = "SLPS489A"
+cite = "SLPS489A, p. 1: pins 1–3 source, 4 gate, 5–8 and the pad drain"
+
+[pins]
+"1" = "S"
+"2" = "S"
+"3" = "S"
+"4" = "G"
+"5" = "D"
+"6" = "D"
+"7" = "D"
+"8" = "D"

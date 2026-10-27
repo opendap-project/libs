@@ -1,0 +1,13 @@
+# SN74AXC1T45DCKR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../SN74AXC1T45DCKR.toml).
+
+datasheet_rev = "SCES882E"
+cite = "DCK pin numbers (Figure 4-2, Table 4-1, p. 3)"
+
+[pins]
+"1" = "VCCA"
+"2" = "GND"
+"3" = "A"
+"4" = "B"
+"5" = "DIR"
+"6" = "VCCB"

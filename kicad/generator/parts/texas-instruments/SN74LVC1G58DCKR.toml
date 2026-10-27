@@ -12,7 +12,6 @@ description = "Configurable multiple-function gate (AND, OR, NAND, NOR, XOR, inv
 keywords = "logic gate configurable Schmitt LVC SN74LVC1G58 SC-70 DCK"
 datasheet = "https://www.ti.com/lit/ds/symlink/sn74lvc1g58.pdf"
 datasheet_rev = "SCES415N"
-sheet = "texas-instruments/SN74LVC1G58DCKR.md"
 notes = [
   "Land pattern = TI example board layout DCK0006A (SCES415N p. 16, drawing 4214835/D): six pads 0.9 x 0.4 mm (reference), 0.65 mm pitch, 2.2 mm between pad-row centres; non-solder-mask-defined preferred; stencil p. 17.",
   "The DCK0006A land is shared with SN74LVC1G57DCKR, SN74AXC1T45DCKR and TPS22919DCKR (same drawing 4214835): the [footprint] section is identical in every file; its cites name SCES414P, and SCES415N pp. 15-17 give the same drawing 4214835/D.",

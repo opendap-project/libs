@@ -1,0 +1,17 @@
+# TPS259470ARPWR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS259470ARPWR.toml).
+
+datasheet_rev = "SLVSFC9C"
+cite = "SLVSFC9C p. 5–6, Figure 5-1, Table 5-1"
+
+[pins]
+"1" = "EN/UVLO"
+"2" = "OVLO"
+"3" = "AUXOFF"
+"4" = "FLT"
+"5" = "IN"
+"6" = "OUT"
+"7" = "DVDT"
+"8" = "GND"
+"9" = "ILM"
+"10" = "ITIMER"

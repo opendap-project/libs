@@ -14,7 +14,6 @@ description = "USB Type-C port protector, 20 V short-to-VBUS overvoltage protect
 keywords = "USB Type-C protection OVP CC SBU ESD dead battery TPD8S300A WQFN RUK"
 datasheet = "https://www.ti.com/lit/ds/symlink/tpd8s300a.pdf"
 datasheet_rev = "SLVSEL9"
-sheet = "texas-instruments/TPD8S300ARUKR.md"
 notes = [
   "Land pattern = TI example board layout RUK0020B (SLVSEL9 p. 34): 20 pads 20X (0.6) x 20X (0.2) at 16X (0.4) pitch, (2.8) between opposite pad-row centres in both axes, (R0.05) TYP; thermal pad 21 (1.7) square. Top view as drawn: pins 1-5 left top to bottom, 6-10 bottom left to right, 11-15 right bottom to top, 16-20 top right to left (the p. 3 pinout is the same order rotated by 90 degrees).",
   "Stencil (p. 35, 0.1 mm): signal apertures equal the pads; pad 21 prints through four 4X (0.75) square apertures at (0.47) TYP from the centre lines, 78 % coverage, so pad 21 has paste = false.",

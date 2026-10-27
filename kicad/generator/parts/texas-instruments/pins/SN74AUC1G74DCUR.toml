@@ -1,0 +1,15 @@
+# SN74AUC1G74DCUR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../SN74AUC1G74DCUR.toml).
+
+datasheet_rev = "SCES537D"
+cite = "DCU (VSSOP-8), top view (SCES537D, p. 1)"
+
+[pins]
+"1" = "CLK"
+"2" = "D"
+"3" = "Q̅"
+"4" = "GND"
+"5" = "Q"
+"6" = "CLR̅"
+"7" = "PRE̅"
+"8" = "VCC"

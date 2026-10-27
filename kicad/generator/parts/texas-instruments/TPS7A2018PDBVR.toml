@@ -12,7 +12,6 @@ description = "LDO regulator, 300 mA, 1.8 V fixed, 7 uVrms noise, 95 dB PSRR at 
 keywords = "LDO linear regulator low noise TPS7A20 SOT-23-5 DBV"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps7a20.pdf"
 datasheet_rev = "SBVS338H"
-sheet = "texas-instruments/TPS7A2018PDBVR.md"
 notes = [
   "Land pattern = TI example board layout DBV0005A (SBVS338H p. 57): 5X (1.1) x (0.6) pads, 0.95 mm pitch, (2.6) between pad-row centres, R0.05 corners; non-solder-mask-defined preferred; stencil p. 58 equal to the pads.",
   "The DBV0005A land is identical in TPS7A2018PDBVR.toml and TPS7A2031PDBVR.toml.",

@@ -12,7 +12,6 @@ description = "Digital PDM MEMS microphone, bottom port, 73 dB(A) SNR, -26 dBFS,
 keywords = "microphone MEMS PDM digital bottom port XENSIV IM73D122 LGA"
 datasheet = "https://www.infineon.com/assets/row/public/documents/24/49/infineon-im73d122-datasheet-en.pdf"
 datasheet_rev = "v1.00 (2022-08-12)"
-sheet = "infineon/IM73D122V01XTMA1.md"
 notes = [
   "Land pattern = Infineon recommendation, Figure 13 (p. 12), solder-mask-defined pads: four signal pads 4x 0.75 x 4x 0.45 copper, 1.7 mm across (0.85 from the centre line), 2x 0.7 between rows; a copper ring R0.58-R1.04 (pad 5, GND) around a PCB acoustic port R0.4 (0.8 mm NPTH, §5 text p. 12).",
   "Positions: Figure 13 dimensions 0.68 (ring centre to the marked body centre), 0.8 (body centre to the near pad row) and 0.7 (row to row). Cross-check with Figure 12 (p. 11): port centre 1.32 from the body edge and 1.48 to the near pad row; 4/2 - 1.32 = 0.68.",

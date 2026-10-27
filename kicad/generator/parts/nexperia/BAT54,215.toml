@@ -12,7 +12,6 @@ description = "Schottky barrier diode, single, 30 V, 200 mA, VF 320 mV max at 1 
 keywords = "diode Schottky BAT54 SOT23 TO-236AB Nexperia"
 datasheet = "https://assets.nexperia.com/documents/data-sheet/BAT54_SER.pdf"
 datasheet_rev = "BAT54 v.6 (1 July 2022)"
-sheet = "nexperia/BAT54.md"
 notes = [
   "Land pattern = Nexperia reflow soldering footprint sot023_fr (Fig. 6, p. 7): solder lands 0.6 (3x) x 0.7 (3x); pins 1 and 2 at 1.9 (basic) pitch, pin 3 centred opposite, 2 (basic) between the rows; paste 0.5 (3x) x 0.6 (3x); solder resist larger than the lands (drawn, not dimensioned: the pads use the board's mask margin).",
   "Fig. 6 does not number the lands; the numbering follows Fig. 5 (p. 6, top view): pins 1 and 2 on one side 1.9 apart, pin 3 opposite and centred.",

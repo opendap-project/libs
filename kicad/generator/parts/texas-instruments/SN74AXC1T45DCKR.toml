@@ -13,7 +13,6 @@ description = "Single-bit dual-supply bus transceiver, 0.65-3.6 V on each port, 
 keywords = "level translator level shifter transceiver dual supply AXC SN74AXC1T45 SC-70 DCK"
 datasheet = "https://www.ti.com/lit/ds/symlink/sn74axc1t45.pdf"
 datasheet_rev = "SCES882E"
-sheet = "texas-instruments/SN74AXC1T45DCKR.md"
 notes = [
   "Land pattern = TI example board layout DCK0006A (SCES882E p. 31, drawing 4214835/D): six pads 0.9 x 0.4 mm (reference), 0.65 mm pitch, 2.2 mm between pad-row centres, R0.05 TYP; non-solder-mask-defined preferred, 0.07 mm max mask clearance; stencil p. 32 equal to the pads.",
   "The DCK0006A land is shared with TPS22919DCKR and SN74LVC1G57DCKR (same drawing 4214835): the [footprint] section is identical in all three files.",

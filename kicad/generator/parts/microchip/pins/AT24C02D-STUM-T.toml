@@ -1,0 +1,12 @@
+# AT24C02D-STUM-T: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../AT24C02D-STUM-T.toml).
+
+datasheet_rev = "Atmel-8871F"
+cite = "5-lead SOT23, top view (8871F, p. 2, pinout figure)"
+
+[pins]
+"1" = "SCL"
+"2" = "GND"
+"3" = "SDA"
+"4" = "VCC"
+"5" = "WP"

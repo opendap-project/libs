@@ -1,0 +1,12 @@
+# IM73D122V01XTMA1: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../IM73D122V01XTMA1.toml).
+
+datasheet_rev = "v1.00 (2022-08-12)"
+cite = "Datasheet v1.00, Table 9 and Figure 12, p. 11"
+
+[pins]
+"1" = "DATA"
+"2" = "VDD"
+"3" = "CLOCK"
+"4" = "LR"
+"5" = "GND"

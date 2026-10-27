@@ -1,0 +1,32 @@
+# LP5521YQX/NOPB: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../LP5521YQX-NOPB.toml).
+
+datasheet_rev = "SNVS441I"
+cite = "LP5521YQ pin functions (SNVS441I, p. 4; pinout p. 3, NJA package)"
+
+[pins]
+"1" = "CFLY2P"
+"2" = "CFLY1P"
+"3" = "VDD"
+"4" = "GND"
+"5" = "CLK_32K"
+"6" = "INT"
+"7" = "TRIG"
+"8" = "N/C"
+"9" = "N/C"
+"10" = "N/C"
+"11" = "N/C"
+"12" = "N/C"
+"13" = "SDA"
+"14" = "EN"
+"15" = "SCL"
+"16" = "GPO"
+"17" = "R"
+"18" = "G"
+"19" = "B"
+"20" = "ADDR_SEL0"
+"21" = "ADDR_SEL1"
+"22" = "VOUT"
+"23" = "CFLY2N"
+"24" = "CFLY1N"
+"25" = "Exposed pad"

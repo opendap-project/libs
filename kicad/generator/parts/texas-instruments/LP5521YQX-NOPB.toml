@@ -14,7 +14,6 @@ description = "Three-channel RGB LED driver, 25.5 mA programmable current source
 keywords = "LED driver RGB charge pump I2C LP5521 WQFN NJA0024A"
 datasheet = "https://www.ti.com/lit/ds/symlink/lp5521.pdf"
 datasheet_rev = "SNVS441I"
-sheet = "texas-instruments/LP5521YQX-NOPB.md"
 notes = [
   "Symbol name LP5521YQX: the MPN's '/NOPB' suffix cannot be part of a KiCad symbol name; the MPN field keeps it.",
   "Land pattern = TI example board layout NJA0024A (SNVS441I p. 49): 24X (0.4) x 24X (0.25) pads, 20X (0.5) pitch, (3.4) between the left and right pad-column centres, (4.4) between the top and bottom pad-row centres, (R0.05) TYP corners; exposed pad 25 (2.4) x (3.4); non-solder-mask-defined preferred (0.07 MAX all around), mask expansion left to the board default.",

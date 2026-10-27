@@ -18,7 +18,6 @@ description = "I2C-controlled 1-4 cell 5 A buck-boost battery charger with NVDC 
 keywords = "charger buck-boost NVDC li-ion 2S I2C power path VQFN-HR RQM"
 datasheet = "https://www.ti.com/lit/ds/symlink/bq25798.pdf"
 datasheet_rev = "SLUSDV2C"
-sheet = "texas-instruments/BQ25798RQMR.md"
 notes = [
   "ACDRV1 and ACDRV2 passive: SLUSDV2C pin table gives them type P, to be tied to GND when no ACFET-RBFET pair is fitted (pp. 4-5, §7.3.5).",
   "Land pattern and stencil are TI's example board layout / stencil for RQM0029A (SLUSDV2C PDF pp. 149-150), used as given.",

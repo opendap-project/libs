@@ -13,7 +13,6 @@ description = "Current-limited load switch, 1.62-5.5 V, 0.4 Ohm P-channel, 100-2
 keywords = "load switch current limit power switch TPS22945 SC-70 DCK"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps22945.pdf"
 datasheet_rev = "SLVS832D"
-sheet = "texas-instruments/TPS22945DCKR.md"
 notes = [
   "Land pattern = TI example board layout DCK0005A (SLVS832D PDF p. 23, drawing 4214834/G): five pads 0.95 x 0.4 mm, 0.65 mm pitch, 2.2 mm between pad-row centres, R0.05 corners; stencil p. 24 equal to the pads (paste = true).",
   "DCK0005A is its own drawing (4214834), not DCK0006A (4214835) minus a pad: the pads are 0.95 mm long instead of 0.9 mm, so this is a separate footprint. Pin 5 sits opposite pin 1 and pin 4 opposite pin 3; there is no pad opposite pin 2.",

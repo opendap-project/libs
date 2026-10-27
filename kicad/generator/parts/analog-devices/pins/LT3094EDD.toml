@@ -1,0 +1,20 @@
+# LT3094EDD#TRPBF: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../LT3094EDD.toml).
+
+datasheet_rev = "Rev. B"
+cite = "DD package, 12-lead DFN 3 × 3 mm; same pin numbering as the MSE package (LT3094 Rev. B, p. 3; pin functions p. 15)"
+
+[pins]
+"1" = "IN"
+"2" = "IN"
+"3" = "EN/UV"
+"4" = "PG"
+"5" = "PGFB"
+"6" = "ILIM"
+"7" = "VIOC"
+"8" = "SET"
+"9" = "GND"
+"10" = "OUTS"
+"11" = "OUT"
+"12" = "OUT"
+"13 (EP)" = "IN"

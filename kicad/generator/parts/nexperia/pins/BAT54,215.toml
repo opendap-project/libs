@@ -1,0 +1,10 @@
+# BAT54,215: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../BAT54,215.toml).
+
+datasheet_rev = "BAT54 v.6 (1 July 2022)"
+cite = "Pinning (Table 2, p. 2)"
+
+[pins]
+"1" = "A"
+"2" = "n.c."
+"3" = "K"

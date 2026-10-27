@@ -13,7 +13,6 @@ description = "Current, voltage and power monitor, 16-bit, -0.3 to 48 V common m
 keywords = "current monitor power monitor shunt I2C INA236 SOT-23 DDF"
 datasheet = "https://www.ti.com/lit/ds/symlink/ina236.pdf"
 datasheet_rev = "SBOSA81D"
-sheet = "texas-instruments/INA236AIDDFR.md"
 notes = [
   "Land pattern = TI example board layout DDF0008A (SBOSA81D p. 42): eight pads 1.05 x 0.45 mm, 0.65 mm pitch, 2.6 mm between pad-row centres, R0.05 corners; non-solder-mask-defined (0.05 MAX all around), mask expansion left to the board default; stencil p. 43 equal to the pads (paste = true).",
   "Pad order read from the p. 42 drawing: pin 1 top left, 1-4 down the left row, 5 bottom right, 8 top right.",

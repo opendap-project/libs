@@ -1,0 +1,18 @@
+# OPA1622IDRCR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../OPA1622IDRCR.toml).
+
+datasheet_rev = "SBOS727B"
+cite = "SBOS727B, §5, p. 3"
+
+[pins]
+"1" = "+IN A"
+"2" = "V+"
+"3" = "GND"
+"4" = "V−"
+"5" = "+IN B"
+"6" = "−IN B"
+"7" = "OUT B"
+"8" = "EN"
+"9" = "OUT A"
+"10" = "−IN A"
+"Pad (11)" = "Thermal pad"

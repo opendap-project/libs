@@ -1,0 +1,24 @@
+# USB4105-GF-A: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../USB4105-GF-A.toml).
+
+datasheet_rev = "Drawing USB4105 rev B4 (18/12/23)"
+cite = "Pin table (sheet 1)"
+
+[pins]
+"A1" = "GND"
+"B12" = "GND"
+"A4" = "VBUS"
+"B9" = "VBUS"
+"A5" = "CC1"
+"B8" = "SBU2"
+"A6" = "Dp1"
+"B7" = "Dn2"
+"A7" = "Dn1"
+"B6" = "Dp2"
+"A8" = "SBU1"
+"B5" = "CC2"
+"A9" = "VBUS"
+"B4" = "VBUS"
+"A12" = "GND"
+"B1" = "GND"
+"Shell" = "GND"

@@ -23,7 +23,6 @@ description = "U.FL ultra-small SMT coaxial receptacle, 50 ohm, DC to 6 GHz, 2.6
 keywords = "connector coaxial RF U.FL IPEX antenna 50ohm Hirose receptacle"
 datasheet = "https://www.hirose.com/en/product/series/U.FL"
 datasheet_rev = "U.FL catalog 2009.2 (p. 3)"
-sheet = "hirose/U.FL-R-SMT-1.md"
 sheet_pins = "none: the sheet lists no pin table; 1 = signal, 2 = ground (UNVERIFIED numbering), checked by pad_count"
 notes = [
   "DISCREPANCY with the parts-lib sheet: the sheet gives GND pads 1 +/- 0.05 wide and SIG 1 x 1 offset 1.05 from the GND row. The p. 3 drawing gives no GND width (4 and 1.9 imply 1.05) and dimensions SIG as 1 +/- 0.05 wide x 1.05 +/- 0.05 tall with its top edge 1 +/- 0.05 below the GND centre line (the 1.05 is the SIG height, not the offset). Footprint follows the drawing.",

@@ -14,7 +14,6 @@ description = "Single-way SMT spring-finger compression contact, 6 A, 0.4 um gol
 keywords = "spring finger compression contact battery contact SMT 9258"
 datasheet = "https://datasheets.kyocera-avx.com/9258-100.pdf"
 datasheet_rev = "TDS-BTB-0026 Rev 1; drawing 70-9258-001-1X0-00XS Rev F"
-sheet = "kyocera-avx/70-9258-001-120-006.md"
 sheet_pins = "none: single contact"
 notes = [
   "Land pattern = manufacturer PCB layout (sheet 2): one solder pad 7.00 x 2.70 mm; tolerance class .00 = +/-0.10 per title block.",

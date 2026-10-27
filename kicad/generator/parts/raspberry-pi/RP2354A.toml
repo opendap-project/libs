@@ -24,7 +24,6 @@ description = "RP2350 microcontroller with 2 MB of QSPI flash stacked in the pac
 keywords = "microcontroller MCU RP2350 RP2354 Cortex-M33 RISC-V flash QFN60 Raspberry Pi"
 datasheet = "https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf"
 datasheet_rev = "Release 8, build 80d627281ed5"
-sheet = "raspberry-pi/RP2354A.md"
 notes = [
   "Land pattern = manufacturer recommended PCB footprint, DS p. 1325 Figure 148 (signal pads 0.875 x 0.20 mm, centre pad 3.40 x 3.40 mm).",
   "Pad and centre-pad corner radii are drawn rounded in Figure 148 but not dimensioned: signal pads roundrect 0.25 ratio and centre pad 0.10 mm radius (rratio 0.03) are UNVERIFIED choices.",

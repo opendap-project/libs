@@ -1,0 +1,15 @@
+# DM3AT-SF-PEJM5: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../DM3AT-SF-PEJM5.toml).
+
+datasheet_rev = "DM3 catalog 2017.1 (May 1, 2017)"
+cite = "Card contacts (p. 3, top view)"
+
+[pins]
+"1" = "DAT2"
+"2" = "CD/DAT3"
+"3" = "CMD"
+"4" = "VDD"
+"5" = "CLK"
+"6" = "VSS"
+"7" = "DAT0"
+"8" = "DAT1"

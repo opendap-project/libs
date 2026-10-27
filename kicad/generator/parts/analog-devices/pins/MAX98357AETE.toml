@@ -1,0 +1,24 @@
+# MAX98357AETE+T: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../MAX98357AETE.toml).
+
+datasheet_rev = "19-6779 Rev 11"
+cite = "16-pin TQFN, Rev 11, Pin Description, p. 15"
+
+[pins]
+"1" = "DIN"
+"2" = "GAIN_SLOT"
+"3" = "GND"
+"11" = "GND"
+"15" = "GND"
+"4" = "SD_MODE"
+"5" = "N.C."
+"6" = "N.C."
+"12" = "N.C."
+"13" = "N.C."
+"7" = "VDD"
+"8" = "VDD"
+"9" = "OUTP"
+"10" = "OUTN"
+"14" = "LRCLK"
+"16" = "BCLK"
+"EP" = "Exposed pad"

@@ -6,7 +6,7 @@ The craft standard for OpenDAP boards: layout (§3–§8) and, since 2026-10-24,
 - **Date:** 2026-10-25
 - **Applies to:** every OpenDAP board: the T1 main board, faceplates, HATs and their reference designs, and any later device.
 - **Levels:** each rule carries the lowest quality level at which it is mandatory ([RFC 0010](https://github.com/opendap-project/rfcs/blob/main/text/0010-quality-levels.md)): Q0 bench-safe, Q1 prototype, Q2 pre-compliance, Q3 compliant product, Q4 reference. A build passes every rule at or below its target level; the rest is debt, listed, never dropped.
-- **Enforcement:** **DRC**, the rule set [`design-rules/opendap-craft/`](../../design-rules/opendap-craft/); **CHK**, `odapkit craft check` in [tools/hardware](https://github.com/opendap-project/tools/tree/main/hardware) (`tools/pcb-craft-check.py` for boards, `tools/sch-craft-check.py` for schematics and symbol libraries); **ERC**, the project's KiCad ERC with the severities of CRAFT-158, folded into the same report; **Review**, the design review, by a person, against this document.
+- **Enforcement:** **DRC**, the rule set [`design-rules/opendap-craft/`](../../design-rules/opendap-craft/); **CHK**, `odapkit craft check` in [toolkit-hardware](https://github.com/opendap-project/toolkit-hardware) (`tools/pcb-craft-check.py` for boards, `tools/sch-craft-check.py` for schematics and symbol libraries); **ERC**, the project's KiCad ERC with the severities of CRAFT-158, folded into the same report; **Review**, the design review, by a person, against this document.
 
 ## Contents
 
@@ -352,8 +352,8 @@ Pages fetched on 2026-10-24 unless stated.
 | IFX-MB | iFixit, Retina MacBook 2015 teardown: <https://www.ifixit.com/Teardown/Retina+Macbook+2015+Teardown/39841> |
 | OSHWA | OSHWA certification requirements and mark usage: <https://certification.oshwa.org/requirements.html>, <https://certification.oshwa.org/mark-usage.html> |
 | CERN-S | CERN-OHL-S-2.0, §1.9 and §4 (SPDX copy): <https://spdx.org/licenses/CERN-OHL-S-2.0.html> |
-| DS | Engineered Matter design system: <https://github.com/opendap-project/blackbird/blob/main/ui/docs/specs/design-system.md> |
-| BRAND | OpenDAP mark construction and minimum sizes: <https://github.com/opendap-project/blackbird/blob/main/ui/brand/README.md> |
+| DS | Engineered Matter design system: <https://github.com/opendap-project/blackbird-ui/blob/main/docs/specs/design-system.md> |
+| BRAND | OpenDAP mark construction and minimum sizes: <https://github.com/opendap-project/blackbird-ui/blob/main/brand/README.md> |
 | KLC-S | KiCad Library Conventions, symbol rules S3.1–S3.9, S4.1–S4.7, S6.1, S6.2, S7.1, read from the source repository at commit `6e8cbad9556359879d2b91f904d6df82517d97d1`: <https://gitlab.com/kicad/libraries/klc> (`content/symbol/`); site <https://klc.kicad.org/symbol/> |
 | KICAD-SCH | KiCad 10 Schematic Editor manual (design variants, embedding files, net classes, tables, labels, power symbols, ERC checks): <https://docs.kicad.org/10.0/en/eeschema/eeschema.html> |
 | KICAD-WKS | KiCad 10 Drawing Sheet Editor manual (text variables): <https://docs.kicad.org/10.0/en/pl_editor/pl_editor.html> |

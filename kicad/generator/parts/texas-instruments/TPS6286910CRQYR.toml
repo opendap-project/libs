@@ -14,7 +14,6 @@ description = "6 A synchronous step-down converter with I2C DVS, 2.4-5.5 V input
 keywords = "buck step-down converter DC-DC DCS-Control I2C DVS 6A TPS62869 VQFN-HR RQY0009A vdd_cpu"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps62869.pdf"
 datasheet_rev = "SLVSFS3B"
-sheet = "texas-instruments/TPS6286910CRQYR.md"
 notes = [
   "Land pattern = TI example board layout RQY0009A (SLVSFS3B p. 39), non-solder-mask-defined pads (preferred by TI, 0.05 mm max mask clearance all around): pad copper = dimensioned metal, mask expansion left to the board default.",
   "Stencil (SLVSFS3B p. 40, 0.1 mm thick) apertures equal the pads 1:1, so pads keep paste = true.",

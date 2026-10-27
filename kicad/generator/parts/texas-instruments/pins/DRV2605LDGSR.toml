@@ -1,0 +1,17 @@
+# DRV2605LDGSR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../DRV2605LDGSR.toml).
+
+datasheet_rev = "SLOS854D"
+cite = "DGS pin numbers (SLOS854D p. 5, pin functions)"
+
+[pins]
+"1" = "REG"
+"2" = "SCL"
+"3" = "SDA"
+"4" = "IN/TRIG"
+"5" = "EN"
+"6" = "VDD/NC"
+"7" = "OUT+"
+"8" = "GND"
+"9" = "OUT−"
+"10" = "VDD"

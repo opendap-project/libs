@@ -15,7 +15,6 @@ description = "Programmable USB Type-C controller with USB PD BMC physical layer
 keywords = "USB Type-C PD power delivery port controller TCPM CC FUSB302 FUSB302B WQFN MLP"
 datasheet = "https://www.onsemi.com/pdf/datasheet/fusb302b-d.pdf"
 datasheet_rev = "FUSB302B/D Rev. 5"
-sheet = "onsemi/FUSB302B01MPX.md"
 notes = [
   "FUSB302B01MPX: top mark UP, 7-bit I2C address 0x23 (FUSB302B/D p. 2 Table 1, p. 18 Table 15). Same die, package and pins as FUSB302BMPX, which differs only in the address: both files keep an identical [footprint] section (one land, case 510BR).",
   "Land pattern = onsemi recommended land pattern, case 510BR (FUSB302B/D p. 31, 98AON13629G): 14 pads 0.30 TYP wide x (0.58) long at 0.50 TYP pitch; 2.43 between the centre lines of opposite pad rows (the dimension lines end on the red pad centre lines, in both axes); centre pad 1.45 x 1.45. Pad corners are drawn square. Note D: 'land pattern recommendation is existing industry land pattern'.",

@@ -14,7 +14,6 @@ description = "4-channel ESD protection, 0.5 pF, 5.5 V stand-off, IEC 61000-4-2 
 keywords = "ESD TVS protection USB high-speed low capacitance TPD4E05U06 USON DQA"
 datasheet = "https://www.ti.com/lit/ds/symlink/tpd4e05u06.pdf"
 datasheet_rev = "SLVSBO7O"
-sheet = "texas-instruments/TPD4E05U06DQAR.md"
 notes = [
   "Land pattern = TI example board layout DQA0010A (SLVSBO7O p. 29): ten pads 10X (0.565) long, 8X (0.2) wide signal pads and 2X (0.4) wide centre GND pads (3, 8), 4X (0.5) pitch, (0.835) between the column centres, (R0.05) TYP. Pins 1-5 left top to bottom, 6-10 right bottom to top (top view).",
   "Stencil (p. 30, 0.1 mm): apertures equal the signal pads; pads 3 and 8 print 2X (0.36) high x (0.565), 90 % coverage, so they have paste = false and their own apertures.",

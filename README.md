@@ -5,7 +5,7 @@ OpenDAP's shared design libraries, one folder per tool, used by every OpenDAP ha
 | Folder | Content |
 | --- | --- |
 | [`kicad/`](kicad/README.md) | KiCad symbols, footprints, 3D models, fab design rules, drawing sheet and colour theme |
-| [`parts/`](parts/README.md) | Tool-independent part data: one spec sheet per part, and the manifest of external files |
+| [`parts/`](parts/README.md) | The manifest of external part files (datasheets, manufacturer models), fetched into a local cache |
 | [`freecad/`](freecad/README.md) | FreeCAD parts (screws, inserts, connectors, battery, display modules, …) |
 | [`blender/`](blender/README.md) | Blender materials, models and scene setups |
 

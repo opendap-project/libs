@@ -12,7 +12,6 @@ description = "Dual bidirectional I2C/SMBus voltage-level translator, pass-gate,
 keywords = "level translator level shifter I2C SMBus PCA9306 pass gate VSSOP DCU"
 datasheet = "https://www.ti.com/lit/ds/symlink/pca9306.pdf"
 datasheet_rev = "SCPS113O"
-sheet = "texas-instruments/PCA9306DCUR.md"
 notes = [
   "Land pattern = TI example board layout DCU0008A (SCPS113O PDF p. 32), the same drawing 4225266/A as SN74AUC1G74DCUR: the [footprint] section is copied from SN74AUC1G74DCUR.toml unchanged (identical footprint file).",
   "SCL1/SDA1/SCL2/SDA2 are bidirectional pass-gate nodes (I/O, Table 5-1): bidirectional. EN: input.",

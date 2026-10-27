@@ -1,0 +1,18 @@
+# TPS62136RGXR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS62136RGXR.toml).
+
+datasheet_rev = "SLVSDV2"
+cite = "SLVSDV2, p. 3, pin functions"
+
+[pins]
+"1" = "VIN"
+"2" = "SW"
+"3" = "GND"
+"4" = "FB2"
+"5" = "FB"
+"6" = "VOS"
+"7" = "PG"
+"8" = "EN"
+"9" = "SS/TR"
+"10" = "MODE"
+"11" = "VSEL"

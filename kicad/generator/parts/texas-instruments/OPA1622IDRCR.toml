@@ -15,7 +15,6 @@ description = "Dual bipolar-input audio operational amplifier, high-current outp
 keywords = "opamp audio dual headphone driver enable VSON DRC"
 datasheet = "https://www.ti.com/lit/ds/symlink/opa1622.pdf"
 datasheet_rev = "SBOS727B"
-sheet = "texas-instruments/OPA1622IDRCR.md"
 notes = [
   "Land pattern and stencil are TI's example board layout / stencil design for DRC0010J (SBOS727B PDF pp. 35-36), used as given.",
   "Thermal pad 11 is the 1.65 x 2.4 mm pad plus four 0.25 x 0.5 mm tabs (drawn as five copper pads with number 11); pad_count therefore counts 15 pads.",

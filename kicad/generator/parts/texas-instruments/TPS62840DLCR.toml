@@ -13,7 +13,6 @@ description = "750 mA step-down converter, 60 nA quiescent current, 1.8-6.5 V in
 keywords = "buck step-down converter DC-DC low-Iq 750mA TPS62840 VSON-HR DLC0008B"
 datasheet = "https://www.ti.com/lit/ds/symlink/tps62840.pdf"
 datasheet_rev = "SLVSEC6D"
-sheet = "texas-instruments/TPS62840DLCR.md"
 notes = [
   "Land pattern = TI example board layout DLC0008B (SLVSEC6D p. 37): 8X (0.6) x 8X (0.25) pads, 6X (0.5) pitch, (1.3) between pad-row centres, (R0.05) TYP corners; non-solder-mask-defined (preferred, 0.05 MAX mask clearance), so the mask expansion is left to the board default.",
   "Pad order read from the p. 37 drawing: pad 1 top left, 1-4 down the left row, 5 bottom right, 8 top right (consistent with the p. 36 outline, pins 1 and 8 at the same end).",

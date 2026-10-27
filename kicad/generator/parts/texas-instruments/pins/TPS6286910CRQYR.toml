@@ -1,0 +1,16 @@
+# TPS6286910CRQYR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS6286910CRQYR.toml).
+
+datasheet_rev = "SLVSFS3B"
+cite = "SLVSFS3B, p. 4, Figure 6-1 and Table 6-1. Pin 9 is VSET/VID on the A options and PG on the C options (p. 3, §5)"
+
+[pins]
+"1" = "AGND"
+"2" = "PGND"
+"3" = "VIN"
+"4" = "EN"
+"5" = "SDA"
+"6" = "SCL"
+"7" = "SW"
+"8" = "VOS"
+"9" = "PG"
