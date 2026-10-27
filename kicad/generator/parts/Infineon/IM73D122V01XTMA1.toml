@@ -1,0 +1,172 @@
+# IM73D122V01XTMA1 - Infineon XENSIV digital PDM MEMS microphone, bottom port, PG-LLGA-5-3
+# Sources: IM73D122V01 datasheet v1.00 (2022-08-12), p. 11 (Figure 12 package drawing, Table 9 pin
+# configuration), p. 12 (§5 and Figure 13, footprint and stencil recommendation).
+
+[part]
+mpn = "IM73D122V01XTMA1"
+manufacturer = "Infineon"
+library = "Infineon"
+symbol = "IM73D122V01XTMA1"
+reference = "MK"
+description = "Digital PDM MEMS microphone, bottom port, 73 dB(A) SNR, -26 dBFS, 122 dBSPL AOP, 1.62-3.6 V, PG-LLGA-5-3 (4 x 3 x 1.2 mm)"
+keywords = "microphone MEMS PDM digital bottom port XENSIV IM73D122 LGA"
+datasheet = "https://www.infineon.com/assets/row/public/documents/24/49/infineon-im73d122-datasheet-en.pdf"
+datasheet_rev = "v1.00 (2022-08-12)"
+sheet = "Infineon/IM73D122V01XTMA1.md"
+notes = [
+  "Land pattern = Infineon recommendation, Figure 13 (p. 12), solder-mask-defined pads: four signal pads 4x 0.75 x 4x 0.45 copper, 1.7 mm across (0.85 from the centre line), 2x 0.7 between rows; a copper ring R0.58-R1.04 (pad 5, GND) around a PCB acoustic port R0.4 (0.8 mm NPTH, §5 text p. 12).",
+  "Positions: Figure 13 dimensions 0.68 (ring centre to the marked body centre), 0.8 (body centre to the near pad row) and 0.7 (row to row). Cross-check with Figure 12 (p. 11): port centre 1.32 from the body edge and 1.48 to the near pad row; 4/2 - 1.32 = 0.68.",
+  "Pin numbering in the top view: Figure 12 is a bottom view (pins 1, 2 left top to bottom, 3, 4 right, port below); mirrored and turned 180 deg to Figure 13's orientation (port on top) pin 1 is the lower-left pad, as Figure 13's Pin1 label shows.",
+  "Mask: Figure 13 shows solder-mask-defined copper but gives no separate mask-opening dimension; the pads open the mask at the copper size (no margin). The mask opening of a solder-mask-defined design is UNVERIFIED.",
+  "Stencil: signal apertures 4x 0.65 x 4x 0.4 at the pad centres; ring apertures six sectors R0.6-R1, 6x 0.12 gaps, (52 deg) per sector (reference), gaps on the horizontal centre line and every 60 deg. Figure 13's undimensioned 0.2 mm corner radii on the sectors are not drawn (sharp corners): UNVERIFIED that this matters for the paste volume.",
+]
+
+[[pins]]
+number = "3"
+name = "CLOCK"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "4"
+name = "LR"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "1"
+name = "DATA"
+type = "tri_state"
+side = "right"
+
+[[pins]]
+number = "2"
+name = "VDD"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "5"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Infineon_PG-LLGA-5-3_3x4mm_P0.7mm_BottomPort"
+description = "Infineon PG-LLGA-5-3 bottom-port MEMS microphone, 3 x 4 mm body, ground ring around a 0.8 mm PCB acoustic port, Infineon recommended land (IM73D122V01 Figure 13)"
+tags = "PG-LLGA-5-3 LGA MEMS microphone bottom port Infineon"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "IM73D122V01 datasheet v1.00 p. 12, §5 and Figure 13"
+body = { x = 3.0, y = 4.0, z = 1.3, standoff = 0.0, cite = "IM73D122V01 v1.00 p. 11, Figure 12: 3 +/- 0.1 x 4 +/- 0.1, height 1.2 +/- 0.1 (1.3 max)" }
+body_offset = [0.0, 0.0]
+
+[[footprint.pads]]
+number = "1"
+at = [-0.85, 1.5]
+size = [0.75, 0.45]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "Figure 13: 0.75 (4x) x 0.45 (4x), 1.7 / 0.85 across, 0.8 + 0.7 below the body centre; Pin1 lower left"
+
+[[footprint.pads]]
+number = "2"
+at = [-0.85, 0.8]
+size = [0.75, 0.45]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "Figure 13: near row, 0.8 below the body centre"
+
+[[footprint.pads]]
+number = "3"
+at = [0.85, 1.5]
+size = [0.75, 0.45]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "Figure 13; Figure 12: pin 3 beside pin 1"
+
+[[footprint.pads]]
+number = "4"
+at = [0.85, 0.8]
+size = [0.75, 0.45]
+shape = "rect"
+type = "smd"
+paste = false
+cite = "Figure 13; Figure 12: pin 4 beside pin 2"
+
+[[footprint.pads]]
+number = ""
+at = [0.0, -0.68]
+size = [0.8, 0.8]
+drill = 0.8
+shape = "circle"
+type = "np_thru_hole"
+cite = "§5 p. 12: PCB sound port radius 0.4 mm (diameter 0.8 mm); Figure 13 R0.4, centre 0.68 above the body centre"
+
+[[footprint.rings]]
+number = "5"
+center = [0.0, -0.68]
+inner = 0.58
+outer = 1.04
+anchor = 0.4
+cite = "Figure 13: copper ring R0.58 (inner) to R1.04 (outer) around the port"
+
+[[footprint.paste]]
+start = [-0.85, 0.8]
+count = [2, 2]
+pitch = [1.7, 0.7]
+size = [0.65, 0.4]
+shape = "roundrect"
+rratio = 0.5
+cite = "Figure 13 stencil: 0.65 (4x) x 0.4 (4x) apertures with round ends, at the pad centres (1.7 across, 0.7 between rows)"
+
+[[footprint.paste_sectors]]
+center = [0.0, -0.68]
+inner = 0.6
+outer = 1.0
+count = 6
+gap = 0.12
+first_gap = 0.0
+cite = "Figure 13 stencil: R1 (6x) outer, R0.6 (6x) inner, 0.12 (6x) gaps, (52 deg); gaps on the horizontal centre line"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "3"
+value = 1.7
+cite = "Figure 13, 1.7"
+
+[[checks]]
+kind = "dy"
+a = "2"
+b = "1"
+value = 0.7
+cite = "Figure 13, 0.7 (2x)"
+
+[[checks]]
+kind = "pad_size"
+a = "1"
+value = [0.75, 0.45]
+cite = "Figure 13, 0.75 (4x), 0.45 (4x)"
+
+[[checks]]
+kind = "ring"
+a = "5"
+value = [0.58, 1.04]
+cite = "Figure 13, R0.58 and R1.04"
+
+[[checks]]
+kind = "ring_dy"
+a = "2"
+b = "5"
+value = 1.48
+cite = "Figure 13, 0.68 + 0.8 (Figure 12, 1.48): ring centre to the near pad row"
+
+[[checks]]
+kind = "pad_count"
+value = 5
+cite = "Table 9, five pins"

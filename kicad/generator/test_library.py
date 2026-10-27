@@ -86,10 +86,33 @@ def read_fp(path):
     for p in find(n, "pad"):
         at, size = one(p, "at"), one(p, "size")
         layers = [str(x) for x in one(p, "layers")[1:]]
-        pads.append({"number": p[1], "kind": str(p[2]), "shape": str(p[3]),
-                     "at": (float(at[1]), float(at[2])), "size": (float(size[1]), float(size[2])),
-                     "layers": layers, "drill": one(p, "drill")})
+        pad = {"number": p[1], "kind": str(p[2]), "shape": str(p[3]),
+               "at": (float(at[1]), float(at[2])), "size": (float(size[1]), float(size[2])),
+               "layers": layers, "drill": one(p, "drill")}
+        if pad["shape"] == "custom":
+            custom_extent(pad, one(p, "primitives"))
+        pads.append(pad)
     return n, pads
+
+
+def custom_extent(pad, prims):
+    """A custom pad's rings ((centre, inner, outer) in board coordinates) and its bounding box,
+    anchor included, read from its primitives."""
+    x0, y0 = pad["at"]
+    a = pad["size"][0] / 2
+    box = [x0 - a, y0 - a, x0 + a, y0 + a]
+    pad["rings"] = []
+    for c in find(prims, "gr_circle"):
+        cx, cy = x0 + float(one(c, "center")[1]), y0 + float(one(c, "center")[2])
+        r = math.hypot(x0 + float(one(c, "end")[1]) - cx, y0 + float(one(c, "end")[2]) - cy)
+        w = float(one(c, "width")[1])
+        pad["rings"].append(((cx, cy), r - w / 2, r + w / 2))
+        box = [min(box[0], cx - r - w / 2), min(box[1], cy - r - w / 2), max(box[2], cx + r + w / 2), max(box[3], cy + r + w / 2)]
+    for pl in find(prims, "gr_poly"):
+        for xy in find(one(pl, "pts"), "xy"):
+            x, y = x0 + float(xy[1]), y0 + float(xy[2])
+            box = [min(box[0], x), min(box[1], y), max(box[2], x), max(box[3], y)]
+    pad["bbox"] = tuple(box)
 
 
 def is_copper_pad(p):
@@ -99,6 +122,9 @@ def is_copper_pad(p):
 
 
 def rect_of(p, grow=0.0):
+    if p.get("bbox"):
+        b = p["bbox"]
+        return (b[0] - grow, b[1] - grow, b[2] + grow, b[3] + grow)
     w, h = p["size"]
     if p["drill"] is not None:
         d = [float(x) for x in p["drill"][1:] if not str(x).isalpha()]
@@ -206,7 +232,8 @@ def sheet_pins(path, header=None):
         if header and header.lower() not in " | ".join(head):
             continue
         pcs = [i for i, h in enumerate(head) if re.fullmatch(r"(pin|pins|pin\(s\)|pin no\.?|no\.?|ball|contact|terminal|pad)s?", h)]
-        ncs = [i for i, h in enumerate(head) if re.search(r"name|signal", h)]
+        # discretes' tables call the name column "Symbol" (Nexperia: Pin | Symbol | Description)
+        ncs = [i for i, h in enumerate(head) if re.search(r"name|signal", h) or h == "symbol"]
         if not ncs:
             ncs = [i for i, h in enumerate(head) if h == "function"]
         if not pcs or not ncs:
@@ -352,6 +379,16 @@ class Footprints(unittest.TestCase):
                         self.assertEqual(len([p for p in lands if p["number"] or c.get("include_unnumbered")]), c["value"])
                         continue
                     a = pad(c["a"])
+                    if k == "ring":  # a copper ring's inner and outer radius
+                        self.assertTrue(a.get("rings"), "pad %s has no ring" % c["a"])
+                        _, ri, ro = a["rings"][0]
+                        self.assertAlmostEqual(ri, c["value"][0], delta=tol)
+                        self.assertAlmostEqual(ro, c["value"][1], delta=tol)
+                        continue
+                    if k == "ring_dy":  # pad a's centre below the centre of pad b's ring
+                        (_, cy), _, _ = pad(c["b"])["rings"][0]
+                        self.assertAlmostEqual(a["at"][1] - cy, c["value"], delta=tol)
+                        continue
                     if k == "pad_size":
                         self.assertAlmostEqual(a["size"][0], c["value"][0], delta=tol)
                         self.assertAlmostEqual(a["size"][1], c["value"][1], delta=tol)
@@ -509,6 +546,67 @@ class SymbolRules(unittest.TestCase):
 
 
 @unittest.skipUnless(os.path.exists(KICAD_CLI), "kicad-cli not found")
+class CustomPads(unittest.TestCase):
+    """The ring and ring-sector pads (custom_pads.py) on an inline fixture: radii, gaps, no copper
+    in the port, and a ring that cannot hold its anchor is refused."""
+    FIXTURE = {"part": {"mpn": "FIXTURE", "library": "Fixture"}, "pins": [{"number": "1"}],
+               "footprint": {"name": "Fixture", "body": {"x": 3.0, "y": 3.0, "z": 1.0},
+                             "pads": [{"number": "", "type": "np_thru_hole", "shape": "circle",
+                                       "at": [0.0, 0.0], "size": [0.8, 0.8], "drill": 0.8}],
+                             "rings": [{"number": "1", "center": [0.0, 0.0], "inner": 0.58,
+                                        "outer": 1.04, "anchor": 0.4}],
+                             "paste_sectors": [{"center": [0.0, 0.0], "inner": 0.6, "outer": 1.0,
+                                                "count": 6, "gap": 0.12, "first_gap": 0.0}]}}
+
+    def pads(self):
+        text, _ = kigen.footprint(self.FIXTURE)
+        path = os.path.join(tempfile.mkdtemp(), "f.kicad_mod")
+        with open(path, "w") as fh:
+            fh.write(text)
+        return read_fp(path)[1]
+
+    def test_ring(self):
+        ring = [p for p in self.pads() if p["number"] == "1"][0]
+        self.assertEqual(ring["shape"], "custom")
+        self.assertNotIn("F.Paste", ring["layers"])
+        (cx, cy), ri, ro = ring["rings"][0]
+        self.assertAlmostEqual(ri, 0.58, places=4)
+        self.assertAlmostEqual(ro, 1.04, places=4)
+        self.assertAlmostEqual(math.hypot(cx, cy), 0.0, places=4)
+        a = ring["size"][0] / 2  # the anchor stays on the ring, clear of the port
+        self.assertGreaterEqual(math.hypot(*ring["at"]) - a, ri - EPS)
+        self.assertLessEqual(math.hypot(*ring["at"]) + a, ro + EPS)
+        self.assertEqual(rect_of(ring), (-1.04, -1.04, 1.04, 1.04))
+
+    def test_sectors(self):
+        secs = [p for p in self.pads() if p["layers"] == ["F.Paste"]]
+        self.assertEqual(len(secs), 6)
+        text, _ = kigen.footprint(self.FIXTURE)
+        polys = [n for n in find(parse(text), "pad") if one(one(n, "primitives") or [], "gr_poly")]
+        self.assertEqual(len(polys), 6)
+        for n in polys:
+            at = one(n, "at")
+            x0, y0 = float(at[1]), float(at[2])
+            pts = [(x0 + float(q[1]), y0 + float(q[2])) for q in find(one(one(one(n, "primitives"), "gr_poly"), "pts"), "xy")]
+            for x, y in pts:
+                self.assertTrue(0.6 - EPS <= math.hypot(x, y) <= 1.0 + EPS)
+            # the two straight edges (outer arc end to inner arc start, inner end to outer start)
+            # each sit gap/2 = 0.06 from a gap centre line at a multiple of 60 degrees
+            k = len(pts) // 2
+            for a, b in ((pts[k - 1], pts[k]), (pts[-1], pts[0])):
+                ang = math.atan2(a[1] + b[1], a[0] + b[0])
+                line = round(ang / (math.pi / 3)) * math.pi / 3
+                for x, y in (a, b):
+                    self.assertAlmostEqual(abs(-math.sin(line) * x + math.cos(line) * y), 0.06, delta=2e-4)
+
+    def test_bad_ring(self):
+        bad = {"rings": [{"number": "1", "center": [0, 0], "inner": 0.58, "outer": 1.04, "anchor": 0.6}]}
+        with self.assertRaises(ValueError):
+            kigen.custom_pads.ring_pads(bad)
+        with self.assertRaises(ValueError):
+            kigen.custom_pads.ring_pads({"rings": [{"number": "1", "center": [0, 0], "inner": 1.0, "outer": 0.5}]})
+
+
 class KicadCli(unittest.TestCase):
     def run_cli(self, *args):
         r = subprocess.run([KICAD_CLI, *args], capture_output=True, text=True)

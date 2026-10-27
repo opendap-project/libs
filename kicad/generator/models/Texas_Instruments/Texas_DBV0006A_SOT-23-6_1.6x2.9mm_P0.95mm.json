@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.6,
+        2.9,
+        1.45
+      ]
+    }
+  ],
+  "library": "Texas_Instruments",
+  "name": "Texas_DBV0006A_SOT-23-6_1.6x2.9mm_P0.95mm",
+  "source": "envelope from SBVS050N p. 36, DBV0006A outline: body 1.45-1.75 x 2.75-3.05, 1.45 max height"
+}

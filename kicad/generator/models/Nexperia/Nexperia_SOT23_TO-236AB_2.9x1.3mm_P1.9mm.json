@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.9,
+        1.3,
+        1.1
+      ]
+    }
+  ],
+  "library": "Nexperia",
+  "name": "Nexperia_SOT23_TO-236AB_2.9x1.3mm_P1.9mm",
+  "source": "envelope from BAT54 v.6 p. 6, Fig. 5: body 2.8-3.0 x 1.2-1.4, height 0.9-1.1"
+}

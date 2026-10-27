@@ -33,6 +33,8 @@ import sys
 import tempfile
 import tomllib
 
+import custom_pads
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PARTS = os.path.join(ROOT, "generator", "parts")
 FP_VERSION = "20260206"
@@ -155,6 +157,7 @@ def expand_pads(fp):
                              "rratio": a.get("rratio", 0.25),
                              "at": [a["start"][0] + ix * a["pitch"][0], a["start"][1] + iy * a["pitch"][1]],
                              "size": list(a["size"])})
+    pads += custom_pads.ring_pads(fp) + custom_pads.sector_pads(fp)
     for p in pads:
         p.setdefault("type", "smd")
         p.setdefault("shape", "roundrect" if p["type"] == "smd" else "circle")
@@ -198,6 +201,9 @@ def frame(part):
 # ---------------------------------------------------------------- geometry helpers
 
 def pad_box(p, grow=0.0):
+    if p.get("extent"):  # a custom pad: its primitives' box, relative to the pad position
+        e, (x, y) = p["extent"], p["at"]
+        return (x + e[0] - grow, y + e[1] - grow, x + e[2] + grow, y + e[3] + grow)
     w, h = p["size"]
     if p["type"] in ("thru_hole", "np_thru_hole", "via") and p.get("drill"):
         d = p["drill"]
@@ -373,6 +379,8 @@ def pad_node(p):
         node.append(S("roundrect_rratio", num(p.get("rratio", 0.25))))
     if p.get("mask_margin"):
         node.append(S("solder_mask_margin", num(p["mask_margin"])))
+    if shape == "custom":
+        node += custom_pads.primitives(p, S, Sym, num)
     return node
 
 
