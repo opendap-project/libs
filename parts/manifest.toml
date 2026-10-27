@@ -1801,6 +1801,46 @@ sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
 redistributable = false
 
 [[file]]
+mpn = "WSL2512R0100FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
+mpn = "WSL2010R0200FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
+mpn = "WSL1206R1000FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
+mpn = "WSL1206R0200FEA"
+manufacturer = "Vishay"
+kind = "datasheet"
+url = "https://www.vishay.com/docs/30100/wsl.pdf"
+revision = "Document 30100, Rev. 23-Nov-2023"
+date = "2023-11-23"
+sha256 = "96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc"
+redistributable = false
+
+[[file]]
 mpn = "43650-0400"
 manufacturer = "Molex"
 kind = "datasheet"
