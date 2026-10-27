@@ -18,10 +18,12 @@ A list right under the title, in this order:
 - **Datasheet:** document, revision and date; the sha256 only when the sheet states it. Further documents go in nested bullets. Local file locations are never written here: they belong to `manifest.toml` and the local cache.
 - **Lifecycle (date, source):** the lifecycle status as the manufacturer states it (active, NRND, last time buy, obsolete), with the document or page it was read from and the date; or "Not stated" (PLIB-003).
 - **Second sources:** form-, fit- and function-compatible parts on the same land, by MPN; or "None found". Stock, prices, distributors and quotes are not recorded here (PLIB-003).
-- **Status:** one of:
-  - "Transcribed from the datasheet";
-  - "Partly UNVERIFIED";
-  - "Datasheet not downloaded: every field UNVERIFIED", followed by the reason.
+- **Status:** a word from the docs status vocabulary, then the detail:
+  - "confirmed (transcribed from the datasheet)";
+  - "draft (partly UNVERIFIED)", or "draft." followed by what is UNVERIFIED;
+  - "draft. Datasheet not downloaded: every field UNVERIFIED", followed by the reason;
+  - "superseded. Not in the current BOM (replaced in BOM v… by …)", for a part another part replaced;
+  - "withdrawn. Not in the current BOM (removed in BOM v… …)", for a part removed without a replacement.
 
 ## Sections
 
