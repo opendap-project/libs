@@ -39,6 +39,8 @@ import sys
 import tomllib
 import uuid
 
+import symlib
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "generator", "bga")
 FP_VERSION = "20260206"
@@ -394,7 +396,7 @@ def outputs(paths):
         models[mpath] = model
         files[mpath] = json.dumps(model, indent=1) + "\n"
     for lib, ps in libs.items():
-        files[os.path.join("symbols", lib + ".kicad_sym")] = symbol_lib(ps)
+        files[os.path.join("symbols", lib + ".kicad_sym")] = symlib.merged(lib, GENERATOR, symbol_lib(ps))
     return files
 
 

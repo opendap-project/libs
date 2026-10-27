@@ -34,6 +34,7 @@ import tempfile
 import tomllib
 
 import custom_pads
+import symlib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PARTS = os.path.join(ROOT, "generator", "parts")
@@ -590,7 +591,7 @@ def build(out, parts):
         path = os.path.join(out, "symbols", lib + ".kicad_sym")
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w") as fh:
-            fh.write(symbol_lib(lp))
+            fh.write(symlib.merged(lib, GENERATOR, symbol_lib(lp)))
         written.append(path)
         seen = {}
         for p in lp:
