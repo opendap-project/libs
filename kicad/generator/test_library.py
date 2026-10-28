@@ -50,6 +50,11 @@ sys.path.insert(0, HERE)
 import generic  # noqa: E402
 import kigen  # noqa: E402
 
+# Tests never inherit a hook's GIT_* variables (HL-64): under pre-commit, git exports GIT_DIR, GIT_INDEX_FILE and
+# others, and a fixture's git would act on the repository being committed.
+for _k in [k for k in os.environ if k.startswith("GIT_")]:
+    del os.environ[_k]
+
 ROOT = kigen.ROOT
 KICAD_CLI = os.environ.get("KICAD_CLI") or shutil.which("kicad-cli") or \
     "/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli"
