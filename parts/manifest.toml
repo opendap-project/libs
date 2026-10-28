@@ -2106,6 +2106,17 @@ sha256 = "e0f4f5766ba30309af96287e20345b34b38986da59bb0e644bf5401e009c0c66"
 redistributable = false
 
 [[file]]
+mpn = "TPS22916CYFPR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps22916.pdf"
+revision = "SLVSDO5F"
+date = "2021-12"
+sha256 = "a4d81b70556d5564aaee9baf455b7651375a94c629448f3f7e7ced2f5c41b33f"
+# TPS22916xx datasheet (29 pages, package option addendum of 2025-11-09)
+redistributable = false
+
+[[file]]
 mpn = "NT3H2111W0FHKH"
 manufacturer = "NXP"
 kind = "datasheet"

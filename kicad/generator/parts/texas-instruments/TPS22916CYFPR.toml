@@ -1,0 +1,133 @@
+# TPS22916CYFPR - TI 1-5.5 V, 2 A, 60 mOhm ultra-low-leakage load switch, slow turn-on (C version), quick
+# output discharge, active-high ON, YFP0004 (WCSP / DSBGA-4)
+# Sources: SLVSDO5F (TPS22916xx datasheet, Jul 2017 rev. Dec 2021), PDF p. 1 (device comparison table),
+# PDF p. 3 (Table 5-1 pin functions, Figures 5-1 and 5-2), PDF p. 24 (YFP0004 outline 4223507/A 01/2017),
+# PDF p. 25 (example board layout, scale 50X), PDF p. 26 (example stencil design, 0.1 mm stencil),
+# PDF p. 27 (package option addendum, 9-Nov-2025). The board layout is a top view: columns 1-2 left to
+# right, rows A-B top to bottom, ball A1 top left; used as drawn (y down).
+
+[part]
+mpn = "TPS22916CYFPR"
+manufacturer = "Texas Instruments"
+library = "texas-instruments"
+symbol = "TPS22916CYFPR"
+reference = "U"
+description = "Load switch, 1-5.5 V, 2 A, 60 mOhm at 5 V, slow controlled turn-on (C version), reverse-current blocking, quick output discharge (150 Ohm), active-high ON, WCSP-4 0.78 x 0.78 mm (YFP0004)"
+keywords = "load switch power switch QOD reverse current blocking TPS22916 WCSP DSBGA YFP"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps22916.pdf"
+datasheet_rev = "SLVSDO5F"
+lifecycle = { status = "Active", source = "TI package option addendum (SLVSDO5F PDF p. 27)", read = "2026-10-27" }
+second_sources = []
+notes = [
+  "Land pattern = TI example board layout YFP0004 (SLVSDO5F PDF p. 25, drawing 4223507/A): four round pads (0.23) at (0.4) pitch both ways, 2 columns x 2 rows.",
+  "TI marks non-solder-mask-defined (NSMD) pads PREFERRED for this WCSP (0.23 copper, 0.05 MAX mask clearance): drawn as NSMD with the generator default mask expansion.",
+  "Stencil (PDF p. 26, 0.1 mm thick): 4X (0.25) square apertures, (R0.05) TYP, at the ball centres -> [[footprint.paste]] with the copper pads paste = false.",
+  "Pad numbers are the WCSP ball names (A1..B2) of Table 5-1. Pin 1 mark on A1 (pin1 = A1).",
+  "The C version has the slow turn-on and QOD; the B, BL, CN, CL and CNL versions share this land and pinout but differ in timing, QOD or ON polarity (PDF p. 1): not interchangeable without a review.",
+]
+
+[[pins]]
+number = "A2"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "B2"
+name = "ON"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "A1"
+name = "VOUT"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "B1"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[footprint]
+name = "Texas_YFP0004_DSBGA-4_0.78x0.78mm_Layout2x2_P0.4mm"
+description = "Texas Instruments YFP0004 DSBGA (WCSP) 4 balls, 0.78 x 0.78 mm body, 0.4 mm pitch, 2 x 2 layout, TI example land pattern (drawing 4223507/A)"
+tags = "WCSP DSBGA-4 YFP0004 YFP Texas"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps22916.pdf"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "YFP0004 example board layout, drawing 4223507/A 01/2017 (SLVSDO5F PDF p. 25); stencil PDF p. 26"
+body = { x = 0.78, y = 0.78, z = 0.5, standoff = 0.16, cite = "SLVSDO5F PDF p. 24, YFP0004 outline 4223507/A: D and E 0.75-0.81 (nominal midpoints), 0.5 MAX height, ball height 0.13-0.19 (midpoint)" }
+body_offset = [0.0, 0.0]
+pin1 = "A1"
+
+[[footprint.pads]]
+number = "A1"
+at = [-0.2, -0.2]
+size = [0.23, 0.23]
+shape = "circle"
+type = "smd"
+paste = false
+cite = "SLVSDO5F PDF p. 25: 4X (0.23), (0.4) TYP both ways, centred on both SYMM lines"
+
+[[footprint.pads]]
+number = "A2"
+at = [0.2, -0.2]
+size = [0.23, 0.23]
+shape = "circle"
+type = "smd"
+paste = false
+cite = "SLVSDO5F PDF p. 25"
+
+[[footprint.pads]]
+number = "B1"
+at = [-0.2, 0.2]
+size = [0.23, 0.23]
+shape = "circle"
+type = "smd"
+paste = false
+cite = "SLVSDO5F PDF p. 25"
+
+[[footprint.pads]]
+number = "B2"
+at = [0.2, 0.2]
+size = [0.23, 0.23]
+shape = "circle"
+type = "smd"
+paste = false
+cite = "SLVSDO5F PDF p. 25"
+
+[[footprint.paste]]
+start = [-0.2, -0.2]
+pitch = [0.4, 0.4]
+count = [2, 2]
+size = [0.25, 0.25]
+rratio = 0.2
+cite = "SLVSDO5F PDF p. 26: 4X (0.25) square, (0.4) TYP, (R0.05) TYP (rratio 0.05/0.25), 0.1 mm stencil"
+
+[[checks]]
+kind = "pitch"
+a = "A1"
+b = "A2"
+value = 0.4
+cite = "SLVSDO5F PDF p. 25, (0.4) TYP column pitch"
+
+[[checks]]
+kind = "pitch"
+a = "A1"
+b = "B1"
+value = 0.4
+cite = "SLVSDO5F PDF p. 25, (0.4) TYP row pitch"
+
+[[checks]]
+kind = "pad_size"
+a = "A1"
+value = [0.23, 0.23]
+cite = "SLVSDO5F PDF p. 25, 4X (0.23)"
+
+[[checks]]
+kind = "pad_count"
+value = 4
+cite = "SLVSDO5F PDF p. 24, four balls"

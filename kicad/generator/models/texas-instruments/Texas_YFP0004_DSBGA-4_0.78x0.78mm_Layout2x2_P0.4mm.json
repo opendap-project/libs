@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.16
+      ],
+      "size": [
+        0.78,
+        0.78,
+        0.33999999999999997
+      ]
+    }
+  ],
+  "library": "texas-instruments",
+  "name": "Texas_YFP0004_DSBGA-4_0.78x0.78mm_Layout2x2_P0.4mm",
+  "source": "envelope from SLVSDO5F PDF p. 24, YFP0004 outline 4223507/A: D and E 0.75-0.81 (nominal midpoints), 0.5 MAX height, ball height 0.13-0.19 (midpoint)"
+}
