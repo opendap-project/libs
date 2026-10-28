@@ -352,8 +352,8 @@ Pages fetched on 2026-10-24 unless stated.
 | IFX-MB | iFixit, Retina MacBook 2015 teardown: <https://www.ifixit.com/Teardown/Retina+Macbook+2015+Teardown/39841> |
 | OSHWA | OSHWA certification requirements and mark usage: <https://certification.oshwa.org/requirements.html>, <https://certification.oshwa.org/mark-usage.html> |
 | CERN-S | CERN-OHL-S-2.0, §1.9 and §4 (SPDX copy): <https://spdx.org/licenses/CERN-OHL-S-2.0.html> |
-| DS | Engineered Matter design system: <https://github.com/opendap-project/blackbird-ui/blob/main/docs/specs/design-system.md> |
-| BRAND | OpenDAP mark construction and minimum sizes: <https://github.com/opendap-project/blackbird-ui/blob/main/brand/README.md> |
+| DS | Engineered Matter design system: <https://github.com/opendap-project/blackbird/blob/main/ui/docs/specs/design-system.md> |
+| BRAND | OpenDAP mark construction and minimum sizes: <https://github.com/opendap-project/blackbird/blob/main/ui/brand/README.md> |
 | KLC-S | KiCad Library Conventions, symbol rules S3.1–S3.9, S4.1–S4.7, S6.1, S6.2, S7.1, read from the source repository at commit `6e8cbad9556359879d2b91f904d6df82517d97d1`: <https://gitlab.com/kicad/libraries/klc> (`content/symbol/`); site <https://klc.kicad.org/symbol/> |
 | KICAD-SCH | KiCad 10 Schematic Editor manual (design variants, embedding files, net classes, tables, labels, power symbols, ERC checks): <https://docs.kicad.org/10.0/en/eeschema/eeschema.html> |
 | KICAD-WKS | KiCad 10 Drawing Sheet Editor manual (text variables): <https://docs.kicad.org/10.0/en/pl_editor/pl_editor.html> |

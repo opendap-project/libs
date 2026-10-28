@@ -15,7 +15,7 @@ OpenDAP repositories add this library as a git submodule, pinned to a tag, at `l
 
 ## Rendering rules
 
-Every render made with this library follows the OpenDAP design language: matte graphite polymer by default, soft studio light, orange only on the Action button and used sparingly elsewhere, plasma effects only in display content or an explicit concept visualisation, and accurate proportions of the real parts. The rules are in the [case industrial-design spec](https://github.com/opendap-project/case/blob/main/docs/specs/industrial-design.md) (§ Rendering rules) and the [design system spec](https://github.com/opendap-project/blackbird-ui/blob/main/docs/specs/design-system.md); materials in `opendap/` implement them.
+Every render made with this library follows the OpenDAP design language: matte graphite polymer by default, soft studio light, orange only on the Action button and used sparingly elsewhere, plasma effects only in display content or an explicit concept visualisation, and accurate proportions of the real parts. The rules are in the [case industrial-design spec](https://github.com/opendap-project/case/blob/main/docs/specs/industrial-design.md) (§ Rendering rules) and the [design system spec](https://github.com/opendap-project/blackbird/blob/main/ui/docs/specs/design-system.md); materials in `opendap/` implement them.
 
 ## License
 
