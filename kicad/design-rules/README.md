@@ -28,7 +28,7 @@ Fab-independent: the part of the [PCB craft standard](../docs/specs/pcb-craft-st
 
 ## Use
 
-List the sets in the board's `<project>.dru.toml` and compose `<project>.kicad_dru` with `odapkit dru compose` ([toolkit-hardware](https://github.com/opendap-project/toolkit-hardware)), in this order: the fab set, `opendap-craft`, then the product rules. Or copy one `.kicad_dru` file next to the KiCad project as `<project>.kicad_dru`. Then set the Board Setup values listed in each set's README. `odapkit craft check <board>.kicad_pcb` checks the rest of the craft standard and reports the board's level.
+List the sets in the board's `<project>.dru.toml` and compose `<project>.kicad_dru` with `odapkit dru compose` ([tools/hardware](https://github.com/opendap-project/tools/tree/main/hardware)), in this order: the fab set, `opendap-craft`, then the product rules. Or copy one `.kicad_dru` file next to the KiCad project as `<project>.kicad_dru`. Then set the Board Setup values listed in each set's README. `odapkit craft check <board>.kicad_pcb` checks the rest of the craft standard and reports the board's level.
 
 ## Test boards
 

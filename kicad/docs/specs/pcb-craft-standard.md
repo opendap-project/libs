@@ -6,7 +6,7 @@ The craft standard for OpenDAP boards: layout (§3–§8) and, since 2026-10-24,
 - **Date:** 2026-10-25
 - **Applies to:** every OpenDAP board: the T1 main board, faceplates, HATs and their reference designs, and any later device.
 - **Levels:** each rule carries the lowest quality level at which it is mandatory ([RFC 0010](https://github.com/opendap-project/rfcs/blob/main/text/0010-quality-levels.md)): Q0 bench-safe, Q1 prototype, Q2 pre-compliance, Q3 compliant product, Q4 reference. A build passes every rule at or below its target level; the rest is debt, listed, never dropped.
-- **Enforcement:** **DRC**, the rule set [`design-rules/opendap-craft/`](../../design-rules/opendap-craft/); **CHK**, `odapkit craft check` in [toolkit-hardware](https://github.com/opendap-project/toolkit-hardware) (`tools/pcb-craft-check.py` for boards, `tools/sch-craft-check.py` for schematics and symbol libraries); **ERC**, the project's KiCad ERC with the severities of CRAFT-158, folded into the same report; **Review**, the design review, by a person, against this document.
+- **Enforcement:** **DRC**, the rule set [`design-rules/opendap-craft/`](../../design-rules/opendap-craft/); **CHK**, `odapkit craft check` in [tools/hardware](https://github.com/opendap-project/tools/tree/main/hardware) (`tools/pcb-craft-check.py` for boards, `tools/sch-craft-check.py` for schematics and symbol libraries); **ERC**, the project's KiCad ERC with the severities of CRAFT-158, folded into the same report; **Review**, the design review, by a person, against this document.
 
 ## Contents
 

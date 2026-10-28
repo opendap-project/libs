@@ -4,7 +4,7 @@ KiCad 10 design rules for the part of the [OpenDAP PCB craft standard](../../doc
 
 - Rules: [`opendap-craft.kicad_dru`](opendap-craft.kicad_dru), 13 rules for 12 CRAFT IDs.
 - Test board: [`test/`](test/), one failing and one passing object per rule, and two rows of exempt objects that must raise nothing.
-- The rest of the standard: `odapkit craft check` ([toolkit-hardware](https://github.com/opendap-project/toolkit-hardware)) and review.
+- The rest of the standard: `odapkit craft check` ([tools/hardware](https://github.com/opendap-project/tools/tree/main/hardware)) and review.
 
 ## Levels
 
