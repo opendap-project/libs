@@ -158,7 +158,7 @@ def expand_pads(fp):
                              "rratio": a.get("rratio", 0.25),
                              "at": [a["start"][0] + ix * a["pitch"][0], a["start"][1] + iy * a["pitch"][1]],
                              "size": list(a["size"])})
-    pads += custom_pads.ring_pads(fp) + custom_pads.sector_pads(fp)
+    pads += custom_pads.ring_pads(fp) + custom_pads.sector_pads(fp) + custom_pads.poly_pads(fp)
     for p in pads:
         p.setdefault("type", "smd")
         p.setdefault("shape", "roundrect" if p["type"] == "smd" else "circle")
@@ -215,6 +215,8 @@ def pad_box(p, grow=0.0):
 
 
 def copper(pads):
+    """Pads that keep silk and courtyard away: every pad but paste-only apertures (a mask aperture
+    of a solder-mask-defined land counts, as its opening exposes metal)."""
     return [p for p in pads if p["type"] != "paste"]
 
 
@@ -352,8 +354,8 @@ def rect(b, layer, w):
 
 def pad_node(p):
     t = p["type"]
-    kind = {"smd": "smd", "paste": "smd", "thru_hole": "thru_hole", "via": "thru_hole",
-            "np_thru_hole": "np_thru_hole"}[t]
+    kind = {"smd": "smd", "paste": "smd", "copper": "smd", "aperture": "smd", "thru_hole": "thru_hole",
+            "via": "thru_hole", "np_thru_hole": "np_thru_hole"}[t]
     shape = p["shape"]
     node = S("pad", p["number"], Sym(kind), Sym(shape), S("at", num(p["at"][0]), num(p["at"][1])),
              S("size", num(p["size"][0]), num(p["size"][1])))
@@ -369,6 +371,10 @@ def pad_node(p):
         layers = ["F.Cu", "F.Mask"] + (["F.Paste"] if p.get("paste", True) else [])
     elif t == "paste":
         layers = ["F.Paste"]
+    elif t == "copper":  # the copper of a solder-mask-defined land: covered by the mask
+        layers = ["F.Cu"]
+    elif t == "aperture":  # its exposed metal: mask opening and paste, no copper
+        layers = ["F.Mask", "F.Paste"]
     elif t == "via":
         layers = ["*.Cu"]
     else:
@@ -380,6 +386,8 @@ def pad_node(p):
         node.append(S("roundrect_rratio", num(p.get("rratio", 0.25))))
     if p.get("mask_margin"):
         node.append(S("solder_mask_margin", num(p["mask_margin"])))
+    elif t == "aperture":  # the opening is the drawn exposed metal: no board-default expansion
+        node.append(S("solder_mask_margin", 0))
     if shape == "custom":
         node += custom_pads.primitives(p, S, Sym, num)
     return node

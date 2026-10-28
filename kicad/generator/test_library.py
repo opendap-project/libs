@@ -124,9 +124,14 @@ def custom_extent(pad, prims):
 
 
 def is_copper_pad(p):
-    """A pad that is a land of the part: copper on an outer layer with a mask opening."""
-    return any(l in ("F.Cu", "*.Cu") for l in p["layers"]) and any("Mask" in l for l in p["layers"]) \
-        and p["kind"] != "np_thru_hole"
+    """A pad that is a land of the part: copper on an outer layer with a mask opening, or the
+    copper-only SMD pad of a solder-mask-defined land (its opening is a separate aperture pad with
+    the same number and no copper, which is not a land)."""
+    if p["kind"] == "np_thru_hole":
+        return False
+    if any(l in ("F.Cu", "*.Cu") for l in p["layers"]) and any("Mask" in l for l in p["layers"]):
+        return True
+    return p["kind"] == "smd" and p["layers"] == ["F.Cu"]
 
 
 def rect_of(p, grow=0.0):
@@ -636,6 +641,68 @@ class CustomPads(unittest.TestCase):
             kigen.custom_pads.ring_pads(bad)
         with self.assertRaises(ValueError):
             kigen.custom_pads.ring_pads({"rings": [{"number": "1", "center": [0, 0], "inner": 1.0, "outer": 0.5}]})
+
+
+class PolyPads(unittest.TestCase):
+    """The polygon pads (custom_pads.poly_pads) on an inline fixture: an L-shaped NSMD land, and a
+    solder-mask-defined land as a copper-only pad plus a mask-and-paste aperture with the same
+    number; bad outlines and anchors are refused."""
+    L = [[-0.25, -0.3], [0.0, -0.3], [0.0, 0.3], [-0.6, 0.3], [-0.6, 0.05], [-0.25, 0.05]]
+    FIXTURE = {"part": {"mpn": "FIXTURE", "library": "Fixture"}, "pins": [{"number": "1"}, {"number": "2"}],
+               "footprint": {"name": "Fixture", "body": {"x": 3.0, "y": 3.0, "z": 1.0},
+                             "polys": [{"number": "1", "layers": "smd", "anchor": [-0.6, -0.825],
+                                        "points": [[x - 0.3, y - 1.0] for x, y in L]},
+                                       {"number": "2", "layers": "copper", "anchor": [0.0, 0.9],
+                                        "points": [[-0.5, 0.7], [0.5, 0.7], [0.5, 1.3], [-0.5, 1.3]]},
+                                       {"number": "2", "layers": "aperture", "anchor": [0.0, 0.9],
+                                        "points": [[-0.45, 0.75], [0.45, 0.75], [0.45, 1.25], [0.15, 1.25],
+                                                   [0.15, 1.1], [-0.15, 1.1], [-0.15, 1.25], [-0.45, 1.25]]}]}}
+
+    def pads(self):
+        text, _ = kigen.footprint(self.FIXTURE)
+        path = os.path.join(tempfile.mkdtemp(), "f.kicad_mod")
+        with open(path, "w") as fh:
+            fh.write(text)
+        return read_fp(path)[1], parse(text)
+
+    def outline(self, node):
+        at = one(node, "at")
+        x0, y0 = float(at[1]), float(at[2])
+        return [(round(x0 + float(q[1]), 4), round(y0 + float(q[2]), 4))
+                for q in find(one(one(one(node, "primitives"), "gr_poly"), "pts"), "xy")]
+
+    def test_layers_and_outlines(self):
+        pads, tree = self.pads()
+        by = {(p["number"], tuple(p["layers"])): p for p in pads}
+        self.assertEqual(sorted(by), [("1", ("F.Cu", "F.Mask", "F.Paste")), ("2", ("F.Cu",)),
+                                      ("2", ("F.Mask", "F.Paste"))])
+        nodes = {(n[1], tuple(str(x) for x in one(n, "layers")[1:])): n for n in find(tree, "pad")}
+        self.assertEqual(self.outline(nodes[("1", ("F.Cu", "F.Mask", "F.Paste"))]),
+                         [(round(x - 0.3, 4), round(y - 1.0, 4)) for x, y in self.L])
+        cu, ap = nodes[("2", ("F.Cu",))], nodes[("2", ("F.Mask", "F.Paste"))]
+        self.assertEqual(rect_of(by[("2", ("F.Cu",))]), (-0.5, 0.7, 0.5, 1.3))
+        # the aperture is the drawn opening: no board-default mask expansion
+        self.assertEqual(float(one(ap, "solder_mask_margin")[1]), 0.0)
+        self.assertIsNone(one(cu, "solder_mask_margin"))
+        # every aperture vertex lies 0.05 inside the copper
+        for x, y in self.outline(ap):
+            self.assertTrue(-0.45 - EPS <= x <= 0.45 + EPS and 0.75 - EPS <= y <= 1.25 + EPS)
+        # the land check: the copper-only pad is pin 2's land, the aperture is not a second one
+        lands = [p for p in pads if is_copper_pad(p)]
+        self.assertEqual(sorted(p["number"] for p in lands), ["1", "2"])
+
+    def test_bad_polys(self):
+        poly = kigen.custom_pads.poly_pads
+        sq = [[0, 0], [1, 0], [1, 1], [0, 1]]
+        self.assertEqual(len(poly({"polys": [{"number": "1", "layers": "smd", "points": sq, "anchor": [0.5, 0.5]}]})), 1)
+        for bad in ({"number": "1", "layers": "smd", "points": sq, "anchor": [1.5, 0.5]},        # anchor outside
+                    {"number": "1", "layers": "smd", "points": sq, "anchor": [0.05, 0.5]},       # anchor over the edge
+                    {"number": "1", "layers": "smd", "points": sq[:2], "anchor": [0.5, 0.5]},    # not a polygon
+                    {"number": "1", "layers": "smd", "points": [[0, 0], [1, 0], [2, 0]], "anchor": [0.5, 0]},  # no area
+                    {"number": "1", "layers": "smd", "points": [[0, 0], [1, 1], [1, 0], [0, 1]], "anchor": [0.5, 0.2]},  # crossed
+                    {"number": "1", "layers": "paste", "points": sq, "anchor": [0.5, 0.5]}):     # unknown layer set
+            with self.subTest(bad=bad), self.assertRaises(ValueError):
+                poly({"polys": [bad]})
 
 
 class KicadCli(unittest.TestCase):

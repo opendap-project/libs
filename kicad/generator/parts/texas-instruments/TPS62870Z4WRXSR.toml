@@ -1,0 +1,338 @@
+# TPS62870Z4WRXSR - TI 6 A synchronous step-down converter with I2C and differential remote sense,
+# RXS0016A (VQFN-FCRLF-16, 2.55 x 3.55 mm)
+# Sources: SLVSGC5E (TPS6287x datasheet, Jan 2023 rev. Oct 2025), PDF pp. 4-5 (device options),
+# PDF pp. 6-7 (Figure 5-1 top view, Table 5-1 pin functions), PDF pp. 34-35 (Table 7-10, I2C
+# address), PDF p. 57 (package option addendum, 3-Apr-2026), mechanical drawing 4226093/E 09/2022:
+# PDF p. 64 package outline, PDF p. 65 example board layout (scale 15X), PDF p. 66 example stencil
+# design (0.1 mm). Drawings checked against 200 dpi renders.
+
+[part]
+mpn = "TPS62870Z4WRXSR"
+manufacturer = "Texas Instruments"
+library = "texas-instruments"
+symbol = "TPS62870Z4WRXSR"
+reference = "U"
+description = "6 A synchronous step-down converter with I2C and differential remote sense, 2.7-6 V input, Z4 option: 0.875 V start-up and I2C address 0x42 with VSEL tied to VIN, VQFN-FCRLF-16 (RXS0016A) 2.55 x 3.55 mm"
+keywords = "buck step-down converter DC-DC I2C remote sense 6A TPS6287x TPS62870 VQFN-FCRLF RXS0016A"
+datasheet = "https://www.ti.com/lit/ds/symlink/tps62870.pdf"
+datasheet_rev = "SLVSGC5E"
+lifecycle = { status = "Active", source = "TI package option addendum (SLVSGC5E PDF p. 57: Active, Production)", read = "2026-10-28" }
+second_sources = [{ part = "TPS62871Z4WRXSR", note = "9 A, same RXS0016A package and pinout, same Z4 start-up voltages and addresses (SLVSGC5E PDF p. 5; one pinout for the family, PDF p. 6)" }]
+notes = [
+  "Device options (PDF p. 5): Z4 start-up voltage and I2C address by VSEL: 6.2 kOhm to GND 0.850 V / 0x40, short to GND 0.750 V / 0x41, short to VIN 0.875 V / 0x42, 47 kOhm to VIN 1.000 V / 0x43; spread spectrum off, soft-start 1 ms by default. Input 2.7-6 V (title, PDF p. 1).",
+  "Land pattern = TI example board layout RXS0016A (PDF p. 65, 4226093/E). Pads 1-5 and 9-17 are non-solder-mask-defined (0.05 max mask clearance all around): copper = the drawn exposed metal, mask expansion left to the board default. Pads 6, 7 and 8 are solder-mask-defined (metal under solder mask 0.05 min all around): each is a copper-only polygon pad (the dashed outline, 0.05 outside the exposed metal) plus an aperture pad with the same number (mask opening and paste = the exposed metal, mask margin 0).",
+  "Stencil (PDF p. 66, 0.1 mm thick): apertures for pads 1-16 equal the exposed metal (pads keep paste); pad 17 has two 1.17 x 1.0 apertures at y = -0.6 and +0.6 ((0.6), (0.2) gap) and no paste on the pad itself.",
+  "Pad centres from reference dimensions on PDF p. 65: columns (2.35) apart, rows 20X (0.5) with the SYMM centre line on pins 4 and 10 (row y = 0); top pads (1.675) above the SYMM line on 20X (0.5) about the vertical SYMM line; pin 1 and 13 vertical legs and pin 6 and 8 spines on 2X (2); pin 1/13 horizontal legs and pin 6/8 middle arms on 2X (3), y = -1.5 and +1.5. Simple pads 11X (0.6) x 11X (0.25); thermal pad (1.25) x (2.25).",
+  "Bottom edge of the exposed metal of pads 6, 7 and 8: y = 1.975, mirroring the top pads (1.675 + 0.6/2) and equal to pad 7's (0.6) height from y = 1.375; the drawing prints it as (1.97) from the SYMM line. Pad 7 bar (0.275) high, then three 0.25 fingers under the 20X (0.5) columns.",
+  "The (R0.05) TYP corner radius is kept on the rectangular pads (rratio 0.05 / short side) and omitted on the polygon pads 1, 6, 7, 8 and 13, drawn with sharp corners. Thermal vias are optional (PDF p. 65 note 5) and not drawn.",
+  "Body z = 1.05 mm is the maximum height (0.95-1.05, PDF p. 64); body x/y are nominal (2.45-2.65 x 3.45-3.65); standoff 0.00/-0.01.",
+  "Orientation: top view as TI's land pattern example and Figure 5-1 (PDF p. 6): pin 1 top-left, 16-15-14 along the top, 13 top-right, 2-5 down the left side, 12-9 down the right side, 6-7-8 along the bottom.",
+  "Symbol: VIN (5, 9) and GND (6, 8, 17) are separate pins; pin 17 is named GND (Table 5-1: exposed thermal pad, solder to GND).",
+]
+
+[[pins]]
+number = "4"
+name = "EN"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "11"
+name = "MODE/SYNC"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "15"
+name = "VSEL"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "16"
+name = "FSEL"
+type = "passive"
+side = "left"
+
+[[pins]]
+number = "12"
+name = "SDA"
+type = "bidirectional"
+side = "left"
+gap = true
+
+[[pins]]
+number = "13"
+name = "SCL"
+type = "input"
+side = "left"
+
+[[pins]]
+number = "1"
+name = "COMP"
+type = "passive"
+side = "left"
+gap = true
+
+[[pins]]
+number = "7"
+name = "SW"
+type = "power_out"
+side = "right"
+
+[[pins]]
+number = "3"
+name = "VOSNS"
+type = "input"
+side = "right"
+gap = true
+
+[[pins]]
+number = "2"
+name = "GOSNS"
+type = "input"
+side = "right"
+
+[[pins]]
+number = "10"
+name = "PG"
+type = "open_collector"
+side = "right"
+gap = true
+
+[[pins]]
+number = "14"
+name = "SYNC_OUT"
+type = "output"
+side = "right"
+
+[[pins]]
+number = "5"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "9"
+name = "VIN"
+type = "power_in"
+side = "top"
+
+[[pins]]
+number = "6"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "8"
+name = "GND"
+type = "power_in"
+side = "bottom"
+
+[[pins]]
+number = "17"
+name = "GND"
+type = "power_in"
+side = "bottom"
+sheet_name = "Exposed Thermal Pad"
+
+[footprint]
+name = "Texas_RXS0016A_VQFN-FCRLF-16_2.55x3.55mm_P0.5mm"
+description = "Texas Instruments RXS0016A VQFN-FCRLF-16, 2.55 x 3.55 mm body, 0.5 mm pitch, TI example land pattern with solder-mask-defined pads 6, 7, 8 and stencil (SLVSGC5E PDF pp. 64-66, drawing 4226093/E)"
+tags = "VQFN-FCRLF QFN RXS0016A TPS62870 TPS62871 TPS62872 TPS62873 Texas"
+attr = "smd"
+courtyard_class = "default"
+land_pattern = "manufacturer"
+land_pattern_cite = "SLVSGC5E PDF p. 65, RXS0016A example board layout (4226093/E 09/2022); stencil PDF p. 66"
+body = { x = 2.55, y = 3.55, z = 1.05, standoff = 0.0, cite = "SLVSGC5E PDF p. 64, RXS0016A outline: 2.45-2.65 x 3.45-3.65, height 0.95-1.05 (z = max), standoff 0.00/-0.01" }
+body_offset = [0.0, 0.0]
+
+# Left column, pins 2-5 top to bottom; pin 4 on the SYMM line
+[[footprint.rows]]
+first = 2
+count = 4
+step = 1
+start = [-1.175, -1.0]
+pitch = [0.0, 0.5]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SLVSGC5E PDF p. 65: 11X (0.6) x 11X (0.25), 20X (0.5), (2.35) between column centres, (R0.05) TYP"
+
+# Right column, pins 12-9 top to bottom; pin 10 on the SYMM line
+[[footprint.rows]]
+first = 12
+count = 4
+step = -1
+start = [1.175, -1.0]
+pitch = [0.0, 0.5]
+size = [0.6, 0.25]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SLVSGC5E PDF p. 65: 11X (0.6) x 11X (0.25), 20X (0.5), (2.35)"
+
+# Top row, pins 16-14 left to right; pin 15 on the vertical SYMM line
+[[footprint.rows]]
+first = 16
+count = 3
+step = -1
+start = [-0.5, -1.675]
+pitch = [0.5, 0.0]
+size = [0.25, 0.6]
+shape = "roundrect"
+rratio = 0.2
+type = "smd"
+cite = "SLVSGC5E PDF p. 65: 11X (0.25) x 11X (0.6), 20X (0.5), (1.675) from the SYMM line"
+
+[[footprint.pads]]
+number = "17"
+at = [0.0, 0.0]
+size = [1.25, 2.25]
+shape = "roundrect"
+rratio = 0.04
+type = "smd"
+paste = false
+cite = "SLVSGC5E PDF p. 65: thermal pad (1.25) x (2.25) on both SYMM lines, (R0.05) TYP (rratio 0.05/1.25); paste PDF p. 66"
+
+[[footprint.paste]]
+start = [0.0, -0.6]
+pitch = [0.0, 1.2]
+count = [1, 2]
+size = [1.17, 1.0]
+rratio = 0.05
+cite = "SLVSGC5E PDF p. 66: 2X (1.17) x 2X (1), (0.6) from the SYMM line to the aperture centre, (0.2) gap, (R0.05) TYP, 0.1 mm stencil"
+
+# Pin 1 and pin 13: L-shaped NSMD lands (vertical leg on 2X (2), horizontal leg on 2X (3))
+[[footprint.polys]]
+number = "1"
+layers = "smd"
+points = [[-1.125, -1.975], [-0.875, -1.975], [-0.875, -1.375], [-1.475, -1.375], [-1.475, -1.625], [-1.125, -1.625]]
+anchor = [-1.175, -1.5]
+cite = "SLVSGC5E PDF p. 65: vertical leg 0.25 x 0.6 on 2X (2) in the top row ((1.675)); horizontal leg (0.6) x (0.25) on the left column ((2.35)), row 2X (3) / 2 = 1.5 above the SYMM line; PDF p. 66 aperture the same"
+
+[[footprint.polys]]
+number = "13"
+layers = "smd"
+points = [[1.125, -1.975], [0.875, -1.975], [0.875, -1.375], [1.475, -1.375], [1.475, -1.625], [1.125, -1.625]]
+anchor = [1.175, -1.5]
+cite = "SLVSGC5E PDF p. 65: mirror of pin 1 about the vertical SYMM line; 2X (3) to pin 8's middle arm"
+
+# Pins 6 and 8: SMD lands, copper 0.05 outside the exposed metal ("E": spine on 2X (2), arms on the
+# 0.5 rows at y = 1.0 and y = 1.5)
+[[footprint.polys]]
+number = "6"
+layers = "copper"
+points = [[-1.525, 0.825], [-0.825, 0.825], [-0.825, 2.025], [-1.175, 2.025], [-1.175, 1.675], [-1.525, 1.675]]
+anchor = [-1.175, 1.5]
+cite = "SLVSGC5E PDF p. 65: metal under solder mask 0.05 min all around the exposed metal (dashed outline)"
+
+[[footprint.polys]]
+number = "6"
+layers = "aperture"
+points = [[-1.475, 0.875], [-0.875, 0.875], [-0.875, 1.975], [-1.125, 1.975], [-1.125, 1.625], [-1.475, 1.625], [-1.475, 1.375], [-1.125, 1.375], [-1.125, 1.125], [-1.475, 1.125]]
+anchor = [-1.175, 1.5]
+cite = "SLVSGC5E PDF p. 65: exposed metal, spine (0.25) on 2X (2) down to (1.97), arms 2X (0.6) x 0.25 at y 1.0 and 1.5 (2X (3) / 2); PDF p. 66 aperture the same"
+
+[[footprint.polys]]
+number = "8"
+layers = "copper"
+points = [[1.525, 0.825], [0.825, 0.825], [0.825, 2.025], [1.175, 2.025], [1.175, 1.675], [1.525, 1.675]]
+anchor = [1.175, 1.5]
+cite = "SLVSGC5E PDF p. 65: mirror of pin 6"
+
+[[footprint.polys]]
+number = "8"
+layers = "aperture"
+points = [[1.475, 0.875], [0.875, 0.875], [0.875, 1.975], [1.125, 1.975], [1.125, 1.625], [1.475, 1.625], [1.475, 1.375], [1.125, 1.375], [1.125, 1.125], [1.475, 1.125]]
+anchor = [1.175, 1.5]
+cite = "SLVSGC5E PDF p. 65: mirror of pin 6; PDF p. 66 aperture the same"
+
+# Pin 7: SMD land, copper 0.05 outside a comb of exposed metal
+[[footprint.polys]]
+number = "7"
+layers = "copper"
+points = [[-0.675, 1.325], [0.675, 1.325], [0.675, 2.025], [-0.675, 2.025]]
+anchor = [0.0, 1.5]
+cite = "SLVSGC5E PDF p. 65: metal under solder mask 0.05 min all around the exposed metal (dashed outline)"
+
+[[footprint.polys]]
+number = "7"
+layers = "aperture"
+points = [[-0.625, 1.375], [0.625, 1.375], [0.625, 1.975], [0.375, 1.975], [0.375, 1.65], [0.125, 1.65], [0.125, 1.975], [-0.125, 1.975], [-0.125, 1.65], [-0.375, 1.65], [-0.375, 1.975], [-0.625, 1.975]]
+anchor = [0.0, 1.5]
+cite = "SLVSGC5E PDF p. 65: exposed metal (0.6) high from y 1.375, bar (0.275), fingers 0.25 wide under the 20X (0.5) columns; outer edges on the pin 16/14 columns (x +-0.625); PDF p. 66 aperture the same"
+
+[[checks]]
+kind = "pitch"
+a = "2"
+b = "3"
+value = 0.5
+cite = "SLVSGC5E PDF p. 64, 20X 0.5; PDF p. 65, 20X (0.5)"
+
+[[checks]]
+kind = "pitch"
+a = "16"
+b = "15"
+value = 0.5
+cite = "SLVSGC5E PDF p. 65, 20X (0.5)"
+
+[[checks]]
+kind = "dx"
+a = "2"
+b = "12"
+value = 2.35
+cite = "SLVSGC5E PDF p. 65, (2.35) between column centres"
+
+[[checks]]
+kind = "dy"
+a = "16"
+b = "4"
+value = 1.675
+cite = "SLVSGC5E PDF p. 65, (1.675) from the top row to the SYMM line"
+
+[[checks]]
+kind = "dy"
+a = "1"
+b = "6"
+value = 3.0
+cite = "SLVSGC5E PDF p. 65, 2X (3): pin 1 horizontal leg to pin 6 middle arm"
+
+[[checks]]
+kind = "dy"
+a = "13"
+b = "8"
+value = 3.0
+cite = "SLVSGC5E PDF p. 65, 2X (3): pin 13 horizontal leg to pin 8 middle arm"
+
+[[checks]]
+kind = "dx"
+a = "1"
+b = "13"
+value = 2.35
+cite = "SLVSGC5E PDF p. 65, horizontal legs on the (2.35) columns"
+
+[[checks]]
+kind = "pad_size"
+a = "2"
+value = [0.6, 0.25]
+cite = "SLVSGC5E PDF p. 65, 11X (0.6) x 11X (0.25)"
+
+[[checks]]
+kind = "pad_size"
+a = "16"
+value = [0.25, 0.6]
+cite = "SLVSGC5E PDF p. 65, 11X (0.25) x 11X (0.6)"
+
+[[checks]]
+kind = "pad_size"
+a = "17"
+value = [1.25, 2.25]
+cite = "SLVSGC5E PDF p. 65, (1.25) x (2.25)"
+
+[[checks]]
+kind = "pad_count"
+value = 17
+cite = "SLVSGC5E PDF p. 6, Figure 5-1, 16-pin RXS plus the thermal pad (pad 17, PDF p. 65)"

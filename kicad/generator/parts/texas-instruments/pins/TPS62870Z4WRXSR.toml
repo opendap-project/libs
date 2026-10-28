@@ -1,0 +1,24 @@
+# TPS62870Z4WRXSR: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../TPS62870Z4WRXSR.toml).
+
+datasheet_rev = "SLVSGC5E"
+cite = "SLVSGC5E PDF pp. 6-7, Figure 5-1 and Table 5-1; the exposed thermal pad is pad 17 in the RXS0016A example board layout (PDF p. 65)"
+
+[pins]
+"1" = "COMP"
+"2" = "GOSNS"
+"3" = "VOSNS"
+"4" = "EN"
+"5" = "VIN"
+"6" = "GND"
+"7" = "SW"
+"8" = "GND"
+"9" = "VIN"
+"10" = "PG"
+"11" = "MODE/SYNC"
+"12" = "SDA"
+"13" = "SCL"
+"14" = "SYNC_OUT"
+"15" = "VSEL"
+"16" = "FSEL"
+"17" = "Exposed Thermal Pad"

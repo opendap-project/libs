@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.55,
+        3.55,
+        1.05
+      ]
+    }
+  ],
+  "library": "texas-instruments",
+  "name": "Texas_RXS0016A_VQFN-FCRLF-16_2.55x3.55mm_P0.5mm",
+  "source": "envelope from SLVSGC5E PDF p. 64, RXS0016A outline: 2.45-2.65 x 3.45-3.65, height 0.95-1.05 (z = max), standoff 0.00/-0.01"
+}

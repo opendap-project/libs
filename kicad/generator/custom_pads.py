@@ -1,4 +1,5 @@
-"""Custom-shape pads for kigen.py: annular copper rings and segmented ring paste apertures.
+"""Custom-shape pads for kigen.py: annular copper rings, segmented ring paste apertures and
+polygon pads.
 
 A bottom-port MEMS microphone lands on a copper ring around its acoustic port, with the paste on
 that ring split into sectors (for example Infineon IM73D122V01, datasheet v1.00 Figure 13). KiCad
@@ -10,6 +11,17 @@ tables below into pad dicts that kigen.py places, clips silk around and writes.
     [[footprint.paste_sectors]]    paste-only ring sectors: center, inner and outer radius, count,
                                    gap (width of the parallel-sided gaps), first_gap (degrees,
                                    the centre line of the first gap, from +x towards +y)
+    [[footprint.polys]]            polygon pads: number, points (the outline, in order, in the
+                                   data frame), anchor (a point inside the outline; the pad's
+                                   position), anchor_size (side of the square anchor, default
+                                   0.2), layers: "smd" (F.Cu, F.Mask, F.Paste: a non-solder-mask-
+                                   defined land), "copper" (F.Cu only: the copper of a solder-mask-
+                                   defined land, under the mask) or "aperture" (F.Mask and F.Paste
+                                   only, no copper: the exposed metal of a solder-mask-defined land,
+                                   numbered as its copper)
+
+A solder-mask-defined land is one "copper" pad plus one "aperture" pad with the same number (for
+example TI RXS0016A pads 6, 7 and 8, SLVSGC5E PDF p. 65). Polygon corners are sharp.
 
 Coordinates in millimetres, top view, +y down, in the data frame (kigen.frame() moves them).
 """
@@ -77,6 +89,66 @@ def sector_pads(fp):
                          "at": [cx + ax, cy + ay], "size": [anchor, anchor],
                          "custom": [("poly", pts)],
                          "extent": (min(xs), min(ys), max(xs), max(ys))})
+    return pads
+
+
+POLY_LAYERS = ("smd", "copper", "aperture")
+
+
+def _inside(pt, pts):
+    """Point strictly inside the polygon pts (even-odd rule); points on an edge count as outside."""
+    x, y = pt
+    for (x1, y1), (x2, y2) in zip(pts, pts[1:] + pts[:1]):
+        cross = (x2 - x1) * (y - y1) - (y2 - y1) * (x - x1)
+        if abs(cross) < 1e-9 and min(x1, x2) - 1e-9 <= x <= max(x1, x2) + 1e-9 \
+                and min(y1, y2) - 1e-9 <= y <= max(y1, y2) + 1e-9:
+            return False
+    hit = False
+    for (x1, y1), (x2, y2) in zip(pts, pts[1:] + pts[:1]):
+        if (y1 > y) != (y2 > y) and x < x1 + (y - y1) * (x2 - x1) / (y2 - y1):
+            hit = not hit
+    return hit
+
+
+def _crosses(a, b, c, d):
+    """Segments a-b and c-d cross at a point inside both (touching at an end does not count)."""
+    def ccw(p, q, r):
+        return (q[0] - p[0]) * (r[1] - p[1]) - (q[1] - p[1]) * (r[0] - p[0])
+    return ccw(a, b, c) * ccw(a, b, d) < -1e-12 and ccw(c, d, a) * ccw(c, d, b) < -1e-12
+
+
+def poly_pads(fp):
+    """One custom pad per [[footprint.polys]] entry. The outline must be a simple polygon with an
+    area, and the square anchor must lie inside it (KiCad adds the anchor to the pad shape)."""
+    pads = []
+    for e in fp.get("polys", []):
+        num = str(e["number"])
+        pts = [tuple(float(v) for v in p) for p in e["points"]]
+        if e.get("layers") not in POLY_LAYERS:
+            raise ValueError("poly %s: layers must be one of %s" % (num, ", ".join(POLY_LAYERS)))
+        if len(pts) < 3:
+            raise ValueError("poly %s: fewer than 3 points" % num)
+        area = sum(x1 * y2 - x2 * y1 for (x1, y1), (x2, y2) in zip(pts, pts[1:] + pts[:1])) / 2
+        if abs(area) < 1e-6:
+            raise ValueError("poly %s: no area" % num)
+        edges = list(zip(pts, pts[1:] + pts[:1]))
+        for i in range(len(edges)):
+            for j in range(i + 2, len(edges)):
+                if i == 0 and j == len(edges) - 1:
+                    continue
+                if _crosses(*edges[i], *edges[j]):
+                    raise ValueError("poly %s: the outline crosses itself" % num)
+        ax, ay = e["anchor"]
+        h = e.get("anchor_size", 0.2) / 2
+        square = [(ax - h, ay - h), (ax + h, ay - h), (ax + h, ay + h), (ax - h, ay + h)]
+        if not all(_inside(c, pts) for c in square + [(ax, ay)]) or \
+                any(ax - h < x < ax + h and ay - h < y < ay + h for x, y in pts):
+            raise ValueError("poly %s: the anchor (%.3f, %.3f) +-%.3f is not inside the outline" % (num, ax, ay, h))
+        rel = [(round(x - ax, 4), round(y - ay, 4)) for x, y in pts]
+        xs, ys = [p[0] for p in rel], [p[1] for p in rel]
+        pads.append({"number": num, "type": {"smd": "smd", "copper": "copper", "aperture": "aperture"}[e["layers"]],
+                     "shape": "custom", "at": [ax, ay], "size": [2 * h, 2 * h],
+                     "custom": [("poly", rel)], "extent": (min(xs), min(ys), max(xs), max(ys))})
     return pads
 
 

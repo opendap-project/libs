@@ -2117,6 +2117,17 @@ sha256 = "a4d81b70556d5564aaee9baf455b7651375a94c629448f3f7e7ced2f5c41b33f"
 redistributable = false
 
 [[file]]
+mpn = "TPS62870Z4WRXSR"
+manufacturer = "Texas Instruments"
+kind = "datasheet"
+url = "https://www.ti.com/lit/ds/symlink/tps62870.pdf"
+revision = "SLVSGC5E"
+date = "2025-10"
+sha256 = "7d9d4bd016674fa6dc55e655f8f3e81080b486fdf659d6e17e36b997d6e2ce48"
+# TPS6287x datasheet (67 pages; RXS0016A drawing 4226093/E on PDF pp. 64-66)
+redistributable = false
+
+[[file]]
 mpn = "NT3H2111W0FHKH"
 manufacturer = "NXP"
 kind = "datasheet"
