@@ -233,19 +233,47 @@ def read_pairs(path):
         return {r["ball"]: r["name"] for r in csv.DictReader(fh)}
 
 
-def board_repo():
-    env = os.environ.get("ODAP_BOARD_DIR")
-    if env:
-        return env
-    ws = os.path.dirname(os.path.dirname(os.path.dirname(ROOT)))
+def board_repo(ws=None, environ=os.environ):
+    """The T1 main board: ODAP_BOARD_DIR, the `board/` folder of ODAP_T1_DIR, else the workspace's repos.tsv: the
+    `board` row, or the `board/` folder of the `t1` root (RFC 0017, the t1 cut)."""
+    if environ.get("ODAP_BOARD_DIR"):
+        return environ["ODAP_BOARD_DIR"]
+    if environ.get("ODAP_T1_DIR"):
+        return os.path.join(environ["ODAP_T1_DIR"], "board")
+    ws = ws or os.path.dirname(os.path.dirname(os.path.dirname(ROOT)))
     tsv = os.path.join(ws, "repos.tsv")
     if os.path.exists(tsv):
         with open(tsv) as fh:
-            for line in fh:
-                f = line.rstrip("\n").split("\t")
-                if len(f) == 2 and f[1] == "opendap-project/board":
-                    return os.path.join(ws, f[0])
+            rows = dict(reversed(line.rstrip("\n").split("\t")) for line in fh if line.count("\t") == 1)
+        if "opendap-project/board" in rows:
+            return os.path.join(ws, rows["opendap-project/board"])
+        if "opendap-project/t1" in rows and os.path.isdir(os.path.join(ws, rows["opendap-project/t1"], "board")):
+            return os.path.join(ws, rows["opendap-project/t1"], "board")
     return None
+
+
+class BoardRepo(unittest.TestCase):
+    def ws(self, rows, folders=()):
+        tmp = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, tmp)
+        with open(os.path.join(tmp, "repos.tsv"), "w") as fh:
+            fh.write("path\trepository\n" + "".join(f"{p}\t{r}\n" for p, r in rows))
+        for f in folders:
+            os.makedirs(os.path.join(tmp, f))
+        return tmp
+
+    def test_the_board_row(self):
+        ws = self.ws([("public/devices/t1/board", "opendap-project/board")])
+        self.assertEqual(board_repo(ws, {}), os.path.join(ws, "public/devices/t1/board"))
+
+    def test_the_board_folder_of_the_t1_root(self):
+        ws = self.ws([("public/t1", "opendap-project/t1")], ["public/t1/board"])
+        self.assertEqual(board_repo(ws, {}), os.path.join(ws, "public/t1/board"))
+        self.assertIsNone(board_repo(self.ws([("public/t1", "opendap-project/t1")]), {}))  # the product repo alone
+
+    def test_the_variables(self):
+        self.assertEqual(board_repo("/nowhere", {"ODAP_T1_DIR": "/t1"}), "/t1/board")
+        self.assertEqual(board_repo("/nowhere", {"ODAP_BOARD_DIR": "/b", "ODAP_T1_DIR": "/t1"}), "/b")
 
 
 class BgaParts(unittest.TestCase):
