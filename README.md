@@ -24,6 +24,10 @@ Each maker has one key in lowercase kebab case (`texas-instruments`, `diodes-inc
 
 The maker's display name is a field, never a key: `manufacturer` in the part data and in `parts/manifest.toml`, and the `Manufacturer` field of each symbol (`Texas Instruments`). The local parts cache follows the display name (`~/.cache/opendap/parts/<manufacturer>/<MPN>/`, named by `parts-sync.py`); the `pdf` path in a BGA part's `[check]` is relative to its maker's cache folder.
 
+## Tests
+
+Tests never inherit a hook's `GIT_*` variables: under pre-commit, git exports `GIT_DIR`, `GIT_INDEX_FILE` and others, and a test whose git inherits them acts on the repository being committed. Each test module in `kicad/generator/` that starts a process removes them after its imports. Each language's protection is in the Developer Toolkit's [rule](https://github.com/opendap-project/tools#tests-never-inherit-a-hooks-git-variables); `odapkit audit` flags a test file that runs git without it.
+
 ## License
 
 This repository follows the [REUSE](https://reuse.software) layout: licence texts in `LICENSES/`, and each folder's `REUSE.toml` maps its paths. Copyright © 2026 The OpenDAP Project.
