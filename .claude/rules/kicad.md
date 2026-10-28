@@ -1,11 +1,10 @@
 ---
 paths:
-  - "hardware/**"
-  - "reference-designs/**/hardware/**"
-  - "symbols/**"
-  - "footprints/**"
-  - "3dmodels/**"
-  - "design-rules/**"
+  - "**/hardware/**"
+  - "**/symbols/**"
+  - "**/footprints/**"
+  - "**/3dmodels/**"
+  - "**/design-rules/**"
 ---
 
 # KiCad (electronics)

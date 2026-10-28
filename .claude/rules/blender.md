@@ -1,9 +1,9 @@
 ---
 paths:
-  - "renders/**"
-  - "materials/**"
-  - "models/**"
-  - "scenes/**"
+  - "**/renders/**"
+  - "**/materials/**"
+  - "**/models/**"
+  - "**/scenes/**"
 ---
 
 # Blender (renders)

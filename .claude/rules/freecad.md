@@ -1,11 +1,10 @@
 ---
 paths:
-  - "case/**"
-  - "core/**"
-  - "hat-mount/**"
-  - "parts/**"
-  - "assembly/**"
-  - "reference-designs/**/case/**"
+  - "**/case/**"
+  - "**/core/**"
+  - "**/hat-mount/**"
+  - "**/parts/**"
+  - "**/assembly/**"
 ---
 
 # FreeCAD (mechanics)
