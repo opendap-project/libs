@@ -1,0 +1,11 @@
+# NX3225GA-24MHZ-STD-CRG-2: the datasheet's pin table, transcribed as printed (a second reading for
+# test_library.py test_pins_match_datasheet; the symbol's pins come from ../NX3225GA-24MHZ-STD-CRG-2.toml).
+
+datasheet_rev = "2008E_NX3225GA_e"
+cite = "Terminal land connections (TOP VIEW): #1 to #4, crystal between #1 and #3 (NX3225GA, p. 1, Dimensions)"
+
+[pins]
+"1" = "#1"
+"2" = "#2"
+"3" = "#3"
+"4" = "#4"

@@ -396,6 +396,16 @@ sha256 = "b818c72bf170e8dac004fcc7e0c5639eb8ffbe22d624f2e851aef9fde8f87825"
 redistributable = false
 
 [[file]]
+mpn = "NX3225GA-24MHZ-STD-CRG-2"
+manufacturer = "NDK"
+kind = "datasheet"
+url = "https://static.chipdip.ru/lib/694/DOC028694308.pdf"
+revision = "2008E_NX3225GA_e"
+sha256 = "09de146de0a99550edc6b898b1a32723fdd4fb0fa4c1b8a334210985dc99c96e"
+# NX3225GA, distributor copy of the NDK sheet
+redistributable = false
+
+[[file]]
 mpn = "TPS65131RGER"
 manufacturer = "Texas Instruments"
 kind = "datasheet"

@@ -21,7 +21,8 @@ For every part data file in generator/parts/:
 - the footprint follows the craft standard's footprint rules: courtyard around pads and body
   (KLC F5.3), silk stroke 0.15 mm and 0.15 mm clear of pads (CRAFT-05, CRAFT-07), reference text
   1.0 x 0.15 mm on the silk (CRAFT-02) and ${REFERENCE} on the fab layer (CRAFT-11), a filled
-  pin-1 mark outside the body and nearest to pad 1 (CRAFT-13), SMD anchor at the body centroid
+  pin-1 mark next to pin 1 (CRAFT-13: its centre outside the body and nearer to pin 1's land edge
+  than to any other land's edge, the craft check's geometry), SMD anchor at the body centroid
   (CRAFT-15);
 - every symbol library (kigen.py, bga.py and generic.py output) follows the craft standard's symbol
   rules that a library carries: pin ends on the 2.54 mm grid, 1.27 mm for two-pin discretes
@@ -161,6 +162,26 @@ def seg_rect_dist(a, b, r):
         c, d = corners[i], corners[(i + 1) % 4]
         best = min(best, seg_seg(a, b, c, d))
     return best
+
+
+def box_gap(x, y, r):
+    return math.hypot(max(r[0] - x, 0, x - r[2]), max(r[1] - y, 0, y - r[3]))
+
+
+def next_to_pin1(centre, body, lands, first):
+    """CRAFT-13 "next to pin 1", as the craft standard states it and the board craft check applies it
+    (tools hardware/tools/craft/pin1.py): the mark's centre lies outside the body and nearer to the edge
+    of pin 1's land than to the edge of any other land; pads on one land are one land.
+    lands: [(number, (x0, y0, x1, y1))]."""
+    x, y = centre
+    if body[0] + 1e-6 < x < body[2] - 1e-6 and body[1] + 1e-6 < y < body[3] - 1e-6:
+        return False
+    merged = {}
+    for number, r in lands:
+        merged.setdefault(tuple(round(v, 4) for v in r), set()).add(number)
+    own = [box_gap(x, y, r) for r, numbers in merged.items() if first in numbers]
+    others = [box_gap(x, y, r) for r, numbers in merged.items() if first not in numbers]
+    return bool(own) and all(min(own) < g - 1e-6 for g in others)
 
 
 def seg_point(p, a, b):
@@ -526,22 +547,16 @@ class Footprints(unittest.TestCase):
                     b = (float(one(l, "end")[1]), float(one(l, "end")[2]))
                     for p in lands:
                         self.assertGreaterEqual(seg_rect_dist(a, b, rect_of(p)) - w / 2, 0.15 - EPS, "silk near pad %s" % p["number"])
-                # pin-1 mark (CRAFT-13): a filled silk polygon, outside the body, nearest to pad 1
+                # pin-1 mark (CRAFT-13): a filled silk polygon next to pin 1 (next_to_pin1)
                 marks = [pl for pl in find(n, "fp_poly") if one(pl, "layer")[1] == "F.SilkS" and one(pl, "fill")[1] == "yes"]
                 first = kigen.pin1_number(part)
                 if any(p["number"] == first for p in lands):
                     self.assertTrue(marks, "no pin-1 mark")
                     pts = [(float(x[1]), float(x[2])) for x in find(one(marks[0], "pts"), "xy")]
-                    cx, cy = sum(p[0] for p in pts) / len(pts), sum(p[1] for p in pts) / len(pts)
-                    inside = [p for p in pts if body[0] + EPS < p[0] < body[2] - EPS and body[1] + EPS < p[1] < body[3] - EPS]
-                    self.assertFalse(inside, "pin-1 mark inside the body")
-                    numbered = [p for p in lands if p["number"]]
-                    def gap(p):
-                        r = rect_of(p)
-                        return math.hypot(max(r[0] - cx, 0, cx - r[2]), max(r[1] - cy, 0, cy - r[3]))
-                    near = min(numbered, key=gap)
-                    if not part["footprint"].get("pin1_mark"):
-                        self.assertEqual(near["number"], first, "pin-1 mark nearest to pad %s" % near["number"])
+                    centre = ((min(p[0] for p in pts) + max(p[0] for p in pts)) / 2,
+                              (min(p[1] for p in pts) + max(p[1] for p in pts)) / 2)
+                    numbered = [(str(p["number"]), rect_of(p)) for p in lands if p["number"]]
+                    self.assertTrue(next_to_pin1(centre, body, numbered, first), "pin-1 mark not next to pad %s" % first)
                     for p in lands:
                         r = rect_of(p, 0.15)
                         self.assertFalse(any(r[0] < x < r[2] and r[1] < y < r[3] for x, y in pts), "pin-1 mark near pad %s" % p["number"])
@@ -564,6 +579,36 @@ PREFIXES = {"R", "C", "L", "FB", "D", "Q", "U", "J", "P", "SW", "Y", "F", "BT", 
             "LS", "MK", "AE", "RN", "RT", "RV", "TP", "FL", "DS", "A", "Z", "NT", "FID"}
 UNIT_MAX_PINS = 64  # CRAFT-126
 PIN_LENGTHS = (2.54, 3.81, 5.08, 6.35, 7.62)  # CRAFT-121
+
+
+class Pin1Geometry(unittest.TestCase):
+    """CRAFT-13 "next to pin 1" runs to the lands' edges: a long pin-1 land counts along its length."""
+
+    def test_long_pin1_land(self):
+        # TI RGX0011A (TPS62136RGXR): pin 1 is a 2.5 mm bar; its triangle sits past the bar's left end,
+        # where pin 11's pad centre is nearer than pin 1's
+        part = next(p for p in PARTS if p["part"]["mpn"] == "TPS62136RGXR")
+        n, pads = read_fp(fp_path(part))
+        _, body, _, _, _ = kigen.frame(part)
+        mark = [pl for pl in find(n, "fp_poly") if one(pl, "layer")[1] == "F.SilkS" and one(pl, "fill")[1] == "yes"][0]
+        pts = [(float(x[1]), float(x[2])) for x in find(one(mark, "pts"), "xy")]
+        centre = ((min(p[0] for p in pts) + max(p[0] for p in pts)) / 2, (min(p[1] for p in pts) + max(p[1] for p in pts)) / 2)
+        lands = [(str(p["number"]), rect_of(p)) for p in pads if is_copper_pad(p) and p["number"]]
+        self.assertTrue(next_to_pin1(centre, body, lands, "1"))
+        by_centre = min(lands, key=lambda nr: math.hypot((nr[1][0] + nr[1][2]) / 2 - centre[0], (nr[1][1] + nr[1][3]) / 2 - centre[1]))
+        self.assertNotEqual(by_centre[0], "1")
+
+    def test_fails(self):
+        body = (-0.5, -0.5, 0.5, 0.5)
+        two = [("1", (-1.3, -0.3, -0.7, 0.3)), ("2", (0.7, -0.3, 1.3, 0.3))]
+        self.assertFalse(next_to_pin1((0.0, -1.0), body, two, "1"))   # as near to pin 2: marks neither
+        self.assertFalse(next_to_pin1((-0.4, 0.0), body, two, "1"))   # inside the body
+        self.assertFalse(next_to_pin1((1.5, 0.0), body, two, "1"))    # at pin 2
+        self.assertTrue(next_to_pin1((-1.5, 0.0), body, two, "1"))
+
+    def test_pads_on_one_land(self):
+        lands = [("A1", (-3.3, -0.6, -2.7, 0.6)), ("B12", (-3.3, -0.6, -2.7, 0.6)), ("A4", (-2.5, -0.6, -1.9, 0.6))]
+        self.assertTrue(next_to_pin1((-3.0, -0.9), (-4.5, 0.5, 4.5, 7.5), lands, "A1"))
 
 
 def pin_length_for(numbers):

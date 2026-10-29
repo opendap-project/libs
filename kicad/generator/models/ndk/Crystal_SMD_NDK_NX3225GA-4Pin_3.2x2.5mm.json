@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.5,
+        3.2,
+        0.9
+      ]
+    }
+  ],
+  "library": "ndk",
+  "name": "Crystal_SMD_NDK_NX3225GA-4Pin_3.2x2.5mm",
+  "source": "envelope from NX3225GA p. 1, Dimensions: 3.2 +/- 0.1 x 2.5 +/- 0.1 (rotated 90 deg), 0.75 +/- 0.15 height (max used)"
+}
