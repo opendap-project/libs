@@ -2,7 +2,7 @@
 # test_library.py test_pins_match_datasheet; the symbol's pins come from ../LSM6DSV16XTR.toml).
 
 datasheet_rev = "DS13510 Rev 4"
-cite = "LGA-14L (Figure 5, p. 9; Table 2, p. 11). Functions shown for mode 1 (host interface only), the T1 configuration"
+cite = "LGA-14L (Figure 5, p. 9; Table 2, p. 11). Functions shown for mode 1 (host interface only)"
 
 [pins]
 "1" = "SDO/SA0"

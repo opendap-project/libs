@@ -10,3 +10,4 @@
 
 - PLIB-003 (2026-10-25): reworded by the maintainers; it previously asked for distributor stock and price.
 - PLIB-001 and PLIB-003 (2026-10-27): spec sheets are no longer published (ADR 0002). PLIB-001 now asks for the manifest entries and the generator data; PLIB-003 keeps its facts, now as fields of the generator data, and a second source a design uses is also named in the symbol's `Second_Source` field.
+- PLIB-003 (2026-10-29): the libraries carry no product content. The alternative a design chooses is a BOM choice: the design names it in the `Second_Source` field of its placed part, and the library symbol no longer carries one; the generator data keeps the part's own `second_sources`.

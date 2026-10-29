@@ -9,7 +9,6 @@
 
 [part]
 mpn = "BQ25798RQMR"
-second_source = "Texas Instruments BQ25792RQMR (BOM v1 line 39)"
 manufacturer = "Texas Instruments"
 library = "texas-instruments"
 symbol = "BQ25798RQMR"

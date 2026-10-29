@@ -182,4 +182,3 @@ balls = 565               # DS p. 18 and p. 21 (b, 565x)
 pdf = "RK3566/Rockchip-RK3566-Datasheet-V1.1-20210305.pdf"   # under ~/.cache/opendap/parts/<manufacturer>/
 pdf_sha256 = "1bc4aa39464c3481d1c82a171498104b9ccd34a61110e97fd9678288e7451280"
 pdf_pages = [23, 30]      # Table 2-1 Pin Number List
-board_pinout = "hardware/pinout/pinout-v1.csv"   # in the T1 board repository, when checked out

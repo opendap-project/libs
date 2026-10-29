@@ -152,7 +152,7 @@ These follow from the figures above and from the part sheets. They are design-ru
 
 1. **Mask bridge threshold.** Pads closer than 8 mil (0.203 mm) do not keep a solder-mask bridge [P2]: RK809 (0.35 mm), DF40 headers and receptacles, and some 0.4 mm QFNs get one opening per row.
 2. **0.4 mm BGA.** Pad ≥ 0.2 mm [P10], ring ≥ 3 mil around a 0.10 mm laser via [P2, P3], hence a 0.25 mm pad when the via sits in the pad. Mask opening 1 mil in the BGA area [P1].
-3. **Through-hole aspect ratio** limits a 0.20 mm hole to 1.6 mm of board [P1]; the main board is far thinner, so this does not bind.
+3. **Through-hole aspect ratio** limits a 0.20 mm hole to 1.6 mm of board [P1]; it binds only boards thicker than that.
 4. **Coverlay** bridge 8 mil (0.2 mm) on flex [P5]; coverlay opening and copper-to-outline rules on flex are not published (**UNVERIFIED**), so the flex rule set keeps the rigid 0.20 mm edge clearance until PCBWay's DFM answers.
 5. **Flex bends** at 10–15 × thickness for multilayer [P5]; stiffened areas (connectors) must not bend.
 

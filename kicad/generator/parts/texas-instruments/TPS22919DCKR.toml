@@ -4,7 +4,6 @@
 
 [part]
 mpn = "TPS22919DCKR"
-second_source = "Texas Instruments TPS22916CYFPR (WCSP, other land; BOM v1 line 50)"
 manufacturer = "Texas Instruments"
 library = "texas-instruments"
 symbol = "TPS22919DCKR"

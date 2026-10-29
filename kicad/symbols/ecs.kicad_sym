@@ -72,15 +72,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Abracon ABM8-272-T3 crystal with a re-tuned XOUT resistor, after qualification over temperature (BOM v1 line 14)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "oscillator XO crystal clock HCMOS ECS-2016MV 12 MHz 2016 MultiVolt"
 			(at 0 0 0)
 			(hide yes)

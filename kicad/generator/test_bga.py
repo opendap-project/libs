@@ -21,8 +21,7 @@ against the other transcriptions of the same datasheet:
   kicad-lib design-rules/pcbway-capabilities.md);
 - the pin list re-extracted from the datasheet PDF itself when it is in the local parts cache and
   pdfplumber (or pdftotext) is installed ([check] pdf with pdf_pages, pdf_ballout_page or
-  pdf_table_page), and the T1 board's pinout CSV pad names when the board repository is checked
-  out ([check] board_pinout); both skipped otherwise;
+  pdf_table_page); skipped otherwise;
 - a partial pin table of the datasheet ([check] table_pins: same names, every pin outside
   table_ignore listed) and a reference design's transcription of the same ball map ([check]
   ref_pins, names normalised by ref_rename), when the part lists them;
@@ -233,49 +232,6 @@ def read_pairs(path):
         return {r["ball"]: r["name"] for r in csv.DictReader(fh)}
 
 
-def board_repo(ws=None, environ=os.environ):
-    """The T1 main board: ODAP_BOARD_DIR, the `board/` folder of ODAP_T1_DIR, else the workspace's repos.tsv: the
-    `board` row, or the `board/` folder of the `t1` root (RFC 0017, the t1 cut)."""
-    if environ.get("ODAP_BOARD_DIR"):
-        return environ["ODAP_BOARD_DIR"]
-    if environ.get("ODAP_T1_DIR"):
-        return os.path.join(environ["ODAP_T1_DIR"], "board")
-    ws = ws or os.path.dirname(os.path.dirname(os.path.dirname(ROOT)))
-    tsv = os.path.join(ws, "repos.tsv")
-    if os.path.exists(tsv):
-        with open(tsv) as fh:
-            rows = dict(reversed(line.rstrip("\n").split("\t")) for line in fh if line.count("\t") == 1)
-        if "opendap-project/board" in rows:
-            return os.path.join(ws, rows["opendap-project/board"])
-        if "opendap-project/t1" in rows and os.path.isdir(os.path.join(ws, rows["opendap-project/t1"], "board")):
-            return os.path.join(ws, rows["opendap-project/t1"], "board")
-    return None
-
-
-class BoardRepo(unittest.TestCase):
-    def ws(self, rows, folders=()):
-        tmp = tempfile.mkdtemp()
-        self.addCleanup(shutil.rmtree, tmp)
-        with open(os.path.join(tmp, "repos.tsv"), "w") as fh:
-            fh.write("path\trepository\n" + "".join(f"{p}\t{r}\n" for p, r in rows))
-        for f in folders:
-            os.makedirs(os.path.join(tmp, f))
-        return tmp
-
-    def test_the_board_row(self):
-        ws = self.ws([("public/devices/t1/board", "opendap-project/board")])
-        self.assertEqual(board_repo(ws, {}), os.path.join(ws, "public/devices/t1/board"))
-
-    def test_the_board_folder_of_the_t1_root(self):
-        ws = self.ws([("public/t1", "opendap-project/t1")], ["public/t1/board"])
-        self.assertEqual(board_repo(ws, {}), os.path.join(ws, "public/t1/board"))
-        self.assertIsNone(board_repo(self.ws([("public/t1", "opendap-project/t1")]), {}))  # the product repo alone
-
-    def test_the_variables(self):
-        self.assertEqual(board_repo("/nowhere", {"ODAP_T1_DIR": "/t1"}), "/t1/board")
-        self.assertEqual(board_repo("/nowhere", {"ODAP_BOARD_DIR": "/b", "ODAP_T1_DIR": "/t1"}), "/b")
-
-
 class BgaParts(unittest.TestCase):
 
     def test_parts(self):
@@ -359,7 +315,7 @@ class BgaParts(unittest.TestCase):
         self.assertTrue(os.path.exists(os.path.join(
             ROOT, "3dmodels", lib + ".3dshapes", part["footprint"]["name"] + ".step")), "STEP missing")
 
-        # 5. optional third readings: the datasheet PDF and the T1 pinout
+        # 5. optional third reading: the datasheet PDF
         chk = part["check"]
         pdf = cache_path(part, chk["pdf"]) if chk.get("pdf") else None
         if pdf and os.path.exists(pdf):
@@ -401,11 +357,6 @@ class BgaParts(unittest.TestCase):
             for pat, rep in chk.get("ref_rename", []):
                 ref = {b: re.sub(pat, rep, nm) for b, nm in ref.items()}
             self.assertEqual(ref, csvpins, "reference schematic vs the pin list")
-        repo = board_repo()
-        if chk.get("board_pinout") and repo and os.path.exists(os.path.join(repo, chk["board_pinout"])):
-            with open(os.path.join(repo, chk["board_pinout"]), newline="") as fh:
-                bp = {r["ball"]: r["pad"] for r in csv.DictReader(fh)}
-            self.assertEqual(bp, csvpins, "T1 pinout pad names vs the pin list")
 
     def test_up_to_date(self):
         r = subprocess.run([sys.executable, os.path.join(HERE, "bga.py"), "--check"],

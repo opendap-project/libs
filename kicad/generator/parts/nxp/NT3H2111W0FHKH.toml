@@ -21,7 +21,6 @@
 
 [part]
 mpn = "NT3H2111W0FHKH"
-second_source = "ST ST25DV04KC / ST25DV64KC (Type 5 tag, different footprint; BOM v1 line 125)"
 manufacturer = "NXP"
 library = "nxp"
 symbol = "NT3H2111W0FHKH"

@@ -20,7 +20,6 @@
 
 [part]
 mpn = "PN7160A1HN/C100E"
-second_source = "NXP PN7161A1HN/C100E (same die, same pinout; BOM v1 line 127)"
 manufacturer = "NXP"
 library = "nxp"
 symbol = "PN7160A1HN-C100E"
@@ -35,7 +34,7 @@ notes = [
   "Pin 22 is TVDD_IN2 in DS Table 7 (p. 16) and 'VDD_IN2' in Figure 6 (p. 15): the symbol follows the table.",
   "Pin types: host-interface pins I/O -> bidirectional; IRQ, CLK_REQ, DCDC_EN, XTAL2, TX1, TX2 outputs; VEN, DWL_REQ, WKUP_REQ, NFC_CLK_XTAL1, RXP, RXN inputs. External supplies VBAT, VBAT2, VDD(UP), VDD(PAD) power_in. VDD(TX), TVDD_IN, TVDD_IN2, VDD, VDD(A), VDD(D), VDD(VMID), VDD(HF), ANT1, ANT2 are 'P' pins tied to each other or to decoupling only (DS Table 7): passive. i.c. (to be left open) and n.c. pins: no_connect.",
   "Exposed pad = VSS, must be connected to ground (DS p. 16, 'Center Pad'): pin EP, power_in.",
-  "I2C address 0x28 (7-bit) with I2C_ADR1 = I2C_ADR0 = 0 (DS p. 23, Table 14: 0x50 write / 0x51 read), matching BOM v1 line 127.",
+  "I2C address 0x28 (7-bit) with I2C_ADR1 = I2C_ADR0 = 0 (DS p. 23, Table 14: 0x50 write / 0x51 read).",
 ]
 
 [[pins]]

@@ -72,15 +72,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "u-blox MAYA-W271-00B (same IW612 chip, other land; pin compatibility UNVERIFIED; BOM v1 line 55)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_locked" ""
 			(at 0 0 0)
 			(hide yes)

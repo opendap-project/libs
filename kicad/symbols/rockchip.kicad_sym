@@ -752,15 +752,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Rockchip RK817-5 (BOM v1 line 2)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_locked" ""
 			(at 0 0 0)
 			(hide yes)
@@ -1749,7 +1740,7 @@
 			)
 		)
 		(symbol "RK809-5_4_1"
-			(unit_name "Codec (unused in the T1)")
+			(unit_name "Codec")
 			(rectangle
 				(start -13.97 26.67)
 				(end 13.97 -26.67)

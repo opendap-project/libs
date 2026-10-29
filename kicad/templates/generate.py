@@ -633,7 +633,7 @@ def build_example(out_dir):
 
 
 NETCLASSES = """# Net classes of the example: the contract between the schematic and the board's rules,
-# in the format of the T1 board's hardware/rules/netclasses.toml. The project's net classes and
+# in the netclasses.toml format a board keeps in its rules folder. The project's net classes and
 # patterns are generated from this file; odapkit craft check compares them (CRAFT-155).
 
 version = 1

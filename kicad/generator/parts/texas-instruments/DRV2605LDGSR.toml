@@ -6,7 +6,6 @@
 
 [part]
 mpn = "DRV2605LDGSR"
-second_source = "Renesas DA7280-00FV2 (not pin-compatible; BOM v1 line 123)"
 manufacturer = "Texas Instruments"
 library = "texas-instruments"
 symbol = "DRV2605LDGSR"

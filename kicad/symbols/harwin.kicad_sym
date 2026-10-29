@@ -72,15 +72,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Mill-Max 0965-0-15-20-80-14-11-0 (BOM v1 line 67, same pads)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "pogo pin spring loaded contact SMT Harwin P70"
 			(at 0 0 0)
 			(hide yes)

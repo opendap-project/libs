@@ -265,15 +265,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "ST ST33KTPM2 I2C build (not pin-compatible; BOM v1 line 122)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "TPM TPM2.0 trusted platform module security OPTIGA SLB9673 I2C UQFN32 Infineon"
 			(at 0 0 0)
 			(hide yes)

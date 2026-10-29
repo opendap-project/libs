@@ -6,7 +6,6 @@
 
 [part]
 mpn = "TPS62826DMQR"
-second_source = "Texas Instruments TPS62827DMQR (BOM v1 line 129)"
 manufacturer = "Texas Instruments"
 library = "texas-instruments"
 symbol = "TPS62826DMQR"

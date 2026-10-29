@@ -8,7 +8,6 @@
 
 [part]
 mpn = "BQ28Z610DRZR-R1"
-second_source = "Texas Instruments BQ40Z50-R2 (BOM v1 line 42, different package)"
 manufacturer = "Texas Instruments"
 library = "texas-instruments"
 symbol = "BQ28Z610DRZR-R1"

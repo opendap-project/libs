@@ -19,7 +19,6 @@ notes = [
   "The DDF0008A land is shared by INA236AIDDFR and INA236BIDDFR (same datasheet, same package, same pin table, SBOSA81D pp. 3, 37): the [footprint] section is identical in both files.",
   "ALERT is open drain (Table 5-1, p. 3; may float if unused, p. 14): open_collector. A0 is tied to GND, VS, SDA or SCL to set the address (Table 7-1, p. 16): input.",
   "Kelvin routing from IN+/IN- to the shunt and the VS bypass are layout rules (p. 31, §8.4.1), not part of the footprint.",
-  "BOM v1 line 54 (x4, 0x40-0x43).",
 ]
 
 [[pins]]

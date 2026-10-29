@@ -1,6 +1,5 @@
 # DF40C-50DS-0.4V(51): Hirose DF40 receptacle, 50 contacts, 0.4 mm pitch, double row, vertical SMT, 1.5 mm stacking
-# height, style C (without reinforcing metal fitting). HRS No. 684-4009-0 51. Placed on the T1 board and on the
-# device-side piece; the DF40C-50DP-0.4V(51) headers are on the HAT flat cable (BOM v1 lines 66, 102).
+# height, style C (without reinforcing metal fitting). HRS No. 684-4009-0 51. It mates with the DF40C-50DP-0.4V(51) header.
 # Source: DF40 cat. = Hirose DF40 Series catalog, edition Aug. 1, 2019 (the copy cached for this part, sha256
 #   b806e4a9...e19f), p. 4, "Receptacle (Stacking height 1.5mm)" and
 #   "Recommended PCB layout", left view "DF40C (Without reinforcing metal fitting)" [PDF page 4]; header notes p. 10.
@@ -26,7 +25,7 @@ datasheet_rev = "DF40 catalog 2019-08-01 (p. 4)"
 sheet_pins = "none: the sheet lists no per-contact table; contacts numbered 1-50 in the odd/even convention of the footprint (UNVERIFIED against a Hirose numbering), checked by pad_count"
 notes = [
   "Contact numbering is not given in the DF40 catalog: UNVERIFIED. The footprint uses the KiCad 2-row convention of DF40C-100DS-0.4V(51), odd contacts on the upper row and even on the lower row, 1/2 at the end carrying the moulded triangle mark (left in the catalog view). Header and receptacle face each other when mated: map the nets through the mating, not by number, until Hirose's numbering is confirmed.",
-  "Corner contacts 1, 2, 49, 50: the receptacle's own lands are all alike (cat. p. 4, no metal fitting on DF40C), but they mate with the four corner contacts of the DF40C-50DP header, which Hirose says to use as metal fittings, never as signal or power contacts (cat. p. 10, note 3). They stay ordinary passive pins here; the board leaves them off signal and power nets (46 usable positions, BOM v1 line 66).",
+  "Corner contacts 1, 2, 49, 50: the receptacle's own lands are all alike (cat. p. 4, no metal fitting on DF40C), but they mate with the four corner contacts of the DF40C-50DP header, which Hirose says to use as metal fittings, never as signal or power contacts (cat. p. 10, note 3). They stay ordinary passive pins here; a design keeps them off signal and power nets (46 usable positions).",
   "One unit of 50 pins (CRAFT-126 allows 64 per unit; DF40C-100DS splits only because it has 100).",
   "Land pattern from the catalog only (DF40 cat. p. 4, DF40C view); no Hirose drawing for the receptacle is cached. Worth checking against the receptacle drawing when obtained.",
   "Resist-coating area 1.5 mm max between the rows (cat. p. 4 note 3) is not encoded in the footprint. The connector is not polarized (cat. p. 4 note 4).",

@@ -18,7 +18,7 @@ Python 3.11 or later (`tomllib`); KiCad 10 (`kicad-cli`) for the load and plot c
 
 ## What the generator produces
 
-- **Symbols** (`symbols/<key>.kicad_sym`): one per part, named after the MPN, with the `Manufacturer`, `MPN`, `Datasheet`, `Description` and `Footprint` fields, and `Second_Source` where the BOM names one. Pin ends on the 2.54 mm grid (CRAFT-122; a side with an even pin count leaves its centre empty rather than landing on ±1.27 mm); inputs and control left, outputs right, supplies top, grounds bottom; no hidden pins. Large parts are split into units by function (`[[units]]`; the RK809-5 by rail group), at most 64 pins per unit (CRAFT-126; a connector by contact group, the DF40C in two units of 50).
+- **Symbols** (`symbols/<key>.kicad_sym`): one per part, named after the MPN, with the `Manufacturer`, `MPN`, `Datasheet`, `Description` and `Footprint` fields. A design's chosen alternative (`Second_Source`) is a BOM choice and is set by the design on its placed part, not by the library. Pin ends on the 2.54 mm grid (CRAFT-122; a side with an even pin count leaves its centre empty rather than landing on ±1.27 mm); inputs and control left, outputs right, supplies top, grounds bottom; no hidden pins. Large parts are split into units by function (`[[units]]`; the RK809-5 by rail group), at most 64 pins per unit (CRAFT-126; a connector by contact group, the DF40C in two units of 50).
 - **Footprints** (`footprints/<key>.pretty/`): pads as the data gives them; the anchor at the body centroid for SMD parts and at pin 1 for through-hole parts (CRAFT-15); silk outline 0.15 mm, clipped 0.15 mm clear of every pad (CRAFT-05, CRAFT-07); reference 1.0 × 0.15 mm on the silk (CRAFT-02); a filled pin-1 triangle without stroke, outside the body (CRAFT-13); fab body outline with a pin-1 chamfer and `${REFERENCE}` (KLC F5.2, CRAFT-11); courtyard 0.05 mm on a 0.01 mm grid at the KLC F5.3 clearance of the part's class.
 - **3D models** (`3dmodels/<key>.3dshapes/`): envelope boxes from the datasheet body dimensions, OpenDAP's own (parts-lib ADR 0001). Manufacturer STEP files are never committed unless their licence allows it; they are listed in the parts-lib `manifest.toml` and fetched into the local cache.
 - **Envelope models for lands the library does not draw** (`envelopes.toml`): KiCad stock footprints whose KiCad 10 library ships no model (the Littelfuse NANO2 fuse, the TI DPY0002A, SOT-523, the Coilcraft XxL4020 land by height) and project lands of OpenDAP boards (inductors, the PTS815 switch, Vishay WSL shunts, shield-can frames). Each entry names its key and STEP name, the land it fits, the document it cites and its boxes; `kigen.py` writes them to `generator/models/` and `model.py` builds them with the rest. A consumer's footprint references `${OPENDAP_KICAD_3DMODELS}/<key>.3dshapes/<name>.step`.
@@ -48,7 +48,7 @@ lifecycle = { status = "Active", source = "TI product page", read = "2026-10-24"
 second_sources = [{ part = "TPS628691ARQYR", note = "on the same land" }]           # [] when none was found
 ```
 
-`status = "Not stated"` may leave out `source` and `read`. The BOM's chosen alternative stays in `second_source`, the string written to the symbol's `Second_Source` field.
+`status = "Not stated"` may leave out `source` and `read`. The part data carries no `second_source` string: the alternative a BOM chooses belongs to that BOM (`test_library.py` rejects it, with the rest of the product content: BOM lines, product ADRs, a product's use of a part).
 
 ### Pin table (`parts/<key>/pins/<part>.toml`)
 

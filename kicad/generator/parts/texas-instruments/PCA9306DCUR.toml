@@ -16,7 +16,6 @@ notes = [
   "Land pattern = TI example board layout DCU0008A (SCPS113O PDF p. 32), the same drawing 4225266/A as SN74AUC1G74DCUR: the [footprint] section is copied from SN74AUC1G74DCUR.toml unchanged (identical footprint file).",
   "SCL1/SDA1/SCL2/SDA2 are bidirectional pass-gate nodes (I/O, Table 5-1): bidirectional. EN: input.",
   "VREF1 is the low-side reference supply: power_in. VREF2 sits on the EN bias node fed through 200 kOhm from the high-side supply (SCPS113O §8.1.2, Figure 8-1), never tied directly to a rail: passive, so ERC does not ask for a driver.",
-  "BOM v1.13 (RFC 0014) removes the PCA9306 from the T1 board (BOM v1 line 94); the part stays in the library for other designs.",
 ]
 
 [[pins]]

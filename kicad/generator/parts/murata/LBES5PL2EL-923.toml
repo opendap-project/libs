@@ -20,7 +20,6 @@
 
 [part]
 mpn = "LBES5PL2EL-923"
-second_source = "u-blox MAYA-W271-00B (same IW612 chip, other land; pin compatibility UNVERIFIED; BOM v1 line 55)"
 manufacturer = "Murata"
 library = "murata"
 symbol = "LBES5PL2EL-923"
@@ -29,7 +28,7 @@ description = "Murata Type 2EL module, NXP IW612: Wi-Fi 6 802.11a/b/g/n/ac/ax 1x
 keywords = "Wi-Fi WiFi 6 802.11ax Bluetooth BLE 802.15.4 Thread module IW612 Murata Type 2EL LBES5PL2EL SDIO"
 datasheet = "https://www.murata.com/en-us/products/connectivitymodule/wi-fi-bluetooth/overview/lineup/type2el"
 datasheet_rev = "Type 2EL Datasheet not obtained (403); pins from E2B-54-1953 Rev. 2.0, land from footprint DXF 2023-07-13"
-second_sources = [{ part = "u-blox MAYA-W271-00B", note = "same chip, per the board BOM" }]
+second_sources = [{ part = "u-blox MAYA-W271-00B", note = "same IW612 chip, other land; pin compatibility UNVERIFIED" }]
 notes = [
   "Datasheet field = Murata Type 2EL product page: the Type 2EL Datasheet it links (https://pim.murata.com/asset/pim4/wifiBluetoothModule/TYPE2EL_PDF) answered 403 to non-browser fetches on 2026-10-24 and 2026-10-25.",
   "Pin numbers and names = E2B-54-1953 Rev. 2.0 Table 3, Type 2EL column (pp. 10-11) (pins/LBES5PL2EL-923.toml); positions = Figure 5 (p. 9, top view).",

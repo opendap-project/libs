@@ -1,6 +1,6 @@
 # pcbway-flex
 
-KiCad 10 design rules for PCBWay's flexible PCB (FPC) process. Written for the HAT flat cable and the faceplate cable; usable by any OpenDAP flex circuit built at PCBWay.
+KiCad 10 design rules for PCBWay's flexible PCB (FPC) process. For any OpenDAP flex circuit built at PCBWay, such as flat cables between boards.
 
 - Rules: [`pcbway-flex.kicad_dru`](pcbway-flex.kicad_dru), 6 rules.
 - Test board: [`test/`](test/), one failing and one passing object per rule.

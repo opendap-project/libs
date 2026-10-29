@@ -72,15 +72,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Same Sky SJ2-35894D-SMT-TR (BOM v1 line 30)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "audio jack 3.5mm TRRS headphone SMT switch Same Sky SJ2-3595"
 			(at 0 0 0)
 			(hide yes)

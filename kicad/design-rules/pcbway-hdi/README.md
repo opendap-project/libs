@@ -1,6 +1,6 @@
 # pcbway-hdi
 
-KiCad 10 design rules for PCBWay's advanced HDI process: laser microvias, blind and buried vias, fine-pitch BGA. Written for the T1 main board; usable by any OpenDAP board built as HDI at PCBWay.
+KiCad 10 design rules for PCBWay's advanced HDI process: laser microvias, blind and buried vias, fine-pitch BGA. For any OpenDAP board built as HDI at PCBWay.
 
 - Rules: [`pcbway-hdi.kicad_dru`](pcbway-hdi.kicad_dru), 16 rules.
 - Test board: [`test/`](test/), one failing and one passing object per rule.

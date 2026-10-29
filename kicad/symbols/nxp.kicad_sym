@@ -72,15 +72,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "ST ST25DV04KC / ST25DV64KC (Type 5 tag, different footprint; BOM v1 line 125)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "NFC tag NTAG NTAG I2C plus NT3H2111 Type 2 T2T dynamic tag I2C XQFN8 SOT902-3 NXP"
 			(at 0 0 0)
 			(hide yes)
@@ -320,15 +311,6 @@
 			)
 		)
 		(property "MPN" "PN7160A1HN/C100E"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Second_Source" "NXP PN7161A1HN/C100E (same die, same pinout; BOM v1 line 127)"
 			(at 0 0 0)
 			(hide yes)
 			(effects

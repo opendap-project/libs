@@ -21,7 +21,6 @@
 
 [part]
 mpn = "SJ2-35954D-SMT-TR"
-second_source = "Same Sky SJ2-35894D-SMT-TR (BOM v1 line 30)"
 manufacturer = "Same Sky"
 library = "same-sky"
 symbol = "SJ2-35954D-SMT-TR"

@@ -3,8 +3,8 @@
 # z42n "LPDDR4X/LPDDR4 SDRAM" data sheet (MT53E1G16D1, MT53E1G32D2, ...), Rev. C 02/2023, 314 pages,
 # design revision :C (parts-lib manifest.toml, sha256 da659aad...cff17e39; distributor copy, not
 # redistributable, fetched into the local cache). Page numbers are the printed ones; the PDF's
-# physical page is one lower from p. 4 on. The T1 fits it under board ADR 0022, which also accepts
-# the CXMT CXDB5CBAM-MA-B as a second source on this land (CXMT = CXMT "4GB LPDDR4X SDRAM
+# physical page is one lower from p. 4 on. The CXMT CXDB5CBAM-MA-B fits the same land
+# (CXMT = CXMT "4GB LPDDR4X SDRAM
 # Datasheet CXDB5CBAM-MA-B", Version 1.0, Apr. 17, 2024, 86 pages).
 #
 # One footprint for both packages. The balls of both sit on the same JEDEC MO-311 grid (DS p. 43;
@@ -21,7 +21,7 @@ reference = "U"
 description = "LPDDR4X SDRAM, 32 Gb (4 GB), 2 x 16 Gb single-channel dies, 2 channels x16, single rank, 4266 Mb/s, VDD1/VDD2/VDDQ 1.8/1.1/0.6 V, 200-ball TFBGA 10 x 14.5 mm; same land: CXMT CXDB5CBAM-MA-B"
 keywords = "LPDDR4X LPDDR4 SDRAM DRAM Micron 200FBGA TFBGA"
 datasheet = "https://4donline.ihs.com/images/VipMasterIC/IC/MICT/MICT-S-A0017683454/MICT-S-A0017683454-1.pdf?hkey=6D3A4C79FDBF58556ACFDE234799DDF0"
-second_sources = [{ part = "WT:C", note = "same data sheet and package" }, { part = "AAT:C", note = "once its data sheet confirms the FW package (board ADR 0022)" }]
+second_sources = [{ part = "WT:C", note = "same data sheet and package" }, { part = "AAT:C", note = "once its data sheet confirms the FW package" }]
 pins = "MT53E1G32D2FW-046-pins.csv"          # DS p. 32, Figure 9, 200-ball dual-channel single-rank ballout (names verbatim)
 ballmap = "MT53E1G32D2FW-046-ballmap.txt"    # DS p. 43, Figure 15, bottom view
 

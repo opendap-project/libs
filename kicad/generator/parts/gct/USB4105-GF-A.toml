@@ -16,7 +16,6 @@
 
 [part]
 mpn = "USB4105-GF-A"
-second_source = "Amphenol 12402012E212A (BOM v1 line 61)"
 manufacturer = "GCT"
 library = "gct"
 symbol = "USB4105-GF-A"

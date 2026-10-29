@@ -373,15 +373,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Analog Devices LT3094EDD#PBF (same part, tube)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "negative LDO linear regulator ultra low noise high PSRR LT3094 DFN DD"
 			(at 0 0 0)
 			(hide yes)

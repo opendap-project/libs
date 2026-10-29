@@ -1,6 +1,6 @@
 # pcbway-multilayer
 
-KiCad 10 design rules for PCBWay's advanced multilayer process with through vias only. Written for the HAT device-side piece and rigid faceplate boards; usable by any 4- or 6-layer OpenDAP board built at PCBWay without blind, buried or laser vias.
+KiCad 10 design rules for PCBWay's advanced multilayer process with through vias only. For any 4- or 6-layer OpenDAP board built at PCBWay without blind, buried or laser vias.
 
 | File | Base copper | Rules |
 |---|---|---|

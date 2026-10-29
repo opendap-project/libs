@@ -11,7 +11,7 @@
 # sha256 = "…"
 # redistributable = false
 
-# Board and touch faceplate parts, from board BOM v1 (2026-10-22).
+# Parts files (first set, 2026-10-22).
 
 [[file]]
 mpn = "RK3566"
@@ -123,7 +123,7 @@ mpn = "RK860-0"
 manufacturer = "Rockchip"
 kind = "datasheet"
 url = ""
-# no public datasheet exists (2026-10-25); replaced in the T1 by the TPS6286910CRQYR (board ADR 0021)
+# no public datasheet exists (2026-10-25)
 # RK860-2 alternative
 redistributable = false
 
@@ -134,7 +134,7 @@ kind = "datasheet"
 url = "https://atta.szlcsc.com/upload/public/pdf/source/20170810/C111838_1502335158458879679.pdf"
 revision = "AN_SYR827/SYR828 Rev. 0.1"
 sha256 = "e3027f87f758885162dd76a2015f97b2f8cc15508708b4b1fc3e8315e649bd62"
-# application note marked "Confidential - Prepared for Customer Use Only", LCSC mirror; no Silergy-hosted datasheet found (board ADR 0021)
+# application note marked "Confidential - Prepared for Customer Use Only", LCSC mirror; no Silergy-hosted datasheet found
 redistributable = false
 
 [[file]]
@@ -145,7 +145,7 @@ url = "https://www.ti.com/lit/ds/symlink/tps62869.pdf"
 revision = "SLVSFS3B"
 date = "2021-07"
 sha256 = "62f61d2bbc06f7d030be182838b00ff065a80c0b953b9319e11a4e66c4e6ab5c"
-# TPS62868/TPS62869 datasheet (41 pages); vdd_cpu buck from board ADR 0021, replaces the RK860-0
+# TPS62868/TPS62869 datasheet (41 pages)
 redistributable = false
 
 [[file]]
@@ -167,7 +167,7 @@ url = "https://www.coilcraft.com/getmedia/80d2e45e-9ea9-4518-8af9-e8c2c28ee954/x
 revision = "Document 1718"
 date = "2026-08-27"
 sha256 = "6a22786f346699ace065e8d6fe336a11518f505f56818d9b67e6eab14e2daaf7"
-# vdd_cpu inductor proposed by board ADR 0021 (0.22 uH, 4.0 x 4.0 x 1.2 mm max)
+# 0.22 uH, 4.0 x 4.0 x 1.2 mm max
 redistributable = false
 
 [[file]]
@@ -1326,7 +1326,7 @@ url = "https://www.hirose.com/en/product/document?clcode=&productname=&series=DF
 # 51; 51
 redistributable = false
 
-# Board BOM v1.1 additions (2026-10-22). sha256 of the copy downloaded from the URL shown, where it was.
+# Additions of 2026-10-22. sha256 of the copy downloaded from the URL shown, where it was.
 
 [[file]]
 mpn = "TPS61089RNRR"
@@ -1356,7 +1356,6 @@ url = "https://www.ti.com/lit/ds/symlink/tps62a03.pdf"
 revision = "SLUSFD4A"
 date = "2024-10"
 sha256 = "db38a14c2b2dfcfb6cdd81baa36ab230aca30df836b81cb974d7ec4ed19c9381"
-# fallback for the vcc3v3_sys buck (BOM line 6); dropped in BOM v1.2
 redistributable = false
 
 [[file]]
@@ -1452,7 +1451,7 @@ sha256 = "34c3113b192357c97ed42b979ab7f6242c492d3f2e02207e128ec35d1733b5bd"
 # RK809-5 reference
 redistributable = false
 
-# Board BOM v1.2 additions (2026-10-22). sha256 of the copy downloaded from the URL shown, where it was.
+# Additions of 2026-10-22. sha256 of the copy downloaded from the URL shown, where it was.
 
 [[file]]
 mpn = "TPS62826DMQR"
@@ -1472,7 +1471,6 @@ url = "https://www.ti.com/lit/ds/symlink/tps62826.pdf"
 revision = "SLVSEF9I"
 date = "2024-03"
 sha256 = "8a309f2a40486a380242d3f178eb4bda3ef4dca3deca647fa82f763d14866f63"
-# alternative for BOM line 6
 redistributable = false
 
 [[file]]
@@ -1534,7 +1532,7 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/6b4c027fb90357baec1b8d318e11eacb
 revision = "Rev. D"
 date = "2022-11"
 sha256 = "9132e595759a58a0920e7c63997872df02ca9ce598ead76c6f7a31051405eba6"
-# LCSC mirror; analog.com timed out from this host. BOM v1.3 line 25
+# LCSC mirror; analog.com timed out from this host.
 redistributable = false
 
 [[file]]
@@ -1545,10 +1543,10 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/1a8bfd511d8ae1f9056ba9136e868838
 revision = "Rev. B"
 date = "2020-01"
 sha256 = "c82438ca3359a588f6f1ad5ab5160b3f2223ec78f723be17bda753f8dc71694d"
-# LCSC mirror; analog.com timed out from this host. BOM v1.3 line 26
+# LCSC mirror; analog.com timed out from this host.
 redistributable = false
 
-# BOM v1.3 parts (2026-10-22).
+# Additions of 2026-10-22.
 
 [[file]]
 mpn = "744373240047"
@@ -1558,7 +1556,7 @@ url = "https://www.we-online.com/components/products/datasheet/744373240047.pdf"
 revision = "003.000"
 date = "2024-12-27"
 sha256 = "18d4780afd61015ea4d7b56a174b1f51405d51a51fd87ca1d1eef86f177af2da"
-# BOM v1.3 line 106. curl from this host gets HTTP 403; the file was fetched from this URL with a browser-like client
+# curl from this host gets HTTP 403; the file was fetched from this URL with a browser-like client
 redistributable = false
 
 [[file]]
@@ -1569,7 +1567,6 @@ url = "https://www.coilcraft.com/getmedia/84927b8b-f089-421b-a7f4-a0fa23afe908/x
 revision = "Document 769-1"
 date = "2026-03-10"
 sha256 = "6535ab70d0ef65ba03d4b0800e206fc7867f26464e2d9dfd5dd931a2bcb0c7c1"
-# BOM v1.3 line 106 alternative
 redistributable = false
 
 [[file]]
@@ -1580,7 +1577,7 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a
 revision = "V.16"
 date = "2025-05-06"
 sha256 = "0a729d144519a7021c82a0ef242b064e467c70d44afcf9eabd6c7ffdc4b673a3"
-# RT series (thin film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 37, 1.00 kΩ
+# RT series (thin film), LCSC mirror; yageo.com path returned 404. 1.00 kΩ
 redistributable = false
 
 [[file]]
@@ -1591,7 +1588,7 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a
 revision = "V.16"
 date = "2025-05-06"
 sha256 = "0a729d144519a7021c82a0ef242b064e467c70d44afcf9eabd6c7ffdc4b673a3"
-# RT series (thin film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 37, 1.62 kΩ
+# RT series (thin film), LCSC mirror; yageo.com path returned 404. 1.62 kΩ
 redistributable = false
 
 [[file]]
@@ -1602,7 +1599,7 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/46d7760c582640714d605308a25a220a
 revision = "V.16"
 date = "2025-05-06"
 sha256 = "0a729d144519a7021c82a0ef242b064e467c70d44afcf9eabd6c7ffdc4b673a3"
-# RT series (thin film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 109, 60.4 kΩ
+# RT series (thin film), LCSC mirror; yageo.com path returned 404. 60.4 kΩ
 redistributable = false
 
 [[file]]
@@ -1613,7 +1610,7 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e
 revision = "V.12"
 date = "2022-08-02"
 sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
-# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 107, 1.0 Ω
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. 1.0 Ω
 redistributable = false
 
 [[file]]
@@ -1624,7 +1621,7 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e
 revision = "V.12"
 date = "2022-08-02"
 sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
-# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 109, 374 Ω
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. 374 Ω
 redistributable = false
 
 [[file]]
@@ -1635,7 +1632,7 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e
 revision = "V.12"
 date = "2022-08-02"
 sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
-# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 109, 9.31 kΩ
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. 9.31 kΩ
 redistributable = false
 
 [[file]]
@@ -1646,7 +1643,7 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e
 revision = "V.12"
 date = "2022-08-02"
 sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
-# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 111, 475 kΩ
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. 475 kΩ
 redistributable = false
 
 [[file]]
@@ -1657,7 +1654,7 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e
 revision = "V.12"
 date = "2022-08-02"
 sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
-# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 111, 576 kΩ
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. 576 kΩ
 redistributable = false
 
 [[file]]
@@ -1668,10 +1665,10 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/b426be3ce22c6de3e0c3a2248e49159e
 revision = "V.12"
 date = "2022-08-02"
 sha256 = "e7dbabb0611925227ccfc429c14c8833a7b1f2c755684444124446f20b22a229"
-# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. BOM v1.3 line 111, 100 kΩ
+# RC_L series (thick film), LCSC mirror; yageo.com path returned 404. 100 kΩ
 redistributable = false
 
-# Board BOM v1.5 (board ADR 0014, two-cell battery), 2026-10-22.
+# Additions of 2026-10-22.
 
 [[file]]
 mpn = "BQ25798RQMR"
@@ -1766,7 +1763,7 @@ url = "https://www.coilcraft.com/getmedia/3c7caaa2-c1ed-4ff8-84e5-0b1b14a30417/x
 revision = "Document 1302"
 date = "2026-02-19"
 sha256 = "1c28ca6c85d755ad87bdf5c258131d6706d60572d592b5647810efd8bab2c3be"
-# second source for XGL4020-152MEC (BOM v1.5 line 114); TI-listed for the TPS62136
+# alternative to the XGL4020-152MEC; TI-listed for the TPS62136
 redistributable = false
 
 [[file]]
@@ -1856,10 +1853,10 @@ url = "https://datasheet.lcsc.com/datasheet/pdf/ecd74ee295e2e3d7ddb74e9193c5d222
 revision = "451/453 Series, Revised 06/15/17"
 date = "2017-06-15"
 sha256 = "e6a46c9a12645c68d2004d892bb8b370e3792708fd2d013c8108b7b00f059dd7"
-# board BOM v1.5 line 104 (supersedes 0451004.MRL); same 451/453 file as 045102.5MRL
+# same 451/453 file as 045102.5MRL
 redistributable = false
 
-# Board BOM v1.6 (board ADR 0015, ADR 0014 item 6, MaskROM fix), 2026-10-22.
+# Additions of 2026-10-22.
 
 [[file]]
 mpn = "LMR33630CRNXR"
@@ -1955,7 +1952,7 @@ url = "https://www.murata.com/en-us/products/productdetail?partno=GRM32ER71E226K
 # DC-bias curve read from Murata SimSurfing on 2026-10-24 (spec sheet, Recommended operating conditions)
 redistributable = false
 
-# Master clock dividers and 2x oscillators (board ADR 0019, 2026-10-24).
+# Clock dividers and oscillators (2026-10-24).
 
 [[file]]
 mpn = "SN74AUC1G74DCUR"
@@ -1987,7 +1984,7 @@ sha256 = "b818c72bf170e8dac004fcc7e0c5639eb8ffbe22d624f2e851aef9fde8f87825"
 # NZ2520SDA, 3.3 V
 redistributable = false
 
-# Battery contacts (board ADR 0020, 2026-10-24).
+# Battery contacts (2026-10-24).
 
 [[file]]
 mpn = "70-9258-001-120-006"
@@ -2011,7 +2008,7 @@ sha256 = "c4907e39d0df15c20abe8db5fe3625bfe0e997d0dee40b89dd1b7b40ea1d2384"
 # sales drawing zip (one PDF, 3 sheets; sheet 2 is the -120); the PDF inside: sha256 2354523cafd9da19797b288adc2bc03fe1c01e38b54145671eecc498e4105aae
 redistributable = false
 
-# LPDDR4X replacement for the discontinued K4UBE3D4AB-MGCL (board ADR 0022, 2026-10-25).
+# LPDDR4X (2026-10-25).
 
 [[file]]
 mpn = "MT53E1G32D2FW-046"
@@ -2046,7 +2043,7 @@ sha256 = "05e13b0d4c20b21e18c532571d5ad91fb2317ab40e2ba08194d48db111977950"
 # Rockchip Solutions DDR SDRAM Support List (21 pages), from a public RK3588 SDK mirror (Common/AVL), pinned by commit
 redistributable = false
 
-# HAT extension switch (board BOM v1.11 line 144, hat-standard interface v1.1).
+# Analog switch (2026-10-25).
 
 [[file]]
 mpn = "TMUXHS4412IRUAR"
@@ -2059,7 +2056,7 @@ sha256 = "6dc3f769bfebb35d87a083ff1cdd7b29b81269bbce8ef172a3dfa4909e083bd3"
 # TMUXHS4412 datasheet (29 pages, package option addendum 2026-02-06); same hash as the board BOM Datasheets table
 redistributable = false
 
-# T1 USB, faceplate and IO parts (board BOM v1 lines 122-127, 145, 146); added 2026-10-25.
+# USB, display and I/O parts; added 2026-10-25.
 
 [[file]]
 mpn = "SLB9673XU20FW2613XTMA1"

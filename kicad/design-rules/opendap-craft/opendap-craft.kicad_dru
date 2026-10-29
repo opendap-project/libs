@@ -12,8 +12,8 @@
 # track_segment_length), so they never relax a fab limit. KiCad applies every
 # matching assertion, so a product rule cannot relax them either: the
 # exemptions are built in, and are the only ones:
-#   - impedance-controlled net classes, named after their impedance as the
-#     T1 board names them: <name>_<ohms>D (differential, for example
+#   - impedance-controlled net classes, named after their impedance:
+#     <name>_<ohms>D (differential, for example
 #     USB3_90D) or <name>_<ohms>SE (single-ended). Their widths come from the
 #     stackup; they are exempt from CRAFT-40 and CRAFT-43;
 #   - rule areas named CRAFT-EXEMPT* or containing ESCAPE (a BGA escape,

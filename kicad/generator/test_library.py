@@ -13,6 +13,8 @@ For every part data file in generator/parts/:
   citation, pin number to name), unless the part records sheet_pins = "none: <reason>";
 - [part] lifecycle and second_sources (PLIB-003) follow their schema and are
   present on every part that had them when the fields were introduced;
+- no product content in the generator data or the parts manifest (BOM lines, product ADRs, the
+  T1's use of a part, a BOM's chosen `second_source`, a read of a board's files);
 - the symbol's pin numbers match the footprint's numbered copper pads, and the symbol carries the
   Manufacturer, MPN, Datasheet and Footprint fields (PCB-T-05);
 - the pads read back from the .kicad_mod file match the transcribed drawing values ([[checks]]);
@@ -232,6 +234,12 @@ SECOND_SOURCES_EXPECTED = {"70-9258-001-120-006", "LBES5PL2EL-923", "NSC5083D-22
                            "TPS6286910CRQYR", "MT53E1G32D2FW-046 IT:C"}
 
 
+# Product content the library data must not carry: BOM lines and versions, product ADRs, the
+# T1's use of a part, a BOM's chosen alternative, a read of a board's files.
+PRODUCT_CONTENT = re.compile(r"\bBOM v\d|\bBOM line|\bboard ADR\b|\bthe T1\b|\bOpenDAP T1\b|\bT1 (board|main board|pinout)"
+                             r"|^second_source\s*=|\bboard_pinout\b")
+
+
 def part_record_errors(pt):
     """Schema of [part] lifecycle = {status, source, read, note?} (source and read may be left out
     only with status "Not stated") and second_sources = [{part, note?}, ...] ([] = none found)."""
@@ -400,6 +408,26 @@ class Symbols(unittest.TestCase):
         have_ss = {pt["mpn"] for pt in records if "second_sources" in pt}
         self.assertEqual(LIFECYCLE_EXPECTED - have_lc, set(), "lifecycle missing")
         self.assertEqual(SECOND_SOURCES_EXPECTED - have_ss, set(), "second_sources missing")
+
+    def test_no_product_content(self):  # libs README: a part's data says what the part is
+        """No product content in the library data: no BOM line or version, no product ADR, no T1 use,
+        no BOM choice (`second_source`), no read of a board's files. Those live with the board."""
+        files = [f for f in glob.glob(os.path.join(HERE, "**", "*.toml"), recursive=True)]
+        files.append(os.path.join(ROOT, "..", "parts", "manifest.toml"))
+        for f in files:
+            with open(f, encoding="utf-8") as fh:
+                for i, line in enumerate(fh, 1):
+                    with self.subTest(file=os.path.relpath(f, ROOT), line=i):
+                        self.assertIsNone(PRODUCT_CONTENT.search(line), line.strip())
+
+    def test_no_product_content_pattern(self):
+        for bad in ('second_source = "X (BOM v1 line 3)"', "# from board BOM v1.5", "matching BOM v1 line 127",
+                    "the T1 fits it under board ADR 0022", "Codec (unused in the T1)", 'board_pinout = "x.csv"',
+                    "the T1 configuration", "# replaced in the T1 by the X"):
+            self.assertIsNotNone(PRODUCT_CONTENT.search(bad), bad)
+        for good in ('second_sources = [{ part = "X" }]', "T1,VSS", "Housing UL94V-HB (drawing BOM items 13-14)",
+                     "Maxim T1633-4 package"):
+            self.assertIsNone(PRODUCT_CONTENT.search(good), good)
 
     def test_part_record_schema_rejects(self):
         good = {"lifecycle": {"status": "Active", "source": "TI product page", "read": "2026-10-24"},

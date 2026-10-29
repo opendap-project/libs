@@ -72,15 +72,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Amphenol 12402012E212A (BOM v1 line 61)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "USB Type-C USB2.0 receptacle connector GCT USB4105"
 			(at 0 0 0)
 			(hide yes)

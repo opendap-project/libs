@@ -14,7 +14,6 @@
 
 [part]
 mpn = "U.FL-R-SMT-1"
-second_source = "Hirose U.FL-R-SMT-1(80) (BOM v1 line 56)"
 manufacturer = "Hirose"
 library = "hirose"
 symbol = "U.FL-R-SMT-1"

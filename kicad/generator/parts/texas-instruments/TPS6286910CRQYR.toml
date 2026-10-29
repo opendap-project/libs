@@ -5,7 +5,6 @@
 
 [part]
 mpn = "TPS6286910CRQYR"
-second_source = "Texas Instruments TPS628691ARQYR (same land; pin 9 is VSET/VID, 86.6 kOhm to AGND for 0.90 V / 0x41; board ADR 0021)"
 manufacturer = "Texas Instruments"
 library = "texas-instruments"
 symbol = "TPS6286910CRQYR"

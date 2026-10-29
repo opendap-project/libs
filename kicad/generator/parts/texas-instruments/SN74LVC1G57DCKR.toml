@@ -4,7 +4,6 @@
 
 [part]
 mpn = "SN74LVC1G57DCKR"
-second_source = "Nexperia 74LVC1G57GW (BOM v1 line 98)"
 manufacturer = "Texas Instruments"
 library = "texas-instruments"
 symbol = "SN74LVC1G57DCKR"

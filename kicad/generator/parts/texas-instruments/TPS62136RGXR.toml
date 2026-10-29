@@ -5,7 +5,6 @@
 
 [part]
 mpn = "TPS62136RGXR"
-second_source = "Texas Instruments TPS62136RGXT (BOM v1 line 113)"
 manufacturer = "Texas Instruments"
 library = "texas-instruments"
 symbol = "TPS62136RGXR"

@@ -4,7 +4,7 @@ The craft standard for OpenDAP boards: layout (§3–§8) and, since 2026-10-24,
 
 - **Status:** Draft. Requirement KLIB-003 (must, confirmed by the maintainers on 2026-10-24): every OpenDAP board follows this standard. The rules and their values follow the sources cited; the proposals in [§8](#8-colour-and-finish) and the items in [§12](#12-open-items) wait for the maintainers. §9 (schematics and symbols) was extended on 2026-10-24 at the maintainers' request for visual quality and technical communication in KiCad.
 - **Date:** 2026-10-25
-- **Applies to:** every OpenDAP board: the T1 main board, faceplates, HATs and their reference designs, and any later device.
+- **Applies to:** every OpenDAP board: main boards, faceplates, HATs and their reference designs, and any later device.
 - **Levels:** each rule carries the lowest quality level at which it is mandatory ([RFC 0010](https://github.com/opendap-project/rfcs/blob/main/text/0010-quality-levels.md)): Q0 bench-safe, Q1 prototype, Q2 pre-compliance, Q3 compliant product, Q4 reference. A build passes every rule at or below its target level; the rest is debt, listed, never dropped.
 - **Enforcement:** **DRC**, the rule set [`design-rules/opendap-craft/`](../../design-rules/opendap-craft/); **CHK**, `odapkit craft check` in [tools/hardware](https://github.com/opendap-project/tools/tree/main/hardware) (`tools/pcb-craft-check.py` for boards, `tools/sch-craft-check.py` for schematics and symbol libraries); **ERC**, the project's KiCad ERC with the severities of CRAFT-158, folded into the same report; **Review**, the design review, by a person, against this document.
 
@@ -36,7 +36,7 @@ Andy Hertzfeld records Steve Jobs, in July 1981, rejecting a Macintosh board lay
 
 - **Composition.** A board's `<project>.kicad_dru` is composed by `odapkit dru compose` from its `<project>.dru.toml` manifest, in this order: the fab rule set (for example [`pcbway-hdi`](../../design-rules/pcbway-hdi/)), then [`opendap-craft`](../../design-rules/opendap-craft/), then the product's own rules. The craft rules use only constraints the fab sets do not (assertions, `silk_clearance`, `track_angle`, `track_segment_length`), so they never relax a fab limit; KiCad applies every matching assertion, so product rules cannot relax them either.
 - **Exemptions** are built into the rules and are the only ones:
-  - impedance-controlled net classes, named `<name>_<ohms>D` (differential, as the T1 board's `USB3_90D`) or `<name>_<ohms>SE` (single-ended), take their widths and geometry from the stackup: exempt from CRAFT-40, CRAFT-42 and CRAFT-43;
+  - impedance-controlled net classes, named `<name>_<ohms>D` (differential, for example `USB3_90D`) or `<name>_<ohms>SE` (single-ended), take their widths and geometry from the stackup: exempt from CRAFT-40, CRAFT-42 and CRAFT-43;
   - rule areas named `CRAFT-EXEMPT*` or containing `ESCAPE` (a BGA escape, where the fab floors apply) exempt the copper inside them from CRAFT-40, CRAFT-41, CRAFT-43 and CRAFT-47;
   - a footprint field `Craft_Exempt` = `"CRAFT-30 CRAFT-31: <reason>"` exempts that footprint from the CHK rules it names; the report lists every exemption with its reason. Use it for parts placed from a mechanical datum (connectors, buttons, mounting holes).
 - **The check.** `odapkit craft check <board>.kicad_pcb` runs the CHK rules, runs the board's DRC and folds every rule tagged `[Qn]` into the same report, groups results by level, and prints the level the board reaches. A `<project>.craft.toml` next to the board names its target level and its mirrored blocks (CRAFT-34).
@@ -107,7 +107,7 @@ Placement carries most of a board's visible order: a grid, rows, shared orientat
 | CRAFT-45 | Q2 | Vias from the OpenDAP set (drill / land). | 0.10 / 0.25 mm laser microvia; 0.20 / 0.46 mm; 0.30 / 0.60 mm | Each meets the prototype fab's HDI and multilayer minimums (0.075 mm microvia ring, 5 mil mechanical ring); fewer sizes, fewer tools | [RES] | DRC |
 | CRAFT-46 | Q3 | At most eight mechanical drill sizes per board (vias, plated and unplated holes, slots); laser drills not counted. | 8 | Each size is a tool change; consistency | — | CHK |
 | CRAFT-47 | Q4 | No jogs: no straight segment shorter than 0.1 mm. | 0.1 mm | Short kinks are router residue | — | DRC |
-| CRAFT-48 | Q3 | One teardrop policy for the board: on at every via and pad junction, or off at all of them. Product rules may require them (the T1 board does at Q2). | — | Consistent geometry | — | CHK |
+| CRAFT-48 | Q3 | One teardrop policy for the board: on at every via and pad junction, or off at all of them. Product rules may require them. | — | Consistent geometry | — | CHK |
 | CRAFT-49 | Q2 | Copper zones remove islands; set the Board Setup check `isolated_copper` to error. | — | No floating copper | — | CHK |
 | CRAFT-50 | Q3 | Zone fill minimum width ≥ 0.2 mm and zone outlines at 45° multiples. | 0.2 mm | No slivers; pour edges follow the routing geometry. KiCad's `connection_width` did not report a 1 mm neck against a 2 mm minimum in kicad-cli 10.0.7 tests, so slivers are controlled by the fill's minimum width | — | CHK |
 | CRAFT-51 | Q3 | Stitching vias (on no track) in one size, on the placement grid, on a regular pitch; the TI OPA1622 EVM rings its jack ground with stitching vias. | Pitch per board | Even return paths and an even appearance | [TI-OPA1622] §5.1 | CHK (size, grid); Review (pitch) |
@@ -283,8 +283,7 @@ kicad-lib's symbols, and any project symbol, follow KLC; where OpenDAP differs, 
 ## 10. Decisions taken
 
 - **Full legend.** An open board keeps a full legend (CRAFT-10, CRAFT-11): the published files and the DIY edition make it a repair document. Discipline (CRAFT-01 to -12) keeps it quiet.
-- **Single HDI main board.** No stacked boards through a perimeter interposer: the interposer is a custom part (T1-038), prototype assembly does not cover it, and rework becomes impractical.
-- **Common tools.** One standard screw family (CRAFT-36, T1-055); the battery stays replaceable with common tools, and the board keeps its connector reachable and marked (CRAFT-14, CRAFT-39).
+- **Common tools.** One standard screw family (CRAFT-36); a replaceable battery stays replaceable with common tools, and the board keeps its connector reachable and marked (CRAFT-14, CRAFT-39).
 - **No rule** rests on recycled plating and solder, or on underfill; underfill is a reliability decision per BGA, taken with drop testing (§12).
 
 ## 11. Enforcement summary
@@ -316,7 +315,7 @@ Rules checked partly by a tool and partly by review are listed under the tool.
 - **Underfill** under the BGAs: a reliability decision after drop testing.
 - **Pick-and-place convention per fab** (CRAFT-15): the prototype fab's convention is not published on its capability pages (**UNVERIFIED**).
 - **Title-block typeface** (CRAFT-102): **decided (maintainers, 2026-10-24):** KiCad's stroke font now; IBM Plex Sans at Q4, once KiCad documents that fonts embedded in a schematic serve its drawing sheet.
-- **Active-low net names** (CRAFT-84): **decided (maintainers, 2026-10-24):** net names use the suffix `_N`, as the T1 pinout v1; pin names on symbols keep the overbar `~{}`.
+- **Active-low net names** (CRAFT-84): **decided (maintainers, 2026-10-24):** net names use the suffix `_N`; pin names on symbols keep the overbar `~{}`.
 - **Colour theme** (CRAFT-103): **decided (maintainers, 2026-10-24):** every published plot (fab package, documentation, review PDFs) uses `colour-themes/opendap.json`, so the documents look the same everywhere; developers install it into KiCad's `colors` folder for daily work. Applying it in the fab-package tool is open.
 - **Functional accents in the colour theme** (CRAFT-103): **Accepted (2026-10-25).** Basis: a visual review in KiCad found wires, labels, symbol bodies and rails hard to tell apart in the monochrome graphite theme (`check_theme.py` measures ΔE76 0 between those groups in the previous theme). The design system's palette is graphite, white and orange, with semantic colours that keep one meaning [DS] §3; its tokens are tuned for dark surfaces (`state.warning` `#F3C66B` is 1.6:1 on white), so the schematic accents are darker shades chosen for a white sheet, one per drawing role, and none of them is red, amber or orange, which stay with ERC and interaction. Why each:
   - **Wires and junctions, blue `#2563A8` (6.1:1):** connectivity is what a reader follows first; a hue apart from the graphite parts separates a wire from a symbol outline or pin where they meet.

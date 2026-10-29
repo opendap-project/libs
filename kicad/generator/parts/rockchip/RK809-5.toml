@@ -28,7 +28,6 @@
 
 [part]
 mpn = "RK809-5"
-second_source = "Rockchip RK817-5 (BOM v1 line 2)"
 manufacturer = "Rockchip"
 library = "rockchip"
 symbol = "RK809-5"
@@ -741,4 +740,4 @@ name = "LDO and switches"
 name = "Control"
 
 [[units]]
-name = "Codec (unused in the T1)"
+name = "Codec"

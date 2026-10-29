@@ -72,15 +72,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Texas Instruments BQ25792RQMR (BOM v1 line 39)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "charger buck-boost NVDC li-ion 2S I2C power path VQFN-HR RQM"
 			(at 0 0 0)
 			(hide yes)
@@ -706,15 +697,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Texas Instruments BQ40Z50-R2 (BOM v1 line 42, different package)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "fuel gauge gas gauge battery 2S li-ion protection I2C impedance track VSON DRZ"
 			(at 0 0 0)
 			(hide yes)
@@ -1291,15 +1273,6 @@
 			)
 		)
 		(property "MPN" "DRV2605LDGSR"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Second_Source" "Renesas DA7280-00FV2 (not pin-compatible; BOM v1 line 123)"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -2077,15 +2050,6 @@
 			)
 		)
 		(property "MPN" "LMR33630CRNXR"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Second_Source" "Texas Instruments LMR33620CRNXR (2 A, same package and pins; BOM v1 line 116)"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -3964,15 +3928,6 @@
 			)
 		)
 		(property "MPN" "SN74LVC1G57DCKR"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Second_Source" "Nexperia 74LVC1G57GW (BOM v1 line 98)"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -6461,15 +6416,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Texas Instruments TPS22916CYFPR (WCSP, other land; BOM v1 line 50)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "load switch power switch QOD TPS22919 SC-70 DCK"
 			(at 0 0 0)
 			(hide yes)
@@ -7808,15 +7754,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Texas Instruments TPS62136RGXT (BOM v1 line 113)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "buck step-down converter DC-DC DCS-Control 4A TPS62136 VQFN-HR RGX0011A"
 			(at 0 0 0)
 			(hide yes)
@@ -8118,15 +8055,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Texas Instruments TPS62827DMQR (BOM v1 line 129)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "buck step-down converter DC-DC 3A TPS62826 TPS6282x VSON-HR DMQ0006A"
 			(at 0 0 0)
 			(hide yes)
@@ -8330,15 +8258,6 @@
 			)
 		)
 		(property "MPN" "TPS62827DMQR"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Second_Source" "Texas Instruments TPS62826DMQR (BOM v1 line 6)"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -8797,15 +8716,6 @@
 			)
 		)
 		(property "MPN" "TPS6286910CRQYR"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Second_Source" "Texas Instruments TPS628691ARQYR (same land; pin 9 is VSET/VID, 86.6 kOhm to AGND for 0.90 V / 0x41; board ADR 0021)"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -9480,15 +9390,6 @@
 			)
 		)
 		(property "MPN" "TPS62903RPJR"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Second_Source" "Texas Instruments TPS62902 (BOM v1 line 38)"
 			(at 0 0 0)
 			(hide yes)
 			(effects

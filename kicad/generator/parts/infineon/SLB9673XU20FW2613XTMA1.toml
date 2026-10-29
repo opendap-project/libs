@@ -19,7 +19,6 @@
 
 [part]
 mpn = "SLB9673XU20FW2613XTMA1"
-second_source = "ST ST33KTPM2 I2C build (not pin-compatible; BOM v1 line 122)"
 manufacturer = "Infineon"
 library = "infineon"
 symbol = "SLB9673XU20FW2613XTMA1"
@@ -29,7 +28,7 @@ keywords = "TPM TPM2.0 trusted platform module security OPTIGA SLB9673 I2C UQFN3
 datasheet = "https://www.farnell.com/datasheets/4146092.pdf"
 datasheet_rev = "Revision 1.3, 2023-05-02"
 notes = [
-  "Package confirmed: PG-UQFN-32-1/-2, 5 x 5 mm, 0.6 mm max height, 0.5 mm pitch, exposed pad 3.6 x 3.6 (DS p. 16, Figure 4); this closes the BOM v1 line 122 'UQFN-32 5 x 5 mm UNVERIFIED'.",
+  "Package confirmed: PG-UQFN-32-1/-2, 5 x 5 mm, 0.6 mm max height, 0.5 mm pitch, exposed pad 3.6 x 3.6 (DS p. 16, Figure 4).",
   "Land pattern = Infineon recommended footprint (DS p. 17, Figure 6): 32 pads 0.25 x 0.7, 0.5 pitch, 4.1 between the inner edges of opposite rows, exposed pad 3.6 x 3.6 to GND; stencil 2 x 2 apertures 1.4 x 1.4, 0.4 apart, on the exposed pad; signal apertures equal to the pads.",
   "Figure 6 draws the solder-mask opening slightly larger than each pad but does not dimension it: the mask expansion is left to the board default (UNVERIFIED against Infineon's intent). Pad corners are drawn square: rect pads.",
   "Datasheet URL is the distributor copy of the Infineon document (infineon.com was not fetchable without a browser on 2026-10-25); the Infineon original link is UNVERIFIED.",

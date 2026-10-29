@@ -565,8 +565,6 @@ def symbol(part):
           prop("Description", pt.get("description", ""), (0, 0)),
           prop("Manufacturer", pt["manufacturer"], (0, 0)),
           prop("MPN", pt["mpn"], (0, 0)))
-    if pt.get("second_source"):
-        n.append(prop("Second_Source", pt["second_source"], (0, 0)))
     if len(units) > 1:
         n.append(prop("ki_locked", "", (0, 0)))
     n.append(prop("ki_keywords", pt.get("keywords", ""), (0, 0)))

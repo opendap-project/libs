@@ -4929,15 +4929,6 @@
 				)
 			)
 		)
-		(property "Second_Source" "Molex 104031-0811 (BOM v1 line 11)"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(property "ki_keywords" "microSD TF card socket push-push Hirose DM3"
 			(at 0 0 0)
 			(hide yes)
@@ -5231,15 +5222,6 @@
 			)
 		)
 		(property "MPN" "FH35C-51S-0.3SHW"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Second_Source" "Hirose FH35C-51S-0.3SHW(99) (BOM v1 line 71)"
 			(at 0 0 0)
 			(hide yes)
 			(effects
@@ -6261,15 +6243,6 @@
 			)
 		)
 		(property "MPN" "U.FL-R-SMT-1"
-			(at 0 0 0)
-			(hide yes)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Second_Source" "Hirose U.FL-R-SMT-1(80) (BOM v1 line 56)"
 			(at 0 0 0)
 			(hide yes)
 			(effects

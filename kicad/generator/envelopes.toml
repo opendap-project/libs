@@ -107,8 +107,8 @@ land = "KiCad Package_TO_SOT_SMD:SOT-523, leads along x (pins 1-2 at x -0.645, p
 cite = "Diodes DS31783 Rev. 8-2 (DMG1012T) SOT523 table: D 1.70, E1 0.85, E 1.75, A1 + A2 0.90 mm (maxima); lead height c 0.20"
 boxes = [{ size = [0.85, 1.70, 0.90], at = [0.0, 0.0, 0.0] }, { size = [1.75, 1.30, 0.20], at = [0.0, 0.0, 0.0] }]
 
-# Shield-can frames of the T1 main board (t1 board hardware/t1-main-board/shields.toml, 2026-10-28):
-# outer land size, the 0.4 mm land as the wall, 1.5 mm with the 0.1 mm lid. Placement v1 decision 15.
+# Shield-can frames made to order (two-piece: frame and lid), sized by the board that orders them
+# (its shields.toml, 2026-10-28): outer land size, the 0.4 mm land as the wall, 1.5 mm with the 0.1 mm lid.
 [[envelope]]
 key = "shield-frames"
 name = "Shield_Frame_SOC_34.15x19.75mm"

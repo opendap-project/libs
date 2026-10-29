@@ -28,7 +28,6 @@
 
 [part]
 mpn = "FH35C-51S-0.3SHW"
-second_source = "Hirose FH35C-51S-0.3SHW(99) (BOM v1 line 71)"
 manufacturer = "Hirose"
 library = "hirose"
 symbol = "FH35C-51S-0.3SHW"
@@ -39,7 +38,7 @@ datasheet = "https://www.hirose.com/en/product/series/FH35C"
 datasheet_rev = "FH35C catalog 2013.11 (Aug. 1, 2019 copyright stamp)"
 sheet_pins = "none: the sheet lists no per-contact table; contact numbering from the drawing (UNVERIFIED), checked by pad_count"
 notes = [
-  "Orderable code is FH35C-51S-0.3SHW(50) (5,000/reel; (99) = 500/reel). mpn kept without the packaging suffix as requested by the task; set the Manufacturer/MPN field to the ordered code if the BOM requires it.",
+  "Orderable code is FH35C-51S-0.3SHW(50) (5,000/reel; (99) = 500/reel). mpn kept without the packaging suffix; a design's BOM names the ordered code.",
   "Contact 1 position UNVERIFIED (not in the catalog; the sheet says the same). Chosen: odd contacts on the 26-land row (n+1)/2, even on the 25-land row, pin 1 at the +x end below the p. 3 polarity mark. Confirm against Hirose's drawing for approval before release.",
   "Sheet has no pin table with names: symbol pins named Pin_1 ... Pin_51 (passive).",
   "Body y extent (3.0) and the 0.35 rear offset are reference dimensions ((3), (0.35)); the body centroid origin depends on them.",

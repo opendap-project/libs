@@ -19,7 +19,6 @@
 
 [part]
 mpn = "ECS-2016MV-120-BN-TR"
-second_source = "Abracon ABM8-272-T3 crystal with a re-tuned XOUT resistor, after qualification over temperature (BOM v1 line 14)"
 manufacturer = "ECS Inc."
 library = "ecs"
 symbol = "ECS-2016MV-120-BN-TR"
@@ -33,7 +32,7 @@ notes = [
   "The suggested land pattern carries no pad numbers; pin 1 follows the top view (dot at #1, lower-left before rotation). The four lands are identical, so the numbering is the only reading involved.",
   "Lands drawn as plain rectangles; mask and paste rules are not given (UNVERIFIED): mask to the board default, paste 1:1 (generator default).",
   "Body height: only 0.85 mm max is given (ECS-2016MV p. 1); the 3D envelope uses the maximum.",
-  "Pin 1 Tri-state: >= 0.7 x Vdd or not connected -> output active (ECS-2016MV p. 1): input. In the T1 it is left open (BOM v1 line 14).",
+  "Pin 1 Tri-state: >= 0.7 x Vdd or not connected -> output active (ECS-2016MV p. 1): input.",
 ]
 
 [[pins]]

@@ -6,7 +6,6 @@
 
 [part]
 mpn = "LMR33630CRNXR"
-second_source = "Texas Instruments LMR33620CRNXR (2 A, same package and pins; BOM v1 line 116)"
 manufacturer = "Texas Instruments"
 library = "texas-instruments"
 symbol = "LMR33630CRNXR"

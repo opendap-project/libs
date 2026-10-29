@@ -4,7 +4,6 @@
 
 [part]
 mpn = "LT3094EDD#TRPBF"
-second_source = "Analog Devices LT3094EDD#PBF (same part, tube)"
 manufacturer = "Analog Devices"
 library = "analog-devices"
 symbol = "LT3094EDD"

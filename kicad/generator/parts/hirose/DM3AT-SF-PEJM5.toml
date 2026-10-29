@@ -32,7 +32,6 @@
 
 [part]
 mpn = "DM3AT-SF-PEJM5"
-second_source = "Molex 104031-0811 (BOM v1 line 11)"
 manufacturer = "Hirose"
 library = "hirose"
 symbol = "DM3AT-SF-PEJM5"
