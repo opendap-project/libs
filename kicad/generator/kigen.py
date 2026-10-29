@@ -20,7 +20,7 @@ SMD anchor at the body centroid, THT anchor at pin 1 (CRAFT-15); silk 0.15 mm st
 0.15 mm clear of pads (CRAFT-07), reference 1.0 x 0.15 mm (CRAFT-02); filled pin-1 triangle without
 stroke, outside the body (CRAFT-13); fab body outline 0.10 mm with a pin-1 chamfer and
 ${REFERENCE} (KLC F5.2, CRAFT-11); courtyard 0.05 mm on a 0.01 mm grid, clearance by class
-(KLC F5.3).
+(KLC F5.3), grown to cover the pin-1 mark.
 
 --check regenerates into a temporary directory and exits 1 if any committed file differs.
 Needs Python 3.11 or later (tomllib).
@@ -406,13 +406,17 @@ def footprint(part):
     allb = union([pad_box(p) for p in cu] + [body])
     crt = (grid_out(allb[0] - crt_clr, up=False), grid_out(allb[1] - crt_clr, up=False),
            grid_out(allb[2] + crt_clr), grid_out(allb[3] + crt_clr))
+    tri = pin1_triangle(pads, body, pin1_number(part)) if not mark else triangle(mark["at"], mark["direction"])
+    if tri:  # the courtyard covers the pin-1 mark too, so a neighbour's silk never meets it (CRAFT-13)
+        tb = tri_box(tri)
+        crt = (min(crt[0], grid_out(tb[0], up=False)), min(crt[1], grid_out(tb[1], up=False)),
+               max(crt[2], grid_out(tb[2])), max(crt[3], grid_out(tb[3])))
 
     n = S("footprint", fp["name"], S("version", Sym(FP_VERSION)), S("generator", GENERATOR),
           S("layer", "F.Cu"), S("descr", fp.get("description", "")), S("tags", fp.get("tags", "")))
     prop = lambda k, v, at, layer, hide=False: S(
         "property", k, v, S("at", num(at[0]), num(at[1]), 0), S("layer", layer),
         *([S("hide", Sym("yes"))] if hide else []), font(1.0, 0.15))
-    tri = pin1_triangle(pads, body, pin1_number(part)) if not mark else triangle(mark["at"], mark["direction"])
     top = min([crt[1]] + ([pt[1] for pt in tri] if tri else []))
     bot = max([crt[3]] + ([pt[1] for pt in tri] if tri else []))
     n.append(prop("Reference", "REF**", (0, round(top - 0.7, 2)), "F.SilkS"))

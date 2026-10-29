@@ -560,6 +560,12 @@ class Footprints(unittest.TestCase):
                     for p in lands:
                         r = rect_of(p, 0.15)
                         self.assertFalse(any(r[0] < x < r[2] and r[1] < y < r[3] for x, y in pts), "pin-1 mark near pad %s" % p["number"])
+                # the courtyard covers every silk mark (KLC F5.3 bounds the part with its courtyard), so a
+                # neighbour placed courtyard to courtyard never meets the mark with its own silk
+                for pl in marks:
+                    for x, y in [(float(v[1]), float(v[2])) for v in find(one(pl, "pts"), "xy")]:
+                        self.assertTrue(cb[0] <= x + EPS and cb[1] <= y + EPS and cb[2] >= x - EPS and cb[3] >= y - EPS,
+                                        "silk mark outside the courtyard at (%g, %g)" % (x, y))
                 # texts (CRAFT-02, CRAFT-11)
                 props = {p[1]: p for p in find(n, "property")}
                 ref = props["Reference"]

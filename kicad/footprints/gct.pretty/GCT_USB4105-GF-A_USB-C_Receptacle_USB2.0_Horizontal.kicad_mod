@@ -122,7 +122,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -5.32 -4.76)
+		(start -5.32 -4.91)
 		(end 5.32 4.18)
 		(stroke
 			(width 0.05)

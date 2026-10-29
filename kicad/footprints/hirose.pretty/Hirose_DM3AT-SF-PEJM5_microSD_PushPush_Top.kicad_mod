@@ -5,7 +5,7 @@
 	(descr "Hirose DM3AT-SF-PEJM5 microSD connector, push-push, top mount, 8 contacts P1.1 mm, detection switch, 4 shell lands (DM3 catalog 2017.1 p. 3)")
 	(tags "microSD TF card Hirose DM3 push-push")
 	(property "Reference" "REF**"
-		(at 0 -10.52 0)
+		(at 0 -10.53 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -167,7 +167,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -7.83 -9.68)
+		(start -7.83 -9.83)
 		(end 7.83 8.48)
 		(stroke
 			(width 0.05)

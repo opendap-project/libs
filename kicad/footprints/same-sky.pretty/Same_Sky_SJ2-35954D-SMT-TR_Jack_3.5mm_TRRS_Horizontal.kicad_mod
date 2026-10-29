@@ -159,7 +159,7 @@
 	)
 	(fp_rect
 		(start -7.5 -4.95)
-		(end 7.75 4.98)
+		(end 7.75 5.13)
 		(stroke
 			(width 0.05)
 			(type solid)
