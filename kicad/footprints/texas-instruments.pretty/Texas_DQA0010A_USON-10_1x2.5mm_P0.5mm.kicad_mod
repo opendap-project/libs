@@ -5,7 +5,7 @@
 	(descr "Texas Instruments DQA0010A USON-10, 1 x 2.5 mm body, 0.5 mm pitch, TI example land pattern and stencil (drawing 4220328/A); also fits DQA0010B")
 	(tags "USON SON DQA0010A DQA0010B DQA Texas TPD4E05U06 ESD")
 	(property "Reference" "REF**"
-		(at 0 -2.2 0)
+		(at 0 -2.7 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -68,9 +68,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy -0.9 -1)
-			(xy -1.35 -1.3)
-			(xy -1.35 -0.7)
+			(xy -0.4175 -1.55)
+			(xy -0.7175 -2)
+			(xy -0.1175 -2)
 		)
 		(stroke
 			(width 0)
@@ -95,7 +95,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -1.35 -1.5)
+		(start -0.95 -2)
 		(end 0.95 1.5)
 		(stroke
 			(width 0.05)

@@ -5,7 +5,7 @@
 	(descr "Hirose DF40C-100DP-0.4V(51) header, 2 x 50 contacts, 0.4 mm pitch, 4 corner hold-downs, 1.5 mm stack (EDC3-311351-00, DF40 catalog p. 10)")
 	(tags "connector Hirose DF40 DF40C header board-to-board 0.4mm 100")
 	(property "Reference" "REF**"
-		(at 0 -3.04 0)
+		(at 0 -2.89 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -104,9 +104,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy -9.8 -1.885)
-			(xy -10.1 -2.335)
-			(xy -9.5 -2.335)
+			(xy -11.06 -1.355)
+			(xy -11.51 -1.655)
+			(xy -11.51 -1.055)
 		)
 		(stroke
 			(width 0)
@@ -131,7 +131,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -11.26 -2.34)
+		(start -11.51 -2.19)
 		(end 11.26 2.19)
 		(stroke
 			(width 0.05)

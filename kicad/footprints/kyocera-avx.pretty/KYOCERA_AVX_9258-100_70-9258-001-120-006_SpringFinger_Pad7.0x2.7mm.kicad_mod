@@ -5,7 +5,7 @@
 	(descr "KYOCERA AVX 70-9258-001-120-006 SMT spring-finger compression contact, 9258-100 type 120, solder pad 7.00 x 2.70 mm (drawing 70-9258-001-1X0-00XS Rev F sheet 2)")
 	(tags "KYOCERA AVX 9258 spring finger compression contact battery")
 	(property "Reference" "REF**"
-		(at 0 -2.7 0)
+		(at 0 -2.3 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -77,19 +77,6 @@
 	)
 	(fp_poly
 		(pts
-			(xy -0.55 -1.55)
-			(xy -0.85 -2)
-			(xy -0.25 -2)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill yes)
-		(layer "F.SilkS")
-	)
-	(fp_poly
-		(pts
 			(xy -3.3 -1.2)
 			(xy 3.9 -1.2)
 			(xy 3.9 1.2)
@@ -104,7 +91,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -4.3 -2)
+		(start -4.3 -1.6)
 		(end 4.15 1.6)
 		(stroke
 			(width 0.05)

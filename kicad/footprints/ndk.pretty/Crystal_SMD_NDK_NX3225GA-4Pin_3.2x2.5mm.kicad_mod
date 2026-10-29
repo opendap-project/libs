@@ -5,7 +5,7 @@
 	(descr "NDK NX3225GA crystal unit, 3.2 x 2.5 mm, 4 terminals, manufacturer land pattern, rotated so pin 1 is top-left (2008E_NX3225GA_e)")
 	(tags "crystal NDK NX3225GA 3225")
 	(property "Reference" "REF**"
-		(at 0 -2.75 0)
+		(at 0 -3.15 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -68,9 +68,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy -1.6 -1.1)
-			(xy -2.05 -1.4)
-			(xy -2.05 -0.8)
+			(xy -0.8 -2)
+			(xy -1.1 -2.45)
+			(xy -0.5 -2.45)
 		)
 		(stroke
 			(width 0)
@@ -95,7 +95,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -2.05 -2.05)
+		(start -1.65 -2.45)
 		(end 1.65 2.05)
 		(stroke
 			(width 0.05)

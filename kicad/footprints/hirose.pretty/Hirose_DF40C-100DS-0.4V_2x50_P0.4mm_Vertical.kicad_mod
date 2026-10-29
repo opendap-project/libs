@@ -5,7 +5,7 @@
 	(descr "Hirose DF40C-100DS-0.4V(51) receptacle, 2 x 50 contacts, 0.4 mm pitch, 1.5 mm stack, without metal fitting (DF40 catalog p. 4)")
 	(tags "connector Hirose DF40 DF40C receptacle board-to-board 0.4mm 100")
 	(property "Reference" "REF**"
-		(at 0 -3.24 0)
+		(at 0 -3.09 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -104,9 +104,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy -9.8 -2.09)
-			(xy -10.1 -2.54)
-			(xy -9.5 -2.54)
+			(xy -11.6 -1.54)
+			(xy -12.05 -1.84)
+			(xy -12.05 -1.24)
 		)
 		(stroke
 			(width 0)
@@ -131,7 +131,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -11.8 -2.54)
+		(start -12.05 -2.39)
 		(end 11.8 2.39)
 		(stroke
 			(width 0.05)

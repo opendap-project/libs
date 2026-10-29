@@ -550,7 +550,11 @@ class Footprints(unittest.TestCase):
                 # pin-1 mark (CRAFT-13): a filled silk polygon next to pin 1 (next_to_pin1)
                 marks = [pl for pl in find(n, "fp_poly") if one(pl, "layer")[1] == "F.SilkS" and one(pl, "fill")[1] == "yes"]
                 first = kigen.pin1_number(part)
-                if any(p["number"] == first for p in lands):
+                if len({p["number"] for p in lands if p["number"]}) < 2:
+                    # one land (a spring contact, a test pad): nothing to tell apart, so no mark (CRAFT-13
+                    # covers polarised parts) and no courtyard grown for one
+                    self.assertFalse(marks, "a one-land part carries a pin-1 mark")
+                elif any(p["number"] == first for p in lands):
                     self.assertTrue(marks, "no pin-1 mark")
                     pts = [(float(x[1]), float(x[2])) for x in find(one(marks[0], "pts"), "xy")]
                     centre = ((min(p[0] for p in pts) + max(p[0] for p in pts)) / 2,
@@ -611,6 +615,22 @@ class Pin1Geometry(unittest.TestCase):
         self.assertFalse(next_to_pin1((-0.4, 0.0), body, two, "1"))   # inside the body
         self.assertFalse(next_to_pin1((1.5, 0.0), body, two, "1"))    # at pin 2
         self.assertTrue(next_to_pin1((-1.5, 0.0), body, two, "1"))
+
+    def test_mark_takes_the_side_that_grows_the_courtyard_least(self):
+        # a 1 x 2.5 mm two-row part (TI DQA0010A-like): pin 1 top-left. Left of pin 1 the mark widens the
+        # 3.09 mm long side; above it, the 1.99 mm short side: above costs less courtyard area
+        body = (-0.5, -1.25, 0.5, 1.25)
+        pads = [{"number": str(i + 1), "type": "smd", "at": [x, -1.0 + 0.5 * k], "size": [0.6, 0.25]}
+                for i, (x, k) in enumerate([(-0.45, k) for k in range(5)] + [(0.45, 4 - k) for k in range(5)])]
+        crt = (-1.0, -1.55, 1.0, 1.55)
+        pts = kigen.pin1_triangle(pads, body, "1", crt)
+        self.assertIsNotNone(pts)
+        self.assertLess(max(p[1] for p in pts), body[1])           # above the body
+        self.assertGreaterEqual(min(p[0] for p in pts), crt[0])    # the long side is not widened
+
+    def test_one_land_has_no_mark(self):
+        pads = [{"number": "1", "type": "smd", "at": [0.0, 0.0], "size": [7.0, 2.7]}]
+        self.assertIsNone(kigen.pin1_triangle(pads, (-3.9, -1.2, 3.9, 1.2), "1", (-4.3, -1.6, 4.15, 1.6)))
 
     def test_pads_on_one_land(self):
         lands = [("A1", (-3.3, -0.6, -2.7, 0.6)), ("B12", (-3.3, -0.6, -2.7, 0.6)), ("A4", (-2.5, -0.6, -1.9, 0.6))]

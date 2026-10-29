@@ -5,7 +5,7 @@
 	(descr "QFN-40 5 x 5 mm, 0.4 mm pitch, exposed pad 3.5 x 3.5 mm, thermal vias; land pattern derived per IPC-7351B nominal from Cirrus Logic DS1156F2 p. 134")
 	(tags "QFN 40 0.4 CS43198 DAC")
 	(property "Reference" "REF**"
-		(at 0 -3.79 0)
+		(at 0 -3.8 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -122,9 +122,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy -3.035 -1.8)
-			(xy -3.485 -2.1)
-			(xy -3.485 -1.5)
+			(xy -2.8 -2.8)
+			(xy -3.25 -3.1)
+			(xy -3.25 -2.5)
 		)
 		(stroke
 			(width 0)
@@ -149,7 +149,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -3.49 -3.09)
+		(start -3.25 -3.1)
 		(end 3.09 3.09)
 		(stroke
 			(width 0.05)

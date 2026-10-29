@@ -297,7 +297,12 @@ def pin1_number(part):
     return "1" if "1" in nums else nums[0]
 
 
-def pin1_triangle(pads, body, first="1"):
+def pin1_triangle(pads, body, first="1", crt=None):
+    """The pin-1 mark (CRAFT-13): a triangle outside the body and clear of every pad, next to pin 1. Of the
+    places that qualify, the one that grows the courtyard `crt` least, since the courtyard covers the mark;
+    without `crt`, the first (nearest body side). A part with one land has nothing to tell apart: no mark."""
+    if len({p["number"] for p in copper(pads) if p["number"]}) < 2:
+        return None
     p1s = [p for p in copper(pads) if p["number"] == first]
     if not p1s:
         return None
@@ -322,6 +327,7 @@ def pin1_triangle(pads, body, first="1"):
         else:
             cands.append(([x, max(pb[3] + gap, sb[3] + 0.05)], "up"))
     cands.append(([sb[0] - 0.05, sb[1] - 0.05], "right"))
+    ok = []
     for at, d in cands:
         pts = triangle(at, d)
         tb = tri_box(pts)
@@ -329,8 +335,30 @@ def pin1_triangle(pads, body, first="1"):
             continue
         if any(overlaps(tb, k) for k in keep):
             continue
-        return pts
-    return None
+        if crt is None:
+            return pts
+        if marks_pin1(((tb[0] + tb[2]) / 2, (tb[1] + tb[3]) / 2), p1, pads):
+            ok.append(pts)
+    if not ok:  # none is next to pin 1 by the land-edge rule: the nearest body side, as before
+        return pin1_triangle(pads, body, first)
+    area = lambda b: (b[2] - b[0]) * (b[3] - b[1])  # noqa: E731
+    return min(ok, key=lambda pts: round(area(cover(crt, tri_box(pts))) - area(crt), 6))  # first on a tie
+
+
+def marks_pin1(centre, p1, pads):
+    """CRAFT-13 "next to pin 1": the centre is nearer to the edge of pin 1's land than to the edge of any
+    other land (pads drawn on one land are one land), as the craft standard states it."""
+    def gap(b):
+        return math.hypot(max(b[0] - centre[0], 0, centre[0] - b[2]), max(b[1] - centre[1], 0, centre[1] - b[3]))
+    own = gap(pad_box(p1))
+    lands = {tuple(round(v, 4) for v in pad_box(p)) for p in copper(pads) if p["number"] and p["number"] != p1["number"]}
+    return all(own < gap(b) - 1e-6 for b in lands if b != tuple(round(v, 4) for v in pad_box(p1)))
+
+
+def cover(crt, tb):
+    """The courtyard `crt` grown, on the 0.01 mm grid, to cover the box `tb`."""
+    return (min(crt[0], grid_out(tb[0], up=False)), min(crt[1], grid_out(tb[1], up=False)),
+            max(crt[2], grid_out(tb[2])), max(crt[3], grid_out(tb[3])))
 
 
 # ---------------------------------------------------------------- footprint
@@ -406,11 +434,9 @@ def footprint(part):
     allb = union([pad_box(p) for p in cu] + [body])
     crt = (grid_out(allb[0] - crt_clr, up=False), grid_out(allb[1] - crt_clr, up=False),
            grid_out(allb[2] + crt_clr), grid_out(allb[3] + crt_clr))
-    tri = pin1_triangle(pads, body, pin1_number(part)) if not mark else triangle(mark["at"], mark["direction"])
+    tri = pin1_triangle(pads, body, pin1_number(part), crt) if not mark else triangle(mark["at"], mark["direction"])
     if tri:  # the courtyard covers the pin-1 mark too, so a neighbour's silk never meets it (CRAFT-13)
-        tb = tri_box(tri)
-        crt = (min(crt[0], grid_out(tb[0], up=False)), min(crt[1], grid_out(tb[1], up=False)),
-               max(crt[2], grid_out(tb[2])), max(crt[3], grid_out(tb[3])))
+        crt = cover(crt, tri_box(tri))
 
     n = S("footprint", fp["name"], S("version", Sym(FP_VERSION)), S("generator", GENERATOR),
           S("layer", "F.Cu"), S("descr", fp.get("description", "")), S("tags", fp.get("tags", "")))

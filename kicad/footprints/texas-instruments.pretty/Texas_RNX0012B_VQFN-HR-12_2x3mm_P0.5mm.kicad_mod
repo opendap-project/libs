@@ -5,7 +5,7 @@
 	(descr "Texas Instruments RNX0012B VQFN-HR-12, 2 x 3 mm body, TI example land pattern and stencil (SNVSAN3F pp. 49-50, drawing 4223969/C)")
 	(tags "VQFN-HR QFN RNX0012B LMR33630 LMR33620 Texas")
 	(property "Reference" "REF**"
-		(at 0 -2.65 0)
+		(at 0 -2.95 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -104,9 +104,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy -1.4 -1.125)
-			(xy -1.85 -1.425)
-			(xy -1.85 -0.825)
+			(xy -0.9 -1.8)
+			(xy -1.2 -2.25)
+			(xy -0.6 -2.25)
 		)
 		(stroke
 			(width 0)
@@ -131,7 +131,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -1.85 -1.95)
+		(start -1.45 -2.25)
 		(end 1.45 1.95)
 		(stroke
 			(width 0.05)

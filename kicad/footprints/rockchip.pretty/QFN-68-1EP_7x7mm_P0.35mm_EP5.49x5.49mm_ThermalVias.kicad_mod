@@ -5,7 +5,7 @@
 	(descr "QFN-68 7 x 7 mm, 0.35 mm pitch, exposed pad 5.49 x 5.49 mm, thermal vias; land pattern derived per IPC-7351B nominal from RK809 Datasheet Rev 1.01 p. 13 Fig. 2-1")
 	(tags "QFN 68 0.35 RK809 PMIC")
 	(property "Reference" "REF**"
-		(at 0 -4.79 0)
+		(at 0 -4.8 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -122,9 +122,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy -4.035 -2.8)
-			(xy -4.485 -3.1)
-			(xy -4.485 -2.5)
+			(xy -3.8 -3.8)
+			(xy -4.25 -4.1)
+			(xy -4.25 -3.5)
 		)
 		(stroke
 			(width 0)
@@ -149,7 +149,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -4.49 -4.09)
+		(start -4.25 -4.1)
 		(end 4.09 4.09)
 		(stroke
 			(width 0.05)

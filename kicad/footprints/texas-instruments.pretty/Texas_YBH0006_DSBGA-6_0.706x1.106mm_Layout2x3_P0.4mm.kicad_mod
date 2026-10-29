@@ -5,7 +5,7 @@
 	(descr "Texas Instruments YBH0006-C02 DSBGA (WCSP) 6 balls, 0.706 x 1.106 mm body, 0.4 mm pitch, 2 x 3 layout, TI example land pattern (drawing 4226594/A)")
 	(tags "WCSP DSBGA-6 YBH0006 YBH Texas")
 	(property "Reference" "REF**"
-		(at 0 -1.51 0)
+		(at 0 -2.01 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -86,9 +86,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy -0.653 -0.4)
-			(xy -1.103 -0.7)
-			(xy -1.103 -0.1)
+			(xy -0.2 -0.853)
+			(xy -0.5 -1.303)
+			(xy 0.1 -1.303)
 		)
 		(stroke
 			(width 0)
@@ -113,7 +113,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -1.11 -0.81)
+		(start -0.61 -1.31)
 		(end 0.61 0.81)
 		(stroke
 			(width 0.05)

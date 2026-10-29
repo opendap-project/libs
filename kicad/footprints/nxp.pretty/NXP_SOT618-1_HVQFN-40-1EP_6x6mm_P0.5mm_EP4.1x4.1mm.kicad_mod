@@ -122,9 +122,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy -3.7 -2.25)
-			(xy -4.15 -2.55)
-			(xy -4.15 -1.95)
+			(xy -3.3 -3.3)
+			(xy -3.75 -3.6)
+			(xy -3.75 -3)
 		)
 		(stroke
 			(width 0)
@@ -149,7 +149,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -4.15 -3.75)
+		(start -3.75 -3.75)
 		(end 3.75 3.75)
 		(stroke
 			(width 0.05)

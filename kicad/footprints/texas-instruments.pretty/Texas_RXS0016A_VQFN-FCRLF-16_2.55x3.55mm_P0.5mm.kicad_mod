@@ -5,7 +5,7 @@
 	(descr "Texas Instruments RXS0016A VQFN-FCRLF-16, 2.55 x 3.55 mm body, 0.5 mm pitch, TI example land pattern with solder-mask-defined pads 6, 7, 8 and stencil (SLVSGC5E PDF pp. 64-66, drawing 4226093/E)")
 	(tags "VQFN-FCRLF QFN RXS0016A TPS62870 TPS62871 TPS62872 TPS62873 Texas")
 	(property "Reference" "REF**"
-		(at 0 -2.93 0)
+		(at 0 -3.33 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -50,9 +50,9 @@
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_poly
 		(pts
-			(xy -1.675 -1.5)
-			(xy -2.125 -1.8)
-			(xy -2.125 -1.2)
+			(xy -1.175 -2.175)
+			(xy -1.475 -2.625)
+			(xy -0.875 -2.625)
 		)
 		(stroke
 			(width 0)
@@ -77,7 +77,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -2.13 -2.23)
+		(start -1.78 -2.63)
 		(end 1.78 2.28)
 		(stroke
 			(width 0.05)

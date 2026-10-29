@@ -5,7 +5,7 @@
 	(descr "NDK NZ2520SDA crystal clock oscillator, 2.5 x 2.0 mm, 4 terminals, manufacturer land pattern, rotated so pin 1 is top-left (https://www.ndk.com/images/products/catalog/c_NZ2520SDA_e.pdf)")
 	(tags "oscillator XO NDK NZ2520SDA NSC5083D 2520")
 	(property "Reference" "REF**"
-		(at 0 -2.28 0)
+		(at 0 -2.7 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -50,9 +50,9 @@
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_poly
 		(pts
-			(xy -1.325 -0.825)
-			(xy -1.775 -1.125)
-			(xy -1.775 -0.525)
+			(xy -0.625 -1.55)
+			(xy -0.925 -2)
+			(xy -0.325 -2)
 		)
 		(stroke
 			(width 0)
@@ -77,7 +77,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -1.78 -1.58)
+		(start -1.38 -2)
 		(end 1.38 1.58)
 		(stroke
 			(width 0.05)

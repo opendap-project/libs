@@ -15,7 +15,7 @@
 		)
 	)
 	(property "Value" "Hirose_FH35C-51S-0.3SHW_1x51-1MP_P0.3mm_Horizontal"
-		(at 0 3.1 0)
+		(at 0 2.95 0)
 		(layer "F.Fab")
 		(effects
 			(font
@@ -86,9 +86,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy 7.5 1.95)
-			(xy 7.2 2.4)
-			(xy 7.8 2.4)
+			(xy 8.75 1.35)
+			(xy 9.2 1.05)
+			(xy 9.2 1.65)
 		)
 		(stroke
 			(width 0)
@@ -114,7 +114,7 @@
 	)
 	(fp_rect
 		(start -8.95 -2.35)
-		(end 8.95 2.4)
+		(end 9.2 2.25)
 		(stroke
 			(width 0.05)
 			(type solid)

@@ -5,7 +5,7 @@
 	(descr "Infineon PG-UQFN-32-1/-2, 5 x 5 mm body, 0.5 mm pitch, exposed pad 3.6 x 3.6 mm, Infineon recommended footprint and stencil (SLB 9673 data sheet Rev. 1.3, Figure 6)")
 	(tags "UQFN-32 QFN PG-UQFN-32-1 PG-UQFN-32-2 SLB9673 TPM Infineon")
 	(property "Reference" "REF**"
-		(at 0 -3.7 0)
+		(at 0 -3.8 0)
 		(layer "F.SilkS")
 		(effects
 			(font
@@ -122,9 +122,9 @@
 	)
 	(fp_poly
 		(pts
-			(xy -2.95 -1.75)
-			(xy -3.4 -2.05)
-			(xy -3.4 -1.45)
+			(xy -2.8 -2.8)
+			(xy -3.25 -3.1)
+			(xy -3.25 -2.5)
 		)
 		(stroke
 			(width 0)
@@ -149,7 +149,7 @@
 		(layer "F.Fab")
 	)
 	(fp_rect
-		(start -3.4 -3)
+		(start -3.25 -3.1)
 		(end 3 3)
 		(stroke
 			(width 0.05)
