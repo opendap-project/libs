@@ -1,0 +1,31 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        4.2,
+        3.2,
+        2.7
+      ]
+    },
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        4.6,
+        2.85,
+        0.3
+      ]
+    }
+  ],
+  "library": "ck",
+  "name": "SW_CK_PTS815",
+  "source": "envelope from C&K PTS 815 data sheet (8 Apr 21) p. B-44: body 4.2 x 3.2 mm, 4.6 mm over the J terminals, 2.5 +- 0.2 mm high"
+}

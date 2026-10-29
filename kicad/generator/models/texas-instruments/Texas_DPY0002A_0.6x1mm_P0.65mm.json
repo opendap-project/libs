@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        1.1,
+        0.7,
+        0.45
+      ]
+    }
+  ],
+  "library": "texas-instruments",
+  "name": "Texas_DPY0002A_0.6x1mm_P0.65mm",
+  "source": "envelope from TI DPY0002A package outline (SLLSEB1G, TPD1E10B06): 1.1 x 0.7 mm max, X1SON 0.45 mm max height"
+}

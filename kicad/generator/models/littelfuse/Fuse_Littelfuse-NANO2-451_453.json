@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        6.1,
+        2.69,
+        2.69
+      ]
+    }
+  ],
+  "library": "littelfuse",
+  "name": "Fuse_Littelfuse-NANO2-451_453",
+  "source": "envelope from Littelfuse 451/453 NANO2: 0.240 x 0.106 x 0.106 in (6.10 x 2.69 x 2.69 mm), catalog figure UNVERIFIED (the data sheet download was refused 2026-10-28)"
+}

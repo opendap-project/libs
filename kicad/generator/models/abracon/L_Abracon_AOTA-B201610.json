@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.0,
+        1.6,
+        1.0
+      ]
+    }
+  ],
+  "library": "abracon",
+  "name": "L_Abracon_AOTA-B201610",
+  "source": "envelope from Abracon AOTA-B201610S3R3-101-T data sheet p. 1: 2.0 x 1.6 x 1.0 mm"
+}

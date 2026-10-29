@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        4.3,
+        4.3,
+        1.2
+      ]
+    }
+  ],
+  "library": "coilcraft",
+  "name": "L_Coilcraft_XxL4020_H1.2",
+  "source": "envelope from Coilcraft XGL4012 (Document 1718, revised 08/27/26) and XEL4012: 4.0 +- 0.3 mm square (XGL4020 Document 1529 drawing), 1.2 mm max"
+}

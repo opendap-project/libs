@@ -1,0 +1,67 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        -5.35,
+        0.0
+      ],
+      "size": [
+        13.3,
+        0.4,
+        1.5
+      ]
+    },
+    {
+      "at": [
+        0.0,
+        5.35,
+        0.0
+      ],
+      "size": [
+        13.3,
+        0.4,
+        1.5
+      ]
+    },
+    {
+      "at": [
+        -6.45,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.4,
+        11.1,
+        1.5
+      ]
+    },
+    {
+      "at": [
+        6.45,
+        0.0,
+        0.0
+      ],
+      "size": [
+        0.4,
+        11.1,
+        1.5
+      ]
+    },
+    {
+      "at": [
+        0.0,
+        0.0,
+        1.4
+      ],
+      "size": [
+        13.3,
+        11.1,
+        0.1
+      ]
+    }
+  ],
+  "library": "shield-frames",
+  "name": "Shield_Frame_RADIO_13.3x11.1mm",
+  "source": "envelope from t1 board shields.toml (2026-10-28): land outer 13.3 x 11.1 mm, land 0.4 mm, height 1.5 mm with a 0.1 mm lid; UNVERIFIED until the maker's drawing"
+}

@@ -12,6 +12,9 @@ writes:
     footprints/<key>.pretty/<name>.kicad_mod     one footprint per distinct footprint name
     generator/models/<key>/<name>.json          the envelope boxes for generator/model.py (STEP)
 
+and, from generator/envelopes.toml, the envelope boxes of lands the library does not draw (KiCad
+stock footprints without a KiCad 10 model, project lands of OpenDAP boards).
+
 Conventions (kicad-lib docs/specs/pcb-craft-standard.md and the KiCad Library Conventions, KLC):
 SMD anchor at the body centroid, THT anchor at pin 1 (CRAFT-15); silk 0.15 mm stroke (CRAFT-05),
 0.15 mm clear of pads (CRAFT-07), reference 1.0 x 0.15 mm (CRAFT-02); filled pin-1 triangle without
@@ -38,6 +41,7 @@ import symlib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PARTS = os.path.join(ROOT, "generator", "parts")
+ENVELOPES = os.path.join(ROOT, "generator", "envelopes.toml")
 FP_VERSION = "20260206"
 SYM_VERSION = "20251024"
 GENERATOR = "opendap-kigen"
@@ -590,9 +594,40 @@ def symbol_lib(parts):
 
 # ---------------------------------------------------------------- build
 
-def build(out, parts):
+def load_envelopes(path=ENVELOPES):
+    """The [[envelope]] entries of envelopes.toml: key, name, land, cite, boxes."""
+    with open(path, "rb") as fh:
+        data = tomllib.load(fh)
+    out = data.get("envelope", [])
+    seen = set()
+    for e in out:
+        for k in ("key", "name", "land", "cite", "boxes"):
+            if not e.get(k):
+                raise ValueError("envelope %s: no %s" % (e.get("name"), k))
+        if (e["key"], e["name"]) in seen:
+            raise ValueError("envelope %s/%s twice" % (e["key"], e["name"]))
+        seen.add((e["key"], e["name"]))
+        for b in e["boxes"]:
+            if len(b["size"]) != 3 or len(b["at"]) != 3 or min(b["size"]) <= 0:
+                raise ValueError("envelope %s: a box needs size [x, y, z] > 0 and at [x, y, z0]" % e["name"])
+    return out
+
+
+def envelope_model(e):
+    return {"name": e["name"], "library": e["key"], "source": "envelope from %s" % e["cite"],
+            "boxes": [{"size": [float(v) for v in b["size"]], "at": [float(v) for v in b["at"]]} for b in e["boxes"]]}
+
+
+def build(out, parts, envelopes=None):
     libs = {}
     written = []
+    for e in (load_envelopes() if envelopes is None else envelopes):
+        path = os.path.join(out, "generator", "models", e["key"], e["name"] + ".json")
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w") as fh:
+            json.dump(envelope_model(e), fh, indent=2, sort_keys=True)
+            fh.write("\n")
+        written.append(path)
     for p in parts:
         libs.setdefault(p["part"]["library"], []).append(p)
     for lib, lp in sorted(libs.items()):

@@ -312,6 +312,33 @@ class Generated(unittest.TestCase):
                 self.assertIn("%s.3dshapes/%s.step" % (lib, name), text)
 
 
+class Envelopes(unittest.TestCase):
+    """envelopes.toml: every entry cites its source and has its STEP; bad entries are refused."""
+
+    def test_every_envelope_has_its_step(self):
+        for e in kigen.load_envelopes():
+            with self.subTest(envelope=e["name"]):
+                self.assertTrue(e["cite"].strip())
+                step = os.path.join(ROOT, "3dmodels", e["key"] + ".3dshapes", e["name"] + ".step")
+                self.assertTrue(os.path.exists(step), "missing %s: run generator/model.py" % step)
+
+    def test_bad_entries_refused(self):
+        import tempfile
+        bad = [
+            'version = 1\n[[envelope]]\nkey = "x"\nname = "A"\nland = "l"\nboxes = [{ size = [1, 1, 1], at = [0, 0, 0] }]\n',
+            'version = 1\n[[envelope]]\nkey = "x"\nname = "A"\nland = "l"\ncite = "c"\nboxes = [{ size = [1, 0, 1], at = [0, 0, 0] }]\n',
+            'version = 1\n' + '[[envelope]]\nkey = "x"\nname = "A"\nland = "l"\ncite = "c"\nboxes = [{ size = [1, 1, 1], at = [0, 0, 0] }]\n' * 2,
+        ]
+        for text in bad:
+            with tempfile.NamedTemporaryFile("w", suffix=".toml", delete=False) as fh:
+                fh.write(text)
+            try:
+                with self.assertRaises(ValueError):
+                    kigen.load_envelopes(fh.name)
+            finally:
+                os.unlink(fh.name)
+
+
 class Symbols(unittest.TestCase):
     def test_fields(self):
         for part in PARTS:

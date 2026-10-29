@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        6.604,
+        3.434,
+        0.889
+      ]
+    }
+  ],
+  "library": "vishay",
+  "name": "R_Vishay_WSL2512",
+  "source": "envelope from Vishay WSL, doc 30100 (Rev. 23-Nov-2023) p. 2: L 6.35 +- 0.254, W 3.18 +- 0.254, H 0.635 +- 0.254 mm (maxima)"
+}

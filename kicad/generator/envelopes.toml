@@ -1,0 +1,136 @@
+# 3D envelope models for lands the library does not draw: KiCad stock footprints whose KiCad 10
+# library ships no model, and project lands of OpenDAP boards. kigen.py writes each entry to
+# generator/models/<key>/<name>.json; model.py builds 3dmodels/<key>.3dshapes/<name>.step.
+#
+# Each entry: key (maker library), name (the STEP file name; a consumer's footprint references
+# ${OPENDAP_KICAD_3DMODELS}/<key>.3dshapes/<name>.step), cite (document, revision, page; maxima
+# used), boxes (size [x, y, z] and at [x, y, z0], mm, footprint frame, +y down, z from the board).
+# Frames: x and y as the footprint named in `land` lays out its pads.
+
+version = 1
+
+[[envelope]]
+key = "murata"
+name = "L_Murata_DFE252012F"
+land = "a 2.5 x 2.0 mm two-terminal land, terminals along x"
+cite = "Murata DFE252012F, J(E)TE243A-0017B-01 p. 5: 2.5 x 2.0 mm; height code F = 1.2 mm max"
+boxes = [{ size = [2.5, 2.0, 1.2], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "murata"
+name = "L_Murata_DFE201610E"
+land = "a 2.0 x 1.6 mm two-terminal land, terminals along x"
+cite = "Murata DFE201610E, J(E)TE243A-0001 p. 5: 2.0 x 1.6 mm; height code E = 1.0 mm max"
+boxes = [{ size = [2.0, 1.6, 1.0], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "abracon"
+name = "L_Abracon_AOTA-B201610"
+land = "a 2.0 x 1.6 mm two-terminal land, terminals along x"
+cite = "Abracon AOTA-B201610S3R3-101-T data sheet p. 1: 2.0 x 1.6 x 1.0 mm"
+boxes = [{ size = [2.0, 1.6, 1.0], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "coilcraft"
+name = "L_Coilcraft_XFL3012"
+land = "two pads 1.0 x 2.90 mm along x"
+cite = "Coilcraft XFL3012, Document 747-1 (revised 03/10/26): 3.0 +- 0.2 x 3.0 +- 0.2 mm, 1.3 mm max"
+boxes = [{ size = [3.2, 3.2, 1.3], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "coilcraft"
+name = "L_Coilcraft_XxL4020_H1.2"
+land = "KiCad Inductor_SMD:L_Coilcraft_XxL4020, pads along x"
+cite = "Coilcraft XGL4012 (Document 1718, revised 08/27/26) and XEL4012: 4.0 +- 0.3 mm square (XGL4020 Document 1529 drawing), 1.2 mm max"
+boxes = [{ size = [4.3, 4.3, 1.2], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "coilcraft"
+name = "L_Coilcraft_XxL4020_H1.5"
+land = "KiCad Inductor_SMD:L_Coilcraft_XxL4020, pads along x"
+cite = "Coilcraft XGL4015 (Document 1660): 4.0 +- 0.3 mm square (XGL4020 Document 1529 drawing), 1.5 mm max"
+boxes = [{ size = [4.3, 4.3, 1.5], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "coilcraft"
+name = "L_Coilcraft_XxL4020_H2.1"
+land = "KiCad Inductor_SMD:L_Coilcraft_XxL4020, pads along x"
+cite = "Coilcraft XGL4020 and XAL4020 (Document 1529, revised 02/19/26): 4.0 +- 0.3 mm square, 2.1 mm max"
+boxes = [{ size = [4.3, 4.3, 2.1], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "ck"
+name = "SW_CK_PTS815"
+land = "four pads, terminals along x at +-2.25 mm"
+cite = "C&K PTS 815 data sheet (8 Apr 21) p. B-44: body 4.2 x 3.2 mm, 4.6 mm over the J terminals, 2.5 +- 0.2 mm high"
+boxes = [{ size = [4.2, 3.2, 2.7], at = [0.0, 0.0, 0.0] }, { size = [4.6, 2.85, 0.3], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "vishay"
+name = "R_Vishay_WSL1206"
+land = "Vishay WSL1206 lands (doc 30100 pad table), terminals along x"
+cite = "Vishay WSL, doc 30100 (Rev. 23-Nov-2023) p. 2: L 3.20 +- 0.254, W 1.60 +- 0.254, H 0.635 +- 0.254 mm (maxima)"
+boxes = [{ size = [3.454, 1.854, 0.889], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "vishay"
+name = "R_Vishay_WSL2010"
+land = "Vishay WSL2010 lands (doc 30100 pad table), terminals along x"
+cite = "Vishay WSL, doc 30100 (Rev. 23-Nov-2023) p. 2: L 5.08 +- 0.254, W 2.54 +- 0.254, H 0.635 +- 0.254 mm (maxima)"
+boxes = [{ size = [5.334, 2.794, 0.889], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "vishay"
+name = "R_Vishay_WSL2512"
+land = "Vishay WSL2512 lands (doc 30100 pad table), terminals along x"
+cite = "Vishay WSL, doc 30100 (Rev. 23-Nov-2023) p. 2: L 6.35 +- 0.254, W 3.18 +- 0.254, H 0.635 +- 0.254 mm (maxima)"
+boxes = [{ size = [6.604, 3.434, 0.889], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "littelfuse"
+name = "Fuse_Littelfuse-NANO2-451_453"
+land = "KiCad Fuse:Fuse_Littelfuse-NANO2-451_453, terminals along x"
+cite = "Littelfuse 451/453 NANO2: 0.240 x 0.106 x 0.106 in (6.10 x 2.69 x 2.69 mm), catalog figure UNVERIFIED (the data sheet download was refused 2026-10-28)"
+boxes = [{ size = [6.10, 2.69, 2.69], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "texas-instruments"
+name = "Texas_DPY0002A_0.6x1mm_P0.65mm"
+land = "KiCad Package_SON:Texas_DPY0002A_0.6x1mm_P0.65mm, pads along x"
+cite = "TI DPY0002A package outline (SLLSEB1G, TPD1E10B06): 1.1 x 0.7 mm max, X1SON 0.45 mm max height"
+boxes = [{ size = [1.1, 0.7, 0.45], at = [0.0, 0.0, 0.0] }]
+
+[[envelope]]
+key = "diodes-inc"
+name = "SOT-523"
+land = "KiCad Package_TO_SOT_SMD:SOT-523, leads along x (pins 1-2 at x -0.645, pin 3 at +0.645)"
+cite = "Diodes DS31783 Rev. 8-2 (DMG1012T) SOT523 table: D 1.70, E1 0.85, E 1.75, A1 + A2 0.90 mm (maxima); lead height c 0.20"
+boxes = [{ size = [0.85, 1.70, 0.90], at = [0.0, 0.0, 0.0] }, { size = [1.75, 1.30, 0.20], at = [0.0, 0.0, 0.0] }]
+
+# Shield-can frames of the T1 main board (t1 board hardware/t1-main-board/shields.toml, 2026-10-28):
+# outer land size, the 0.4 mm land as the wall, 1.5 mm with the 0.1 mm lid. Placement v1 decision 15.
+[[envelope]]
+key = "shield-frames"
+name = "Shield_Frame_SOC_34.15x19.75mm"
+land = "the frame land, centred"
+cite = "t1 board shields.toml (2026-10-28): land outer 34.15 x 19.75 mm, land 0.4 mm, height 1.5 mm with a 0.1 mm lid; UNVERIFIED until the maker's drawing"
+boxes = [
+    { size = [34.15, 0.4, 1.5], at = [0.0, -9.675, 0.0] },
+    { size = [34.15, 0.4, 1.5], at = [0.0, 9.675, 0.0] },
+    { size = [0.4, 19.75, 1.5], at = [-16.875, 0.0, 0.0] },
+    { size = [0.4, 19.75, 1.5], at = [16.875, 0.0, 0.0] },
+    { size = [34.15, 19.75, 0.1], at = [0.0, 0.0, 1.4] },
+]
+
+[[envelope]]
+key = "shield-frames"
+name = "Shield_Frame_RADIO_13.3x11.1mm"
+land = "the frame land, centred"
+cite = "t1 board shields.toml (2026-10-28): land outer 13.3 x 11.1 mm, land 0.4 mm, height 1.5 mm with a 0.1 mm lid; UNVERIFIED until the maker's drawing"
+boxes = [
+    { size = [13.3, 0.4, 1.5], at = [0.0, -5.35, 0.0] },
+    { size = [13.3, 0.4, 1.5], at = [0.0, 5.35, 0.0] },
+    { size = [0.4, 11.1, 1.5], at = [-6.45, 0.0, 0.0] },
+    { size = [0.4, 11.1, 1.5], at = [6.45, 0.0, 0.0] },
+    { size = [13.3, 11.1, 0.1], at = [0.0, 0.0, 1.4] },
+]

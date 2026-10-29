@@ -1,0 +1,19 @@
+{
+  "boxes": [
+    {
+      "at": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "size": [
+        2.5,
+        2.0,
+        1.2
+      ]
+    }
+  ],
+  "library": "murata",
+  "name": "L_Murata_DFE252012F",
+  "source": "envelope from Murata DFE252012F, J(E)TE243A-0017B-01 p. 5: 2.5 x 2.0 mm; height code F = 1.2 mm max"
+}
