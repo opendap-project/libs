@@ -1,6 +1,6 @@
 # ADR 0001: Part data in the repository and in a local cache
 
-- **Status:** Superseded: moved to [parts-lib ADR 0001](https://github.com/opendap-project/parts-lib/blob/main/docs/adr/0001-part-data-in-repo-and-local-cache.md), where tool-independent part data now lives
+- **Status:** Superseded: moved to [parts-lib ADR 0001](https://github.com/opendap-project/libs/blob/main/parts/docs/adr/0001-part-data-in-repo-and-local-cache.md), where tool-independent part data now lives
 - **Date:** 2026-10-22
 
 ## Context
